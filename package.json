@@ -1,0 +1,20 @@
+{
+  "name": "ots-schema",
+  "version": "0.0.1",
+  "author": "Oddin.gg",
+  "license": "ISC",
+  "scripts": {
+    "release-minor": "npm version minor -m \"Release v%s\"",
+    "release-patch": "npm version patch -m \"Release v%s\""
+  },
+  "dependencies": {
+    "@types/google-protobuf": "^3.7.3",
+    "google-protobuf": "^3.13.0",
+    "grpc-tools": "^1.9.1",
+    "protoc-gen-grpc-web": "^1.2.0",
+    "ts-protoc-gen": "^0.12.0"
+  },
+  "devDependencies": {
+    "@improbable-eng/grpc-web": "^0.12.0"
+  }
+}

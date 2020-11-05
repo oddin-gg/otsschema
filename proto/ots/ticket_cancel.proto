@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+
+message TicketCancelRequest {
+  string id = 1;
+  enums.CancelReason cancel_reason = 2;
+  string cancel_reason_detail = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  uint32 cancel_percent = 5;
+  repeated CancelBetInfo cancel_bet_info = 6;
+}
+
+message CancelBetInfo {
+  string id = 1;
+  uint32 cancel_percent = 2;
+}
+
+message TicketCancelResponse {
+  enums.AcceptanceStatus status = 1;
+  enums.CancelRejectionReason cancel_rejection_reason = 2;
+  string cancel_rejection_message = 3;
+}

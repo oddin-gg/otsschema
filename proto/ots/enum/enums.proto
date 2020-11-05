@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package ots.enums;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+enum AcceptanceStatus {
+  REJECTED = 0;
+  ACCEPTED = 1;
+}
+
+enum CancelStatus {
+  NOT_CANCELED = 0;
+  CANCELED = 1;
+}
+
+message RejectionReason {
+  uint32 code = 1;
+  string message = 2;
+}
+
+enum CancelReason {
+  UNKNOWN = 0;
+  TICKET_TIMEOUT = 1;
+  WRONG_TICKET = 2;
+  TECHNICAL_ISSUE = 3;
+  UNEXPECTED_ISSUE = 4;
+  REGULATOR = 5;
+}
+
+enum BetStakeType {
+  SUM = 0;
+  UNIT = 1;
+}
+
+
+enum AcceptOddsChange {
+  NONE = 0;
+  ANY = 1;
+  HIGHER = 2;
+}
+
+enum BetChannel {
+  NOT_SPECIFIED = 0;
+  INTERNET = 1;
+  RETAIL = 2;
+  TERMINAL = 3;
+  MOBILE = 4;
+  PHONE = 5;
+  SMS = 6;
+  CALL_CENTRE = 7;
+  TV_APP = 8;
+  AGENT = 9;
+}
+
+enum BetBonusType {
+  TOTAL = 0;
+}
+
+enum BetBonusMode {
+  ALL = 0;
+}
+
+enum CancelRejectionReason {
+  NOT_KNOWN = 0;
+  TICKET_NOT_FOUND = 1;
+  TIME_EXPIRED = 2;
+  ALREADY_SETTLED = 3;
+  OTHER = 4;
+}

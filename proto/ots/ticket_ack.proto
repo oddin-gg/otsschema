@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+
+message TicketAckRequest {
+  string ticketId = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  enums.AcceptanceStatus acceptance_status = 3;
+  enums.RejectionReason rejection_reason = 4;
+}

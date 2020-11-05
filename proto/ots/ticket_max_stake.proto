@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/timestamp.proto";
+
+message TicketMaxStakeRequest {
+  string id = 1;
+}
+
+message TicketMaxStakeResponse {
+  uint64 stake = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}

@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+
+message TicketRequest {
+  string id = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  repeated Bet bets = 3;
+  enums.AcceptOddsChange accept_odds_change = 4;
+  // Total number of combinations to validate against generated combinations
+  google.protobuf.UInt32Value total_combinations = 5;
+  TicketRequestBetInfo bet_info = 6;
+  google.protobuf.Timestamp last_match_end_timestamp = 7;
+  google.protobuf.StringValue reoffer_id = 8;
+  map<string, TicketSelection> selections = 9;
+}
+
+message Bet {
+  google.protobuf.StringValue id = 1;
+  BetBonus bonus = 2;
+  BetStake stake = 3;
+  google.protobuf.StringValue reoffer_id = 4;
+  google.protobuf.UInt64Value total_wins = 5;
+  repeated uint32 systems = 6;
+  repeated BetSelection selections = 7;
+}
+
+message TicketSelection {
+  string event_id = 1;
+  string id = 2;
+  uint64 odds = 3;
+}
+
+message BetSelection {
+  string id = 1;
+  bool banker = 2;
+}
+
+message BetStake {
+  uint64 value = 1;
+  enums.BetStakeType type = 2;
+}
+
+message BetBonus {
+  uint64 value = 1;
+  enums.BetBonusType type = 2;
+  enums.BetBonusMode mode = 3;
+}
+
+message TicketRequestBetInfo {
+  // Id of terminal or shop, where bet is received
+  google.protobuf.StringValue location_id = 1;
+  enums.BetChannel bet_channel = 2;
+  string currency = 3;
+  BetCustomer customer = 4;
+}
+
+message BetCustomer {
+  string id = 1;
+  google.protobuf.StringValue ip = 2;
+  google.protobuf.StringValue device_id = 3;
+  string language = 4;
+}

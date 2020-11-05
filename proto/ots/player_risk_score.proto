@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+message PlayerRiskScoreRequest {
+  string id = 1;
+}
+
+message PlayerRiskScoreResponse {
+  string sport_id = 1;
+  uint32 prematch = 2;
+  uint32 live = 3;
+}

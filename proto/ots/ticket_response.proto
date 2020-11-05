@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "github.com/otsschema.git/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/wrappers.proto";
+import "ots/enum/enums.proto";
+
+message TicketResponse {
+  string id = 1;
+  enums.AcceptanceStatus ticket_status = 2;
+  enums.RejectionReason rejection_reason = 3;
+  repeated TicketResponseBetInfo bet_info = 4;
+  google.protobuf.UInt64Value exchange_rate = 5;
+  repeated AutoAcceptedOdds auto_accepted_odds = 6;
+}
+
+message AutoAcceptedOdds {
+  string selection_id = 1;
+  uint64 requested_odds = 2;
+  uint64 used_odds = 3;
+}
+
+message TicketResponseBetInfo {
+  string id = 1;
+  enums.RejectionReason rejection_reason = 2;
+  repeated RejectedSelection selection_info = 3;
+}
+
+message RejectedSelection {
+  string id = 1;
+  enums.RejectionReason rejection_reason = 2;
+  RejectionInfo rejection_info = 3;
+}
+
+message RejectionInfo {
+  string eventId = 1;
+  string id = 2;
+  uint64 odds = 3;
+}
