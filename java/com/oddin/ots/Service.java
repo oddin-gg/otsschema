@@ -40,9 +40,8 @@ public final class Service {
       "axStakeResponse\022L\n\017PlayerRiskScore\022\033.ots" +
       ".PlayerRiskScoreRequest\032\034.ots.PlayerRisk" +
       "ScoreResponse\022:\n\tTicketAck\022\025.ots.TicketA" +
-      "ckRequest\032\026.google.protobuf.EmptyB-\n\rcom" +
-      ".oddin.otsZ\034github.com/otsschema.git/ots" +
-      "b\006proto3"
+      "ckRequest\032\026.google.protobuf.EmptyB\035\n\rcom" +
+      ".oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

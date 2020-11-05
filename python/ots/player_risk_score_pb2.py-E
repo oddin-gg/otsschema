@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ots/player_risk_score.proto',
   package='ots',
   syntax='proto3',
-  serialized_options=b'\n\rcom.oddin.otsZ\034github.com/otsschema.git/ots',
+  serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1bots/player_risk_score.proto\x12\x03ots\"$\n\x16PlayerRiskScoreRequest\x12\n\n\x02id\x18\x01 \x01(\t\"K\n\x17PlayerRiskScoreResponse\x12\x10\n\x08sport_id\x18\x01 \x01(\t\x12\x10\n\x08prematch\x18\x02 \x01(\r\x12\x0c\n\x04live\x18\x03 \x01(\rB-\n\rcom.oddin.otsZ\x1cgithub.com/otsschema.git/otsb\x06proto3'
+  serialized_pb=b'\n\x1bots/player_risk_score.proto\x12\x03ots\"$\n\x16PlayerRiskScoreRequest\x12\n\n\x02id\x18\x01 \x01(\t\"K\n\x17PlayerRiskScoreResponse\x12\x10\n\x08sport_id\x18\x01 \x01(\t\x12\x10\n\x08prematch\x18\x02 \x01(\r\x12\x0c\n\x04live\x18\x03 \x01(\rB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
 )
 
 

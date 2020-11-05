@@ -5514,9 +5514,8 @@ public final class TicketResponseOuterClass {
       "ction_reason\030\002 \001(\0132\032.ots.enums.Rejection" +
       "Reason\022*\n\016rejection_info\030\003 \001(\0132\022.ots.Rej" +
       "ectionInfo\":\n\rRejectionInfo\022\017\n\007eventId\030\001" +
-      " \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004odds\030\003 \001(\004B-\n\rcom.od" +
-      "din.otsZ\034github.com/otsschema.git/otsb\006p" +
-      "roto3"
+      " \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004odds\030\003 \001(\004B\035\n\rcom.od" +
+      "din.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

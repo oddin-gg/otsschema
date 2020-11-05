@@ -1612,8 +1612,8 @@ public final class ResolveForeignEventsInTicket {
       "olveForeignEventsInTicketResponse\022+\n\006sta" +
       "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\0224" +
       "\n\020rejection_reason\030\002 \001(\0132\032.ots.enums.Rej" +
-      "ectionReasonB-\n\rcom.oddin.otsZ\034github.co" +
-      "m/otsschema.git/otsb\006proto3"
+      "ectionReasonB\035\n\rcom.oddin.otsZ\014oddin.gg/" +
+      "otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

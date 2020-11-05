@@ -1297,9 +1297,8 @@ public final class TicketMaxStake {
       "e/protobuf/timestamp.proto\"#\n\025TicketMaxS" +
       "takeRequest\022\n\n\002id\030\001 \001(\t\"V\n\026TicketMaxStak" +
       "eResponse\022\r\n\005stake\030\001 \001(\004\022-\n\ttimestamp\030\002 " +
-      "\001(\0132\032.google.protobuf.TimestampB-\n\rcom.o" +
-      "ddin.otsZ\034github.com/otsschema.git/otsb\006" +
-      "proto3"
+      "\001(\0132\032.google.protobuf.TimestampB\035\n\rcom.o" +
+      "ddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

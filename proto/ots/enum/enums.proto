@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ots.enums;
 
-option go_package = "github.com/otsschema.git/ots";
+option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
 enum AcceptanceStatus {

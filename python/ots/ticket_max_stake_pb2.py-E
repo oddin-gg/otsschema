@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ots/ticket_max_stake.proto',
   package='ots',
   syntax='proto3',
-  serialized_options=b'\n\rcom.oddin.otsZ\034github.com/otsschema.git/ots',
+  serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1aots/ticket_max_stake.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\"#\n\x15TicketMaxStakeRequest\x12\n\n\x02id\x18\x01 \x01(\t\"V\n\x16TicketMaxStakeResponse\x12\r\n\x05stake\x18\x01 \x01(\x04\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB-\n\rcom.oddin.otsZ\x1cgithub.com/otsschema.git/otsb\x06proto3'
+  serialized_pb=b'\n\x1aots/ticket_max_stake.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\"#\n\x15TicketMaxStakeRequest\x12\n\n\x02id\x18\x01 \x01(\t\"V\n\x16TicketMaxStakeResponse\x12\r\n\x05stake\x18\x01 \x01(\x04\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 

@@ -2944,8 +2944,8 @@ public final class TicketCancel {
       "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\022A" +
       "\n\027cancel_rejection_reason\030\002 \001(\0162 .ots.en" +
       "ums.CancelRejectionReason\022 \n\030cancel_reje" +
-      "ction_message\030\003 \001(\tB-\n\rcom.oddin.otsZ\034gi" +
-      "thub.com/otsschema.git/otsb\006proto3"
+      "ction_message\030\003 \001(\tB\035\n\rcom.oddin.otsZ\014od" +
+      "din.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

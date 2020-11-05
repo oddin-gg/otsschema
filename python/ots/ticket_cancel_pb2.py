@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ots/ticket_cancel.proto',
   package='ots',
   syntax='proto3',
-  serialized_options=b'\n\rcom.oddin.otsZ\034github.com/otsschema.git/ots',
+  serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17ots/ticket_cancel.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"\xe3\x01\n\x13TicketCancelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\rcancel_reason\x18\x02 \x01(\x0e\x32\x17.ots.enums.CancelReason\x12\x1c\n\x14\x63\x61ncel_reason_detail\x18\x03 \x01(\t\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x63\x61ncel_percent\x18\x05 \x01(\r\x12+\n\x0f\x63\x61ncel_bet_info\x18\x06 \x03(\x0b\x32\x12.ots.CancelBetInfo\"3\n\rCancelBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x61ncel_percent\x18\x02 \x01(\r\"\xa8\x01\n\x14TicketCancelResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x41\n\x17\x63\x61ncel_rejection_reason\x18\x02 \x01(\x0e\x32 .ots.enums.CancelRejectionReason\x12 \n\x18\x63\x61ncel_rejection_message\x18\x03 \x01(\tB-\n\rcom.oddin.otsZ\x1cgithub.com/otsschema.git/otsb\x06proto3'
+  serialized_pb=b'\n\x17ots/ticket_cancel.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"\xe3\x01\n\x13TicketCancelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\rcancel_reason\x18\x02 \x01(\x0e\x32\x17.ots.enums.CancelReason\x12\x1c\n\x14\x63\x61ncel_reason_detail\x18\x03 \x01(\t\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x63\x61ncel_percent\x18\x05 \x01(\r\x12+\n\x0f\x63\x61ncel_bet_info\x18\x06 \x03(\x0b\x32\x12.ots.CancelBetInfo\"3\n\rCancelBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x61ncel_percent\x18\x02 \x01(\r\"\xa8\x01\n\x14TicketCancelResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x41\n\x17\x63\x61ncel_rejection_reason\x18\x02 \x01(\x0e\x32 .ots.enums.CancelRejectionReason\x12 \n\x18\x63\x61ncel_rejection_message\x18\x03 \x01(\tB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
 

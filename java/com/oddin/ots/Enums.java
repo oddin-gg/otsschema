@@ -1781,8 +1781,8 @@ public final class Enums {
       "L\020\000*\027\n\014BetBonusMode\022\007\n\003ALL\020\000*n\n\025CancelRe" +
       "jectionReason\022\r\n\tNOT_KNOWN\020\000\022\024\n\020TICKET_N" +
       "OT_FOUND\020\001\022\020\n\014TIME_EXPIRED\020\002\022\023\n\017ALREADY_" +
-      "SETTLED\020\003\022\t\n\005OTHER\020\004B-\n\rcom.oddin.otsZ\034g" +
-      "ithub.com/otsschema.git/otsb\006proto3"
+      "SETTLED\020\003\022\t\n\005OTHER\020\004B\035\n\rcom.oddin.otsZ\014o" +
+      "ddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

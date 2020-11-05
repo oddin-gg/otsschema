@@ -1115,9 +1115,8 @@ public final class TicketAck {
       "\t\022-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.T" +
       "imestamp\0226\n\021acceptance_status\030\003 \001(\0162\033.ot" +
       "s.enums.AcceptanceStatus\0224\n\020rejection_re" +
-      "ason\030\004 \001(\0132\032.ots.enums.RejectionReasonB-" +
-      "\n\rcom.oddin.otsZ\034github.com/otsschema.gi" +
-      "t/otsb\006proto3"
+      "ason\030\004 \001(\0132\032.ots.enums.RejectionReasonB\035" +
+      "\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

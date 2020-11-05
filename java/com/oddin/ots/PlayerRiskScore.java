@@ -1312,9 +1312,8 @@ public final class PlayerRiskScore {
       "\n\033ots/player_risk_score.proto\022\003ots\"$\n\026Pl" +
       "ayerRiskScoreRequest\022\n\n\002id\030\001 \001(\t\"K\n\027Play" +
       "erRiskScoreResponse\022\020\n\010sport_id\030\001 \001(\t\022\020\n" +
-      "\010prematch\030\002 \001(\r\022\014\n\004live\030\003 \001(\rB-\n\rcom.odd" +
-      "in.otsZ\034github.com/otsschema.git/otsb\006pr" +
-      "oto3"
+      "\010prematch\030\002 \001(\r\022\014\n\004live\030\003 \001(\rB\035\n\rcom.odd" +
+      "in.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

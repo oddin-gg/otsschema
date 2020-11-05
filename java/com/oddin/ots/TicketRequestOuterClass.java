@@ -9540,9 +9540,8 @@ public final class TicketRequestOuterClass {
       "2\020.ots.BetCustomer\"\206\001\n\013BetCustomer\022\n\n\002id" +
       "\030\001 \001(\t\022(\n\002ip\030\002 \001(\0132\034.google.protobuf.Str" +
       "ingValue\022/\n\tdevice_id\030\003 \001(\0132\034.google.pro" +
-      "tobuf.StringValue\022\020\n\010language\030\004 \001(\tB-\n\rc" +
-      "om.oddin.otsZ\034github.com/otsschema.git/o" +
-      "tsb\006proto3"
+      "tobuf.StringValue\022\020\n\010language\030\004 \001(\tB\035\n\rc" +
+      "om.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

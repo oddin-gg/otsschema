@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ots/resolve_foreign_events_in_ticket.proto',
   package='ots',
   syntax='proto3',
-  serialized_options=b'\n\rcom.oddin.otsZ\034github.com/otsschema.git/ots',
+  serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"~\n#ResolveForeignEventsInTicketRequest\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x89\x01\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x34\n\x10rejection_reason\x18\x02 \x01(\x0b\x32\x1a.ots.enums.RejectionReasonB-\n\rcom.oddin.otsZ\x1cgithub.com/otsschema.git/otsb\x06proto3'
+  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"~\n#ResolveForeignEventsInTicketRequest\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x89\x01\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x34\n\x10rejection_reason\x18\x02 \x01(\x0b\x32\x1a.ots.enums.RejectionReasonB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
 
