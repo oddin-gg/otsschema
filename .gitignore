@@ -25,3 +25,5 @@ vendor/
 /venv
 
 protoc-gen-grpc-java
+*/.gradle
+*/build

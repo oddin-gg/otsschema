@@ -9,12 +9,12 @@ import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
 
 message ResolveForeignEventsInTicketRequest {
-    string ticket_id = 1;
+    string id = 1;
     uint64 foreign_stake = 3;
     google.protobuf.Timestamp timestamp = 4;
 }
 
 message ResolveForeignEventsInTicketResponse {
     enums.AcceptanceStatus status = 1;
-    enums.RejectionReason rejection_reason = 2;
+    enums.Reason reason = 2;
 }

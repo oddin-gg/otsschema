@@ -42,19 +42,19 @@ public final class TicketResponseOuterClass {
     com.oddin.ots.Enums.AcceptanceStatus getTicketStatus();
 
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 3;</code>
+     * @return Whether the reason field is set.
      */
-    boolean hasRejectionReason();
+    boolean hasReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 3;</code>
+     * @return The reason.
      */
-    com.oddin.ots.Enums.RejectionReason getRejectionReason();
+    com.oddin.ots.Enums.Reason getReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+     * <code>.ots.enums.Reason reason = 3;</code>
      */
-    com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder();
+    com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder();
 
     /**
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
@@ -182,14 +182,14 @@ public final class TicketResponseOuterClass {
               break;
             }
             case 26: {
-              com.oddin.ots.Enums.RejectionReason.Builder subBuilder = null;
-              if (rejectionReason_ != null) {
-                subBuilder = rejectionReason_.toBuilder();
+              com.oddin.ots.Enums.Reason.Builder subBuilder = null;
+              if (reason_ != null) {
+                subBuilder = reason_.toBuilder();
               }
-              rejectionReason_ = input.readMessage(com.oddin.ots.Enums.RejectionReason.parser(), extensionRegistry);
+              reason_ = input.readMessage(com.oddin.ots.Enums.Reason.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(rejectionReason_);
-                rejectionReason_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(reason_);
+                reason_ = subBuilder.buildPartial();
               }
 
               break;
@@ -320,30 +320,30 @@ public final class TicketResponseOuterClass {
       return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
     }
 
-    public static final int REJECTION_REASON_FIELD_NUMBER = 3;
-    private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+    public static final int REASON_FIELD_NUMBER = 3;
+    private com.oddin.ots.Enums.Reason reason_;
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 3;</code>
+     * @return Whether the reason field is set.
      */
     @java.lang.Override
-    public boolean hasRejectionReason() {
-      return rejectionReason_ != null;
+    public boolean hasReason() {
+      return reason_ != null;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 3;</code>
+     * @return The reason.
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-      return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+    public com.oddin.ots.Enums.Reason getReason() {
+      return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+     * <code>.ots.enums.Reason reason = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-      return getRejectionReason();
+    public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+      return getReason();
     }
 
     public static final int BET_INFO_FIELD_NUMBER = 4;
@@ -472,8 +472,8 @@ public final class TicketResponseOuterClass {
       if (ticketStatus_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
         output.writeEnum(2, ticketStatus_);
       }
-      if (rejectionReason_ != null) {
-        output.writeMessage(3, getRejectionReason());
+      if (reason_ != null) {
+        output.writeMessage(3, getReason());
       }
       for (int i = 0; i < betInfo_.size(); i++) {
         output.writeMessage(4, betInfo_.get(i));
@@ -500,9 +500,9 @@ public final class TicketResponseOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, ticketStatus_);
       }
-      if (rejectionReason_ != null) {
+      if (reason_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getRejectionReason());
+          .computeMessageSize(3, getReason());
       }
       for (int i = 0; i < betInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -534,10 +534,10 @@ public final class TicketResponseOuterClass {
       if (!getId()
           .equals(other.getId())) return false;
       if (ticketStatus_ != other.ticketStatus_) return false;
-      if (hasRejectionReason() != other.hasRejectionReason()) return false;
-      if (hasRejectionReason()) {
-        if (!getRejectionReason()
-            .equals(other.getRejectionReason())) return false;
+      if (hasReason() != other.hasReason()) return false;
+      if (hasReason()) {
+        if (!getReason()
+            .equals(other.getReason())) return false;
       }
       if (!getBetInfoList()
           .equals(other.getBetInfoList())) return false;
@@ -563,9 +563,9 @@ public final class TicketResponseOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TICKET_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + ticketStatus_;
-      if (hasRejectionReason()) {
-        hash = (37 * hash) + REJECTION_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getRejectionReason().hashCode();
+      if (hasReason()) {
+        hash = (37 * hash) + REASON_FIELD_NUMBER;
+        hash = (53 * hash) + getReason().hashCode();
       }
       if (getBetInfoCount() > 0) {
         hash = (37 * hash) + BET_INFO_FIELD_NUMBER;
@@ -718,11 +718,11 @@ public final class TicketResponseOuterClass {
 
         ticketStatus_ = 0;
 
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+        if (reasonBuilder_ == null) {
+          reason_ = null;
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
         if (betInfoBuilder_ == null) {
           betInfo_ = java.util.Collections.emptyList();
@@ -771,10 +771,10 @@ public final class TicketResponseOuterClass {
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.ticketStatus_ = ticketStatus_;
-        if (rejectionReasonBuilder_ == null) {
-          result.rejectionReason_ = rejectionReason_;
+        if (reasonBuilder_ == null) {
+          result.reason_ = reason_;
         } else {
-          result.rejectionReason_ = rejectionReasonBuilder_.build();
+          result.reason_ = reasonBuilder_.build();
         }
         if (betInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -854,8 +854,8 @@ public final class TicketResponseOuterClass {
         if (other.ticketStatus_ != 0) {
           setTicketStatusValue(other.getTicketStatusValue());
         }
-        if (other.hasRejectionReason()) {
-          mergeRejectionReason(other.getRejectionReason());
+        if (other.hasReason()) {
+          mergeReason(other.getReason());
         }
         if (betInfoBuilder_ == null) {
           if (!other.betInfo_.isEmpty()) {
@@ -1072,123 +1072,123 @@ public final class TicketResponseOuterClass {
         return this;
       }
 
-      private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+      private com.oddin.ots.Enums.Reason reason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> rejectionReasonBuilder_;
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> reasonBuilder_;
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-       * @return Whether the rejectionReason field is set.
+       * <code>.ots.enums.Reason reason = 3;</code>
+       * @return Whether the reason field is set.
        */
-      public boolean hasRejectionReason() {
-        return rejectionReasonBuilder_ != null || rejectionReason_ != null;
+      public boolean hasReason() {
+        return reasonBuilder_ != null || reason_ != null;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
-       * @return The rejectionReason.
+       * <code>.ots.enums.Reason reason = 3;</code>
+       * @return The reason.
        */
-      public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+      public com.oddin.ots.Enums.Reason getReason() {
+        if (reasonBuilder_ == null) {
+          return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         } else {
-          return rejectionReasonBuilder_.getMessage();
+          return reasonBuilder_.getMessage();
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public Builder setRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
+      public Builder setReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rejectionReason_ = value;
+          reason_ = value;
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(value);
+          reasonBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public Builder setRejectionReason(
-          com.oddin.ots.Enums.RejectionReason.Builder builderForValue) {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = builderForValue.build();
+      public Builder setReason(
+          com.oddin.ots.Enums.Reason.Builder builderForValue) {
+        if (reasonBuilder_ == null) {
+          reason_ = builderForValue.build();
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(builderForValue.build());
+          reasonBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public Builder mergeRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
-          if (rejectionReason_ != null) {
-            rejectionReason_ =
-              com.oddin.ots.Enums.RejectionReason.newBuilder(rejectionReason_).mergeFrom(value).buildPartial();
+      public Builder mergeReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
+          if (reason_ != null) {
+            reason_ =
+              com.oddin.ots.Enums.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
-            rejectionReason_ = value;
+            reason_ = value;
           }
           onChanged();
         } else {
-          rejectionReasonBuilder_.mergeFrom(value);
+          reasonBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public Builder clearRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+      public Builder clearReason() {
+        if (reasonBuilder_ == null) {
+          reason_ = null;
           onChanged();
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public com.oddin.ots.Enums.RejectionReason.Builder getRejectionReasonBuilder() {
+      public com.oddin.ots.Enums.Reason.Builder getReasonBuilder() {
         
         onChanged();
-        return getRejectionReasonFieldBuilder().getBuilder();
+        return getReasonFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
-      public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-        if (rejectionReasonBuilder_ != null) {
-          return rejectionReasonBuilder_.getMessageOrBuilder();
+      public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+        if (reasonBuilder_ != null) {
+          return reasonBuilder_.getMessageOrBuilder();
         } else {
-          return rejectionReason_ == null ?
-              com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+          return reason_ == null ?
+              com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 3;</code>
+       * <code>.ots.enums.Reason reason = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> 
-          getRejectionReasonFieldBuilder() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder>(
-                  getRejectionReason(),
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> 
+          getReasonFieldBuilder() {
+        if (reasonBuilder_ == null) {
+          reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder>(
+                  getReason(),
                   getParentForChildren(),
                   isClean());
-          rejectionReason_ = null;
+          reason_ = null;
         }
-        return rejectionReasonBuilder_;
+        return reasonBuilder_;
       }
 
       private java.util.List<com.oddin.ots.TicketResponseOuterClass.TicketResponseBetInfo> betInfo_ =
@@ -1847,16 +1847,16 @@ public final class TicketResponseOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string selection_id = 1;</code>
-     * @return The selectionId.
+     * <code>string id = 1;</code>
+     * @return The id.
      */
-    java.lang.String getSelectionId();
+    java.lang.String getId();
     /**
-     * <code>string selection_id = 1;</code>
-     * @return The bytes for selectionId.
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getSelectionIdBytes();
+        getIdBytes();
 
     /**
      * <code>uint64 requested_odds = 2;</code>
@@ -1883,7 +1883,7 @@ public final class TicketResponseOuterClass {
       super(builder);
     }
     private AutoAcceptedOdds() {
-      selectionId_ = "";
+      id_ = "";
     }
 
     @java.lang.Override
@@ -1919,7 +1919,7 @@ public final class TicketResponseOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              selectionId_ = s;
+              id_ = s;
               break;
             }
             case 16: {
@@ -1964,38 +1964,38 @@ public final class TicketResponseOuterClass {
               com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds.class, com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds.Builder.class);
     }
 
-    public static final int SELECTION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object selectionId_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
     /**
-     * <code>string selection_id = 1;</code>
-     * @return The selectionId.
+     * <code>string id = 1;</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getSelectionId() {
-      java.lang.Object ref = selectionId_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        selectionId_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
-     * <code>string selection_id = 1;</code>
-     * @return The bytes for selectionId.
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSelectionIdBytes() {
-      java.lang.Object ref = selectionId_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        selectionId_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2038,8 +2038,8 @@ public final class TicketResponseOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSelectionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selectionId_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (requestedOdds_ != 0L) {
         output.writeUInt64(2, requestedOdds_);
@@ -2056,8 +2056,8 @@ public final class TicketResponseOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSelectionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, selectionId_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (requestedOdds_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -2082,8 +2082,8 @@ public final class TicketResponseOuterClass {
       }
       com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds other = (com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds) obj;
 
-      if (!getSelectionId()
-          .equals(other.getSelectionId())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (getRequestedOdds()
           != other.getRequestedOdds()) return false;
       if (getUsedOdds()
@@ -2099,8 +2099,8 @@ public final class TicketResponseOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SELECTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSelectionId().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + REQUESTED_ODDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestedOdds());
@@ -2240,7 +2240,7 @@ public final class TicketResponseOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        selectionId_ = "";
+        id_ = "";
 
         requestedOdds_ = 0L;
 
@@ -2272,7 +2272,7 @@ public final class TicketResponseOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds buildPartial() {
         com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds result = new com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds(this);
-        result.selectionId_ = selectionId_;
+        result.id_ = id_;
         result.requestedOdds_ = requestedOdds_;
         result.usedOdds_ = usedOdds_;
         onBuilt();
@@ -2323,8 +2323,8 @@ public final class TicketResponseOuterClass {
 
       public Builder mergeFrom(com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds other) {
         if (other == com.oddin.ots.TicketResponseOuterClass.AutoAcceptedOdds.getDefaultInstance()) return this;
-        if (!other.getSelectionId().isEmpty()) {
-          selectionId_ = other.selectionId_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (other.getRequestedOdds() != 0L) {
@@ -2362,78 +2362,78 @@ public final class TicketResponseOuterClass {
         return this;
       }
 
-      private java.lang.Object selectionId_ = "";
+      private java.lang.Object id_ = "";
       /**
-       * <code>string selection_id = 1;</code>
-       * @return The selectionId.
+       * <code>string id = 1;</code>
+       * @return The id.
        */
-      public java.lang.String getSelectionId() {
-        java.lang.Object ref = selectionId_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          selectionId_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string selection_id = 1;</code>
-       * @return The bytes for selectionId.
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getSelectionIdBytes() {
-        java.lang.Object ref = selectionId_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          selectionId_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string selection_id = 1;</code>
-       * @param value The selectionId to set.
+       * <code>string id = 1;</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setSelectionId(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        selectionId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string selection_id = 1;</code>
+       * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSelectionId() {
+      public Builder clearId() {
         
-        selectionId_ = getDefaultInstance().getSelectionId();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
-       * <code>string selection_id = 1;</code>
-       * @param value The bytes for selectionId to set.
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setSelectionIdBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        selectionId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -2569,42 +2569,57 @@ public final class TicketResponseOuterClass {
         getIdBytes();
 
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return Whether the reason field is set.
      */
-    boolean hasRejectionReason();
+    boolean hasReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return The reason.
      */
-    com.oddin.ots.Enums.RejectionReason getRejectionReason();
+    com.oddin.ots.Enums.Reason getReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+     * <code>.ots.enums.Reason reason = 2;</code>
      */
-    com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder();
+    com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder();
 
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     * @return Whether the reoffer field is set.
+     */
+    boolean hasReoffer();
+    /**
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     * @return The reoffer.
+     */
+    com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getReoffer();
+    /**
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     */
+    com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder getReofferOrBuilder();
+
+    /**
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> 
-        getSelectionInfoList();
+        getSelectionsInfoList();
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionInfo(int index);
+    com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionsInfo(int index);
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    int getSelectionInfoCount();
+    int getSelectionsInfoCount();
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     java.util.List<? extends com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> 
-        getSelectionInfoOrBuilderList();
+        getSelectionsInfoOrBuilderList();
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionInfoOrBuilder(
+    com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
         int index);
   }
   /**
@@ -2621,7 +2636,7 @@ public final class TicketResponseOuterClass {
     }
     private TicketResponseBetInfo() {
       id_ = "";
-      selectionInfo_ = java.util.Collections.emptyList();
+      selectionsInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2662,24 +2677,37 @@ public final class TicketResponseOuterClass {
               break;
             }
             case 18: {
-              com.oddin.ots.Enums.RejectionReason.Builder subBuilder = null;
-              if (rejectionReason_ != null) {
-                subBuilder = rejectionReason_.toBuilder();
+              com.oddin.ots.Enums.Reason.Builder subBuilder = null;
+              if (reason_ != null) {
+                subBuilder = reason_.toBuilder();
               }
-              rejectionReason_ = input.readMessage(com.oddin.ots.Enums.RejectionReason.parser(), extensionRegistry);
+              reason_ = input.readMessage(com.oddin.ots.Enums.Reason.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(rejectionReason_);
-                rejectionReason_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(reason_);
+                reason_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 26: {
+              com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder subBuilder = null;
+              if (reoffer_ != null) {
+                subBuilder = reoffer_.toBuilder();
+              }
+              reoffer_ = input.readMessage(com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reoffer_);
+                reoffer_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectionInfo_ = new java.util.ArrayList<com.oddin.ots.TicketResponseOuterClass.RejectedSelection>();
+                selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.TicketResponseOuterClass.RejectedSelection>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              selectionInfo_.add(
+              selectionsInfo_.add(
                   input.readMessage(com.oddin.ots.TicketResponseOuterClass.RejectedSelection.parser(), extensionRegistry));
               break;
             }
@@ -2699,7 +2727,7 @@ public final class TicketResponseOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selectionInfo_ = java.util.Collections.unmodifiableList(selectionInfo_);
+          selectionsInfo_ = java.util.Collections.unmodifiableList(selectionsInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2756,70 +2784,96 @@ public final class TicketResponseOuterClass {
       }
     }
 
-    public static final int REJECTION_REASON_FIELD_NUMBER = 2;
-    private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+    public static final int REASON_FIELD_NUMBER = 2;
+    private com.oddin.ots.Enums.Reason reason_;
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return Whether the reason field is set.
      */
     @java.lang.Override
-    public boolean hasRejectionReason() {
-      return rejectionReason_ != null;
+    public boolean hasReason() {
+      return reason_ != null;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return The reason.
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-      return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+    public com.oddin.ots.Enums.Reason getReason() {
+      return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+     * <code>.ots.enums.Reason reason = 2;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-      return getRejectionReason();
+    public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+      return getReason();
     }
 
-    public static final int SELECTION_INFO_FIELD_NUMBER = 3;
-    private java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> selectionInfo_;
+    public static final int REOFFER_FIELD_NUMBER = 3;
+    private com.oddin.ots.TicketResponseOuterClass.ResponseReoffer reoffer_;
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     * @return Whether the reoffer field is set.
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> getSelectionInfoList() {
-      return selectionInfo_;
+    public boolean hasReoffer() {
+      return reoffer_ != null;
     }
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     * @return The reoffer.
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getReoffer() {
+      return reoffer_ == null ? com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
+    }
+    /**
+     * <code>.ots.ResponseReoffer reoffer = 3;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder getReofferOrBuilder() {
+      return getReoffer();
+    }
+
+    public static final int SELECTIONS_INFO_FIELD_NUMBER = 4;
+    private java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> selectionsInfo_;
+    /**
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> getSelectionsInfoList() {
+      return selectionsInfo_;
+    }
+    /**
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> 
-        getSelectionInfoOrBuilderList() {
-      return selectionInfo_;
+        getSelectionsInfoOrBuilderList() {
+      return selectionsInfo_;
     }
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public int getSelectionInfoCount() {
-      return selectionInfo_.size();
+    public int getSelectionsInfoCount() {
+      return selectionsInfo_.size();
     }
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionInfo(int index) {
-      return selectionInfo_.get(index);
+    public com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionsInfo(int index) {
+      return selectionsInfo_.get(index);
     }
     /**
-     * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+     * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionInfoOrBuilder(
+    public com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
         int index) {
-      return selectionInfo_.get(index);
+      return selectionsInfo_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2839,11 +2893,14 @@ public final class TicketResponseOuterClass {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (rejectionReason_ != null) {
-        output.writeMessage(2, getRejectionReason());
+      if (reason_ != null) {
+        output.writeMessage(2, getReason());
       }
-      for (int i = 0; i < selectionInfo_.size(); i++) {
-        output.writeMessage(3, selectionInfo_.get(i));
+      if (reoffer_ != null) {
+        output.writeMessage(3, getReoffer());
+      }
+      for (int i = 0; i < selectionsInfo_.size(); i++) {
+        output.writeMessage(4, selectionsInfo_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2857,13 +2914,17 @@ public final class TicketResponseOuterClass {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (rejectionReason_ != null) {
+      if (reason_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRejectionReason());
+          .computeMessageSize(2, getReason());
       }
-      for (int i = 0; i < selectionInfo_.size(); i++) {
+      if (reoffer_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, selectionInfo_.get(i));
+          .computeMessageSize(3, getReoffer());
+      }
+      for (int i = 0; i < selectionsInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, selectionsInfo_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2882,13 +2943,18 @@ public final class TicketResponseOuterClass {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (hasRejectionReason() != other.hasRejectionReason()) return false;
-      if (hasRejectionReason()) {
-        if (!getRejectionReason()
-            .equals(other.getRejectionReason())) return false;
+      if (hasReason() != other.hasReason()) return false;
+      if (hasReason()) {
+        if (!getReason()
+            .equals(other.getReason())) return false;
       }
-      if (!getSelectionInfoList()
-          .equals(other.getSelectionInfoList())) return false;
+      if (hasReoffer() != other.hasReoffer()) return false;
+      if (hasReoffer()) {
+        if (!getReoffer()
+            .equals(other.getReoffer())) return false;
+      }
+      if (!getSelectionsInfoList()
+          .equals(other.getSelectionsInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2902,13 +2968,17 @@ public final class TicketResponseOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      if (hasRejectionReason()) {
-        hash = (37 * hash) + REJECTION_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getRejectionReason().hashCode();
+      if (hasReason()) {
+        hash = (37 * hash) + REASON_FIELD_NUMBER;
+        hash = (53 * hash) + getReason().hashCode();
       }
-      if (getSelectionInfoCount() > 0) {
-        hash = (37 * hash) + SELECTION_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectionInfoList().hashCode();
+      if (hasReoffer()) {
+        hash = (37 * hash) + REOFFER_FIELD_NUMBER;
+        hash = (53 * hash) + getReoffer().hashCode();
+      }
+      if (getSelectionsInfoCount() > 0) {
+        hash = (37 * hash) + SELECTIONS_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectionsInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3038,7 +3108,7 @@ public final class TicketResponseOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getSelectionInfoFieldBuilder();
+          getSelectionsInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3046,17 +3116,23 @@ public final class TicketResponseOuterClass {
         super.clear();
         id_ = "";
 
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+        if (reasonBuilder_ == null) {
+          reason_ = null;
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
-        if (selectionInfoBuilder_ == null) {
-          selectionInfo_ = java.util.Collections.emptyList();
+        if (reofferBuilder_ == null) {
+          reoffer_ = null;
+        } else {
+          reoffer_ = null;
+          reofferBuilder_ = null;
+        }
+        if (selectionsInfoBuilder_ == null) {
+          selectionsInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          selectionInfoBuilder_.clear();
+          selectionsInfoBuilder_.clear();
         }
         return this;
       }
@@ -3086,19 +3162,24 @@ public final class TicketResponseOuterClass {
         com.oddin.ots.TicketResponseOuterClass.TicketResponseBetInfo result = new com.oddin.ots.TicketResponseOuterClass.TicketResponseBetInfo(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
-        if (rejectionReasonBuilder_ == null) {
-          result.rejectionReason_ = rejectionReason_;
+        if (reasonBuilder_ == null) {
+          result.reason_ = reason_;
         } else {
-          result.rejectionReason_ = rejectionReasonBuilder_.build();
+          result.reason_ = reasonBuilder_.build();
         }
-        if (selectionInfoBuilder_ == null) {
+        if (reofferBuilder_ == null) {
+          result.reoffer_ = reoffer_;
+        } else {
+          result.reoffer_ = reofferBuilder_.build();
+        }
+        if (selectionsInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            selectionInfo_ = java.util.Collections.unmodifiableList(selectionInfo_);
+            selectionsInfo_ = java.util.Collections.unmodifiableList(selectionsInfo_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.selectionInfo_ = selectionInfo_;
+          result.selectionsInfo_ = selectionsInfo_;
         } else {
-          result.selectionInfo_ = selectionInfoBuilder_.build();
+          result.selectionsInfo_ = selectionsInfoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3152,32 +3233,35 @@ public final class TicketResponseOuterClass {
           id_ = other.id_;
           onChanged();
         }
-        if (other.hasRejectionReason()) {
-          mergeRejectionReason(other.getRejectionReason());
+        if (other.hasReason()) {
+          mergeReason(other.getReason());
         }
-        if (selectionInfoBuilder_ == null) {
-          if (!other.selectionInfo_.isEmpty()) {
-            if (selectionInfo_.isEmpty()) {
-              selectionInfo_ = other.selectionInfo_;
+        if (other.hasReoffer()) {
+          mergeReoffer(other.getReoffer());
+        }
+        if (selectionsInfoBuilder_ == null) {
+          if (!other.selectionsInfo_.isEmpty()) {
+            if (selectionsInfo_.isEmpty()) {
+              selectionsInfo_ = other.selectionsInfo_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureSelectionInfoIsMutable();
-              selectionInfo_.addAll(other.selectionInfo_);
+              ensureSelectionsInfoIsMutable();
+              selectionsInfo_.addAll(other.selectionsInfo_);
             }
             onChanged();
           }
         } else {
-          if (!other.selectionInfo_.isEmpty()) {
-            if (selectionInfoBuilder_.isEmpty()) {
-              selectionInfoBuilder_.dispose();
-              selectionInfoBuilder_ = null;
-              selectionInfo_ = other.selectionInfo_;
+          if (!other.selectionsInfo_.isEmpty()) {
+            if (selectionsInfoBuilder_.isEmpty()) {
+              selectionsInfoBuilder_.dispose();
+              selectionsInfoBuilder_ = null;
+              selectionsInfo_ = other.selectionsInfo_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              selectionInfoBuilder_ = 
+              selectionsInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSelectionInfoFieldBuilder() : null;
+                   getSelectionsInfoFieldBuilder() : null;
             } else {
-              selectionInfoBuilder_.addAllMessages(other.selectionInfo_);
+              selectionsInfoBuilder_.addAllMessages(other.selectionsInfo_);
             }
           }
         }
@@ -3287,363 +3371,482 @@ public final class TicketResponseOuterClass {
         return this;
       }
 
-      private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+      private com.oddin.ots.Enums.Reason reason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> rejectionReasonBuilder_;
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> reasonBuilder_;
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-       * @return Whether the rejectionReason field is set.
+       * <code>.ots.enums.Reason reason = 2;</code>
+       * @return Whether the reason field is set.
        */
-      public boolean hasRejectionReason() {
-        return rejectionReasonBuilder_ != null || rejectionReason_ != null;
+      public boolean hasReason() {
+        return reasonBuilder_ != null || reason_ != null;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-       * @return The rejectionReason.
+       * <code>.ots.enums.Reason reason = 2;</code>
+       * @return The reason.
        */
-      public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+      public com.oddin.ots.Enums.Reason getReason() {
+        if (reasonBuilder_ == null) {
+          return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         } else {
-          return rejectionReasonBuilder_.getMessage();
+          return reasonBuilder_.getMessage();
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder setRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
+      public Builder setReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rejectionReason_ = value;
+          reason_ = value;
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(value);
+          reasonBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder setRejectionReason(
-          com.oddin.ots.Enums.RejectionReason.Builder builderForValue) {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = builderForValue.build();
+      public Builder setReason(
+          com.oddin.ots.Enums.Reason.Builder builderForValue) {
+        if (reasonBuilder_ == null) {
+          reason_ = builderForValue.build();
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(builderForValue.build());
+          reasonBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder mergeRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
-          if (rejectionReason_ != null) {
-            rejectionReason_ =
-              com.oddin.ots.Enums.RejectionReason.newBuilder(rejectionReason_).mergeFrom(value).buildPartial();
+      public Builder mergeReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
+          if (reason_ != null) {
+            reason_ =
+              com.oddin.ots.Enums.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
-            rejectionReason_ = value;
+            reason_ = value;
           }
           onChanged();
         } else {
-          rejectionReasonBuilder_.mergeFrom(value);
+          reasonBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder clearRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+      public Builder clearReason() {
+        if (reasonBuilder_ == null) {
+          reason_ = null;
           onChanged();
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.RejectionReason.Builder getRejectionReasonBuilder() {
+      public com.oddin.ots.Enums.Reason.Builder getReasonBuilder() {
         
         onChanged();
-        return getRejectionReasonFieldBuilder().getBuilder();
+        return getReasonFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-        if (rejectionReasonBuilder_ != null) {
-          return rejectionReasonBuilder_.getMessageOrBuilder();
+      public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+        if (reasonBuilder_ != null) {
+          return reasonBuilder_.getMessageOrBuilder();
         } else {
-          return rejectionReason_ == null ?
-              com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+          return reason_ == null ?
+              com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> 
-          getRejectionReasonFieldBuilder() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder>(
-                  getRejectionReason(),
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> 
+          getReasonFieldBuilder() {
+        if (reasonBuilder_ == null) {
+          reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder>(
+                  getReason(),
                   getParentForChildren(),
                   isClean());
-          rejectionReason_ = null;
+          reason_ = null;
         }
-        return rejectionReasonBuilder_;
+        return reasonBuilder_;
       }
 
-      private java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> selectionInfo_ =
+      private com.oddin.ots.TicketResponseOuterClass.ResponseReoffer reoffer_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketResponseOuterClass.ResponseReoffer, com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder> reofferBuilder_;
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       * @return Whether the reoffer field is set.
+       */
+      public boolean hasReoffer() {
+        return reofferBuilder_ != null || reoffer_ != null;
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       * @return The reoffer.
+       */
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getReoffer() {
+        if (reofferBuilder_ == null) {
+          return reoffer_ == null ? com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
+        } else {
+          return reofferBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public Builder setReoffer(com.oddin.ots.TicketResponseOuterClass.ResponseReoffer value) {
+        if (reofferBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reoffer_ = value;
+          onChanged();
+        } else {
+          reofferBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public Builder setReoffer(
+          com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder builderForValue) {
+        if (reofferBuilder_ == null) {
+          reoffer_ = builderForValue.build();
+          onChanged();
+        } else {
+          reofferBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public Builder mergeReoffer(com.oddin.ots.TicketResponseOuterClass.ResponseReoffer value) {
+        if (reofferBuilder_ == null) {
+          if (reoffer_ != null) {
+            reoffer_ =
+              com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.newBuilder(reoffer_).mergeFrom(value).buildPartial();
+          } else {
+            reoffer_ = value;
+          }
+          onChanged();
+        } else {
+          reofferBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public Builder clearReoffer() {
+        if (reofferBuilder_ == null) {
+          reoffer_ = null;
+          onChanged();
+        } else {
+          reoffer_ = null;
+          reofferBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder getReofferBuilder() {
+        
+        onChanged();
+        return getReofferFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder getReofferOrBuilder() {
+        if (reofferBuilder_ != null) {
+          return reofferBuilder_.getMessageOrBuilder();
+        } else {
+          return reoffer_ == null ?
+              com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
+        }
+      }
+      /**
+       * <code>.ots.ResponseReoffer reoffer = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketResponseOuterClass.ResponseReoffer, com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder> 
+          getReofferFieldBuilder() {
+        if (reofferBuilder_ == null) {
+          reofferBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.TicketResponseOuterClass.ResponseReoffer, com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder>(
+                  getReoffer(),
+                  getParentForChildren(),
+                  isClean());
+          reoffer_ = null;
+        }
+        return reofferBuilder_;
+      }
+
+      private java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> selectionsInfo_ =
         java.util.Collections.emptyList();
-      private void ensureSelectionInfoIsMutable() {
+      private void ensureSelectionsInfoIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          selectionInfo_ = new java.util.ArrayList<com.oddin.ots.TicketResponseOuterClass.RejectedSelection>(selectionInfo_);
+          selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.TicketResponseOuterClass.RejectedSelection>(selectionsInfo_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.TicketResponseOuterClass.RejectedSelection, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> selectionInfoBuilder_;
+          com.oddin.ots.TicketResponseOuterClass.RejectedSelection, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> selectionsInfoBuilder_;
 
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> getSelectionInfoList() {
-        if (selectionInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(selectionInfo_);
+      public java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection> getSelectionsInfoList() {
+        if (selectionsInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(selectionsInfo_);
         } else {
-          return selectionInfoBuilder_.getMessageList();
+          return selectionsInfoBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public int getSelectionInfoCount() {
-        if (selectionInfoBuilder_ == null) {
-          return selectionInfo_.size();
+      public int getSelectionsInfoCount() {
+        if (selectionsInfoBuilder_ == null) {
+          return selectionsInfo_.size();
         } else {
-          return selectionInfoBuilder_.getCount();
+          return selectionsInfoBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionInfo(int index) {
-        if (selectionInfoBuilder_ == null) {
-          return selectionInfo_.get(index);
+      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection getSelectionsInfo(int index) {
+        if (selectionsInfoBuilder_ == null) {
+          return selectionsInfo_.get(index);
         } else {
-          return selectionInfoBuilder_.getMessage(index);
+          return selectionsInfoBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder setSelectionInfo(
+      public Builder setSelectionsInfo(
           int index, com.oddin.ots.TicketResponseOuterClass.RejectedSelection value) {
-        if (selectionInfoBuilder_ == null) {
+        if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.set(index, value);
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.set(index, value);
           onChanged();
         } else {
-          selectionInfoBuilder_.setMessage(index, value);
+          selectionsInfoBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder setSelectionInfo(
+      public Builder setSelectionsInfo(
           int index, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder builderForValue) {
-        if (selectionInfoBuilder_ == null) {
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.set(index, builderForValue.build());
+        if (selectionsInfoBuilder_ == null) {
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.set(index, builderForValue.build());
           onChanged();
         } else {
-          selectionInfoBuilder_.setMessage(index, builderForValue.build());
+          selectionsInfoBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addSelectionInfo(com.oddin.ots.TicketResponseOuterClass.RejectedSelection value) {
-        if (selectionInfoBuilder_ == null) {
+      public Builder addSelectionsInfo(com.oddin.ots.TicketResponseOuterClass.RejectedSelection value) {
+        if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.add(value);
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.add(value);
           onChanged();
         } else {
-          selectionInfoBuilder_.addMessage(value);
+          selectionsInfoBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addSelectionInfo(
+      public Builder addSelectionsInfo(
           int index, com.oddin.ots.TicketResponseOuterClass.RejectedSelection value) {
-        if (selectionInfoBuilder_ == null) {
+        if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.add(index, value);
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.add(index, value);
           onChanged();
         } else {
-          selectionInfoBuilder_.addMessage(index, value);
+          selectionsInfoBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addSelectionInfo(
+      public Builder addSelectionsInfo(
           com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder builderForValue) {
-        if (selectionInfoBuilder_ == null) {
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.add(builderForValue.build());
+        if (selectionsInfoBuilder_ == null) {
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          selectionInfoBuilder_.addMessage(builderForValue.build());
+          selectionsInfoBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addSelectionInfo(
+      public Builder addSelectionsInfo(
           int index, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder builderForValue) {
-        if (selectionInfoBuilder_ == null) {
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.add(index, builderForValue.build());
+        if (selectionsInfoBuilder_ == null) {
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          selectionInfoBuilder_.addMessage(index, builderForValue.build());
+          selectionsInfoBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addAllSelectionInfo(
+      public Builder addAllSelectionsInfo(
           java.lang.Iterable<? extends com.oddin.ots.TicketResponseOuterClass.RejectedSelection> values) {
-        if (selectionInfoBuilder_ == null) {
-          ensureSelectionInfoIsMutable();
+        if (selectionsInfoBuilder_ == null) {
+          ensureSelectionsInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, selectionInfo_);
+              values, selectionsInfo_);
           onChanged();
         } else {
-          selectionInfoBuilder_.addAllMessages(values);
+          selectionsInfoBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder clearSelectionInfo() {
-        if (selectionInfoBuilder_ == null) {
-          selectionInfo_ = java.util.Collections.emptyList();
+      public Builder clearSelectionsInfo() {
+        if (selectionsInfoBuilder_ == null) {
+          selectionsInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          selectionInfoBuilder_.clear();
+          selectionsInfoBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder removeSelectionInfo(int index) {
-        if (selectionInfoBuilder_ == null) {
-          ensureSelectionInfoIsMutable();
-          selectionInfo_.remove(index);
+      public Builder removeSelectionsInfo(int index) {
+        if (selectionsInfoBuilder_ == null) {
+          ensureSelectionsInfoIsMutable();
+          selectionsInfo_.remove(index);
           onChanged();
         } else {
-          selectionInfoBuilder_.remove(index);
+          selectionsInfoBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder getSelectionInfoBuilder(
+      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder getSelectionsInfoBuilder(
           int index) {
-        return getSelectionInfoFieldBuilder().getBuilder(index);
+        return getSelectionsInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionInfoOrBuilder(
+      public com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
           int index) {
-        if (selectionInfoBuilder_ == null) {
-          return selectionInfo_.get(index);  } else {
-          return selectionInfoBuilder_.getMessageOrBuilder(index);
+        if (selectionsInfoBuilder_ == null) {
+          return selectionsInfo_.get(index);  } else {
+          return selectionsInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public java.util.List<? extends com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> 
-           getSelectionInfoOrBuilderList() {
-        if (selectionInfoBuilder_ != null) {
-          return selectionInfoBuilder_.getMessageOrBuilderList();
+           getSelectionsInfoOrBuilderList() {
+        if (selectionsInfoBuilder_ != null) {
+          return selectionsInfoBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(selectionInfo_);
+          return java.util.Collections.unmodifiableList(selectionsInfo_);
         }
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder addSelectionInfoBuilder() {
-        return getSelectionInfoFieldBuilder().addBuilder(
+      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder addSelectionsInfoBuilder() {
+        return getSelectionsInfoFieldBuilder().addBuilder(
             com.oddin.ots.TicketResponseOuterClass.RejectedSelection.getDefaultInstance());
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder addSelectionInfoBuilder(
+      public com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder addSelectionsInfoBuilder(
           int index) {
-        return getSelectionInfoFieldBuilder().addBuilder(
+        return getSelectionsInfoFieldBuilder().addBuilder(
             index, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.getDefaultInstance());
       }
       /**
-       * <code>repeated .ots.RejectedSelection selection_info = 3;</code>
+       * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public java.util.List<com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder> 
-           getSelectionInfoBuilderList() {
-        return getSelectionInfoFieldBuilder().getBuilderList();
+           getSelectionsInfoBuilderList() {
+        return getSelectionsInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.oddin.ots.TicketResponseOuterClass.RejectedSelection, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder> 
-          getSelectionInfoFieldBuilder() {
-        if (selectionInfoBuilder_ == null) {
-          selectionInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getSelectionsInfoFieldBuilder() {
+        if (selectionsInfoBuilder_ == null) {
+          selectionsInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.oddin.ots.TicketResponseOuterClass.RejectedSelection, com.oddin.ots.TicketResponseOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketResponseOuterClass.RejectedSelectionOrBuilder>(
-                  selectionInfo_,
+                  selectionsInfo_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          selectionInfo_ = null;
+          selectionsInfo_ = null;
         }
-        return selectionInfoBuilder_;
+        return selectionsInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3715,19 +3918,19 @@ public final class TicketResponseOuterClass {
         getIdBytes();
 
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return Whether the reason field is set.
      */
-    boolean hasRejectionReason();
+    boolean hasReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return The reason.
      */
-    com.oddin.ots.Enums.RejectionReason getRejectionReason();
+    com.oddin.ots.Enums.Reason getReason();
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+     * <code>.ots.enums.Reason reason = 2;</code>
      */
-    com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder();
+    com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder();
 
     /**
      * <code>.ots.RejectionInfo rejection_info = 3;</code>
@@ -3797,14 +4000,14 @@ public final class TicketResponseOuterClass {
               break;
             }
             case 18: {
-              com.oddin.ots.Enums.RejectionReason.Builder subBuilder = null;
-              if (rejectionReason_ != null) {
-                subBuilder = rejectionReason_.toBuilder();
+              com.oddin.ots.Enums.Reason.Builder subBuilder = null;
+              if (reason_ != null) {
+                subBuilder = reason_.toBuilder();
               }
-              rejectionReason_ = input.readMessage(com.oddin.ots.Enums.RejectionReason.parser(), extensionRegistry);
+              reason_ = input.readMessage(com.oddin.ots.Enums.Reason.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(rejectionReason_);
-                rejectionReason_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(reason_);
+                reason_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3892,30 +4095,30 @@ public final class TicketResponseOuterClass {
       }
     }
 
-    public static final int REJECTION_REASON_FIELD_NUMBER = 2;
-    private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+    public static final int REASON_FIELD_NUMBER = 2;
+    private com.oddin.ots.Enums.Reason reason_;
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return Whether the rejectionReason field is set.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return Whether the reason field is set.
      */
     @java.lang.Override
-    public boolean hasRejectionReason() {
-      return rejectionReason_ != null;
+    public boolean hasReason() {
+      return reason_ != null;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-     * @return The rejectionReason.
+     * <code>.ots.enums.Reason reason = 2;</code>
+     * @return The reason.
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-      return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+    public com.oddin.ots.Enums.Reason getReason() {
+      return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
     }
     /**
-     * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+     * <code>.ots.enums.Reason reason = 2;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-      return getRejectionReason();
+    public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+      return getReason();
     }
 
     public static final int REJECTION_INFO_FIELD_NUMBER = 3;
@@ -3961,8 +4164,8 @@ public final class TicketResponseOuterClass {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (rejectionReason_ != null) {
-        output.writeMessage(2, getRejectionReason());
+      if (reason_ != null) {
+        output.writeMessage(2, getReason());
       }
       if (rejectionInfo_ != null) {
         output.writeMessage(3, getRejectionInfo());
@@ -3979,9 +4182,9 @@ public final class TicketResponseOuterClass {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (rejectionReason_ != null) {
+      if (reason_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRejectionReason());
+          .computeMessageSize(2, getReason());
       }
       if (rejectionInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -4004,10 +4207,10 @@ public final class TicketResponseOuterClass {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (hasRejectionReason() != other.hasRejectionReason()) return false;
-      if (hasRejectionReason()) {
-        if (!getRejectionReason()
-            .equals(other.getRejectionReason())) return false;
+      if (hasReason() != other.hasReason()) return false;
+      if (hasReason()) {
+        if (!getReason()
+            .equals(other.getReason())) return false;
       }
       if (hasRejectionInfo() != other.hasRejectionInfo()) return false;
       if (hasRejectionInfo()) {
@@ -4027,9 +4230,9 @@ public final class TicketResponseOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      if (hasRejectionReason()) {
-        hash = (37 * hash) + REJECTION_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getRejectionReason().hashCode();
+      if (hasReason()) {
+        hash = (37 * hash) + REASON_FIELD_NUMBER;
+        hash = (53 * hash) + getReason().hashCode();
       }
       if (hasRejectionInfo()) {
         hash = (37 * hash) + REJECTION_INFO_FIELD_NUMBER;
@@ -4170,11 +4373,11 @@ public final class TicketResponseOuterClass {
         super.clear();
         id_ = "";
 
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+        if (reasonBuilder_ == null) {
+          reason_ = null;
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
         if (rejectionInfoBuilder_ == null) {
           rejectionInfo_ = null;
@@ -4209,10 +4412,10 @@ public final class TicketResponseOuterClass {
       public com.oddin.ots.TicketResponseOuterClass.RejectedSelection buildPartial() {
         com.oddin.ots.TicketResponseOuterClass.RejectedSelection result = new com.oddin.ots.TicketResponseOuterClass.RejectedSelection(this);
         result.id_ = id_;
-        if (rejectionReasonBuilder_ == null) {
-          result.rejectionReason_ = rejectionReason_;
+        if (reasonBuilder_ == null) {
+          result.reason_ = reason_;
         } else {
-          result.rejectionReason_ = rejectionReasonBuilder_.build();
+          result.reason_ = reasonBuilder_.build();
         }
         if (rejectionInfoBuilder_ == null) {
           result.rejectionInfo_ = rejectionInfo_;
@@ -4271,8 +4474,8 @@ public final class TicketResponseOuterClass {
           id_ = other.id_;
           onChanged();
         }
-        if (other.hasRejectionReason()) {
-          mergeRejectionReason(other.getRejectionReason());
+        if (other.hasReason()) {
+          mergeReason(other.getReason());
         }
         if (other.hasRejectionInfo()) {
           mergeRejectionInfo(other.getRejectionInfo());
@@ -4382,123 +4585,123 @@ public final class TicketResponseOuterClass {
         return this;
       }
 
-      private com.oddin.ots.Enums.RejectionReason rejectionReason_;
+      private com.oddin.ots.Enums.Reason reason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> rejectionReasonBuilder_;
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> reasonBuilder_;
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-       * @return Whether the rejectionReason field is set.
+       * <code>.ots.enums.Reason reason = 2;</code>
+       * @return Whether the reason field is set.
        */
-      public boolean hasRejectionReason() {
-        return rejectionReasonBuilder_ != null || rejectionReason_ != null;
+      public boolean hasReason() {
+        return reasonBuilder_ != null || reason_ != null;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
-       * @return The rejectionReason.
+       * <code>.ots.enums.Reason reason = 2;</code>
+       * @return The reason.
        */
-      public com.oddin.ots.Enums.RejectionReason getRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          return rejectionReason_ == null ? com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+      public com.oddin.ots.Enums.Reason getReason() {
+        if (reasonBuilder_ == null) {
+          return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         } else {
-          return rejectionReasonBuilder_.getMessage();
+          return reasonBuilder_.getMessage();
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder setRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
+      public Builder setReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rejectionReason_ = value;
+          reason_ = value;
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(value);
+          reasonBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder setRejectionReason(
-          com.oddin.ots.Enums.RejectionReason.Builder builderForValue) {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = builderForValue.build();
+      public Builder setReason(
+          com.oddin.ots.Enums.Reason.Builder builderForValue) {
+        if (reasonBuilder_ == null) {
+          reason_ = builderForValue.build();
           onChanged();
         } else {
-          rejectionReasonBuilder_.setMessage(builderForValue.build());
+          reasonBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder mergeRejectionReason(com.oddin.ots.Enums.RejectionReason value) {
-        if (rejectionReasonBuilder_ == null) {
-          if (rejectionReason_ != null) {
-            rejectionReason_ =
-              com.oddin.ots.Enums.RejectionReason.newBuilder(rejectionReason_).mergeFrom(value).buildPartial();
+      public Builder mergeReason(com.oddin.ots.Enums.Reason value) {
+        if (reasonBuilder_ == null) {
+          if (reason_ != null) {
+            reason_ =
+              com.oddin.ots.Enums.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
-            rejectionReason_ = value;
+            reason_ = value;
           }
           onChanged();
         } else {
-          rejectionReasonBuilder_.mergeFrom(value);
+          reasonBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public Builder clearRejectionReason() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReason_ = null;
+      public Builder clearReason() {
+        if (reasonBuilder_ == null) {
+          reason_ = null;
           onChanged();
         } else {
-          rejectionReason_ = null;
-          rejectionReasonBuilder_ = null;
+          reason_ = null;
+          reasonBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.RejectionReason.Builder getRejectionReasonBuilder() {
+      public com.oddin.ots.Enums.Reason.Builder getReasonBuilder() {
         
         onChanged();
-        return getRejectionReasonFieldBuilder().getBuilder();
+        return getReasonFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.RejectionReasonOrBuilder getRejectionReasonOrBuilder() {
-        if (rejectionReasonBuilder_ != null) {
-          return rejectionReasonBuilder_.getMessageOrBuilder();
+      public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+        if (reasonBuilder_ != null) {
+          return reasonBuilder_.getMessageOrBuilder();
         } else {
-          return rejectionReason_ == null ?
-              com.oddin.ots.Enums.RejectionReason.getDefaultInstance() : rejectionReason_;
+          return reason_ == null ?
+              com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
         }
       }
       /**
-       * <code>.ots.enums.RejectionReason rejection_reason = 2;</code>
+       * <code>.ots.enums.Reason reason = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder> 
-          getRejectionReasonFieldBuilder() {
-        if (rejectionReasonBuilder_ == null) {
-          rejectionReasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Enums.RejectionReason, com.oddin.ots.Enums.RejectionReason.Builder, com.oddin.ots.Enums.RejectionReasonOrBuilder>(
-                  getRejectionReason(),
+          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> 
+          getReasonFieldBuilder() {
+        if (reasonBuilder_ == null) {
+          reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder>(
+                  getReason(),
                   getParentForChildren(),
                   isClean());
-          rejectionReason_ = null;
+          reason_ = null;
         }
-        return rejectionReasonBuilder_;
+        return reasonBuilder_;
       }
 
       private com.oddin.ots.TicketResponseOuterClass.RejectionInfo rejectionInfo_;
@@ -4677,31 +4880,19 @@ public final class TicketResponseOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string eventId = 1;</code>
-     * @return The eventId.
-     */
-    java.lang.String getEventId();
-    /**
-     * <code>string eventId = 1;</code>
-     * @return The bytes for eventId.
-     */
-    com.google.protobuf.ByteString
-        getEventIdBytes();
-
-    /**
-     * <code>string id = 2;</code>
+     * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 1;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>uint64 odds = 3;</code>
+     * <code>uint64 odds = 2;</code>
      * @return The odds.
      */
     long getOdds();
@@ -4719,7 +4910,6 @@ public final class TicketResponseOuterClass {
       super(builder);
     }
     private RejectionInfo() {
-      eventId_ = "";
       id_ = "";
     }
 
@@ -4756,16 +4946,10 @@ public final class TicketResponseOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              eventId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               id_ = s;
               break;
             }
-            case 24: {
+            case 16: {
 
               odds_ = input.readUInt64();
               break;
@@ -4802,48 +4986,10 @@ public final class TicketResponseOuterClass {
               com.oddin.ots.TicketResponseOuterClass.RejectionInfo.class, com.oddin.ots.TicketResponseOuterClass.RejectionInfo.Builder.class);
     }
 
-    public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
-    /**
-     * <code>string eventId = 1;</code>
-     * @return The eventId.
-     */
-    @java.lang.Override
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eventId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string eventId = 1;</code>
-     * @return The bytes for eventId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        eventId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -4860,7 +5006,7 @@ public final class TicketResponseOuterClass {
       }
     }
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 1;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -4878,10 +5024,10 @@ public final class TicketResponseOuterClass {
       }
     }
 
-    public static final int ODDS_FIELD_NUMBER = 3;
+    public static final int ODDS_FIELD_NUMBER = 2;
     private long odds_;
     /**
-     * <code>uint64 odds = 3;</code>
+     * <code>uint64 odds = 2;</code>
      * @return The odds.
      */
     @java.lang.Override
@@ -4903,14 +5049,11 @@ public final class TicketResponseOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getEventIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventId_);
-      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (odds_ != 0L) {
-        output.writeUInt64(3, odds_);
+        output.writeUInt64(2, odds_);
       }
       unknownFields.writeTo(output);
     }
@@ -4921,15 +5064,12 @@ public final class TicketResponseOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getEventIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventId_);
-      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (odds_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, odds_);
+          .computeUInt64Size(2, odds_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4946,8 +5086,6 @@ public final class TicketResponseOuterClass {
       }
       com.oddin.ots.TicketResponseOuterClass.RejectionInfo other = (com.oddin.ots.TicketResponseOuterClass.RejectionInfo) obj;
 
-      if (!getEventId()
-          .equals(other.getEventId())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (getOdds()
@@ -4963,8 +5101,6 @@ public final class TicketResponseOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EVENTID_FIELD_NUMBER;
-      hash = (53 * hash) + getEventId().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + ODDS_FIELD_NUMBER;
@@ -5103,8 +5239,6 @@ public final class TicketResponseOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        eventId_ = "";
-
         id_ = "";
 
         odds_ = 0L;
@@ -5135,7 +5269,6 @@ public final class TicketResponseOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketResponseOuterClass.RejectionInfo buildPartial() {
         com.oddin.ots.TicketResponseOuterClass.RejectionInfo result = new com.oddin.ots.TicketResponseOuterClass.RejectionInfo(this);
-        result.eventId_ = eventId_;
         result.id_ = id_;
         result.odds_ = odds_;
         onBuilt();
@@ -5186,10 +5319,6 @@ public final class TicketResponseOuterClass {
 
       public Builder mergeFrom(com.oddin.ots.TicketResponseOuterClass.RejectionInfo other) {
         if (other == com.oddin.ots.TicketResponseOuterClass.RejectionInfo.getDefaultInstance()) return this;
-        if (!other.getEventId().isEmpty()) {
-          eventId_ = other.eventId_;
-          onChanged();
-        }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -5226,85 +5355,9 @@ public final class TicketResponseOuterClass {
         return this;
       }
 
-      private java.lang.Object eventId_ = "";
-      /**
-       * <code>string eventId = 1;</code>
-       * @return The eventId.
-       */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          eventId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string eventId = 1;</code>
-       * @return The bytes for eventId.
-       */
-      public com.google.protobuf.ByteString
-          getEventIdBytes() {
-        java.lang.Object ref = eventId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          eventId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string eventId = 1;</code>
-       * @param value The eventId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        eventId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string eventId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEventId() {
-        
-        eventId_ = getDefaultInstance().getEventId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string eventId = 1;</code>
-       * @param value The bytes for eventId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        eventId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 1;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -5320,7 +5373,7 @@ public final class TicketResponseOuterClass {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 1;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -5337,7 +5390,7 @@ public final class TicketResponseOuterClass {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -5352,7 +5405,7 @@ public final class TicketResponseOuterClass {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -5362,7 +5415,7 @@ public final class TicketResponseOuterClass {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -5380,7 +5433,7 @@ public final class TicketResponseOuterClass {
 
       private long odds_ ;
       /**
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 2;</code>
        * @return The odds.
        */
       @java.lang.Override
@@ -5388,7 +5441,7 @@ public final class TicketResponseOuterClass {
         return odds_;
       }
       /**
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 2;</code>
        * @param value The odds to set.
        * @return This builder for chaining.
        */
@@ -5399,7 +5452,7 @@ public final class TicketResponseOuterClass {
         return this;
       }
       /**
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOdds() {
@@ -5461,6 +5514,495 @@ public final class TicketResponseOuterClass {
 
   }
 
+  public interface ResponseReofferOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.ResponseReoffer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 stake = 1;</code>
+     * @return The stake.
+     */
+    long getStake();
+  }
+  /**
+   * Protobuf type {@code ots.ResponseReoffer}
+   */
+  public static final class ResponseReoffer extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.ResponseReoffer)
+      ResponseReofferOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResponseReoffer.newBuilder() to construct.
+    private ResponseReoffer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseReoffer() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResponseReoffer();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponseReoffer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              stake_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.TicketResponseOuterClass.internal_static_ots_ResponseReoffer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.TicketResponseOuterClass.internal_static_ots_ResponseReoffer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.class, com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder.class);
+    }
+
+    public static final int STAKE_FIELD_NUMBER = 1;
+    private long stake_;
+    /**
+     * <code>uint64 stake = 1;</code>
+     * @return The stake.
+     */
+    @java.lang.Override
+    public long getStake() {
+      return stake_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (stake_ != 0L) {
+        output.writeUInt64(1, stake_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (stake_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, stake_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.TicketResponseOuterClass.ResponseReoffer)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.TicketResponseOuterClass.ResponseReoffer other = (com.oddin.ots.TicketResponseOuterClass.ResponseReoffer) obj;
+
+      if (getStake()
+          != other.getStake()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STAKE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStake());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.TicketResponseOuterClass.ResponseReoffer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.ResponseReoffer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.ResponseReoffer)
+        com.oddin.ots.TicketResponseOuterClass.ResponseReofferOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.TicketResponseOuterClass.internal_static_ots_ResponseReoffer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.TicketResponseOuterClass.internal_static_ots_ResponseReoffer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.class, com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        stake_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.TicketResponseOuterClass.internal_static_ots_ResponseReoffer_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getDefaultInstanceForType() {
+        return com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer build() {
+        com.oddin.ots.TicketResponseOuterClass.ResponseReoffer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer buildPartial() {
+        com.oddin.ots.TicketResponseOuterClass.ResponseReoffer result = new com.oddin.ots.TicketResponseOuterClass.ResponseReoffer(this);
+        result.stake_ = stake_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.TicketResponseOuterClass.ResponseReoffer) {
+          return mergeFrom((com.oddin.ots.TicketResponseOuterClass.ResponseReoffer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.TicketResponseOuterClass.ResponseReoffer other) {
+        if (other == com.oddin.ots.TicketResponseOuterClass.ResponseReoffer.getDefaultInstance()) return this;
+        if (other.getStake() != 0L) {
+          setStake(other.getStake());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.oddin.ots.TicketResponseOuterClass.ResponseReoffer parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketResponseOuterClass.ResponseReoffer) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long stake_ ;
+      /**
+       * <code>uint64 stake = 1;</code>
+       * @return The stake.
+       */
+      @java.lang.Override
+      public long getStake() {
+        return stake_;
+      }
+      /**
+       * <code>uint64 stake = 1;</code>
+       * @param value The stake to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStake(long value) {
+        
+        stake_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 stake = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStake() {
+        
+        stake_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.ResponseReoffer)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.ResponseReoffer)
+    private static final com.oddin.ots.TicketResponseOuterClass.ResponseReoffer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketResponseOuterClass.ResponseReoffer();
+    }
+
+    public static com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResponseReoffer>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseReoffer>() {
+      @java.lang.Override
+      public ResponseReoffer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponseReoffer(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseReoffer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseReoffer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.TicketResponseOuterClass.ResponseReoffer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_TicketResponse_descriptor;
   private static final 
@@ -5486,6 +6028,11 @@ public final class TicketResponseOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_RejectionInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_ResponseReoffer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_ResponseReoffer_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5497,25 +6044,25 @@ public final class TicketResponseOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031ots/ticket_response.proto\022\003ots\032\036google" +
       "/protobuf/wrappers.proto\032\024ots/enum/enums" +
-      ".proto\"\234\002\n\016TicketResponse\022\n\n\002id\030\001 \001(\t\0222\n" +
+      ".proto\"\211\002\n\016TicketResponse\022\n\n\002id\030\001 \001(\t\0222\n" +
       "\rticket_status\030\002 \001(\0162\033.ots.enums.Accepta" +
-      "nceStatus\0224\n\020rejection_reason\030\003 \001(\0132\032.ot" +
-      "s.enums.RejectionReason\022,\n\010bet_info\030\004 \003(" +
-      "\0132\032.ots.TicketResponseBetInfo\0223\n\rexchang" +
-      "e_rate\030\005 \001(\0132\034.google.protobuf.UInt64Val" +
-      "ue\0221\n\022auto_accepted_odds\030\006 \003(\0132\025.ots.Aut" +
-      "oAcceptedOdds\"S\n\020AutoAcceptedOdds\022\024\n\014sel" +
-      "ection_id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022" +
-      "\021\n\tused_odds\030\003 \001(\004\"\211\001\n\025TicketResponseBet" +
-      "Info\022\n\n\002id\030\001 \001(\t\0224\n\020rejection_reason\030\002 \001" +
-      "(\0132\032.ots.enums.RejectionReason\022.\n\016select" +
-      "ion_info\030\003 \003(\0132\026.ots.RejectedSelection\"\201" +
-      "\001\n\021RejectedSelection\022\n\n\002id\030\001 \001(\t\0224\n\020reje" +
-      "ction_reason\030\002 \001(\0132\032.ots.enums.Rejection" +
-      "Reason\022*\n\016rejection_info\030\003 \001(\0132\022.ots.Rej" +
-      "ectionInfo\":\n\rRejectionInfo\022\017\n\007eventId\030\001" +
-      " \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004odds\030\003 \001(\004B\035\n\rcom.od" +
-      "din.otsZ\014oddin.gg/otsb\006proto3"
+      "nceStatus\022!\n\006reason\030\003 \001(\0132\021.ots.enums.Re" +
+      "ason\022,\n\010bet_info\030\004 \003(\0132\032.ots.TicketRespo" +
+      "nseBetInfo\0223\n\rexchange_rate\030\005 \001(\0132\034.goog" +
+      "le.protobuf.UInt64Value\0221\n\022auto_accepted" +
+      "_odds\030\006 \003(\0132\025.ots.AutoAcceptedOdds\"I\n\020Au" +
+      "toAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_" +
+      "odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004\"\236\001\n\025Ticket" +
+      "ResponseBetInfo\022\n\n\002id\030\001 \001(\t\022!\n\006reason\030\002 " +
+      "\001(\0132\021.ots.enums.Reason\022%\n\007reoffer\030\003 \001(\0132" +
+      "\024.ots.ResponseReoffer\022/\n\017selections_info" +
+      "\030\004 \003(\0132\026.ots.RejectedSelection\"n\n\021Reject" +
+      "edSelection\022\n\n\002id\030\001 \001(\t\022!\n\006reason\030\002 \001(\0132" +
+      "\021.ots.enums.Reason\022*\n\016rejection_info\030\003 \001" +
+      "(\0132\022.ots.RejectionInfo\")\n\rRejectionInfo\022" +
+      "\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\" \n\017ResponseReo" +
+      "ffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014od" +
+      "din.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5528,31 +6075,37 @@ public final class TicketResponseOuterClass {
     internal_static_ots_TicketResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResponse_descriptor,
-        new java.lang.String[] { "Id", "TicketStatus", "RejectionReason", "BetInfo", "ExchangeRate", "AutoAcceptedOdds", });
+        new java.lang.String[] { "Id", "TicketStatus", "Reason", "BetInfo", "ExchangeRate", "AutoAcceptedOdds", });
     internal_static_ots_AutoAcceptedOdds_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ots_AutoAcceptedOdds_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_AutoAcceptedOdds_descriptor,
-        new java.lang.String[] { "SelectionId", "RequestedOdds", "UsedOdds", });
+        new java.lang.String[] { "Id", "RequestedOdds", "UsedOdds", });
     internal_static_ots_TicketResponseBetInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ots_TicketResponseBetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResponseBetInfo_descriptor,
-        new java.lang.String[] { "Id", "RejectionReason", "SelectionInfo", });
+        new java.lang.String[] { "Id", "Reason", "Reoffer", "SelectionsInfo", });
     internal_static_ots_RejectedSelection_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ots_RejectedSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectedSelection_descriptor,
-        new java.lang.String[] { "Id", "RejectionReason", "RejectionInfo", });
+        new java.lang.String[] { "Id", "Reason", "RejectionInfo", });
     internal_static_ots_RejectionInfo_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ots_RejectionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectionInfo_descriptor,
-        new java.lang.String[] { "EventId", "Id", "Odds", });
+        new java.lang.String[] { "Id", "Odds", });
+    internal_static_ots_ResponseReoffer_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_ots_ResponseReoffer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_ResponseReoffer_descriptor,
+        new java.lang.String[] { "Stake", });
     com.google.protobuf.WrappersProto.getDescriptor();
     com.oddin.ots.Enums.getDescriptor();
   }

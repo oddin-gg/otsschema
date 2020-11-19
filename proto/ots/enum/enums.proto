@@ -15,7 +15,7 @@ enum CancelStatus {
   CANCELED = 1;
 }
 
-message RejectionReason {
+message Reason {
   uint32 code = 1;
   string message = 2;
 }
@@ -60,12 +60,4 @@ enum BetBonusType {
 
 enum BetBonusMode {
   ALL = 0;
-}
-
-enum CancelRejectionReason {
-  NOT_KNOWN = 0;
-  TICKET_NOT_FOUND = 1;
-  TIME_EXPIRED = 2;
-  ALREADY_SETTLED = 3;
-  OTHER = 4;
 }

@@ -33,11 +33,6 @@ export class TicketRequest extends jspb.Message {
   getBetInfo(): TicketRequestBetInfo | undefined;
   setBetInfo(value?: TicketRequestBetInfo): void;
 
-  hasLastMatchEndTimestamp(): boolean;
-  clearLastMatchEndTimestamp(): void;
-  getLastMatchEndTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastMatchEndTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   hasReofferId(): boolean;
   clearReofferId(): void;
   getReofferId(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -63,7 +58,6 @@ export namespace TicketRequest {
     acceptOddsChange: ots_enum_enums_pb.AcceptOddsChangeMap[keyof ots_enum_enums_pb.AcceptOddsChangeMap],
     totalCombinations?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
     betInfo?: TicketRequestBetInfo.AsObject,
-    lastMatchEndTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     reofferId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     selectionsMap: Array<[string, TicketSelection.AsObject]>,
   }
@@ -128,9 +122,6 @@ export namespace Bet {
 }
 
 export class TicketSelection extends jspb.Message {
-  getEventId(): string;
-  setEventId(value: string): void;
-
   getId(): string;
   setId(value: string): void;
 
@@ -149,7 +140,6 @@ export class TicketSelection extends jspb.Message {
 
 export namespace TicketSelection {
   export type AsObject = {
-    eventId: string,
     id: string,
     odds: number,
   }
@@ -158,9 +148,6 @@ export namespace TicketSelection {
 export class BetSelection extends jspb.Message {
   getId(): string;
   setId(value: string): void;
-
-  getBanker(): boolean;
-  setBanker(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BetSelection.AsObject;
@@ -175,7 +162,6 @@ export class BetSelection extends jspb.Message {
 export namespace BetSelection {
   export type AsObject = {
     id: string,
-    banker: boolean,
   }
 }
 

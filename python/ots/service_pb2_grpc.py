@@ -7,7 +7,6 @@ from ots_schema.ots import player_risk_score_pb2 as ots_dot_player__risk__score_
 from ots_schema.ots import resolve_foreign_events_in_ticket_pb2 as ots_dot_resolve__foreign__events__in__ticket__pb2
 from ots_schema.ots import ticket_ack_pb2 as ots_dot_ticket__ack__pb2
 from ots_schema.ots import ticket_cancel_pb2 as ots_dot_ticket__cancel__pb2
-from ots_schema.ots import ticket_max_stake_pb2 as ots_dot_ticket__max__stake__pb2
 from ots_schema.ots import ticket_request_pb2 as ots_dot_ticket__request__pb2
 from ots_schema.ots import ticket_response_pb2 as ots_dot_ticket__response__pb2
 
@@ -35,11 +34,6 @@ class otsStub(object):
                 '/ots.ots/CancelTicket',
                 request_serializer=ots_dot_ticket__cancel__pb2.TicketCancelRequest.SerializeToString,
                 response_deserializer=ots_dot_ticket__cancel__pb2.TicketCancelResponse.FromString,
-                )
-        self.TicketMaxStake = channel.unary_unary(
-                '/ots.ots/TicketMaxStake',
-                request_serializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.SerializeToString,
-                response_deserializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.FromString,
                 )
         self.PlayerRiskScore = channel.unary_unary(
                 '/ots.ots/PlayerRiskScore',
@@ -74,12 +68,6 @@ class otsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def TicketMaxStake(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def PlayerRiskScore(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -109,11 +97,6 @@ def add_otsServicer_to_server(servicer, server):
                     servicer.CancelTicket,
                     request_deserializer=ots_dot_ticket__cancel__pb2.TicketCancelRequest.FromString,
                     response_serializer=ots_dot_ticket__cancel__pb2.TicketCancelResponse.SerializeToString,
-            ),
-            'TicketMaxStake': grpc.unary_unary_rpc_method_handler(
-                    servicer.TicketMaxStake,
-                    request_deserializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.FromString,
-                    response_serializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.SerializeToString,
             ),
             'PlayerRiskScore': grpc.unary_unary_rpc_method_handler(
                     servicer.PlayerRiskScore,
@@ -183,23 +166,6 @@ class ots(object):
         return grpc.experimental.unary_unary(request, target, '/ots.ots/CancelTicket',
             ots_dot_ticket__cancel__pb2.TicketCancelRequest.SerializeToString,
             ots_dot_ticket__cancel__pb2.TicketCancelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def TicketMaxStake(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ots.ots/TicketMaxStake',
-            ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.SerializeToString,
-            ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

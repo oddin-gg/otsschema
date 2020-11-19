@@ -12,10 +12,10 @@ export class TicketResponse extends jspb.Message {
   getTicketStatus(): ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap];
   setTicketStatus(value: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap]): void;
 
-  hasRejectionReason(): boolean;
-  clearRejectionReason(): void;
-  getRejectionReason(): ots_enum_enums_pb.RejectionReason | undefined;
-  setRejectionReason(value?: ots_enum_enums_pb.RejectionReason): void;
+  hasReason(): boolean;
+  clearReason(): void;
+  getReason(): ots_enum_enums_pb.Reason | undefined;
+  setReason(value?: ots_enum_enums_pb.Reason): void;
 
   clearBetInfoList(): void;
   getBetInfoList(): Array<TicketResponseBetInfo>;
@@ -46,7 +46,7 @@ export namespace TicketResponse {
   export type AsObject = {
     id: string,
     ticketStatus: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    rejectionReason?: ots_enum_enums_pb.RejectionReason.AsObject,
+    reason?: ots_enum_enums_pb.Reason.AsObject,
     betInfoList: Array<TicketResponseBetInfo.AsObject>,
     exchangeRate?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
     autoAcceptedOddsList: Array<AutoAcceptedOdds.AsObject>,
@@ -54,8 +54,8 @@ export namespace TicketResponse {
 }
 
 export class AutoAcceptedOdds extends jspb.Message {
-  getSelectionId(): string;
-  setSelectionId(value: string): void;
+  getId(): string;
+  setId(value: string): void;
 
   getRequestedOdds(): number;
   setRequestedOdds(value: number): void;
@@ -75,7 +75,7 @@ export class AutoAcceptedOdds extends jspb.Message {
 
 export namespace AutoAcceptedOdds {
   export type AsObject = {
-    selectionId: string,
+    id: string,
     requestedOdds: number,
     usedOdds: number,
   }
@@ -85,15 +85,20 @@ export class TicketResponseBetInfo extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  hasRejectionReason(): boolean;
-  clearRejectionReason(): void;
-  getRejectionReason(): ots_enum_enums_pb.RejectionReason | undefined;
-  setRejectionReason(value?: ots_enum_enums_pb.RejectionReason): void;
+  hasReason(): boolean;
+  clearReason(): void;
+  getReason(): ots_enum_enums_pb.Reason | undefined;
+  setReason(value?: ots_enum_enums_pb.Reason): void;
 
-  clearSelectionInfoList(): void;
-  getSelectionInfoList(): Array<RejectedSelection>;
-  setSelectionInfoList(value: Array<RejectedSelection>): void;
-  addSelectionInfo(value?: RejectedSelection, index?: number): RejectedSelection;
+  hasReoffer(): boolean;
+  clearReoffer(): void;
+  getReoffer(): ResponseReoffer | undefined;
+  setReoffer(value?: ResponseReoffer): void;
+
+  clearSelectionsInfoList(): void;
+  getSelectionsInfoList(): Array<RejectedSelection>;
+  setSelectionsInfoList(value: Array<RejectedSelection>): void;
+  addSelectionsInfo(value?: RejectedSelection, index?: number): RejectedSelection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResponseBetInfo.AsObject;
@@ -108,8 +113,9 @@ export class TicketResponseBetInfo extends jspb.Message {
 export namespace TicketResponseBetInfo {
   export type AsObject = {
     id: string,
-    rejectionReason?: ots_enum_enums_pb.RejectionReason.AsObject,
-    selectionInfoList: Array<RejectedSelection.AsObject>,
+    reason?: ots_enum_enums_pb.Reason.AsObject,
+    reoffer?: ResponseReoffer.AsObject,
+    selectionsInfoList: Array<RejectedSelection.AsObject>,
   }
 }
 
@@ -117,10 +123,10 @@ export class RejectedSelection extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  hasRejectionReason(): boolean;
-  clearRejectionReason(): void;
-  getRejectionReason(): ots_enum_enums_pb.RejectionReason | undefined;
-  setRejectionReason(value?: ots_enum_enums_pb.RejectionReason): void;
+  hasReason(): boolean;
+  clearReason(): void;
+  getReason(): ots_enum_enums_pb.Reason | undefined;
+  setReason(value?: ots_enum_enums_pb.Reason): void;
 
   hasRejectionInfo(): boolean;
   clearRejectionInfo(): void;
@@ -140,15 +146,12 @@ export class RejectedSelection extends jspb.Message {
 export namespace RejectedSelection {
   export type AsObject = {
     id: string,
-    rejectionReason?: ots_enum_enums_pb.RejectionReason.AsObject,
+    reason?: ots_enum_enums_pb.Reason.AsObject,
     rejectionInfo?: RejectionInfo.AsObject,
   }
 }
 
 export class RejectionInfo extends jspb.Message {
-  getEventid(): string;
-  setEventid(value: string): void;
-
   getId(): string;
   setId(value: string): void;
 
@@ -167,9 +170,28 @@ export class RejectionInfo extends jspb.Message {
 
 export namespace RejectionInfo {
   export type AsObject = {
-    eventid: string,
     id: string,
     odds: number,
+  }
+}
+
+export class ResponseReoffer extends jspb.Message {
+  getStake(): number;
+  setStake(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResponseReoffer.AsObject;
+  static toObject(includeInstance: boolean, msg: ResponseReoffer): ResponseReoffer.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResponseReoffer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResponseReoffer;
+  static deserializeBinaryFromReader(message: ResponseReoffer, reader: jspb.BinaryReader): ResponseReoffer;
+}
+
+export namespace ResponseReoffer {
+  export type AsObject = {
+    stake: number,
   }
 }
 

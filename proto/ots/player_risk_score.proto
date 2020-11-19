@@ -10,6 +10,10 @@ message PlayerRiskScoreRequest {
 }
 
 message PlayerRiskScoreResponse {
+  repeated PlayerRiskScore risk_scores = 1;
+}
+
+message PlayerRiskScore {
   string sport_id = 1;
   uint32 prematch = 2;
   uint32 live = 3;

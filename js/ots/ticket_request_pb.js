@@ -240,7 +240,6 @@ proto.ots.TicketRequest.toObject = function(includeInstance, msg) {
     acceptOddsChange: jspb.Message.getFieldWithDefault(msg, 4, 0),
     totalCombinations: (f = msg.getTotalCombinations()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
     betInfo: (f = msg.getBetInfo()) && proto.ots.TicketRequestBetInfo.toObject(includeInstance, f),
-    lastMatchEndTimestamp: (f = msg.getLastMatchEndTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     reofferId: (f = msg.getReofferId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     selectionsMap: (f = msg.getSelectionsMap()) ? f.toObject(includeInstance, proto.ots.TicketSelection.toObject) : []
   };
@@ -306,11 +305,6 @@ proto.ots.TicketRequest.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ots.TicketRequestBetInfo;
       reader.readMessage(value,proto.ots.TicketRequestBetInfo.deserializeBinaryFromReader);
       msg.setBetInfo(value);
-      break;
-    case 7:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLastMatchEndTimestamp(value);
       break;
     case 8:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -396,14 +390,6 @@ proto.ots.TicketRequest.serializeBinaryToWriter = function(message, writer) {
       6,
       f,
       proto.ots.TicketRequestBetInfo.serializeBinaryToWriter
-    );
-  }
-  f = message.getLastMatchEndTimestamp();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getReofferId();
@@ -603,43 +589,6 @@ proto.ots.TicketRequest.prototype.clearBetInfo = function() {
  */
 proto.ots.TicketRequest.prototype.hasBetInfo = function() {
   return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp last_match_end_timestamp = 7;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.ots.TicketRequest.prototype.getLastMatchEndTimestamp = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.ots.TicketRequest} returns this
-*/
-proto.ots.TicketRequest.prototype.setLastMatchEndTimestamp = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ots.TicketRequest} returns this
- */
-proto.ots.TicketRequest.prototype.clearLastMatchEndTimestamp = function() {
-  return this.setLastMatchEndTimestamp(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ots.TicketRequest.prototype.hasLastMatchEndTimestamp = function() {
-  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -1198,7 +1147,6 @@ proto.ots.TicketSelection.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ots.TicketSelection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    eventId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     id: jspb.Message.getFieldWithDefault(msg, 2, ""),
     odds: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -1237,10 +1185,6 @@ proto.ots.TicketSelection.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
@@ -1278,13 +1222,6 @@ proto.ots.TicketSelection.prototype.serializeBinary = function() {
  */
 proto.ots.TicketSelection.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEventId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getId();
   if (f.length > 0) {
     writer.writeString(
@@ -1299,24 +1236,6 @@ proto.ots.TicketSelection.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-};
-
-
-/**
- * optional string event_id = 1;
- * @return {string}
- */
-proto.ots.TicketSelection.prototype.getEventId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ots.TicketSelection} returns this
- */
-proto.ots.TicketSelection.prototype.setEventId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1388,8 +1307,7 @@ proto.ots.BetSelection.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ots.BetSelection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    banker: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1430,10 +1348,6 @@ proto.ots.BetSelection.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBanker(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1470,13 +1384,6 @@ proto.ots.BetSelection.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBanker();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1495,24 +1402,6 @@ proto.ots.BetSelection.prototype.getId = function() {
  */
 proto.ots.BetSelection.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional bool banker = 2;
- * @return {boolean}
- */
-proto.ots.BetSelection.prototype.getBanker = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.ots.BetSelection} returns this
- */
-proto.ots.BetSelection.prototype.setBanker = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 

@@ -11,32 +11,36 @@ import "ots/enum/enums.proto";
 message TicketResponse {
   string id = 1;
   enums.AcceptanceStatus ticket_status = 2;
-  enums.RejectionReason rejection_reason = 3;
+  enums.Reason reason = 3;
   repeated TicketResponseBetInfo bet_info = 4;
   google.protobuf.UInt64Value exchange_rate = 5;
   repeated AutoAcceptedOdds auto_accepted_odds = 6;
 }
 
 message AutoAcceptedOdds {
-  string selection_id = 1;
+  string id = 1;
   uint64 requested_odds = 2;
   uint64 used_odds = 3;
 }
 
 message TicketResponseBetInfo {
   string id = 1;
-  enums.RejectionReason rejection_reason = 2;
-  repeated RejectedSelection selection_info = 3;
+  enums.Reason reason = 2;
+  ResponseReoffer reoffer = 3;
+  repeated RejectedSelection selections_info = 4;
 }
 
 message RejectedSelection {
   string id = 1;
-  enums.RejectionReason rejection_reason = 2;
+  enums.Reason reason = 2;
   RejectionInfo rejection_info = 3;
 }
 
 message RejectionInfo {
-  string eventId = 1;
-  string id = 2;
-  uint64 odds = 3;
+  string id = 1;
+  uint64 odds = 2;
+}
+
+message ResponseReoffer {
+  uint64 stake = 1;
 }

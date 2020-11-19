@@ -977,143 +977,8 @@ public final class Enums {
     // @@protoc_insertion_point(enum_scope:ots.enums.BetBonusMode)
   }
 
-  /**
-   * Protobuf enum {@code ots.enums.CancelRejectionReason}
-   */
-  public enum CancelRejectionReason
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>NOT_KNOWN = 0;</code>
-     */
-    NOT_KNOWN(0),
-    /**
-     * <code>TICKET_NOT_FOUND = 1;</code>
-     */
-    TICKET_NOT_FOUND(1),
-    /**
-     * <code>TIME_EXPIRED = 2;</code>
-     */
-    TIME_EXPIRED(2),
-    /**
-     * <code>ALREADY_SETTLED = 3;</code>
-     */
-    ALREADY_SETTLED(3),
-    /**
-     * <code>OTHER = 4;</code>
-     */
-    OTHER(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>NOT_KNOWN = 0;</code>
-     */
-    public static final int NOT_KNOWN_VALUE = 0;
-    /**
-     * <code>TICKET_NOT_FOUND = 1;</code>
-     */
-    public static final int TICKET_NOT_FOUND_VALUE = 1;
-    /**
-     * <code>TIME_EXPIRED = 2;</code>
-     */
-    public static final int TIME_EXPIRED_VALUE = 2;
-    /**
-     * <code>ALREADY_SETTLED = 3;</code>
-     */
-    public static final int ALREADY_SETTLED_VALUE = 3;
-    /**
-     * <code>OTHER = 4;</code>
-     */
-    public static final int OTHER_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static CancelRejectionReason valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static CancelRejectionReason forNumber(int value) {
-      switch (value) {
-        case 0: return NOT_KNOWN;
-        case 1: return TICKET_NOT_FOUND;
-        case 2: return TIME_EXPIRED;
-        case 3: return ALREADY_SETTLED;
-        case 4: return OTHER;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CancelRejectionReason> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>() {
-            public CancelRejectionReason findValueByNumber(int number) {
-              return CancelRejectionReason.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(8);
-    }
-
-    private static final CancelRejectionReason[] VALUES = values();
-
-    public static CancelRejectionReason valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private CancelRejectionReason(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:ots.enums.CancelRejectionReason)
-  }
-
-  public interface RejectionReasonOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ots.enums.RejectionReason)
+  public interface ReasonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.enums.Reason)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1135,18 +1000,18 @@ public final class Enums {
         getMessageBytes();
   }
   /**
-   * Protobuf type {@code ots.enums.RejectionReason}
+   * Protobuf type {@code ots.enums.Reason}
    */
-  public static final class RejectionReason extends
+  public static final class Reason extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ots.enums.RejectionReason)
-      RejectionReasonOrBuilder {
+      // @@protoc_insertion_point(message_implements:ots.enums.Reason)
+      ReasonOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use RejectionReason.newBuilder() to construct.
-    private RejectionReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Reason.newBuilder() to construct.
+    private Reason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RejectionReason() {
+    private Reason() {
       message_ = "";
     }
 
@@ -1154,7 +1019,7 @@ public final class Enums {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new RejectionReason();
+      return new Reason();
     }
 
     @java.lang.Override
@@ -1162,7 +1027,7 @@ public final class Enums {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RejectionReason(
+    private Reason(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1212,15 +1077,15 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.internal_static_ots_enums_RejectionReason_descriptor;
+      return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Enums.internal_static_ots_enums_RejectionReason_fieldAccessorTable
+      return com.oddin.ots.Enums.internal_static_ots_enums_Reason_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Enums.RejectionReason.class, com.oddin.ots.Enums.RejectionReason.Builder.class);
+              com.oddin.ots.Enums.Reason.class, com.oddin.ots.Enums.Reason.Builder.class);
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
@@ -1318,10 +1183,10 @@ public final class Enums {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Enums.RejectionReason)) {
+      if (!(obj instanceof com.oddin.ots.Enums.Reason)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Enums.RejectionReason other = (com.oddin.ots.Enums.RejectionReason) obj;
+      com.oddin.ots.Enums.Reason other = (com.oddin.ots.Enums.Reason) obj;
 
       if (getCode()
           != other.getCode()) return false;
@@ -1347,69 +1212,69 @@ public final class Enums {
       return hash;
     }
 
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(byte[] data)
+    public static com.oddin.ots.Enums.Reason parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.Enums.Reason parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.Enums.Reason parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseDelimitedFrom(
+    public static com.oddin.ots.Enums.Reason parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Enums.RejectionReason parseFrom(
+    public static com.oddin.ots.Enums.Reason parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1422,7 +1287,7 @@ public final class Enums {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Enums.RejectionReason prototype) {
+    public static Builder newBuilder(com.oddin.ots.Enums.Reason prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1438,26 +1303,26 @@ public final class Enums {
       return builder;
     }
     /**
-     * Protobuf type {@code ots.enums.RejectionReason}
+     * Protobuf type {@code ots.enums.Reason}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ots.enums.RejectionReason)
-        com.oddin.ots.Enums.RejectionReasonOrBuilder {
+        // @@protoc_insertion_point(builder_implements:ots.enums.Reason)
+        com.oddin.ots.Enums.ReasonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_RejectionReason_descriptor;
+        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_RejectionReason_fieldAccessorTable
+        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Enums.RejectionReason.class, com.oddin.ots.Enums.RejectionReason.Builder.class);
+                com.oddin.ots.Enums.Reason.class, com.oddin.ots.Enums.Reason.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Enums.RejectionReason.newBuilder()
+      // Construct using com.oddin.ots.Enums.Reason.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1485,17 +1350,17 @@ public final class Enums {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_RejectionReason_descriptor;
+        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Enums.RejectionReason getDefaultInstanceForType() {
-        return com.oddin.ots.Enums.RejectionReason.getDefaultInstance();
+      public com.oddin.ots.Enums.Reason getDefaultInstanceForType() {
+        return com.oddin.ots.Enums.Reason.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Enums.RejectionReason build() {
-        com.oddin.ots.Enums.RejectionReason result = buildPartial();
+      public com.oddin.ots.Enums.Reason build() {
+        com.oddin.ots.Enums.Reason result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1503,8 +1368,8 @@ public final class Enums {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Enums.RejectionReason buildPartial() {
-        com.oddin.ots.Enums.RejectionReason result = new com.oddin.ots.Enums.RejectionReason(this);
+      public com.oddin.ots.Enums.Reason buildPartial() {
+        com.oddin.ots.Enums.Reason result = new com.oddin.ots.Enums.Reason(this);
         result.code_ = code_;
         result.message_ = message_;
         onBuilt();
@@ -1545,16 +1410,16 @@ public final class Enums {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Enums.RejectionReason) {
-          return mergeFrom((com.oddin.ots.Enums.RejectionReason)other);
+        if (other instanceof com.oddin.ots.Enums.Reason) {
+          return mergeFrom((com.oddin.ots.Enums.Reason)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Enums.RejectionReason other) {
-        if (other == com.oddin.ots.Enums.RejectionReason.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.Enums.Reason other) {
+        if (other == com.oddin.ots.Enums.Reason.getDefaultInstance()) return this;
         if (other.getCode() != 0) {
           setCode(other.getCode());
         }
@@ -1577,11 +1442,11 @@ public final class Enums {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Enums.RejectionReason parsedMessage = null;
+        com.oddin.ots.Enums.Reason parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Enums.RejectionReason) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.Enums.Reason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1710,51 +1575,51 @@ public final class Enums {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ots.enums.RejectionReason)
+      // @@protoc_insertion_point(builder_scope:ots.enums.Reason)
     }
 
-    // @@protoc_insertion_point(class_scope:ots.enums.RejectionReason)
-    private static final com.oddin.ots.Enums.RejectionReason DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ots.enums.Reason)
+    private static final com.oddin.ots.Enums.Reason DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Enums.RejectionReason();
+      DEFAULT_INSTANCE = new com.oddin.ots.Enums.Reason();
     }
 
-    public static com.oddin.ots.Enums.RejectionReason getDefaultInstance() {
+    public static com.oddin.ots.Enums.Reason getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RejectionReason>
-        PARSER = new com.google.protobuf.AbstractParser<RejectionReason>() {
+    private static final com.google.protobuf.Parser<Reason>
+        PARSER = new com.google.protobuf.AbstractParser<Reason>() {
       @java.lang.Override
-      public RejectionReason parsePartialFrom(
+      public Reason parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RejectionReason(input, extensionRegistry);
+        return new Reason(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RejectionReason> parser() {
+    public static com.google.protobuf.Parser<Reason> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RejectionReason> getParserForType() {
+    public com.google.protobuf.Parser<Reason> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.ots.Enums.RejectionReason getDefaultInstanceForType() {
+    public com.oddin.ots.Enums.Reason getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ots_enums_RejectionReason_descriptor;
+    internal_static_ots_enums_Reason_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ots_enums_RejectionReason_fieldAccessorTable;
+      internal_static_ots_enums_Reason_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1764,35 +1629,32 @@ public final class Enums {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ots/enum/enums.proto\022\tots.enums\"0\n\017Rej" +
-      "ectionReason\022\014\n\004code\030\001 \001(\r\022\017\n\007message\030\002 " +
-      "\001(\t*.\n\020AcceptanceStatus\022\014\n\010REJECTED\020\000\022\014\n" +
-      "\010ACCEPTED\020\001*.\n\014CancelStatus\022\020\n\014NOT_CANCE" +
-      "LED\020\000\022\014\n\010CANCELED\020\001*{\n\014CancelReason\022\013\n\007U" +
-      "NKNOWN\020\000\022\022\n\016TICKET_TIMEOUT\020\001\022\020\n\014WRONG_TI" +
-      "CKET\020\002\022\023\n\017TECHNICAL_ISSUE\020\003\022\024\n\020UNEXPECTE" +
-      "D_ISSUE\020\004\022\r\n\tREGULATOR\020\005*!\n\014BetStakeType" +
-      "\022\007\n\003SUM\020\000\022\010\n\004UNIT\020\001*1\n\020AcceptOddsChange\022" +
-      "\010\n\004NONE\020\000\022\007\n\003ANY\020\001\022\n\n\006HIGHER\020\002*\217\001\n\nBetCh" +
-      "annel\022\021\n\rNOT_SPECIFIED\020\000\022\014\n\010INTERNET\020\001\022\n" +
-      "\n\006RETAIL\020\002\022\014\n\010TERMINAL\020\003\022\n\n\006MOBILE\020\004\022\t\n\005" +
-      "PHONE\020\005\022\007\n\003SMS\020\006\022\017\n\013CALL_CENTRE\020\007\022\n\n\006TV_" +
-      "APP\020\010\022\t\n\005AGENT\020\t*\031\n\014BetBonusType\022\t\n\005TOTA" +
-      "L\020\000*\027\n\014BetBonusMode\022\007\n\003ALL\020\000*n\n\025CancelRe" +
-      "jectionReason\022\r\n\tNOT_KNOWN\020\000\022\024\n\020TICKET_N" +
-      "OT_FOUND\020\001\022\020\n\014TIME_EXPIRED\020\002\022\023\n\017ALREADY_" +
-      "SETTLED\020\003\022\t\n\005OTHER\020\004B\035\n\rcom.oddin.otsZ\014o" +
-      "ddin.gg/otsb\006proto3"
+      "\n\024ots/enum/enums.proto\022\tots.enums\"\'\n\006Rea" +
+      "son\022\014\n\004code\030\001 \001(\r\022\017\n\007message\030\002 \001(\t*.\n\020Ac" +
+      "ceptanceStatus\022\014\n\010REJECTED\020\000\022\014\n\010ACCEPTED" +
+      "\020\001*.\n\014CancelStatus\022\020\n\014NOT_CANCELED\020\000\022\014\n\010" +
+      "CANCELED\020\001*{\n\014CancelReason\022\013\n\007UNKNOWN\020\000\022" +
+      "\022\n\016TICKET_TIMEOUT\020\001\022\020\n\014WRONG_TICKET\020\002\022\023\n" +
+      "\017TECHNICAL_ISSUE\020\003\022\024\n\020UNEXPECTED_ISSUE\020\004" +
+      "\022\r\n\tREGULATOR\020\005*!\n\014BetStakeType\022\007\n\003SUM\020\000" +
+      "\022\010\n\004UNIT\020\001*1\n\020AcceptOddsChange\022\010\n\004NONE\020\000" +
+      "\022\007\n\003ANY\020\001\022\n\n\006HIGHER\020\002*\217\001\n\nBetChannel\022\021\n\r" +
+      "NOT_SPECIFIED\020\000\022\014\n\010INTERNET\020\001\022\n\n\006RETAIL\020" +
+      "\002\022\014\n\010TERMINAL\020\003\022\n\n\006MOBILE\020\004\022\t\n\005PHONE\020\005\022\007" +
+      "\n\003SMS\020\006\022\017\n\013CALL_CENTRE\020\007\022\n\n\006TV_APP\020\010\022\t\n\005" +
+      "AGENT\020\t*\031\n\014BetBonusType\022\t\n\005TOTAL\020\000*\027\n\014Be" +
+      "tBonusMode\022\007\n\003ALL\020\000B\035\n\rcom.oddin.otsZ\014od" +
+      "din.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ots_enums_RejectionReason_descriptor =
+    internal_static_ots_enums_Reason_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ots_enums_RejectionReason_fieldAccessorTable = new
+    internal_static_ots_enums_Reason_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ots_enums_RejectionReason_descriptor,
+        internal_static_ots_enums_Reason_descriptor,
         new java.lang.String[] { "Code", "Message", });
   }
 

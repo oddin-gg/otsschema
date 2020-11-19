@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"~\n#ResolveForeignEventsInTicketRequest\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x89\x01\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x34\n\x10rejection_reason\x18\x02 \x01(\x0b\x32\x1a.ots.enums.RejectionReasonB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"w\n#ResolveForeignEventsInTicketRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"v\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12!\n\x06reason\x18\x02 \x01(\x0b\x32\x11.ots.enums.ReasonB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
 
@@ -37,7 +37,7 @@ _RESOLVEFOREIGNEVENTSINTICKETREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ticket_id', full_name='ots.ResolveForeignEventsInTicketRequest.ticket_id', index=0,
+      name='id', full_name='ots.ResolveForeignEventsInTicketRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -70,7 +70,7 @@ _RESOLVEFOREIGNEVENTSINTICKETREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=106,
-  serialized_end=232,
+  serialized_end=225,
 )
 
 
@@ -90,7 +90,7 @@ _RESOLVEFOREIGNEVENTSINTICKETRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rejection_reason', full_name='ots.ResolveForeignEventsInTicketResponse.rejection_reason', index=1,
+      name='reason', full_name='ots.ResolveForeignEventsInTicketResponse.reason', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -108,13 +108,13 @@ _RESOLVEFOREIGNEVENTSINTICKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=235,
-  serialized_end=372,
+  serialized_start=227,
+  serialized_end=345,
 )
 
 _RESOLVEFOREIGNEVENTSINTICKETREQUEST.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['status'].enum_type = ots_dot_enum_dot_enums__pb2._ACCEPTANCESTATUS
-_RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['rejection_reason'].message_type = ots_dot_enum_dot_enums__pb2._REJECTIONREASON
+_RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['reason'].message_type = ots_dot_enum_dot_enums__pb2._REASON
 DESCRIPTOR.message_types_by_name['ResolveForeignEventsInTicketRequest'] = _RESOLVEFOREIGNEVENTSINTICKETREQUEST
 DESCRIPTOR.message_types_by_name['ResolveForeignEventsInTicketResponse'] = _RESOLVEFOREIGNEVENTSINTICKETRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

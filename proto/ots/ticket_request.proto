@@ -17,7 +17,6 @@ message TicketRequest {
   // Total number of combinations to validate against generated combinations
   google.protobuf.UInt32Value total_combinations = 5;
   TicketRequestBetInfo bet_info = 6;
-  google.protobuf.Timestamp last_match_end_timestamp = 7;
   google.protobuf.StringValue reoffer_id = 8;
   map<string, TicketSelection> selections = 9;
 }
@@ -33,14 +32,12 @@ message Bet {
 }
 
 message TicketSelection {
-  string event_id = 1;
   string id = 2;
   uint64 odds = 3;
 }
 
 message BetSelection {
   string id = 1;
-  bool banker = 2;
 }
 
 message BetStake {

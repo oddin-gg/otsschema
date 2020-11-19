@@ -70,10 +70,10 @@ proto.ots.TicketAckRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ots.TicketAckRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     acceptanceStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    rejectionReason: (f = msg.getRejectionReason()) && ots_enum_enums_pb.RejectionReason.toObject(includeInstance, f)
+    reason: (f = msg.getReason()) && ots_enum_enums_pb.Reason.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -112,7 +112,7 @@ proto.ots.TicketAckRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTicketid(value);
+      msg.setId(value);
       break;
     case 2:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -124,9 +124,9 @@ proto.ots.TicketAckRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.setAcceptanceStatus(value);
       break;
     case 4:
-      var value = new ots_enum_enums_pb.RejectionReason;
-      reader.readMessage(value,ots_enum_enums_pb.RejectionReason.deserializeBinaryFromReader);
-      msg.setRejectionReason(value);
+      var value = new ots_enum_enums_pb.Reason;
+      reader.readMessage(value,ots_enum_enums_pb.Reason.deserializeBinaryFromReader);
+      msg.setReason(value);
       break;
     default:
       reader.skipField();
@@ -157,7 +157,7 @@ proto.ots.TicketAckRequest.prototype.serializeBinary = function() {
  */
 proto.ots.TicketAckRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTicketid();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -179,22 +179,22 @@ proto.ots.TicketAckRequest.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRejectionReason();
+  f = message.getReason();
   if (f != null) {
     writer.writeMessage(
       4,
       f,
-      ots_enum_enums_pb.RejectionReason.serializeBinaryToWriter
+      ots_enum_enums_pb.Reason.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string ticketId = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.ots.TicketAckRequest.prototype.getTicketid = function() {
+proto.ots.TicketAckRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -203,7 +203,7 @@ proto.ots.TicketAckRequest.prototype.getTicketid = function() {
  * @param {string} value
  * @return {!proto.ots.TicketAckRequest} returns this
  */
-proto.ots.TicketAckRequest.prototype.setTicketid = function(value) {
+proto.ots.TicketAckRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -264,20 +264,20 @@ proto.ots.TicketAckRequest.prototype.setAcceptanceStatus = function(value) {
 
 
 /**
- * optional enums.RejectionReason rejection_reason = 4;
- * @return {?proto.ots.enums.RejectionReason}
+ * optional enums.Reason reason = 4;
+ * @return {?proto.ots.enums.Reason}
  */
-proto.ots.TicketAckRequest.prototype.getRejectionReason = function() {
-  return /** @type{?proto.ots.enums.RejectionReason} */ (
-    jspb.Message.getWrapperField(this, ots_enum_enums_pb.RejectionReason, 4));
+proto.ots.TicketAckRequest.prototype.getReason = function() {
+  return /** @type{?proto.ots.enums.Reason} */ (
+    jspb.Message.getWrapperField(this, ots_enum_enums_pb.Reason, 4));
 };
 
 
 /**
- * @param {?proto.ots.enums.RejectionReason|undefined} value
+ * @param {?proto.ots.enums.Reason|undefined} value
  * @return {!proto.ots.TicketAckRequest} returns this
 */
-proto.ots.TicketAckRequest.prototype.setRejectionReason = function(value) {
+proto.ots.TicketAckRequest.prototype.setReason = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -286,8 +286,8 @@ proto.ots.TicketAckRequest.prototype.setRejectionReason = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ots.TicketAckRequest} returns this
  */
-proto.ots.TicketAckRequest.prototype.clearRejectionReason = function() {
-  return this.setRejectionReason(undefined);
+proto.ots.TicketAckRequest.prototype.clearReason = function() {
+  return this.setReason(undefined);
 };
 
 
@@ -295,7 +295,7 @@ proto.ots.TicketAckRequest.prototype.clearRejectionReason = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ots.TicketAckRequest.prototype.hasRejectionReason = function() {
+proto.ots.TicketAckRequest.prototype.hasReason = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

@@ -14,6 +14,141 @@ public final class TicketCancel {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code ots.CancelRejectionReason}
+   */
+  public enum CancelRejectionReason
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNKNOWN = 0;</code>
+     */
+    UNKNOWN(0),
+    /**
+     * <code>TICKET_NOT_FOUND = 1;</code>
+     */
+    TICKET_NOT_FOUND(1),
+    /**
+     * <code>TIME_EXPIRED = 2;</code>
+     */
+    TIME_EXPIRED(2),
+    /**
+     * <code>ALREADY_SETTLED = 3;</code>
+     */
+    ALREADY_SETTLED(3),
+    /**
+     * <code>OTHER = 4;</code>
+     */
+    OTHER(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNKNOWN = 0;</code>
+     */
+    public static final int UNKNOWN_VALUE = 0;
+    /**
+     * <code>TICKET_NOT_FOUND = 1;</code>
+     */
+    public static final int TICKET_NOT_FOUND_VALUE = 1;
+    /**
+     * <code>TIME_EXPIRED = 2;</code>
+     */
+    public static final int TIME_EXPIRED_VALUE = 2;
+    /**
+     * <code>ALREADY_SETTLED = 3;</code>
+     */
+    public static final int ALREADY_SETTLED_VALUE = 3;
+    /**
+     * <code>OTHER = 4;</code>
+     */
+    public static final int OTHER_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CancelRejectionReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CancelRejectionReason forNumber(int value) {
+      switch (value) {
+        case 0: return UNKNOWN;
+        case 1: return TICKET_NOT_FOUND;
+        case 2: return TIME_EXPIRED;
+        case 3: return ALREADY_SETTLED;
+        case 4: return OTHER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CancelRejectionReason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>() {
+            public CancelRejectionReason findValueByNumber(int number) {
+              return CancelRejectionReason.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.oddin.ots.TicketCancel.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CancelRejectionReason[] VALUES = values();
+
+    public static CancelRejectionReason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CancelRejectionReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ots.CancelRejectionReason)
+  }
+
   public interface TicketCancelRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.TicketCancelRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -2141,15 +2276,15 @@ public final class TicketCancel {
     com.oddin.ots.Enums.AcceptanceStatus getStatus();
 
     /**
-     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelRejectionReason.
      */
     int getCancelRejectionReasonValue();
     /**
-     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The cancelRejectionReason.
      */
-    com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason();
+    com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason();
 
     /**
      * <code>string cancel_rejection_message = 3;</code>
@@ -2283,20 +2418,20 @@ public final class TicketCancel {
     public static final int CANCEL_REJECTION_REASON_FIELD_NUMBER = 2;
     private int cancelRejectionReason_;
     /**
-     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelRejectionReason.
      */
     @java.lang.Override public int getCancelRejectionReasonValue() {
       return cancelRejectionReason_;
     }
     /**
-     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The cancelRejectionReason.
      */
-    @java.lang.Override public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
+    @java.lang.Override public com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason() {
       @SuppressWarnings("deprecation")
-      com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
-      return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
+      com.oddin.ots.TicketCancel.CancelRejectionReason result = com.oddin.ots.TicketCancel.CancelRejectionReason.valueOf(cancelRejectionReason_);
+      return result == null ? com.oddin.ots.TicketCancel.CancelRejectionReason.UNRECOGNIZED : result;
     }
 
     public static final int CANCEL_REJECTION_MESSAGE_FIELD_NUMBER = 3;
@@ -2354,7 +2489,7 @@ public final class TicketCancel {
       if (status_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
         output.writeEnum(1, status_);
       }
-      if (cancelRejectionReason_ != com.oddin.ots.Enums.CancelRejectionReason.NOT_KNOWN.getNumber()) {
+      if (cancelRejectionReason_ != com.oddin.ots.TicketCancel.CancelRejectionReason.UNKNOWN.getNumber()) {
         output.writeEnum(2, cancelRejectionReason_);
       }
       if (!getCancelRejectionMessageBytes().isEmpty()) {
@@ -2373,7 +2508,7 @@ public final class TicketCancel {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_);
       }
-      if (cancelRejectionReason_ != com.oddin.ots.Enums.CancelRejectionReason.NOT_KNOWN.getNumber()) {
+      if (cancelRejectionReason_ != com.oddin.ots.TicketCancel.CancelRejectionReason.UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, cancelRejectionReason_);
       }
@@ -2727,14 +2862,14 @@ public final class TicketCancel {
 
       private int cancelRejectionReason_ = 0;
       /**
-       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return The enum numeric value on the wire for cancelRejectionReason.
        */
       @java.lang.Override public int getCancelRejectionReasonValue() {
         return cancelRejectionReason_;
       }
       /**
-       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @param value The enum numeric value on the wire for cancelRejectionReason to set.
        * @return This builder for chaining.
        */
@@ -2745,21 +2880,21 @@ public final class TicketCancel {
         return this;
       }
       /**
-       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return The cancelRejectionReason.
        */
       @java.lang.Override
-      public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
+      public com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason() {
         @SuppressWarnings("deprecation")
-        com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
-        return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
+        com.oddin.ots.TicketCancel.CancelRejectionReason result = com.oddin.ots.TicketCancel.CancelRejectionReason.valueOf(cancelRejectionReason_);
+        return result == null ? com.oddin.ots.TicketCancel.CancelRejectionReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @param value The cancelRejectionReason to set.
        * @return This builder for chaining.
        */
-      public Builder setCancelRejectionReason(com.oddin.ots.Enums.CancelRejectionReason value) {
+      public Builder setCancelRejectionReason(com.oddin.ots.TicketCancel.CancelRejectionReason value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2769,7 +2904,7 @@ public final class TicketCancel {
         return this;
       }
       /**
-       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCancelRejectionReason() {
@@ -2940,12 +3075,15 @@ public final class TicketCancel {
       "estamp\022\026\n\016cancel_percent\030\005 \001(\r\022+\n\017cancel" +
       "_bet_info\030\006 \003(\0132\022.ots.CancelBetInfo\"3\n\rC" +
       "ancelBetInfo\022\n\n\002id\030\001 \001(\t\022\026\n\016cancel_perce" +
-      "nt\030\002 \001(\r\"\250\001\n\024TicketCancelResponse\022+\n\006sta" +
-      "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\022A" +
-      "\n\027cancel_rejection_reason\030\002 \001(\0162 .ots.en" +
-      "ums.CancelRejectionReason\022 \n\030cancel_reje" +
-      "ction_message\030\003 \001(\tB\035\n\rcom.oddin.otsZ\014od" +
-      "din.gg/otsb\006proto3"
+      "nt\030\002 \001(\r\"\242\001\n\024TicketCancelResponse\022+\n\006sta" +
+      "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\022;" +
+      "\n\027cancel_rejection_reason\030\002 \001(\0162\032.ots.Ca" +
+      "ncelRejectionReason\022 \n\030cancel_rejection_" +
+      "message\030\003 \001(\t*l\n\025CancelRejectionReason\022\013" +
+      "\n\007UNKNOWN\020\000\022\024\n\020TICKET_NOT_FOUND\020\001\022\020\n\014TIM" +
+      "E_EXPIRED\020\002\022\023\n\017ALREADY_SETTLED\020\003\022\t\n\005OTHE" +
+      "R\020\004B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

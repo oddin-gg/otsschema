@@ -77,8 +77,8 @@ export class TicketCancelResponse extends jspb.Message {
   getStatus(): ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap];
   setStatus(value: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap]): void;
 
-  getCancelRejectionReason(): ots_enum_enums_pb.CancelRejectionReasonMap[keyof ots_enum_enums_pb.CancelRejectionReasonMap];
-  setCancelRejectionReason(value: ots_enum_enums_pb.CancelRejectionReasonMap[keyof ots_enum_enums_pb.CancelRejectionReasonMap]): void;
+  getCancelRejectionReason(): CancelRejectionReasonMap[keyof CancelRejectionReasonMap];
+  setCancelRejectionReason(value: CancelRejectionReasonMap[keyof CancelRejectionReasonMap]): void;
 
   getCancelRejectionMessage(): string;
   setCancelRejectionMessage(value: string): void;
@@ -96,8 +96,18 @@ export class TicketCancelResponse extends jspb.Message {
 export namespace TicketCancelResponse {
   export type AsObject = {
     status: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    cancelRejectionReason: ots_enum_enums_pb.CancelRejectionReasonMap[keyof ots_enum_enums_pb.CancelRejectionReasonMap],
+    cancelRejectionReason: CancelRejectionReasonMap[keyof CancelRejectionReasonMap],
     cancelRejectionMessage: string,
   }
 }
+
+export interface CancelRejectionReasonMap {
+  UNKNOWN: 0;
+  TICKET_NOT_FOUND: 1;
+  TIME_EXPIRED: 2;
+  ALREADY_SETTLED: 3;
+  OTHER: 4;
+}
+
+export const CancelRejectionReason: CancelRejectionReasonMap;
 

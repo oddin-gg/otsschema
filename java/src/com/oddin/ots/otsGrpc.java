@@ -120,60 +120,29 @@ public final class otsGrpc {
     return getCancelTicketMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
-      com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "TicketMaxStake",
-      requestType = com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest.class,
-      responseType = com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
-      com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod() {
-    io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest, com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod;
-    if ((getTicketMaxStakeMethod = otsGrpc.getTicketMaxStakeMethod) == null) {
-      synchronized (otsGrpc.class) {
-        if ((getTicketMaxStakeMethod = otsGrpc.getTicketMaxStakeMethod) == null) {
-          otsGrpc.getTicketMaxStakeMethod = getTicketMaxStakeMethod =
-              io.grpc.MethodDescriptor.<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest, com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TicketMaxStake"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new otsMethodDescriptorSupplier("TicketMaxStake"))
-              .build();
-        }
-      }
-    }
-    return getTicketMaxStakeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest,
-      com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> getPlayerRiskScoreMethod;
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest,
+      com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> getPlayerRiskScoreMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "PlayerRiskScore",
-      requestType = com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest.class,
-      responseType = com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse.class,
+      requestType = com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest.class,
+      responseType = com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest,
-      com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> getPlayerRiskScoreMethod() {
-    io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest, com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> getPlayerRiskScoreMethod;
+  public static io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest,
+      com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> getPlayerRiskScoreMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest, com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> getPlayerRiskScoreMethod;
     if ((getPlayerRiskScoreMethod = otsGrpc.getPlayerRiskScoreMethod) == null) {
       synchronized (otsGrpc.class) {
         if ((getPlayerRiskScoreMethod = otsGrpc.getPlayerRiskScoreMethod) == null) {
           otsGrpc.getPlayerRiskScoreMethod = getPlayerRiskScoreMethod =
-              io.grpc.MethodDescriptor.<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest, com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest, com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PlayerRiskScore"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest.getDefaultInstance()))
+                  com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse.getDefaultInstance()))
+                  com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse.getDefaultInstance()))
               .setSchemaDescriptor(new otsMethodDescriptorSupplier("PlayerRiskScore"))
               .build();
         }
@@ -284,15 +253,8 @@ public final class otsGrpc {
 
     /**
      */
-    public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
-        io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTicketMaxStakeMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request,
-        io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> responseObserver) {
+    public void playerRiskScore(com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPlayerRiskScoreMethod(), responseObserver);
     }
 
@@ -327,18 +289,11 @@ public final class otsGrpc {
                 com.oddin.ots.TicketCancel.TicketCancelResponse>(
                   this, METHODID_CANCEL_TICKET)))
           .addMethod(
-            getTicketMaxStakeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
-                com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>(
-                  this, METHODID_TICKET_MAX_STAKE)))
-          .addMethod(
             getPlayerRiskScoreMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest,
-                com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse>(
+                com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest,
+                com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse>(
                   this, METHODID_PLAYER_RISK_SCORE)))
           .addMethod(
             getTicketAckMethod(),
@@ -391,16 +346,8 @@ public final class otsGrpc {
 
     /**
      */
-    public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
-        io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request,
-        io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> responseObserver) {
+    public void playerRiskScore(com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPlayerRiskScoreMethod(), getCallOptions()), request, responseObserver);
     }
@@ -451,14 +398,7 @@ public final class otsGrpc {
 
     /**
      */
-    public com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getTicketMaxStakeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request) {
+    public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse playerRiskScore(com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest request) {
       return blockingUnaryCall(
           getChannel(), getPlayerRiskScoreMethod(), getCallOptions(), request);
     }
@@ -511,16 +451,8 @@ public final class otsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> ticketMaxStake(
-        com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> playerRiskScore(
-        com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse> playerRiskScore(
+        com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPlayerRiskScoreMethod(), getCallOptions()), request);
     }
@@ -537,9 +469,8 @@ public final class otsGrpc {
   private static final int METHODID_TICKET = 0;
   private static final int METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET = 1;
   private static final int METHODID_CANCEL_TICKET = 2;
-  private static final int METHODID_TICKET_MAX_STAKE = 3;
-  private static final int METHODID_PLAYER_RISK_SCORE = 4;
-  private static final int METHODID_TICKET_ACK = 5;
+  private static final int METHODID_PLAYER_RISK_SCORE = 3;
+  private static final int METHODID_TICKET_ACK = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -570,13 +501,9 @@ public final class otsGrpc {
           serviceImpl.cancelTicket((com.oddin.ots.TicketCancel.TicketCancelRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.ots.TicketCancel.TicketCancelResponse>) responseObserver);
           break;
-        case METHODID_TICKET_MAX_STAKE:
-          serviceImpl.ticketMaxStake((com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest) request,
-              (io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>) responseObserver);
-          break;
         case METHODID_PLAYER_RISK_SCORE:
-          serviceImpl.playerRiskScore((com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest) request,
-              (io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse>) responseObserver);
+          serviceImpl.playerRiskScore((com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreResponse>) responseObserver);
           break;
         case METHODID_TICKET_ACK:
           serviceImpl.ticketAck((com.oddin.ots.TicketAck.TicketAckRequest) request,
@@ -646,7 +573,6 @@ public final class otsGrpc {
               .addMethod(getTicketMethod())
               .addMethod(getResolveForeignMatchesInTicketMethod())
               .addMethod(getCancelTicketMethod())
-              .addMethod(getTicketMaxStakeMethod())
               .addMethod(getPlayerRiskScoreMethod())
               .addMethod(getTicketAckMethod())
               .build();

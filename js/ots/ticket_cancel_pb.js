@@ -17,6 +17,7 @@ goog.object.extend(proto, google_protobuf_timestamp_pb);
 var ots_enum_enums_pb = require('../ots/enum/enums_pb.js');
 goog.object.extend(proto, ots_enum_enums_pb);
 goog.exportSymbol('proto.ots.CancelBetInfo', null, global);
+goog.exportSymbol('proto.ots.CancelRejectionReason', null, global);
 goog.exportSymbol('proto.ots.TicketCancelRequest', null, global);
 goog.exportSymbol('proto.ots.TicketCancelResponse', null, global);
 /**
@@ -649,7 +650,7 @@ proto.ots.TicketCancelResponse.deserializeBinaryFromReader = function(msg, reade
       msg.setStatus(value);
       break;
     case 2:
-      var value = /** @type {!proto.ots.enums.CancelRejectionReason} */ (reader.readEnum());
+      var value = /** @type {!proto.ots.CancelRejectionReason} */ (reader.readEnum());
       msg.setCancelRejectionReason(value);
       break;
     case 3:
@@ -728,16 +729,16 @@ proto.ots.TicketCancelResponse.prototype.setStatus = function(value) {
 
 
 /**
- * optional enums.CancelRejectionReason cancel_rejection_reason = 2;
- * @return {!proto.ots.enums.CancelRejectionReason}
+ * optional CancelRejectionReason cancel_rejection_reason = 2;
+ * @return {!proto.ots.CancelRejectionReason}
  */
 proto.ots.TicketCancelResponse.prototype.getCancelRejectionReason = function() {
-  return /** @type {!proto.ots.enums.CancelRejectionReason} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.ots.CancelRejectionReason} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.ots.enums.CancelRejectionReason} value
+ * @param {!proto.ots.CancelRejectionReason} value
  * @return {!proto.ots.TicketCancelResponse} returns this
  */
 proto.ots.TicketCancelResponse.prototype.setCancelRejectionReason = function(value) {
@@ -762,5 +763,16 @@ proto.ots.TicketCancelResponse.prototype.setCancelRejectionMessage = function(va
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ots.CancelRejectionReason = {
+  UNKNOWN: 0,
+  TICKET_NOT_FOUND: 1,
+  TIME_EXPIRED: 2,
+  ALREADY_SETTLED: 3,
+  OTHER: 4
+};
 
 goog.object.extend(exports, proto.ots);

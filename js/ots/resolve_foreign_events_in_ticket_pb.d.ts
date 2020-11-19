@@ -6,8 +6,8 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as ots_enum_enums_pb from "../ots/enum/enums_pb";
 
 export class ResolveForeignEventsInTicketRequest extends jspb.Message {
-  getTicketId(): string;
-  setTicketId(value: string): void;
+  getId(): string;
+  setId(value: string): void;
 
   getForeignStake(): number;
   setForeignStake(value: number): void;
@@ -29,7 +29,7 @@ export class ResolveForeignEventsInTicketRequest extends jspb.Message {
 
 export namespace ResolveForeignEventsInTicketRequest {
   export type AsObject = {
-    ticketId: string,
+    id: string,
     foreignStake: number,
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
@@ -39,10 +39,10 @@ export class ResolveForeignEventsInTicketResponse extends jspb.Message {
   getStatus(): ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap];
   setStatus(value: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap]): void;
 
-  hasRejectionReason(): boolean;
-  clearRejectionReason(): void;
-  getRejectionReason(): ots_enum_enums_pb.RejectionReason | undefined;
-  setRejectionReason(value?: ots_enum_enums_pb.RejectionReason): void;
+  hasReason(): boolean;
+  clearReason(): void;
+  getReason(): ots_enum_enums_pb.Reason | undefined;
+  setReason(value?: ots_enum_enums_pb.Reason): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveForeignEventsInTicketResponse.AsObject;
@@ -57,7 +57,7 @@ export class ResolveForeignEventsInTicketResponse extends jspb.Message {
 export namespace ResolveForeignEventsInTicketResponse {
   export type AsObject = {
     status: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    rejectionReason?: ots_enum_enums_pb.RejectionReason.AsObject,
+    reason?: ots_enum_enums_pb.Reason.AsObject,
   }
 }
 

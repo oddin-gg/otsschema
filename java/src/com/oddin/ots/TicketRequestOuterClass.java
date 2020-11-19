@@ -123,21 +123,6 @@ public final class TicketRequestOuterClass {
     com.oddin.ots.TicketRequestOuterClass.TicketRequestBetInfoOrBuilder getBetInfoOrBuilder();
 
     /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     * @return Whether the lastMatchEndTimestamp field is set.
-     */
-    boolean hasLastMatchEndTimestamp();
-    /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     * @return The lastMatchEndTimestamp.
-     */
-    com.google.protobuf.Timestamp getLastMatchEndTimestamp();
-    /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getLastMatchEndTimestampOrBuilder();
-
-    /**
      * <code>.google.protobuf.StringValue reoffer_id = 8;</code>
      * @return Whether the reofferId field is set.
      */
@@ -291,19 +276,6 @@ public final class TicketRequestOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(betInfo_);
                 betInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastMatchEndTimestamp_ != null) {
-                subBuilder = lastMatchEndTimestamp_.toBuilder();
-              }
-              lastMatchEndTimestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastMatchEndTimestamp_);
-                lastMatchEndTimestamp_ = subBuilder.buildPartial();
               }
 
               break;
@@ -568,32 +540,6 @@ public final class TicketRequestOuterClass {
       return getBetInfo();
     }
 
-    public static final int LAST_MATCH_END_TIMESTAMP_FIELD_NUMBER = 7;
-    private com.google.protobuf.Timestamp lastMatchEndTimestamp_;
-    /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     * @return Whether the lastMatchEndTimestamp field is set.
-     */
-    @java.lang.Override
-    public boolean hasLastMatchEndTimestamp() {
-      return lastMatchEndTimestamp_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     * @return The lastMatchEndTimestamp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getLastMatchEndTimestamp() {
-      return lastMatchEndTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastMatchEndTimestamp_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getLastMatchEndTimestampOrBuilder() {
-      return getLastMatchEndTimestamp();
-    }
-
     public static final int REOFFER_ID_FIELD_NUMBER = 8;
     private com.google.protobuf.StringValue reofferId_;
     /**
@@ -733,9 +679,6 @@ public final class TicketRequestOuterClass {
       if (betInfo_ != null) {
         output.writeMessage(6, getBetInfo());
       }
-      if (lastMatchEndTimestamp_ != null) {
-        output.writeMessage(7, getLastMatchEndTimestamp());
-      }
       if (reofferId_ != null) {
         output.writeMessage(8, getReofferId());
       }
@@ -776,10 +719,6 @@ public final class TicketRequestOuterClass {
       if (betInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getBetInfo());
-      }
-      if (lastMatchEndTimestamp_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getLastMatchEndTimestamp());
       }
       if (reofferId_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -830,11 +769,6 @@ public final class TicketRequestOuterClass {
         if (!getBetInfo()
             .equals(other.getBetInfo())) return false;
       }
-      if (hasLastMatchEndTimestamp() != other.hasLastMatchEndTimestamp()) return false;
-      if (hasLastMatchEndTimestamp()) {
-        if (!getLastMatchEndTimestamp()
-            .equals(other.getLastMatchEndTimestamp())) return false;
-      }
       if (hasReofferId() != other.hasReofferId()) return false;
       if (hasReofferId()) {
         if (!getReofferId()
@@ -872,10 +806,6 @@ public final class TicketRequestOuterClass {
       if (hasBetInfo()) {
         hash = (37 * hash) + BET_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getBetInfo().hashCode();
-      }
-      if (hasLastMatchEndTimestamp()) {
-        hash = (37 * hash) + LAST_MATCH_END_TIMESTAMP_FIELD_NUMBER;
-        hash = (53 * hash) + getLastMatchEndTimestamp().hashCode();
       }
       if (hasReofferId()) {
         hash = (37 * hash) + REOFFER_ID_FIELD_NUMBER;
@@ -1069,12 +999,6 @@ public final class TicketRequestOuterClass {
           betInfo_ = null;
           betInfoBuilder_ = null;
         }
-        if (lastMatchEndTimestampBuilder_ == null) {
-          lastMatchEndTimestamp_ = null;
-        } else {
-          lastMatchEndTimestamp_ = null;
-          lastMatchEndTimestampBuilder_ = null;
-        }
         if (reofferIdBuilder_ == null) {
           reofferId_ = null;
         } else {
@@ -1134,11 +1058,6 @@ public final class TicketRequestOuterClass {
           result.betInfo_ = betInfo_;
         } else {
           result.betInfo_ = betInfoBuilder_.build();
-        }
-        if (lastMatchEndTimestampBuilder_ == null) {
-          result.lastMatchEndTimestamp_ = lastMatchEndTimestamp_;
-        } else {
-          result.lastMatchEndTimestamp_ = lastMatchEndTimestampBuilder_.build();
         }
         if (reofferIdBuilder_ == null) {
           result.reofferId_ = reofferId_;
@@ -1236,9 +1155,6 @@ public final class TicketRequestOuterClass {
         }
         if (other.hasBetInfo()) {
           mergeBetInfo(other.getBetInfo());
-        }
-        if (other.hasLastMatchEndTimestamp()) {
-          mergeLastMatchEndTimestamp(other.getLastMatchEndTimestamp());
         }
         if (other.hasReofferId()) {
           mergeReofferId(other.getReofferId());
@@ -2036,125 +1952,6 @@ public final class TicketRequestOuterClass {
           betInfo_ = null;
         }
         return betInfoBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp lastMatchEndTimestamp_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastMatchEndTimestampBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       * @return Whether the lastMatchEndTimestamp field is set.
-       */
-      public boolean hasLastMatchEndTimestamp() {
-        return lastMatchEndTimestampBuilder_ != null || lastMatchEndTimestamp_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       * @return The lastMatchEndTimestamp.
-       */
-      public com.google.protobuf.Timestamp getLastMatchEndTimestamp() {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          return lastMatchEndTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastMatchEndTimestamp_;
-        } else {
-          return lastMatchEndTimestampBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public Builder setLastMatchEndTimestamp(com.google.protobuf.Timestamp value) {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          lastMatchEndTimestamp_ = value;
-          onChanged();
-        } else {
-          lastMatchEndTimestampBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public Builder setLastMatchEndTimestamp(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          lastMatchEndTimestamp_ = builderForValue.build();
-          onChanged();
-        } else {
-          lastMatchEndTimestampBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public Builder mergeLastMatchEndTimestamp(com.google.protobuf.Timestamp value) {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          if (lastMatchEndTimestamp_ != null) {
-            lastMatchEndTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(lastMatchEndTimestamp_).mergeFrom(value).buildPartial();
-          } else {
-            lastMatchEndTimestamp_ = value;
-          }
-          onChanged();
-        } else {
-          lastMatchEndTimestampBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public Builder clearLastMatchEndTimestamp() {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          lastMatchEndTimestamp_ = null;
-          onChanged();
-        } else {
-          lastMatchEndTimestamp_ = null;
-          lastMatchEndTimestampBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getLastMatchEndTimestampBuilder() {
-        
-        onChanged();
-        return getLastMatchEndTimestampFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getLastMatchEndTimestampOrBuilder() {
-        if (lastMatchEndTimestampBuilder_ != null) {
-          return lastMatchEndTimestampBuilder_.getMessageOrBuilder();
-        } else {
-          return lastMatchEndTimestamp_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : lastMatchEndTimestamp_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp last_match_end_timestamp = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getLastMatchEndTimestampFieldBuilder() {
-        if (lastMatchEndTimestampBuilder_ == null) {
-          lastMatchEndTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getLastMatchEndTimestamp(),
-                  getParentForChildren(),
-                  isClean());
-          lastMatchEndTimestamp_ = null;
-        }
-        return lastMatchEndTimestampBuilder_;
       }
 
       private com.google.protobuf.StringValue reofferId_;
@@ -4463,18 +4260,6 @@ public final class TicketRequestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string event_id = 1;</code>
-     * @return The eventId.
-     */
-    java.lang.String getEventId();
-    /**
-     * <code>string event_id = 1;</code>
-     * @return The bytes for eventId.
-     */
-    com.google.protobuf.ByteString
-        getEventIdBytes();
-
-    /**
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -4505,7 +4290,6 @@ public final class TicketRequestOuterClass {
       super(builder);
     }
     private TicketSelection() {
-      eventId_ = "";
       id_ = "";
     }
 
@@ -4539,12 +4323,6 @@ public final class TicketRequestOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              eventId_ = s;
-              break;
-            }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4586,44 +4364,6 @@ public final class TicketRequestOuterClass {
       return com.oddin.ots.TicketRequestOuterClass.internal_static_ots_TicketSelection_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.oddin.ots.TicketRequestOuterClass.TicketSelection.class, com.oddin.ots.TicketRequestOuterClass.TicketSelection.Builder.class);
-    }
-
-    public static final int EVENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
-    /**
-     * <code>string event_id = 1;</code>
-     * @return The eventId.
-     */
-    @java.lang.Override
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eventId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string event_id = 1;</code>
-     * @return The bytes for eventId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        eventId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int ID_FIELD_NUMBER = 2;
@@ -4689,9 +4429,6 @@ public final class TicketRequestOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getEventIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventId_);
-      }
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
@@ -4707,9 +4444,6 @@ public final class TicketRequestOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getEventIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventId_);
-      }
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
@@ -4732,8 +4466,6 @@ public final class TicketRequestOuterClass {
       }
       com.oddin.ots.TicketRequestOuterClass.TicketSelection other = (com.oddin.ots.TicketRequestOuterClass.TicketSelection) obj;
 
-      if (!getEventId()
-          .equals(other.getEventId())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (getOdds()
@@ -4749,8 +4481,6 @@ public final class TicketRequestOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EVENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEventId().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + ODDS_FIELD_NUMBER;
@@ -4889,8 +4619,6 @@ public final class TicketRequestOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        eventId_ = "";
-
         id_ = "";
 
         odds_ = 0L;
@@ -4921,7 +4649,6 @@ public final class TicketRequestOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketRequestOuterClass.TicketSelection buildPartial() {
         com.oddin.ots.TicketRequestOuterClass.TicketSelection result = new com.oddin.ots.TicketRequestOuterClass.TicketSelection(this);
-        result.eventId_ = eventId_;
         result.id_ = id_;
         result.odds_ = odds_;
         onBuilt();
@@ -4972,10 +4699,6 @@ public final class TicketRequestOuterClass {
 
       public Builder mergeFrom(com.oddin.ots.TicketRequestOuterClass.TicketSelection other) {
         if (other == com.oddin.ots.TicketRequestOuterClass.TicketSelection.getDefaultInstance()) return this;
-        if (!other.getEventId().isEmpty()) {
-          eventId_ = other.eventId_;
-          onChanged();
-        }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -5009,82 +4732,6 @@ public final class TicketRequestOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object eventId_ = "";
-      /**
-       * <code>string event_id = 1;</code>
-       * @return The eventId.
-       */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          eventId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string event_id = 1;</code>
-       * @return The bytes for eventId.
-       */
-      public com.google.protobuf.ByteString
-          getEventIdBytes() {
-        java.lang.Object ref = eventId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          eventId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string event_id = 1;</code>
-       * @param value The eventId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        eventId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string event_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEventId() {
-        
-        eventId_ = getDefaultInstance().getEventId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string event_id = 1;</code>
-       * @param value The bytes for eventId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        eventId_ = value;
-        onChanged();
         return this;
       }
 
@@ -5262,12 +4909,6 @@ public final class TicketRequestOuterClass {
      */
     com.google.protobuf.ByteString
         getIdBytes();
-
-    /**
-     * <code>bool banker = 2;</code>
-     * @return The banker.
-     */
-    boolean getBanker();
   }
   /**
    * Protobuf type {@code ots.BetSelection}
@@ -5319,11 +4960,6 @@ public final class TicketRequestOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
-              break;
-            }
-            case 16: {
-
-              banker_ = input.readBool();
               break;
             }
             default: {
@@ -5396,17 +5032,6 @@ public final class TicketRequestOuterClass {
       }
     }
 
-    public static final int BANKER_FIELD_NUMBER = 2;
-    private boolean banker_;
-    /**
-     * <code>bool banker = 2;</code>
-     * @return The banker.
-     */
-    @java.lang.Override
-    public boolean getBanker() {
-      return banker_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5424,9 +5049,6 @@ public final class TicketRequestOuterClass {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (banker_ != false) {
-        output.writeBool(2, banker_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5438,10 +5060,6 @@ public final class TicketRequestOuterClass {
       size = 0;
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-      }
-      if (banker_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, banker_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5460,8 +5078,6 @@ public final class TicketRequestOuterClass {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (getBanker()
-          != other.getBanker()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5475,9 +5091,6 @@ public final class TicketRequestOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + BANKER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBanker());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5613,8 +5226,6 @@ public final class TicketRequestOuterClass {
         super.clear();
         id_ = "";
 
-        banker_ = false;
-
         return this;
       }
 
@@ -5642,7 +5253,6 @@ public final class TicketRequestOuterClass {
       public com.oddin.ots.TicketRequestOuterClass.BetSelection buildPartial() {
         com.oddin.ots.TicketRequestOuterClass.BetSelection result = new com.oddin.ots.TicketRequestOuterClass.BetSelection(this);
         result.id_ = id_;
-        result.banker_ = banker_;
         onBuilt();
         return result;
       }
@@ -5694,9 +5304,6 @@ public final class TicketRequestOuterClass {
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
-        }
-        if (other.getBanker() != false) {
-          setBanker(other.getBanker());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5799,37 +5406,6 @@ public final class TicketRequestOuterClass {
   checkByteStringIsUtf8(value);
         
         id_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean banker_ ;
-      /**
-       * <code>bool banker = 2;</code>
-       * @return The banker.
-       */
-      @java.lang.Override
-      public boolean getBanker() {
-        return banker_;
-      }
-      /**
-       * <code>bool banker = 2;</code>
-       * @param value The banker to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBanker(boolean value) {
-        
-        banker_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool banker = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBanker() {
-        
-        banker_ = false;
         onChanged();
         return this;
       }
@@ -9506,42 +9082,40 @@ public final class TicketRequestOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ots/ticket_request.proto\022\003ots\032\036google/" +
       "protobuf/wrappers.proto\032\037google/protobuf" +
-      "/timestamp.proto\032\024ots/enum/enums.proto\"\363" +
+      "/timestamp.proto\032\024ots/enum/enums.proto\"\265" +
       "\003\n\rTicketRequest\022\n\n\002id\030\001 \001(\t\022-\n\ttimestam" +
       "p\030\002 \001(\0132\032.google.protobuf.Timestamp\022\026\n\004b" +
       "ets\030\003 \003(\0132\010.ots.Bet\0227\n\022accept_odds_chang" +
       "e\030\004 \001(\0162\033.ots.enums.AcceptOddsChange\0228\n\022" +
       "total_combinations\030\005 \001(\0132\034.google.protob" +
       "uf.UInt32Value\022+\n\010bet_info\030\006 \001(\0132\031.ots.T" +
-      "icketRequestBetInfo\022<\n\030last_match_end_ti" +
-      "mestamp\030\007 \001(\0132\032.google.protobuf.Timestam" +
-      "p\0220\n\nreoffer_id\030\010 \001(\0132\034.google.protobuf." +
-      "StringValue\0226\n\nselections\030\t \003(\0132\".ots.Ti" +
-      "cketRequest.SelectionsEntry\032G\n\017Selection" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.ots" +
-      ".TicketSelection:\0028\001\"\207\002\n\003Bet\022(\n\002id\030\001 \001(\013" +
-      "2\034.google.protobuf.StringValue\022\034\n\005bonus\030" +
-      "\002 \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r.ot" +
-      "s.BetStake\0220\n\nreoffer_id\030\004 \001(\0132\034.google." +
-      "protobuf.StringValue\0220\n\ntotal_wins\030\005 \001(\013" +
-      "2\034.google.protobuf.UInt64Value\022\017\n\007system" +
-      "s\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots.BetSel" +
-      "ection\"=\n\017TicketSelection\022\020\n\010event_id\030\001 " +
-      "\001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004odds\030\003 \001(\004\"*\n\014BetSele" +
-      "ction\022\n\n\002id\030\001 \001(\t\022\016\n\006banker\030\002 \001(\010\"@\n\010Bet" +
-      "Stake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots" +
-      ".enums.BetStakeType\"g\n\010BetBonus\022\r\n\005value" +
-      "\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetBonu" +
-      "sType\022%\n\004mode\030\003 \001(\0162\027.ots.enums.BetBonus" +
-      "Mode\"\253\001\n\024TicketRequestBetInfo\0221\n\013locatio" +
-      "n_id\030\001 \001(\0132\034.google.protobuf.StringValue" +
-      "\022*\n\013bet_channel\030\002 \001(\0162\025.ots.enums.BetCha" +
-      "nnel\022\020\n\010currency\030\003 \001(\t\022\"\n\010customer\030\004 \001(\013" +
-      "2\020.ots.BetCustomer\"\206\001\n\013BetCustomer\022\n\n\002id" +
-      "\030\001 \001(\t\022(\n\002ip\030\002 \001(\0132\034.google.protobuf.Str" +
-      "ingValue\022/\n\tdevice_id\030\003 \001(\0132\034.google.pro" +
-      "tobuf.StringValue\022\020\n\010language\030\004 \001(\tB\035\n\rc" +
-      "om.oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "icketRequestBetInfo\0220\n\nreoffer_id\030\010 \001(\0132" +
+      "\034.google.protobuf.StringValue\0226\n\nselecti" +
+      "ons\030\t \003(\0132\".ots.TicketRequest.Selections" +
+      "Entry\032G\n\017SelectionsEntry\022\013\n\003key\030\001 \001(\t\022#\n" +
+      "\005value\030\002 \001(\0132\024.ots.TicketSelection:\0028\001\"\207" +
+      "\002\n\003Bet\022(\n\002id\030\001 \001(\0132\034.google.protobuf.Str" +
+      "ingValue\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034" +
+      "\n\005stake\030\003 \001(\0132\r.ots.BetStake\0220\n\nreoffer_" +
+      "id\030\004 \001(\0132\034.google.protobuf.StringValue\0220" +
+      "\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf.UIn" +
+      "t64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselections\030" +
+      "\007 \003(\0132\021.ots.BetSelection\"+\n\017TicketSelect" +
+      "ion\022\n\n\002id\030\002 \001(\t\022\014\n\004odds\030\003 \001(\004\"\032\n\014BetSele" +
+      "ction\022\n\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001" +
+      " \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeT" +
+      "ype\"g\n\010BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002" +
+      " \001(\0162\027.ots.enums.BetBonusType\022%\n\004mode\030\003 " +
+      "\001(\0162\027.ots.enums.BetBonusMode\"\253\001\n\024TicketR" +
+      "equestBetInfo\0221\n\013location_id\030\001 \001(\0132\034.goo" +
+      "gle.protobuf.StringValue\022*\n\013bet_channel\030" +
+      "\002 \001(\0162\025.ots.enums.BetChannel\022\020\n\010currency" +
+      "\030\003 \001(\t\022\"\n\010customer\030\004 \001(\0132\020.ots.BetCustom" +
+      "er\"\206\001\n\013BetCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001" +
+      "(\0132\034.google.protobuf.StringValue\022/\n\tdevi" +
+      "ce_id\030\003 \001(\0132\034.google.protobuf.StringValu" +
+      "e\022\020\n\010language\030\004 \001(\tB\035\n\rcom.oddin.otsZ\014od" +
+      "din.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9555,7 +9129,7 @@ public final class TicketRequestOuterClass {
     internal_static_ots_TicketRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketRequest_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "BetInfo", "LastMatchEndTimestamp", "ReofferId", "Selections", });
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "BetInfo", "ReofferId", "Selections", });
     internal_static_ots_TicketRequest_SelectionsEntry_descriptor =
       internal_static_ots_TicketRequest_descriptor.getNestedTypes().get(0);
     internal_static_ots_TicketRequest_SelectionsEntry_fieldAccessorTable = new
@@ -9573,13 +9147,13 @@ public final class TicketRequestOuterClass {
     internal_static_ots_TicketSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketSelection_descriptor,
-        new java.lang.String[] { "EventId", "Id", "Odds", });
+        new java.lang.String[] { "Id", "Odds", });
     internal_static_ots_BetSelection_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ots_BetSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetSelection_descriptor,
-        new java.lang.String[] { "Id", "Banker", });
+        new java.lang.String[] { "Id", });
     internal_static_ots_BetStake_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ots_BetStake_fieldAccessorTable = new

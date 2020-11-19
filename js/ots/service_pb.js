@@ -18,8 +18,6 @@ var ots_ticket_response_pb = require('../ots/ticket_response_pb.js');
 goog.object.extend(proto, ots_ticket_response_pb);
 var ots_ticket_cancel_pb = require('../ots/ticket_cancel_pb.js');
 goog.object.extend(proto, ots_ticket_cancel_pb);
-var ots_ticket_max_stake_pb = require('../ots/ticket_max_stake_pb.js');
-goog.object.extend(proto, ots_ticket_max_stake_pb);
 var ots_player_risk_score_pb = require('../ots/player_risk_score_pb.js');
 goog.object.extend(proto, ots_player_risk_score_pb);
 var ots_resolve_foreign_events_in_ticket_pb = require('../ots/resolve_foreign_events_in_ticket_pb.js');

@@ -8,7 +8,6 @@ option java_package = "com.oddin.ots";
 import "ots/ticket_request.proto";
 import "ots/ticket_response.proto";
 import "ots/ticket_cancel.proto";
-import "ots/ticket_max_stake.proto";
 import "ots/player_risk_score.proto";
 import "ots/resolve_foreign_events_in_ticket.proto";
 import "ots/ticket_ack.proto";
@@ -18,7 +17,6 @@ service ots {
   rpc Ticket (TicketRequest) returns (TicketResponse);
   rpc ResolveForeignMatchesInTicket(ResolveForeignEventsInTicketRequest) returns (ResolveForeignEventsInTicketResponse);
   rpc CancelTicket (TicketCancelRequest) returns (TicketCancelResponse);
-  rpc TicketMaxStake (TicketMaxStakeRequest) returns (TicketMaxStakeResponse);
   rpc PlayerRiskScore(PlayerRiskScoreRequest) returns (PlayerRiskScoreResponse);
   rpc TicketAck (TicketAckRequest) returns (google.protobuf.Empty);
 }

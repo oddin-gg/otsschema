@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums\"0\n\x0fRejectionReason\x12\x0c\n\x04\x63ode\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t*.\n\x10\x41\x63\x63\x65ptanceStatus\x12\x0c\n\x08REJECTED\x10\x00\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x01*.\n\x0c\x43\x61ncelStatus\x12\x10\n\x0cNOT_CANCELED\x10\x00\x12\x0c\n\x08\x43\x41NCELED\x10\x01*{\n\x0c\x43\x61ncelReason\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0eTICKET_TIMEOUT\x10\x01\x12\x10\n\x0cWRONG_TICKET\x10\x02\x12\x13\n\x0fTECHNICAL_ISSUE\x10\x03\x12\x14\n\x10UNEXPECTED_ISSUE\x10\x04\x12\r\n\tREGULATOR\x10\x05*!\n\x0c\x42\x65tStakeType\x12\x07\n\x03SUM\x10\x00\x12\x08\n\x04UNIT\x10\x01*1\n\x10\x41\x63\x63\x65ptOddsChange\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03\x41NY\x10\x01\x12\n\n\x06HIGHER\x10\x02*\x8f\x01\n\nBetChannel\x12\x11\n\rNOT_SPECIFIED\x10\x00\x12\x0c\n\x08INTERNET\x10\x01\x12\n\n\x06RETAIL\x10\x02\x12\x0c\n\x08TERMINAL\x10\x03\x12\n\n\x06MOBILE\x10\x04\x12\t\n\x05PHONE\x10\x05\x12\x07\n\x03SMS\x10\x06\x12\x0f\n\x0b\x43\x41LL_CENTRE\x10\x07\x12\n\n\x06TV_APP\x10\x08\x12\t\n\x05\x41GENT\x10\t*\x19\n\x0c\x42\x65tBonusType\x12\t\n\x05TOTAL\x10\x00*\x17\n\x0c\x42\x65tBonusMode\x12\x07\n\x03\x41LL\x10\x00*n\n\x15\x43\x61ncelRejectionReason\x12\r\n\tNOT_KNOWN\x10\x00\x12\x14\n\x10TICKET_NOT_FOUND\x10\x01\x12\x10\n\x0cTIME_EXPIRED\x10\x02\x12\x13\n\x0f\x41LREADY_SETTLED\x10\x03\x12\t\n\x05OTHER\x10\x04\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums\"\'\n\x06Reason\x12\x0c\n\x04\x63ode\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t*.\n\x10\x41\x63\x63\x65ptanceStatus\x12\x0c\n\x08REJECTED\x10\x00\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x01*.\n\x0c\x43\x61ncelStatus\x12\x10\n\x0cNOT_CANCELED\x10\x00\x12\x0c\n\x08\x43\x41NCELED\x10\x01*{\n\x0c\x43\x61ncelReason\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0eTICKET_TIMEOUT\x10\x01\x12\x10\n\x0cWRONG_TICKET\x10\x02\x12\x13\n\x0fTECHNICAL_ISSUE\x10\x03\x12\x14\n\x10UNEXPECTED_ISSUE\x10\x04\x12\r\n\tREGULATOR\x10\x05*!\n\x0c\x42\x65tStakeType\x12\x07\n\x03SUM\x10\x00\x12\x08\n\x04UNIT\x10\x01*1\n\x10\x41\x63\x63\x65ptOddsChange\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03\x41NY\x10\x01\x12\n\n\x06HIGHER\x10\x02*\x8f\x01\n\nBetChannel\x12\x11\n\rNOT_SPECIFIED\x10\x00\x12\x0c\n\x08INTERNET\x10\x01\x12\n\n\x06RETAIL\x10\x02\x12\x0c\n\x08TERMINAL\x10\x03\x12\n\n\x06MOBILE\x10\x04\x12\t\n\x05PHONE\x10\x05\x12\x07\n\x03SMS\x10\x06\x12\x0f\n\x0b\x43\x41LL_CENTRE\x10\x07\x12\n\n\x06TV_APP\x10\x08\x12\t\n\x05\x41GENT\x10\t*\x19\n\x0c\x42\x65tBonusType\x12\t\n\x05TOTAL\x10\x00*\x17\n\x0c\x42\x65tBonusMode\x12\x07\n\x03\x41LL\x10\x00\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
 )
 
 _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=85,
-  serialized_end=131,
+  serialized_start=76,
+  serialized_end=122,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTANCESTATUS)
 
@@ -69,8 +69,8 @@ _CANCELSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=133,
-  serialized_end=179,
+  serialized_start=124,
+  serialized_end=170,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELSTATUS)
 
@@ -115,8 +115,8 @@ _CANCELREASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=181,
-  serialized_end=304,
+  serialized_start=172,
+  serialized_end=295,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELREASON)
 
@@ -141,8 +141,8 @@ _BETSTAKETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=306,
-  serialized_end=339,
+  serialized_start=297,
+  serialized_end=330,
 )
 _sym_db.RegisterEnumDescriptor(_BETSTAKETYPE)
 
@@ -172,8 +172,8 @@ _ACCEPTODDSCHANGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=341,
-  serialized_end=390,
+  serialized_start=332,
+  serialized_end=381,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTODDSCHANGE)
 
@@ -238,8 +238,8 @@ _BETCHANNEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=393,
-  serialized_end=536,
+  serialized_start=384,
+  serialized_end=527,
 )
 _sym_db.RegisterEnumDescriptor(_BETCHANNEL)
 
@@ -259,8 +259,8 @@ _BETBONUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=538,
-  serialized_end=563,
+  serialized_start=529,
+  serialized_end=554,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSTYPE)
 
@@ -280,53 +280,12 @@ _BETBONUSMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=565,
-  serialized_end=588,
+  serialized_start=556,
+  serialized_end=579,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSMODE)
 
 BetBonusMode = enum_type_wrapper.EnumTypeWrapper(_BETBONUSMODE)
-_CANCELREJECTIONREASON = _descriptor.EnumDescriptor(
-  name='CancelRejectionReason',
-  full_name='ots.enums.CancelRejectionReason',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='NOT_KNOWN', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='TICKET_NOT_FOUND', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='TIME_EXPIRED', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ALREADY_SETTLED', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='OTHER', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=590,
-  serialized_end=700,
-)
-_sym_db.RegisterEnumDescriptor(_CANCELREJECTIONREASON)
-
-CancelRejectionReason = enum_type_wrapper.EnumTypeWrapper(_CANCELREJECTIONREASON)
 REJECTED = 0
 ACCEPTED = 1
 NOT_CANCELED = 0
@@ -354,31 +313,26 @@ TV_APP = 8
 AGENT = 9
 TOTAL = 0
 ALL = 0
-NOT_KNOWN = 0
-TICKET_NOT_FOUND = 1
-TIME_EXPIRED = 2
-ALREADY_SETTLED = 3
-OTHER = 4
 
 
 
-_REJECTIONREASON = _descriptor.Descriptor(
-  name='RejectionReason',
-  full_name='ots.enums.RejectionReason',
+_REASON = _descriptor.Descriptor(
+  name='Reason',
+  full_name='ots.enums.Reason',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='ots.enums.RejectionReason.code', index=0,
+      name='code', full_name='ots.enums.Reason.code', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='message', full_name='ots.enums.RejectionReason.message', index=1,
+      name='message', full_name='ots.enums.Reason.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -397,10 +351,10 @@ _REJECTIONREASON = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=35,
-  serialized_end=83,
+  serialized_end=74,
 )
 
-DESCRIPTOR.message_types_by_name['RejectionReason'] = _REJECTIONREASON
+DESCRIPTOR.message_types_by_name['Reason'] = _REASON
 DESCRIPTOR.enum_types_by_name['AcceptanceStatus'] = _ACCEPTANCESTATUS
 DESCRIPTOR.enum_types_by_name['CancelStatus'] = _CANCELSTATUS
 DESCRIPTOR.enum_types_by_name['CancelReason'] = _CANCELREASON
@@ -409,15 +363,14 @@ DESCRIPTOR.enum_types_by_name['AcceptOddsChange'] = _ACCEPTODDSCHANGE
 DESCRIPTOR.enum_types_by_name['BetChannel'] = _BETCHANNEL
 DESCRIPTOR.enum_types_by_name['BetBonusType'] = _BETBONUSTYPE
 DESCRIPTOR.enum_types_by_name['BetBonusMode'] = _BETBONUSMODE
-DESCRIPTOR.enum_types_by_name['CancelRejectionReason'] = _CANCELREJECTIONREASON
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-RejectionReason = _reflection.GeneratedProtocolMessageType('RejectionReason', (_message.Message,), {
-  'DESCRIPTOR' : _REJECTIONREASON,
+Reason = _reflection.GeneratedProtocolMessageType('Reason', (_message.Message,), {
+  'DESCRIPTOR' : _REASON,
   '__module__' : 'ots.enum.enums_pb2'
-  # @@protoc_insertion_point(class_scope:ots.enums.RejectionReason)
+  # @@protoc_insertion_point(class_scope:ots.enums.Reason)
   })
-_sym_db.RegisterMessage(RejectionReason)
+_sym_db.RegisterMessage(Reason)
 
 
 DESCRIPTOR._options = None

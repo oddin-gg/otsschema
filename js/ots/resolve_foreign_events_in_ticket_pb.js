@@ -92,7 +92,7 @@ proto.ots.ResolveForeignEventsInTicketRequest.prototype.toObject = function(opt_
  */
 proto.ots.ResolveForeignEventsInTicketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     foreignStake: jspb.Message.getFieldWithDefault(msg, 3, 0),
     timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -133,7 +133,7 @@ proto.ots.ResolveForeignEventsInTicketRequest.deserializeBinaryFromReader = func
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTicketId(value);
+      msg.setId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
@@ -173,7 +173,7 @@ proto.ots.ResolveForeignEventsInTicketRequest.prototype.serializeBinary = functi
  */
 proto.ots.ResolveForeignEventsInTicketRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTicketId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -199,10 +199,10 @@ proto.ots.ResolveForeignEventsInTicketRequest.serializeBinaryToWriter = function
 
 
 /**
- * optional string ticket_id = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.ots.ResolveForeignEventsInTicketRequest.prototype.getTicketId = function() {
+proto.ots.ResolveForeignEventsInTicketRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -211,7 +211,7 @@ proto.ots.ResolveForeignEventsInTicketRequest.prototype.getTicketId = function()
  * @param {string} value
  * @return {!proto.ots.ResolveForeignEventsInTicketRequest} returns this
  */
-proto.ots.ResolveForeignEventsInTicketRequest.prototype.setTicketId = function(value) {
+proto.ots.ResolveForeignEventsInTicketRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -304,7 +304,7 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.toObject = function(opt
 proto.ots.ResolveForeignEventsInTicketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    rejectionReason: (f = msg.getRejectionReason()) && ots_enum_enums_pb.RejectionReason.toObject(includeInstance, f)
+    reason: (f = msg.getReason()) && ots_enum_enums_pb.Reason.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -346,9 +346,9 @@ proto.ots.ResolveForeignEventsInTicketResponse.deserializeBinaryFromReader = fun
       msg.setStatus(value);
       break;
     case 2:
-      var value = new ots_enum_enums_pb.RejectionReason;
-      reader.readMessage(value,ots_enum_enums_pb.RejectionReason.deserializeBinaryFromReader);
-      msg.setRejectionReason(value);
+      var value = new ots_enum_enums_pb.Reason;
+      reader.readMessage(value,ots_enum_enums_pb.Reason.deserializeBinaryFromReader);
+      msg.setReason(value);
       break;
     default:
       reader.skipField();
@@ -386,12 +386,12 @@ proto.ots.ResolveForeignEventsInTicketResponse.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getRejectionReason();
+  f = message.getReason();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      ots_enum_enums_pb.RejectionReason.serializeBinaryToWriter
+      ots_enum_enums_pb.Reason.serializeBinaryToWriter
     );
   }
 };
@@ -416,20 +416,20 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.setStatus = function(va
 
 
 /**
- * optional enums.RejectionReason rejection_reason = 2;
- * @return {?proto.ots.enums.RejectionReason}
+ * optional enums.Reason reason = 2;
+ * @return {?proto.ots.enums.Reason}
  */
-proto.ots.ResolveForeignEventsInTicketResponse.prototype.getRejectionReason = function() {
-  return /** @type{?proto.ots.enums.RejectionReason} */ (
-    jspb.Message.getWrapperField(this, ots_enum_enums_pb.RejectionReason, 2));
+proto.ots.ResolveForeignEventsInTicketResponse.prototype.getReason = function() {
+  return /** @type{?proto.ots.enums.Reason} */ (
+    jspb.Message.getWrapperField(this, ots_enum_enums_pb.Reason, 2));
 };
 
 
 /**
- * @param {?proto.ots.enums.RejectionReason|undefined} value
+ * @param {?proto.ots.enums.Reason|undefined} value
  * @return {!proto.ots.ResolveForeignEventsInTicketResponse} returns this
 */
-proto.ots.ResolveForeignEventsInTicketResponse.prototype.setRejectionReason = function(value) {
+proto.ots.ResolveForeignEventsInTicketResponse.prototype.setReason = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -438,8 +438,8 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.setRejectionReason = fu
  * Clears the message field making it undefined.
  * @return {!proto.ots.ResolveForeignEventsInTicketResponse} returns this
  */
-proto.ots.ResolveForeignEventsInTicketResponse.prototype.clearRejectionReason = function() {
-  return this.setRejectionReason(undefined);
+proto.ots.ResolveForeignEventsInTicketResponse.prototype.clearReason = function() {
+  return this.setReason(undefined);
 };
 
 
@@ -447,7 +447,7 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.clearRejectionReason = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ots.ResolveForeignEventsInTicketResponse.prototype.hasRejectionReason = function() {
+proto.ots.ResolveForeignEventsInTicketResponse.prototype.hasReason = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

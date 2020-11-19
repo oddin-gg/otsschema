@@ -6,8 +6,8 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as ots_enum_enums_pb from "../ots/enum/enums_pb";
 
 export class TicketAckRequest extends jspb.Message {
-  getTicketid(): string;
-  setTicketid(value: string): void;
+  getId(): string;
+  setId(value: string): void;
 
   hasTimestamp(): boolean;
   clearTimestamp(): void;
@@ -17,10 +17,10 @@ export class TicketAckRequest extends jspb.Message {
   getAcceptanceStatus(): ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap];
   setAcceptanceStatus(value: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap]): void;
 
-  hasRejectionReason(): boolean;
-  clearRejectionReason(): void;
-  getRejectionReason(): ots_enum_enums_pb.RejectionReason | undefined;
-  setRejectionReason(value?: ots_enum_enums_pb.RejectionReason): void;
+  hasReason(): boolean;
+  clearReason(): void;
+  getReason(): ots_enum_enums_pb.Reason | undefined;
+  setReason(value?: ots_enum_enums_pb.Reason): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAckRequest.AsObject;
@@ -34,10 +34,10 @@ export class TicketAckRequest extends jspb.Message {
 
 export namespace TicketAckRequest {
   export type AsObject = {
-    ticketid: string,
+    id: string,
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     acceptanceStatus: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    rejectionReason?: ots_enum_enums_pb.RejectionReason.AsObject,
+    reason?: ots_enum_enums_pb.Reason.AsObject,
   }
 }
 

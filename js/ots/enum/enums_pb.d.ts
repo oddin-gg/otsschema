@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 
-export class RejectionReason extends jspb.Message {
+export class Reason extends jspb.Message {
   getCode(): number;
   setCode(value: number): void;
 
@@ -11,16 +11,16 @@ export class RejectionReason extends jspb.Message {
   setMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RejectionReason.AsObject;
-  static toObject(includeInstance: boolean, msg: RejectionReason): RejectionReason.AsObject;
+  toObject(includeInstance?: boolean): Reason.AsObject;
+  static toObject(includeInstance: boolean, msg: Reason): Reason.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RejectionReason, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RejectionReason;
-  static deserializeBinaryFromReader(message: RejectionReason, reader: jspb.BinaryReader): RejectionReason;
+  static serializeBinaryToWriter(message: Reason, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Reason;
+  static deserializeBinaryFromReader(message: Reason, reader: jspb.BinaryReader): Reason;
 }
 
-export namespace RejectionReason {
+export namespace Reason {
   export type AsObject = {
     code: number,
     message: string,
@@ -93,14 +93,4 @@ export interface BetBonusModeMap {
 }
 
 export const BetBonusMode: BetBonusModeMap;
-
-export interface CancelRejectionReasonMap {
-  NOT_KNOWN: 0;
-  TICKET_NOT_FOUND: 1;
-  TIME_EXPIRED: 2;
-  ALREADY_SETTLED: 3;
-  OTHER: 4;
-}
-
-export const CancelRejectionReason: CancelRejectionReasonMap;
 
