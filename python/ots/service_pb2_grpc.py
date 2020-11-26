@@ -20,7 +20,7 @@ class otsStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Ticket = channel.unary_unary(
+        self.Ticket = channel.stream_stream(
                 '/ots.ots/Ticket',
                 request_serializer=ots_dot_ticket__request__pb2.TicketRequest.SerializeToString,
                 response_deserializer=ots_dot_ticket__response__pb2.TicketResponse.FromString,
@@ -50,7 +50,7 @@ class otsStub(object):
 class otsServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Ticket(self, request, context):
+    def Ticket(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -83,7 +83,7 @@ class otsServicer(object):
 
 def add_otsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Ticket': grpc.unary_unary_rpc_method_handler(
+            'Ticket': grpc.stream_stream_rpc_method_handler(
                     servicer.Ticket,
                     request_deserializer=ots_dot_ticket__request__pb2.TicketRequest.FromString,
                     response_serializer=ots_dot_ticket__response__pb2.TicketResponse.SerializeToString,
@@ -119,7 +119,7 @@ class ots(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Ticket(request,
+    def Ticket(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -129,7 +129,7 @@ class ots(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ots.ots/Ticket',
+        return grpc.experimental.stream_stream(request_iterator, target, '/ots.ots/Ticket',
             ots_dot_ticket__request__pb2.TicketRequest.SerializeToString,
             ots_dot_ticket__response__pb2.TicketResponse.FromString,
             options, channel_credentials,

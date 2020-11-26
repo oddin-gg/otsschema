@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11ots/service.proto\x12\x03ots\x1a\x18ots/ticket_request.proto\x1a\x19ots/ticket_response.proto\x1a\x17ots/ticket_cancel.proto\x1a\x1bots/player_risk_score.proto\x1a*ots/resolve_foreign_events_in_ticket.proto\x1a\x14ots/ticket_ack.proto\x1a\x1bgoogle/protobuf/empty.proto2\xfd\x02\n\x03ots\x12\x31\n\x06Ticket\x12\x12.ots.TicketRequest\x1a\x13.ots.TicketResponse\x12t\n\x1dResolveForeignMatchesInTicket\x12(.ots.ResolveForeignEventsInTicketRequest\x1a).ots.ResolveForeignEventsInTicketResponse\x12\x43\n\x0c\x43\x61ncelTicket\x12\x18.ots.TicketCancelRequest\x1a\x19.ots.TicketCancelResponse\x12L\n\x0fPlayerRiskScore\x12\x1b.ots.PlayerRiskScoreRequest\x1a\x1c.ots.PlayerRiskScoreResponse\x12:\n\tTicketAck\x12\x15.ots.TicketAckRequest\x1a\x16.google.protobuf.EmptyB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x11ots/service.proto\x12\x03ots\x1a\x18ots/ticket_request.proto\x1a\x19ots/ticket_response.proto\x1a\x17ots/ticket_cancel.proto\x1a\x1bots/player_risk_score.proto\x1a*ots/resolve_foreign_events_in_ticket.proto\x1a\x14ots/ticket_ack.proto\x1a\x1bgoogle/protobuf/empty.proto2\x81\x03\n\x03ots\x12\x35\n\x06Ticket\x12\x12.ots.TicketRequest\x1a\x13.ots.TicketResponse(\x01\x30\x01\x12t\n\x1dResolveForeignMatchesInTicket\x12(.ots.ResolveForeignEventsInTicketRequest\x1a).ots.ResolveForeignEventsInTicketResponse\x12\x43\n\x0c\x43\x61ncelTicket\x12\x18.ots.TicketCancelRequest\x1a\x19.ots.TicketCancelResponse\x12L\n\x0fPlayerRiskScore\x12\x1b.ots.PlayerRiskScoreRequest\x1a\x1c.ots.PlayerRiskScoreResponse\x12:\n\tTicketAck\x12\x15.ots.TicketAckRequest\x1a\x16.google.protobuf.EmptyB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[ots_dot_ticket__request__pb2.DESCRIPTOR,ots_dot_ticket__response__pb2.DESCRIPTOR,ots_dot_ticket__cancel__pb2.DESCRIPTOR,ots_dot_player__risk__score__pb2.DESCRIPTOR,ots_dot_resolve__foreign__events__in__ticket__pb2.DESCRIPTOR,ots_dot_ticket__ack__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -45,7 +45,7 @@ _OTS = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=229,
-  serialized_end=610,
+  serialized_end=614,
   methods=[
   _descriptor.MethodDescriptor(
     name='Ticket',

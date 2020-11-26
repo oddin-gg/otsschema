@@ -34,7 +34,7 @@ public final class otsGrpc {
       fullMethodName = SERVICE_NAME + '/' + "Ticket",
       requestType = com.oddin.ots.TicketRequestOuterClass.TicketRequest.class,
       responseType = com.oddin.ots.TicketResponseOuterClass.TicketResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<com.oddin.ots.TicketRequestOuterClass.TicketRequest,
       com.oddin.ots.TicketResponseOuterClass.TicketResponse> getTicketMethod() {
     io.grpc.MethodDescriptor<com.oddin.ots.TicketRequestOuterClass.TicketRequest, com.oddin.ots.TicketResponseOuterClass.TicketResponse> getTicketMethod;
@@ -43,7 +43,7 @@ public final class otsGrpc {
         if ((getTicketMethod = otsGrpc.getTicketMethod) == null) {
           otsGrpc.getTicketMethod = getTicketMethod =
               io.grpc.MethodDescriptor.<com.oddin.ots.TicketRequestOuterClass.TicketRequest, com.oddin.ots.TicketResponseOuterClass.TicketResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Ticket"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -232,9 +232,9 @@ public final class otsGrpc {
 
     /**
      */
-    public void ticket(com.oddin.ots.TicketRequestOuterClass.TicketRequest request,
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketRequestOuterClass.TicketRequest> ticket(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketResponseOuterClass.TicketResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTicketMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getTicketMethod(), responseObserver);
     }
 
     /**
@@ -269,7 +269,7 @@ public final class otsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getTicketMethod(),
-            asyncUnaryCall(
+            asyncBidiStreamingCall(
               new MethodHandlers<
                 com.oddin.ots.TicketRequestOuterClass.TicketRequest,
                 com.oddin.ots.TicketResponseOuterClass.TicketResponse>(
@@ -322,10 +322,10 @@ public final class otsGrpc {
 
     /**
      */
-    public void ticket(com.oddin.ots.TicketRequestOuterClass.TicketRequest request,
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketRequestOuterClass.TicketRequest> ticket(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketResponseOuterClass.TicketResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getTicketMethod(), getCallOptions()), request, responseObserver);
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getTicketMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -377,13 +377,6 @@ public final class otsGrpc {
 
     /**
      */
-    public com.oddin.ots.TicketResponseOuterClass.TicketResponse ticket(com.oddin.ots.TicketRequestOuterClass.TicketRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getTicketMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse resolveForeignMatchesInTicket(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request) {
       return blockingUnaryCall(
           getChannel(), getResolveForeignMatchesInTicketMethod(), getCallOptions(), request);
@@ -427,14 +420,6 @@ public final class otsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketResponseOuterClass.TicketResponse> ticket(
-        com.oddin.ots.TicketRequestOuterClass.TicketRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getTicketMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse> resolveForeignMatchesInTicket(
         com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request) {
       return futureUnaryCall(
@@ -466,11 +451,11 @@ public final class otsGrpc {
     }
   }
 
-  private static final int METHODID_TICKET = 0;
-  private static final int METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET = 1;
-  private static final int METHODID_CANCEL_TICKET = 2;
-  private static final int METHODID_PLAYER_RISK_SCORE = 3;
-  private static final int METHODID_TICKET_ACK = 4;
+  private static final int METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET = 0;
+  private static final int METHODID_CANCEL_TICKET = 1;
+  private static final int METHODID_PLAYER_RISK_SCORE = 2;
+  private static final int METHODID_TICKET_ACK = 3;
+  private static final int METHODID_TICKET = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -489,10 +474,6 @@ public final class otsGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_TICKET:
-          serviceImpl.ticket((com.oddin.ots.TicketRequestOuterClass.TicketRequest) request,
-              (io.grpc.stub.StreamObserver<com.oddin.ots.TicketResponseOuterClass.TicketResponse>) responseObserver);
-          break;
         case METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET:
           serviceImpl.resolveForeignMatchesInTicket((com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse>) responseObserver);
@@ -519,6 +500,9 @@ public final class otsGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_TICKET:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.ticket(
+              (io.grpc.stub.StreamObserver<com.oddin.ots.TicketResponseOuterClass.TicketResponse>) responseObserver);
         default:
           throw new AssertionError();
       }

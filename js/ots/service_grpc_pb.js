@@ -124,8 +124,8 @@ function deserialize_ots_TicketResponse(buffer_arg) {
 var otsService = exports.otsService = {
   ticket: {
     path: '/ots.ots/Ticket',
-    requestStream: false,
-    responseStream: false,
+    requestStream: true,
+    responseStream: true,
     requestType: ots_ticket_request_pb.TicketRequest,
     responseType: ots_ticket_response_pb.TicketResponse,
     requestSerialize: serialize_ots_TicketRequest,
