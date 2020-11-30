@@ -6,58 +6,99 @@ option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
 enum AcceptanceStatus {
-  REJECTED = 0;
-  ACCEPTED = 1;
+  // Not a valid value. Used for blocking 0 as invalid state.
+  ACCEPTANCE_STATUS_UNSPECIFIED = 0;
+  ACCEPTANCE_STATUS_REJECTED = 1;
+  ACCEPTANCE_STATUS_ACCEPTED = 2;
 }
 
 enum CancelStatus {
-  NOT_CANCELED = 0;
-  CANCELED = 1;
-}
-
-message Reason {
-  uint32 code = 1;
-  string message = 2;
+  // Not a valid value. Used for blocking 0 as invalid state.
+  CANCEL_STATUS_UNSPECIFIED = 0;
+  CANCEL_STATUS_NOT_CANCELED = 1;
+  CANCEL_STATUS_CANCELED = 2;
 }
 
 enum CancelReason {
-  UNKNOWN = 0;
-  TICKET_TIMEOUT = 1;
-  WRONG_TICKET = 2;
-  TECHNICAL_ISSUE = 3;
-  UNEXPECTED_ISSUE = 4;
-  REGULATOR = 5;
+  // Not a valid reason. Used for blocking 0 as invalid state.
+  CANCEL_REASON_UNSPECIFIED = 0;
+
+  // Please use this code if a ticket response was not received within a given time.
+  CANCEL_REASON_TICKET_TIMEOUT = 1;
+
+  // Should be used in case the ticket information was wrong and the client will send the corrected ticket in future.
+  CANCEL_REASON_WRONG_TICKET = 2;
+
+  // Clients should use this if they discover a technical issue,
+  // correct it and now need to cancel tickets affected by technical issues.
+  CANCEL_REASON_TECHNICAL_ISSUE = 3;
+
+  // Should be used in case none of the above codes works.
+  CANCEL_REASON_UNEXPECTED_ISSUE = 4;
+
+  // Regulator requested to cancel the ticket.
+  CANCEL_REASON_REGULATOR = 5;
+}
+
+enum CancelRejectionReason {
+  // Not a valid reason. Used for blocking 0 as invalid state.
+  CANCEL_REJECT_REASON_UNSPECIFIED = 0;
+
+  // Ticket was not found in OTS system.
+  CANCEL_REJECT_REASON_TICKET_NOT_FOUND = 1;
+
+  // Time for receiving ticket cancellation has passed.
+  CANCEL_REJECT_REASON_TIME_EXPIRED = 2;
+
+  // Ticket is already settled and cannot be canceled.
+  CANCEL_REJECT_REASON_ALREADY_SETTLED = 3;
+
+  // Reason is not specified. More info should be contained in the message field.
+  CANCEL_REJECT_REASON_OTHER = 4;
 }
 
 enum BetStakeType {
-  SUM = 0;
-  UNIT = 1;
+  // Not a valid type. Used for blocking 0 as invalid state.
+  BET_STAKE_TYPE_UNSPECIFIED = 0;
+  BET_STAKE_TYPE_SUM = 1;
+  BET_STAKE_TYPE_UNIT = 2;
 }
-
 
 enum AcceptOddsChange {
-  NONE = 0;
-  ANY = 1;
-  HIGHER = 2;
+  // Not a valid value. Used for blocking 0 as invalid state.
+  ACCEPT_ODDS_CHANGE_UNSPECIFIED = 0;
+  ACCEPT_ODDS_CHANGE_NONE = 1;
+  ACCEPT_ODDS_CHANGE_ANY = 2;
+  ACCEPT_ODDS_CHANGE_HIGHER = 3;
 }
 
-enum BetChannel {
-  NOT_SPECIFIED = 0;
-  INTERNET = 1;
-  RETAIL = 2;
-  TERMINAL = 3;
-  MOBILE = 4;
-  PHONE = 5;
-  SMS = 6;
-  CALL_CENTRE = 7;
-  TV_APP = 8;
-  AGENT = 9;
+enum TicketChannel {
+  // Not a valid value. Used for blocking 0 as invalid state.
+  TICKET_CHANNEL_UNSPECIFIED = 0;
+  TICKET_CHANNEL_INTERNET = 1;
+  TICKET_CHANNEL_RETAIL = 2;
+  TICKET_CHANNEL_TERMINAL = 3;
+  TICKET_CHANNEL_MOBILE = 4;
+  TICKET_CHANNEL_PHONE = 5;
+  TICKET_CHANNEL_SMS = 6;
+  TICKET_CHANNEL_CALL_CENTRE = 7;
+  TICKET_CHANNEL_TV_APP = 8;
+  TICKET_CHANNEL_AGENT = 9;
 }
 
 enum BetBonusType {
-  TOTAL = 0;
+  // Not a valid type. Used for blocking 0 as invalid state.
+  BET_BONUS_TYPE_UNSPECIFIED = 0;
+  BET_BONUS_TYPE_TOTAL = 1;
 }
 
 enum BetBonusMode {
-  ALL = 0;
+  // Not a valid mode. Used for blocking 0 as invalid state.
+  BET_BONUS_MODE_UNSPECIFIED = 0;
+  BET_BONUS_MODE_ALL = 1;
+}
+
+enum ReasonCode {
+  // Not a valid value. Used for blocking 0 as invalid state.
+  REASON_CODE_UNSPECIFIED = 0;
 }

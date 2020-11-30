@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from ots_schema.ots.enum import enums_pb2 as ots_dot_enum_dot_enums__pb2
+from ots_schema.ots import commons_pb2 as ots_dot_commons__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"w\n#ResolveForeignEventsInTicketRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"v\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12!\n\x06reason\x18\x02 \x01(\x0b\x32\x11.ots.enums.ReasonB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n*ots/resolve_foreign_events_in_ticket.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\x1a\x11ots/commons.proto\"w\n#ResolveForeignEventsInTicketRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x15\n\rforeign_stake\x18\x03 \x01(\x04\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"p\n$ResolveForeignEventsInTicketResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x1b\n\x06reason\x18\x02 \x01(\x0b\x32\x0b.ots.ReasonB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,ots_dot_commons__pb2.DESCRIPTOR,])
 
 
 
@@ -69,8 +70,8 @@ _RESOLVEFOREIGNEVENTSINTICKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=106,
-  serialized_end=225,
+  serialized_start=125,
+  serialized_end=244,
 )
 
 
@@ -108,13 +109,13 @@ _RESOLVEFOREIGNEVENTSINTICKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=227,
-  serialized_end=345,
+  serialized_start=246,
+  serialized_end=358,
 )
 
 _RESOLVEFOREIGNEVENTSINTICKETREQUEST.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['status'].enum_type = ots_dot_enum_dot_enums__pb2._ACCEPTANCESTATUS
-_RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['reason'].message_type = ots_dot_enum_dot_enums__pb2._REASON
+_RESOLVEFOREIGNEVENTSINTICKETRESPONSE.fields_by_name['reason'].message_type = ots_dot_commons__pb2._REASON
 DESCRIPTOR.message_types_by_name['ResolveForeignEventsInTicketRequest'] = _RESOLVEFOREIGNEVENTSINTICKETREQUEST
 DESCRIPTOR.message_types_by_name['ResolveForeignEventsInTicketResponse'] = _RESOLVEFOREIGNEVENTSINTICKETRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

@@ -7,14 +7,24 @@ option java_package = "com.oddin.ots";
 
 import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
+import "ots/commons.proto";
 
 message ResolveForeignEventsInTicketRequest {
-    string id = 1;
-    uint64 foreign_stake = 3;
-    google.protobuf.Timestamp timestamp = 4;
+  // Unique ticket id from the operator’s system.
+  string id = 1;
+
+  // Stake not handled by Oddin in the same currency as the previous ticket
+  // multiplied by 10 000 and rounded to a long value.
+  uint64 foreign_stake = 3;
+
+  // Timestamp of non Oddin settlement.
+  google.protobuf.Timestamp timestamp = 4;
 }
 
 message ResolveForeignEventsInTicketResponse {
-    enums.AcceptanceStatus status = 1;
-    enums.Reason reason = 2;
+  // Acceptance status - REJECTED or ACCEPTED
+  enums.AcceptanceStatus status = 1;
+
+  // Information about rejection/acception reason.
+  Reason reason = 2;
 }

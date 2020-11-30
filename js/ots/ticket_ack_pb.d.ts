@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as ots_enum_enums_pb from "../ots/enum/enums_pb";
+import * as ots_commons_pb from "../ots/commons_pb";
 
 export class TicketAckRequest extends jspb.Message {
   getId(): string;
@@ -19,8 +20,8 @@ export class TicketAckRequest extends jspb.Message {
 
   hasReason(): boolean;
   clearReason(): void;
-  getReason(): ots_enum_enums_pb.Reason | undefined;
-  setReason(value?: ots_enum_enums_pb.Reason): void;
+  getReason(): ots_commons_pb.Reason | undefined;
+  setReason(value?: ots_commons_pb.Reason): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAckRequest.AsObject;
@@ -37,7 +38,23 @@ export namespace TicketAckRequest {
     id: string,
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     acceptanceStatus: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    reason?: ots_enum_enums_pb.Reason.AsObject,
+    reason?: ots_commons_pb.Reason.AsObject,
+  }
+}
+
+export class TicketAckResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketAckResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketAckResponse): TicketAckResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketAckResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketAckResponse;
+  static deserializeBinaryFromReader(message: TicketAckResponse, reader: jspb.BinaryReader): TicketAckResponse;
+}
+
+export namespace TicketAckResponse {
+  export type AsObject = {
   }
 }
 

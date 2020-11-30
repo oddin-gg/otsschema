@@ -14,151 +14,24 @@ public final class TicketCancel {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code ots.CancelRejectionReason}
-   */
-  public enum CancelRejectionReason
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNKNOWN = 0;</code>
-     */
-    UNKNOWN(0),
-    /**
-     * <code>TICKET_NOT_FOUND = 1;</code>
-     */
-    TICKET_NOT_FOUND(1),
-    /**
-     * <code>TIME_EXPIRED = 2;</code>
-     */
-    TIME_EXPIRED(2),
-    /**
-     * <code>ALREADY_SETTLED = 3;</code>
-     */
-    ALREADY_SETTLED(3),
-    /**
-     * <code>OTHER = 4;</code>
-     */
-    OTHER(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNKNOWN = 0;</code>
-     */
-    public static final int UNKNOWN_VALUE = 0;
-    /**
-     * <code>TICKET_NOT_FOUND = 1;</code>
-     */
-    public static final int TICKET_NOT_FOUND_VALUE = 1;
-    /**
-     * <code>TIME_EXPIRED = 2;</code>
-     */
-    public static final int TIME_EXPIRED_VALUE = 2;
-    /**
-     * <code>ALREADY_SETTLED = 3;</code>
-     */
-    public static final int ALREADY_SETTLED_VALUE = 3;
-    /**
-     * <code>OTHER = 4;</code>
-     */
-    public static final int OTHER_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static CancelRejectionReason valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static CancelRejectionReason forNumber(int value) {
-      switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return TICKET_NOT_FOUND;
-        case 2: return TIME_EXPIRED;
-        case 3: return ALREADY_SETTLED;
-        case 4: return OTHER;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CancelRejectionReason> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>() {
-            public CancelRejectionReason findValueByNumber(int number) {
-              return CancelRejectionReason.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.oddin.ots.TicketCancel.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final CancelRejectionReason[] VALUES = values();
-
-    public static CancelRejectionReason valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private CancelRejectionReason(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:ots.CancelRejectionReason)
-  }
-
   public interface TicketCancelRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.TicketCancelRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -166,22 +39,38 @@ public final class TicketCancel {
         getIdBytes();
 
     /**
+     * <pre>
+     * Enum describing the reason for cancelling.
+     * </pre>
+     *
      * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelReason.
      */
     int getCancelReasonValue();
     /**
+     * <pre>
+     * Enum describing the reason for cancelling.
+     * </pre>
+     *
      * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
      * @return The cancelReason.
      */
     com.oddin.ots.Enums.CancelReason getCancelReason();
 
     /**
+     * <pre>
+     * Verbose description of the reason for cancelling the ticket.
+     * </pre>
+     *
      * <code>string cancel_reason_detail = 3;</code>
      * @return The cancelReasonDetail.
      */
     java.lang.String getCancelReasonDetail();
     /**
+     * <pre>
+     * Verbose description of the reason for cancelling the ticket.
+     * </pre>
+     *
      * <code>string cancel_reason_detail = 3;</code>
      * @return The bytes for cancelReasonDetail.
      */
@@ -189,45 +78,81 @@ public final class TicketCancel {
         getCancelReasonDetailBytes();
 
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return The timestamp.
      */
     com.google.protobuf.Timestamp getTimestamp();
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
 
     /**
+     * <pre>
+     * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+     * </pre>
+     *
      * <code>uint32 cancel_percent = 5;</code>
      * @return The cancelPercent.
      */
     int getCancelPercent();
 
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo> 
         getCancelBetInfoList();
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     com.oddin.ots.TicketCancel.CancelBetInfo getCancelBetInfo(int index);
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     int getCancelBetInfoCount();
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     java.util.List<? extends com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder> 
         getCancelBetInfoOrBuilderList();
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder getCancelBetInfoOrBuilder(
@@ -366,6 +291,10 @@ public final class TicketCancel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -383,6 +312,10 @@ public final class TicketCancel {
       }
     }
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -404,6 +337,10 @@ public final class TicketCancel {
     public static final int CANCEL_REASON_FIELD_NUMBER = 2;
     private int cancelReason_;
     /**
+     * <pre>
+     * Enum describing the reason for cancelling.
+     * </pre>
+     *
      * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelReason.
      */
@@ -411,6 +348,10 @@ public final class TicketCancel {
       return cancelReason_;
     }
     /**
+     * <pre>
+     * Enum describing the reason for cancelling.
+     * </pre>
+     *
      * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
      * @return The cancelReason.
      */
@@ -423,6 +364,10 @@ public final class TicketCancel {
     public static final int CANCEL_REASON_DETAIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object cancelReasonDetail_;
     /**
+     * <pre>
+     * Verbose description of the reason for cancelling the ticket.
+     * </pre>
+     *
      * <code>string cancel_reason_detail = 3;</code>
      * @return The cancelReasonDetail.
      */
@@ -440,6 +385,10 @@ public final class TicketCancel {
       }
     }
     /**
+     * <pre>
+     * Verbose description of the reason for cancelling the ticket.
+     * </pre>
+     *
      * <code>string cancel_reason_detail = 3;</code>
      * @return The bytes for cancelReasonDetail.
      */
@@ -461,6 +410,10 @@ public final class TicketCancel {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp timestamp_;
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return Whether the timestamp field is set.
      */
@@ -469,6 +422,10 @@ public final class TicketCancel {
       return timestamp_ != null;
     }
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return The timestamp.
      */
@@ -477,6 +434,10 @@ public final class TicketCancel {
       return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
+     * <pre>
+     * Timestamp of the ticket cancellation in UTC.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      */
     @java.lang.Override
@@ -487,6 +448,10 @@ public final class TicketCancel {
     public static final int CANCEL_PERCENT_FIELD_NUMBER = 5;
     private int cancelPercent_;
     /**
+     * <pre>
+     * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+     * </pre>
+     *
      * <code>uint32 cancel_percent = 5;</code>
      * @return The cancelPercent.
      */
@@ -498,6 +463,10 @@ public final class TicketCancel {
     public static final int CANCEL_BET_INFO_FIELD_NUMBER = 6;
     private java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo> cancelBetInfo_;
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     @java.lang.Override
@@ -505,6 +474,10 @@ public final class TicketCancel {
       return cancelBetInfo_;
     }
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     @java.lang.Override
@@ -513,6 +486,10 @@ public final class TicketCancel {
       return cancelBetInfo_;
     }
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     @java.lang.Override
@@ -520,6 +497,10 @@ public final class TicketCancel {
       return cancelBetInfo_.size();
     }
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     @java.lang.Override
@@ -527,6 +508,10 @@ public final class TicketCancel {
       return cancelBetInfo_.get(index);
     }
     /**
+     * <pre>
+     * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+     * </pre>
+     *
      * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
      */
     @java.lang.Override
@@ -552,7 +537,7 @@ public final class TicketCancel {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (cancelReason_ != com.oddin.ots.Enums.CancelReason.UNKNOWN.getNumber()) {
+      if (cancelReason_ != com.oddin.ots.Enums.CancelReason.CANCEL_REASON_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, cancelReason_);
       }
       if (!getCancelReasonDetailBytes().isEmpty()) {
@@ -579,7 +564,7 @@ public final class TicketCancel {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (cancelReason_ != com.oddin.ots.Enums.CancelReason.UNKNOWN.getNumber()) {
+      if (cancelReason_ != com.oddin.ots.Enums.CancelReason.CANCEL_REASON_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, cancelReason_);
       }
@@ -976,6 +961,10 @@ public final class TicketCancel {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -992,6 +981,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -1009,6 +1002,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -1024,6 +1021,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1034,6 +1035,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -1052,6 +1057,10 @@ public final class TicketCancel {
 
       private int cancelReason_ = 0;
       /**
+       * <pre>
+       * Enum describing the reason for cancelling.
+       * </pre>
+       *
        * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
        * @return The enum numeric value on the wire for cancelReason.
        */
@@ -1059,6 +1068,10 @@ public final class TicketCancel {
         return cancelReason_;
       }
       /**
+       * <pre>
+       * Enum describing the reason for cancelling.
+       * </pre>
+       *
        * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
        * @param value The enum numeric value on the wire for cancelReason to set.
        * @return This builder for chaining.
@@ -1070,6 +1083,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Enum describing the reason for cancelling.
+       * </pre>
+       *
        * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
        * @return The cancelReason.
        */
@@ -1080,6 +1097,10 @@ public final class TicketCancel {
         return result == null ? com.oddin.ots.Enums.CancelReason.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Enum describing the reason for cancelling.
+       * </pre>
+       *
        * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
        * @param value The cancelReason to set.
        * @return This builder for chaining.
@@ -1094,6 +1115,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Enum describing the reason for cancelling.
+       * </pre>
+       *
        * <code>.ots.enums.CancelReason cancel_reason = 2;</code>
        * @return This builder for chaining.
        */
@@ -1106,6 +1131,10 @@ public final class TicketCancel {
 
       private java.lang.Object cancelReasonDetail_ = "";
       /**
+       * <pre>
+       * Verbose description of the reason for cancelling the ticket.
+       * </pre>
+       *
        * <code>string cancel_reason_detail = 3;</code>
        * @return The cancelReasonDetail.
        */
@@ -1122,6 +1151,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Verbose description of the reason for cancelling the ticket.
+       * </pre>
+       *
        * <code>string cancel_reason_detail = 3;</code>
        * @return The bytes for cancelReasonDetail.
        */
@@ -1139,6 +1172,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Verbose description of the reason for cancelling the ticket.
+       * </pre>
+       *
        * <code>string cancel_reason_detail = 3;</code>
        * @param value The cancelReasonDetail to set.
        * @return This builder for chaining.
@@ -1154,6 +1191,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Verbose description of the reason for cancelling the ticket.
+       * </pre>
+       *
        * <code>string cancel_reason_detail = 3;</code>
        * @return This builder for chaining.
        */
@@ -1164,6 +1205,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Verbose description of the reason for cancelling the ticket.
+       * </pre>
+       *
        * <code>string cancel_reason_detail = 3;</code>
        * @param value The bytes for cancelReasonDetail to set.
        * @return This builder for chaining.
@@ -1184,6 +1229,10 @@ public final class TicketCancel {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        * @return Whether the timestamp field is set.
        */
@@ -1191,6 +1240,10 @@ public final class TicketCancel {
         return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        * @return The timestamp.
        */
@@ -1202,6 +1255,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder setTimestamp(com.google.protobuf.Timestamp value) {
@@ -1218,6 +1275,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder setTimestamp(
@@ -1232,6 +1293,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
@@ -1250,6 +1315,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder clearTimestamp() {
@@ -1264,6 +1333,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
@@ -1272,6 +1345,10 @@ public final class TicketCancel {
         return getTimestampFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
@@ -1283,6 +1360,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Timestamp of the ticket cancellation in UTC.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1301,6 +1382,10 @@ public final class TicketCancel {
 
       private int cancelPercent_ ;
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 5;</code>
        * @return The cancelPercent.
        */
@@ -1309,6 +1394,10 @@ public final class TicketCancel {
         return cancelPercent_;
       }
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 5;</code>
        * @param value The cancelPercent to set.
        * @return This builder for chaining.
@@ -1320,6 +1409,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 5;</code>
        * @return This builder for chaining.
        */
@@ -1343,6 +1436,10 @@ public final class TicketCancel {
           com.oddin.ots.TicketCancel.CancelBetInfo, com.oddin.ots.TicketCancel.CancelBetInfo.Builder, com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder> cancelBetInfoBuilder_;
 
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo> getCancelBetInfoList() {
@@ -1353,6 +1450,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public int getCancelBetInfoCount() {
@@ -1363,6 +1464,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public com.oddin.ots.TicketCancel.CancelBetInfo getCancelBetInfo(int index) {
@@ -1373,6 +1478,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder setCancelBetInfo(
@@ -1390,6 +1499,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder setCancelBetInfo(
@@ -1404,6 +1517,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder addCancelBetInfo(com.oddin.ots.TicketCancel.CancelBetInfo value) {
@@ -1420,6 +1537,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder addCancelBetInfo(
@@ -1437,6 +1558,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder addCancelBetInfo(
@@ -1451,6 +1576,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder addCancelBetInfo(
@@ -1465,6 +1594,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder addAllCancelBetInfo(
@@ -1480,6 +1613,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder clearCancelBetInfo() {
@@ -1493,6 +1630,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public Builder removeCancelBetInfo(int index) {
@@ -1506,6 +1647,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public com.oddin.ots.TicketCancel.CancelBetInfo.Builder getCancelBetInfoBuilder(
@@ -1513,6 +1658,10 @@ public final class TicketCancel {
         return getCancelBetInfoFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder getCancelBetInfoOrBuilder(
@@ -1523,6 +1672,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public java.util.List<? extends com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder> 
@@ -1534,6 +1687,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public com.oddin.ots.TicketCancel.CancelBetInfo.Builder addCancelBetInfoBuilder() {
@@ -1541,6 +1698,10 @@ public final class TicketCancel {
             com.oddin.ots.TicketCancel.CancelBetInfo.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public com.oddin.ots.TicketCancel.CancelBetInfo.Builder addCancelBetInfoBuilder(
@@ -1549,6 +1710,10 @@ public final class TicketCancel {
             index, com.oddin.ots.TicketCancel.CancelBetInfo.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+       * </pre>
+       *
        * <code>repeated .ots.CancelBetInfo cancel_bet_info = 6;</code>
        */
       public java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo.Builder> 
@@ -1627,11 +1792,19 @@ public final class TicketCancel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique bet id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Unique bet id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -1639,6 +1812,10 @@ public final class TicketCancel {
         getIdBytes();
 
     /**
+     * <pre>
+     * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+     * </pre>
+     *
      * <code>uint32 cancel_percent = 2;</code>
      * @return The cancelPercent.
      */
@@ -1736,6 +1913,10 @@ public final class TicketCancel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Unique bet id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -1753,6 +1934,10 @@ public final class TicketCancel {
       }
     }
     /**
+     * <pre>
+     * Unique bet id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -1774,6 +1959,10 @@ public final class TicketCancel {
     public static final int CANCEL_PERCENT_FIELD_NUMBER = 2;
     private int cancelPercent_;
     /**
+     * <pre>
+     * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+     * </pre>
+     *
      * <code>uint32 cancel_percent = 2;</code>
      * @return The cancelPercent.
      */
@@ -2103,6 +2292,10 @@ public final class TicketCancel {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Unique bet id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -2119,6 +2312,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Unique bet id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -2136,6 +2333,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Unique bet id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -2151,6 +2352,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Unique bet id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -2161,6 +2366,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Unique bet id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -2179,6 +2388,10 @@ public final class TicketCancel {
 
       private int cancelPercent_ ;
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 2;</code>
        * @return The cancelPercent.
        */
@@ -2187,6 +2400,10 @@ public final class TicketCancel {
         return cancelPercent_;
       }
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 2;</code>
        * @param value The cancelPercent to set.
        * @return This builder for chaining.
@@ -2198,6 +2415,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+       * </pre>
+       *
        * <code>uint32 cancel_percent = 2;</code>
        * @return This builder for chaining.
        */
@@ -2265,33 +2486,57 @@ public final class TicketCancel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED.
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED.
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The status.
      */
     com.oddin.ots.Enums.AcceptanceStatus getStatus();
 
     /**
-     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <pre>
+     * Enum describing cancel rejection reason.
+     * </pre>
+     *
+     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelRejectionReason.
      */
     int getCancelRejectionReasonValue();
     /**
-     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <pre>
+     * Enum describing cancel rejection reason.
+     * </pre>
+     *
+     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The cancelRejectionReason.
      */
-    com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason();
+    com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason();
 
     /**
+     * <pre>
+     * Verbose description of ticket cancel rejection reason.
+     * </pre>
+     *
      * <code>string cancel_rejection_message = 3;</code>
      * @return The cancelRejectionMessage.
      */
     java.lang.String getCancelRejectionMessage();
     /**
+     * <pre>
+     * Verbose description of ticket cancel rejection reason.
+     * </pre>
+     *
      * <code>string cancel_rejection_message = 3;</code>
      * @return The bytes for cancelRejectionMessage.
      */
@@ -2399,6 +2644,10 @@ public final class TicketCancel {
     public static final int STATUS_FIELD_NUMBER = 1;
     private int status_;
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED.
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -2406,6 +2655,10 @@ public final class TicketCancel {
       return status_;
     }
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED.
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The status.
      */
@@ -2418,25 +2671,37 @@ public final class TicketCancel {
     public static final int CANCEL_REJECTION_REASON_FIELD_NUMBER = 2;
     private int cancelRejectionReason_;
     /**
-     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <pre>
+     * Enum describing cancel rejection reason.
+     * </pre>
+     *
+     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The enum numeric value on the wire for cancelRejectionReason.
      */
     @java.lang.Override public int getCancelRejectionReasonValue() {
       return cancelRejectionReason_;
     }
     /**
-     * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+     * <pre>
+     * Enum describing cancel rejection reason.
+     * </pre>
+     *
+     * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
      * @return The cancelRejectionReason.
      */
-    @java.lang.Override public com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason() {
+    @java.lang.Override public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
       @SuppressWarnings("deprecation")
-      com.oddin.ots.TicketCancel.CancelRejectionReason result = com.oddin.ots.TicketCancel.CancelRejectionReason.valueOf(cancelRejectionReason_);
-      return result == null ? com.oddin.ots.TicketCancel.CancelRejectionReason.UNRECOGNIZED : result;
+      com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
+      return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
     }
 
     public static final int CANCEL_REJECTION_MESSAGE_FIELD_NUMBER = 3;
     private volatile java.lang.Object cancelRejectionMessage_;
     /**
+     * <pre>
+     * Verbose description of ticket cancel rejection reason.
+     * </pre>
+     *
      * <code>string cancel_rejection_message = 3;</code>
      * @return The cancelRejectionMessage.
      */
@@ -2454,6 +2719,10 @@ public final class TicketCancel {
       }
     }
     /**
+     * <pre>
+     * Verbose description of ticket cancel rejection reason.
+     * </pre>
+     *
      * <code>string cancel_rejection_message = 3;</code>
      * @return The bytes for cancelRejectionMessage.
      */
@@ -2486,10 +2755,10 @@ public final class TicketCancel {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
+      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, status_);
       }
-      if (cancelRejectionReason_ != com.oddin.ots.TicketCancel.CancelRejectionReason.UNKNOWN.getNumber()) {
+      if (cancelRejectionReason_ != com.oddin.ots.Enums.CancelRejectionReason.CANCEL_REJECT_REASON_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, cancelRejectionReason_);
       }
       if (!getCancelRejectionMessageBytes().isEmpty()) {
@@ -2504,11 +2773,11 @@ public final class TicketCancel {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
+      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_);
       }
-      if (cancelRejectionReason_ != com.oddin.ots.TicketCancel.CancelRejectionReason.UNKNOWN.getNumber()) {
+      if (cancelRejectionReason_ != com.oddin.ots.Enums.CancelRejectionReason.CANCEL_REJECT_REASON_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, cancelRejectionReason_);
       }
@@ -2808,6 +3077,10 @@ public final class TicketCancel {
 
       private int status_ = 0;
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED.
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return The enum numeric value on the wire for status.
        */
@@ -2815,6 +3088,10 @@ public final class TicketCancel {
         return status_;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED.
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
@@ -2826,6 +3103,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED.
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return The status.
        */
@@ -2836,6 +3117,10 @@ public final class TicketCancel {
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED.
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -2850,6 +3135,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED.
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return This builder for chaining.
        */
@@ -2862,14 +3151,22 @@ public final class TicketCancel {
 
       private int cancelRejectionReason_ = 0;
       /**
-       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <pre>
+       * Enum describing cancel rejection reason.
+       * </pre>
+       *
+       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return The enum numeric value on the wire for cancelRejectionReason.
        */
       @java.lang.Override public int getCancelRejectionReasonValue() {
         return cancelRejectionReason_;
       }
       /**
-       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <pre>
+       * Enum describing cancel rejection reason.
+       * </pre>
+       *
+       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @param value The enum numeric value on the wire for cancelRejectionReason to set.
        * @return This builder for chaining.
        */
@@ -2880,21 +3177,29 @@ public final class TicketCancel {
         return this;
       }
       /**
-       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <pre>
+       * Enum describing cancel rejection reason.
+       * </pre>
+       *
+       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return The cancelRejectionReason.
        */
       @java.lang.Override
-      public com.oddin.ots.TicketCancel.CancelRejectionReason getCancelRejectionReason() {
+      public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
         @SuppressWarnings("deprecation")
-        com.oddin.ots.TicketCancel.CancelRejectionReason result = com.oddin.ots.TicketCancel.CancelRejectionReason.valueOf(cancelRejectionReason_);
-        return result == null ? com.oddin.ots.TicketCancel.CancelRejectionReason.UNRECOGNIZED : result;
+        com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
+        return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <pre>
+       * Enum describing cancel rejection reason.
+       * </pre>
+       *
+       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @param value The cancelRejectionReason to set.
        * @return This builder for chaining.
        */
-      public Builder setCancelRejectionReason(com.oddin.ots.TicketCancel.CancelRejectionReason value) {
+      public Builder setCancelRejectionReason(com.oddin.ots.Enums.CancelRejectionReason value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2904,7 +3209,11 @@ public final class TicketCancel {
         return this;
       }
       /**
-       * <code>.ots.CancelRejectionReason cancel_rejection_reason = 2;</code>
+       * <pre>
+       * Enum describing cancel rejection reason.
+       * </pre>
+       *
+       * <code>.ots.enums.CancelRejectionReason cancel_rejection_reason = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCancelRejectionReason() {
@@ -2916,6 +3225,10 @@ public final class TicketCancel {
 
       private java.lang.Object cancelRejectionMessage_ = "";
       /**
+       * <pre>
+       * Verbose description of ticket cancel rejection reason.
+       * </pre>
+       *
        * <code>string cancel_rejection_message = 3;</code>
        * @return The cancelRejectionMessage.
        */
@@ -2932,6 +3245,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Verbose description of ticket cancel rejection reason.
+       * </pre>
+       *
        * <code>string cancel_rejection_message = 3;</code>
        * @return The bytes for cancelRejectionMessage.
        */
@@ -2949,6 +3266,10 @@ public final class TicketCancel {
         }
       }
       /**
+       * <pre>
+       * Verbose description of ticket cancel rejection reason.
+       * </pre>
+       *
        * <code>string cancel_rejection_message = 3;</code>
        * @param value The cancelRejectionMessage to set.
        * @return This builder for chaining.
@@ -2964,6 +3285,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Verbose description of ticket cancel rejection reason.
+       * </pre>
+       *
        * <code>string cancel_rejection_message = 3;</code>
        * @return This builder for chaining.
        */
@@ -2974,6 +3299,10 @@ public final class TicketCancel {
         return this;
       }
       /**
+       * <pre>
+       * Verbose description of ticket cancel rejection reason.
+       * </pre>
+       *
        * <code>string cancel_rejection_message = 3;</code>
        * @param value The bytes for cancelRejectionMessage to set.
        * @return This builder for chaining.
@@ -3075,15 +3404,12 @@ public final class TicketCancel {
       "estamp\022\026\n\016cancel_percent\030\005 \001(\r\022+\n\017cancel" +
       "_bet_info\030\006 \003(\0132\022.ots.CancelBetInfo\"3\n\rC" +
       "ancelBetInfo\022\n\n\002id\030\001 \001(\t\022\026\n\016cancel_perce" +
-      "nt\030\002 \001(\r\"\242\001\n\024TicketCancelResponse\022+\n\006sta" +
-      "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\022;" +
-      "\n\027cancel_rejection_reason\030\002 \001(\0162\032.ots.Ca" +
-      "ncelRejectionReason\022 \n\030cancel_rejection_" +
-      "message\030\003 \001(\t*l\n\025CancelRejectionReason\022\013" +
-      "\n\007UNKNOWN\020\000\022\024\n\020TICKET_NOT_FOUND\020\001\022\020\n\014TIM" +
-      "E_EXPIRED\020\002\022\023\n\017ALREADY_SETTLED\020\003\022\t\n\005OTHE" +
-      "R\020\004B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006prot" +
-      "o3"
+      "nt\030\002 \001(\r\"\250\001\n\024TicketCancelResponse\022+\n\006sta" +
+      "tus\030\001 \001(\0162\033.ots.enums.AcceptanceStatus\022A" +
+      "\n\027cancel_rejection_reason\030\002 \001(\0162 .ots.en" +
+      "ums.CancelRejectionReason\022 \n\030cancel_reje" +
+      "ction_message\030\003 \001(\tB\035\n\rcom.oddin.otsZ\014od" +
+      "din.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

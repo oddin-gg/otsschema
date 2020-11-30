@@ -1,0 +1,180 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+import "ots/commons.proto";
+
+// TicketRequest is used as request for Ticket RPC call.
+message TicketRequest {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+
+  // Timestamp of request creation.
+  google.protobuf.Timestamp timestamp = 2;
+
+  // List of ticket bets.
+  repeated Bet bets = 3;
+
+  // Alternative odds used to accept bet.
+  enums.AcceptOddsChange accept_odds_change = 4;
+
+  // Total number of combinations to validate against generated combinations.
+  uint64 total_combinations = 5;
+
+  // Customer information.
+  TicketCustomer customer = 6;
+
+  // Reoffer ticket id.
+  google.protobuf.StringValue reoffer_id = 8;
+
+  // Array of selections which form this bet, if omitted all selections are used.
+  map<string, TicketSelection> selections = 9;
+
+  // Id of terminal or shop, where bet is received.
+  google.protobuf.StringValue location_id = 10;
+
+  // Currency of bets stakes. Must be the same for the whole ticket.
+  string currency = 11;
+
+  // Channel from which ticket was placed (internet, terminal, etc..).
+  enums.TicketChannel channel = 12;
+}
+
+message TicketSelection {
+  // Selection ID mush have specific format:
+  // "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  string id = 1;
+
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 3;
+}
+
+message TicketCustomer {
+  // Bookmaker unique user ID.
+  string id = 1;
+
+  // Bettor IP address.
+  google.protobuf.StringValue ip = 2;
+
+  // Bettor unique device id from which ticket was placed.
+  google.protobuf.StringValue device_id = 3;
+
+  // Supported language ISO-639-1 code.
+  string language = 4;
+}
+
+message Bet {
+  // Bet id for multi-bets ticket.
+  google.protobuf.StringValue id = 1;
+
+  // Bonus part of the bet.
+  BetBonus bonus = 2;
+
+  // Stake of the bet.
+  BetStake stake = 3;
+
+  // Reoffer bet id.
+  google.protobuf.StringValue reoffer_id = 4;
+
+  // Total wins for all generated combinations for the bet. We use this for validation purposes.
+  google.protobuf.UInt64Value total_wins = 5;
+
+  // Array of all the systems in the bet ([0] is not allowed, use [fold] instead).
+  repeated uint32 systems = 6;
+
+  //  Array of selections which form this bet, if omitted all selections are used.
+  repeated BetSelection selections = 7;
+}
+
+message BetSelection {
+  // Selection ID is a link on TicketSelection.ID.
+  string id = 1;
+}
+
+message BetStake {
+  // Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+  uint64 value = 1;
+
+  // Stake type - SUM or UNIT.
+  enums.BetStakeType type = 2;
+}
+
+message BetBonus {
+  // Bonus amount to add to the win. It needs to be multiplied by 10000 and rounded to long value in local currency.
+  uint64 value = 1;
+
+  // Bonus type - only supported TOTAL for now.
+  enums.BetBonusType type = 2;
+
+  // Bonus payout mode. Typically used for system bets - only supported ALL for now (means all bets has to be winning).
+  enums.BetBonusMode mode = 3;
+}
+
+message TicketResponse {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+
+  // Acceptance status - REJECTED or ACCEPTED.
+  enums.AcceptanceStatus ticket_status = 2;
+
+  // Information about rejection/acception reason.
+  Reason reason = 3;
+
+  // Bet level rejection details.
+  repeated TicketResponseBetInfo bet_info = 4;
+
+  // Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
+  google.protobuf.UInt64Value exchange_rate = 5;
+
+  // Alternative odds used to accept bet.
+  repeated AutoAcceptedOdds auto_accepted_odds = 6;
+}
+
+message AutoAcceptedOdds {
+  // Selection id.
+  string id = 1;
+
+  // Odds which were ticked placed multiplied by 10 000 and rounded to long value.
+  uint64 requested_odds = 2;
+
+  // Odds which were ticked accepted multiplied by 10 000 and rounded to long value.
+  uint64 used_odds = 3;
+}
+
+message TicketResponseBetInfo {
+  // Unique bet id from operator’s system.
+  string id = 1;
+
+  // Information about rejection/acception reason.
+  Reason reason = 2;
+
+  // Information about the reoffer stake.
+  ResponseReoffer reoffer = 3;
+
+  // Selection info level rejection details - selection id and odds.
+  repeated RejectedSelection selections_info = 4;
+}
+
+message RejectedSelection {
+  // Selection id.
+  string id = 1;
+
+  // Information about rejection reason.
+  Reason reason = 2;
+  RejectionInfo rejection_info = 3;
+}
+
+message RejectionInfo {
+  string id = 1;
+  uint64 odds = 2;
+}
+
+message ResponseReoffer {
+  uint64 stake = 1;
+}

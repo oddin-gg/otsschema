@@ -2,24 +2,11 @@
 
 'use strict';
 var grpc = require('grpc');
-var ots_ticket_request_pb = require('../ots/ticket_request_pb.js');
-var ots_ticket_response_pb = require('../ots/ticket_response_pb.js');
+var ots_ticket_pb = require('../ots/ticket_pb.js');
 var ots_ticket_cancel_pb = require('../ots/ticket_cancel_pb.js');
 var ots_player_risk_score_pb = require('../ots/player_risk_score_pb.js');
 var ots_resolve_foreign_events_in_ticket_pb = require('../ots/resolve_foreign_events_in_ticket_pb.js');
 var ots_ticket_ack_pb = require('../ots/ticket_ack_pb.js');
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-
-function serialize_google_protobuf_Empty(arg) {
-  if (!(arg instanceof google_protobuf_empty_pb.Empty)) {
-    throw new Error('Expected argument of type google.protobuf.Empty');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_google_protobuf_Empty(buffer_arg) {
-  return google_protobuf_empty_pb.Empty.deserializeBinary(new Uint8Array(buffer_arg));
-}
 
 function serialize_ots_PlayerRiskScoreRequest(arg) {
   if (!(arg instanceof ots_player_risk_score_pb.PlayerRiskScoreRequest)) {
@@ -76,6 +63,17 @@ function deserialize_ots_TicketAckRequest(buffer_arg) {
   return ots_ticket_ack_pb.TicketAckRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_ots_TicketAckResponse(arg) {
+  if (!(arg instanceof ots_ticket_ack_pb.TicketAckResponse)) {
+    throw new Error('Expected argument of type ots.TicketAckResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ots_TicketAckResponse(buffer_arg) {
+  return ots_ticket_ack_pb.TicketAckResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_ots_TicketCancelRequest(arg) {
   if (!(arg instanceof ots_ticket_cancel_pb.TicketCancelRequest)) {
     throw new Error('Expected argument of type ots.TicketCancelRequest');
@@ -99,25 +97,25 @@ function deserialize_ots_TicketCancelResponse(buffer_arg) {
 }
 
 function serialize_ots_TicketRequest(arg) {
-  if (!(arg instanceof ots_ticket_request_pb.TicketRequest)) {
+  if (!(arg instanceof ots_ticket_pb.TicketRequest)) {
     throw new Error('Expected argument of type ots.TicketRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_ots_TicketRequest(buffer_arg) {
-  return ots_ticket_request_pb.TicketRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return ots_ticket_pb.TicketRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_ots_TicketResponse(arg) {
-  if (!(arg instanceof ots_ticket_response_pb.TicketResponse)) {
+  if (!(arg instanceof ots_ticket_pb.TicketResponse)) {
     throw new Error('Expected argument of type ots.TicketResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_ots_TicketResponse(buffer_arg) {
-  return ots_ticket_response_pb.TicketResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return ots_ticket_pb.TicketResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -126,8 +124,8 @@ var otsService = exports.otsService = {
     path: '/ots.ots/Ticket',
     requestStream: true,
     responseStream: true,
-    requestType: ots_ticket_request_pb.TicketRequest,
-    responseType: ots_ticket_response_pb.TicketResponse,
+    requestType: ots_ticket_pb.TicketRequest,
+    responseType: ots_ticket_pb.TicketResponse,
     requestSerialize: serialize_ots_TicketRequest,
     requestDeserialize: deserialize_ots_TicketRequest,
     responseSerialize: serialize_ots_TicketResponse,
@@ -171,11 +169,11 @@ var otsService = exports.otsService = {
     requestStream: false,
     responseStream: false,
     requestType: ots_ticket_ack_pb.TicketAckRequest,
-    responseType: google_protobuf_empty_pb.Empty,
+    responseType: ots_ticket_ack_pb.TicketAckResponse,
     requestSerialize: serialize_ots_TicketAckRequest,
     requestDeserialize: deserialize_ots_TicketAckRequest,
-    responseSerialize: serialize_google_protobuf_Empty,
-    responseDeserialize: deserialize_google_protobuf_Empty,
+    responseSerialize: serialize_ots_TicketAckResponse,
+    responseDeserialize: deserialize_ots_TicketAckResponse,
   },
 };
 

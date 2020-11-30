@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "ots/enum/enums.proto";
+
+message Reason {
+  // Reason code.
+  enums.ReasonCode code = 1;
+  // Message describing a reason.
+  string message = 2;
+}

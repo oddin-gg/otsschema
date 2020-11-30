@@ -2,13 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from ots_schema.ots import player_risk_score_pb2 as ots_dot_player__risk__score__pb2
 from ots_schema.ots import resolve_foreign_events_in_ticket_pb2 as ots_dot_resolve__foreign__events__in__ticket__pb2
 from ots_schema.ots import ticket_ack_pb2 as ots_dot_ticket__ack__pb2
 from ots_schema.ots import ticket_cancel_pb2 as ots_dot_ticket__cancel__pb2
-from ots_schema.ots import ticket_request_pb2 as ots_dot_ticket__request__pb2
-from ots_schema.ots import ticket_response_pb2 as ots_dot_ticket__response__pb2
+from ots_schema.ots import ticket_pb2 as ots_dot_ticket__pb2
 
 
 class otsStub(object):
@@ -22,8 +20,8 @@ class otsStub(object):
         """
         self.Ticket = channel.stream_stream(
                 '/ots.ots/Ticket',
-                request_serializer=ots_dot_ticket__request__pb2.TicketRequest.SerializeToString,
-                response_deserializer=ots_dot_ticket__response__pb2.TicketResponse.FromString,
+                request_serializer=ots_dot_ticket__pb2.TicketRequest.SerializeToString,
+                response_deserializer=ots_dot_ticket__pb2.TicketResponse.FromString,
                 )
         self.ResolveForeignMatchesInTicket = channel.unary_unary(
                 '/ots.ots/ResolveForeignMatchesInTicket',
@@ -43,7 +41,7 @@ class otsStub(object):
         self.TicketAck = channel.unary_unary(
                 '/ots.ots/TicketAck',
                 request_serializer=ots_dot_ticket__ack__pb2.TicketAckRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=ots_dot_ticket__ack__pb2.TicketAckResponse.FromString,
                 )
 
 
@@ -85,8 +83,8 @@ def add_otsServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ticket': grpc.stream_stream_rpc_method_handler(
                     servicer.Ticket,
-                    request_deserializer=ots_dot_ticket__request__pb2.TicketRequest.FromString,
-                    response_serializer=ots_dot_ticket__response__pb2.TicketResponse.SerializeToString,
+                    request_deserializer=ots_dot_ticket__pb2.TicketRequest.FromString,
+                    response_serializer=ots_dot_ticket__pb2.TicketResponse.SerializeToString,
             ),
             'ResolveForeignMatchesInTicket': grpc.unary_unary_rpc_method_handler(
                     servicer.ResolveForeignMatchesInTicket,
@@ -106,7 +104,7 @@ def add_otsServicer_to_server(servicer, server):
             'TicketAck': grpc.unary_unary_rpc_method_handler(
                     servicer.TicketAck,
                     request_deserializer=ots_dot_ticket__ack__pb2.TicketAckRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=ots_dot_ticket__ack__pb2.TicketAckResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -130,8 +128,8 @@ class ots(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.stream_stream(request_iterator, target, '/ots.ots/Ticket',
-            ots_dot_ticket__request__pb2.TicketRequest.SerializeToString,
-            ots_dot_ticket__response__pb2.TicketResponse.FromString,
+            ots_dot_ticket__pb2.TicketRequest.SerializeToString,
+            ots_dot_ticket__pb2.TicketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -199,6 +197,6 @@ class ots(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/ots.ots/TicketAck',
             ots_dot_ticket__ack__pb2.TicketAckRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            ots_dot_ticket__ack__pb2.TicketAckResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -19,11 +19,19 @@ public final class PlayerRiskScoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique player id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Unique player id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -31,6 +39,11 @@ public final class PlayerRiskScoreOuterClass {
         getIdBytes();
   }
   /**
+   * <pre>
+   * PlayerRiskScoreRequest is used for PlayerRiskScore RPC call.
+   * You can use this method to get more insight on individual player risk score.
+   * </pre>
+   *
    * Protobuf type {@code ots.PlayerRiskScoreRequest}
    */
   public static final class PlayerRiskScoreRequest extends
@@ -117,6 +130,10 @@ public final class PlayerRiskScoreOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Unique player id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -134,6 +151,10 @@ public final class PlayerRiskScoreOuterClass {
       }
     }
     /**
+     * <pre>
+     * Unique player id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -307,6 +328,11 @@ public final class PlayerRiskScoreOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * PlayerRiskScoreRequest is used for PlayerRiskScore RPC call.
+     * You can use this method to get more insight on individual player risk score.
+     * </pre>
+     *
      * Protobuf type {@code ots.PlayerRiskScoreRequest}
      */
     public static final class Builder extends
@@ -456,6 +482,10 @@ public final class PlayerRiskScoreOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Unique player id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -472,6 +502,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Unique player id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -489,6 +523,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Unique player id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -504,6 +542,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Unique player id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -514,6 +556,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Unique player id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -587,24 +633,44 @@ public final class PlayerRiskScoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     java.util.List<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore> 
         getRiskScoresList();
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore getRiskScores(int index);
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     int getRiskScoresCount();
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     java.util.List<? extends com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreOrBuilder> 
         getRiskScoresOrBuilderList();
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreOrBuilder getRiskScoresOrBuilder(
@@ -704,6 +770,10 @@ public final class PlayerRiskScoreOuterClass {
     public static final int RISK_SCORES_FIELD_NUMBER = 1;
     private java.util.List<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore> riskScores_;
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     @java.lang.Override
@@ -711,6 +781,10 @@ public final class PlayerRiskScoreOuterClass {
       return riskScores_;
     }
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     @java.lang.Override
@@ -719,6 +793,10 @@ public final class PlayerRiskScoreOuterClass {
       return riskScores_;
     }
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     @java.lang.Override
@@ -726,6 +804,10 @@ public final class PlayerRiskScoreOuterClass {
       return riskScores_.size();
     }
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     @java.lang.Override
@@ -733,6 +815,10 @@ public final class PlayerRiskScoreOuterClass {
       return riskScores_.get(index);
     }
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
      */
     @java.lang.Override
@@ -1096,6 +1182,10 @@ public final class PlayerRiskScoreOuterClass {
           com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore, com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.Builder, com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreOrBuilder> riskScoresBuilder_;
 
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public java.util.List<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore> getRiskScoresList() {
@@ -1106,6 +1196,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public int getRiskScoresCount() {
@@ -1116,6 +1210,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore getRiskScores(int index) {
@@ -1126,6 +1224,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder setRiskScores(
@@ -1143,6 +1245,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder setRiskScores(
@@ -1157,6 +1263,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder addRiskScores(com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore value) {
@@ -1173,6 +1283,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder addRiskScores(
@@ -1190,6 +1304,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder addRiskScores(
@@ -1204,6 +1322,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder addRiskScores(
@@ -1218,6 +1340,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder addAllRiskScores(
@@ -1233,6 +1359,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder clearRiskScores() {
@@ -1246,6 +1376,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public Builder removeRiskScores(int index) {
@@ -1259,6 +1393,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.Builder getRiskScoresBuilder(
@@ -1266,6 +1404,10 @@ public final class PlayerRiskScoreOuterClass {
         return getRiskScoresFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreOrBuilder getRiskScoresOrBuilder(
@@ -1276,6 +1418,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public java.util.List<? extends com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScoreOrBuilder> 
@@ -1287,6 +1433,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.Builder addRiskScoresBuilder() {
@@ -1294,6 +1444,10 @@ public final class PlayerRiskScoreOuterClass {
             com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.Builder addRiskScoresBuilder(
@@ -1302,6 +1456,10 @@ public final class PlayerRiskScoreOuterClass {
             index, com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>repeated .ots.PlayerRiskScore risk_scores = 1;</code>
        */
       public java.util.List<com.oddin.ots.PlayerRiskScoreOuterClass.PlayerRiskScore.Builder> 
@@ -1380,11 +1538,19 @@ public final class PlayerRiskScoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>string sport_id = 1;</code>
      * @return The sportId.
      */
     java.lang.String getSportId();
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>string sport_id = 1;</code>
      * @return The bytes for sportId.
      */
@@ -1392,12 +1558,20 @@ public final class PlayerRiskScoreOuterClass {
         getSportIdBytes();
 
     /**
+     * <pre>
+     * Risk score for the pre match phase multiplied by 10 000.
+     * </pre>
+     *
      * <code>uint32 prematch = 2;</code>
      * @return The prematch.
      */
     int getPrematch();
 
     /**
+     * <pre>
+     * Risk score for the  live phase multiplied by 10 000.
+     * </pre>
+     *
      * <code>uint32 live = 3;</code>
      * @return The live.
      */
@@ -1500,6 +1674,10 @@ public final class PlayerRiskScoreOuterClass {
     public static final int SPORT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object sportId_;
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>string sport_id = 1;</code>
      * @return The sportId.
      */
@@ -1517,6 +1695,10 @@ public final class PlayerRiskScoreOuterClass {
       }
     }
     /**
+     * <pre>
+     * Information about the player risk score for every sport.
+     * </pre>
+     *
      * <code>string sport_id = 1;</code>
      * @return The bytes for sportId.
      */
@@ -1538,6 +1720,10 @@ public final class PlayerRiskScoreOuterClass {
     public static final int PREMATCH_FIELD_NUMBER = 2;
     private int prematch_;
     /**
+     * <pre>
+     * Risk score for the pre match phase multiplied by 10 000.
+     * </pre>
+     *
      * <code>uint32 prematch = 2;</code>
      * @return The prematch.
      */
@@ -1549,6 +1735,10 @@ public final class PlayerRiskScoreOuterClass {
     public static final int LIVE_FIELD_NUMBER = 3;
     private int live_;
     /**
+     * <pre>
+     * Risk score for the  live phase multiplied by 10 000.
+     * </pre>
+     *
      * <code>uint32 live = 3;</code>
      * @return The live.
      */
@@ -1895,6 +2085,10 @@ public final class PlayerRiskScoreOuterClass {
 
       private java.lang.Object sportId_ = "";
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>string sport_id = 1;</code>
        * @return The sportId.
        */
@@ -1911,6 +2105,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>string sport_id = 1;</code>
        * @return The bytes for sportId.
        */
@@ -1928,6 +2126,10 @@ public final class PlayerRiskScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>string sport_id = 1;</code>
        * @param value The sportId to set.
        * @return This builder for chaining.
@@ -1943,6 +2145,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>string sport_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1953,6 +2159,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Information about the player risk score for every sport.
+       * </pre>
+       *
        * <code>string sport_id = 1;</code>
        * @param value The bytes for sportId to set.
        * @return This builder for chaining.
@@ -1971,6 +2181,10 @@ public final class PlayerRiskScoreOuterClass {
 
       private int prematch_ ;
       /**
+       * <pre>
+       * Risk score for the pre match phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 prematch = 2;</code>
        * @return The prematch.
        */
@@ -1979,6 +2193,10 @@ public final class PlayerRiskScoreOuterClass {
         return prematch_;
       }
       /**
+       * <pre>
+       * Risk score for the pre match phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 prematch = 2;</code>
        * @param value The prematch to set.
        * @return This builder for chaining.
@@ -1990,6 +2208,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Risk score for the pre match phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 prematch = 2;</code>
        * @return This builder for chaining.
        */
@@ -2002,6 +2224,10 @@ public final class PlayerRiskScoreOuterClass {
 
       private int live_ ;
       /**
+       * <pre>
+       * Risk score for the  live phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 live = 3;</code>
        * @return The live.
        */
@@ -2010,6 +2236,10 @@ public final class PlayerRiskScoreOuterClass {
         return live_;
       }
       /**
+       * <pre>
+       * Risk score for the  live phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 live = 3;</code>
        * @param value The live to set.
        * @return This builder for chaining.
@@ -2021,6 +2251,10 @@ public final class PlayerRiskScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Risk score for the  live phase multiplied by 10 000.
+       * </pre>
+       *
        * <code>uint32 live = 3;</code>
        * @return This builder for chaining.
        */

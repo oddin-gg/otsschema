@@ -18,6 +18,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var ots_enum_enums_pb = require('../ots/enum/enums_pb.js');
 goog.object.extend(proto, ots_enum_enums_pb);
+var ots_commons_pb = require('../ots/commons_pb.js');
+goog.object.extend(proto, ots_commons_pb);
 goog.exportSymbol('proto.ots.ResolveForeignEventsInTicketRequest', null, global);
 goog.exportSymbol('proto.ots.ResolveForeignEventsInTicketResponse', null, global);
 /**
@@ -306,7 +308,7 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.toObject = function(opt
 proto.ots.ResolveForeignEventsInTicketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    reason: (f = msg.getReason()) && ots_enum_enums_pb.Reason.toObject(includeInstance, f)
+    reason: (f = msg.getReason()) && ots_commons_pb.Reason.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -348,8 +350,8 @@ proto.ots.ResolveForeignEventsInTicketResponse.deserializeBinaryFromReader = fun
       msg.setStatus(value);
       break;
     case 2:
-      var value = new ots_enum_enums_pb.Reason;
-      reader.readMessage(value,ots_enum_enums_pb.Reason.deserializeBinaryFromReader);
+      var value = new ots_commons_pb.Reason;
+      reader.readMessage(value,ots_commons_pb.Reason.deserializeBinaryFromReader);
       msg.setReason(value);
       break;
     default:
@@ -393,7 +395,7 @@ proto.ots.ResolveForeignEventsInTicketResponse.serializeBinaryToWriter = functio
     writer.writeMessage(
       2,
       f,
-      ots_enum_enums_pb.Reason.serializeBinaryToWriter
+      ots_commons_pb.Reason.serializeBinaryToWriter
     );
   }
 };
@@ -418,17 +420,17 @@ proto.ots.ResolveForeignEventsInTicketResponse.prototype.setStatus = function(va
 
 
 /**
- * optional enums.Reason reason = 2;
- * @return {?proto.ots.enums.Reason}
+ * optional Reason reason = 2;
+ * @return {?proto.ots.Reason}
  */
 proto.ots.ResolveForeignEventsInTicketResponse.prototype.getReason = function() {
-  return /** @type{?proto.ots.enums.Reason} */ (
-    jspb.Message.getWrapperField(this, ots_enum_enums_pb.Reason, 2));
+  return /** @type{?proto.ots.Reason} */ (
+    jspb.Message.getWrapperField(this, ots_commons_pb.Reason, 2));
 };
 
 
 /**
- * @param {?proto.ots.enums.Reason|undefined} value
+ * @param {?proto.ots.Reason|undefined} value
  * @return {!proto.ots.ResolveForeignEventsInTicketResponse} returns this
 */
 proto.ots.ResolveForeignEventsInTicketResponse.prototype.setReason = function(value) {

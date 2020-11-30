@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums\"\'\n\x06Reason\x12\x0c\n\x04\x63ode\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t*.\n\x10\x41\x63\x63\x65ptanceStatus\x12\x0c\n\x08REJECTED\x10\x00\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x01*.\n\x0c\x43\x61ncelStatus\x12\x10\n\x0cNOT_CANCELED\x10\x00\x12\x0c\n\x08\x43\x41NCELED\x10\x01*{\n\x0c\x43\x61ncelReason\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0eTICKET_TIMEOUT\x10\x01\x12\x10\n\x0cWRONG_TICKET\x10\x02\x12\x13\n\x0fTECHNICAL_ISSUE\x10\x03\x12\x14\n\x10UNEXPECTED_ISSUE\x10\x04\x12\r\n\tREGULATOR\x10\x05*!\n\x0c\x42\x65tStakeType\x12\x07\n\x03SUM\x10\x00\x12\x08\n\x04UNIT\x10\x01*1\n\x10\x41\x63\x63\x65ptOddsChange\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03\x41NY\x10\x01\x12\n\n\x06HIGHER\x10\x02*\x8f\x01\n\nBetChannel\x12\x11\n\rNOT_SPECIFIED\x10\x00\x12\x0c\n\x08INTERNET\x10\x01\x12\n\n\x06RETAIL\x10\x02\x12\x0c\n\x08TERMINAL\x10\x03\x12\n\n\x06MOBILE\x10\x04\x12\t\n\x05PHONE\x10\x05\x12\x07\n\x03SMS\x10\x06\x12\x0f\n\x0b\x43\x41LL_CENTRE\x10\x07\x12\n\n\x06TV_APP\x10\x08\x12\t\n\x05\x41GENT\x10\t*\x19\n\x0c\x42\x65tBonusType\x12\t\n\x05TOTAL\x10\x00*\x17\n\x0c\x42\x65tBonusMode\x12\x07\n\x03\x41LL\x10\x00\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums*u\n\x10\x41\x63\x63\x65ptanceStatus\x12!\n\x1d\x41\x43\x43\x45PTANCE_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_REJECTED\x10\x01\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_ACCEPTED\x10\x02*i\n\x0c\x43\x61ncelStatus\x12\x1d\n\x19\x43\x41NCEL_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x43\x41NCEL_STATUS_NOT_CANCELED\x10\x01\x12\x1a\n\x16\x43\x41NCEL_STATUS_CANCELED\x10\x02*\xd3\x01\n\x0c\x43\x61ncelReason\x12\x1d\n\x19\x43\x41NCEL_REASON_UNSPECIFIED\x10\x00\x12 \n\x1c\x43\x41NCEL_REASON_TICKET_TIMEOUT\x10\x01\x12\x1e\n\x1a\x43\x41NCEL_REASON_WRONG_TICKET\x10\x02\x12!\n\x1d\x43\x41NCEL_REASON_TECHNICAL_ISSUE\x10\x03\x12\"\n\x1e\x43\x41NCEL_REASON_UNEXPECTED_ISSUE\x10\x04\x12\x1b\n\x17\x43\x41NCEL_REASON_REGULATOR\x10\x05*\xd9\x01\n\x15\x43\x61ncelRejectionReason\x12$\n CANCEL_REJECT_REASON_UNSPECIFIED\x10\x00\x12)\n%CANCEL_REJECT_REASON_TICKET_NOT_FOUND\x10\x01\x12%\n!CANCEL_REJECT_REASON_TIME_EXPIRED\x10\x02\x12(\n$CANCEL_REJECT_REASON_ALREADY_SETTLED\x10\x03\x12\x1e\n\x1a\x43\x41NCEL_REJECT_REASON_OTHER\x10\x04*_\n\x0c\x42\x65tStakeType\x12\x1e\n\x1a\x42\x45T_STAKE_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_STAKE_TYPE_SUM\x10\x01\x12\x17\n\x13\x42\x45T_STAKE_TYPE_UNIT\x10\x02*\x8e\x01\n\x10\x41\x63\x63\x65ptOddsChange\x12\"\n\x1e\x41\x43\x43\x45PT_ODDS_CHANGE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x41\x43\x43\x45PT_ODDS_CHANGE_NONE\x10\x01\x12\x1a\n\x16\x41\x43\x43\x45PT_ODDS_CHANGE_ANY\x10\x02\x12\x1d\n\x19\x41\x43\x43\x45PT_ODDS_CHANGE_HIGHER\x10\x03*\xa6\x02\n\rTicketChannel\x12\x1e\n\x1aTICKET_CHANNEL_UNSPECIFIED\x10\x00\x12\x1b\n\x17TICKET_CHANNEL_INTERNET\x10\x01\x12\x19\n\x15TICKET_CHANNEL_RETAIL\x10\x02\x12\x1b\n\x17TICKET_CHANNEL_TERMINAL\x10\x03\x12\x19\n\x15TICKET_CHANNEL_MOBILE\x10\x04\x12\x18\n\x14TICKET_CHANNEL_PHONE\x10\x05\x12\x16\n\x12TICKET_CHANNEL_SMS\x10\x06\x12\x1e\n\x1aTICKET_CHANNEL_CALL_CENTRE\x10\x07\x12\x19\n\x15TICKET_CHANNEL_TV_APP\x10\x08\x12\x18\n\x14TICKET_CHANNEL_AGENT\x10\t*H\n\x0c\x42\x65tBonusType\x12\x1e\n\x1a\x42\x45T_BONUS_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x42\x45T_BONUS_TYPE_TOTAL\x10\x01*F\n\x0c\x42\x65tBonusMode\x12\x1e\n\x1a\x42\x45T_BONUS_MODE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_BONUS_MODE_ALL\x10\x01*)\n\nReasonCode\x12\x1b\n\x17REASON_CODE_UNSPECIFIED\x10\x00\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
 )
 
 _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
@@ -31,20 +31,25 @@ _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='REJECTED', index=0, number=0,
+      name='ACCEPTANCE_STATUS_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ACCEPTED', index=1, number=1,
+      name='ACCEPTANCE_STATUS_REJECTED', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ACCEPTANCE_STATUS_ACCEPTED', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=76,
-  serialized_end=122,
+  serialized_start=35,
+  serialized_end=152,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTANCESTATUS)
 
@@ -57,20 +62,25 @@ _CANCELSTATUS = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='NOT_CANCELED', index=0, number=0,
+      name='CANCEL_STATUS_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='CANCELED', index=1, number=1,
+      name='CANCEL_STATUS_NOT_CANCELED', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_STATUS_CANCELED', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=124,
-  serialized_end=170,
+  serialized_start=154,
+  serialized_end=259,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELSTATUS)
 
@@ -83,44 +93,85 @@ _CANCELREASON = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='UNKNOWN', index=0, number=0,
+      name='CANCEL_REASON_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='TICKET_TIMEOUT', index=1, number=1,
+      name='CANCEL_REASON_TICKET_TIMEOUT', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='WRONG_TICKET', index=2, number=2,
+      name='CANCEL_REASON_WRONG_TICKET', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='TECHNICAL_ISSUE', index=3, number=3,
+      name='CANCEL_REASON_TECHNICAL_ISSUE', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='UNEXPECTED_ISSUE', index=4, number=4,
+      name='CANCEL_REASON_UNEXPECTED_ISSUE', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='REGULATOR', index=5, number=5,
+      name='CANCEL_REASON_REGULATOR', index=5, number=5,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=172,
-  serialized_end=295,
+  serialized_start=262,
+  serialized_end=473,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELREASON)
 
 CancelReason = enum_type_wrapper.EnumTypeWrapper(_CANCELREASON)
+_CANCELREJECTIONREASON = _descriptor.EnumDescriptor(
+  name='CancelRejectionReason',
+  full_name='ots.enums.CancelRejectionReason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_REJECT_REASON_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_REJECT_REASON_TICKET_NOT_FOUND', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_REJECT_REASON_TIME_EXPIRED', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_REJECT_REASON_ALREADY_SETTLED', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_REJECT_REASON_OTHER', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=476,
+  serialized_end=693,
+)
+_sym_db.RegisterEnumDescriptor(_CANCELREJECTIONREASON)
+
+CancelRejectionReason = enum_type_wrapper.EnumTypeWrapper(_CANCELREJECTIONREASON)
 _BETSTAKETYPE = _descriptor.EnumDescriptor(
   name='BetStakeType',
   full_name='ots.enums.BetStakeType',
@@ -129,20 +180,25 @@ _BETSTAKETYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='SUM', index=0, number=0,
+      name='BET_STAKE_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='UNIT', index=1, number=1,
+      name='BET_STAKE_TYPE_SUM', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BET_STAKE_TYPE_UNIT', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=297,
-  serialized_end=330,
+  serialized_start=695,
+  serialized_end=790,
 )
 _sym_db.RegisterEnumDescriptor(_BETSTAKETYPE)
 
@@ -155,95 +211,100 @@ _ACCEPTODDSCHANGE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='NONE', index=0, number=0,
+      name='ACCEPT_ODDS_CHANGE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ANY', index=1, number=1,
+      name='ACCEPT_ODDS_CHANGE_NONE', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HIGHER', index=2, number=2,
+      name='ACCEPT_ODDS_CHANGE_ANY', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ACCEPT_ODDS_CHANGE_HIGHER', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=332,
-  serialized_end=381,
+  serialized_start=793,
+  serialized_end=935,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTODDSCHANGE)
 
 AcceptOddsChange = enum_type_wrapper.EnumTypeWrapper(_ACCEPTODDSCHANGE)
-_BETCHANNEL = _descriptor.EnumDescriptor(
-  name='BetChannel',
-  full_name='ots.enums.BetChannel',
+_TICKETCHANNEL = _descriptor.EnumDescriptor(
+  name='TicketChannel',
+  full_name='ots.enums.TicketChannel',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='NOT_SPECIFIED', index=0, number=0,
+      name='TICKET_CHANNEL_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='INTERNET', index=1, number=1,
+      name='TICKET_CHANNEL_INTERNET', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='RETAIL', index=2, number=2,
+      name='TICKET_CHANNEL_RETAIL', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='TERMINAL', index=3, number=3,
+      name='TICKET_CHANNEL_TERMINAL', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='MOBILE', index=4, number=4,
+      name='TICKET_CHANNEL_MOBILE', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='PHONE', index=5, number=5,
+      name='TICKET_CHANNEL_PHONE', index=5, number=5,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='SMS', index=6, number=6,
+      name='TICKET_CHANNEL_SMS', index=6, number=6,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='CALL_CENTRE', index=7, number=7,
+      name='TICKET_CHANNEL_CALL_CENTRE', index=7, number=7,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='TV_APP', index=8, number=8,
+      name='TICKET_CHANNEL_TV_APP', index=8, number=8,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='AGENT', index=9, number=9,
+      name='TICKET_CHANNEL_AGENT', index=9, number=9,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=384,
-  serialized_end=527,
+  serialized_start=938,
+  serialized_end=1232,
 )
-_sym_db.RegisterEnumDescriptor(_BETCHANNEL)
+_sym_db.RegisterEnumDescriptor(_TICKETCHANNEL)
 
-BetChannel = enum_type_wrapper.EnumTypeWrapper(_BETCHANNEL)
+TicketChannel = enum_type_wrapper.EnumTypeWrapper(_TICKETCHANNEL)
 _BETBONUSTYPE = _descriptor.EnumDescriptor(
   name='BetBonusType',
   full_name='ots.enums.BetBonusType',
@@ -252,15 +313,20 @@ _BETBONUSTYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='TOTAL', index=0, number=0,
+      name='BET_BONUS_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BET_BONUS_TYPE_TOTAL', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=529,
-  serialized_end=554,
+  serialized_start=1234,
+  serialized_end=1306,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSTYPE)
 
@@ -273,104 +339,97 @@ _BETBONUSMODE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ALL', index=0, number=0,
+      name='BET_BONUS_MODE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BET_BONUS_MODE_ALL', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=556,
-  serialized_end=579,
+  serialized_start=1308,
+  serialized_end=1378,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSMODE)
 
 BetBonusMode = enum_type_wrapper.EnumTypeWrapper(_BETBONUSMODE)
-REJECTED = 0
-ACCEPTED = 1
-NOT_CANCELED = 0
-CANCELED = 1
-UNKNOWN = 0
-TICKET_TIMEOUT = 1
-WRONG_TICKET = 2
-TECHNICAL_ISSUE = 3
-UNEXPECTED_ISSUE = 4
-REGULATOR = 5
-SUM = 0
-UNIT = 1
-NONE = 0
-ANY = 1
-HIGHER = 2
-NOT_SPECIFIED = 0
-INTERNET = 1
-RETAIL = 2
-TERMINAL = 3
-MOBILE = 4
-PHONE = 5
-SMS = 6
-CALL_CENTRE = 7
-TV_APP = 8
-AGENT = 9
-TOTAL = 0
-ALL = 0
-
-
-
-_REASON = _descriptor.Descriptor(
-  name='Reason',
-  full_name='ots.enums.Reason',
+_REASONCODE = _descriptor.EnumDescriptor(
+  name='ReasonCode',
+  full_name='ots.enums.ReasonCode',
   filename=None,
   file=DESCRIPTOR,
-  containing_type=None,
   create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='code', full_name='ots.enums.Reason.code', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='ots.enums.Reason.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='REASON_CODE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
+  containing_type=None,
   serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=35,
-  serialized_end=74,
+  serialized_start=1380,
+  serialized_end=1421,
 )
+_sym_db.RegisterEnumDescriptor(_REASONCODE)
 
-DESCRIPTOR.message_types_by_name['Reason'] = _REASON
+ReasonCode = enum_type_wrapper.EnumTypeWrapper(_REASONCODE)
+ACCEPTANCE_STATUS_UNSPECIFIED = 0
+ACCEPTANCE_STATUS_REJECTED = 1
+ACCEPTANCE_STATUS_ACCEPTED = 2
+CANCEL_STATUS_UNSPECIFIED = 0
+CANCEL_STATUS_NOT_CANCELED = 1
+CANCEL_STATUS_CANCELED = 2
+CANCEL_REASON_UNSPECIFIED = 0
+CANCEL_REASON_TICKET_TIMEOUT = 1
+CANCEL_REASON_WRONG_TICKET = 2
+CANCEL_REASON_TECHNICAL_ISSUE = 3
+CANCEL_REASON_UNEXPECTED_ISSUE = 4
+CANCEL_REASON_REGULATOR = 5
+CANCEL_REJECT_REASON_UNSPECIFIED = 0
+CANCEL_REJECT_REASON_TICKET_NOT_FOUND = 1
+CANCEL_REJECT_REASON_TIME_EXPIRED = 2
+CANCEL_REJECT_REASON_ALREADY_SETTLED = 3
+CANCEL_REJECT_REASON_OTHER = 4
+BET_STAKE_TYPE_UNSPECIFIED = 0
+BET_STAKE_TYPE_SUM = 1
+BET_STAKE_TYPE_UNIT = 2
+ACCEPT_ODDS_CHANGE_UNSPECIFIED = 0
+ACCEPT_ODDS_CHANGE_NONE = 1
+ACCEPT_ODDS_CHANGE_ANY = 2
+ACCEPT_ODDS_CHANGE_HIGHER = 3
+TICKET_CHANNEL_UNSPECIFIED = 0
+TICKET_CHANNEL_INTERNET = 1
+TICKET_CHANNEL_RETAIL = 2
+TICKET_CHANNEL_TERMINAL = 3
+TICKET_CHANNEL_MOBILE = 4
+TICKET_CHANNEL_PHONE = 5
+TICKET_CHANNEL_SMS = 6
+TICKET_CHANNEL_CALL_CENTRE = 7
+TICKET_CHANNEL_TV_APP = 8
+TICKET_CHANNEL_AGENT = 9
+BET_BONUS_TYPE_UNSPECIFIED = 0
+BET_BONUS_TYPE_TOTAL = 1
+BET_BONUS_MODE_UNSPECIFIED = 0
+BET_BONUS_MODE_ALL = 1
+REASON_CODE_UNSPECIFIED = 0
+
+
 DESCRIPTOR.enum_types_by_name['AcceptanceStatus'] = _ACCEPTANCESTATUS
 DESCRIPTOR.enum_types_by_name['CancelStatus'] = _CANCELSTATUS
 DESCRIPTOR.enum_types_by_name['CancelReason'] = _CANCELREASON
+DESCRIPTOR.enum_types_by_name['CancelRejectionReason'] = _CANCELREJECTIONREASON
 DESCRIPTOR.enum_types_by_name['BetStakeType'] = _BETSTAKETYPE
 DESCRIPTOR.enum_types_by_name['AcceptOddsChange'] = _ACCEPTODDSCHANGE
-DESCRIPTOR.enum_types_by_name['BetChannel'] = _BETCHANNEL
+DESCRIPTOR.enum_types_by_name['TicketChannel'] = _TICKETCHANNEL
 DESCRIPTOR.enum_types_by_name['BetBonusType'] = _BETBONUSTYPE
 DESCRIPTOR.enum_types_by_name['BetBonusMode'] = _BETBONUSMODE
+DESCRIPTOR.enum_types_by_name['ReasonCode'] = _REASONCODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Reason = _reflection.GeneratedProtocolMessageType('Reason', (_message.Message,), {
-  'DESCRIPTOR' : _REASON,
-  '__module__' : 'ots.enum.enums_pb2'
-  # @@protoc_insertion_point(class_scope:ots.enums.Reason)
-  })
-_sym_db.RegisterMessage(Reason)
 
 
 DESCRIPTOR._options = None

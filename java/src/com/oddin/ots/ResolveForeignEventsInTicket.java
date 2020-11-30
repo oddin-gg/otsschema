@@ -19,11 +19,19 @@ public final class ResolveForeignEventsInTicket {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -31,22 +39,39 @@ public final class ResolveForeignEventsInTicket {
         getIdBytes();
 
     /**
+     * <pre>
+     * Stake not handled by Oddin in the same currency as the previous ticket
+     * multiplied by 10 000 and rounded to a long value.
+     * </pre>
+     *
      * <code>uint64 foreign_stake = 3;</code>
      * @return The foreignStake.
      */
     long getForeignStake();
 
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return The timestamp.
      */
     com.google.protobuf.Timestamp getTimestamp();
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
@@ -156,6 +181,10 @@ public final class ResolveForeignEventsInTicket {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -173,6 +202,10 @@ public final class ResolveForeignEventsInTicket {
       }
     }
     /**
+     * <pre>
+     * Unique ticket id from the operator’s system.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -194,6 +227,11 @@ public final class ResolveForeignEventsInTicket {
     public static final int FOREIGN_STAKE_FIELD_NUMBER = 3;
     private long foreignStake_;
     /**
+     * <pre>
+     * Stake not handled by Oddin in the same currency as the previous ticket
+     * multiplied by 10 000 and rounded to a long value.
+     * </pre>
+     *
      * <code>uint64 foreign_stake = 3;</code>
      * @return The foreignStake.
      */
@@ -205,6 +243,10 @@ public final class ResolveForeignEventsInTicket {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp timestamp_;
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return Whether the timestamp field is set.
      */
@@ -213,6 +255,10 @@ public final class ResolveForeignEventsInTicket {
       return timestamp_ != null;
     }
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      * @return The timestamp.
      */
@@ -221,6 +267,10 @@ public final class ResolveForeignEventsInTicket {
       return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
+     * <pre>
+     * Timestamp of non Oddin settlement.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
      */
     @java.lang.Override
@@ -580,6 +630,10 @@ public final class ResolveForeignEventsInTicket {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -596,6 +650,10 @@ public final class ResolveForeignEventsInTicket {
         }
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -613,6 +671,10 @@ public final class ResolveForeignEventsInTicket {
         }
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -628,6 +690,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -638,6 +704,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Unique ticket id from the operator’s system.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -656,6 +726,11 @@ public final class ResolveForeignEventsInTicket {
 
       private long foreignStake_ ;
       /**
+       * <pre>
+       * Stake not handled by Oddin in the same currency as the previous ticket
+       * multiplied by 10 000 and rounded to a long value.
+       * </pre>
+       *
        * <code>uint64 foreign_stake = 3;</code>
        * @return The foreignStake.
        */
@@ -664,6 +739,11 @@ public final class ResolveForeignEventsInTicket {
         return foreignStake_;
       }
       /**
+       * <pre>
+       * Stake not handled by Oddin in the same currency as the previous ticket
+       * multiplied by 10 000 and rounded to a long value.
+       * </pre>
+       *
        * <code>uint64 foreign_stake = 3;</code>
        * @param value The foreignStake to set.
        * @return This builder for chaining.
@@ -675,6 +755,11 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Stake not handled by Oddin in the same currency as the previous ticket
+       * multiplied by 10 000 and rounded to a long value.
+       * </pre>
+       *
        * <code>uint64 foreign_stake = 3;</code>
        * @return This builder for chaining.
        */
@@ -689,6 +774,10 @@ public final class ResolveForeignEventsInTicket {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        * @return Whether the timestamp field is set.
        */
@@ -696,6 +785,10 @@ public final class ResolveForeignEventsInTicket {
         return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        * @return The timestamp.
        */
@@ -707,6 +800,10 @@ public final class ResolveForeignEventsInTicket {
         }
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder setTimestamp(com.google.protobuf.Timestamp value) {
@@ -723,6 +820,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder setTimestamp(
@@ -737,6 +838,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
@@ -755,6 +860,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder clearTimestamp() {
@@ -769,6 +878,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
@@ -777,6 +890,10 @@ public final class ResolveForeignEventsInTicket {
         return getTimestampFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
@@ -788,6 +905,10 @@ public final class ResolveForeignEventsInTicket {
         }
       }
       /**
+       * <pre>
+       * Timestamp of non Oddin settlement.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -861,30 +982,50 @@ public final class ResolveForeignEventsInTicket {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The status.
      */
     com.oddin.ots.Enums.AcceptanceStatus getStatus();
 
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      * @return Whether the reason field is set.
      */
     boolean hasReason();
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      * @return The reason.
      */
-    com.oddin.ots.Enums.Reason getReason();
+    com.oddin.ots.Commons.Reason getReason();
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      */
-    com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder();
+    com.oddin.ots.Commons.ReasonOrBuilder getReasonOrBuilder();
   }
   /**
    * Protobuf type {@code ots.ResolveForeignEventsInTicketResponse}
@@ -939,11 +1080,11 @@ public final class ResolveForeignEventsInTicket {
               break;
             }
             case 18: {
-              com.oddin.ots.Enums.Reason.Builder subBuilder = null;
+              com.oddin.ots.Commons.Reason.Builder subBuilder = null;
               if (reason_ != null) {
                 subBuilder = reason_.toBuilder();
               }
-              reason_ = input.readMessage(com.oddin.ots.Enums.Reason.parser(), extensionRegistry);
+              reason_ = input.readMessage(com.oddin.ots.Commons.Reason.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(reason_);
                 reason_ = subBuilder.buildPartial();
@@ -986,6 +1127,10 @@ public final class ResolveForeignEventsInTicket {
     public static final int STATUS_FIELD_NUMBER = 1;
     private int status_;
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -993,6 +1138,10 @@ public final class ResolveForeignEventsInTicket {
       return status_;
     }
     /**
+     * <pre>
+     * Acceptance status - REJECTED or ACCEPTED
+     * </pre>
+     *
      * <code>.ots.enums.AcceptanceStatus status = 1;</code>
      * @return The status.
      */
@@ -1003,9 +1152,13 @@ public final class ResolveForeignEventsInTicket {
     }
 
     public static final int REASON_FIELD_NUMBER = 2;
-    private com.oddin.ots.Enums.Reason reason_;
+    private com.oddin.ots.Commons.Reason reason_;
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      * @return Whether the reason field is set.
      */
     @java.lang.Override
@@ -1013,18 +1166,26 @@ public final class ResolveForeignEventsInTicket {
       return reason_ != null;
     }
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      * @return The reason.
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.Reason getReason() {
-      return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
+    public com.oddin.ots.Commons.Reason getReason() {
+      return reason_ == null ? com.oddin.ots.Commons.Reason.getDefaultInstance() : reason_;
     }
     /**
-     * <code>.ots.enums.Reason reason = 2;</code>
+     * <pre>
+     * Information about rejection/acception reason.
+     * </pre>
+     *
+     * <code>.ots.Reason reason = 2;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+    public com.oddin.ots.Commons.ReasonOrBuilder getReasonOrBuilder() {
       return getReason();
     }
 
@@ -1042,7 +1203,7 @@ public final class ResolveForeignEventsInTicket {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
+      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, status_);
       }
       if (reason_ != null) {
@@ -1057,7 +1218,7 @@ public final class ResolveForeignEventsInTicket {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.REJECTED.getNumber()) {
+      if (status_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_);
       }
@@ -1361,6 +1522,10 @@ public final class ResolveForeignEventsInTicket {
 
       private int status_ = 0;
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return The enum numeric value on the wire for status.
        */
@@ -1368,6 +1533,10 @@ public final class ResolveForeignEventsInTicket {
         return status_;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
@@ -1379,6 +1548,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return The status.
        */
@@ -1389,6 +1562,10 @@ public final class ResolveForeignEventsInTicket {
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -1403,6 +1580,10 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
+       * <pre>
+       * Acceptance status - REJECTED or ACCEPTED
+       * </pre>
+       *
        * <code>.ots.enums.AcceptanceStatus status = 1;</code>
        * @return This builder for chaining.
        */
@@ -1413,31 +1594,43 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
 
-      private com.oddin.ots.Enums.Reason reason_;
+      private com.oddin.ots.Commons.Reason reason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> reasonBuilder_;
+          com.oddin.ots.Commons.Reason, com.oddin.ots.Commons.Reason.Builder, com.oddin.ots.Commons.ReasonOrBuilder> reasonBuilder_;
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        * @return Whether the reason field is set.
        */
       public boolean hasReason() {
         return reasonBuilder_ != null || reason_ != null;
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        * @return The reason.
        */
-      public com.oddin.ots.Enums.Reason getReason() {
+      public com.oddin.ots.Commons.Reason getReason() {
         if (reasonBuilder_ == null) {
-          return reason_ == null ? com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
+          return reason_ == null ? com.oddin.ots.Commons.Reason.getDefaultInstance() : reason_;
         } else {
           return reasonBuilder_.getMessage();
         }
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
-      public Builder setReason(com.oddin.ots.Enums.Reason value) {
+      public Builder setReason(com.oddin.ots.Commons.Reason value) {
         if (reasonBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1451,10 +1644,14 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
       public Builder setReason(
-          com.oddin.ots.Enums.Reason.Builder builderForValue) {
+          com.oddin.ots.Commons.Reason.Builder builderForValue) {
         if (reasonBuilder_ == null) {
           reason_ = builderForValue.build();
           onChanged();
@@ -1465,13 +1662,17 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
-      public Builder mergeReason(com.oddin.ots.Enums.Reason value) {
+      public Builder mergeReason(com.oddin.ots.Commons.Reason value) {
         if (reasonBuilder_ == null) {
           if (reason_ != null) {
             reason_ =
-              com.oddin.ots.Enums.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
+              com.oddin.ots.Commons.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
             reason_ = value;
           }
@@ -1483,7 +1684,11 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
       public Builder clearReason() {
         if (reasonBuilder_ == null) {
@@ -1497,33 +1702,45 @@ public final class ResolveForeignEventsInTicket {
         return this;
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.Reason.Builder getReasonBuilder() {
+      public com.oddin.ots.Commons.Reason.Builder getReasonBuilder() {
         
         onChanged();
         return getReasonFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
-      public com.oddin.ots.Enums.ReasonOrBuilder getReasonOrBuilder() {
+      public com.oddin.ots.Commons.ReasonOrBuilder getReasonOrBuilder() {
         if (reasonBuilder_ != null) {
           return reasonBuilder_.getMessageOrBuilder();
         } else {
           return reason_ == null ?
-              com.oddin.ots.Enums.Reason.getDefaultInstance() : reason_;
+              com.oddin.ots.Commons.Reason.getDefaultInstance() : reason_;
         }
       }
       /**
-       * <code>.ots.enums.Reason reason = 2;</code>
+       * <pre>
+       * Information about rejection/acception reason.
+       * </pre>
+       *
+       * <code>.ots.Reason reason = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder> 
+          com.oddin.ots.Commons.Reason, com.oddin.ots.Commons.Reason.Builder, com.oddin.ots.Commons.ReasonOrBuilder> 
           getReasonFieldBuilder() {
         if (reasonBuilder_ == null) {
           reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Enums.Reason, com.oddin.ots.Enums.Reason.Builder, com.oddin.ots.Enums.ReasonOrBuilder>(
+              com.oddin.ots.Commons.Reason, com.oddin.ots.Commons.Reason.Builder, com.oddin.ots.Commons.ReasonOrBuilder>(
                   getReason(),
                   getParentForChildren(),
                   isClean());
@@ -1605,20 +1822,21 @@ public final class ResolveForeignEventsInTicket {
     java.lang.String[] descriptorData = {
       "\n*ots/resolve_foreign_events_in_ticket.p" +
       "roto\022\003ots\032\037google/protobuf/timestamp.pro" +
-      "to\032\024ots/enum/enums.proto\"w\n#ResolveForei" +
-      "gnEventsInTicketRequest\022\n\n\002id\030\001 \001(\t\022\025\n\rf" +
-      "oreign_stake\030\003 \001(\004\022-\n\ttimestamp\030\004 \001(\0132\032." +
-      "google.protobuf.Timestamp\"v\n$ResolveFore" +
-      "ignEventsInTicketResponse\022+\n\006status\030\001 \001(" +
-      "\0162\033.ots.enums.AcceptanceStatus\022!\n\006reason" +
-      "\030\002 \001(\0132\021.ots.enums.ReasonB\035\n\rcom.oddin.o" +
-      "tsZ\014oddin.gg/otsb\006proto3"
+      "to\032\024ots/enum/enums.proto\032\021ots/commons.pr" +
+      "oto\"w\n#ResolveForeignEventsInTicketReque" +
+      "st\022\n\n\002id\030\001 \001(\t\022\025\n\rforeign_stake\030\003 \001(\004\022-\n" +
+      "\ttimestamp\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\"p\n$ResolveForeignEventsInTicketResp" +
+      "onse\022+\n\006status\030\001 \001(\0162\033.ots.enums.Accepta" +
+      "nceStatus\022\033\n\006reason\030\002 \001(\0132\013.ots.ReasonB\035" +
+      "\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.oddin.ots.Enums.getDescriptor(),
+          com.oddin.ots.Commons.getDescriptor(),
         });
     internal_static_ots_ResolveForeignEventsInTicketRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1634,6 +1852,7 @@ public final class ResolveForeignEventsInTicket {
         new java.lang.String[] { "Status", "Reason", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.oddin.ots.Enums.getDescriptor();
+    com.oddin.ots.Commons.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

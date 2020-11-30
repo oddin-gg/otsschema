@@ -9,29 +9,40 @@ import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
 
 message TicketCancelRequest {
+  // Unique ticket id from the operator’s system.
   string id = 1;
+
+  // Enum describing the reason for cancelling.
   enums.CancelReason cancel_reason = 2;
+
+  // Verbose description of the reason for cancelling the ticket.
   string cancel_reason_detail = 3;
+
+  // Timestamp of the ticket cancellation in UTC.
   google.protobuf.Timestamp timestamp = 4;
+
+  // Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
   uint32 cancel_percent = 5;
+
+  // Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
   repeated CancelBetInfo cancel_bet_info = 6;
 }
 
 message CancelBetInfo {
+  // Unique bet id from the operator’s system.
   string id = 1;
+
+  // Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
   uint32 cancel_percent = 2;
 }
 
 message TicketCancelResponse {
+  // Acceptance status - REJECTED or ACCEPTED.
   enums.AcceptanceStatus status = 1;
-  CancelRejectionReason cancel_rejection_reason = 2;
-  string cancel_rejection_message = 3;
-}
 
-enum CancelRejectionReason {
-  UNKNOWN = 0;
-  TICKET_NOT_FOUND = 1;
-  TIME_EXPIRED = 2;
-  ALREADY_SETTLED = 3;
-  OTHER = 4;
+  // Enum describing cancel rejection reason.
+  enums.CancelRejectionReason cancel_rejection_reason = 2;
+
+  // Verbose description of ticket cancel rejection reason.
+  string cancel_rejection_message = 3;
 }

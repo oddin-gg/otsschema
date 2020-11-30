@@ -20,24 +20,40 @@ public final class Enums {
   public enum AcceptanceStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>REJECTED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>ACCEPTANCE_STATUS_UNSPECIFIED = 0;</code>
      */
-    REJECTED(0),
+    ACCEPTANCE_STATUS_UNSPECIFIED(0),
     /**
-     * <code>ACCEPTED = 1;</code>
+     * <code>ACCEPTANCE_STATUS_REJECTED = 1;</code>
      */
-    ACCEPTED(1),
+    ACCEPTANCE_STATUS_REJECTED(1),
+    /**
+     * <code>ACCEPTANCE_STATUS_ACCEPTED = 2;</code>
+     */
+    ACCEPTANCE_STATUS_ACCEPTED(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>REJECTED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>ACCEPTANCE_STATUS_UNSPECIFIED = 0;</code>
      */
-    public static final int REJECTED_VALUE = 0;
+    public static final int ACCEPTANCE_STATUS_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>ACCEPTED = 1;</code>
+     * <code>ACCEPTANCE_STATUS_REJECTED = 1;</code>
      */
-    public static final int ACCEPTED_VALUE = 1;
+    public static final int ACCEPTANCE_STATUS_REJECTED_VALUE = 1;
+    /**
+     * <code>ACCEPTANCE_STATUS_ACCEPTED = 2;</code>
+     */
+    public static final int ACCEPTANCE_STATUS_ACCEPTED_VALUE = 2;
 
 
     public final int getNumber() {
@@ -64,8 +80,9 @@ public final class Enums {
      */
     public static AcceptanceStatus forNumber(int value) {
       switch (value) {
-        case 0: return REJECTED;
-        case 1: return ACCEPTED;
+        case 0: return ACCEPTANCE_STATUS_UNSPECIFIED;
+        case 1: return ACCEPTANCE_STATUS_REJECTED;
+        case 2: return ACCEPTANCE_STATUS_ACCEPTED;
         default: return null;
       }
     }
@@ -128,24 +145,40 @@ public final class Enums {
   public enum CancelStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>NOT_CANCELED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_STATUS_UNSPECIFIED = 0;</code>
      */
-    NOT_CANCELED(0),
+    CANCEL_STATUS_UNSPECIFIED(0),
     /**
-     * <code>CANCELED = 1;</code>
+     * <code>CANCEL_STATUS_NOT_CANCELED = 1;</code>
      */
-    CANCELED(1),
+    CANCEL_STATUS_NOT_CANCELED(1),
+    /**
+     * <code>CANCEL_STATUS_CANCELED = 2;</code>
+     */
+    CANCEL_STATUS_CANCELED(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>NOT_CANCELED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_STATUS_UNSPECIFIED = 0;</code>
      */
-    public static final int NOT_CANCELED_VALUE = 0;
+    public static final int CANCEL_STATUS_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>CANCELED = 1;</code>
+     * <code>CANCEL_STATUS_NOT_CANCELED = 1;</code>
      */
-    public static final int CANCELED_VALUE = 1;
+    public static final int CANCEL_STATUS_NOT_CANCELED_VALUE = 1;
+    /**
+     * <code>CANCEL_STATUS_CANCELED = 2;</code>
+     */
+    public static final int CANCEL_STATUS_CANCELED_VALUE = 2;
 
 
     public final int getNumber() {
@@ -172,8 +205,9 @@ public final class Enums {
      */
     public static CancelStatus forNumber(int value) {
       switch (value) {
-        case 0: return NOT_CANCELED;
-        case 1: return CANCELED;
+        case 0: return CANCEL_STATUS_UNSPECIFIED;
+        case 1: return CANCEL_STATUS_NOT_CANCELED;
+        case 2: return CANCEL_STATUS_CANCELED;
         default: return null;
       }
     }
@@ -236,56 +270,106 @@ public final class Enums {
   public enum CancelReason
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>UNKNOWN = 0;</code>
+     * <pre>
+     * Not a valid reason. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_UNSPECIFIED = 0;</code>
      */
-    UNKNOWN(0),
+    CANCEL_REASON_UNSPECIFIED(0),
     /**
-     * <code>TICKET_TIMEOUT = 1;</code>
+     * <pre>
+     * Please use this code if a ticket response was not received within a given time.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_TICKET_TIMEOUT = 1;</code>
      */
-    TICKET_TIMEOUT(1),
+    CANCEL_REASON_TICKET_TIMEOUT(1),
     /**
-     * <code>WRONG_TICKET = 2;</code>
+     * <pre>
+     * Should be used in case the ticket information was wrong and the client will send the corrected ticket in future.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_WRONG_TICKET = 2;</code>
      */
-    WRONG_TICKET(2),
+    CANCEL_REASON_WRONG_TICKET(2),
     /**
-     * <code>TECHNICAL_ISSUE = 3;</code>
+     * <pre>
+     * Clients should use this if they discover a technical issue,
+     * correct it and now need to cancel tickets affected by technical issues.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_TECHNICAL_ISSUE = 3;</code>
      */
-    TECHNICAL_ISSUE(3),
+    CANCEL_REASON_TECHNICAL_ISSUE(3),
     /**
-     * <code>UNEXPECTED_ISSUE = 4;</code>
+     * <pre>
+     * Should be used in case none of the above codes works.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_UNEXPECTED_ISSUE = 4;</code>
      */
-    UNEXPECTED_ISSUE(4),
+    CANCEL_REASON_UNEXPECTED_ISSUE(4),
     /**
-     * <code>REGULATOR = 5;</code>
+     * <pre>
+     * Regulator requested to cancel the ticket.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_REGULATOR = 5;</code>
      */
-    REGULATOR(5),
+    CANCEL_REASON_REGULATOR(5),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>UNKNOWN = 0;</code>
+     * <pre>
+     * Not a valid reason. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_UNSPECIFIED = 0;</code>
      */
-    public static final int UNKNOWN_VALUE = 0;
+    public static final int CANCEL_REASON_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>TICKET_TIMEOUT = 1;</code>
+     * <pre>
+     * Please use this code if a ticket response was not received within a given time.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_TICKET_TIMEOUT = 1;</code>
      */
-    public static final int TICKET_TIMEOUT_VALUE = 1;
+    public static final int CANCEL_REASON_TICKET_TIMEOUT_VALUE = 1;
     /**
-     * <code>WRONG_TICKET = 2;</code>
+     * <pre>
+     * Should be used in case the ticket information was wrong and the client will send the corrected ticket in future.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_WRONG_TICKET = 2;</code>
      */
-    public static final int WRONG_TICKET_VALUE = 2;
+    public static final int CANCEL_REASON_WRONG_TICKET_VALUE = 2;
     /**
-     * <code>TECHNICAL_ISSUE = 3;</code>
+     * <pre>
+     * Clients should use this if they discover a technical issue,
+     * correct it and now need to cancel tickets affected by technical issues.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_TECHNICAL_ISSUE = 3;</code>
      */
-    public static final int TECHNICAL_ISSUE_VALUE = 3;
+    public static final int CANCEL_REASON_TECHNICAL_ISSUE_VALUE = 3;
     /**
-     * <code>UNEXPECTED_ISSUE = 4;</code>
+     * <pre>
+     * Should be used in case none of the above codes works.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_UNEXPECTED_ISSUE = 4;</code>
      */
-    public static final int UNEXPECTED_ISSUE_VALUE = 4;
+    public static final int CANCEL_REASON_UNEXPECTED_ISSUE_VALUE = 4;
     /**
-     * <code>REGULATOR = 5;</code>
+     * <pre>
+     * Regulator requested to cancel the ticket.
+     * </pre>
+     *
+     * <code>CANCEL_REASON_REGULATOR = 5;</code>
      */
-    public static final int REGULATOR_VALUE = 5;
+    public static final int CANCEL_REASON_REGULATOR_VALUE = 5;
 
 
     public final int getNumber() {
@@ -312,12 +396,12 @@ public final class Enums {
      */
     public static CancelReason forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return TICKET_TIMEOUT;
-        case 2: return WRONG_TICKET;
-        case 3: return TECHNICAL_ISSUE;
-        case 4: return UNEXPECTED_ISSUE;
-        case 5: return REGULATOR;
+        case 0: return CANCEL_REASON_UNSPECIFIED;
+        case 1: return CANCEL_REASON_TICKET_TIMEOUT;
+        case 2: return CANCEL_REASON_WRONG_TICKET;
+        case 3: return CANCEL_REASON_TECHNICAL_ISSUE;
+        case 4: return CANCEL_REASON_UNEXPECTED_ISSUE;
+        case 5: return CANCEL_REASON_REGULATOR;
         default: return null;
       }
     }
@@ -375,29 +459,220 @@ public final class Enums {
   }
 
   /**
+   * Protobuf enum {@code ots.enums.CancelRejectionReason}
+   */
+  public enum CancelRejectionReason
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Not a valid reason. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_UNSPECIFIED = 0;</code>
+     */
+    CANCEL_REJECT_REASON_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Ticket was not found in OTS system.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_TICKET_NOT_FOUND = 1;</code>
+     */
+    CANCEL_REJECT_REASON_TICKET_NOT_FOUND(1),
+    /**
+     * <pre>
+     * Time for receiving ticket cancellation has passed.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_TIME_EXPIRED = 2;</code>
+     */
+    CANCEL_REJECT_REASON_TIME_EXPIRED(2),
+    /**
+     * <pre>
+     * Ticket is already settled and cannot be canceled.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_ALREADY_SETTLED = 3;</code>
+     */
+    CANCEL_REJECT_REASON_ALREADY_SETTLED(3),
+    /**
+     * <pre>
+     * Reason is not specified. More info should be contained in the message field.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_OTHER = 4;</code>
+     */
+    CANCEL_REJECT_REASON_OTHER(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Not a valid reason. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int CANCEL_REJECT_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Ticket was not found in OTS system.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_TICKET_NOT_FOUND = 1;</code>
+     */
+    public static final int CANCEL_REJECT_REASON_TICKET_NOT_FOUND_VALUE = 1;
+    /**
+     * <pre>
+     * Time for receiving ticket cancellation has passed.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_TIME_EXPIRED = 2;</code>
+     */
+    public static final int CANCEL_REJECT_REASON_TIME_EXPIRED_VALUE = 2;
+    /**
+     * <pre>
+     * Ticket is already settled and cannot be canceled.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_ALREADY_SETTLED = 3;</code>
+     */
+    public static final int CANCEL_REJECT_REASON_ALREADY_SETTLED_VALUE = 3;
+    /**
+     * <pre>
+     * Reason is not specified. More info should be contained in the message field.
+     * </pre>
+     *
+     * <code>CANCEL_REJECT_REASON_OTHER = 4;</code>
+     */
+    public static final int CANCEL_REJECT_REASON_OTHER_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CancelRejectionReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CancelRejectionReason forNumber(int value) {
+      switch (value) {
+        case 0: return CANCEL_REJECT_REASON_UNSPECIFIED;
+        case 1: return CANCEL_REJECT_REASON_TICKET_NOT_FOUND;
+        case 2: return CANCEL_REJECT_REASON_TIME_EXPIRED;
+        case 3: return CANCEL_REJECT_REASON_ALREADY_SETTLED;
+        case 4: return CANCEL_REJECT_REASON_OTHER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CancelRejectionReason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CancelRejectionReason>() {
+            public CancelRejectionReason findValueByNumber(int number) {
+              return CancelRejectionReason.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final CancelRejectionReason[] VALUES = values();
+
+    public static CancelRejectionReason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CancelRejectionReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ots.enums.CancelRejectionReason)
+  }
+
+  /**
    * Protobuf enum {@code ots.enums.BetStakeType}
    */
   public enum BetStakeType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>SUM = 0;</code>
+     * <pre>
+     * Not a valid type. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_STAKE_TYPE_UNSPECIFIED = 0;</code>
      */
-    SUM(0),
+    BET_STAKE_TYPE_UNSPECIFIED(0),
     /**
-     * <code>UNIT = 1;</code>
+     * <code>BET_STAKE_TYPE_SUM = 1;</code>
      */
-    UNIT(1),
+    BET_STAKE_TYPE_SUM(1),
+    /**
+     * <code>BET_STAKE_TYPE_UNIT = 2;</code>
+     */
+    BET_STAKE_TYPE_UNIT(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>SUM = 0;</code>
+     * <pre>
+     * Not a valid type. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_STAKE_TYPE_UNSPECIFIED = 0;</code>
      */
-    public static final int SUM_VALUE = 0;
+    public static final int BET_STAKE_TYPE_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>UNIT = 1;</code>
+     * <code>BET_STAKE_TYPE_SUM = 1;</code>
      */
-    public static final int UNIT_VALUE = 1;
+    public static final int BET_STAKE_TYPE_SUM_VALUE = 1;
+    /**
+     * <code>BET_STAKE_TYPE_UNIT = 2;</code>
+     */
+    public static final int BET_STAKE_TYPE_UNIT_VALUE = 2;
 
 
     public final int getNumber() {
@@ -424,8 +699,9 @@ public final class Enums {
      */
     public static BetStakeType forNumber(int value) {
       switch (value) {
-        case 0: return SUM;
-        case 1: return UNIT;
+        case 0: return BET_STAKE_TYPE_UNSPECIFIED;
+        case 1: return BET_STAKE_TYPE_SUM;
+        case 2: return BET_STAKE_TYPE_UNIT;
         default: return null;
       }
     }
@@ -456,7 +732,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(3);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final BetStakeType[] VALUES = values();
@@ -488,32 +764,48 @@ public final class Enums {
   public enum AcceptOddsChange
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>NONE = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>ACCEPT_ODDS_CHANGE_UNSPECIFIED = 0;</code>
      */
-    NONE(0),
+    ACCEPT_ODDS_CHANGE_UNSPECIFIED(0),
     /**
-     * <code>ANY = 1;</code>
+     * <code>ACCEPT_ODDS_CHANGE_NONE = 1;</code>
      */
-    ANY(1),
+    ACCEPT_ODDS_CHANGE_NONE(1),
     /**
-     * <code>HIGHER = 2;</code>
+     * <code>ACCEPT_ODDS_CHANGE_ANY = 2;</code>
      */
-    HIGHER(2),
+    ACCEPT_ODDS_CHANGE_ANY(2),
+    /**
+     * <code>ACCEPT_ODDS_CHANGE_HIGHER = 3;</code>
+     */
+    ACCEPT_ODDS_CHANGE_HIGHER(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>NONE = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>ACCEPT_ODDS_CHANGE_UNSPECIFIED = 0;</code>
      */
-    public static final int NONE_VALUE = 0;
+    public static final int ACCEPT_ODDS_CHANGE_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>ANY = 1;</code>
+     * <code>ACCEPT_ODDS_CHANGE_NONE = 1;</code>
      */
-    public static final int ANY_VALUE = 1;
+    public static final int ACCEPT_ODDS_CHANGE_NONE_VALUE = 1;
     /**
-     * <code>HIGHER = 2;</code>
+     * <code>ACCEPT_ODDS_CHANGE_ANY = 2;</code>
      */
-    public static final int HIGHER_VALUE = 2;
+    public static final int ACCEPT_ODDS_CHANGE_ANY_VALUE = 2;
+    /**
+     * <code>ACCEPT_ODDS_CHANGE_HIGHER = 3;</code>
+     */
+    public static final int ACCEPT_ODDS_CHANGE_HIGHER_VALUE = 3;
 
 
     public final int getNumber() {
@@ -540,9 +832,10 @@ public final class Enums {
      */
     public static AcceptOddsChange forNumber(int value) {
       switch (value) {
-        case 0: return NONE;
-        case 1: return ANY;
-        case 2: return HIGHER;
+        case 0: return ACCEPT_ODDS_CHANGE_UNSPECIFIED;
+        case 1: return ACCEPT_ODDS_CHANGE_NONE;
+        case 2: return ACCEPT_ODDS_CHANGE_ANY;
+        case 3: return ACCEPT_ODDS_CHANGE_HIGHER;
         default: return null;
       }
     }
@@ -573,7 +866,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(4);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final AcceptOddsChange[] VALUES = values();
@@ -600,93 +893,101 @@ public final class Enums {
   }
 
   /**
-   * Protobuf enum {@code ots.enums.BetChannel}
+   * Protobuf enum {@code ots.enums.TicketChannel}
    */
-  public enum BetChannel
+  public enum TicketChannel
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>NOT_SPECIFIED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>TICKET_CHANNEL_UNSPECIFIED = 0;</code>
      */
-    NOT_SPECIFIED(0),
+    TICKET_CHANNEL_UNSPECIFIED(0),
     /**
-     * <code>INTERNET = 1;</code>
+     * <code>TICKET_CHANNEL_INTERNET = 1;</code>
      */
-    INTERNET(1),
+    TICKET_CHANNEL_INTERNET(1),
     /**
-     * <code>RETAIL = 2;</code>
+     * <code>TICKET_CHANNEL_RETAIL = 2;</code>
      */
-    RETAIL(2),
+    TICKET_CHANNEL_RETAIL(2),
     /**
-     * <code>TERMINAL = 3;</code>
+     * <code>TICKET_CHANNEL_TERMINAL = 3;</code>
      */
-    TERMINAL(3),
+    TICKET_CHANNEL_TERMINAL(3),
     /**
-     * <code>MOBILE = 4;</code>
+     * <code>TICKET_CHANNEL_MOBILE = 4;</code>
      */
-    MOBILE(4),
+    TICKET_CHANNEL_MOBILE(4),
     /**
-     * <code>PHONE = 5;</code>
+     * <code>TICKET_CHANNEL_PHONE = 5;</code>
      */
-    PHONE(5),
+    TICKET_CHANNEL_PHONE(5),
     /**
-     * <code>SMS = 6;</code>
+     * <code>TICKET_CHANNEL_SMS = 6;</code>
      */
-    SMS(6),
+    TICKET_CHANNEL_SMS(6),
     /**
-     * <code>CALL_CENTRE = 7;</code>
+     * <code>TICKET_CHANNEL_CALL_CENTRE = 7;</code>
      */
-    CALL_CENTRE(7),
+    TICKET_CHANNEL_CALL_CENTRE(7),
     /**
-     * <code>TV_APP = 8;</code>
+     * <code>TICKET_CHANNEL_TV_APP = 8;</code>
      */
-    TV_APP(8),
+    TICKET_CHANNEL_TV_APP(8),
     /**
-     * <code>AGENT = 9;</code>
+     * <code>TICKET_CHANNEL_AGENT = 9;</code>
      */
-    AGENT(9),
+    TICKET_CHANNEL_AGENT(9),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>NOT_SPECIFIED = 0;</code>
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>TICKET_CHANNEL_UNSPECIFIED = 0;</code>
      */
-    public static final int NOT_SPECIFIED_VALUE = 0;
+    public static final int TICKET_CHANNEL_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>INTERNET = 1;</code>
+     * <code>TICKET_CHANNEL_INTERNET = 1;</code>
      */
-    public static final int INTERNET_VALUE = 1;
+    public static final int TICKET_CHANNEL_INTERNET_VALUE = 1;
     /**
-     * <code>RETAIL = 2;</code>
+     * <code>TICKET_CHANNEL_RETAIL = 2;</code>
      */
-    public static final int RETAIL_VALUE = 2;
+    public static final int TICKET_CHANNEL_RETAIL_VALUE = 2;
     /**
-     * <code>TERMINAL = 3;</code>
+     * <code>TICKET_CHANNEL_TERMINAL = 3;</code>
      */
-    public static final int TERMINAL_VALUE = 3;
+    public static final int TICKET_CHANNEL_TERMINAL_VALUE = 3;
     /**
-     * <code>MOBILE = 4;</code>
+     * <code>TICKET_CHANNEL_MOBILE = 4;</code>
      */
-    public static final int MOBILE_VALUE = 4;
+    public static final int TICKET_CHANNEL_MOBILE_VALUE = 4;
     /**
-     * <code>PHONE = 5;</code>
+     * <code>TICKET_CHANNEL_PHONE = 5;</code>
      */
-    public static final int PHONE_VALUE = 5;
+    public static final int TICKET_CHANNEL_PHONE_VALUE = 5;
     /**
-     * <code>SMS = 6;</code>
+     * <code>TICKET_CHANNEL_SMS = 6;</code>
      */
-    public static final int SMS_VALUE = 6;
+    public static final int TICKET_CHANNEL_SMS_VALUE = 6;
     /**
-     * <code>CALL_CENTRE = 7;</code>
+     * <code>TICKET_CHANNEL_CALL_CENTRE = 7;</code>
      */
-    public static final int CALL_CENTRE_VALUE = 7;
+    public static final int TICKET_CHANNEL_CALL_CENTRE_VALUE = 7;
     /**
-     * <code>TV_APP = 8;</code>
+     * <code>TICKET_CHANNEL_TV_APP = 8;</code>
      */
-    public static final int TV_APP_VALUE = 8;
+    public static final int TICKET_CHANNEL_TV_APP_VALUE = 8;
     /**
-     * <code>AGENT = 9;</code>
+     * <code>TICKET_CHANNEL_AGENT = 9;</code>
      */
-    public static final int AGENT_VALUE = 9;
+    public static final int TICKET_CHANNEL_AGENT_VALUE = 9;
 
 
     public final int getNumber() {
@@ -703,7 +1004,7 @@ public final class Enums {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static BetChannel valueOf(int value) {
+    public static TicketChannel valueOf(int value) {
       return forNumber(value);
     }
 
@@ -711,31 +1012,31 @@ public final class Enums {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static BetChannel forNumber(int value) {
+    public static TicketChannel forNumber(int value) {
       switch (value) {
-        case 0: return NOT_SPECIFIED;
-        case 1: return INTERNET;
-        case 2: return RETAIL;
-        case 3: return TERMINAL;
-        case 4: return MOBILE;
-        case 5: return PHONE;
-        case 6: return SMS;
-        case 7: return CALL_CENTRE;
-        case 8: return TV_APP;
-        case 9: return AGENT;
+        case 0: return TICKET_CHANNEL_UNSPECIFIED;
+        case 1: return TICKET_CHANNEL_INTERNET;
+        case 2: return TICKET_CHANNEL_RETAIL;
+        case 3: return TICKET_CHANNEL_TERMINAL;
+        case 4: return TICKET_CHANNEL_MOBILE;
+        case 5: return TICKET_CHANNEL_PHONE;
+        case 6: return TICKET_CHANNEL_SMS;
+        case 7: return TICKET_CHANNEL_CALL_CENTRE;
+        case 8: return TICKET_CHANNEL_TV_APP;
+        case 9: return TICKET_CHANNEL_AGENT;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<BetChannel>
+    public static com.google.protobuf.Internal.EnumLiteMap<TicketChannel>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        BetChannel> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BetChannel>() {
-            public BetChannel findValueByNumber(int number) {
-              return BetChannel.forNumber(number);
+        TicketChannel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TicketChannel>() {
+            public TicketChannel findValueByNumber(int number) {
+              return TicketChannel.forNumber(number);
             }
           };
 
@@ -753,12 +1054,12 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(5);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(6);
     }
 
-    private static final BetChannel[] VALUES = values();
+    private static final TicketChannel[] VALUES = values();
 
-    public static BetChannel valueOf(
+    public static TicketChannel valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -772,11 +1073,11 @@ public final class Enums {
 
     private final int value;
 
-    private BetChannel(int value) {
+    private TicketChannel(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:ots.enums.BetChannel)
+    // @@protoc_insertion_point(enum_scope:ots.enums.TicketChannel)
   }
 
   /**
@@ -785,16 +1086,32 @@ public final class Enums {
   public enum BetBonusType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>TOTAL = 0;</code>
+     * <pre>
+     * Not a valid type. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_BONUS_TYPE_UNSPECIFIED = 0;</code>
      */
-    TOTAL(0),
+    BET_BONUS_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>BET_BONUS_TYPE_TOTAL = 1;</code>
+     */
+    BET_BONUS_TYPE_TOTAL(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>TOTAL = 0;</code>
+     * <pre>
+     * Not a valid type. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_BONUS_TYPE_UNSPECIFIED = 0;</code>
      */
-    public static final int TOTAL_VALUE = 0;
+    public static final int BET_BONUS_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>BET_BONUS_TYPE_TOTAL = 1;</code>
+     */
+    public static final int BET_BONUS_TYPE_TOTAL_VALUE = 1;
 
 
     public final int getNumber() {
@@ -821,7 +1138,8 @@ public final class Enums {
      */
     public static BetBonusType forNumber(int value) {
       switch (value) {
-        case 0: return TOTAL;
+        case 0: return BET_BONUS_TYPE_UNSPECIFIED;
+        case 1: return BET_BONUS_TYPE_TOTAL;
         default: return null;
       }
     }
@@ -852,7 +1170,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(6);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final BetBonusType[] VALUES = values();
@@ -884,16 +1202,32 @@ public final class Enums {
   public enum BetBonusMode
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ALL = 0;</code>
+     * <pre>
+     * Not a valid mode. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_BONUS_MODE_UNSPECIFIED = 0;</code>
      */
-    ALL(0),
+    BET_BONUS_MODE_UNSPECIFIED(0),
+    /**
+     * <code>BET_BONUS_MODE_ALL = 1;</code>
+     */
+    BET_BONUS_MODE_ALL(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>ALL = 0;</code>
+     * <pre>
+     * Not a valid mode. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>BET_BONUS_MODE_UNSPECIFIED = 0;</code>
      */
-    public static final int ALL_VALUE = 0;
+    public static final int BET_BONUS_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>BET_BONUS_MODE_ALL = 1;</code>
+     */
+    public static final int BET_BONUS_MODE_ALL_VALUE = 1;
 
 
     public final int getNumber() {
@@ -920,7 +1254,8 @@ public final class Enums {
      */
     public static BetBonusMode forNumber(int value) {
       switch (value) {
-        case 0: return ALL;
+        case 0: return BET_BONUS_MODE_UNSPECIFIED;
+        case 1: return BET_BONUS_MODE_ALL;
         default: return null;
       }
     }
@@ -951,7 +1286,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(7);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final BetBonusMode[] VALUES = values();
@@ -977,649 +1312,113 @@ public final class Enums {
     // @@protoc_insertion_point(enum_scope:ots.enums.BetBonusMode)
   }
 
-  public interface ReasonOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ots.enums.Reason)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint32 code = 1;</code>
-     * @return The code.
-     */
-    int getCode();
-
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
   /**
-   * Protobuf type {@code ots.enums.Reason}
+   * Protobuf enum {@code ots.enums.ReasonCode}
    */
-  public static final class Reason extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ots.enums.Reason)
-      ReasonOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Reason.newBuilder() to construct.
-    private Reason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Reason() {
-      message_ = "";
-    }
+  public enum ReasonCode
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>REASON_CODE_UNSPECIFIED = 0;</code>
+     */
+    REASON_CODE_UNSPECIFIED(0),
+    UNRECOGNIZED(-1),
+    ;
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Reason();
-    }
+    /**
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>REASON_CODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int REASON_CODE_UNSPECIFIED_VALUE = 0;
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Reason(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
+      return value;
+    }
 
-              code_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReasonCode valueOf(int value) {
+      return forNumber(value);
+    }
 
-              message_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReasonCode forNumber(int value) {
+      switch (value) {
+        case 0: return REASON_CODE_UNSPECIFIED;
+        default: return null;
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReasonCode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ReasonCode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ReasonCode>() {
+            public ReasonCode findValueByNumber(int number) {
+              return ReasonCode.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(9);
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.oddin.ots.Enums.internal_static_ots_enums_Reason_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Enums.Reason.class, com.oddin.ots.Enums.Reason.Builder.class);
+    private static final ReasonCode[] VALUES = values();
+
+    public static ReasonCode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
     }
 
-    public static final int CODE_FIELD_NUMBER = 1;
-    private int code_;
-    /**
-     * <code>uint32 code = 1;</code>
-     * @return The code.
-     */
-    @java.lang.Override
-    public int getCode() {
-      return code_;
+    private final int value;
+
+    private ReasonCode(int value) {
+      this.value = value;
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object message_;
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (code_ != 0) {
-        output.writeUInt32(1, code_);
-      }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (code_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, code_);
-      }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.oddin.ots.Enums.Reason)) {
-        return super.equals(obj);
-      }
-      com.oddin.ots.Enums.Reason other = (com.oddin.ots.Enums.Reason) obj;
-
-      if (getCode()
-          != other.getCode()) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.ots.Enums.Reason parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Enums.Reason parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Enums.Reason parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.oddin.ots.Enums.Reason prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code ots.enums.Reason}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ots.enums.Reason)
-        com.oddin.ots.Enums.ReasonOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Enums.Reason.class, com.oddin.ots.Enums.Reason.Builder.class);
-      }
-
-      // Construct using com.oddin.ots.Enums.Reason.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        code_ = 0;
-
-        message_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.oddin.ots.Enums.internal_static_ots_enums_Reason_descriptor;
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Enums.Reason getDefaultInstanceForType() {
-        return com.oddin.ots.Enums.Reason.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Enums.Reason build() {
-        com.oddin.ots.Enums.Reason result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Enums.Reason buildPartial() {
-        com.oddin.ots.Enums.Reason result = new com.oddin.ots.Enums.Reason(this);
-        result.code_ = code_;
-        result.message_ = message_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Enums.Reason) {
-          return mergeFrom((com.oddin.ots.Enums.Reason)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.oddin.ots.Enums.Reason other) {
-        if (other == com.oddin.ots.Enums.Reason.getDefaultInstance()) return this;
-        if (other.getCode() != 0) {
-          setCode(other.getCode());
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.oddin.ots.Enums.Reason parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Enums.Reason) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int code_ ;
-      /**
-       * <code>uint32 code = 1;</code>
-       * @return The code.
-       */
-      @java.lang.Override
-      public int getCode() {
-        return code_;
-      }
-      /**
-       * <code>uint32 code = 1;</code>
-       * @param value The code to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCode(int value) {
-        
-        code_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 code = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCode() {
-        
-        code_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <code>string message = 2;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:ots.enums.Reason)
-    }
-
-    // @@protoc_insertion_point(class_scope:ots.enums.Reason)
-    private static final com.oddin.ots.Enums.Reason DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Enums.Reason();
-    }
-
-    public static com.oddin.ots.Enums.Reason getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Reason>
-        PARSER = new com.google.protobuf.AbstractParser<Reason>() {
-      @java.lang.Override
-      public Reason parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Reason(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Reason> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Reason> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.oddin.ots.Enums.Reason getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(enum_scope:ots.enums.ReasonCode)
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ots_enums_Reason_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ots_enums_Reason_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1629,33 +1428,48 @@ public final class Enums {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ots/enum/enums.proto\022\tots.enums\"\'\n\006Rea" +
-      "son\022\014\n\004code\030\001 \001(\r\022\017\n\007message\030\002 \001(\t*.\n\020Ac" +
-      "ceptanceStatus\022\014\n\010REJECTED\020\000\022\014\n\010ACCEPTED" +
-      "\020\001*.\n\014CancelStatus\022\020\n\014NOT_CANCELED\020\000\022\014\n\010" +
-      "CANCELED\020\001*{\n\014CancelReason\022\013\n\007UNKNOWN\020\000\022" +
-      "\022\n\016TICKET_TIMEOUT\020\001\022\020\n\014WRONG_TICKET\020\002\022\023\n" +
-      "\017TECHNICAL_ISSUE\020\003\022\024\n\020UNEXPECTED_ISSUE\020\004" +
-      "\022\r\n\tREGULATOR\020\005*!\n\014BetStakeType\022\007\n\003SUM\020\000" +
-      "\022\010\n\004UNIT\020\001*1\n\020AcceptOddsChange\022\010\n\004NONE\020\000" +
-      "\022\007\n\003ANY\020\001\022\n\n\006HIGHER\020\002*\217\001\n\nBetChannel\022\021\n\r" +
-      "NOT_SPECIFIED\020\000\022\014\n\010INTERNET\020\001\022\n\n\006RETAIL\020" +
-      "\002\022\014\n\010TERMINAL\020\003\022\n\n\006MOBILE\020\004\022\t\n\005PHONE\020\005\022\007" +
-      "\n\003SMS\020\006\022\017\n\013CALL_CENTRE\020\007\022\n\n\006TV_APP\020\010\022\t\n\005" +
-      "AGENT\020\t*\031\n\014BetBonusType\022\t\n\005TOTAL\020\000*\027\n\014Be" +
-      "tBonusMode\022\007\n\003ALL\020\000B\035\n\rcom.oddin.otsZ\014od" +
-      "din.gg/otsb\006proto3"
+      "\n\024ots/enum/enums.proto\022\tots.enums*u\n\020Acc" +
+      "eptanceStatus\022!\n\035ACCEPTANCE_STATUS_UNSPE" +
+      "CIFIED\020\000\022\036\n\032ACCEPTANCE_STATUS_REJECTED\020\001" +
+      "\022\036\n\032ACCEPTANCE_STATUS_ACCEPTED\020\002*i\n\014Canc" +
+      "elStatus\022\035\n\031CANCEL_STATUS_UNSPECIFIED\020\000\022" +
+      "\036\n\032CANCEL_STATUS_NOT_CANCELED\020\001\022\032\n\026CANCE" +
+      "L_STATUS_CANCELED\020\002*\323\001\n\014CancelReason\022\035\n\031" +
+      "CANCEL_REASON_UNSPECIFIED\020\000\022 \n\034CANCEL_RE" +
+      "ASON_TICKET_TIMEOUT\020\001\022\036\n\032CANCEL_REASON_W" +
+      "RONG_TICKET\020\002\022!\n\035CANCEL_REASON_TECHNICAL" +
+      "_ISSUE\020\003\022\"\n\036CANCEL_REASON_UNEXPECTED_ISS" +
+      "UE\020\004\022\033\n\027CANCEL_REASON_REGULATOR\020\005*\331\001\n\025Ca" +
+      "ncelRejectionReason\022$\n CANCEL_REJECT_REA" +
+      "SON_UNSPECIFIED\020\000\022)\n%CANCEL_REJECT_REASO" +
+      "N_TICKET_NOT_FOUND\020\001\022%\n!CANCEL_REJECT_RE" +
+      "ASON_TIME_EXPIRED\020\002\022(\n$CANCEL_REJECT_REA" +
+      "SON_ALREADY_SETTLED\020\003\022\036\n\032CANCEL_REJECT_R" +
+      "EASON_OTHER\020\004*_\n\014BetStakeType\022\036\n\032BET_STA" +
+      "KE_TYPE_UNSPECIFIED\020\000\022\026\n\022BET_STAKE_TYPE_" +
+      "SUM\020\001\022\027\n\023BET_STAKE_TYPE_UNIT\020\002*\216\001\n\020Accep" +
+      "tOddsChange\022\"\n\036ACCEPT_ODDS_CHANGE_UNSPEC" +
+      "IFIED\020\000\022\033\n\027ACCEPT_ODDS_CHANGE_NONE\020\001\022\032\n\026" +
+      "ACCEPT_ODDS_CHANGE_ANY\020\002\022\035\n\031ACCEPT_ODDS_" +
+      "CHANGE_HIGHER\020\003*\246\002\n\rTicketChannel\022\036\n\032TIC" +
+      "KET_CHANNEL_UNSPECIFIED\020\000\022\033\n\027TICKET_CHAN" +
+      "NEL_INTERNET\020\001\022\031\n\025TICKET_CHANNEL_RETAIL\020" +
+      "\002\022\033\n\027TICKET_CHANNEL_TERMINAL\020\003\022\031\n\025TICKET" +
+      "_CHANNEL_MOBILE\020\004\022\030\n\024TICKET_CHANNEL_PHON" +
+      "E\020\005\022\026\n\022TICKET_CHANNEL_SMS\020\006\022\036\n\032TICKET_CH" +
+      "ANNEL_CALL_CENTRE\020\007\022\031\n\025TICKET_CHANNEL_TV" +
+      "_APP\020\010\022\030\n\024TICKET_CHANNEL_AGENT\020\t*H\n\014BetB" +
+      "onusType\022\036\n\032BET_BONUS_TYPE_UNSPECIFIED\020\000" +
+      "\022\030\n\024BET_BONUS_TYPE_TOTAL\020\001*F\n\014BetBonusMo" +
+      "de\022\036\n\032BET_BONUS_MODE_UNSPECIFIED\020\000\022\026\n\022BE" +
+      "T_BONUS_MODE_ALL\020\001*)\n\nReasonCode\022\033\n\027REAS" +
+      "ON_CODE_UNSPECIFIED\020\000B\035\n\rcom.oddin.otsZ\014" +
+      "oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ots_enums_Reason_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_ots_enums_Reason_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ots_enums_Reason_descriptor,
-        new java.lang.String[] { "Code", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

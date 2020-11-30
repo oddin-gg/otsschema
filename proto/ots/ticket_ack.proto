@@ -7,10 +7,21 @@ option java_package = "com.oddin.ots";
 
 import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
+import "ots/commons.proto";
 
 message TicketAckRequest {
+  // Unique ticket id from the operator’s system.
   string id = 1;
+
+  // Timestamp when the ticket was accepted.
   google.protobuf.Timestamp timestamp = 2;
+
+  // Acceptance status - REJECTED or ACCEPTED
   enums.AcceptanceStatus acceptance_status = 3;
-  enums.Reason reason = 4;
+
+  // Information about rejection/acception reason
+  Reason reason = 4;
+}
+
+message TicketAckResponse {
 }

@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as ots_enum_enums_pb from "../ots/enum/enums_pb";
+import * as ots_commons_pb from "../ots/commons_pb";
 
 export class ResolveForeignEventsInTicketRequest extends jspb.Message {
   getId(): string;
@@ -41,8 +42,8 @@ export class ResolveForeignEventsInTicketResponse extends jspb.Message {
 
   hasReason(): boolean;
   clearReason(): void;
-  getReason(): ots_enum_enums_pb.Reason | undefined;
-  setReason(value?: ots_enum_enums_pb.Reason): void;
+  getReason(): ots_commons_pb.Reason | undefined;
+  setReason(value?: ots_commons_pb.Reason): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveForeignEventsInTicketResponse.AsObject;
@@ -57,7 +58,7 @@ export class ResolveForeignEventsInTicketResponse extends jspb.Message {
 export namespace ResolveForeignEventsInTicketResponse {
   export type AsObject = {
     status: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    reason?: ots_enum_enums_pb.Reason.AsObject,
+    reason?: ots_commons_pb.Reason.AsObject,
   }
 }
 

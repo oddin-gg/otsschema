@@ -26,72 +26,23 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type CancelRejectionReason int32
-
-const (
-	CancelRejectionReason_UNKNOWN          CancelRejectionReason = 0
-	CancelRejectionReason_TICKET_NOT_FOUND CancelRejectionReason = 1
-	CancelRejectionReason_TIME_EXPIRED     CancelRejectionReason = 2
-	CancelRejectionReason_ALREADY_SETTLED  CancelRejectionReason = 3
-	CancelRejectionReason_OTHER            CancelRejectionReason = 4
-)
-
-// Enum value maps for CancelRejectionReason.
-var (
-	CancelRejectionReason_name = map[int32]string{
-		0: "UNKNOWN",
-		1: "TICKET_NOT_FOUND",
-		2: "TIME_EXPIRED",
-		3: "ALREADY_SETTLED",
-		4: "OTHER",
-	}
-	CancelRejectionReason_value = map[string]int32{
-		"UNKNOWN":          0,
-		"TICKET_NOT_FOUND": 1,
-		"TIME_EXPIRED":     2,
-		"ALREADY_SETTLED":  3,
-		"OTHER":            4,
-	}
-)
-
-func (x CancelRejectionReason) Enum() *CancelRejectionReason {
-	p := new(CancelRejectionReason)
-	*p = x
-	return p
-}
-
-func (x CancelRejectionReason) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (CancelRejectionReason) Descriptor() protoreflect.EnumDescriptor {
-	return file_ots_ticket_cancel_proto_enumTypes[0].Descriptor()
-}
-
-func (CancelRejectionReason) Type() protoreflect.EnumType {
-	return &file_ots_ticket_cancel_proto_enumTypes[0]
-}
-
-func (x CancelRejectionReason) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use CancelRejectionReason.Descriptor instead.
-func (CancelRejectionReason) EnumDescriptor() ([]byte, []int) {
-	return file_ots_ticket_cancel_proto_rawDescGZIP(), []int{0}
-}
-
 type TicketCancelRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	CancelReason       CancelReason           `protobuf:"varint,2,opt,name=cancel_reason,json=cancelReason,proto3,enum=ots.enums.CancelReason" json:"cancel_reason,omitempty"`
-	CancelReasonDetail string                 `protobuf:"bytes,3,opt,name=cancel_reason_detail,json=cancelReasonDetail,proto3" json:"cancel_reason_detail,omitempty"`
-	Timestamp          *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	CancelPercent      uint32                 `protobuf:"varint,5,opt,name=cancel_percent,json=cancelPercent,proto3" json:"cancel_percent,omitempty"`
-	CancelBetInfo      []*CancelBetInfo       `protobuf:"bytes,6,rep,name=cancel_bet_info,json=cancelBetInfo,proto3" json:"cancel_bet_info,omitempty"`
+	// Unique ticket id from the operator’s system.
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Enum describing the reason for cancelling.
+	CancelReason CancelReason `protobuf:"varint,2,opt,name=cancel_reason,json=cancelReason,proto3,enum=ots.enums.CancelReason" json:"cancel_reason,omitempty"`
+	// Verbose description of the reason for cancelling the ticket.
+	CancelReasonDetail string `protobuf:"bytes,3,opt,name=cancel_reason_detail,json=cancelReasonDetail,proto3" json:"cancel_reason_detail,omitempty"`
+	// Timestamp of the ticket cancellation in UTC.
+	Timestamp *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	// Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
+	CancelPercent uint32 `protobuf:"varint,5,opt,name=cancel_percent,json=cancelPercent,proto3" json:"cancel_percent,omitempty"`
+	// Information about the partial bet cancelation. Mutually exclusive with cancel_percent.
+	CancelBetInfo []*CancelBetInfo `protobuf:"bytes,6,rep,name=cancel_bet_info,json=cancelBetInfo,proto3" json:"cancel_bet_info,omitempty"`
 }
 
 func (x *TicketCancelRequest) Reset() {
@@ -137,7 +88,7 @@ func (x *TicketCancelRequest) GetCancelReason() CancelReason {
 	if x != nil {
 		return x.CancelReason
 	}
-	return CancelReason_UNKNOWN
+	return CancelReason_CANCEL_REASON_UNSPECIFIED
 }
 
 func (x *TicketCancelRequest) GetCancelReasonDetail() string {
@@ -173,7 +124,9 @@ type CancelBetInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id            string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Unique bet id from the operator’s system.
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
 	CancelPercent uint32 `protobuf:"varint,2,opt,name=cancel_percent,json=cancelPercent,proto3" json:"cancel_percent,omitempty"`
 }
 
@@ -228,9 +181,12 @@ type TicketCancelResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Status                 AcceptanceStatus      `protobuf:"varint,1,opt,name=status,proto3,enum=ots.enums.AcceptanceStatus" json:"status,omitempty"`
-	CancelRejectionReason  CancelRejectionReason `protobuf:"varint,2,opt,name=cancel_rejection_reason,json=cancelRejectionReason,proto3,enum=ots.CancelRejectionReason" json:"cancel_rejection_reason,omitempty"`
-	CancelRejectionMessage string                `protobuf:"bytes,3,opt,name=cancel_rejection_message,json=cancelRejectionMessage,proto3" json:"cancel_rejection_message,omitempty"`
+	// Acceptance status - REJECTED or ACCEPTED.
+	Status AcceptanceStatus `protobuf:"varint,1,opt,name=status,proto3,enum=ots.enums.AcceptanceStatus" json:"status,omitempty"`
+	// Enum describing cancel rejection reason.
+	CancelRejectionReason CancelRejectionReason `protobuf:"varint,2,opt,name=cancel_rejection_reason,json=cancelRejectionReason,proto3,enum=ots.enums.CancelRejectionReason" json:"cancel_rejection_reason,omitempty"`
+	// Verbose description of ticket cancel rejection reason.
+	CancelRejectionMessage string `protobuf:"bytes,3,opt,name=cancel_rejection_message,json=cancelRejectionMessage,proto3" json:"cancel_rejection_message,omitempty"`
 }
 
 func (x *TicketCancelResponse) Reset() {
@@ -269,14 +225,14 @@ func (x *TicketCancelResponse) GetStatus() AcceptanceStatus {
 	if x != nil {
 		return x.Status
 	}
-	return AcceptanceStatus_REJECTED
+	return AcceptanceStatus_ACCEPTANCE_STATUS_UNSPECIFIED
 }
 
 func (x *TicketCancelResponse) GetCancelRejectionReason() CancelRejectionReason {
 	if x != nil {
 		return x.CancelRejectionReason
 	}
-	return CancelRejectionReason_UNKNOWN
+	return CancelRejectionReason_CANCEL_REJECT_REASON_UNSPECIFIED
 }
 
 func (x *TicketCancelResponse) GetCancelRejectionMessage() string {
@@ -318,30 +274,23 @@ var file_ots_ticket_cancel_proto_rawDesc = []byte{
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x25, 0x0a, 0x0e, 0x63,
 	0x61, 0x6e, 0x63, 0x65, 0x6c, 0x5f, 0x70, 0x65, 0x72, 0x63, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0d, 0x52, 0x0d, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x50, 0x65, 0x72, 0x63, 0x65,
-	0x6e, 0x74, 0x22, 0xd9, 0x01, 0x0a, 0x14, 0x54, 0x69, 0x63, 0x6b, 0x65, 0x74, 0x43, 0x61, 0x6e,
+	0x6e, 0x74, 0x22, 0xdf, 0x01, 0x0a, 0x14, 0x54, 0x69, 0x63, 0x6b, 0x65, 0x74, 0x43, 0x61, 0x6e,
 	0x63, 0x65, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x06, 0x73,
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x6f, 0x74,
 	0x73, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x61, 0x6e,
 	0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x12, 0x52, 0x0a, 0x17, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x5f, 0x72, 0x65, 0x6a, 0x65, 0x63,
+	0x12, 0x58, 0x0a, 0x17, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x5f, 0x72, 0x65, 0x6a, 0x65, 0x63,
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x1a, 0x2e, 0x6f, 0x74, 0x73, 0x2e, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65,
-	0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x52, 0x15, 0x63,
-	0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x61, 0x73, 0x6f, 0x6e, 0x12, 0x38, 0x0a, 0x18, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x5f, 0x72,
-	0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x16, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65,
-	0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2a, 0x6c,
-	0x0a, 0x15, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x12, 0x0b, 0x0a, 0x07, 0x55, 0x4e, 0x4b, 0x4e, 0x4f,
-	0x57, 0x4e, 0x10, 0x00, 0x12, 0x14, 0x0a, 0x10, 0x54, 0x49, 0x43, 0x4b, 0x45, 0x54, 0x5f, 0x4e,
-	0x4f, 0x54, 0x5f, 0x46, 0x4f, 0x55, 0x4e, 0x44, 0x10, 0x01, 0x12, 0x10, 0x0a, 0x0c, 0x54, 0x49,
-	0x4d, 0x45, 0x5f, 0x45, 0x58, 0x50, 0x49, 0x52, 0x45, 0x44, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f,
-	0x41, 0x4c, 0x52, 0x45, 0x41, 0x44, 0x59, 0x5f, 0x53, 0x45, 0x54, 0x54, 0x4c, 0x45, 0x44, 0x10,
-	0x03, 0x12, 0x09, 0x0a, 0x05, 0x4f, 0x54, 0x48, 0x45, 0x52, 0x10, 0x04, 0x42, 0x1d, 0x0a, 0x0d,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6f, 0x64, 0x64, 0x69, 0x6e, 0x2e, 0x6f, 0x74, 0x73, 0x5a, 0x0c, 0x6f,
-	0x64, 0x64, 0x69, 0x6e, 0x2e, 0x67, 0x67, 0x2f, 0x6f, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x0e, 0x32, 0x20, 0x2e, 0x6f, 0x74, 0x73, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x61,
+	0x73, 0x6f, 0x6e, 0x52, 0x15, 0x63, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x6a, 0x65, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x12, 0x38, 0x0a, 0x18, 0x63, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x5f, 0x72, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x16, 0x63, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x42, 0x1d, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x2e, 0x6f, 0x64, 0x64, 0x69,
+	0x6e, 0x2e, 0x6f, 0x74, 0x73, 0x5a, 0x0c, 0x6f, 0x64, 0x64, 0x69, 0x6e, 0x2e, 0x67, 0x67, 0x2f,
+	0x6f, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -356,23 +305,22 @@ func file_ots_ticket_cancel_proto_rawDescGZIP() []byte {
 	return file_ots_ticket_cancel_proto_rawDescData
 }
 
-var file_ots_ticket_cancel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ots_ticket_cancel_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ots_ticket_cancel_proto_goTypes = []interface{}{
-	(CancelRejectionReason)(0),    // 0: ots.CancelRejectionReason
-	(*TicketCancelRequest)(nil),   // 1: ots.TicketCancelRequest
-	(*CancelBetInfo)(nil),         // 2: ots.CancelBetInfo
-	(*TicketCancelResponse)(nil),  // 3: ots.TicketCancelResponse
-	(CancelReason)(0),             // 4: ots.enums.CancelReason
-	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
-	(AcceptanceStatus)(0),         // 6: ots.enums.AcceptanceStatus
+	(*TicketCancelRequest)(nil),   // 0: ots.TicketCancelRequest
+	(*CancelBetInfo)(nil),         // 1: ots.CancelBetInfo
+	(*TicketCancelResponse)(nil),  // 2: ots.TicketCancelResponse
+	(CancelReason)(0),             // 3: ots.enums.CancelReason
+	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
+	(AcceptanceStatus)(0),         // 5: ots.enums.AcceptanceStatus
+	(CancelRejectionReason)(0),    // 6: ots.enums.CancelRejectionReason
 }
 var file_ots_ticket_cancel_proto_depIdxs = []int32{
-	4, // 0: ots.TicketCancelRequest.cancel_reason:type_name -> ots.enums.CancelReason
-	5, // 1: ots.TicketCancelRequest.timestamp:type_name -> google.protobuf.Timestamp
-	2, // 2: ots.TicketCancelRequest.cancel_bet_info:type_name -> ots.CancelBetInfo
-	6, // 3: ots.TicketCancelResponse.status:type_name -> ots.enums.AcceptanceStatus
-	0, // 4: ots.TicketCancelResponse.cancel_rejection_reason:type_name -> ots.CancelRejectionReason
+	3, // 0: ots.TicketCancelRequest.cancel_reason:type_name -> ots.enums.CancelReason
+	4, // 1: ots.TicketCancelRequest.timestamp:type_name -> google.protobuf.Timestamp
+	1, // 2: ots.TicketCancelRequest.cancel_bet_info:type_name -> ots.CancelBetInfo
+	5, // 3: ots.TicketCancelResponse.status:type_name -> ots.enums.AcceptanceStatus
+	6, // 4: ots.TicketCancelResponse.cancel_rejection_reason:type_name -> ots.enums.CancelRejectionReason
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -429,14 +377,13 @@ func file_ots_ticket_cancel_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_ots_ticket_cancel_proto_rawDesc,
-			NumEnums:      1,
+			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ots_ticket_cancel_proto_goTypes,
 		DependencyIndexes: file_ots_ticket_cancel_proto_depIdxs,
-		EnumInfos:         file_ots_ticket_cancel_proto_enumTypes,
 		MessageInfos:      file_ots_ticket_cancel_proto_msgTypes,
 	}.Build()
 	File_ots_ticket_cancel_proto = out.File

@@ -5,19 +5,16 @@ package ots;
 option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
-import "ots/ticket_request.proto";
-import "ots/ticket_response.proto";
+import "ots/ticket.proto";
 import "ots/ticket_cancel.proto";
 import "ots/player_risk_score.proto";
 import "ots/resolve_foreign_events_in_ticket.proto";
 import "ots/ticket_ack.proto";
-import "google/protobuf/empty.proto";
 
 service ots {
   rpc Ticket (stream TicketRequest) returns (stream TicketResponse);
-  rpc ResolveForeignMatchesInTicket(ResolveForeignEventsInTicketRequest) returns (ResolveForeignEventsInTicketResponse);
+  rpc ResolveForeignMatchesInTicket (ResolveForeignEventsInTicketRequest) returns (ResolveForeignEventsInTicketResponse);
   rpc CancelTicket (TicketCancelRequest) returns (TicketCancelResponse);
-  rpc PlayerRiskScore(PlayerRiskScoreRequest) returns (PlayerRiskScoreResponse);
-  rpc TicketAck (TicketAckRequest) returns (google.protobuf.Empty);
+  rpc PlayerRiskScore (PlayerRiskScoreRequest) returns (PlayerRiskScoreResponse);
+  rpc TicketAck (TicketAckRequest) returns (TicketAckResponse);
 }
-

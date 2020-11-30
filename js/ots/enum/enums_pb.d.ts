@@ -3,94 +3,92 @@
 
 import * as jspb from "google-protobuf";
 
-export class Reason extends jspb.Message {
-  getCode(): number;
-  setCode(value: number): void;
-
-  getMessage(): string;
-  setMessage(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Reason.AsObject;
-  static toObject(includeInstance: boolean, msg: Reason): Reason.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Reason, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Reason;
-  static deserializeBinaryFromReader(message: Reason, reader: jspb.BinaryReader): Reason;
-}
-
-export namespace Reason {
-  export type AsObject = {
-    code: number,
-    message: string,
-  }
-}
-
 export interface AcceptanceStatusMap {
-  REJECTED: 0;
-  ACCEPTED: 1;
+  ACCEPTANCE_STATUS_UNSPECIFIED: 0;
+  ACCEPTANCE_STATUS_REJECTED: 1;
+  ACCEPTANCE_STATUS_ACCEPTED: 2;
 }
 
 export const AcceptanceStatus: AcceptanceStatusMap;
 
 export interface CancelStatusMap {
-  NOT_CANCELED: 0;
-  CANCELED: 1;
+  CANCEL_STATUS_UNSPECIFIED: 0;
+  CANCEL_STATUS_NOT_CANCELED: 1;
+  CANCEL_STATUS_CANCELED: 2;
 }
 
 export const CancelStatus: CancelStatusMap;
 
 export interface CancelReasonMap {
-  UNKNOWN: 0;
-  TICKET_TIMEOUT: 1;
-  WRONG_TICKET: 2;
-  TECHNICAL_ISSUE: 3;
-  UNEXPECTED_ISSUE: 4;
-  REGULATOR: 5;
+  CANCEL_REASON_UNSPECIFIED: 0;
+  CANCEL_REASON_TICKET_TIMEOUT: 1;
+  CANCEL_REASON_WRONG_TICKET: 2;
+  CANCEL_REASON_TECHNICAL_ISSUE: 3;
+  CANCEL_REASON_UNEXPECTED_ISSUE: 4;
+  CANCEL_REASON_REGULATOR: 5;
 }
 
 export const CancelReason: CancelReasonMap;
 
+export interface CancelRejectionReasonMap {
+  CANCEL_REJECT_REASON_UNSPECIFIED: 0;
+  CANCEL_REJECT_REASON_TICKET_NOT_FOUND: 1;
+  CANCEL_REJECT_REASON_TIME_EXPIRED: 2;
+  CANCEL_REJECT_REASON_ALREADY_SETTLED: 3;
+  CANCEL_REJECT_REASON_OTHER: 4;
+}
+
+export const CancelRejectionReason: CancelRejectionReasonMap;
+
 export interface BetStakeTypeMap {
-  SUM: 0;
-  UNIT: 1;
+  BET_STAKE_TYPE_UNSPECIFIED: 0;
+  BET_STAKE_TYPE_SUM: 1;
+  BET_STAKE_TYPE_UNIT: 2;
 }
 
 export const BetStakeType: BetStakeTypeMap;
 
 export interface AcceptOddsChangeMap {
-  NONE: 0;
-  ANY: 1;
-  HIGHER: 2;
+  ACCEPT_ODDS_CHANGE_UNSPECIFIED: 0;
+  ACCEPT_ODDS_CHANGE_NONE: 1;
+  ACCEPT_ODDS_CHANGE_ANY: 2;
+  ACCEPT_ODDS_CHANGE_HIGHER: 3;
 }
 
 export const AcceptOddsChange: AcceptOddsChangeMap;
 
-export interface BetChannelMap {
-  NOT_SPECIFIED: 0;
-  INTERNET: 1;
-  RETAIL: 2;
-  TERMINAL: 3;
-  MOBILE: 4;
-  PHONE: 5;
-  SMS: 6;
-  CALL_CENTRE: 7;
-  TV_APP: 8;
-  AGENT: 9;
+export interface TicketChannelMap {
+  TICKET_CHANNEL_UNSPECIFIED: 0;
+  TICKET_CHANNEL_INTERNET: 1;
+  TICKET_CHANNEL_RETAIL: 2;
+  TICKET_CHANNEL_TERMINAL: 3;
+  TICKET_CHANNEL_MOBILE: 4;
+  TICKET_CHANNEL_PHONE: 5;
+  TICKET_CHANNEL_SMS: 6;
+  TICKET_CHANNEL_CALL_CENTRE: 7;
+  TICKET_CHANNEL_TV_APP: 8;
+  TICKET_CHANNEL_AGENT: 9;
 }
 
-export const BetChannel: BetChannelMap;
+export const TicketChannel: TicketChannelMap;
 
 export interface BetBonusTypeMap {
-  TOTAL: 0;
+  BET_BONUS_TYPE_UNSPECIFIED: 0;
+  BET_BONUS_TYPE_TOTAL: 1;
 }
 
 export const BetBonusType: BetBonusTypeMap;
 
 export interface BetBonusModeMap {
-  ALL: 0;
+  BET_BONUS_MODE_UNSPECIFIED: 0;
+  BET_BONUS_MODE_ALL: 1;
 }
 
 export const BetBonusMode: BetBonusModeMap;
+
+export interface ReasonCodeMap {
+  REASON_CODE_UNSPECIFIED: 0;
+}
+
+export const ReasonCode: ReasonCodeMap;
 

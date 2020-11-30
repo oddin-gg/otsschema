@@ -23,42 +23,36 @@ public final class Service {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ots/service.proto\022\003ots\032\030ots/ticket_req" +
-      "uest.proto\032\031ots/ticket_response.proto\032\027o" +
-      "ts/ticket_cancel.proto\032\033ots/player_risk_" +
-      "score.proto\032*ots/resolve_foreign_events_" +
-      "in_ticket.proto\032\024ots/ticket_ack.proto\032\033g" +
-      "oogle/protobuf/empty.proto2\201\003\n\003ots\0225\n\006Ti" +
-      "cket\022\022.ots.TicketRequest\032\023.ots.TicketRes" +
-      "ponse(\0010\001\022t\n\035ResolveForeignMatchesInTick" +
-      "et\022(.ots.ResolveForeignEventsInTicketReq" +
-      "uest\032).ots.ResolveForeignEventsInTicketR" +
-      "esponse\022C\n\014CancelTicket\022\030.ots.TicketCanc" +
-      "elRequest\032\031.ots.TicketCancelResponse\022L\n\017" +
-      "PlayerRiskScore\022\033.ots.PlayerRiskScoreReq" +
-      "uest\032\034.ots.PlayerRiskScoreResponse\022:\n\tTi" +
-      "cketAck\022\025.ots.TicketAckRequest\032\026.google." +
-      "protobuf.EmptyB\035\n\rcom.oddin.otsZ\014oddin.g" +
-      "g/otsb\006proto3"
+      "\n\021ots/service.proto\022\003ots\032\020ots/ticket.pro" +
+      "to\032\027ots/ticket_cancel.proto\032\033ots/player_" +
+      "risk_score.proto\032*ots/resolve_foreign_ev" +
+      "ents_in_ticket.proto\032\024ots/ticket_ack.pro" +
+      "to2\201\003\n\003ots\0225\n\006Ticket\022\022.ots.TicketRequest" +
+      "\032\023.ots.TicketResponse(\0010\001\022t\n\035ResolveFore" +
+      "ignMatchesInTicket\022(.ots.ResolveForeignE" +
+      "ventsInTicketRequest\032).ots.ResolveForeig" +
+      "nEventsInTicketResponse\022C\n\014CancelTicket\022" +
+      "\030.ots.TicketCancelRequest\032\031.ots.TicketCa" +
+      "ncelResponse\022L\n\017PlayerRiskScore\022\033.ots.Pl" +
+      "ayerRiskScoreRequest\032\034.ots.PlayerRiskSco" +
+      "reResponse\022:\n\tTicketAck\022\025.ots.TicketAckR" +
+      "equest\032\026.ots.TicketAckResponseB\035\n\rcom.od" +
+      "din.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.oddin.ots.TicketRequestOuterClass.getDescriptor(),
-          com.oddin.ots.TicketResponseOuterClass.getDescriptor(),
+          com.oddin.ots.Ticket.getDescriptor(),
           com.oddin.ots.TicketCancel.getDescriptor(),
           com.oddin.ots.PlayerRiskScoreOuterClass.getDescriptor(),
           com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor(),
           com.oddin.ots.TicketAck.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
         });
-    com.oddin.ots.TicketRequestOuterClass.getDescriptor();
-    com.oddin.ots.TicketResponseOuterClass.getDescriptor();
+    com.oddin.ots.Ticket.getDescriptor();
     com.oddin.ots.TicketCancel.getDescriptor();
     com.oddin.ots.PlayerRiskScoreOuterClass.getDescriptor();
     com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor();
     com.oddin.ots.TicketAck.getDescriptor();
-    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

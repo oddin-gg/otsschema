@@ -25,11 +25,14 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+// PlayerRiskScoreRequest is used for PlayerRiskScore RPC call.
+// You can use this method to get more insight on individual player risk score.
 type PlayerRiskScoreRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Unique player id from the operator’s system.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
@@ -77,6 +80,7 @@ type PlayerRiskScoreResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Information about the player risk score for every sport.
 	RiskScores []*PlayerRiskScore `protobuf:"bytes,1,rep,name=risk_scores,json=riskScores,proto3" json:"risk_scores,omitempty"`
 }
 
@@ -124,9 +128,12 @@ type PlayerRiskScore struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SportId  string `protobuf:"bytes,1,opt,name=sport_id,json=sportId,proto3" json:"sport_id,omitempty"`
+	// Information about the player risk score for every sport.
+	SportId string `protobuf:"bytes,1,opt,name=sport_id,json=sportId,proto3" json:"sport_id,omitempty"`
+	// Risk score for the pre match phase multiplied by 10 000.
 	Prematch uint32 `protobuf:"varint,2,opt,name=prematch,proto3" json:"prematch,omitempty"`
-	Live     uint32 `protobuf:"varint,3,opt,name=live,proto3" json:"live,omitempty"`
+	// Risk score for the  live phase multiplied by 10 000.
+	Live uint32 `protobuf:"varint,3,opt,name=live,proto3" json:"live,omitempty"`
 }
 
 func (x *PlayerRiskScore) Reset() {
