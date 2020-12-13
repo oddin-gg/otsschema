@@ -88,6 +88,11 @@ export const BetBonusMode: BetBonusModeMap;
 
 export interface ReasonCodeMap {
   REASON_CODE_UNSPECIFIED: 0;
+  REASON_CODE_INVALID_ARGUMENT: 1;
+  REASON_CODE_ALREADY_EXISTS: 2;
+  REASON_CODE_NOT_FOUND: 3;
+  REASON_CODE_UNAVAILABLE: 4;
+  REASON_CODE_INTERNAL: 5;
 }
 
 export const ReasonCode: ReasonCodeMap;

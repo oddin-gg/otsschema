@@ -1325,6 +1325,26 @@ public final class Enums {
      * <code>REASON_CODE_UNSPECIFIED = 0;</code>
      */
     REASON_CODE_UNSPECIFIED(0),
+    /**
+     * <code>REASON_CODE_INVALID_ARGUMENT = 1;</code>
+     */
+    REASON_CODE_INVALID_ARGUMENT(1),
+    /**
+     * <code>REASON_CODE_ALREADY_EXISTS = 2;</code>
+     */
+    REASON_CODE_ALREADY_EXISTS(2),
+    /**
+     * <code>REASON_CODE_NOT_FOUND = 3;</code>
+     */
+    REASON_CODE_NOT_FOUND(3),
+    /**
+     * <code>REASON_CODE_UNAVAILABLE = 4;</code>
+     */
+    REASON_CODE_UNAVAILABLE(4),
+    /**
+     * <code>REASON_CODE_INTERNAL = 5;</code>
+     */
+    REASON_CODE_INTERNAL(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -1336,6 +1356,26 @@ public final class Enums {
      * <code>REASON_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int REASON_CODE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>REASON_CODE_INVALID_ARGUMENT = 1;</code>
+     */
+    public static final int REASON_CODE_INVALID_ARGUMENT_VALUE = 1;
+    /**
+     * <code>REASON_CODE_ALREADY_EXISTS = 2;</code>
+     */
+    public static final int REASON_CODE_ALREADY_EXISTS_VALUE = 2;
+    /**
+     * <code>REASON_CODE_NOT_FOUND = 3;</code>
+     */
+    public static final int REASON_CODE_NOT_FOUND_VALUE = 3;
+    /**
+     * <code>REASON_CODE_UNAVAILABLE = 4;</code>
+     */
+    public static final int REASON_CODE_UNAVAILABLE_VALUE = 4;
+    /**
+     * <code>REASON_CODE_INTERNAL = 5;</code>
+     */
+    public static final int REASON_CODE_INTERNAL_VALUE = 5;
 
 
     public final int getNumber() {
@@ -1363,6 +1403,11 @@ public final class Enums {
     public static ReasonCode forNumber(int value) {
       switch (value) {
         case 0: return REASON_CODE_UNSPECIFIED;
+        case 1: return REASON_CODE_INVALID_ARGUMENT;
+        case 2: return REASON_CODE_ALREADY_EXISTS;
+        case 3: return REASON_CODE_NOT_FOUND;
+        case 4: return REASON_CODE_UNAVAILABLE;
+        case 5: return REASON_CODE_INTERNAL;
         default: return null;
       }
     }
@@ -1462,9 +1507,13 @@ public final class Enums {
       "onusType\022\036\n\032BET_BONUS_TYPE_UNSPECIFIED\020\000" +
       "\022\030\n\024BET_BONUS_TYPE_TOTAL\020\001*F\n\014BetBonusMo" +
       "de\022\036\n\032BET_BONUS_MODE_UNSPECIFIED\020\000\022\026\n\022BE" +
-      "T_BONUS_MODE_ALL\020\001*)\n\nReasonCode\022\033\n\027REAS" +
-      "ON_CODE_UNSPECIFIED\020\000B\035\n\rcom.oddin.otsZ\014" +
-      "oddin.gg/otsb\006proto3"
+      "T_BONUS_MODE_ALL\020\001*\275\001\n\nReasonCode\022\033\n\027REA" +
+      "SON_CODE_UNSPECIFIED\020\000\022 \n\034REASON_CODE_IN" +
+      "VALID_ARGUMENT\020\001\022\036\n\032REASON_CODE_ALREADY_" +
+      "EXISTS\020\002\022\031\n\025REASON_CODE_NOT_FOUND\020\003\022\033\n\027R" +
+      "EASON_CODE_UNAVAILABLE\020\004\022\030\n\024REASON_CODE_" +
+      "INTERNAL\020\005B\035\n\rcom.oddin.otsZ\014oddin.gg/ot" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
