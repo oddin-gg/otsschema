@@ -9672,7 +9672,7 @@ public final class Ticket {
 
     /**
      * <pre>
-     * Acceptance status - REJECTED or ACCEPTED.
+     * Acceptance status - PENDING | REJECTED | ACCEPTED.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -9681,7 +9681,7 @@ public final class Ticket {
     int getTicketStatusValue();
     /**
      * <pre>
-     * Acceptance status - REJECTED or ACCEPTED.
+     * Acceptance status - PENDING | REJECTED | ACCEPTED.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10025,7 +10025,7 @@ public final class Ticket {
     private int ticketStatus_;
     /**
      * <pre>
-     * Acceptance status - REJECTED or ACCEPTED.
+     * Acceptance status - PENDING | REJECTED | ACCEPTED.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10036,7 +10036,7 @@ public final class Ticket {
     }
     /**
      * <pre>
-     * Acceptance status - REJECTED or ACCEPTED.
+     * Acceptance status - PENDING | REJECTED | ACCEPTED.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10833,7 +10833,7 @@ public final class Ticket {
       private int ticketStatus_ = 0;
       /**
        * <pre>
-       * Acceptance status - REJECTED or ACCEPTED.
+       * Acceptance status - PENDING | REJECTED | ACCEPTED.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10844,7 +10844,7 @@ public final class Ticket {
       }
       /**
        * <pre>
-       * Acceptance status - REJECTED or ACCEPTED.
+       * Acceptance status - PENDING | REJECTED | ACCEPTED.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10859,7 +10859,7 @@ public final class Ticket {
       }
       /**
        * <pre>
-       * Acceptance status - REJECTED or ACCEPTED.
+       * Acceptance status - PENDING | REJECTED | ACCEPTED.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10873,7 +10873,7 @@ public final class Ticket {
       }
       /**
        * <pre>
-       * Acceptance status - REJECTED or ACCEPTED.
+       * Acceptance status - PENDING | REJECTED | ACCEPTED.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -10891,7 +10891,7 @@ public final class Ticket {
       }
       /**
        * <pre>
-       * Acceptance status - REJECTED or ACCEPTED.
+       * Acceptance status - PENDING | REJECTED | ACCEPTED.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>

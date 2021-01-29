@@ -120,7 +120,7 @@ message TicketResponse {
   // Unique ticket id from operator’s system.
   string id = 1;
 
-  // Acceptance status - REJECTED or ACCEPTED.
+  // Acceptance status - PENDING | REJECTED | ACCEPTED.
   enums.AcceptanceStatus ticket_status = 2;
 
   // Information about rejection/acception reason.

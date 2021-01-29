@@ -579,7 +579,7 @@ type TicketResponse struct {
 
 	// Unique ticket id from operator’s system.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Acceptance status - REJECTED or ACCEPTED.
+	// Acceptance status - PENDING | REJECTED | ACCEPTED.
 	TicketStatus AcceptanceStatus `protobuf:"varint,2,opt,name=ticket_status,json=ticketStatus,proto3,enum=ots.enums.AcceptanceStatus" json:"ticket_status,omitempty"`
 	// Information about rejection/acception reason.
 	Reason *Reason `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`

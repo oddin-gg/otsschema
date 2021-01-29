@@ -30,7 +30,8 @@ goog.exportSymbol('proto.ots.enums.TicketChannel', null, global);
 proto.ots.enums.AcceptanceStatus = {
   ACCEPTANCE_STATUS_UNSPECIFIED: 0,
   ACCEPTANCE_STATUS_REJECTED: 1,
-  ACCEPTANCE_STATUS_ACCEPTED: 2
+  ACCEPTANCE_STATUS_ACCEPTED: 2,
+  ACCEPTANCE_STATUS_PENDING: 3
 };
 
 /**
