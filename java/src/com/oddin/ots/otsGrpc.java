@@ -27,29 +27,29 @@ public final class otsGrpc {
   public static final String SERVICE_NAME = "ots.ots";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.Ticket.TicketRequest,
-      com.oddin.ots.Ticket.TicketResponse> getTicketMethod;
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.TicketOuterClass.TicketRequest,
+      com.oddin.ots.TicketOuterClass.TicketResponse> getTicketMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Ticket",
-      requestType = com.oddin.ots.Ticket.TicketRequest.class,
-      responseType = com.oddin.ots.Ticket.TicketResponse.class,
+      requestType = com.oddin.ots.TicketOuterClass.TicketRequest.class,
+      responseType = com.oddin.ots.TicketOuterClass.TicketResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<com.oddin.ots.Ticket.TicketRequest,
-      com.oddin.ots.Ticket.TicketResponse> getTicketMethod() {
-    io.grpc.MethodDescriptor<com.oddin.ots.Ticket.TicketRequest, com.oddin.ots.Ticket.TicketResponse> getTicketMethod;
+  public static io.grpc.MethodDescriptor<com.oddin.ots.TicketOuterClass.TicketRequest,
+      com.oddin.ots.TicketOuterClass.TicketResponse> getTicketMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.TicketOuterClass.TicketRequest, com.oddin.ots.TicketOuterClass.TicketResponse> getTicketMethod;
     if ((getTicketMethod = otsGrpc.getTicketMethod) == null) {
       synchronized (otsGrpc.class) {
         if ((getTicketMethod = otsGrpc.getTicketMethod) == null) {
           otsGrpc.getTicketMethod = getTicketMethod =
-              io.grpc.MethodDescriptor.<com.oddin.ots.Ticket.TicketRequest, com.oddin.ots.Ticket.TicketResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.oddin.ots.TicketOuterClass.TicketRequest, com.oddin.ots.TicketOuterClass.TicketResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Ticket"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.Ticket.TicketRequest.getDefaultInstance()))
+                  com.oddin.ots.TicketOuterClass.TicketRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.oddin.ots.Ticket.TicketResponse.getDefaultInstance()))
+                  com.oddin.ots.TicketOuterClass.TicketResponse.getDefaultInstance()))
               .setSchemaDescriptor(new otsMethodDescriptorSupplier("Ticket"))
               .build();
         }
@@ -232,8 +232,8 @@ public final class otsGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.oddin.ots.Ticket.TicketRequest> ticket(
-        io.grpc.stub.StreamObserver<com.oddin.ots.Ticket.TicketResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketRequest> ticket(
+        io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getTicketMethod(), responseObserver);
     }
 
@@ -271,8 +271,8 @@ public final class otsGrpc {
             getTicketMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                com.oddin.ots.Ticket.TicketRequest,
-                com.oddin.ots.Ticket.TicketResponse>(
+                com.oddin.ots.TicketOuterClass.TicketRequest,
+                com.oddin.ots.TicketOuterClass.TicketResponse>(
                   this, METHODID_TICKET)))
           .addMethod(
             getResolveForeignMatchesInTicketMethod(),
@@ -322,8 +322,8 @@ public final class otsGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.oddin.ots.Ticket.TicketRequest> ticket(
-        io.grpc.stub.StreamObserver<com.oddin.ots.Ticket.TicketResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketRequest> ticket(
+        io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getTicketMethod(), getCallOptions()), responseObserver);
     }
@@ -502,7 +502,7 @@ public final class otsGrpc {
       switch (methodId) {
         case METHODID_TICKET:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.ticket(
-              (io.grpc.stub.StreamObserver<com.oddin.ots.Ticket.TicketResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketResponse>) responseObserver);
         default:
           throw new AssertionError();
       }

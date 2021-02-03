@@ -42,13 +42,13 @@ public final class Service {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.oddin.ots.Ticket.getDescriptor(),
+          com.oddin.ots.TicketOuterClass.getDescriptor(),
           com.oddin.ots.TicketCancel.getDescriptor(),
           com.oddin.ots.PlayerRiskScoreOuterClass.getDescriptor(),
           com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor(),
           com.oddin.ots.TicketAck.getDescriptor(),
         });
-    com.oddin.ots.Ticket.getDescriptor();
+    com.oddin.ots.TicketOuterClass.getDescriptor();
     com.oddin.ots.TicketCancel.getDescriptor();
     com.oddin.ots.PlayerRiskScoreOuterClass.getDescriptor();
     com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor();

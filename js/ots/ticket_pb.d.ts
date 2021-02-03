@@ -8,6 +8,76 @@ import * as ots_enum_enums_pb from "../ots/enum/enums_pb";
 import * as ots_commons_pb from "../ots/commons_pb";
 
 export class TicketRequest extends jspb.Message {
+  hasTicket(): boolean;
+  clearTicket(): void;
+  getTicket(): Ticket | undefined;
+  setTicket(value?: Ticket): void;
+
+  hasKeepalive(): boolean;
+  clearKeepalive(): void;
+  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
+  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
+
+  getDataCase(): TicketRequest.DataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketRequest): TicketRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketRequest;
+  static deserializeBinaryFromReader(message: TicketRequest, reader: jspb.BinaryReader): TicketRequest;
+}
+
+export namespace TicketRequest {
+  export type AsObject = {
+    ticket?: Ticket.AsObject,
+    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
+  }
+
+  export enum DataCase {
+    DATA_NOT_SET = 0,
+    TICKET = 1,
+    KEEPALIVE = 2,
+  }
+}
+
+export class TicketResponse extends jspb.Message {
+  hasState(): boolean;
+  clearState(): void;
+  getState(): TicketState | undefined;
+  setState(value?: TicketState): void;
+
+  hasKeepalive(): boolean;
+  clearKeepalive(): void;
+  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
+  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
+
+  getDataCase(): TicketResponse.DataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResponse): TicketResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResponse;
+  static deserializeBinaryFromReader(message: TicketResponse, reader: jspb.BinaryReader): TicketResponse;
+}
+
+export namespace TicketResponse {
+  export type AsObject = {
+    state?: TicketState.AsObject,
+    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
+  }
+
+  export enum DataCase {
+    DATA_NOT_SET = 0,
+    STATE = 1,
+    KEEPALIVE = 2,
+  }
+}
+
+export class Ticket extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -51,16 +121,16 @@ export class TicketRequest extends jspb.Message {
   setChannel(value: ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TicketRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TicketRequest): TicketRequest.AsObject;
+  toObject(includeInstance?: boolean): Ticket.AsObject;
+  static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TicketRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TicketRequest;
-  static deserializeBinaryFromReader(message: TicketRequest, reader: jspb.BinaryReader): TicketRequest;
+  static serializeBinaryToWriter(message: Ticket, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Ticket;
+  static deserializeBinaryFromReader(message: Ticket, reader: jspb.BinaryReader): Ticket;
 }
 
-export namespace TicketRequest {
+export namespace Ticket {
   export type AsObject = {
     id: string,
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -263,41 +333,6 @@ export namespace BetBonus {
     value: number,
     type: ots_enum_enums_pb.BetBonusTypeMap[keyof ots_enum_enums_pb.BetBonusTypeMap],
     mode: ots_enum_enums_pb.BetBonusModeMap[keyof ots_enum_enums_pb.BetBonusModeMap],
-  }
-}
-
-export class TicketResponse extends jspb.Message {
-  hasState(): boolean;
-  clearState(): void;
-  getState(): TicketState | undefined;
-  setState(value?: TicketState): void;
-
-  hasKeepalive(): boolean;
-  clearKeepalive(): void;
-  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
-  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
-
-  getDataCase(): TicketResponse.DataCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TicketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TicketResponse): TicketResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TicketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TicketResponse;
-  static deserializeBinaryFromReader(message: TicketResponse, reader: jspb.BinaryReader): TicketResponse;
-}
-
-export namespace TicketResponse {
-  export type AsObject = {
-    state?: TicketState.AsObject,
-    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
-  }
-
-  export enum DataCase {
-    DATA_NOT_SET = 0,
-    STATE = 1,
-    KEEPALIVE = 2,
   }
 }
 

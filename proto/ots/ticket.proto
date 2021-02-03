@@ -10,8 +10,22 @@ import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
 import "ots/commons.proto";
 
-// TicketRequest is used as request for Ticket RPC call.
 message TicketRequest {
+  oneof data {
+    Ticket ticket = 1;
+    StreamKeepalive keepalive = 2;
+  }
+}
+
+message TicketResponse {
+  oneof data {
+    TicketState state = 1;
+    StreamKeepalive keepalive = 2;
+  }
+}
+
+// TicketRequest is used as request for Ticket RPC call.
+message Ticket {
   // Unique ticket id from operator’s system.
   string id = 1;
 
@@ -114,13 +128,6 @@ message BetBonus {
 
   // Bonus payout mode. Typically used for system bets - only supported ALL for now (means all bets has to be winning).
   enums.BetBonusMode mode = 3;
-}
-
-message TicketResponse {
-  oneof data {
-    TicketState state = 1;
-    StreamKeepalive keepalive = 2;
-  }
 }
 
 message TicketState {

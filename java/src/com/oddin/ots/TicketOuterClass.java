@@ -3,8 +3,8 @@
 
 package com.oddin.ots;
 
-public final class Ticket {
-  private Ticket() {}
+public final class TicketOuterClass {
+  private TicketOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -16,6 +16,1900 @@ public final class Ticket {
   }
   public interface TicketRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.TicketRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     * @return Whether the ticket field is set.
+     */
+    boolean hasTicket();
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     * @return The ticket.
+     */
+    com.oddin.ots.TicketOuterClass.Ticket getTicket();
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     */
+    com.oddin.ots.TicketOuterClass.TicketOrBuilder getTicketOrBuilder();
+
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    boolean hasKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    com.oddin.ots.Commons.StreamKeepalive getKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
+
+    public com.oddin.ots.TicketOuterClass.TicketRequest.DataCase getDataCase();
+  }
+  /**
+   * Protobuf type {@code ots.TicketRequest}
+   */
+  public static final class TicketRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.TicketRequest)
+      TicketRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TicketRequest.newBuilder() to construct.
+    private TicketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TicketRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TicketRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TicketRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.oddin.ots.TicketOuterClass.Ticket.Builder subBuilder = null;
+              if (dataCase_ == 1) {
+                subBuilder = ((com.oddin.ots.TicketOuterClass.Ticket) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.TicketOuterClass.Ticket.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.TicketOuterClass.Ticket) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 1;
+              break;
+            }
+            case 18: {
+              com.oddin.ots.Commons.StreamKeepalive.Builder subBuilder = null;
+              if (dataCase_ == 2) {
+                subBuilder = ((com.oddin.ots.Commons.StreamKeepalive) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.Commons.StreamKeepalive.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.Commons.StreamKeepalive) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.TicketOuterClass.TicketRequest.class, com.oddin.ots.TicketOuterClass.TicketRequest.Builder.class);
+    }
+
+    private int dataCase_ = 0;
+    private java.lang.Object data_;
+    public enum DataCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      TICKET(1),
+      KEEPALIVE(2),
+      DATA_NOT_SET(0);
+      private final int value;
+      private DataCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataCase forNumber(int value) {
+        switch (value) {
+          case 1: return TICKET;
+          case 2: return KEEPALIVE;
+          case 0: return DATA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataCase
+    getDataCase() {
+      return DataCase.forNumber(
+          dataCase_);
+    }
+
+    public static final int TICKET_FIELD_NUMBER = 1;
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     * @return Whether the ticket field is set.
+     */
+    @java.lang.Override
+    public boolean hasTicket() {
+      return dataCase_ == 1;
+    }
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     * @return The ticket.
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.Ticket getTicket() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.TicketOuterClass.Ticket) data_;
+      }
+      return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.Ticket ticket = 1;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.TicketOrBuilder getTicketOrBuilder() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.TicketOuterClass.Ticket) data_;
+      }
+      return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+    }
+
+    public static final int KEEPALIVE_FIELD_NUMBER = 2;
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepalive() {
+      return dataCase_ == 2;
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (dataCase_ == 1) {
+        output.writeMessage(1, (com.oddin.ots.TicketOuterClass.Ticket) data_);
+      }
+      if (dataCase_ == 2) {
+        output.writeMessage(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.oddin.ots.TicketOuterClass.Ticket) data_);
+      }
+      if (dataCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketRequest)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.TicketOuterClass.TicketRequest other = (com.oddin.ots.TicketOuterClass.TicketRequest) obj;
+
+      if (!getDataCase().equals(other.getDataCase())) return false;
+      switch (dataCase_) {
+        case 1:
+          if (!getTicket()
+              .equals(other.getTicket())) return false;
+          break;
+        case 2:
+          if (!getKeepalive()
+              .equals(other.getKeepalive())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (dataCase_) {
+        case 1:
+          hash = (37 * hash) + TICKET_FIELD_NUMBER;
+          hash = (53 * hash) + getTicket().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
+          hash = (53 * hash) + getKeepalive().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.TicketRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.TicketRequest)
+        com.oddin.ots.TicketOuterClass.TicketRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.TicketOuterClass.TicketRequest.class, com.oddin.ots.TicketOuterClass.TicketRequest.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.TicketOuterClass.TicketRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dataCase_ = 0;
+        data_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketRequest getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketRequest build() {
+        com.oddin.ots.TicketOuterClass.TicketRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketRequest buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketRequest result = new com.oddin.ots.TicketOuterClass.TicketRequest(this);
+        if (dataCase_ == 1) {
+          if (ticketBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = ticketBuilder_.build();
+          }
+        }
+        if (dataCase_ == 2) {
+          if (keepaliveBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = keepaliveBuilder_.build();
+          }
+        }
+        result.dataCase_ = dataCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketRequest) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketRequest other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketRequest.getDefaultInstance()) return this;
+        switch (other.getDataCase()) {
+          case TICKET: {
+            mergeTicket(other.getTicket());
+            break;
+          }
+          case KEEPALIVE: {
+            mergeKeepalive(other.getKeepalive());
+            break;
+          }
+          case DATA_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.oddin.ots.TicketOuterClass.TicketRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataCase_ = 0;
+      private java.lang.Object data_;
+      public DataCase
+          getDataCase() {
+        return DataCase.forNumber(
+            dataCase_);
+      }
+
+      public Builder clearData() {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketOuterClass.Ticket, com.oddin.ots.TicketOuterClass.Ticket.Builder, com.oddin.ots.TicketOuterClass.TicketOrBuilder> ticketBuilder_;
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       * @return Whether the ticket field is set.
+       */
+      @java.lang.Override
+      public boolean hasTicket() {
+        return dataCase_ == 1;
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       * @return The ticket.
+       */
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.Ticket getTicket() {
+        if (ticketBuilder_ == null) {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.TicketOuterClass.Ticket) data_;
+          }
+          return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+        } else {
+          if (dataCase_ == 1) {
+            return ticketBuilder_.getMessage();
+          }
+          return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      public Builder setTicket(com.oddin.ots.TicketOuterClass.Ticket value) {
+        if (ticketBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          ticketBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      public Builder setTicket(
+          com.oddin.ots.TicketOuterClass.Ticket.Builder builderForValue) {
+        if (ticketBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          ticketBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      public Builder mergeTicket(com.oddin.ots.TicketOuterClass.Ticket value) {
+        if (ticketBuilder_ == null) {
+          if (dataCase_ == 1 &&
+              data_ != com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance()) {
+            data_ = com.oddin.ots.TicketOuterClass.Ticket.newBuilder((com.oddin.ots.TicketOuterClass.Ticket) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 1) {
+            ticketBuilder_.mergeFrom(value);
+          }
+          ticketBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      public Builder clearTicket() {
+        if (ticketBuilder_ == null) {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          ticketBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      public com.oddin.ots.TicketOuterClass.Ticket.Builder getTicketBuilder() {
+        return getTicketFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketOrBuilder getTicketOrBuilder() {
+        if ((dataCase_ == 1) && (ticketBuilder_ != null)) {
+          return ticketBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.TicketOuterClass.Ticket) data_;
+          }
+          return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.Ticket ticket = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketOuterClass.Ticket, com.oddin.ots.TicketOuterClass.Ticket.Builder, com.oddin.ots.TicketOuterClass.TicketOrBuilder> 
+          getTicketFieldBuilder() {
+        if (ticketBuilder_ == null) {
+          if (!(dataCase_ == 1)) {
+            data_ = com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
+          }
+          ticketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.TicketOuterClass.Ticket, com.oddin.ots.TicketOuterClass.Ticket.Builder, com.oddin.ots.TicketOuterClass.TicketOrBuilder>(
+                  (com.oddin.ots.TicketOuterClass.Ticket) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 1;
+        onChanged();;
+        return ticketBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return Whether the keepalive field is set.
+       */
+      @java.lang.Override
+      public boolean hasKeepalive() {
+        return dataCase_ == 2;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return The keepalive.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        } else {
+          if (dataCase_ == 2) {
+            return keepaliveBuilder_.getMessage();
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(
+          com.oddin.ots.Commons.StreamKeepalive.Builder builderForValue) {
+        if (keepaliveBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder mergeKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2 &&
+              data_ != com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance()) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.newBuilder((com.oddin.ots.Commons.StreamKeepalive) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 2) {
+            keepaliveBuilder_.mergeFrom(value);
+          }
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder clearKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          keepaliveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public com.oddin.ots.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
+        return getKeepaliveFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
+          return keepaliveBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> 
+          getKeepaliveFieldBuilder() {
+        if (keepaliveBuilder_ == null) {
+          if (!(dataCase_ == 2)) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+          }
+          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder>(
+                  (com.oddin.ots.Commons.StreamKeepalive) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 2;
+        onChanged();;
+        return keepaliveBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.TicketRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.TicketRequest)
+    private static final com.oddin.ots.TicketOuterClass.TicketRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketRequest();
+    }
+
+    public static com.oddin.ots.TicketOuterClass.TicketRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TicketRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TicketRequest>() {
+      @java.lang.Override
+      public TicketRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TicketRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TicketRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TicketRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.TicketRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TicketResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.TicketResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return Whether the state field is set.
+     */
+    boolean hasState();
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return The state.
+     */
+    com.oddin.ots.TicketOuterClass.TicketState getState();
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     */
+    com.oddin.ots.TicketOuterClass.TicketStateOrBuilder getStateOrBuilder();
+
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    boolean hasKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    com.oddin.ots.Commons.StreamKeepalive getKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
+
+    public com.oddin.ots.TicketOuterClass.TicketResponse.DataCase getDataCase();
+  }
+  /**
+   * Protobuf type {@code ots.TicketResponse}
+   */
+  public static final class TicketResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.TicketResponse)
+      TicketResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TicketResponse.newBuilder() to construct.
+    private TicketResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TicketResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TicketResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TicketResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.oddin.ots.TicketOuterClass.TicketState.Builder subBuilder = null;
+              if (dataCase_ == 1) {
+                subBuilder = ((com.oddin.ots.TicketOuterClass.TicketState) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.TicketOuterClass.TicketState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.TicketOuterClass.TicketState) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 1;
+              break;
+            }
+            case 18: {
+              com.oddin.ots.Commons.StreamKeepalive.Builder subBuilder = null;
+              if (dataCase_ == 2) {
+                subBuilder = ((com.oddin.ots.Commons.StreamKeepalive) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.Commons.StreamKeepalive.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.Commons.StreamKeepalive) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.TicketOuterClass.TicketResponse.class, com.oddin.ots.TicketOuterClass.TicketResponse.Builder.class);
+    }
+
+    private int dataCase_ = 0;
+    private java.lang.Object data_;
+    public enum DataCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STATE(1),
+      KEEPALIVE(2),
+      DATA_NOT_SET(0);
+      private final int value;
+      private DataCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataCase forNumber(int value) {
+        switch (value) {
+          case 1: return STATE;
+          case 2: return KEEPALIVE;
+          case 0: return DATA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataCase
+    getDataCase() {
+      return DataCase.forNumber(
+          dataCase_);
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return dataCase_ == 1;
+    }
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.TicketState getState() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.TicketOuterClass.TicketState) data_;
+      }
+      return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.TicketStateOrBuilder getStateOrBuilder() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.TicketOuterClass.TicketState) data_;
+      }
+      return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+    }
+
+    public static final int KEEPALIVE_FIELD_NUMBER = 2;
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepalive() {
+      return dataCase_ == 2;
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (dataCase_ == 1) {
+        output.writeMessage(1, (com.oddin.ots.TicketOuterClass.TicketState) data_);
+      }
+      if (dataCase_ == 2) {
+        output.writeMessage(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.oddin.ots.TicketOuterClass.TicketState) data_);
+      }
+      if (dataCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketResponse)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.TicketOuterClass.TicketResponse other = (com.oddin.ots.TicketOuterClass.TicketResponse) obj;
+
+      if (!getDataCase().equals(other.getDataCase())) return false;
+      switch (dataCase_) {
+        case 1:
+          if (!getState()
+              .equals(other.getState())) return false;
+          break;
+        case 2:
+          if (!getKeepalive()
+              .equals(other.getKeepalive())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (dataCase_) {
+        case 1:
+          hash = (37 * hash) + STATE_FIELD_NUMBER;
+          hash = (53 * hash) + getState().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
+          hash = (53 * hash) + getKeepalive().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.TicketOuterClass.TicketResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.TicketResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.TicketResponse)
+        com.oddin.ots.TicketOuterClass.TicketResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.TicketOuterClass.TicketResponse.class, com.oddin.ots.TicketOuterClass.TicketResponse.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.TicketOuterClass.TicketResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dataCase_ = 0;
+        data_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketResponse getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketResponse build() {
+        com.oddin.ots.TicketOuterClass.TicketResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketResponse buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketResponse result = new com.oddin.ots.TicketOuterClass.TicketResponse(this);
+        if (dataCase_ == 1) {
+          if (stateBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = stateBuilder_.build();
+          }
+        }
+        if (dataCase_ == 2) {
+          if (keepaliveBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = keepaliveBuilder_.build();
+          }
+        }
+        result.dataCase_ = dataCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketResponse) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketResponse other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketResponse.getDefaultInstance()) return this;
+        switch (other.getDataCase()) {
+          case STATE: {
+            mergeState(other.getState());
+            break;
+          }
+          case KEEPALIVE: {
+            mergeKeepalive(other.getKeepalive());
+            break;
+          }
+          case DATA_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.oddin.ots.TicketOuterClass.TicketResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataCase_ = 0;
+      private java.lang.Object data_;
+      public DataCase
+          getDataCase() {
+        return DataCase.forNumber(
+            dataCase_);
+      }
+
+      public Builder clearData() {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketOuterClass.TicketState, com.oddin.ots.TicketOuterClass.TicketState.Builder, com.oddin.ots.TicketOuterClass.TicketStateOrBuilder> stateBuilder_;
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       * @return Whether the state field is set.
+       */
+      @java.lang.Override
+      public boolean hasState() {
+        return dataCase_ == 1;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketState getState() {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.TicketOuterClass.TicketState) data_;
+          }
+          return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+        } else {
+          if (dataCase_ == 1) {
+            return stateBuilder_.getMessage();
+          }
+          return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder setState(com.oddin.ots.TicketOuterClass.TicketState value) {
+        if (stateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder setState(
+          com.oddin.ots.TicketOuterClass.TicketState.Builder builderForValue) {
+        if (stateBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder mergeState(com.oddin.ots.TicketOuterClass.TicketState value) {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1 &&
+              data_ != com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance()) {
+            data_ = com.oddin.ots.TicketOuterClass.TicketState.newBuilder((com.oddin.ots.TicketOuterClass.TicketState) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 1) {
+            stateBuilder_.mergeFrom(value);
+          }
+          stateBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder clearState() {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          stateBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public com.oddin.ots.TicketOuterClass.TicketState.Builder getStateBuilder() {
+        return getStateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.TicketOuterClass.TicketStateOrBuilder getStateOrBuilder() {
+        if ((dataCase_ == 1) && (stateBuilder_ != null)) {
+          return stateBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.TicketOuterClass.TicketState) data_;
+          }
+          return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.TicketOuterClass.TicketState, com.oddin.ots.TicketOuterClass.TicketState.Builder, com.oddin.ots.TicketOuterClass.TicketStateOrBuilder> 
+          getStateFieldBuilder() {
+        if (stateBuilder_ == null) {
+          if (!(dataCase_ == 1)) {
+            data_ = com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
+          }
+          stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.TicketOuterClass.TicketState, com.oddin.ots.TicketOuterClass.TicketState.Builder, com.oddin.ots.TicketOuterClass.TicketStateOrBuilder>(
+                  (com.oddin.ots.TicketOuterClass.TicketState) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 1;
+        onChanged();;
+        return stateBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return Whether the keepalive field is set.
+       */
+      @java.lang.Override
+      public boolean hasKeepalive() {
+        return dataCase_ == 2;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return The keepalive.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        } else {
+          if (dataCase_ == 2) {
+            return keepaliveBuilder_.getMessage();
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(
+          com.oddin.ots.Commons.StreamKeepalive.Builder builderForValue) {
+        if (keepaliveBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder mergeKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2 &&
+              data_ != com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance()) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.newBuilder((com.oddin.ots.Commons.StreamKeepalive) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 2) {
+            keepaliveBuilder_.mergeFrom(value);
+          }
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder clearKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          keepaliveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public com.oddin.ots.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
+        return getKeepaliveFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
+          return keepaliveBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> 
+          getKeepaliveFieldBuilder() {
+        if (keepaliveBuilder_ == null) {
+          if (!(dataCase_ == 2)) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+          }
+          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder>(
+                  (com.oddin.ots.Commons.StreamKeepalive) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 2;
+        onChanged();;
+        return keepaliveBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.TicketResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.TicketResponse)
+    private static final com.oddin.ots.TicketOuterClass.TicketResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketResponse();
+    }
+
+    public static com.oddin.ots.TicketOuterClass.TicketResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TicketResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TicketResponse>() {
+      @java.lang.Override
+      public TicketResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TicketResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TicketResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TicketResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.TicketOuterClass.TicketResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TicketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.Ticket)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -72,7 +1966,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.Bet bets = 3;</code>
      */
-    java.util.List<com.oddin.ots.Ticket.Bet> 
+    java.util.List<com.oddin.ots.TicketOuterClass.Bet> 
         getBetsList();
     /**
      * <pre>
@@ -81,7 +1975,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.Bet bets = 3;</code>
      */
-    com.oddin.ots.Ticket.Bet getBets(int index);
+    com.oddin.ots.TicketOuterClass.Bet getBets(int index);
     /**
      * <pre>
      * List of ticket bets.
@@ -97,7 +1991,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.Bet bets = 3;</code>
      */
-    java.util.List<? extends com.oddin.ots.Ticket.BetOrBuilder> 
+    java.util.List<? extends com.oddin.ots.TicketOuterClass.BetOrBuilder> 
         getBetsOrBuilderList();
     /**
      * <pre>
@@ -106,7 +2000,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.Bet bets = 3;</code>
      */
-    com.oddin.ots.Ticket.BetOrBuilder getBetsOrBuilder(
+    com.oddin.ots.TicketOuterClass.BetOrBuilder getBetsOrBuilder(
         int index);
 
     /**
@@ -155,7 +2049,7 @@ public final class Ticket {
      * <code>.ots.TicketCustomer customer = 6;</code>
      * @return The customer.
      */
-    com.oddin.ots.Ticket.TicketCustomer getCustomer();
+    com.oddin.ots.TicketOuterClass.TicketCustomer getCustomer();
     /**
      * <pre>
      * Customer information.
@@ -163,7 +2057,7 @@ public final class Ticket {
      *
      * <code>.ots.TicketCustomer customer = 6;</code>
      */
-    com.oddin.ots.Ticket.TicketCustomerOrBuilder getCustomerOrBuilder();
+    com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder getCustomerOrBuilder();
 
     /**
      * <pre>
@@ -213,7 +2107,7 @@ public final class Ticket {
      * Use {@link #getSelectionsMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+    java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
     getSelections();
     /**
      * <pre>
@@ -222,7 +2116,7 @@ public final class Ticket {
      *
      * <code>map&lt;string, .ots.TicketSelection&gt; selections = 9;</code>
      */
-    java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+    java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
     getSelectionsMap();
     /**
      * <pre>
@@ -232,9 +2126,9 @@ public final class Ticket {
      * <code>map&lt;string, .ots.TicketSelection&gt; selections = 9;</code>
      */
 
-    com.oddin.ots.Ticket.TicketSelection getSelectionsOrDefault(
+    com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
         java.lang.String key,
-        com.oddin.ots.Ticket.TicketSelection defaultValue);
+        com.oddin.ots.TicketOuterClass.TicketSelection defaultValue);
     /**
      * <pre>
      * Array of selections which form this bet, if omitted all selections are used.
@@ -243,7 +2137,7 @@ public final class Ticket {
      * <code>map&lt;string, .ots.TicketSelection&gt; selections = 9;</code>
      */
 
-    com.oddin.ots.Ticket.TicketSelection getSelectionsOrThrow(
+    com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrThrow(
         java.lang.String key);
 
     /**
@@ -317,18 +2211,18 @@ public final class Ticket {
    * TicketRequest is used as request for Ticket RPC call.
    * </pre>
    *
-   * Protobuf type {@code ots.TicketRequest}
+   * Protobuf type {@code ots.Ticket}
    */
-  public static final class TicketRequest extends
+  public static final class Ticket extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ots.TicketRequest)
-      TicketRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:ots.Ticket)
+      TicketOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TicketRequest.newBuilder() to construct.
-    private TicketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Ticket.newBuilder() to construct.
+    private Ticket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TicketRequest() {
+    private Ticket() {
       id_ = "";
       bets_ = java.util.Collections.emptyList();
       acceptOddsChange_ = 0;
@@ -340,7 +2234,7 @@ public final class Ticket {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new TicketRequest();
+      return new Ticket();
     }
 
     @java.lang.Override
@@ -348,7 +2242,7 @@ public final class Ticket {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TicketRequest(
+    private Ticket(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -388,11 +2282,11 @@ public final class Ticket {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bets_ = new java.util.ArrayList<com.oddin.ots.Ticket.Bet>();
+                bets_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.Bet>();
                 mutable_bitField0_ |= 0x00000001;
               }
               bets_.add(
-                  input.readMessage(com.oddin.ots.Ticket.Bet.parser(), extensionRegistry));
+                  input.readMessage(com.oddin.ots.TicketOuterClass.Bet.parser(), extensionRegistry));
               break;
             }
             case 32: {
@@ -407,11 +2301,11 @@ public final class Ticket {
               break;
             }
             case 50: {
-              com.oddin.ots.Ticket.TicketCustomer.Builder subBuilder = null;
+              com.oddin.ots.TicketOuterClass.TicketCustomer.Builder subBuilder = null;
               if (customer_ != null) {
                 subBuilder = customer_.toBuilder();
               }
-              customer_ = input.readMessage(com.oddin.ots.Ticket.TicketCustomer.parser(), extensionRegistry);
+              customer_ = input.readMessage(com.oddin.ots.TicketOuterClass.TicketCustomer.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(customer_);
                 customer_ = subBuilder.buildPartial();
@@ -438,7 +2332,7 @@ public final class Ticket {
                     SelectionsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000002;
               }
-              com.google.protobuf.MapEntry<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+              com.google.protobuf.MapEntry<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
               selections__ = input.readMessage(
                   SelectionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               selections_.getMutableMap().put(
@@ -494,7 +2388,7 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketRequest_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -512,9 +2406,9 @@ public final class Ticket {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketRequest_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketRequest.class, com.oddin.ots.Ticket.TicketRequest.Builder.class);
+              com.oddin.ots.TicketOuterClass.Ticket.class, com.oddin.ots.TicketOuterClass.Ticket.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -602,7 +2496,7 @@ public final class Ticket {
     }
 
     public static final int BETS_FIELD_NUMBER = 3;
-    private java.util.List<com.oddin.ots.Ticket.Bet> bets_;
+    private java.util.List<com.oddin.ots.TicketOuterClass.Bet> bets_;
     /**
      * <pre>
      * List of ticket bets.
@@ -611,7 +2505,7 @@ public final class Ticket {
      * <code>repeated .ots.Bet bets = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.Ticket.Bet> getBetsList() {
+    public java.util.List<com.oddin.ots.TicketOuterClass.Bet> getBetsList() {
       return bets_;
     }
     /**
@@ -622,7 +2516,7 @@ public final class Ticket {
      * <code>repeated .ots.Bet bets = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.ots.Ticket.BetOrBuilder> 
+    public java.util.List<? extends com.oddin.ots.TicketOuterClass.BetOrBuilder> 
         getBetsOrBuilderList() {
       return bets_;
     }
@@ -645,7 +2539,7 @@ public final class Ticket {
      * <code>repeated .ots.Bet bets = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.Bet getBets(int index) {
+    public com.oddin.ots.TicketOuterClass.Bet getBets(int index) {
       return bets_.get(index);
     }
     /**
@@ -656,7 +2550,7 @@ public final class Ticket {
      * <code>repeated .ots.Bet bets = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetOrBuilder getBetsOrBuilder(
+    public com.oddin.ots.TicketOuterClass.BetOrBuilder getBetsOrBuilder(
         int index) {
       return bets_.get(index);
     }
@@ -704,7 +2598,7 @@ public final class Ticket {
     }
 
     public static final int CUSTOMER_FIELD_NUMBER = 6;
-    private com.oddin.ots.Ticket.TicketCustomer customer_;
+    private com.oddin.ots.TicketOuterClass.TicketCustomer customer_;
     /**
      * <pre>
      * Customer information.
@@ -726,8 +2620,8 @@ public final class Ticket {
      * @return The customer.
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketCustomer getCustomer() {
-      return customer_ == null ? com.oddin.ots.Ticket.TicketCustomer.getDefaultInstance() : customer_;
+    public com.oddin.ots.TicketOuterClass.TicketCustomer getCustomer() {
+      return customer_ == null ? com.oddin.ots.TicketOuterClass.TicketCustomer.getDefaultInstance() : customer_;
     }
     /**
      * <pre>
@@ -737,7 +2631,7 @@ public final class Ticket {
      * <code>.ots.TicketCustomer customer = 6;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketCustomerOrBuilder getCustomerOrBuilder() {
+    public com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder getCustomerOrBuilder() {
       return getCustomer();
     }
 
@@ -782,18 +2676,18 @@ public final class Ticket {
     public static final int SELECTIONS_FIELD_NUMBER = 9;
     private static final class SelectionsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, com.oddin.ots.Ticket.TicketSelection> defaultEntry =
+          java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, com.oddin.ots.Ticket.TicketSelection>newDefaultInstance(
-                  com.oddin.ots.Ticket.internal_static_ots_TicketRequest_SelectionsEntry_descriptor, 
+              .<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>newDefaultInstance(
+                  com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_SelectionsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.oddin.ots.Ticket.TicketSelection.getDefaultInstance());
+                  com.oddin.ots.TicketOuterClass.TicketSelection.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.String, com.oddin.ots.Ticket.TicketSelection> selections_;
-    private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+        java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> selections_;
+    private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
     internalGetSelections() {
       if (selections_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -824,7 +2718,7 @@ public final class Ticket {
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> getSelections() {
+    public java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> getSelections() {
       return getSelectionsMap();
     }
     /**
@@ -836,7 +2730,7 @@ public final class Ticket {
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> getSelectionsMap() {
+    public java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> getSelectionsMap() {
       return internalGetSelections().getMap();
     }
     /**
@@ -848,11 +2742,11 @@ public final class Ticket {
      */
     @java.lang.Override
 
-    public com.oddin.ots.Ticket.TicketSelection getSelectionsOrDefault(
+    public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
         java.lang.String key,
-        com.oddin.ots.Ticket.TicketSelection defaultValue) {
+        com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> map =
+      java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
           internalGetSelections().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
@@ -865,10 +2759,10 @@ public final class Ticket {
      */
     @java.lang.Override
 
-    public com.oddin.ots.Ticket.TicketSelection getSelectionsOrThrow(
+    public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> map =
+      java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
           internalGetSelections().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1073,9 +2967,9 @@ public final class Ticket {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getReofferId());
       }
-      for (java.util.Map.Entry<java.lang.String, com.oddin.ots.Ticket.TicketSelection> entry
+      for (java.util.Map.Entry<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> entry
            : internalGetSelections().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+        com.google.protobuf.MapEntry<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
         selections__ = SelectionsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1104,10 +2998,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketRequest)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.Ticket)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketRequest other = (com.oddin.ots.Ticket.TicketRequest) obj;
+      com.oddin.ots.TicketOuterClass.Ticket other = (com.oddin.ots.TicketOuterClass.Ticket) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -1192,69 +3086,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.Ticket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketRequest parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Ticket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1267,7 +3161,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketRequest prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.Ticket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1287,15 +3181,15 @@ public final class Ticket {
      * TicketRequest is used as request for Ticket RPC call.
      * </pre>
      *
-     * Protobuf type {@code ots.TicketRequest}
+     * Protobuf type {@code ots.Ticket}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ots.TicketRequest)
-        com.oddin.ots.Ticket.TicketRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:ots.Ticket)
+        com.oddin.ots.TicketOuterClass.TicketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketRequest_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1323,12 +3217,12 @@ public final class Ticket {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketRequest_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketRequest.class, com.oddin.ots.Ticket.TicketRequest.Builder.class);
+                com.oddin.ots.TicketOuterClass.Ticket.class, com.oddin.ots.TicketOuterClass.Ticket.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketRequest.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.Ticket.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1394,17 +3288,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketRequest_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketRequest getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketRequest.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.Ticket getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketRequest build() {
-        com.oddin.ots.Ticket.TicketRequest result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.Ticket build() {
+        com.oddin.ots.TicketOuterClass.Ticket result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1412,8 +3306,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketRequest buildPartial() {
-        com.oddin.ots.Ticket.TicketRequest result = new com.oddin.ots.Ticket.TicketRequest(this);
+      public com.oddin.ots.TicketOuterClass.Ticket buildPartial() {
+        com.oddin.ots.TicketOuterClass.Ticket result = new com.oddin.ots.TicketOuterClass.Ticket(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         if (timestampBuilder_ == null) {
@@ -1489,16 +3383,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketRequest) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketRequest)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.Ticket) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.Ticket)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketRequest other) {
-        if (other == com.oddin.ots.Ticket.TicketRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.Ticket other) {
+        if (other == com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -1571,11 +3465,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketRequest parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.Ticket parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.Ticket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1837,17 +3731,17 @@ public final class Ticket {
         return timestampBuilder_;
       }
 
-      private java.util.List<com.oddin.ots.Ticket.Bet> bets_ =
+      private java.util.List<com.oddin.ots.TicketOuterClass.Bet> bets_ =
         java.util.Collections.emptyList();
       private void ensureBetsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          bets_ = new java.util.ArrayList<com.oddin.ots.Ticket.Bet>(bets_);
+          bets_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.Bet>(bets_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.Bet, com.oddin.ots.Ticket.Bet.Builder, com.oddin.ots.Ticket.BetOrBuilder> betsBuilder_;
+          com.oddin.ots.TicketOuterClass.Bet, com.oddin.ots.TicketOuterClass.Bet.Builder, com.oddin.ots.TicketOuterClass.BetOrBuilder> betsBuilder_;
 
       /**
        * <pre>
@@ -1856,7 +3750,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.Bet> getBetsList() {
+      public java.util.List<com.oddin.ots.TicketOuterClass.Bet> getBetsList() {
         if (betsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(bets_);
         } else {
@@ -1884,7 +3778,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public com.oddin.ots.Ticket.Bet getBets(int index) {
+      public com.oddin.ots.TicketOuterClass.Bet getBets(int index) {
         if (betsBuilder_ == null) {
           return bets_.get(index);
         } else {
@@ -1899,7 +3793,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder setBets(
-          int index, com.oddin.ots.Ticket.Bet value) {
+          int index, com.oddin.ots.TicketOuterClass.Bet value) {
         if (betsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1920,7 +3814,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder setBets(
-          int index, com.oddin.ots.Ticket.Bet.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.Bet.Builder builderForValue) {
         if (betsBuilder_ == null) {
           ensureBetsIsMutable();
           bets_.set(index, builderForValue.build());
@@ -1937,7 +3831,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public Builder addBets(com.oddin.ots.Ticket.Bet value) {
+      public Builder addBets(com.oddin.ots.TicketOuterClass.Bet value) {
         if (betsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1958,7 +3852,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder addBets(
-          int index, com.oddin.ots.Ticket.Bet value) {
+          int index, com.oddin.ots.TicketOuterClass.Bet value) {
         if (betsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1979,7 +3873,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder addBets(
-          com.oddin.ots.Ticket.Bet.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.Bet.Builder builderForValue) {
         if (betsBuilder_ == null) {
           ensureBetsIsMutable();
           bets_.add(builderForValue.build());
@@ -1997,7 +3891,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder addBets(
-          int index, com.oddin.ots.Ticket.Bet.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.Bet.Builder builderForValue) {
         if (betsBuilder_ == null) {
           ensureBetsIsMutable();
           bets_.add(index, builderForValue.build());
@@ -2015,7 +3909,7 @@ public final class Ticket {
        * <code>repeated .ots.Bet bets = 3;</code>
        */
       public Builder addAllBets(
-          java.lang.Iterable<? extends com.oddin.ots.Ticket.Bet> values) {
+          java.lang.Iterable<? extends com.oddin.ots.TicketOuterClass.Bet> values) {
         if (betsBuilder_ == null) {
           ensureBetsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2067,7 +3961,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public com.oddin.ots.Ticket.Bet.Builder getBetsBuilder(
+      public com.oddin.ots.TicketOuterClass.Bet.Builder getBetsBuilder(
           int index) {
         return getBetsFieldBuilder().getBuilder(index);
       }
@@ -2078,7 +3972,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public com.oddin.ots.Ticket.BetOrBuilder getBetsOrBuilder(
+      public com.oddin.ots.TicketOuterClass.BetOrBuilder getBetsOrBuilder(
           int index) {
         if (betsBuilder_ == null) {
           return bets_.get(index);  } else {
@@ -2092,7 +3986,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public java.util.List<? extends com.oddin.ots.Ticket.BetOrBuilder> 
+      public java.util.List<? extends com.oddin.ots.TicketOuterClass.BetOrBuilder> 
            getBetsOrBuilderList() {
         if (betsBuilder_ != null) {
           return betsBuilder_.getMessageOrBuilderList();
@@ -2107,9 +4001,9 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public com.oddin.ots.Ticket.Bet.Builder addBetsBuilder() {
+      public com.oddin.ots.TicketOuterClass.Bet.Builder addBetsBuilder() {
         return getBetsFieldBuilder().addBuilder(
-            com.oddin.ots.Ticket.Bet.getDefaultInstance());
+            com.oddin.ots.TicketOuterClass.Bet.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2118,10 +4012,10 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public com.oddin.ots.Ticket.Bet.Builder addBetsBuilder(
+      public com.oddin.ots.TicketOuterClass.Bet.Builder addBetsBuilder(
           int index) {
         return getBetsFieldBuilder().addBuilder(
-            index, com.oddin.ots.Ticket.Bet.getDefaultInstance());
+            index, com.oddin.ots.TicketOuterClass.Bet.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2130,16 +4024,16 @@ public final class Ticket {
        *
        * <code>repeated .ots.Bet bets = 3;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.Bet.Builder> 
+      public java.util.List<com.oddin.ots.TicketOuterClass.Bet.Builder> 
            getBetsBuilderList() {
         return getBetsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.Bet, com.oddin.ots.Ticket.Bet.Builder, com.oddin.ots.Ticket.BetOrBuilder> 
+          com.oddin.ots.TicketOuterClass.Bet, com.oddin.ots.TicketOuterClass.Bet.Builder, com.oddin.ots.TicketOuterClass.BetOrBuilder> 
           getBetsFieldBuilder() {
         if (betsBuilder_ == null) {
           betsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.ots.Ticket.Bet, com.oddin.ots.Ticket.Bet.Builder, com.oddin.ots.Ticket.BetOrBuilder>(
+              com.oddin.ots.TicketOuterClass.Bet, com.oddin.ots.TicketOuterClass.Bet.Builder, com.oddin.ots.TicketOuterClass.BetOrBuilder>(
                   bets_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2266,9 +4160,9 @@ public final class Ticket {
         return this;
       }
 
-      private com.oddin.ots.Ticket.TicketCustomer customer_;
+      private com.oddin.ots.TicketOuterClass.TicketCustomer customer_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketCustomer, com.oddin.ots.Ticket.TicketCustomer.Builder, com.oddin.ots.Ticket.TicketCustomerOrBuilder> customerBuilder_;
+          com.oddin.ots.TicketOuterClass.TicketCustomer, com.oddin.ots.TicketOuterClass.TicketCustomer.Builder, com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder> customerBuilder_;
       /**
        * <pre>
        * Customer information.
@@ -2288,9 +4182,9 @@ public final class Ticket {
        * <code>.ots.TicketCustomer customer = 6;</code>
        * @return The customer.
        */
-      public com.oddin.ots.Ticket.TicketCustomer getCustomer() {
+      public com.oddin.ots.TicketOuterClass.TicketCustomer getCustomer() {
         if (customerBuilder_ == null) {
-          return customer_ == null ? com.oddin.ots.Ticket.TicketCustomer.getDefaultInstance() : customer_;
+          return customer_ == null ? com.oddin.ots.TicketOuterClass.TicketCustomer.getDefaultInstance() : customer_;
         } else {
           return customerBuilder_.getMessage();
         }
@@ -2302,7 +4196,7 @@ public final class Ticket {
        *
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
-      public Builder setCustomer(com.oddin.ots.Ticket.TicketCustomer value) {
+      public Builder setCustomer(com.oddin.ots.TicketOuterClass.TicketCustomer value) {
         if (customerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2323,7 +4217,7 @@ public final class Ticket {
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
       public Builder setCustomer(
-          com.oddin.ots.Ticket.TicketCustomer.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.TicketCustomer.Builder builderForValue) {
         if (customerBuilder_ == null) {
           customer_ = builderForValue.build();
           onChanged();
@@ -2340,11 +4234,11 @@ public final class Ticket {
        *
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
-      public Builder mergeCustomer(com.oddin.ots.Ticket.TicketCustomer value) {
+      public Builder mergeCustomer(com.oddin.ots.TicketOuterClass.TicketCustomer value) {
         if (customerBuilder_ == null) {
           if (customer_ != null) {
             customer_ =
-              com.oddin.ots.Ticket.TicketCustomer.newBuilder(customer_).mergeFrom(value).buildPartial();
+              com.oddin.ots.TicketOuterClass.TicketCustomer.newBuilder(customer_).mergeFrom(value).buildPartial();
           } else {
             customer_ = value;
           }
@@ -2380,7 +4274,7 @@ public final class Ticket {
        *
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
-      public com.oddin.ots.Ticket.TicketCustomer.Builder getCustomerBuilder() {
+      public com.oddin.ots.TicketOuterClass.TicketCustomer.Builder getCustomerBuilder() {
         
         onChanged();
         return getCustomerFieldBuilder().getBuilder();
@@ -2392,12 +4286,12 @@ public final class Ticket {
        *
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
-      public com.oddin.ots.Ticket.TicketCustomerOrBuilder getCustomerOrBuilder() {
+      public com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder getCustomerOrBuilder() {
         if (customerBuilder_ != null) {
           return customerBuilder_.getMessageOrBuilder();
         } else {
           return customer_ == null ?
-              com.oddin.ots.Ticket.TicketCustomer.getDefaultInstance() : customer_;
+              com.oddin.ots.TicketOuterClass.TicketCustomer.getDefaultInstance() : customer_;
         }
       }
       /**
@@ -2408,11 +4302,11 @@ public final class Ticket {
        * <code>.ots.TicketCustomer customer = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketCustomer, com.oddin.ots.Ticket.TicketCustomer.Builder, com.oddin.ots.Ticket.TicketCustomerOrBuilder> 
+          com.oddin.ots.TicketOuterClass.TicketCustomer, com.oddin.ots.TicketOuterClass.TicketCustomer.Builder, com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder> 
           getCustomerFieldBuilder() {
         if (customerBuilder_ == null) {
           customerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.TicketCustomer, com.oddin.ots.Ticket.TicketCustomer.Builder, com.oddin.ots.Ticket.TicketCustomerOrBuilder>(
+              com.oddin.ots.TicketOuterClass.TicketCustomer, com.oddin.ots.TicketOuterClass.TicketCustomer.Builder, com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder>(
                   getCustomer(),
                   getParentForChildren(),
                   isClean());
@@ -2577,8 +4471,8 @@ public final class Ticket {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.String, com.oddin.ots.Ticket.TicketSelection> selections_;
-      private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+          java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> selections_;
+      private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
       internalGetSelections() {
         if (selections_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -2586,7 +4480,7 @@ public final class Ticket {
         }
         return selections_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+      private com.google.protobuf.MapField<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
       internalGetMutableSelections() {
         onChanged();;
         if (selections_ == null) {
@@ -2621,7 +4515,7 @@ public final class Ticket {
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> getSelections() {
+      public java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> getSelections() {
         return getSelectionsMap();
       }
       /**
@@ -2633,7 +4527,7 @@ public final class Ticket {
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> getSelectionsMap() {
+      public java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> getSelectionsMap() {
         return internalGetSelections().getMap();
       }
       /**
@@ -2645,11 +4539,11 @@ public final class Ticket {
        */
       @java.lang.Override
 
-      public com.oddin.ots.Ticket.TicketSelection getSelectionsOrDefault(
+      public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
           java.lang.String key,
-          com.oddin.ots.Ticket.TicketSelection defaultValue) {
+          com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> map =
+        java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
             internalGetSelections().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -2662,10 +4556,10 @@ public final class Ticket {
        */
       @java.lang.Override
 
-      public com.oddin.ots.Ticket.TicketSelection getSelectionsOrThrow(
+      public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> map =
+        java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
             internalGetSelections().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -2697,7 +4591,7 @@ public final class Ticket {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection>
+      public java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection>
       getMutableSelections() {
         return internalGetMutableSelections().getMutableMap();
       }
@@ -2710,7 +4604,7 @@ public final class Ticket {
        */
       public Builder putSelections(
           java.lang.String key,
-          com.oddin.ots.Ticket.TicketSelection value) {
+          com.oddin.ots.TicketOuterClass.TicketSelection value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableSelections().getMutableMap()
@@ -2726,7 +4620,7 @@ public final class Ticket {
        */
 
       public Builder putAllSelections(
-          java.util.Map<java.lang.String, com.oddin.ots.Ticket.TicketSelection> values) {
+          java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> values) {
         internalGetMutableSelections().getMutableMap()
             .putAll(values);
         return this;
@@ -3069,41 +4963,41 @@ public final class Ticket {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ots.TicketRequest)
+      // @@protoc_insertion_point(builder_scope:ots.Ticket)
     }
 
-    // @@protoc_insertion_point(class_scope:ots.TicketRequest)
-    private static final com.oddin.ots.Ticket.TicketRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ots.Ticket)
+    private static final com.oddin.ots.TicketOuterClass.Ticket DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketRequest();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.Ticket();
     }
 
-    public static com.oddin.ots.Ticket.TicketRequest getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.Ticket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TicketRequest>
-        PARSER = new com.google.protobuf.AbstractParser<TicketRequest>() {
+    private static final com.google.protobuf.Parser<Ticket>
+        PARSER = new com.google.protobuf.AbstractParser<Ticket>() {
       @java.lang.Override
-      public TicketRequest parsePartialFrom(
+      public Ticket parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TicketRequest(input, extensionRegistry);
+        return new Ticket(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TicketRequest> parser() {
+    public static com.google.protobuf.Parser<Ticket> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TicketRequest> getParserForType() {
+    public com.google.protobuf.Parser<Ticket> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketRequest getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.Ticket getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3223,15 +5117,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketSelection_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketSelection_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketSelection_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketSelection_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketSelection.class, com.oddin.ots.Ticket.TicketSelection.Builder.class);
+              com.oddin.ots.TicketOuterClass.TicketSelection.class, com.oddin.ots.TicketOuterClass.TicketSelection.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3343,10 +5237,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketSelection)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketSelection)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketSelection other = (com.oddin.ots.Ticket.TicketSelection) obj;
+      com.oddin.ots.TicketOuterClass.TicketSelection other = (com.oddin.ots.TicketOuterClass.TicketSelection) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -3373,69 +5267,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketSelection parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3448,7 +5342,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketSelection prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketSelection prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3469,21 +5363,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.TicketSelection)
-        com.oddin.ots.Ticket.TicketSelectionOrBuilder {
+        com.oddin.ots.TicketOuterClass.TicketSelectionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketSelection_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketSelection_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketSelection_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketSelection.class, com.oddin.ots.Ticket.TicketSelection.Builder.class);
+                com.oddin.ots.TicketOuterClass.TicketSelection.class, com.oddin.ots.TicketOuterClass.TicketSelection.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketSelection.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.TicketSelection.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3511,17 +5405,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketSelection_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketSelection getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketSelection.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.TicketSelection getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketSelection.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketSelection build() {
-        com.oddin.ots.Ticket.TicketSelection result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.TicketSelection build() {
+        com.oddin.ots.TicketOuterClass.TicketSelection result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3529,8 +5423,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketSelection buildPartial() {
-        com.oddin.ots.Ticket.TicketSelection result = new com.oddin.ots.Ticket.TicketSelection(this);
+      public com.oddin.ots.TicketOuterClass.TicketSelection buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketSelection result = new com.oddin.ots.TicketOuterClass.TicketSelection(this);
         result.id_ = id_;
         result.odds_ = odds_;
         onBuilt();
@@ -3571,16 +5465,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketSelection) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketSelection)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketSelection) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketSelection)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketSelection other) {
-        if (other == com.oddin.ots.Ticket.TicketSelection.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketSelection other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketSelection.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -3603,11 +5497,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketSelection parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.TicketSelection parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketSelection) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketSelection) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3777,12 +5671,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.TicketSelection)
-    private static final com.oddin.ots.Ticket.TicketSelection DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.TicketSelection DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketSelection();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketSelection();
     }
 
-    public static com.oddin.ots.Ticket.TicketSelection getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.TicketSelection getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3807,7 +5701,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketSelection getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.TicketSelection getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4017,15 +5911,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketCustomer_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketCustomer_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketCustomer_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketCustomer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketCustomer.class, com.oddin.ots.Ticket.TicketCustomer.Builder.class);
+              com.oddin.ots.TicketOuterClass.TicketCustomer.class, com.oddin.ots.TicketOuterClass.TicketCustomer.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -4255,10 +6149,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketCustomer)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketCustomer)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketCustomer other = (com.oddin.ots.Ticket.TicketCustomer) obj;
+      com.oddin.ots.TicketOuterClass.TicketCustomer other = (com.oddin.ots.TicketOuterClass.TicketCustomer) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -4302,69 +6196,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketCustomer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4377,7 +6271,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketCustomer prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketCustomer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4398,21 +6292,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.TicketCustomer)
-        com.oddin.ots.Ticket.TicketCustomerOrBuilder {
+        com.oddin.ots.TicketOuterClass.TicketCustomerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketCustomer_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketCustomer_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketCustomer_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketCustomer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketCustomer.class, com.oddin.ots.Ticket.TicketCustomer.Builder.class);
+                com.oddin.ots.TicketOuterClass.TicketCustomer.class, com.oddin.ots.TicketOuterClass.TicketCustomer.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketCustomer.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.TicketCustomer.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4452,17 +6346,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketCustomer_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketCustomer_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketCustomer getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketCustomer.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.TicketCustomer getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketCustomer.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketCustomer build() {
-        com.oddin.ots.Ticket.TicketCustomer result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.TicketCustomer build() {
+        com.oddin.ots.TicketOuterClass.TicketCustomer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4470,8 +6364,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketCustomer buildPartial() {
-        com.oddin.ots.Ticket.TicketCustomer result = new com.oddin.ots.Ticket.TicketCustomer(this);
+      public com.oddin.ots.TicketOuterClass.TicketCustomer buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketCustomer result = new com.oddin.ots.TicketOuterClass.TicketCustomer(this);
         result.id_ = id_;
         if (ipBuilder_ == null) {
           result.ip_ = ip_;
@@ -4522,16 +6416,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketCustomer) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketCustomer)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketCustomer) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketCustomer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketCustomer other) {
-        if (other == com.oddin.ots.Ticket.TicketCustomer.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketCustomer other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketCustomer.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -4561,11 +6455,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketCustomer parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.TicketCustomer parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketCustomer) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketCustomer) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5093,12 +6987,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.TicketCustomer)
-    private static final com.oddin.ots.Ticket.TicketCustomer DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.TicketCustomer DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketCustomer();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketCustomer();
     }
 
-    public static com.oddin.ots.Ticket.TicketCustomer getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.TicketCustomer getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5123,7 +7017,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketCustomer getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.TicketCustomer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5177,7 +7071,7 @@ public final class Ticket {
      * <code>.ots.BetBonus bonus = 2;</code>
      * @return The bonus.
      */
-    com.oddin.ots.Ticket.BetBonus getBonus();
+    com.oddin.ots.TicketOuterClass.BetBonus getBonus();
     /**
      * <pre>
      * Bonus part of the bet.
@@ -5185,7 +7079,7 @@ public final class Ticket {
      *
      * <code>.ots.BetBonus bonus = 2;</code>
      */
-    com.oddin.ots.Ticket.BetBonusOrBuilder getBonusOrBuilder();
+    com.oddin.ots.TicketOuterClass.BetBonusOrBuilder getBonusOrBuilder();
 
     /**
      * <pre>
@@ -5204,7 +7098,7 @@ public final class Ticket {
      * <code>.ots.BetStake stake = 3;</code>
      * @return The stake.
      */
-    com.oddin.ots.Ticket.BetStake getStake();
+    com.oddin.ots.TicketOuterClass.BetStake getStake();
     /**
      * <pre>
      * Stake of the bet.
@@ -5212,7 +7106,7 @@ public final class Ticket {
      *
      * <code>.ots.BetStake stake = 3;</code>
      */
-    com.oddin.ots.Ticket.BetStakeOrBuilder getStakeOrBuilder();
+    com.oddin.ots.TicketOuterClass.BetStakeOrBuilder getStakeOrBuilder();
 
     /**
      * <pre>
@@ -5304,7 +7198,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
-    java.util.List<com.oddin.ots.Ticket.BetSelection> 
+    java.util.List<com.oddin.ots.TicketOuterClass.BetSelection> 
         getSelectionsList();
     /**
      * <pre>
@@ -5313,7 +7207,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
-    com.oddin.ots.Ticket.BetSelection getSelections(int index);
+    com.oddin.ots.TicketOuterClass.BetSelection getSelections(int index);
     /**
      * <pre>
      *  Array of selections which form this bet, if omitted all selections are used.
@@ -5329,7 +7223,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
-    java.util.List<? extends com.oddin.ots.Ticket.BetSelectionOrBuilder> 
+    java.util.List<? extends com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder> 
         getSelectionsOrBuilderList();
     /**
      * <pre>
@@ -5338,7 +7232,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
-    com.oddin.ots.Ticket.BetSelectionOrBuilder getSelectionsOrBuilder(
+    com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder getSelectionsOrBuilder(
         int index);
   }
   /**
@@ -5403,11 +7297,11 @@ public final class Ticket {
               break;
             }
             case 18: {
-              com.oddin.ots.Ticket.BetBonus.Builder subBuilder = null;
+              com.oddin.ots.TicketOuterClass.BetBonus.Builder subBuilder = null;
               if (bonus_ != null) {
                 subBuilder = bonus_.toBuilder();
               }
-              bonus_ = input.readMessage(com.oddin.ots.Ticket.BetBonus.parser(), extensionRegistry);
+              bonus_ = input.readMessage(com.oddin.ots.TicketOuterClass.BetBonus.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(bonus_);
                 bonus_ = subBuilder.buildPartial();
@@ -5416,11 +7310,11 @@ public final class Ticket {
               break;
             }
             case 26: {
-              com.oddin.ots.Ticket.BetStake.Builder subBuilder = null;
+              com.oddin.ots.TicketOuterClass.BetStake.Builder subBuilder = null;
               if (stake_ != null) {
                 subBuilder = stake_.toBuilder();
               }
-              stake_ = input.readMessage(com.oddin.ots.Ticket.BetStake.parser(), extensionRegistry);
+              stake_ = input.readMessage(com.oddin.ots.TicketOuterClass.BetStake.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(stake_);
                 stake_ = subBuilder.buildPartial();
@@ -5477,11 +7371,11 @@ public final class Ticket {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                selections_ = new java.util.ArrayList<com.oddin.ots.Ticket.BetSelection>();
+                selections_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.BetSelection>();
                 mutable_bitField0_ |= 0x00000002;
               }
               selections_.add(
-                  input.readMessage(com.oddin.ots.Ticket.BetSelection.parser(), extensionRegistry));
+                  input.readMessage(com.oddin.ots.TicketOuterClass.BetSelection.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -5511,15 +7405,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_Bet_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_Bet_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_Bet_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_Bet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.Bet.class, com.oddin.ots.Ticket.Bet.Builder.class);
+              com.oddin.ots.TicketOuterClass.Bet.class, com.oddin.ots.TicketOuterClass.Bet.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -5561,7 +7455,7 @@ public final class Ticket {
     }
 
     public static final int BONUS_FIELD_NUMBER = 2;
-    private com.oddin.ots.Ticket.BetBonus bonus_;
+    private com.oddin.ots.TicketOuterClass.BetBonus bonus_;
     /**
      * <pre>
      * Bonus part of the bet.
@@ -5583,8 +7477,8 @@ public final class Ticket {
      * @return The bonus.
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetBonus getBonus() {
-      return bonus_ == null ? com.oddin.ots.Ticket.BetBonus.getDefaultInstance() : bonus_;
+    public com.oddin.ots.TicketOuterClass.BetBonus getBonus() {
+      return bonus_ == null ? com.oddin.ots.TicketOuterClass.BetBonus.getDefaultInstance() : bonus_;
     }
     /**
      * <pre>
@@ -5594,12 +7488,12 @@ public final class Ticket {
      * <code>.ots.BetBonus bonus = 2;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetBonusOrBuilder getBonusOrBuilder() {
+    public com.oddin.ots.TicketOuterClass.BetBonusOrBuilder getBonusOrBuilder() {
       return getBonus();
     }
 
     public static final int STAKE_FIELD_NUMBER = 3;
-    private com.oddin.ots.Ticket.BetStake stake_;
+    private com.oddin.ots.TicketOuterClass.BetStake stake_;
     /**
      * <pre>
      * Stake of the bet.
@@ -5621,8 +7515,8 @@ public final class Ticket {
      * @return The stake.
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetStake getStake() {
-      return stake_ == null ? com.oddin.ots.Ticket.BetStake.getDefaultInstance() : stake_;
+    public com.oddin.ots.TicketOuterClass.BetStake getStake() {
+      return stake_ == null ? com.oddin.ots.TicketOuterClass.BetStake.getDefaultInstance() : stake_;
     }
     /**
      * <pre>
@@ -5632,7 +7526,7 @@ public final class Ticket {
      * <code>.ots.BetStake stake = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetStakeOrBuilder getStakeOrBuilder() {
+    public com.oddin.ots.TicketOuterClass.BetStakeOrBuilder getStakeOrBuilder() {
       return getStake();
     }
 
@@ -5753,7 +7647,7 @@ public final class Ticket {
     private int systemsMemoizedSerializedSize = -1;
 
     public static final int SELECTIONS_FIELD_NUMBER = 7;
-    private java.util.List<com.oddin.ots.Ticket.BetSelection> selections_;
+    private java.util.List<com.oddin.ots.TicketOuterClass.BetSelection> selections_;
     /**
      * <pre>
      *  Array of selections which form this bet, if omitted all selections are used.
@@ -5762,7 +7656,7 @@ public final class Ticket {
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.Ticket.BetSelection> getSelectionsList() {
+    public java.util.List<com.oddin.ots.TicketOuterClass.BetSelection> getSelectionsList() {
       return selections_;
     }
     /**
@@ -5773,7 +7667,7 @@ public final class Ticket {
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.ots.Ticket.BetSelectionOrBuilder> 
+    public java.util.List<? extends com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder> 
         getSelectionsOrBuilderList() {
       return selections_;
     }
@@ -5796,7 +7690,7 @@ public final class Ticket {
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetSelection getSelections(int index) {
+    public com.oddin.ots.TicketOuterClass.BetSelection getSelections(int index) {
       return selections_.get(index);
     }
     /**
@@ -5807,7 +7701,7 @@ public final class Ticket {
      * <code>repeated .ots.BetSelection selections = 7;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetSelectionOrBuilder getSelectionsOrBuilder(
+    public com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder getSelectionsOrBuilder(
         int index) {
       return selections_.get(index);
     }
@@ -5909,10 +7803,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.Bet)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.Bet)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.Bet other = (com.oddin.ots.Ticket.Bet) obj;
+      com.oddin.ots.TicketOuterClass.Bet other = (com.oddin.ots.TicketOuterClass.Bet) obj;
 
       if (hasId() != other.hasId()) return false;
       if (hasId()) {
@@ -5987,69 +7881,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.Bet parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.Bet parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.Bet parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.Bet parseFrom(
+    public static com.oddin.ots.TicketOuterClass.Bet parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6062,7 +7956,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.Bet prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.Bet prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6083,21 +7977,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.Bet)
-        com.oddin.ots.Ticket.BetOrBuilder {
+        com.oddin.ots.TicketOuterClass.BetOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_Bet_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Bet_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_Bet_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Bet_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.Bet.class, com.oddin.ots.Ticket.Bet.Builder.class);
+                com.oddin.ots.TicketOuterClass.Bet.class, com.oddin.ots.TicketOuterClass.Bet.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.Bet.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.Bet.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6160,17 +8054,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_Bet_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_Bet_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.Bet getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.Bet.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.Bet getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.Bet.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.Bet build() {
-        com.oddin.ots.Ticket.Bet result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.Bet build() {
+        com.oddin.ots.TicketOuterClass.Bet result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6178,8 +8072,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.Bet buildPartial() {
-        com.oddin.ots.Ticket.Bet result = new com.oddin.ots.Ticket.Bet(this);
+      public com.oddin.ots.TicketOuterClass.Bet buildPartial() {
+        com.oddin.ots.TicketOuterClass.Bet result = new com.oddin.ots.TicketOuterClass.Bet(this);
         int from_bitField0_ = bitField0_;
         if (idBuilder_ == null) {
           result.id_ = id_;
@@ -6258,16 +8152,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.Bet) {
-          return mergeFrom((com.oddin.ots.Ticket.Bet)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.Bet) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.Bet)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.Bet other) {
-        if (other == com.oddin.ots.Ticket.Bet.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.Bet other) {
+        if (other == com.oddin.ots.TicketOuterClass.Bet.getDefaultInstance()) return this;
         if (other.hasId()) {
           mergeId(other.getId());
         }
@@ -6334,11 +8228,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.Bet parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.Bet parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.Bet) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.Bet) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6504,9 +8398,9 @@ public final class Ticket {
         return idBuilder_;
       }
 
-      private com.oddin.ots.Ticket.BetBonus bonus_;
+      private com.oddin.ots.TicketOuterClass.BetBonus bonus_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.BetBonus, com.oddin.ots.Ticket.BetBonus.Builder, com.oddin.ots.Ticket.BetBonusOrBuilder> bonusBuilder_;
+          com.oddin.ots.TicketOuterClass.BetBonus, com.oddin.ots.TicketOuterClass.BetBonus.Builder, com.oddin.ots.TicketOuterClass.BetBonusOrBuilder> bonusBuilder_;
       /**
        * <pre>
        * Bonus part of the bet.
@@ -6526,9 +8420,9 @@ public final class Ticket {
        * <code>.ots.BetBonus bonus = 2;</code>
        * @return The bonus.
        */
-      public com.oddin.ots.Ticket.BetBonus getBonus() {
+      public com.oddin.ots.TicketOuterClass.BetBonus getBonus() {
         if (bonusBuilder_ == null) {
-          return bonus_ == null ? com.oddin.ots.Ticket.BetBonus.getDefaultInstance() : bonus_;
+          return bonus_ == null ? com.oddin.ots.TicketOuterClass.BetBonus.getDefaultInstance() : bonus_;
         } else {
           return bonusBuilder_.getMessage();
         }
@@ -6540,7 +8434,7 @@ public final class Ticket {
        *
        * <code>.ots.BetBonus bonus = 2;</code>
        */
-      public Builder setBonus(com.oddin.ots.Ticket.BetBonus value) {
+      public Builder setBonus(com.oddin.ots.TicketOuterClass.BetBonus value) {
         if (bonusBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6561,7 +8455,7 @@ public final class Ticket {
        * <code>.ots.BetBonus bonus = 2;</code>
        */
       public Builder setBonus(
-          com.oddin.ots.Ticket.BetBonus.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.BetBonus.Builder builderForValue) {
         if (bonusBuilder_ == null) {
           bonus_ = builderForValue.build();
           onChanged();
@@ -6578,11 +8472,11 @@ public final class Ticket {
        *
        * <code>.ots.BetBonus bonus = 2;</code>
        */
-      public Builder mergeBonus(com.oddin.ots.Ticket.BetBonus value) {
+      public Builder mergeBonus(com.oddin.ots.TicketOuterClass.BetBonus value) {
         if (bonusBuilder_ == null) {
           if (bonus_ != null) {
             bonus_ =
-              com.oddin.ots.Ticket.BetBonus.newBuilder(bonus_).mergeFrom(value).buildPartial();
+              com.oddin.ots.TicketOuterClass.BetBonus.newBuilder(bonus_).mergeFrom(value).buildPartial();
           } else {
             bonus_ = value;
           }
@@ -6618,7 +8512,7 @@ public final class Ticket {
        *
        * <code>.ots.BetBonus bonus = 2;</code>
        */
-      public com.oddin.ots.Ticket.BetBonus.Builder getBonusBuilder() {
+      public com.oddin.ots.TicketOuterClass.BetBonus.Builder getBonusBuilder() {
         
         onChanged();
         return getBonusFieldBuilder().getBuilder();
@@ -6630,12 +8524,12 @@ public final class Ticket {
        *
        * <code>.ots.BetBonus bonus = 2;</code>
        */
-      public com.oddin.ots.Ticket.BetBonusOrBuilder getBonusOrBuilder() {
+      public com.oddin.ots.TicketOuterClass.BetBonusOrBuilder getBonusOrBuilder() {
         if (bonusBuilder_ != null) {
           return bonusBuilder_.getMessageOrBuilder();
         } else {
           return bonus_ == null ?
-              com.oddin.ots.Ticket.BetBonus.getDefaultInstance() : bonus_;
+              com.oddin.ots.TicketOuterClass.BetBonus.getDefaultInstance() : bonus_;
         }
       }
       /**
@@ -6646,11 +8540,11 @@ public final class Ticket {
        * <code>.ots.BetBonus bonus = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.BetBonus, com.oddin.ots.Ticket.BetBonus.Builder, com.oddin.ots.Ticket.BetBonusOrBuilder> 
+          com.oddin.ots.TicketOuterClass.BetBonus, com.oddin.ots.TicketOuterClass.BetBonus.Builder, com.oddin.ots.TicketOuterClass.BetBonusOrBuilder> 
           getBonusFieldBuilder() {
         if (bonusBuilder_ == null) {
           bonusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.BetBonus, com.oddin.ots.Ticket.BetBonus.Builder, com.oddin.ots.Ticket.BetBonusOrBuilder>(
+              com.oddin.ots.TicketOuterClass.BetBonus, com.oddin.ots.TicketOuterClass.BetBonus.Builder, com.oddin.ots.TicketOuterClass.BetBonusOrBuilder>(
                   getBonus(),
                   getParentForChildren(),
                   isClean());
@@ -6659,9 +8553,9 @@ public final class Ticket {
         return bonusBuilder_;
       }
 
-      private com.oddin.ots.Ticket.BetStake stake_;
+      private com.oddin.ots.TicketOuterClass.BetStake stake_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.BetStake, com.oddin.ots.Ticket.BetStake.Builder, com.oddin.ots.Ticket.BetStakeOrBuilder> stakeBuilder_;
+          com.oddin.ots.TicketOuterClass.BetStake, com.oddin.ots.TicketOuterClass.BetStake.Builder, com.oddin.ots.TicketOuterClass.BetStakeOrBuilder> stakeBuilder_;
       /**
        * <pre>
        * Stake of the bet.
@@ -6681,9 +8575,9 @@ public final class Ticket {
        * <code>.ots.BetStake stake = 3;</code>
        * @return The stake.
        */
-      public com.oddin.ots.Ticket.BetStake getStake() {
+      public com.oddin.ots.TicketOuterClass.BetStake getStake() {
         if (stakeBuilder_ == null) {
-          return stake_ == null ? com.oddin.ots.Ticket.BetStake.getDefaultInstance() : stake_;
+          return stake_ == null ? com.oddin.ots.TicketOuterClass.BetStake.getDefaultInstance() : stake_;
         } else {
           return stakeBuilder_.getMessage();
         }
@@ -6695,7 +8589,7 @@ public final class Ticket {
        *
        * <code>.ots.BetStake stake = 3;</code>
        */
-      public Builder setStake(com.oddin.ots.Ticket.BetStake value) {
+      public Builder setStake(com.oddin.ots.TicketOuterClass.BetStake value) {
         if (stakeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6716,7 +8610,7 @@ public final class Ticket {
        * <code>.ots.BetStake stake = 3;</code>
        */
       public Builder setStake(
-          com.oddin.ots.Ticket.BetStake.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.BetStake.Builder builderForValue) {
         if (stakeBuilder_ == null) {
           stake_ = builderForValue.build();
           onChanged();
@@ -6733,11 +8627,11 @@ public final class Ticket {
        *
        * <code>.ots.BetStake stake = 3;</code>
        */
-      public Builder mergeStake(com.oddin.ots.Ticket.BetStake value) {
+      public Builder mergeStake(com.oddin.ots.TicketOuterClass.BetStake value) {
         if (stakeBuilder_ == null) {
           if (stake_ != null) {
             stake_ =
-              com.oddin.ots.Ticket.BetStake.newBuilder(stake_).mergeFrom(value).buildPartial();
+              com.oddin.ots.TicketOuterClass.BetStake.newBuilder(stake_).mergeFrom(value).buildPartial();
           } else {
             stake_ = value;
           }
@@ -6773,7 +8667,7 @@ public final class Ticket {
        *
        * <code>.ots.BetStake stake = 3;</code>
        */
-      public com.oddin.ots.Ticket.BetStake.Builder getStakeBuilder() {
+      public com.oddin.ots.TicketOuterClass.BetStake.Builder getStakeBuilder() {
         
         onChanged();
         return getStakeFieldBuilder().getBuilder();
@@ -6785,12 +8679,12 @@ public final class Ticket {
        *
        * <code>.ots.BetStake stake = 3;</code>
        */
-      public com.oddin.ots.Ticket.BetStakeOrBuilder getStakeOrBuilder() {
+      public com.oddin.ots.TicketOuterClass.BetStakeOrBuilder getStakeOrBuilder() {
         if (stakeBuilder_ != null) {
           return stakeBuilder_.getMessageOrBuilder();
         } else {
           return stake_ == null ?
-              com.oddin.ots.Ticket.BetStake.getDefaultInstance() : stake_;
+              com.oddin.ots.TicketOuterClass.BetStake.getDefaultInstance() : stake_;
         }
       }
       /**
@@ -6801,11 +8695,11 @@ public final class Ticket {
        * <code>.ots.BetStake stake = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.BetStake, com.oddin.ots.Ticket.BetStake.Builder, com.oddin.ots.Ticket.BetStakeOrBuilder> 
+          com.oddin.ots.TicketOuterClass.BetStake, com.oddin.ots.TicketOuterClass.BetStake.Builder, com.oddin.ots.TicketOuterClass.BetStakeOrBuilder> 
           getStakeFieldBuilder() {
         if (stakeBuilder_ == null) {
           stakeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.BetStake, com.oddin.ots.Ticket.BetStake.Builder, com.oddin.ots.Ticket.BetStakeOrBuilder>(
+              com.oddin.ots.TicketOuterClass.BetStake, com.oddin.ots.TicketOuterClass.BetStake.Builder, com.oddin.ots.TicketOuterClass.BetStakeOrBuilder>(
                   getStake(),
                   getParentForChildren(),
                   isClean());
@@ -7231,17 +9125,17 @@ public final class Ticket {
         return this;
       }
 
-      private java.util.List<com.oddin.ots.Ticket.BetSelection> selections_ =
+      private java.util.List<com.oddin.ots.TicketOuterClass.BetSelection> selections_ =
         java.util.Collections.emptyList();
       private void ensureSelectionsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          selections_ = new java.util.ArrayList<com.oddin.ots.Ticket.BetSelection>(selections_);
+          selections_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.BetSelection>(selections_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.BetSelection, com.oddin.ots.Ticket.BetSelection.Builder, com.oddin.ots.Ticket.BetSelectionOrBuilder> selectionsBuilder_;
+          com.oddin.ots.TicketOuterClass.BetSelection, com.oddin.ots.TicketOuterClass.BetSelection.Builder, com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder> selectionsBuilder_;
 
       /**
        * <pre>
@@ -7250,7 +9144,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.BetSelection> getSelectionsList() {
+      public java.util.List<com.oddin.ots.TicketOuterClass.BetSelection> getSelectionsList() {
         if (selectionsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(selections_);
         } else {
@@ -7278,7 +9172,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public com.oddin.ots.Ticket.BetSelection getSelections(int index) {
+      public com.oddin.ots.TicketOuterClass.BetSelection getSelections(int index) {
         if (selectionsBuilder_ == null) {
           return selections_.get(index);
         } else {
@@ -7293,7 +9187,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder setSelections(
-          int index, com.oddin.ots.Ticket.BetSelection value) {
+          int index, com.oddin.ots.TicketOuterClass.BetSelection value) {
         if (selectionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7314,7 +9208,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder setSelections(
-          int index, com.oddin.ots.Ticket.BetSelection.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.BetSelection.Builder builderForValue) {
         if (selectionsBuilder_ == null) {
           ensureSelectionsIsMutable();
           selections_.set(index, builderForValue.build());
@@ -7331,7 +9225,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public Builder addSelections(com.oddin.ots.Ticket.BetSelection value) {
+      public Builder addSelections(com.oddin.ots.TicketOuterClass.BetSelection value) {
         if (selectionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7352,7 +9246,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder addSelections(
-          int index, com.oddin.ots.Ticket.BetSelection value) {
+          int index, com.oddin.ots.TicketOuterClass.BetSelection value) {
         if (selectionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7373,7 +9267,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder addSelections(
-          com.oddin.ots.Ticket.BetSelection.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.BetSelection.Builder builderForValue) {
         if (selectionsBuilder_ == null) {
           ensureSelectionsIsMutable();
           selections_.add(builderForValue.build());
@@ -7391,7 +9285,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder addSelections(
-          int index, com.oddin.ots.Ticket.BetSelection.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.BetSelection.Builder builderForValue) {
         if (selectionsBuilder_ == null) {
           ensureSelectionsIsMutable();
           selections_.add(index, builderForValue.build());
@@ -7409,7 +9303,7 @@ public final class Ticket {
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
       public Builder addAllSelections(
-          java.lang.Iterable<? extends com.oddin.ots.Ticket.BetSelection> values) {
+          java.lang.Iterable<? extends com.oddin.ots.TicketOuterClass.BetSelection> values) {
         if (selectionsBuilder_ == null) {
           ensureSelectionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7461,7 +9355,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public com.oddin.ots.Ticket.BetSelection.Builder getSelectionsBuilder(
+      public com.oddin.ots.TicketOuterClass.BetSelection.Builder getSelectionsBuilder(
           int index) {
         return getSelectionsFieldBuilder().getBuilder(index);
       }
@@ -7472,7 +9366,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public com.oddin.ots.Ticket.BetSelectionOrBuilder getSelectionsOrBuilder(
+      public com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder getSelectionsOrBuilder(
           int index) {
         if (selectionsBuilder_ == null) {
           return selections_.get(index);  } else {
@@ -7486,7 +9380,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public java.util.List<? extends com.oddin.ots.Ticket.BetSelectionOrBuilder> 
+      public java.util.List<? extends com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder> 
            getSelectionsOrBuilderList() {
         if (selectionsBuilder_ != null) {
           return selectionsBuilder_.getMessageOrBuilderList();
@@ -7501,9 +9395,9 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public com.oddin.ots.Ticket.BetSelection.Builder addSelectionsBuilder() {
+      public com.oddin.ots.TicketOuterClass.BetSelection.Builder addSelectionsBuilder() {
         return getSelectionsFieldBuilder().addBuilder(
-            com.oddin.ots.Ticket.BetSelection.getDefaultInstance());
+            com.oddin.ots.TicketOuterClass.BetSelection.getDefaultInstance());
       }
       /**
        * <pre>
@@ -7512,10 +9406,10 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public com.oddin.ots.Ticket.BetSelection.Builder addSelectionsBuilder(
+      public com.oddin.ots.TicketOuterClass.BetSelection.Builder addSelectionsBuilder(
           int index) {
         return getSelectionsFieldBuilder().addBuilder(
-            index, com.oddin.ots.Ticket.BetSelection.getDefaultInstance());
+            index, com.oddin.ots.TicketOuterClass.BetSelection.getDefaultInstance());
       }
       /**
        * <pre>
@@ -7524,16 +9418,16 @@ public final class Ticket {
        *
        * <code>repeated .ots.BetSelection selections = 7;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.BetSelection.Builder> 
+      public java.util.List<com.oddin.ots.TicketOuterClass.BetSelection.Builder> 
            getSelectionsBuilderList() {
         return getSelectionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.BetSelection, com.oddin.ots.Ticket.BetSelection.Builder, com.oddin.ots.Ticket.BetSelectionOrBuilder> 
+          com.oddin.ots.TicketOuterClass.BetSelection, com.oddin.ots.TicketOuterClass.BetSelection.Builder, com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder> 
           getSelectionsFieldBuilder() {
         if (selectionsBuilder_ == null) {
           selectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.ots.Ticket.BetSelection, com.oddin.ots.Ticket.BetSelection.Builder, com.oddin.ots.Ticket.BetSelectionOrBuilder>(
+              com.oddin.ots.TicketOuterClass.BetSelection, com.oddin.ots.TicketOuterClass.BetSelection.Builder, com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder>(
                   selections_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -7559,12 +9453,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.Bet)
-    private static final com.oddin.ots.Ticket.Bet DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.Bet DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.Bet();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.Bet();
     }
 
-    public static com.oddin.ots.Ticket.Bet getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.Bet getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7589,7 +9483,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.Bet getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.Bet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7692,15 +9586,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetSelection_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetSelection_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetSelection_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetSelection_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.BetSelection.class, com.oddin.ots.Ticket.BetSelection.Builder.class);
+              com.oddin.ots.TicketOuterClass.BetSelection.class, com.oddin.ots.TicketOuterClass.BetSelection.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -7788,10 +9682,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.BetSelection)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.BetSelection)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.BetSelection other = (com.oddin.ots.Ticket.BetSelection) obj;
+      com.oddin.ots.TicketOuterClass.BetSelection other = (com.oddin.ots.TicketOuterClass.BetSelection) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -7813,69 +9707,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetSelection parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7888,7 +9782,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.BetSelection prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.BetSelection prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7909,21 +9803,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.BetSelection)
-        com.oddin.ots.Ticket.BetSelectionOrBuilder {
+        com.oddin.ots.TicketOuterClass.BetSelectionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetSelection_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetSelection_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetSelection_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.BetSelection.class, com.oddin.ots.Ticket.BetSelection.Builder.class);
+                com.oddin.ots.TicketOuterClass.BetSelection.class, com.oddin.ots.TicketOuterClass.BetSelection.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.BetSelection.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.BetSelection.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7949,17 +9843,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetSelection_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetSelection getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.BetSelection.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.BetSelection getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.BetSelection.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetSelection build() {
-        com.oddin.ots.Ticket.BetSelection result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.BetSelection build() {
+        com.oddin.ots.TicketOuterClass.BetSelection result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7967,8 +9861,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetSelection buildPartial() {
-        com.oddin.ots.Ticket.BetSelection result = new com.oddin.ots.Ticket.BetSelection(this);
+      public com.oddin.ots.TicketOuterClass.BetSelection buildPartial() {
+        com.oddin.ots.TicketOuterClass.BetSelection result = new com.oddin.ots.TicketOuterClass.BetSelection(this);
         result.id_ = id_;
         onBuilt();
         return result;
@@ -8008,16 +9902,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.BetSelection) {
-          return mergeFrom((com.oddin.ots.Ticket.BetSelection)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.BetSelection) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.BetSelection)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.BetSelection other) {
-        if (other == com.oddin.ots.Ticket.BetSelection.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.BetSelection other) {
+        if (other == com.oddin.ots.TicketOuterClass.BetSelection.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -8037,11 +9931,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.BetSelection parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.BetSelection parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.BetSelection) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.BetSelection) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8163,12 +10057,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.BetSelection)
-    private static final com.oddin.ots.Ticket.BetSelection DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.BetSelection DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.BetSelection();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.BetSelection();
     }
 
-    public static com.oddin.ots.Ticket.BetSelection getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.BetSelection getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8193,7 +10087,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetSelection getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.BetSelection getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8310,15 +10204,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetStake_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetStake_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetStake_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetStake_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.BetStake.class, com.oddin.ots.Ticket.BetStake.Builder.class);
+              com.oddin.ots.TicketOuterClass.BetStake.class, com.oddin.ots.TicketOuterClass.BetStake.Builder.class);
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
@@ -8410,10 +10304,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.BetStake)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.BetStake)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.BetStake other = (com.oddin.ots.Ticket.BetStake) obj;
+      com.oddin.ots.TicketOuterClass.BetStake other = (com.oddin.ots.TicketOuterClass.BetStake) obj;
 
       if (getValue()
           != other.getValue()) return false;
@@ -8439,69 +10333,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetStake parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetStake parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetStake parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetStake parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetStake parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8514,7 +10408,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.BetStake prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.BetStake prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8535,21 +10429,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.BetStake)
-        com.oddin.ots.Ticket.BetStakeOrBuilder {
+        com.oddin.ots.TicketOuterClass.BetStakeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetStake_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetStake_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetStake_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetStake_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.BetStake.class, com.oddin.ots.Ticket.BetStake.Builder.class);
+                com.oddin.ots.TicketOuterClass.BetStake.class, com.oddin.ots.TicketOuterClass.BetStake.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.BetStake.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.BetStake.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8577,17 +10471,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetStake_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetStake_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetStake getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.BetStake.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.BetStake getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.BetStake.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetStake build() {
-        com.oddin.ots.Ticket.BetStake result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.BetStake build() {
+        com.oddin.ots.TicketOuterClass.BetStake result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8595,8 +10489,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetStake buildPartial() {
-        com.oddin.ots.Ticket.BetStake result = new com.oddin.ots.Ticket.BetStake(this);
+      public com.oddin.ots.TicketOuterClass.BetStake buildPartial() {
+        com.oddin.ots.TicketOuterClass.BetStake result = new com.oddin.ots.TicketOuterClass.BetStake(this);
         result.value_ = value_;
         result.type_ = type_;
         onBuilt();
@@ -8637,16 +10531,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.BetStake) {
-          return mergeFrom((com.oddin.ots.Ticket.BetStake)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.BetStake) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.BetStake)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.BetStake other) {
-        if (other == com.oddin.ots.Ticket.BetStake.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.BetStake other) {
+        if (other == com.oddin.ots.TicketOuterClass.BetStake.getDefaultInstance()) return this;
         if (other.getValue() != 0L) {
           setValue(other.getValue());
         }
@@ -8668,11 +10562,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.BetStake parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.BetStake parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.BetStake) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.BetStake) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8815,12 +10709,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.BetStake)
-    private static final com.oddin.ots.Ticket.BetStake DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.BetStake DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.BetStake();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.BetStake();
     }
 
-    public static com.oddin.ots.Ticket.BetStake getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.BetStake getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8845,7 +10739,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetStake getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.BetStake getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8988,15 +10882,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetBonus_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetBonus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_BetBonus_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_BetBonus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.BetBonus.class, com.oddin.ots.Ticket.BetBonus.Builder.class);
+              com.oddin.ots.TicketOuterClass.BetBonus.class, com.oddin.ots.TicketOuterClass.BetBonus.Builder.class);
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
@@ -9122,10 +11016,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.BetBonus)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.BetBonus)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.BetBonus other = (com.oddin.ots.Ticket.BetBonus) obj;
+      com.oddin.ots.TicketOuterClass.BetBonus other = (com.oddin.ots.TicketOuterClass.BetBonus) obj;
 
       if (getValue()
           != other.getValue()) return false;
@@ -9154,69 +11048,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.BetBonus parseFrom(
+    public static com.oddin.ots.TicketOuterClass.BetBonus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9229,7 +11123,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.BetBonus prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.BetBonus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9250,21 +11144,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.BetBonus)
-        com.oddin.ots.Ticket.BetBonusOrBuilder {
+        com.oddin.ots.TicketOuterClass.BetBonusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetBonus_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetBonus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetBonus_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetBonus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.BetBonus.class, com.oddin.ots.Ticket.BetBonus.Builder.class);
+                com.oddin.ots.TicketOuterClass.BetBonus.class, com.oddin.ots.TicketOuterClass.BetBonus.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.BetBonus.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.BetBonus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9294,17 +11188,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_BetBonus_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_BetBonus_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetBonus getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.BetBonus.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.BetBonus getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.BetBonus.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetBonus build() {
-        com.oddin.ots.Ticket.BetBonus result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.BetBonus build() {
+        com.oddin.ots.TicketOuterClass.BetBonus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9312,8 +11206,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.BetBonus buildPartial() {
-        com.oddin.ots.Ticket.BetBonus result = new com.oddin.ots.Ticket.BetBonus(this);
+      public com.oddin.ots.TicketOuterClass.BetBonus buildPartial() {
+        com.oddin.ots.TicketOuterClass.BetBonus result = new com.oddin.ots.TicketOuterClass.BetBonus(this);
         result.value_ = value_;
         result.type_ = type_;
         result.mode_ = mode_;
@@ -9355,16 +11249,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.BetBonus) {
-          return mergeFrom((com.oddin.ots.Ticket.BetBonus)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.BetBonus) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.BetBonus)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.BetBonus other) {
-        if (other == com.oddin.ots.Ticket.BetBonus.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.BetBonus other) {
+        if (other == com.oddin.ots.TicketOuterClass.BetBonus.getDefaultInstance()) return this;
         if (other.getValue() != 0L) {
           setValue(other.getValue());
         }
@@ -9389,11 +11283,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.BetBonus parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.BetBonus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.BetBonus) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.BetBonus) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9610,12 +11504,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.BetBonus)
-    private static final com.oddin.ots.Ticket.BetBonus DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.BetBonus DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.BetBonus();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.BetBonus();
     }
 
-    public static com.oddin.ots.Ticket.BetBonus getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.BetBonus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9640,954 +11534,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.BetBonus getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TicketResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ots.TicketResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     * @return Whether the state field is set.
-     */
-    boolean hasState();
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     * @return The state.
-     */
-    com.oddin.ots.Ticket.TicketState getState();
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     */
-    com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder();
-
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    boolean hasKeepalive();
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    com.oddin.ots.Commons.StreamKeepalive getKeepalive();
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     */
-    com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
-
-    public com.oddin.ots.Ticket.TicketResponse.DataCase getDataCase();
-  }
-  /**
-   * Protobuf type {@code ots.TicketResponse}
-   */
-  public static final class TicketResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ots.TicketResponse)
-      TicketResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TicketResponse.newBuilder() to construct.
-    private TicketResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TicketResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TicketResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TicketResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.oddin.ots.Ticket.TicketState.Builder subBuilder = null;
-              if (dataCase_ == 1) {
-                subBuilder = ((com.oddin.ots.Ticket.TicketState) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.ots.Ticket.TicketState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.ots.Ticket.TicketState) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 1;
-              break;
-            }
-            case 18: {
-              com.oddin.ots.Commons.StreamKeepalive.Builder subBuilder = null;
-              if (dataCase_ == 2) {
-                subBuilder = ((com.oddin.ots.Commons.StreamKeepalive) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.ots.Commons.StreamKeepalive.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.ots.Commons.StreamKeepalive) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 2;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
-    }
-
-    private int dataCase_ = 0;
-    private java.lang.Object data_;
-    public enum DataCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      STATE(1),
-      KEEPALIVE(2),
-      DATA_NOT_SET(0);
-      private final int value;
-      private DataCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DataCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DataCase forNumber(int value) {
-        switch (value) {
-          case 1: return STATE;
-          case 2: return KEEPALIVE;
-          case 0: return DATA_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DataCase
-    getDataCase() {
-      return DataCase.forNumber(
-          dataCase_);
-    }
-
-    public static final int STATE_FIELD_NUMBER = 1;
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     * @return Whether the state field is set.
-     */
-    @java.lang.Override
-    public boolean hasState() {
-      return dataCase_ == 1;
-    }
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.oddin.ots.Ticket.TicketState getState() {
-      if (dataCase_ == 1) {
-         return (com.oddin.ots.Ticket.TicketState) data_;
-      }
-      return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-    }
-    /**
-     * <code>.ots.TicketState state = 1;</code>
-     */
-    @java.lang.Override
-    public com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder() {
-      if (dataCase_ == 1) {
-         return (com.oddin.ots.Ticket.TicketState) data_;
-      }
-      return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-    }
-
-    public static final int KEEPALIVE_FIELD_NUMBER = 2;
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    @java.lang.Override
-    public boolean hasKeepalive() {
-      return dataCase_ == 2;
-    }
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    @java.lang.Override
-    public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
-      if (dataCase_ == 2) {
-         return (com.oddin.ots.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-    }
-    /**
-     * <code>.ots.StreamKeepalive keepalive = 2;</code>
-     */
-    @java.lang.Override
-    public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-      if (dataCase_ == 2) {
-         return (com.oddin.ots.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (dataCase_ == 1) {
-        output.writeMessage(1, (com.oddin.ots.Ticket.TicketState) data_);
-      }
-      if (dataCase_ == 2) {
-        output.writeMessage(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (dataCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.oddin.ots.Ticket.TicketState) data_);
-      }
-      if (dataCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketResponse)) {
-        return super.equals(obj);
-      }
-      com.oddin.ots.Ticket.TicketResponse other = (com.oddin.ots.Ticket.TicketResponse) obj;
-
-      if (!getDataCase().equals(other.getDataCase())) return false;
-      switch (dataCase_) {
-        case 1:
-          if (!getState()
-              .equals(other.getState())) return false;
-          break;
-        case 2:
-          if (!getKeepalive()
-              .equals(other.getKeepalive())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (dataCase_) {
-        case 1:
-          hash = (37 * hash) + STATE_FIELD_NUMBER;
-          hash = (53 * hash) + getState().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
-          hash = (53 * hash) + getKeepalive().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code ots.TicketResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ots.TicketResponse)
-        com.oddin.ots.Ticket.TicketResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
-      }
-
-      // Construct using com.oddin.ots.Ticket.TicketResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dataCase_ = 0;
-        data_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse build() {
-        com.oddin.ots.Ticket.TicketResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse buildPartial() {
-        com.oddin.ots.Ticket.TicketResponse result = new com.oddin.ots.Ticket.TicketResponse(this);
-        if (dataCase_ == 1) {
-          if (stateBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = stateBuilder_.build();
-          }
-        }
-        if (dataCase_ == 2) {
-          if (keepaliveBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = keepaliveBuilder_.build();
-          }
-        }
-        result.dataCase_ = dataCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketResponse) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketResponse other) {
-        if (other == com.oddin.ots.Ticket.TicketResponse.getDefaultInstance()) return this;
-        switch (other.getDataCase()) {
-          case STATE: {
-            mergeState(other.getState());
-            break;
-          }
-          case KEEPALIVE: {
-            mergeKeepalive(other.getKeepalive());
-            break;
-          }
-          case DATA_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int dataCase_ = 0;
-      private java.lang.Object data_;
-      public DataCase
-          getDataCase() {
-        return DataCase.forNumber(
-            dataCase_);
-      }
-
-      public Builder clearData() {
-        dataCase_ = 0;
-        data_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder> stateBuilder_;
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       * @return Whether the state field is set.
-       */
-      @java.lang.Override
-      public boolean hasState() {
-        return dataCase_ == 1;
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       * @return The state.
-       */
-      @java.lang.Override
-      public com.oddin.ots.Ticket.TicketState getState() {
-        if (stateBuilder_ == null) {
-          if (dataCase_ == 1) {
-            return (com.oddin.ots.Ticket.TicketState) data_;
-          }
-          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-        } else {
-          if (dataCase_ == 1) {
-            return stateBuilder_.getMessage();
-          }
-          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      public Builder setState(com.oddin.ots.Ticket.TicketState value) {
-        if (stateBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          stateBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      public Builder setState(
-          com.oddin.ots.Ticket.TicketState.Builder builderForValue) {
-        if (stateBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          stateBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      public Builder mergeState(com.oddin.ots.Ticket.TicketState value) {
-        if (stateBuilder_ == null) {
-          if (dataCase_ == 1 &&
-              data_ != com.oddin.ots.Ticket.TicketState.getDefaultInstance()) {
-            data_ = com.oddin.ots.Ticket.TicketState.newBuilder((com.oddin.ots.Ticket.TicketState) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 1) {
-            stateBuilder_.mergeFrom(value);
-          }
-          stateBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      public Builder clearState() {
-        if (stateBuilder_ == null) {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          stateBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      public com.oddin.ots.Ticket.TicketState.Builder getStateBuilder() {
-        return getStateFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      @java.lang.Override
-      public com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder() {
-        if ((dataCase_ == 1) && (stateBuilder_ != null)) {
-          return stateBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 1) {
-            return (com.oddin.ots.Ticket.TicketState) data_;
-          }
-          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ots.TicketState state = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder> 
-          getStateFieldBuilder() {
-        if (stateBuilder_ == null) {
-          if (!(dataCase_ == 1)) {
-            data_ = com.oddin.ots.Ticket.TicketState.getDefaultInstance();
-          }
-          stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder>(
-                  (com.oddin.ots.Ticket.TicketState) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 1;
-        onChanged();;
-        return stateBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       * @return Whether the keepalive field is set.
-       */
-      @java.lang.Override
-      public boolean hasKeepalive() {
-        return dataCase_ == 2;
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       * @return The keepalive.
-       */
-      @java.lang.Override
-      public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            return (com.oddin.ots.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-        } else {
-          if (dataCase_ == 2) {
-            return keepaliveBuilder_.getMessage();
-          }
-          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(
-          com.oddin.ots.Commons.StreamKeepalive.Builder builderForValue) {
-        if (keepaliveBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder mergeKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2 &&
-              data_ != com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance()) {
-            data_ = com.oddin.ots.Commons.StreamKeepalive.newBuilder((com.oddin.ots.Commons.StreamKeepalive) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 2) {
-            keepaliveBuilder_.mergeFrom(value);
-          }
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder clearKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          keepaliveBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      public com.oddin.ots.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
-        return getKeepaliveFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      @java.lang.Override
-      public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
-          return keepaliveBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 2) {
-            return (com.oddin.ots.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ots.StreamKeepalive keepalive = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> 
-          getKeepaliveFieldBuilder() {
-        if (keepaliveBuilder_ == null) {
-          if (!(dataCase_ == 2)) {
-            data_ = com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
-          }
-          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder>(
-                  (com.oddin.ots.Commons.StreamKeepalive) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 2;
-        onChanged();;
-        return keepaliveBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:ots.TicketResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:ots.TicketResponse)
-    private static final com.oddin.ots.Ticket.TicketResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketResponse();
-    }
-
-    public static com.oddin.ots.Ticket.TicketResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TicketResponse>
-        PARSER = new com.google.protobuf.AbstractParser<TicketResponse>() {
-      @java.lang.Override
-      public TicketResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TicketResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TicketResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TicketResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.BetBonus getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10670,7 +11617,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
-    java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo> 
+    java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> 
         getBetInfoList();
     /**
      * <pre>
@@ -10679,7 +11626,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
-    com.oddin.ots.Ticket.TicketResponseBetInfo getBetInfo(int index);
+    com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfo(int index);
     /**
      * <pre>
      * Bet level rejection details.
@@ -10695,7 +11642,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
-    java.util.List<? extends com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder> 
+    java.util.List<? extends com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder> 
         getBetInfoOrBuilderList();
     /**
      * <pre>
@@ -10704,7 +11651,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
-    com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
+    com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
         int index);
 
     /**
@@ -10741,7 +11688,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
-    java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds> 
+    java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> 
         getAutoAcceptedOddsList();
     /**
      * <pre>
@@ -10750,7 +11697,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
-    com.oddin.ots.Ticket.AutoAcceptedOdds getAutoAcceptedOdds(int index);
+    com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOdds(int index);
     /**
      * <pre>
      * Alternative odds used to accept bet.
@@ -10766,7 +11713,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
-    java.util.List<? extends com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder> 
+    java.util.List<? extends com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder> 
         getAutoAcceptedOddsOrBuilderList();
     /**
      * <pre>
@@ -10775,7 +11722,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
-    com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
+    com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
         int index);
   }
   /**
@@ -10855,11 +11802,11 @@ public final class Ticket {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                betInfo_ = new java.util.ArrayList<com.oddin.ots.Ticket.TicketResponseBetInfo>();
+                betInfo_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               betInfo_.add(
-                  input.readMessage(com.oddin.ots.Ticket.TicketResponseBetInfo.parser(), extensionRegistry));
+                  input.readMessage(com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.parser(), extensionRegistry));
               break;
             }
             case 42: {
@@ -10877,11 +11824,11 @@ public final class Ticket {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                autoAcceptedOdds_ = new java.util.ArrayList<com.oddin.ots.Ticket.AutoAcceptedOdds>();
+                autoAcceptedOdds_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds>();
                 mutable_bitField0_ |= 0x00000002;
               }
               autoAcceptedOdds_.add(
-                  input.readMessage(com.oddin.ots.Ticket.AutoAcceptedOdds.parser(), extensionRegistry));
+                  input.readMessage(com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -10911,15 +11858,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketState_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketState_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketState_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketState.class, com.oddin.ots.Ticket.TicketState.Builder.class);
+              com.oddin.ots.TicketOuterClass.TicketState.class, com.oddin.ots.TicketOuterClass.TicketState.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -11034,7 +11981,7 @@ public final class Ticket {
     }
 
     public static final int BET_INFO_FIELD_NUMBER = 4;
-    private java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo> betInfo_;
+    private java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> betInfo_;
     /**
      * <pre>
      * Bet level rejection details.
@@ -11043,7 +11990,7 @@ public final class Ticket {
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo> getBetInfoList() {
+    public java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> getBetInfoList() {
       return betInfo_;
     }
     /**
@@ -11054,7 +12001,7 @@ public final class Ticket {
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder> 
+    public java.util.List<? extends com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder> 
         getBetInfoOrBuilderList() {
       return betInfo_;
     }
@@ -11077,7 +12024,7 @@ public final class Ticket {
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketResponseBetInfo getBetInfo(int index) {
+    public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfo(int index) {
       return betInfo_.get(index);
     }
     /**
@@ -11088,7 +12035,7 @@ public final class Ticket {
      * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
+    public com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
         int index) {
       return betInfo_.get(index);
     }
@@ -11132,7 +12079,7 @@ public final class Ticket {
     }
 
     public static final int AUTO_ACCEPTED_ODDS_FIELD_NUMBER = 6;
-    private java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds> autoAcceptedOdds_;
+    private java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> autoAcceptedOdds_;
     /**
      * <pre>
      * Alternative odds used to accept bet.
@@ -11141,7 +12088,7 @@ public final class Ticket {
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds> getAutoAcceptedOddsList() {
+    public java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> getAutoAcceptedOddsList() {
       return autoAcceptedOdds_;
     }
     /**
@@ -11152,7 +12099,7 @@ public final class Ticket {
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder> 
+    public java.util.List<? extends com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder> 
         getAutoAcceptedOddsOrBuilderList() {
       return autoAcceptedOdds_;
     }
@@ -11175,7 +12122,7 @@ public final class Ticket {
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.AutoAcceptedOdds getAutoAcceptedOdds(int index) {
+    public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOdds(int index) {
       return autoAcceptedOdds_.get(index);
     }
     /**
@@ -11186,7 +12133,7 @@ public final class Ticket {
      * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
+    public com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
         int index) {
       return autoAcceptedOdds_.get(index);
     }
@@ -11265,10 +12212,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketState)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketState)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketState other = (com.oddin.ots.Ticket.TicketState) obj;
+      com.oddin.ots.TicketOuterClass.TicketState other = (com.oddin.ots.TicketOuterClass.TicketState) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -11323,69 +12270,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketState parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketState parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketState parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketState parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketState parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11398,7 +12345,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketState prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11419,21 +12366,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.TicketState)
-        com.oddin.ots.Ticket.TicketStateOrBuilder {
+        com.oddin.ots.TicketOuterClass.TicketStateOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketState_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketState_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketState_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketState.class, com.oddin.ots.Ticket.TicketState.Builder.class);
+                com.oddin.ots.TicketOuterClass.TicketState.class, com.oddin.ots.TicketOuterClass.TicketState.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketState.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.TicketState.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11487,17 +12434,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketState_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketState getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.TicketState getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketState build() {
-        com.oddin.ots.Ticket.TicketState result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.TicketState build() {
+        com.oddin.ots.TicketOuterClass.TicketState result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11505,8 +12452,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketState buildPartial() {
-        com.oddin.ots.Ticket.TicketState result = new com.oddin.ots.Ticket.TicketState(this);
+      public com.oddin.ots.TicketOuterClass.TicketState buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketState result = new com.oddin.ots.TicketOuterClass.TicketState(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.ticketStatus_ = ticketStatus_;
@@ -11576,16 +12523,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketState) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketState)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketState) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketState)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketState other) {
-        if (other == com.oddin.ots.Ticket.TicketState.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketState other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -11666,11 +12613,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketState parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.TicketState parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketState) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12006,17 +12953,17 @@ public final class Ticket {
         return reasonBuilder_;
       }
 
-      private java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo> betInfo_ =
+      private java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> betInfo_ =
         java.util.Collections.emptyList();
       private void ensureBetInfoIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          betInfo_ = new java.util.ArrayList<com.oddin.ots.Ticket.TicketResponseBetInfo>(betInfo_);
+          betInfo_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo>(betInfo_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketResponseBetInfo, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder, com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder> betInfoBuilder_;
+          com.oddin.ots.TicketOuterClass.TicketResponseBetInfo, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder, com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder> betInfoBuilder_;
 
       /**
        * <pre>
@@ -12025,7 +12972,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo> getBetInfoList() {
+      public java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> getBetInfoList() {
         if (betInfoBuilder_ == null) {
           return java.util.Collections.unmodifiableList(betInfo_);
         } else {
@@ -12053,7 +13000,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.TicketResponseBetInfo getBetInfo(int index) {
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfo(int index) {
         if (betInfoBuilder_ == null) {
           return betInfo_.get(index);
         } else {
@@ -12068,7 +13015,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder setBetInfo(
-          int index, com.oddin.ots.Ticket.TicketResponseBetInfo value) {
+          int index, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo value) {
         if (betInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12089,7 +13036,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder setBetInfo(
-          int index, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder builderForValue) {
         if (betInfoBuilder_ == null) {
           ensureBetInfoIsMutable();
           betInfo_.set(index, builderForValue.build());
@@ -12106,7 +13053,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public Builder addBetInfo(com.oddin.ots.Ticket.TicketResponseBetInfo value) {
+      public Builder addBetInfo(com.oddin.ots.TicketOuterClass.TicketResponseBetInfo value) {
         if (betInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12127,7 +13074,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder addBetInfo(
-          int index, com.oddin.ots.Ticket.TicketResponseBetInfo value) {
+          int index, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo value) {
         if (betInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12148,7 +13095,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder addBetInfo(
-          com.oddin.ots.Ticket.TicketResponseBetInfo.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder builderForValue) {
         if (betInfoBuilder_ == null) {
           ensureBetInfoIsMutable();
           betInfo_.add(builderForValue.build());
@@ -12166,7 +13113,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder addBetInfo(
-          int index, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder builderForValue) {
         if (betInfoBuilder_ == null) {
           ensureBetInfoIsMutable();
           betInfo_.add(index, builderForValue.build());
@@ -12184,7 +13131,7 @@ public final class Ticket {
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
       public Builder addAllBetInfo(
-          java.lang.Iterable<? extends com.oddin.ots.Ticket.TicketResponseBetInfo> values) {
+          java.lang.Iterable<? extends com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> values) {
         if (betInfoBuilder_ == null) {
           ensureBetInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -12236,7 +13183,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.TicketResponseBetInfo.Builder getBetInfoBuilder(
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder getBetInfoBuilder(
           int index) {
         return getBetInfoFieldBuilder().getBuilder(index);
       }
@@ -12247,7 +13194,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder getBetInfoOrBuilder(
           int index) {
         if (betInfoBuilder_ == null) {
           return betInfo_.get(index);  } else {
@@ -12261,7 +13208,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public java.util.List<? extends com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder> 
+      public java.util.List<? extends com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder> 
            getBetInfoOrBuilderList() {
         if (betInfoBuilder_ != null) {
           return betInfoBuilder_.getMessageOrBuilderList();
@@ -12276,9 +13223,9 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.TicketResponseBetInfo.Builder addBetInfoBuilder() {
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder addBetInfoBuilder() {
         return getBetInfoFieldBuilder().addBuilder(
-            com.oddin.ots.Ticket.TicketResponseBetInfo.getDefaultInstance());
+            com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.getDefaultInstance());
       }
       /**
        * <pre>
@@ -12287,10 +13234,10 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.TicketResponseBetInfo.Builder addBetInfoBuilder(
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder addBetInfoBuilder(
           int index) {
         return getBetInfoFieldBuilder().addBuilder(
-            index, com.oddin.ots.Ticket.TicketResponseBetInfo.getDefaultInstance());
+            index, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.getDefaultInstance());
       }
       /**
        * <pre>
@@ -12299,16 +13246,16 @@ public final class Ticket {
        *
        * <code>repeated .ots.TicketResponseBetInfo bet_info = 4;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.TicketResponseBetInfo.Builder> 
+      public java.util.List<com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder> 
            getBetInfoBuilderList() {
         return getBetInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.TicketResponseBetInfo, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder, com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder> 
+          com.oddin.ots.TicketOuterClass.TicketResponseBetInfo, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder, com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder> 
           getBetInfoFieldBuilder() {
         if (betInfoBuilder_ == null) {
           betInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.ots.Ticket.TicketResponseBetInfo, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder, com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder>(
+              com.oddin.ots.TicketOuterClass.TicketResponseBetInfo, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder, com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder>(
                   betInfo_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -12473,17 +13420,17 @@ public final class Ticket {
         return exchangeRateBuilder_;
       }
 
-      private java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds> autoAcceptedOdds_ =
+      private java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> autoAcceptedOdds_ =
         java.util.Collections.emptyList();
       private void ensureAutoAcceptedOddsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          autoAcceptedOdds_ = new java.util.ArrayList<com.oddin.ots.Ticket.AutoAcceptedOdds>(autoAcceptedOdds_);
+          autoAcceptedOdds_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds>(autoAcceptedOdds_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.AutoAcceptedOdds, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder, com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder> autoAcceptedOddsBuilder_;
+          com.oddin.ots.TicketOuterClass.AutoAcceptedOdds, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder, com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder> autoAcceptedOddsBuilder_;
 
       /**
        * <pre>
@@ -12492,7 +13439,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds> getAutoAcceptedOddsList() {
+      public java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> getAutoAcceptedOddsList() {
         if (autoAcceptedOddsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(autoAcceptedOdds_);
         } else {
@@ -12520,7 +13467,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public com.oddin.ots.Ticket.AutoAcceptedOdds getAutoAcceptedOdds(int index) {
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOdds(int index) {
         if (autoAcceptedOddsBuilder_ == null) {
           return autoAcceptedOdds_.get(index);
         } else {
@@ -12535,7 +13482,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder setAutoAcceptedOdds(
-          int index, com.oddin.ots.Ticket.AutoAcceptedOdds value) {
+          int index, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds value) {
         if (autoAcceptedOddsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12556,7 +13503,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder setAutoAcceptedOdds(
-          int index, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder builderForValue) {
         if (autoAcceptedOddsBuilder_ == null) {
           ensureAutoAcceptedOddsIsMutable();
           autoAcceptedOdds_.set(index, builderForValue.build());
@@ -12573,7 +13520,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public Builder addAutoAcceptedOdds(com.oddin.ots.Ticket.AutoAcceptedOdds value) {
+      public Builder addAutoAcceptedOdds(com.oddin.ots.TicketOuterClass.AutoAcceptedOdds value) {
         if (autoAcceptedOddsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12594,7 +13541,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder addAutoAcceptedOdds(
-          int index, com.oddin.ots.Ticket.AutoAcceptedOdds value) {
+          int index, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds value) {
         if (autoAcceptedOddsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12615,7 +13562,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder addAutoAcceptedOdds(
-          com.oddin.ots.Ticket.AutoAcceptedOdds.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder builderForValue) {
         if (autoAcceptedOddsBuilder_ == null) {
           ensureAutoAcceptedOddsIsMutable();
           autoAcceptedOdds_.add(builderForValue.build());
@@ -12633,7 +13580,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder addAutoAcceptedOdds(
-          int index, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder builderForValue) {
         if (autoAcceptedOddsBuilder_ == null) {
           ensureAutoAcceptedOddsIsMutable();
           autoAcceptedOdds_.add(index, builderForValue.build());
@@ -12651,7 +13598,7 @@ public final class Ticket {
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
       public Builder addAllAutoAcceptedOdds(
-          java.lang.Iterable<? extends com.oddin.ots.Ticket.AutoAcceptedOdds> values) {
+          java.lang.Iterable<? extends com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> values) {
         if (autoAcceptedOddsBuilder_ == null) {
           ensureAutoAcceptedOddsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -12703,7 +13650,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public com.oddin.ots.Ticket.AutoAcceptedOdds.Builder getAutoAcceptedOddsBuilder(
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder getAutoAcceptedOddsBuilder(
           int index) {
         return getAutoAcceptedOddsFieldBuilder().getBuilder(index);
       }
@@ -12714,7 +13661,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder getAutoAcceptedOddsOrBuilder(
           int index) {
         if (autoAcceptedOddsBuilder_ == null) {
           return autoAcceptedOdds_.get(index);  } else {
@@ -12728,7 +13675,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public java.util.List<? extends com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder> 
+      public java.util.List<? extends com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder> 
            getAutoAcceptedOddsOrBuilderList() {
         if (autoAcceptedOddsBuilder_ != null) {
           return autoAcceptedOddsBuilder_.getMessageOrBuilderList();
@@ -12743,9 +13690,9 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public com.oddin.ots.Ticket.AutoAcceptedOdds.Builder addAutoAcceptedOddsBuilder() {
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder addAutoAcceptedOddsBuilder() {
         return getAutoAcceptedOddsFieldBuilder().addBuilder(
-            com.oddin.ots.Ticket.AutoAcceptedOdds.getDefaultInstance());
+            com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.getDefaultInstance());
       }
       /**
        * <pre>
@@ -12754,10 +13701,10 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public com.oddin.ots.Ticket.AutoAcceptedOdds.Builder addAutoAcceptedOddsBuilder(
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder addAutoAcceptedOddsBuilder(
           int index) {
         return getAutoAcceptedOddsFieldBuilder().addBuilder(
-            index, com.oddin.ots.Ticket.AutoAcceptedOdds.getDefaultInstance());
+            index, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.getDefaultInstance());
       }
       /**
        * <pre>
@@ -12766,16 +13713,16 @@ public final class Ticket {
        *
        * <code>repeated .ots.AutoAcceptedOdds auto_accepted_odds = 6;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.AutoAcceptedOdds.Builder> 
+      public java.util.List<com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder> 
            getAutoAcceptedOddsBuilderList() {
         return getAutoAcceptedOddsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.AutoAcceptedOdds, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder, com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder> 
+          com.oddin.ots.TicketOuterClass.AutoAcceptedOdds, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder, com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder> 
           getAutoAcceptedOddsFieldBuilder() {
         if (autoAcceptedOddsBuilder_ == null) {
           autoAcceptedOddsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.ots.Ticket.AutoAcceptedOdds, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder, com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder>(
+              com.oddin.ots.TicketOuterClass.AutoAcceptedOdds, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder, com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder>(
                   autoAcceptedOdds_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -12801,12 +13748,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.TicketState)
-    private static final com.oddin.ots.Ticket.TicketState DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.TicketState DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketState();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketState();
     }
 
-    public static com.oddin.ots.Ticket.TicketState getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.TicketState getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12831,7 +13778,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketState getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.TicketState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12964,15 +13911,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_AutoAcceptedOdds_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_AutoAcceptedOdds_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_AutoAcceptedOdds_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_AutoAcceptedOdds_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.AutoAcceptedOdds.class, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder.class);
+              com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.class, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -13104,10 +14051,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.AutoAcceptedOdds)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.AutoAcceptedOdds)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.AutoAcceptedOdds other = (com.oddin.ots.Ticket.AutoAcceptedOdds) obj;
+      com.oddin.ots.TicketOuterClass.AutoAcceptedOdds other = (com.oddin.ots.TicketOuterClass.AutoAcceptedOdds) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -13139,69 +14086,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds parseFrom(
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13214,7 +14161,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.AutoAcceptedOdds prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.AutoAcceptedOdds prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -13235,21 +14182,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.AutoAcceptedOdds)
-        com.oddin.ots.Ticket.AutoAcceptedOddsOrBuilder {
+        com.oddin.ots.TicketOuterClass.AutoAcceptedOddsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_AutoAcceptedOdds_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_AutoAcceptedOdds_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_AutoAcceptedOdds_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_AutoAcceptedOdds_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.AutoAcceptedOdds.class, com.oddin.ots.Ticket.AutoAcceptedOdds.Builder.class);
+                com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.class, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.AutoAcceptedOdds.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13279,17 +14226,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_AutoAcceptedOdds_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_AutoAcceptedOdds_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.AutoAcceptedOdds getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.AutoAcceptedOdds.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.AutoAcceptedOdds build() {
-        com.oddin.ots.Ticket.AutoAcceptedOdds result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds build() {
+        com.oddin.ots.TicketOuterClass.AutoAcceptedOdds result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -13297,8 +14244,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.AutoAcceptedOdds buildPartial() {
-        com.oddin.ots.Ticket.AutoAcceptedOdds result = new com.oddin.ots.Ticket.AutoAcceptedOdds(this);
+      public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds buildPartial() {
+        com.oddin.ots.TicketOuterClass.AutoAcceptedOdds result = new com.oddin.ots.TicketOuterClass.AutoAcceptedOdds(this);
         result.id_ = id_;
         result.requestedOdds_ = requestedOdds_;
         result.usedOdds_ = usedOdds_;
@@ -13340,16 +14287,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.AutoAcceptedOdds) {
-          return mergeFrom((com.oddin.ots.Ticket.AutoAcceptedOdds)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.AutoAcceptedOdds) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.AutoAcceptedOdds)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.AutoAcceptedOdds other) {
-        if (other == com.oddin.ots.Ticket.AutoAcceptedOdds.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.AutoAcceptedOdds other) {
+        if (other == com.oddin.ots.TicketOuterClass.AutoAcceptedOdds.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -13375,11 +14322,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.AutoAcceptedOdds parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.AutoAcceptedOdds parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.AutoAcceptedOdds) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.AutoAcceptedOdds) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13587,12 +14534,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.AutoAcceptedOdds)
-    private static final com.oddin.ots.Ticket.AutoAcceptedOdds DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.AutoAcceptedOdds DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.AutoAcceptedOdds();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.AutoAcceptedOdds();
     }
 
-    public static com.oddin.ots.Ticket.AutoAcceptedOdds getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13617,7 +14564,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.AutoAcceptedOdds getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13691,7 +14638,7 @@ public final class Ticket {
      * <code>.ots.ResponseReoffer reoffer = 3;</code>
      * @return The reoffer.
      */
-    com.oddin.ots.Ticket.ResponseReoffer getReoffer();
+    com.oddin.ots.TicketOuterClass.ResponseReoffer getReoffer();
     /**
      * <pre>
      * Information about the reoffer stake.
@@ -13699,7 +14646,7 @@ public final class Ticket {
      *
      * <code>.ots.ResponseReoffer reoffer = 3;</code>
      */
-    com.oddin.ots.Ticket.ResponseReofferOrBuilder getReofferOrBuilder();
+    com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder getReofferOrBuilder();
 
     /**
      * <pre>
@@ -13708,7 +14655,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    java.util.List<com.oddin.ots.Ticket.RejectedSelection> 
+    java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection> 
         getSelectionsInfoList();
     /**
      * <pre>
@@ -13717,7 +14664,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    com.oddin.ots.Ticket.RejectedSelection getSelectionsInfo(int index);
+    com.oddin.ots.TicketOuterClass.RejectedSelection getSelectionsInfo(int index);
     /**
      * <pre>
      * Selection info level rejection details - selection id and odds.
@@ -13733,7 +14680,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    java.util.List<? extends com.oddin.ots.Ticket.RejectedSelectionOrBuilder> 
+    java.util.List<? extends com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder> 
         getSelectionsInfoOrBuilderList();
     /**
      * <pre>
@@ -13742,7 +14689,7 @@ public final class Ticket {
      *
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
-    com.oddin.ots.Ticket.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
+    com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
         int index);
   }
   /**
@@ -13813,11 +14760,11 @@ public final class Ticket {
               break;
             }
             case 26: {
-              com.oddin.ots.Ticket.ResponseReoffer.Builder subBuilder = null;
+              com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder subBuilder = null;
               if (reoffer_ != null) {
                 subBuilder = reoffer_.toBuilder();
               }
-              reoffer_ = input.readMessage(com.oddin.ots.Ticket.ResponseReoffer.parser(), extensionRegistry);
+              reoffer_ = input.readMessage(com.oddin.ots.TicketOuterClass.ResponseReoffer.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(reoffer_);
                 reoffer_ = subBuilder.buildPartial();
@@ -13827,11 +14774,11 @@ public final class Ticket {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.Ticket.RejectedSelection>();
+                selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.RejectedSelection>();
                 mutable_bitField0_ |= 0x00000001;
               }
               selectionsInfo_.add(
-                  input.readMessage(com.oddin.ots.Ticket.RejectedSelection.parser(), extensionRegistry));
+                  input.readMessage(com.oddin.ots.TicketOuterClass.RejectedSelection.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -13858,15 +14805,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponseBetInfo_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponseBetInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponseBetInfo_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponseBetInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketResponseBetInfo.class, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder.class);
+              com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.class, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -13954,7 +14901,7 @@ public final class Ticket {
     }
 
     public static final int REOFFER_FIELD_NUMBER = 3;
-    private com.oddin.ots.Ticket.ResponseReoffer reoffer_;
+    private com.oddin.ots.TicketOuterClass.ResponseReoffer reoffer_;
     /**
      * <pre>
      * Information about the reoffer stake.
@@ -13976,8 +14923,8 @@ public final class Ticket {
      * @return The reoffer.
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.ResponseReoffer getReoffer() {
-      return reoffer_ == null ? com.oddin.ots.Ticket.ResponseReoffer.getDefaultInstance() : reoffer_;
+    public com.oddin.ots.TicketOuterClass.ResponseReoffer getReoffer() {
+      return reoffer_ == null ? com.oddin.ots.TicketOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
     }
     /**
      * <pre>
@@ -13987,12 +14934,12 @@ public final class Ticket {
      * <code>.ots.ResponseReoffer reoffer = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.ResponseReofferOrBuilder getReofferOrBuilder() {
+    public com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder getReofferOrBuilder() {
       return getReoffer();
     }
 
     public static final int SELECTIONS_INFO_FIELD_NUMBER = 4;
-    private java.util.List<com.oddin.ots.Ticket.RejectedSelection> selectionsInfo_;
+    private java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection> selectionsInfo_;
     /**
      * <pre>
      * Selection info level rejection details - selection id and odds.
@@ -14001,7 +14948,7 @@ public final class Ticket {
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.ots.Ticket.RejectedSelection> getSelectionsInfoList() {
+    public java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection> getSelectionsInfoList() {
       return selectionsInfo_;
     }
     /**
@@ -14012,7 +14959,7 @@ public final class Ticket {
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.ots.Ticket.RejectedSelectionOrBuilder> 
+    public java.util.List<? extends com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder> 
         getSelectionsInfoOrBuilderList() {
       return selectionsInfo_;
     }
@@ -14035,7 +14982,7 @@ public final class Ticket {
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectedSelection getSelectionsInfo(int index) {
+    public com.oddin.ots.TicketOuterClass.RejectedSelection getSelectionsInfo(int index) {
       return selectionsInfo_.get(index);
     }
     /**
@@ -14046,7 +14993,7 @@ public final class Ticket {
      * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
+    public com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
         int index) {
       return selectionsInfo_.get(index);
     }
@@ -14111,10 +15058,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketResponseBetInfo)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.TicketResponseBetInfo)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketResponseBetInfo other = (com.oddin.ots.Ticket.TicketResponseBetInfo) obj;
+      com.oddin.ots.TicketOuterClass.TicketResponseBetInfo other = (com.oddin.ots.TicketOuterClass.TicketResponseBetInfo) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -14160,69 +15107,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14235,7 +15182,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketResponseBetInfo prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.TicketResponseBetInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -14256,21 +15203,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.TicketResponseBetInfo)
-        com.oddin.ots.Ticket.TicketResponseBetInfoOrBuilder {
+        com.oddin.ots.TicketOuterClass.TicketResponseBetInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponseBetInfo_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponseBetInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponseBetInfo_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponseBetInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketResponseBetInfo.class, com.oddin.ots.Ticket.TicketResponseBetInfo.Builder.class);
+                com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.class, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketResponseBetInfo.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14315,17 +15262,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponseBetInfo_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_TicketResponseBetInfo_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponseBetInfo getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketResponseBetInfo.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponseBetInfo build() {
-        com.oddin.ots.Ticket.TicketResponseBetInfo result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo build() {
+        com.oddin.ots.TicketOuterClass.TicketResponseBetInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -14333,8 +15280,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponseBetInfo buildPartial() {
-        com.oddin.ots.Ticket.TicketResponseBetInfo result = new com.oddin.ots.Ticket.TicketResponseBetInfo(this);
+      public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo buildPartial() {
+        com.oddin.ots.TicketOuterClass.TicketResponseBetInfo result = new com.oddin.ots.TicketOuterClass.TicketResponseBetInfo(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         if (reasonBuilder_ == null) {
@@ -14394,16 +15341,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketResponseBetInfo) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketResponseBetInfo)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.TicketResponseBetInfo) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.TicketResponseBetInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketResponseBetInfo other) {
-        if (other == com.oddin.ots.Ticket.TicketResponseBetInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.TicketResponseBetInfo other) {
+        if (other == com.oddin.ots.TicketOuterClass.TicketResponseBetInfo.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -14455,11 +15402,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketResponseBetInfo parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.TicketResponseBetInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketResponseBetInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.TicketResponseBetInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -14721,9 +15668,9 @@ public final class Ticket {
         return reasonBuilder_;
       }
 
-      private com.oddin.ots.Ticket.ResponseReoffer reoffer_;
+      private com.oddin.ots.TicketOuterClass.ResponseReoffer reoffer_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.ResponseReoffer, com.oddin.ots.Ticket.ResponseReoffer.Builder, com.oddin.ots.Ticket.ResponseReofferOrBuilder> reofferBuilder_;
+          com.oddin.ots.TicketOuterClass.ResponseReoffer, com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder> reofferBuilder_;
       /**
        * <pre>
        * Information about the reoffer stake.
@@ -14743,9 +15690,9 @@ public final class Ticket {
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        * @return The reoffer.
        */
-      public com.oddin.ots.Ticket.ResponseReoffer getReoffer() {
+      public com.oddin.ots.TicketOuterClass.ResponseReoffer getReoffer() {
         if (reofferBuilder_ == null) {
-          return reoffer_ == null ? com.oddin.ots.Ticket.ResponseReoffer.getDefaultInstance() : reoffer_;
+          return reoffer_ == null ? com.oddin.ots.TicketOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
         } else {
           return reofferBuilder_.getMessage();
         }
@@ -14757,7 +15704,7 @@ public final class Ticket {
        *
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
-      public Builder setReoffer(com.oddin.ots.Ticket.ResponseReoffer value) {
+      public Builder setReoffer(com.oddin.ots.TicketOuterClass.ResponseReoffer value) {
         if (reofferBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14778,7 +15725,7 @@ public final class Ticket {
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
       public Builder setReoffer(
-          com.oddin.ots.Ticket.ResponseReoffer.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder builderForValue) {
         if (reofferBuilder_ == null) {
           reoffer_ = builderForValue.build();
           onChanged();
@@ -14795,11 +15742,11 @@ public final class Ticket {
        *
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
-      public Builder mergeReoffer(com.oddin.ots.Ticket.ResponseReoffer value) {
+      public Builder mergeReoffer(com.oddin.ots.TicketOuterClass.ResponseReoffer value) {
         if (reofferBuilder_ == null) {
           if (reoffer_ != null) {
             reoffer_ =
-              com.oddin.ots.Ticket.ResponseReoffer.newBuilder(reoffer_).mergeFrom(value).buildPartial();
+              com.oddin.ots.TicketOuterClass.ResponseReoffer.newBuilder(reoffer_).mergeFrom(value).buildPartial();
           } else {
             reoffer_ = value;
           }
@@ -14835,7 +15782,7 @@ public final class Ticket {
        *
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
-      public com.oddin.ots.Ticket.ResponseReoffer.Builder getReofferBuilder() {
+      public com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder getReofferBuilder() {
         
         onChanged();
         return getReofferFieldBuilder().getBuilder();
@@ -14847,12 +15794,12 @@ public final class Ticket {
        *
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
-      public com.oddin.ots.Ticket.ResponseReofferOrBuilder getReofferOrBuilder() {
+      public com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder getReofferOrBuilder() {
         if (reofferBuilder_ != null) {
           return reofferBuilder_.getMessageOrBuilder();
         } else {
           return reoffer_ == null ?
-              com.oddin.ots.Ticket.ResponseReoffer.getDefaultInstance() : reoffer_;
+              com.oddin.ots.TicketOuterClass.ResponseReoffer.getDefaultInstance() : reoffer_;
         }
       }
       /**
@@ -14863,11 +15810,11 @@ public final class Ticket {
        * <code>.ots.ResponseReoffer reoffer = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.ResponseReoffer, com.oddin.ots.Ticket.ResponseReoffer.Builder, com.oddin.ots.Ticket.ResponseReofferOrBuilder> 
+          com.oddin.ots.TicketOuterClass.ResponseReoffer, com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder> 
           getReofferFieldBuilder() {
         if (reofferBuilder_ == null) {
           reofferBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.ResponseReoffer, com.oddin.ots.Ticket.ResponseReoffer.Builder, com.oddin.ots.Ticket.ResponseReofferOrBuilder>(
+              com.oddin.ots.TicketOuterClass.ResponseReoffer, com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder, com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder>(
                   getReoffer(),
                   getParentForChildren(),
                   isClean());
@@ -14876,17 +15823,17 @@ public final class Ticket {
         return reofferBuilder_;
       }
 
-      private java.util.List<com.oddin.ots.Ticket.RejectedSelection> selectionsInfo_ =
+      private java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection> selectionsInfo_ =
         java.util.Collections.emptyList();
       private void ensureSelectionsInfoIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.Ticket.RejectedSelection>(selectionsInfo_);
+          selectionsInfo_ = new java.util.ArrayList<com.oddin.ots.TicketOuterClass.RejectedSelection>(selectionsInfo_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.RejectedSelection, com.oddin.ots.Ticket.RejectedSelection.Builder, com.oddin.ots.Ticket.RejectedSelectionOrBuilder> selectionsInfoBuilder_;
+          com.oddin.ots.TicketOuterClass.RejectedSelection, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder> selectionsInfoBuilder_;
 
       /**
        * <pre>
@@ -14895,7 +15842,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.RejectedSelection> getSelectionsInfoList() {
+      public java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection> getSelectionsInfoList() {
         if (selectionsInfoBuilder_ == null) {
           return java.util.Collections.unmodifiableList(selectionsInfo_);
         } else {
@@ -14923,7 +15870,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.RejectedSelection getSelectionsInfo(int index) {
+      public com.oddin.ots.TicketOuterClass.RejectedSelection getSelectionsInfo(int index) {
         if (selectionsInfoBuilder_ == null) {
           return selectionsInfo_.get(index);
         } else {
@@ -14938,7 +15885,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder setSelectionsInfo(
-          int index, com.oddin.ots.Ticket.RejectedSelection value) {
+          int index, com.oddin.ots.TicketOuterClass.RejectedSelection value) {
         if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14959,7 +15906,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder setSelectionsInfo(
-          int index, com.oddin.ots.Ticket.RejectedSelection.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder builderForValue) {
         if (selectionsInfoBuilder_ == null) {
           ensureSelectionsInfoIsMutable();
           selectionsInfo_.set(index, builderForValue.build());
@@ -14976,7 +15923,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public Builder addSelectionsInfo(com.oddin.ots.Ticket.RejectedSelection value) {
+      public Builder addSelectionsInfo(com.oddin.ots.TicketOuterClass.RejectedSelection value) {
         if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14997,7 +15944,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder addSelectionsInfo(
-          int index, com.oddin.ots.Ticket.RejectedSelection value) {
+          int index, com.oddin.ots.TicketOuterClass.RejectedSelection value) {
         if (selectionsInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15018,7 +15965,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder addSelectionsInfo(
-          com.oddin.ots.Ticket.RejectedSelection.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.RejectedSelection.Builder builderForValue) {
         if (selectionsInfoBuilder_ == null) {
           ensureSelectionsInfoIsMutable();
           selectionsInfo_.add(builderForValue.build());
@@ -15036,7 +15983,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder addSelectionsInfo(
-          int index, com.oddin.ots.Ticket.RejectedSelection.Builder builderForValue) {
+          int index, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder builderForValue) {
         if (selectionsInfoBuilder_ == null) {
           ensureSelectionsInfoIsMutable();
           selectionsInfo_.add(index, builderForValue.build());
@@ -15054,7 +16001,7 @@ public final class Ticket {
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
       public Builder addAllSelectionsInfo(
-          java.lang.Iterable<? extends com.oddin.ots.Ticket.RejectedSelection> values) {
+          java.lang.Iterable<? extends com.oddin.ots.TicketOuterClass.RejectedSelection> values) {
         if (selectionsInfoBuilder_ == null) {
           ensureSelectionsInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -15106,7 +16053,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.RejectedSelection.Builder getSelectionsInfoBuilder(
+      public com.oddin.ots.TicketOuterClass.RejectedSelection.Builder getSelectionsInfoBuilder(
           int index) {
         return getSelectionsInfoFieldBuilder().getBuilder(index);
       }
@@ -15117,7 +16064,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
+      public com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder getSelectionsInfoOrBuilder(
           int index) {
         if (selectionsInfoBuilder_ == null) {
           return selectionsInfo_.get(index);  } else {
@@ -15131,7 +16078,7 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public java.util.List<? extends com.oddin.ots.Ticket.RejectedSelectionOrBuilder> 
+      public java.util.List<? extends com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder> 
            getSelectionsInfoOrBuilderList() {
         if (selectionsInfoBuilder_ != null) {
           return selectionsInfoBuilder_.getMessageOrBuilderList();
@@ -15146,9 +16093,9 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.RejectedSelection.Builder addSelectionsInfoBuilder() {
+      public com.oddin.ots.TicketOuterClass.RejectedSelection.Builder addSelectionsInfoBuilder() {
         return getSelectionsInfoFieldBuilder().addBuilder(
-            com.oddin.ots.Ticket.RejectedSelection.getDefaultInstance());
+            com.oddin.ots.TicketOuterClass.RejectedSelection.getDefaultInstance());
       }
       /**
        * <pre>
@@ -15157,10 +16104,10 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public com.oddin.ots.Ticket.RejectedSelection.Builder addSelectionsInfoBuilder(
+      public com.oddin.ots.TicketOuterClass.RejectedSelection.Builder addSelectionsInfoBuilder(
           int index) {
         return getSelectionsInfoFieldBuilder().addBuilder(
-            index, com.oddin.ots.Ticket.RejectedSelection.getDefaultInstance());
+            index, com.oddin.ots.TicketOuterClass.RejectedSelection.getDefaultInstance());
       }
       /**
        * <pre>
@@ -15169,16 +16116,16 @@ public final class Ticket {
        *
        * <code>repeated .ots.RejectedSelection selections_info = 4;</code>
        */
-      public java.util.List<com.oddin.ots.Ticket.RejectedSelection.Builder> 
+      public java.util.List<com.oddin.ots.TicketOuterClass.RejectedSelection.Builder> 
            getSelectionsInfoBuilderList() {
         return getSelectionsInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.ots.Ticket.RejectedSelection, com.oddin.ots.Ticket.RejectedSelection.Builder, com.oddin.ots.Ticket.RejectedSelectionOrBuilder> 
+          com.oddin.ots.TicketOuterClass.RejectedSelection, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder> 
           getSelectionsInfoFieldBuilder() {
         if (selectionsInfoBuilder_ == null) {
           selectionsInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.ots.Ticket.RejectedSelection, com.oddin.ots.Ticket.RejectedSelection.Builder, com.oddin.ots.Ticket.RejectedSelectionOrBuilder>(
+              com.oddin.ots.TicketOuterClass.RejectedSelection, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder, com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder>(
                   selectionsInfo_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -15204,12 +16151,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.TicketResponseBetInfo)
-    private static final com.oddin.ots.Ticket.TicketResponseBetInfo DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.TicketResponseBetInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketResponseBetInfo();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.TicketResponseBetInfo();
     }
 
-    public static com.oddin.ots.Ticket.TicketResponseBetInfo getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15234,7 +16181,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketResponseBetInfo getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15300,11 +16247,11 @@ public final class Ticket {
      * <code>.ots.RejectionInfo rejection_info = 3;</code>
      * @return The rejectionInfo.
      */
-    com.oddin.ots.Ticket.RejectionInfo getRejectionInfo();
+    com.oddin.ots.TicketOuterClass.RejectionInfo getRejectionInfo();
     /**
      * <code>.ots.RejectionInfo rejection_info = 3;</code>
      */
-    com.oddin.ots.Ticket.RejectionInfoOrBuilder getRejectionInfoOrBuilder();
+    com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder getRejectionInfoOrBuilder();
   }
   /**
    * Protobuf type {@code ots.RejectedSelection}
@@ -15372,11 +16319,11 @@ public final class Ticket {
               break;
             }
             case 26: {
-              com.oddin.ots.Ticket.RejectionInfo.Builder subBuilder = null;
+              com.oddin.ots.TicketOuterClass.RejectionInfo.Builder subBuilder = null;
               if (rejectionInfo_ != null) {
                 subBuilder = rejectionInfo_.toBuilder();
               }
-              rejectionInfo_ = input.readMessage(com.oddin.ots.Ticket.RejectionInfo.parser(), extensionRegistry);
+              rejectionInfo_ = input.readMessage(com.oddin.ots.TicketOuterClass.RejectionInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(rejectionInfo_);
                 rejectionInfo_ = subBuilder.buildPartial();
@@ -15405,15 +16352,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_RejectedSelection_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectedSelection_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_RejectedSelection_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectedSelection_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.RejectedSelection.class, com.oddin.ots.Ticket.RejectedSelection.Builder.class);
+              com.oddin.ots.TicketOuterClass.RejectedSelection.class, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -15501,7 +16448,7 @@ public final class Ticket {
     }
 
     public static final int REJECTION_INFO_FIELD_NUMBER = 3;
-    private com.oddin.ots.Ticket.RejectionInfo rejectionInfo_;
+    private com.oddin.ots.TicketOuterClass.RejectionInfo rejectionInfo_;
     /**
      * <code>.ots.RejectionInfo rejection_info = 3;</code>
      * @return Whether the rejectionInfo field is set.
@@ -15515,14 +16462,14 @@ public final class Ticket {
      * @return The rejectionInfo.
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectionInfo getRejectionInfo() {
-      return rejectionInfo_ == null ? com.oddin.ots.Ticket.RejectionInfo.getDefaultInstance() : rejectionInfo_;
+    public com.oddin.ots.TicketOuterClass.RejectionInfo getRejectionInfo() {
+      return rejectionInfo_ == null ? com.oddin.ots.TicketOuterClass.RejectionInfo.getDefaultInstance() : rejectionInfo_;
     }
     /**
      * <code>.ots.RejectionInfo rejection_info = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectionInfoOrBuilder getRejectionInfoOrBuilder() {
+    public com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder getRejectionInfoOrBuilder() {
       return getRejectionInfo();
     }
 
@@ -15579,10 +16526,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.RejectedSelection)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.RejectedSelection)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.RejectedSelection other = (com.oddin.ots.Ticket.RejectedSelection) obj;
+      com.oddin.ots.TicketOuterClass.RejectedSelection other = (com.oddin.ots.TicketOuterClass.RejectedSelection) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -15622,69 +16569,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectedSelection parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -15697,7 +16644,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.RejectedSelection prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.RejectedSelection prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -15718,21 +16665,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.RejectedSelection)
-        com.oddin.ots.Ticket.RejectedSelectionOrBuilder {
+        com.oddin.ots.TicketOuterClass.RejectedSelectionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectedSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectedSelection_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectedSelection_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectedSelection_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.RejectedSelection.class, com.oddin.ots.Ticket.RejectedSelection.Builder.class);
+                com.oddin.ots.TicketOuterClass.RejectedSelection.class, com.oddin.ots.TicketOuterClass.RejectedSelection.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.RejectedSelection.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.RejectedSelection.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -15770,17 +16717,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectedSelection_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectedSelection_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectedSelection getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.RejectedSelection.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.RejectedSelection getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.RejectedSelection.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectedSelection build() {
-        com.oddin.ots.Ticket.RejectedSelection result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.RejectedSelection build() {
+        com.oddin.ots.TicketOuterClass.RejectedSelection result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -15788,8 +16735,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectedSelection buildPartial() {
-        com.oddin.ots.Ticket.RejectedSelection result = new com.oddin.ots.Ticket.RejectedSelection(this);
+      public com.oddin.ots.TicketOuterClass.RejectedSelection buildPartial() {
+        com.oddin.ots.TicketOuterClass.RejectedSelection result = new com.oddin.ots.TicketOuterClass.RejectedSelection(this);
         result.id_ = id_;
         if (reasonBuilder_ == null) {
           result.reason_ = reason_;
@@ -15839,16 +16786,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.RejectedSelection) {
-          return mergeFrom((com.oddin.ots.Ticket.RejectedSelection)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.RejectedSelection) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.RejectedSelection)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.RejectedSelection other) {
-        if (other == com.oddin.ots.Ticket.RejectedSelection.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.RejectedSelection other) {
+        if (other == com.oddin.ots.TicketOuterClass.RejectedSelection.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -15874,11 +16821,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.RejectedSelection parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.RejectedSelection parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.RejectedSelection) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.RejectedSelection) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16139,9 +17086,9 @@ public final class Ticket {
         return reasonBuilder_;
       }
 
-      private com.oddin.ots.Ticket.RejectionInfo rejectionInfo_;
+      private com.oddin.ots.TicketOuterClass.RejectionInfo rejectionInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.RejectionInfo, com.oddin.ots.Ticket.RejectionInfo.Builder, com.oddin.ots.Ticket.RejectionInfoOrBuilder> rejectionInfoBuilder_;
+          com.oddin.ots.TicketOuterClass.RejectionInfo, com.oddin.ots.TicketOuterClass.RejectionInfo.Builder, com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder> rejectionInfoBuilder_;
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        * @return Whether the rejectionInfo field is set.
@@ -16153,9 +17100,9 @@ public final class Ticket {
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        * @return The rejectionInfo.
        */
-      public com.oddin.ots.Ticket.RejectionInfo getRejectionInfo() {
+      public com.oddin.ots.TicketOuterClass.RejectionInfo getRejectionInfo() {
         if (rejectionInfoBuilder_ == null) {
-          return rejectionInfo_ == null ? com.oddin.ots.Ticket.RejectionInfo.getDefaultInstance() : rejectionInfo_;
+          return rejectionInfo_ == null ? com.oddin.ots.TicketOuterClass.RejectionInfo.getDefaultInstance() : rejectionInfo_;
         } else {
           return rejectionInfoBuilder_.getMessage();
         }
@@ -16163,7 +17110,7 @@ public final class Ticket {
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
-      public Builder setRejectionInfo(com.oddin.ots.Ticket.RejectionInfo value) {
+      public Builder setRejectionInfo(com.oddin.ots.TicketOuterClass.RejectionInfo value) {
         if (rejectionInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16180,7 +17127,7 @@ public final class Ticket {
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
       public Builder setRejectionInfo(
-          com.oddin.ots.Ticket.RejectionInfo.Builder builderForValue) {
+          com.oddin.ots.TicketOuterClass.RejectionInfo.Builder builderForValue) {
         if (rejectionInfoBuilder_ == null) {
           rejectionInfo_ = builderForValue.build();
           onChanged();
@@ -16193,11 +17140,11 @@ public final class Ticket {
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
-      public Builder mergeRejectionInfo(com.oddin.ots.Ticket.RejectionInfo value) {
+      public Builder mergeRejectionInfo(com.oddin.ots.TicketOuterClass.RejectionInfo value) {
         if (rejectionInfoBuilder_ == null) {
           if (rejectionInfo_ != null) {
             rejectionInfo_ =
-              com.oddin.ots.Ticket.RejectionInfo.newBuilder(rejectionInfo_).mergeFrom(value).buildPartial();
+              com.oddin.ots.TicketOuterClass.RejectionInfo.newBuilder(rejectionInfo_).mergeFrom(value).buildPartial();
           } else {
             rejectionInfo_ = value;
           }
@@ -16225,7 +17172,7 @@ public final class Ticket {
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
-      public com.oddin.ots.Ticket.RejectionInfo.Builder getRejectionInfoBuilder() {
+      public com.oddin.ots.TicketOuterClass.RejectionInfo.Builder getRejectionInfoBuilder() {
         
         onChanged();
         return getRejectionInfoFieldBuilder().getBuilder();
@@ -16233,23 +17180,23 @@ public final class Ticket {
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
-      public com.oddin.ots.Ticket.RejectionInfoOrBuilder getRejectionInfoOrBuilder() {
+      public com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder getRejectionInfoOrBuilder() {
         if (rejectionInfoBuilder_ != null) {
           return rejectionInfoBuilder_.getMessageOrBuilder();
         } else {
           return rejectionInfo_ == null ?
-              com.oddin.ots.Ticket.RejectionInfo.getDefaultInstance() : rejectionInfo_;
+              com.oddin.ots.TicketOuterClass.RejectionInfo.getDefaultInstance() : rejectionInfo_;
         }
       }
       /**
        * <code>.ots.RejectionInfo rejection_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.ots.Ticket.RejectionInfo, com.oddin.ots.Ticket.RejectionInfo.Builder, com.oddin.ots.Ticket.RejectionInfoOrBuilder> 
+          com.oddin.ots.TicketOuterClass.RejectionInfo, com.oddin.ots.TicketOuterClass.RejectionInfo.Builder, com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder> 
           getRejectionInfoFieldBuilder() {
         if (rejectionInfoBuilder_ == null) {
           rejectionInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.ots.Ticket.RejectionInfo, com.oddin.ots.Ticket.RejectionInfo.Builder, com.oddin.ots.Ticket.RejectionInfoOrBuilder>(
+              com.oddin.ots.TicketOuterClass.RejectionInfo, com.oddin.ots.TicketOuterClass.RejectionInfo.Builder, com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder>(
                   getRejectionInfo(),
                   getParentForChildren(),
                   isClean());
@@ -16274,12 +17221,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.RejectedSelection)
-    private static final com.oddin.ots.Ticket.RejectedSelection DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.RejectedSelection DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.RejectedSelection();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.RejectedSelection();
     }
 
-    public static com.oddin.ots.Ticket.RejectedSelection getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.RejectedSelection getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16304,7 +17251,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectedSelection getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.RejectedSelection getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16410,15 +17357,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_RejectionInfo_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectionInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_RejectionInfo_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectionInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.RejectionInfo.class, com.oddin.ots.Ticket.RejectionInfo.Builder.class);
+              com.oddin.ots.TicketOuterClass.RejectionInfo.class, com.oddin.ots.TicketOuterClass.RejectionInfo.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -16516,10 +17463,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.RejectionInfo)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.RejectionInfo)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.RejectionInfo other = (com.oddin.ots.Ticket.RejectionInfo) obj;
+      com.oddin.ots.TicketOuterClass.RejectionInfo other = (com.oddin.ots.TicketOuterClass.RejectionInfo) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -16546,69 +17493,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.RejectionInfo parseFrom(
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16621,7 +17568,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.RejectionInfo prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.RejectionInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16642,21 +17589,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.RejectionInfo)
-        com.oddin.ots.Ticket.RejectionInfoOrBuilder {
+        com.oddin.ots.TicketOuterClass.RejectionInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectionInfo_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectionInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectionInfo_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectionInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.RejectionInfo.class, com.oddin.ots.Ticket.RejectionInfo.Builder.class);
+                com.oddin.ots.TicketOuterClass.RejectionInfo.class, com.oddin.ots.TicketOuterClass.RejectionInfo.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.RejectionInfo.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.RejectionInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -16684,17 +17631,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_RejectionInfo_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_RejectionInfo_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectionInfo getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.RejectionInfo.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.RejectionInfo getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.RejectionInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectionInfo build() {
-        com.oddin.ots.Ticket.RejectionInfo result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.RejectionInfo build() {
+        com.oddin.ots.TicketOuterClass.RejectionInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16702,8 +17649,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.RejectionInfo buildPartial() {
-        com.oddin.ots.Ticket.RejectionInfo result = new com.oddin.ots.Ticket.RejectionInfo(this);
+      public com.oddin.ots.TicketOuterClass.RejectionInfo buildPartial() {
+        com.oddin.ots.TicketOuterClass.RejectionInfo result = new com.oddin.ots.TicketOuterClass.RejectionInfo(this);
         result.id_ = id_;
         result.odds_ = odds_;
         onBuilt();
@@ -16744,16 +17691,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.RejectionInfo) {
-          return mergeFrom((com.oddin.ots.Ticket.RejectionInfo)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.RejectionInfo) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.RejectionInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.RejectionInfo other) {
-        if (other == com.oddin.ots.Ticket.RejectionInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.RejectionInfo other) {
+        if (other == com.oddin.ots.TicketOuterClass.RejectionInfo.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -16776,11 +17723,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.RejectionInfo parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.RejectionInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.RejectionInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.RejectionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16913,12 +17860,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.RejectionInfo)
-    private static final com.oddin.ots.Ticket.RejectionInfo DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.RejectionInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.RejectionInfo();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.RejectionInfo();
     }
 
-    public static com.oddin.ots.Ticket.RejectionInfo getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.RejectionInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16943,7 +17890,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.RejectionInfo getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.RejectionInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17030,15 +17977,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_ResponseReoffer_descriptor;
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_ResponseReoffer_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_ResponseReoffer_fieldAccessorTable
+      return com.oddin.ots.TicketOuterClass.internal_static_ots_ResponseReoffer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.ResponseReoffer.class, com.oddin.ots.Ticket.ResponseReoffer.Builder.class);
+              com.oddin.ots.TicketOuterClass.ResponseReoffer.class, com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder.class);
     }
 
     public static final int STAKE_FIELD_NUMBER = 1;
@@ -17092,10 +18039,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.ResponseReoffer)) {
+      if (!(obj instanceof com.oddin.ots.TicketOuterClass.ResponseReoffer)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.ResponseReoffer other = (com.oddin.ots.Ticket.ResponseReoffer) obj;
+      com.oddin.ots.TicketOuterClass.ResponseReoffer other = (com.oddin.ots.TicketOuterClass.ResponseReoffer) obj;
 
       if (getStake()
           != other.getStake()) return false;
@@ -17118,69 +18065,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(byte[] data)
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseDelimitedFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.ResponseReoffer parseFrom(
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17193,7 +18140,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.ResponseReoffer prototype) {
+    public static Builder newBuilder(com.oddin.ots.TicketOuterClass.ResponseReoffer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -17214,21 +18161,21 @@ public final class Ticket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ots.ResponseReoffer)
-        com.oddin.ots.Ticket.ResponseReofferOrBuilder {
+        com.oddin.ots.TicketOuterClass.ResponseReofferOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_ResponseReoffer_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_ResponseReoffer_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_ResponseReoffer_fieldAccessorTable
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_ResponseReoffer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.ResponseReoffer.class, com.oddin.ots.Ticket.ResponseReoffer.Builder.class);
+                com.oddin.ots.TicketOuterClass.ResponseReoffer.class, com.oddin.ots.TicketOuterClass.ResponseReoffer.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.ResponseReoffer.newBuilder()
+      // Construct using com.oddin.ots.TicketOuterClass.ResponseReoffer.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -17254,17 +18201,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_ResponseReoffer_descriptor;
+        return com.oddin.ots.TicketOuterClass.internal_static_ots_ResponseReoffer_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.ResponseReoffer getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.ResponseReoffer.getDefaultInstance();
+      public com.oddin.ots.TicketOuterClass.ResponseReoffer getDefaultInstanceForType() {
+        return com.oddin.ots.TicketOuterClass.ResponseReoffer.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.ResponseReoffer build() {
-        com.oddin.ots.Ticket.ResponseReoffer result = buildPartial();
+      public com.oddin.ots.TicketOuterClass.ResponseReoffer build() {
+        com.oddin.ots.TicketOuterClass.ResponseReoffer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -17272,8 +18219,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.ResponseReoffer buildPartial() {
-        com.oddin.ots.Ticket.ResponseReoffer result = new com.oddin.ots.Ticket.ResponseReoffer(this);
+      public com.oddin.ots.TicketOuterClass.ResponseReoffer buildPartial() {
+        com.oddin.ots.TicketOuterClass.ResponseReoffer result = new com.oddin.ots.TicketOuterClass.ResponseReoffer(this);
         result.stake_ = stake_;
         onBuilt();
         return result;
@@ -17313,16 +18260,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.ResponseReoffer) {
-          return mergeFrom((com.oddin.ots.Ticket.ResponseReoffer)other);
+        if (other instanceof com.oddin.ots.TicketOuterClass.ResponseReoffer) {
+          return mergeFrom((com.oddin.ots.TicketOuterClass.ResponseReoffer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.ResponseReoffer other) {
-        if (other == com.oddin.ots.Ticket.ResponseReoffer.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.TicketOuterClass.ResponseReoffer other) {
+        if (other == com.oddin.ots.TicketOuterClass.ResponseReoffer.getDefaultInstance()) return this;
         if (other.getStake() != 0L) {
           setStake(other.getStake());
         }
@@ -17341,11 +18288,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.ResponseReoffer parsedMessage = null;
+        com.oddin.ots.TicketOuterClass.ResponseReoffer parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.ResponseReoffer) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.TicketOuterClass.ResponseReoffer) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17402,12 +18349,12 @@ public final class Ticket {
     }
 
     // @@protoc_insertion_point(class_scope:ots.ResponseReoffer)
-    private static final com.oddin.ots.Ticket.ResponseReoffer DEFAULT_INSTANCE;
+    private static final com.oddin.ots.TicketOuterClass.ResponseReoffer DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.ResponseReoffer();
+      DEFAULT_INSTANCE = new com.oddin.ots.TicketOuterClass.ResponseReoffer();
     }
 
-    public static com.oddin.ots.Ticket.ResponseReoffer getDefaultInstance() {
+    public static com.oddin.ots.TicketOuterClass.ResponseReoffer getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17432,7 +18379,7 @@ public final class Ticket {
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.ResponseReoffer getDefaultInstanceForType() {
+    public com.oddin.ots.TicketOuterClass.ResponseReoffer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17444,10 +18391,20 @@ public final class Ticket {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_TicketRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ots_TicketRequest_SelectionsEntry_descriptor;
+    internal_static_ots_TicketResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ots_TicketRequest_SelectionsEntry_fieldAccessorTable;
+      internal_static_ots_TicketResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_Ticket_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_Ticket_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_Ticket_SelectionsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_TicketSelection_descriptor;
   private static final 
@@ -17478,11 +18435,6 @@ public final class Ticket {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_BetBonus_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ots_TicketResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ots_TicketResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_TicketState_descriptor;
   private static final 
@@ -17525,56 +18477,58 @@ public final class Ticket {
       "\n\020ots/ticket.proto\022\003ots\032\036google/protobuf" +
       "/wrappers.proto\032\037google/protobuf/timesta" +
       "mp.proto\032\024ots/enum/enums.proto\032\021ots/comm" +
-      "ons.proto\"\201\004\n\rTicketRequest\022\n\n\002id\030\001 \001(\t\022" +
-      "-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022\026\n\004bets\030\003 \003(\0132\010.ots.Bet\0227\n\022accept" +
-      "_odds_change\030\004 \001(\0162\033.ots.enums.AcceptOdd" +
-      "sChange\022\032\n\022total_combinations\030\005 \001(\004\022%\n\010c" +
-      "ustomer\030\006 \001(\0132\023.ots.TicketCustomer\0220\n\nre" +
-      "offer_id\030\010 \001(\0132\034.google.protobuf.StringV" +
-      "alue\0226\n\nselections\030\t \003(\0132\".ots.TicketReq" +
-      "uest.SelectionsEntry\0221\n\013location_id\030\n \001(" +
-      "\0132\034.google.protobuf.StringValue\022\020\n\010curre" +
-      "ncy\030\013 \001(\t\022)\n\007channel\030\014 \001(\0162\030.ots.enums.T" +
-      "icketChannel\032G\n\017SelectionsEntry\022\013\n\003key\030\001" +
-      " \001(\t\022#\n\005value\030\002 \001(\0132\024.ots.TicketSelectio" +
-      "n:\0028\001\"+\n\017TicketSelection\022\n\n\002id\030\001 \001(\t\022\014\n\004" +
-      "odds\030\003 \001(\004\"\211\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(" +
-      "\t\022(\n\002ip\030\002 \001(\0132\034.google.protobuf.StringVa" +
-      "lue\022/\n\tdevice_id\030\003 \001(\0132\034.google.protobuf" +
-      ".StringValue\022\020\n\010language\030\004 \001(\t\"\207\002\n\003Bet\022(" +
-      "\n\002id\030\001 \001(\0132\034.google.protobuf.StringValue" +
-      "\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005stake\030" +
-      "\003 \001(\0132\r.ots.BetStake\0220\n\nreoffer_id\030\004 \001(\013" +
-      "2\034.google.protobuf.StringValue\0220\n\ntotal_" +
-      "wins\030\005 \001(\0132\034.google.protobuf.UInt64Value" +
-      "\022\017\n\007systems\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021." +
-      "ots.BetSelection\"\032\n\014BetSelection\022\n\n\002id\030\001" +
-      " \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030" +
-      "\002 \001(\0162\027.ots.enums.BetStakeType\"g\n\010BetBon" +
-      "us\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.en" +
-      "ums.BetBonusType\022%\n\004mode\030\003 \001(\0162\027.ots.enu" +
-      "ms.BetBonusMode\"f\n\016TicketResponse\022!\n\005sta" +
-      "te\030\001 \001(\0132\020.ots.TicketStateH\000\022)\n\tkeepaliv" +
-      "e\030\002 \001(\0132\024.ots.StreamKeepaliveH\000B\006\n\004data\"" +
-      "\200\002\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rticket_st" +
-      "atus\030\002 \001(\0162\033.ots.enums.AcceptanceStatus\022" +
-      "\033\n\006reason\030\003 \001(\0132\013.ots.Reason\022,\n\010bet_info" +
-      "\030\004 \003(\0132\032.ots.TicketResponseBetInfo\0223\n\rex" +
-      "change_rate\030\005 \001(\0132\034.google.protobuf.UInt" +
-      "64Value\0221\n\022auto_accepted_odds\030\006 \003(\0132\025.ot" +
-      "s.AutoAcceptedOdds\"I\n\020AutoAcceptedOdds\022\n" +
-      "\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n\tus" +
-      "ed_odds\030\003 \001(\004\"\230\001\n\025TicketResponseBetInfo\022" +
-      "\n\n\002id\030\001 \001(\t\022\033\n\006reason\030\002 \001(\0132\013.ots.Reason" +
-      "\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReoffer\022" +
-      "/\n\017selections_info\030\004 \003(\0132\026.ots.RejectedS" +
-      "election\"h\n\021RejectedSelection\022\n\n\002id\030\001 \001(" +
-      "\t\022\033\n\006reason\030\002 \001(\0132\013.ots.Reason\022*\n\016reject" +
-      "ion_info\030\003 \001(\0132\022.ots.RejectionInfo\")\n\rRe" +
-      "jectionInfo\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\" \n" +
-      "\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.o" +
-      "ddin.otsZ\014oddin.gg/otsb\006proto3"
+      "ons.proto\"a\n\rTicketRequest\022\035\n\006ticket\030\001 \001" +
+      "(\0132\013.ots.TicketH\000\022)\n\tkeepalive\030\002 \001(\0132\024.o" +
+      "ts.StreamKeepaliveH\000B\006\n\004data\"f\n\016TicketRe" +
+      "sponse\022!\n\005state\030\001 \001(\0132\020.ots.TicketStateH" +
+      "\000\022)\n\tkeepalive\030\002 \001(\0132\024.ots.StreamKeepali" +
+      "veH\000B\006\n\004data\"\363\003\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\tt" +
+      "imestamp\030\002 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\022\026\n\004bets\030\003 \003(\0132\010.ots.Bet\0227\n\022accept_odd" +
+      "s_change\030\004 \001(\0162\033.ots.enums.AcceptOddsCha" +
+      "nge\022\032\n\022total_combinations\030\005 \001(\004\022%\n\010custo" +
+      "mer\030\006 \001(\0132\023.ots.TicketCustomer\0220\n\nreoffe" +
+      "r_id\030\010 \001(\0132\034.google.protobuf.StringValue" +
+      "\022/\n\nselections\030\t \003(\0132\033.ots.Ticket.Select" +
+      "ionsEntry\0221\n\013location_id\030\n \001(\0132\034.google." +
+      "protobuf.StringValue\022\020\n\010currency\030\013 \001(\t\022)" +
+      "\n\007channel\030\014 \001(\0162\030.ots.enums.TicketChanne" +
+      "l\032G\n\017SelectionsEntry\022\013\n\003key\030\001 \001(\t\022#\n\005val" +
+      "ue\030\002 \001(\0132\024.ots.TicketSelection:\0028\001\"+\n\017Ti" +
+      "cketSelection\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\003 \001(\004\"" +
+      "\211\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001" +
+      "(\0132\034.google.protobuf.StringValue\022/\n\tdevi" +
+      "ce_id\030\003 \001(\0132\034.google.protobuf.StringValu" +
+      "e\022\020\n\010language\030\004 \001(\t\"\207\002\n\003Bet\022(\n\002id\030\001 \001(\0132" +
+      "\034.google.protobuf.StringValue\022\034\n\005bonus\030\002" +
+      " \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r.ots" +
+      ".BetStake\0220\n\nreoffer_id\030\004 \001(\0132\034.google.p" +
+      "rotobuf.StringValue\0220\n\ntotal_wins\030\005 \001(\0132" +
+      "\034.google.protobuf.UInt64Value\022\017\n\007systems" +
+      "\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots.BetSele" +
+      "ction\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(\t\"@\n\010Bet" +
+      "Stake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots" +
+      ".enums.BetStakeType\"g\n\010BetBonus\022\r\n\005value" +
+      "\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetBonu" +
+      "sType\022%\n\004mode\030\003 \001(\0162\027.ots.enums.BetBonus" +
+      "Mode\"\200\002\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rtick" +
+      "et_status\030\002 \001(\0162\033.ots.enums.AcceptanceSt" +
+      "atus\022\033\n\006reason\030\003 \001(\0132\013.ots.Reason\022,\n\010bet" +
+      "_info\030\004 \003(\0132\032.ots.TicketResponseBetInfo\022" +
+      "3\n\rexchange_rate\030\005 \001(\0132\034.google.protobuf" +
+      ".UInt64Value\0221\n\022auto_accepted_odds\030\006 \003(\013" +
+      "2\025.ots.AutoAcceptedOdds\"I\n\020AutoAcceptedO" +
+      "dds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022" +
+      "\021\n\tused_odds\030\003 \001(\004\"\230\001\n\025TicketResponseBet" +
+      "Info\022\n\n\002id\030\001 \001(\t\022\033\n\006reason\030\002 \001(\0132\013.ots.R" +
+      "eason\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReo" +
+      "ffer\022/\n\017selections_info\030\004 \003(\0132\026.ots.Reje" +
+      "ctedSelection\"h\n\021RejectedSelection\022\n\n\002id" +
+      "\030\001 \001(\t\022\033\n\006reason\030\002 \001(\0132\013.ots.Reason\022*\n\016r" +
+      "ejection_info\030\003 \001(\0132\022.ots.RejectionInfo\"" +
+      ")\n\rRejectionInfo\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\002 \001" +
+      "(\004\" \n\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\r" +
+      "com.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17589,87 +18543,93 @@ public final class Ticket {
     internal_static_ots_TicketRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketRequest_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", });
-    internal_static_ots_TicketRequest_SelectionsEntry_descriptor =
-      internal_static_ots_TicketRequest_descriptor.getNestedTypes().get(0);
-    internal_static_ots_TicketRequest_SelectionsEntry_fieldAccessorTable = new
+        new java.lang.String[] { "Ticket", "Keepalive", "Data", });
+    internal_static_ots_TicketResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_ots_TicketResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ots_TicketRequest_SelectionsEntry_descriptor,
+        internal_static_ots_TicketResponse_descriptor,
+        new java.lang.String[] { "State", "Keepalive", "Data", });
+    internal_static_ots_Ticket_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_ots_Ticket_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_Ticket_descriptor,
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", });
+    internal_static_ots_Ticket_SelectionsEntry_descriptor =
+      internal_static_ots_Ticket_descriptor.getNestedTypes().get(0);
+    internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_Ticket_SelectionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_ots_TicketSelection_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_ots_TicketSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketSelection_descriptor,
         new java.lang.String[] { "Id", "Odds", });
     internal_static_ots_TicketCustomer_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_ots_TicketCustomer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketCustomer_descriptor,
         new java.lang.String[] { "Id", "Ip", "DeviceId", "Language", });
     internal_static_ots_Bet_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_ots_Bet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Bet_descriptor,
         new java.lang.String[] { "Id", "Bonus", "Stake", "ReofferId", "TotalWins", "Systems", "Selections", });
     internal_static_ots_BetSelection_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_ots_BetSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetSelection_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_ots_BetStake_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_ots_BetStake_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetStake_descriptor,
         new java.lang.String[] { "Value", "Type", });
     internal_static_ots_BetBonus_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_ots_BetBonus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetBonus_descriptor,
         new java.lang.String[] { "Value", "Type", "Mode", });
-    internal_static_ots_TicketResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_ots_TicketResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ots_TicketResponse_descriptor,
-        new java.lang.String[] { "State", "Keepalive", "Data", });
     internal_static_ots_TicketState_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_ots_TicketState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketState_descriptor,
         new java.lang.String[] { "Id", "TicketStatus", "Reason", "BetInfo", "ExchangeRate", "AutoAcceptedOdds", });
     internal_static_ots_AutoAcceptedOdds_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_ots_AutoAcceptedOdds_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_AutoAcceptedOdds_descriptor,
         new java.lang.String[] { "Id", "RequestedOdds", "UsedOdds", });
     internal_static_ots_TicketResponseBetInfo_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_ots_TicketResponseBetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResponseBetInfo_descriptor,
         new java.lang.String[] { "Id", "Reason", "Reoffer", "SelectionsInfo", });
     internal_static_ots_RejectedSelection_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_ots_RejectedSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectedSelection_descriptor,
         new java.lang.String[] { "Id", "Reason", "RejectionInfo", });
     internal_static_ots_RejectionInfo_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_ots_RejectionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectionInfo_descriptor,
         new java.lang.String[] { "Id", "Odds", });
     internal_static_ots_ResponseReoffer_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_ots_ResponseReoffer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_ResponseReoffer_descriptor,
