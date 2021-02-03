@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from ots_schema.ots.enum import enums_pb2 as ots_dot_enum_dot_enums__pb2
 
 
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11ots/commons.proto\x12\x03ots\x1a\x14ots/enum/enums.proto\">\n\x06Reason\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.ots.enums.ReasonCode\x12\x0f\n\x07message\x18\x02 \x01(\tB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x11ots/commons.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\">\n\x06Reason\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.ots.enums.ReasonCode\x12\x0f\n\x07message\x18\x02 \x01(\t\"@\n\x0fStreamKeepalive\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
-  dependencies=[ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,])
 
 
 
@@ -61,12 +62,46 @@ _REASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=48,
-  serialized_end=110,
+  serialized_start=81,
+  serialized_end=143,
+)
+
+
+_STREAMKEEPALIVE = _descriptor.Descriptor(
+  name='StreamKeepalive',
+  full_name='ots.StreamKeepalive',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='ots.StreamKeepalive.timestamp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=145,
+  serialized_end=209,
 )
 
 _REASON.fields_by_name['code'].enum_type = ots_dot_enum_dot_enums__pb2._REASONCODE
+_STREAMKEEPALIVE.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Reason'] = _REASON
+DESCRIPTOR.message_types_by_name['StreamKeepalive'] = _STREAMKEEPALIVE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Reason = _reflection.GeneratedProtocolMessageType('Reason', (_message.Message,), {
@@ -75,6 +110,13 @@ Reason = _reflection.GeneratedProtocolMessageType('Reason', (_message.Message,),
   # @@protoc_insertion_point(class_scope:ots.Reason)
   })
 _sym_db.RegisterMessage(Reason)
+
+StreamKeepalive = _reflection.GeneratedProtocolMessageType('StreamKeepalive', (_message.Message,), {
+  'DESCRIPTOR' : _STREAMKEEPALIVE,
+  '__module__' : 'ots.commons_pb2'
+  # @@protoc_insertion_point(class_scope:ots.StreamKeepalive)
+  })
+_sym_db.RegisterMessage(StreamKeepalive)
 
 
 DESCRIPTOR._options = None

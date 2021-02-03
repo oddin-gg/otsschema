@@ -5,6 +5,7 @@ package ots;
 option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
+import "google/protobuf/timestamp.proto";
 import "ots/enum/enums.proto";
 
 message Reason {
@@ -12,4 +13,9 @@ message Reason {
   enums.ReasonCode code = 1;
   // Message describing a reason.
   string message = 2;
+}
+
+// StreamKeepalive is used for keeping alive open client, server or bidirectional stream.
+message StreamKeepalive {
+  google.protobuf.Timestamp timestamp = 1;
 }

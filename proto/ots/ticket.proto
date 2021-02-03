@@ -117,6 +117,13 @@ message BetBonus {
 }
 
 message TicketResponse {
+  oneof data {
+    TicketState state = 1;
+    StreamKeepalive keepalive = 2;
+  }
+}
+
+message TicketState {
   // Unique ticket id from operator’s system.
   string id = 1;
 

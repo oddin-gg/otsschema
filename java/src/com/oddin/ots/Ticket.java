@@ -9651,6 +9651,953 @@ public final class Ticket {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return Whether the state field is set.
+     */
+    boolean hasState();
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return The state.
+     */
+    com.oddin.ots.Ticket.TicketState getState();
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     */
+    com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder();
+
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    boolean hasKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    com.oddin.ots.Commons.StreamKeepalive getKeepalive();
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
+
+    public com.oddin.ots.Ticket.TicketResponse.DataCase getDataCase();
+  }
+  /**
+   * Protobuf type {@code ots.TicketResponse}
+   */
+  public static final class TicketResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.TicketResponse)
+      TicketResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TicketResponse.newBuilder() to construct.
+    private TicketResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TicketResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TicketResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TicketResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.oddin.ots.Ticket.TicketState.Builder subBuilder = null;
+              if (dataCase_ == 1) {
+                subBuilder = ((com.oddin.ots.Ticket.TicketState) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.Ticket.TicketState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.Ticket.TicketState) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 1;
+              break;
+            }
+            case 18: {
+              com.oddin.ots.Commons.StreamKeepalive.Builder subBuilder = null;
+              if (dataCase_ == 2) {
+                subBuilder = ((com.oddin.ots.Commons.StreamKeepalive) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.oddin.ots.Commons.StreamKeepalive.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.oddin.ots.Commons.StreamKeepalive) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
+    }
+
+    private int dataCase_ = 0;
+    private java.lang.Object data_;
+    public enum DataCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STATE(1),
+      KEEPALIVE(2),
+      DATA_NOT_SET(0);
+      private final int value;
+      private DataCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataCase forNumber(int value) {
+        switch (value) {
+          case 1: return STATE;
+          case 2: return KEEPALIVE;
+          case 0: return DATA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataCase
+    getDataCase() {
+      return DataCase.forNumber(
+          dataCase_);
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return dataCase_ == 1;
+    }
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.oddin.ots.Ticket.TicketState getState() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.Ticket.TicketState) data_;
+      }
+      return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.TicketState state = 1;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder() {
+      if (dataCase_ == 1) {
+         return (com.oddin.ots.Ticket.TicketState) data_;
+      }
+      return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+    }
+
+    public static final int KEEPALIVE_FIELD_NUMBER = 2;
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return Whether the keepalive field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepalive() {
+      return dataCase_ == 2;
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     * @return The keepalive.
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+    /**
+     * <code>.ots.StreamKeepalive keepalive = 2;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+      if (dataCase_ == 2) {
+         return (com.oddin.ots.Commons.StreamKeepalive) data_;
+      }
+      return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (dataCase_ == 1) {
+        output.writeMessage(1, (com.oddin.ots.Ticket.TicketState) data_);
+      }
+      if (dataCase_ == 2) {
+        output.writeMessage(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.oddin.ots.Ticket.TicketState) data_);
+      }
+      if (dataCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.oddin.ots.Commons.StreamKeepalive) data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.Ticket.TicketResponse)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.Ticket.TicketResponse other = (com.oddin.ots.Ticket.TicketResponse) obj;
+
+      if (!getDataCase().equals(other.getDataCase())) return false;
+      switch (dataCase_) {
+        case 1:
+          if (!getState()
+              .equals(other.getState())) return false;
+          break;
+        case 2:
+          if (!getKeepalive()
+              .equals(other.getKeepalive())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (dataCase_) {
+        case 1:
+          hash = (37 * hash) + STATE_FIELD_NUMBER;
+          hash = (53 * hash) + getState().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
+          hash = (53 * hash) + getKeepalive().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.Ticket.TicketResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.TicketResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.TicketResponse)
+        com.oddin.ots.Ticket.TicketResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.Ticket.TicketResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dataCase_ = 0;
+        data_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
+        return com.oddin.ots.Ticket.TicketResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.Ticket.TicketResponse build() {
+        com.oddin.ots.Ticket.TicketResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.Ticket.TicketResponse buildPartial() {
+        com.oddin.ots.Ticket.TicketResponse result = new com.oddin.ots.Ticket.TicketResponse(this);
+        if (dataCase_ == 1) {
+          if (stateBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = stateBuilder_.build();
+          }
+        }
+        if (dataCase_ == 2) {
+          if (keepaliveBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = keepaliveBuilder_.build();
+          }
+        }
+        result.dataCase_ = dataCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.Ticket.TicketResponse) {
+          return mergeFrom((com.oddin.ots.Ticket.TicketResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.Ticket.TicketResponse other) {
+        if (other == com.oddin.ots.Ticket.TicketResponse.getDefaultInstance()) return this;
+        switch (other.getDataCase()) {
+          case STATE: {
+            mergeState(other.getState());
+            break;
+          }
+          case KEEPALIVE: {
+            mergeKeepalive(other.getKeepalive());
+            break;
+          }
+          case DATA_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.oddin.ots.Ticket.TicketResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.Ticket.TicketResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataCase_ = 0;
+      private java.lang.Object data_;
+      public DataCase
+          getDataCase() {
+        return DataCase.forNumber(
+            dataCase_);
+      }
+
+      public Builder clearData() {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder> stateBuilder_;
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       * @return Whether the state field is set.
+       */
+      @java.lang.Override
+      public boolean hasState() {
+        return dataCase_ == 1;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Ticket.TicketState getState() {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.Ticket.TicketState) data_;
+          }
+          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+        } else {
+          if (dataCase_ == 1) {
+            return stateBuilder_.getMessage();
+          }
+          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder setState(com.oddin.ots.Ticket.TicketState value) {
+        if (stateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder setState(
+          com.oddin.ots.Ticket.TicketState.Builder builderForValue) {
+        if (stateBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder mergeState(com.oddin.ots.Ticket.TicketState value) {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1 &&
+              data_ != com.oddin.ots.Ticket.TicketState.getDefaultInstance()) {
+            data_ = com.oddin.ots.Ticket.TicketState.newBuilder((com.oddin.ots.Ticket.TicketState) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 1) {
+            stateBuilder_.mergeFrom(value);
+          }
+          stateBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public Builder clearState() {
+        if (stateBuilder_ == null) {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          stateBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      public com.oddin.ots.Ticket.TicketState.Builder getStateBuilder() {
+        return getStateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.Ticket.TicketStateOrBuilder getStateOrBuilder() {
+        if ((dataCase_ == 1) && (stateBuilder_ != null)) {
+          return stateBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 1) {
+            return (com.oddin.ots.Ticket.TicketState) data_;
+          }
+          return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.TicketState state = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder> 
+          getStateFieldBuilder() {
+        if (stateBuilder_ == null) {
+          if (!(dataCase_ == 1)) {
+            data_ = com.oddin.ots.Ticket.TicketState.getDefaultInstance();
+          }
+          stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Ticket.TicketState, com.oddin.ots.Ticket.TicketState.Builder, com.oddin.ots.Ticket.TicketStateOrBuilder>(
+                  (com.oddin.ots.Ticket.TicketState) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 1;
+        onChanged();;
+        return stateBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return Whether the keepalive field is set.
+       */
+      @java.lang.Override
+      public boolean hasKeepalive() {
+        return dataCase_ == 2;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       * @return The keepalive.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepalive getKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        } else {
+          if (dataCase_ == 2) {
+            return keepaliveBuilder_.getMessage();
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder setKeepalive(
+          com.oddin.ots.Commons.StreamKeepalive.Builder builderForValue) {
+        if (keepaliveBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          keepaliveBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder mergeKeepalive(com.oddin.ots.Commons.StreamKeepalive value) {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2 &&
+              data_ != com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance()) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.newBuilder((com.oddin.ots.Commons.StreamKeepalive) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 2) {
+            keepaliveBuilder_.mergeFrom(value);
+          }
+          keepaliveBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public Builder clearKeepalive() {
+        if (keepaliveBuilder_ == null) {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          keepaliveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      public com.oddin.ots.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
+        return getKeepaliveFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      @java.lang.Override
+      public com.oddin.ots.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
+        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
+          return keepaliveBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 2) {
+            return (com.oddin.ots.Commons.StreamKeepalive) data_;
+          }
+          return com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ots.StreamKeepalive keepalive = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder> 
+          getKeepaliveFieldBuilder() {
+        if (keepaliveBuilder_ == null) {
+          if (!(dataCase_ == 2)) {
+            data_ = com.oddin.ots.Commons.StreamKeepalive.getDefaultInstance();
+          }
+          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.Commons.StreamKeepalive, com.oddin.ots.Commons.StreamKeepalive.Builder, com.oddin.ots.Commons.StreamKeepaliveOrBuilder>(
+                  (com.oddin.ots.Commons.StreamKeepalive) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 2;
+        onChanged();;
+        return keepaliveBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.TicketResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.TicketResponse)
+    private static final com.oddin.ots.Ticket.TicketResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketResponse();
+    }
+
+    public static com.oddin.ots.Ticket.TicketResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TicketResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TicketResponse>() {
+      @java.lang.Override
+      public TicketResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TicketResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TicketResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TicketResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TicketStateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.TicketState)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
      * <pre>
      * Unique ticket id from operator’s system.
      * </pre>
@@ -9832,18 +10779,18 @@ public final class Ticket {
         int index);
   }
   /**
-   * Protobuf type {@code ots.TicketResponse}
+   * Protobuf type {@code ots.TicketState}
    */
-  public static final class TicketResponse extends
+  public static final class TicketState extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ots.TicketResponse)
-      TicketResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:ots.TicketState)
+      TicketStateOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TicketResponse.newBuilder() to construct.
-    private TicketResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TicketState.newBuilder() to construct.
+    private TicketState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TicketResponse() {
+    private TicketState() {
       id_ = "";
       ticketStatus_ = 0;
       betInfo_ = java.util.Collections.emptyList();
@@ -9854,7 +10801,7 @@ public final class Ticket {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new TicketResponse();
+      return new TicketState();
     }
 
     @java.lang.Override
@@ -9862,7 +10809,7 @@ public final class Ticket {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TicketResponse(
+    private TicketState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9964,15 +10911,15 @@ public final class Ticket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+      return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
+      return com.oddin.ots.Ticket.internal_static_ots_TicketState_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
+              com.oddin.ots.Ticket.TicketState.class, com.oddin.ots.Ticket.TicketState.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -10318,10 +11265,10 @@ public final class Ticket {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.ots.Ticket.TicketResponse)) {
+      if (!(obj instanceof com.oddin.ots.Ticket.TicketState)) {
         return super.equals(obj);
       }
-      com.oddin.ots.Ticket.TicketResponse other = (com.oddin.ots.Ticket.TicketResponse) obj;
+      com.oddin.ots.Ticket.TicketState other = (com.oddin.ots.Ticket.TicketState) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -10376,69 +11323,69 @@ public final class Ticket {
       return hash;
     }
 
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(byte[] data)
+    public static com.oddin.ots.Ticket.TicketState parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(java.io.InputStream input)
+    public static com.oddin.ots.Ticket.TicketState parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.ots.Ticket.TicketState parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseDelimitedFrom(
+    public static com.oddin.ots.Ticket.TicketState parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.ots.Ticket.TicketResponse parseFrom(
+    public static com.oddin.ots.Ticket.TicketState parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10451,7 +11398,7 @@ public final class Ticket {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.ots.Ticket.TicketResponse prototype) {
+    public static Builder newBuilder(com.oddin.ots.Ticket.TicketState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10467,26 +11414,26 @@ public final class Ticket {
       return builder;
     }
     /**
-     * Protobuf type {@code ots.TicketResponse}
+     * Protobuf type {@code ots.TicketState}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ots.TicketResponse)
-        com.oddin.ots.Ticket.TicketResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:ots.TicketState)
+        com.oddin.ots.Ticket.TicketStateOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+        return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_fieldAccessorTable
+        return com.oddin.ots.Ticket.internal_static_ots_TicketState_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.ots.Ticket.TicketResponse.class, com.oddin.ots.Ticket.TicketResponse.Builder.class);
+                com.oddin.ots.Ticket.TicketState.class, com.oddin.ots.Ticket.TicketState.Builder.class);
       }
 
-      // Construct using com.oddin.ots.Ticket.TicketResponse.newBuilder()
+      // Construct using com.oddin.ots.Ticket.TicketState.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10540,17 +11487,17 @@ public final class Ticket {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.ots.Ticket.internal_static_ots_TicketResponse_descriptor;
+        return com.oddin.ots.Ticket.internal_static_ots_TicketState_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
-        return com.oddin.ots.Ticket.TicketResponse.getDefaultInstance();
+      public com.oddin.ots.Ticket.TicketState getDefaultInstanceForType() {
+        return com.oddin.ots.Ticket.TicketState.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse build() {
-        com.oddin.ots.Ticket.TicketResponse result = buildPartial();
+      public com.oddin.ots.Ticket.TicketState build() {
+        com.oddin.ots.Ticket.TicketState result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10558,8 +11505,8 @@ public final class Ticket {
       }
 
       @java.lang.Override
-      public com.oddin.ots.Ticket.TicketResponse buildPartial() {
-        com.oddin.ots.Ticket.TicketResponse result = new com.oddin.ots.Ticket.TicketResponse(this);
+      public com.oddin.ots.Ticket.TicketState buildPartial() {
+        com.oddin.ots.Ticket.TicketState result = new com.oddin.ots.Ticket.TicketState(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.ticketStatus_ = ticketStatus_;
@@ -10629,16 +11576,16 @@ public final class Ticket {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.ots.Ticket.TicketResponse) {
-          return mergeFrom((com.oddin.ots.Ticket.TicketResponse)other);
+        if (other instanceof com.oddin.ots.Ticket.TicketState) {
+          return mergeFrom((com.oddin.ots.Ticket.TicketState)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.ots.Ticket.TicketResponse other) {
-        if (other == com.oddin.ots.Ticket.TicketResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.ots.Ticket.TicketState other) {
+        if (other == com.oddin.ots.Ticket.TicketState.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -10719,11 +11666,11 @@ public final class Ticket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.Ticket.TicketResponse parsedMessage = null;
+        com.oddin.ots.Ticket.TicketState parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.Ticket.TicketResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.oddin.ots.Ticket.TicketState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11850,41 +12797,41 @@ public final class Ticket {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ots.TicketResponse)
+      // @@protoc_insertion_point(builder_scope:ots.TicketState)
     }
 
-    // @@protoc_insertion_point(class_scope:ots.TicketResponse)
-    private static final com.oddin.ots.Ticket.TicketResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ots.TicketState)
+    private static final com.oddin.ots.Ticket.TicketState DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketResponse();
+      DEFAULT_INSTANCE = new com.oddin.ots.Ticket.TicketState();
     }
 
-    public static com.oddin.ots.Ticket.TicketResponse getDefaultInstance() {
+    public static com.oddin.ots.Ticket.TicketState getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TicketResponse>
-        PARSER = new com.google.protobuf.AbstractParser<TicketResponse>() {
+    private static final com.google.protobuf.Parser<TicketState>
+        PARSER = new com.google.protobuf.AbstractParser<TicketState>() {
       @java.lang.Override
-      public TicketResponse parsePartialFrom(
+      public TicketState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TicketResponse(input, extensionRegistry);
+        return new TicketState(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TicketResponse> parser() {
+    public static com.google.protobuf.Parser<TicketState> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TicketResponse> getParserForType() {
+    public com.google.protobuf.Parser<TicketState> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.ots.Ticket.TicketResponse getDefaultInstanceForType() {
+    public com.oddin.ots.Ticket.TicketState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16537,6 +17484,11 @@ public final class Ticket {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_TicketResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_TicketState_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_TicketState_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_AutoAcceptedOdds_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -16602,25 +17554,27 @@ public final class Ticket {
       "\002 \001(\0162\027.ots.enums.BetStakeType\"g\n\010BetBon" +
       "us\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.en" +
       "ums.BetBonusType\022%\n\004mode\030\003 \001(\0162\027.ots.enu" +
-      "ms.BetBonusMode\"\203\002\n\016TicketResponse\022\n\n\002id" +
-      "\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.ots.enum" +
-      "s.AcceptanceStatus\022\033\n\006reason\030\003 \001(\0132\013.ots" +
-      ".Reason\022,\n\010bet_info\030\004 \003(\0132\032.ots.TicketRe" +
-      "sponseBetInfo\0223\n\rexchange_rate\030\005 \001(\0132\034.g" +
-      "oogle.protobuf.UInt64Value\0221\n\022auto_accep" +
-      "ted_odds\030\006 \003(\0132\025.ots.AutoAcceptedOdds\"I\n" +
-      "\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016request" +
-      "ed_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004\"\230\001\n\025Tic" +
-      "ketResponseBetInfo\022\n\n\002id\030\001 \001(\t\022\033\n\006reason" +
-      "\030\002 \001(\0132\013.ots.Reason\022%\n\007reoffer\030\003 \001(\0132\024.o" +
-      "ts.ResponseReoffer\022/\n\017selections_info\030\004 " +
-      "\003(\0132\026.ots.RejectedSelection\"h\n\021RejectedS" +
-      "election\022\n\n\002id\030\001 \001(\t\022\033\n\006reason\030\002 \001(\0132\013.o" +
-      "ts.Reason\022*\n\016rejection_info\030\003 \001(\0132\022.ots." +
-      "RejectionInfo\")\n\rRejectionInfo\022\n\n\002id\030\001 \001" +
-      "(\t\022\014\n\004odds\030\002 \001(\004\" \n\017ResponseReoffer\022\r\n\005s" +
-      "take\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddin.gg/ot" +
-      "sb\006proto3"
+      "ms.BetBonusMode\"f\n\016TicketResponse\022!\n\005sta" +
+      "te\030\001 \001(\0132\020.ots.TicketStateH\000\022)\n\tkeepaliv" +
+      "e\030\002 \001(\0132\024.ots.StreamKeepaliveH\000B\006\n\004data\"" +
+      "\200\002\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rticket_st" +
+      "atus\030\002 \001(\0162\033.ots.enums.AcceptanceStatus\022" +
+      "\033\n\006reason\030\003 \001(\0132\013.ots.Reason\022,\n\010bet_info" +
+      "\030\004 \003(\0132\032.ots.TicketResponseBetInfo\0223\n\rex" +
+      "change_rate\030\005 \001(\0132\034.google.protobuf.UInt" +
+      "64Value\0221\n\022auto_accepted_odds\030\006 \003(\0132\025.ot" +
+      "s.AutoAcceptedOdds\"I\n\020AutoAcceptedOdds\022\n" +
+      "\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n\tus" +
+      "ed_odds\030\003 \001(\004\"\230\001\n\025TicketResponseBetInfo\022" +
+      "\n\n\002id\030\001 \001(\t\022\033\n\006reason\030\002 \001(\0132\013.ots.Reason" +
+      "\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReoffer\022" +
+      "/\n\017selections_info\030\004 \003(\0132\026.ots.RejectedS" +
+      "election\"h\n\021RejectedSelection\022\n\n\002id\030\001 \001(" +
+      "\t\022\033\n\006reason\030\002 \001(\0132\013.ots.Reason\022*\n\016reject" +
+      "ion_info\030\003 \001(\0132\022.ots.RejectionInfo\")\n\rRe" +
+      "jectionInfo\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\" \n" +
+      "\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.o" +
+      "ddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16683,33 +17637,39 @@ public final class Ticket {
     internal_static_ots_TicketResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResponse_descriptor,
+        new java.lang.String[] { "State", "Keepalive", "Data", });
+    internal_static_ots_TicketState_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_ots_TicketState_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_TicketState_descriptor,
         new java.lang.String[] { "Id", "TicketStatus", "Reason", "BetInfo", "ExchangeRate", "AutoAcceptedOdds", });
     internal_static_ots_AutoAcceptedOdds_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_ots_AutoAcceptedOdds_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_AutoAcceptedOdds_descriptor,
         new java.lang.String[] { "Id", "RequestedOdds", "UsedOdds", });
     internal_static_ots_TicketResponseBetInfo_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_ots_TicketResponseBetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResponseBetInfo_descriptor,
         new java.lang.String[] { "Id", "Reason", "Reoffer", "SelectionsInfo", });
     internal_static_ots_RejectedSelection_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_ots_RejectedSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectedSelection_descriptor,
         new java.lang.String[] { "Id", "Reason", "RejectionInfo", });
     internal_static_ots_RejectionInfo_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_ots_RejectionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_RejectionInfo_descriptor,
         new java.lang.String[] { "Id", "Odds", });
     internal_static_ots_ResponseReoffer_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_ots_ResponseReoffer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_ResponseReoffer_descriptor,

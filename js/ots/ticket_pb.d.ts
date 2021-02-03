@@ -267,6 +267,41 @@ export namespace BetBonus {
 }
 
 export class TicketResponse extends jspb.Message {
+  hasState(): boolean;
+  clearState(): void;
+  getState(): TicketState | undefined;
+  setState(value?: TicketState): void;
+
+  hasKeepalive(): boolean;
+  clearKeepalive(): void;
+  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
+  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
+
+  getDataCase(): TicketResponse.DataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResponse): TicketResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResponse;
+  static deserializeBinaryFromReader(message: TicketResponse, reader: jspb.BinaryReader): TicketResponse;
+}
+
+export namespace TicketResponse {
+  export type AsObject = {
+    state?: TicketState.AsObject,
+    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
+  }
+
+  export enum DataCase {
+    DATA_NOT_SET = 0,
+    STATE = 1,
+    KEEPALIVE = 2,
+  }
+}
+
+export class TicketState extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -294,16 +329,16 @@ export class TicketResponse extends jspb.Message {
   addAutoAcceptedOdds(value?: AutoAcceptedOdds, index?: number): AutoAcceptedOdds;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TicketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TicketResponse): TicketResponse.AsObject;
+  toObject(includeInstance?: boolean): TicketState.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketState): TicketState.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TicketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TicketResponse;
-  static deserializeBinaryFromReader(message: TicketResponse, reader: jspb.BinaryReader): TicketResponse;
+  static serializeBinaryToWriter(message: TicketState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketState;
+  static deserializeBinaryFromReader(message: TicketState, reader: jspb.BinaryReader): TicketState;
 }
 
-export namespace TicketResponse {
+export namespace TicketState {
   export type AsObject = {
     id: string,
     ticketStatus: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
