@@ -24,10 +24,8 @@ export namespace PlayerRiskScoreRequest {
 }
 
 export class PlayerRiskScoreResponse extends jspb.Message {
-  clearRiskScoresList(): void;
-  getRiskScoresList(): Array<PlayerRiskScore>;
-  setRiskScoresList(value: Array<PlayerRiskScore>): void;
-  addRiskScores(value?: PlayerRiskScore, index?: number): PlayerRiskScore;
+  getScore(): number;
+  setScore(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PlayerRiskScoreResponse.AsObject;
@@ -41,35 +39,7 @@ export class PlayerRiskScoreResponse extends jspb.Message {
 
 export namespace PlayerRiskScoreResponse {
   export type AsObject = {
-    riskScoresList: Array<PlayerRiskScore.AsObject>,
-  }
-}
-
-export class PlayerRiskScore extends jspb.Message {
-  getSportId(): string;
-  setSportId(value: string): void;
-
-  getPrematch(): number;
-  setPrematch(value: number): void;
-
-  getLive(): number;
-  setLive(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PlayerRiskScore.AsObject;
-  static toObject(includeInstance: boolean, msg: PlayerRiskScore): PlayerRiskScore.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PlayerRiskScore, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PlayerRiskScore;
-  static deserializeBinaryFromReader(message: PlayerRiskScore, reader: jspb.BinaryReader): PlayerRiskScore;
-}
-
-export namespace PlayerRiskScore {
-  export type AsObject = {
-    sportId: string,
-    prematch: number,
-    live: number,
+    score: number,
   }
 }
 
