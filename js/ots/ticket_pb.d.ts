@@ -343,25 +343,26 @@ export class TicketState extends jspb.Message {
   getTicketStatus(): ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap];
   setTicketStatus(value: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap]): void;
 
-  hasReason(): boolean;
-  clearReason(): void;
-  getReason(): ots_commons_pb.Reason | undefined;
-  setReason(value?: ots_commons_pb.Reason): void;
+  hasRejectReason(): boolean;
+  clearRejectReason(): void;
+  getRejectReason(): TicketRejectReason | undefined;
+  setRejectReason(value?: TicketRejectReason): void;
 
-  clearBetInfoList(): void;
-  getBetInfoList(): Array<TicketResponseBetInfo>;
-  setBetInfoList(value: Array<TicketResponseBetInfo>): void;
-  addBetInfo(value?: TicketResponseBetInfo, index?: number): TicketResponseBetInfo;
-
+  getBetInfoMap(): jspb.Map<string, TicketResponseBetInfo>;
+  clearBetInfoMap(): void;
+  getSelectionInfoMap(): jspb.Map<string, TicketSelectionRejectReason>;
+  clearSelectionInfoMap(): void;
   hasExchangeRate(): boolean;
   clearExchangeRate(): void;
   getExchangeRate(): google_protobuf_wrappers_pb.UInt64Value | undefined;
   setExchangeRate(value?: google_protobuf_wrappers_pb.UInt64Value): void;
 
-  clearAutoAcceptedOddsList(): void;
-  getAutoAcceptedOddsList(): Array<AutoAcceptedOdds>;
-  setAutoAcceptedOddsList(value: Array<AutoAcceptedOdds>): void;
-  addAutoAcceptedOdds(value?: AutoAcceptedOdds, index?: number): AutoAcceptedOdds;
+  getAutoAcceptedOddsMap(): jspb.Map<string, AutoAcceptedOdds>;
+  clearAutoAcceptedOddsMap(): void;
+  hasReoffer(): boolean;
+  clearReoffer(): void;
+  getReoffer(): ResponseReoffer | undefined;
+  setReoffer(value?: ResponseReoffer): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketState.AsObject;
@@ -377,10 +378,12 @@ export namespace TicketState {
   export type AsObject = {
     id: string,
     ticketStatus: ots_enum_enums_pb.AcceptanceStatusMap[keyof ots_enum_enums_pb.AcceptanceStatusMap],
-    reason?: ots_commons_pb.Reason.AsObject,
-    betInfoList: Array<TicketResponseBetInfo.AsObject>,
+    rejectReason?: TicketRejectReason.AsObject,
+    betInfoMap: Array<[string, TicketResponseBetInfo.AsObject]>,
+    selectionInfoMap: Array<[string, TicketSelectionRejectReason.AsObject]>,
     exchangeRate?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
-    autoAcceptedOddsList: Array<AutoAcceptedOdds.AsObject>,
+    autoAcceptedOddsMap: Array<[string, AutoAcceptedOdds.AsObject]>,
+    reoffer?: ResponseReoffer.AsObject,
   }
 }
 
@@ -412,24 +415,95 @@ export namespace AutoAcceptedOdds {
   }
 }
 
+export class TicketRejectReason extends jspb.Message {
+  getCode(): TicketRejectReason.CodeMap[keyof TicketRejectReason.CodeMap];
+  setCode(value: TicketRejectReason.CodeMap[keyof TicketRejectReason.CodeMap]): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketRejectReason.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketRejectReason): TicketRejectReason.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketRejectReason, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketRejectReason;
+  static deserializeBinaryFromReader(message: TicketRejectReason, reader: jspb.BinaryReader): TicketRejectReason;
+}
+
+export namespace TicketRejectReason {
+  export type AsObject = {
+    code: TicketRejectReason.CodeMap[keyof TicketRejectReason.CodeMap],
+    message: string,
+  }
+
+  export interface CodeMap {
+    CODE_UNSPECIFIED: 0;
+    CODE_INTERNAL: 1;
+    CODE_INVALID_ARGUMENT: 2;
+    CODE_ALREADY_EXISTS: 3;
+    CODE_STAKE_TO_LOW: 4;
+    CODE_STAKE_TO_HIGH: 5;
+    CODE_MAX_PAYOUT_BREACHED: 6;
+    CODE_BETS_NOT_ACCEPTABLE: 7;
+    CODE_SELECTIONS_NOT_ACCEPTABLE: 8;
+  }
+
+  export const Code: CodeMap;
+}
+
+export class TicketBetRejectReason extends jspb.Message {
+  getCode(): TicketBetRejectReason.CodeMap[keyof TicketBetRejectReason.CodeMap];
+  setCode(value: TicketBetRejectReason.CodeMap[keyof TicketBetRejectReason.CodeMap]): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketBetRejectReason.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketBetRejectReason): TicketBetRejectReason.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketBetRejectReason, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketBetRejectReason;
+  static deserializeBinaryFromReader(message: TicketBetRejectReason, reader: jspb.BinaryReader): TicketBetRejectReason;
+}
+
+export namespace TicketBetRejectReason {
+  export type AsObject = {
+    code: TicketBetRejectReason.CodeMap[keyof TicketBetRejectReason.CodeMap],
+    message: string,
+  }
+
+  export interface CodeMap {
+    CODE_UNSPECIFIED: 0;
+    CODE_ODDS_CHANGED: 1;
+    CODE_SELECTION_NOT_ACTIVE: 2;
+    CODE_STAKE_TO_LOW: 3;
+    CODE_STAKE_TO_HIGH: 4;
+    CODE_MAX_PAYOUT_BREACHED: 5;
+    CODE_MARKET_LIABILITY_BREACHED: 6;
+    CODE_BETTOR_LIABILITY_BREACHED: 7;
+    CODE_EVENT_LIABILITY_BREACHED: 8;
+  }
+
+  export const Code: CodeMap;
+}
+
 export class TicketResponseBetInfo extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  hasReason(): boolean;
-  clearReason(): void;
-  getReason(): ots_commons_pb.Reason | undefined;
-  setReason(value?: ots_commons_pb.Reason): void;
+  hasRejectReason(): boolean;
+  clearRejectReason(): void;
+  getRejectReason(): TicketBetRejectReason | undefined;
+  setRejectReason(value?: TicketBetRejectReason): void;
 
   hasReoffer(): boolean;
   clearReoffer(): void;
   getReoffer(): ResponseReoffer | undefined;
   setReoffer(value?: ResponseReoffer): void;
-
-  clearSelectionsInfoList(): void;
-  getSelectionsInfoList(): Array<RejectedSelection>;
-  setSelectionsInfoList(value: Array<RejectedSelection>): void;
-  addSelectionsInfo(value?: RejectedSelection, index?: number): RejectedSelection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResponseBetInfo.AsObject;
@@ -444,66 +518,41 @@ export class TicketResponseBetInfo extends jspb.Message {
 export namespace TicketResponseBetInfo {
   export type AsObject = {
     id: string,
-    reason?: ots_commons_pb.Reason.AsObject,
+    rejectReason?: TicketBetRejectReason.AsObject,
     reoffer?: ResponseReoffer.AsObject,
-    selectionsInfoList: Array<RejectedSelection.AsObject>,
   }
 }
 
-export class RejectedSelection extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
+export class TicketSelectionRejectReason extends jspb.Message {
+  getCode(): TicketSelectionRejectReason.CodeMap[keyof TicketSelectionRejectReason.CodeMap];
+  setCode(value: TicketSelectionRejectReason.CodeMap[keyof TicketSelectionRejectReason.CodeMap]): void;
 
-  hasReason(): boolean;
-  clearReason(): void;
-  getReason(): ots_commons_pb.Reason | undefined;
-  setReason(value?: ots_commons_pb.Reason): void;
-
-  hasRejectionInfo(): boolean;
-  clearRejectionInfo(): void;
-  getRejectionInfo(): RejectionInfo | undefined;
-  setRejectionInfo(value?: RejectionInfo): void;
+  getMessage(): string;
+  setMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RejectedSelection.AsObject;
-  static toObject(includeInstance: boolean, msg: RejectedSelection): RejectedSelection.AsObject;
+  toObject(includeInstance?: boolean): TicketSelectionRejectReason.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketSelectionRejectReason): TicketSelectionRejectReason.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RejectedSelection, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RejectedSelection;
-  static deserializeBinaryFromReader(message: RejectedSelection, reader: jspb.BinaryReader): RejectedSelection;
+  static serializeBinaryToWriter(message: TicketSelectionRejectReason, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketSelectionRejectReason;
+  static deserializeBinaryFromReader(message: TicketSelectionRejectReason, reader: jspb.BinaryReader): TicketSelectionRejectReason;
 }
 
-export namespace RejectedSelection {
+export namespace TicketSelectionRejectReason {
   export type AsObject = {
-    id: string,
-    reason?: ots_commons_pb.Reason.AsObject,
-    rejectionInfo?: RejectionInfo.AsObject,
+    code: TicketSelectionRejectReason.CodeMap[keyof TicketSelectionRejectReason.CodeMap],
+    message: string,
   }
-}
 
-export class RejectionInfo extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
-  getOdds(): number;
-  setOdds(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RejectionInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: RejectionInfo): RejectionInfo.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RejectionInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RejectionInfo;
-  static deserializeBinaryFromReader(message: RejectionInfo, reader: jspb.BinaryReader): RejectionInfo;
-}
-
-export namespace RejectionInfo {
-  export type AsObject = {
-    id: string,
-    odds: number,
+  export interface CodeMap {
+    CODE_UNSPECIFIED: 0;
+    CODE_ODDS_CHANGED: 1;
+    CODE_NOT_ACTIVE: 2;
   }
+
+  export const Code: CodeMap;
 }
 
 export class ResponseReoffer extends jspb.Message {

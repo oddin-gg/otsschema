@@ -137,17 +137,23 @@ message TicketState {
   // Acceptance status - PENDING | REJECTED | ACCEPTED.
   enums.AcceptanceStatus ticket_status = 2;
 
-  // Information about rejection/acception reason.
-  Reason reason = 3;
+  // Information about rejection reason.
+  TicketRejectReason reject_reason = 3;
 
-  // Bet level rejection details.
-  repeated TicketResponseBetInfo bet_info = 4;
+  // Rejection details of bets.
+  map<string, TicketResponseBetInfo> bet_info = 4;
+
+  // Rejection details of selections.
+  map<string, TicketSelectionRejectReason> selection_info = 7;
 
   // Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
   google.protobuf.UInt64Value exchange_rate = 5;
 
   // Alternative odds used to accept bet.
-  repeated AutoAcceptedOdds auto_accepted_odds = 6;
+  map<string, AutoAcceptedOdds> auto_accepted_odds = 6;
+
+  // Information about the reoffer stake.
+  ResponseReoffer reoffer = 8;
 }
 
 message AutoAcceptedOdds {
@@ -161,32 +167,108 @@ message AutoAcceptedOdds {
   uint64 used_odds = 3;
 }
 
+message TicketRejectReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
+
+    // We are having internal problems.
+    CODE_INTERNAL = 1;
+
+    // Ticket is not valid.
+    CODE_INVALID_ARGUMENT = 2;
+
+    // Ticket already exists in our system.
+    CODE_ALREADY_EXISTS = 3;
+
+    // Bet stake is lower then minimum stake.
+    CODE_STAKE_TO_LOW = 4;
+
+    // Bet stake is high then maximal stake.
+    CODE_STAKE_TO_HIGH = 5;
+
+    // Max payout breached.
+    CODE_MAX_PAYOUT_BREACHED = 6;
+
+    // Ticket bets are not acceptable, check bet_info field for details.
+    CODE_BETS_NOT_ACCEPTABLE = 7;
+
+    // Ticket selections are not acceptable, check selection_info field for details.
+    CODE_SELECTIONS_NOT_ACCEPTABLE = 8;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
+}
+
+message TicketBetRejectReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
+
+    // At least one odds in bet is different from current odds.
+    CODE_ODDS_CHANGED = 1;
+
+    // At least one selection in bet is not active.
+    CODE_SELECTION_NOT_ACTIVE = 2;
+
+    // Bet stake is lower then minimum stake.
+    CODE_STAKE_TO_LOW = 3;
+
+    // Bet stake is high then maximal stake.
+    CODE_STAKE_TO_HIGH = 4;
+
+    // Max payout breached.
+    CODE_MAX_PAYOUT_BREACHED = 5;
+
+    // Market liability breached.
+    CODE_MARKET_LIABILITY_BREACHED = 6;
+
+    // Bettor liability breached.
+    CODE_BETTOR_LIABILITY_BREACHED = 7;
+
+    // Event liability breached.
+    CODE_EVENT_LIABILITY_BREACHED = 8;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
+}
+
 message TicketResponseBetInfo {
   // Unique bet id from operator’s system.
   string id = 1;
 
-  // Information about rejection/acception reason.
-  Reason reason = 2;
+  // Information about rejection reason.
+  TicketBetRejectReason reject_reason = 2;
 
   // Information about the reoffer stake.
   ResponseReoffer reoffer = 3;
-
-  // Selection info level rejection details - selection id and odds.
-  repeated RejectedSelection selections_info = 4;
 }
 
-message RejectedSelection {
-  // Selection id.
-  string id = 1;
+message TicketSelectionRejectReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
 
-  // Information about rejection reason.
-  Reason reason = 2;
-  RejectionInfo rejection_info = 3;
-}
+    // Selection Odds is different from current odds.
+    CODE_ODDS_CHANGED = 1;
 
-message RejectionInfo {
-  string id = 1;
-  uint64 odds = 2;
+    // Selection is not active.
+    CODE_NOT_ACTIVE = 2;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
 }
 
 message ResponseReoffer {
