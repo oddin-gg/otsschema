@@ -5804,6 +5804,33 @@ public final class TicketOuterClass {
      */
     com.google.protobuf.ByteString
         getLanguageBytes();
+
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     * @return Whether the nickname field is set.
+     */
+    boolean hasNickname();
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     * @return The nickname.
+     */
+    com.google.protobuf.StringValue getNickname();
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     */
+    com.google.protobuf.StringValueOrBuilder getNicknameOrBuilder();
   }
   /**
    * Protobuf type {@code ots.TicketCustomer}
@@ -5888,6 +5915,19 @@ public final class TicketOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               language_ = s;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.StringValue.Builder subBuilder = null;
+              if (nickname_ != null) {
+                subBuilder = nickname_.toBuilder();
+              }
+              nickname_ = input.readMessage(com.google.protobuf.StringValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nickname_);
+                nickname_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -6090,6 +6130,44 @@ public final class TicketOuterClass {
       }
     }
 
+    public static final int NICKNAME_FIELD_NUMBER = 5;
+    private com.google.protobuf.StringValue nickname_;
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     * @return Whether the nickname field is set.
+     */
+    @java.lang.Override
+    public boolean hasNickname() {
+      return nickname_ != null;
+    }
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     * @return The nickname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.StringValue getNickname() {
+      return nickname_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : nickname_;
+    }
+    /**
+     * <pre>
+     * Optional bettor nickname
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue nickname = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StringValueOrBuilder getNicknameOrBuilder() {
+      return getNickname();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6116,6 +6194,9 @@ public final class TicketOuterClass {
       if (!getLanguageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
       }
+      if (nickname_ != null) {
+        output.writeMessage(5, getNickname());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6138,6 +6219,10 @@ public final class TicketOuterClass {
       }
       if (!getLanguageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
+      }
+      if (nickname_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getNickname());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6168,6 +6253,11 @@ public final class TicketOuterClass {
       }
       if (!getLanguage()
           .equals(other.getLanguage())) return false;
+      if (hasNickname() != other.hasNickname()) return false;
+      if (hasNickname()) {
+        if (!getNickname()
+            .equals(other.getNickname())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6191,6 +6281,10 @@ public final class TicketOuterClass {
       }
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + getLanguage().hashCode();
+      if (hasNickname()) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickname().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6340,6 +6434,12 @@ public final class TicketOuterClass {
         }
         language_ = "";
 
+        if (nicknameBuilder_ == null) {
+          nickname_ = null;
+        } else {
+          nickname_ = null;
+          nicknameBuilder_ = null;
+        }
         return this;
       }
 
@@ -6378,6 +6478,11 @@ public final class TicketOuterClass {
           result.deviceId_ = deviceIdBuilder_.build();
         }
         result.language_ = language_;
+        if (nicknameBuilder_ == null) {
+          result.nickname_ = nickname_;
+        } else {
+          result.nickname_ = nicknameBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -6439,6 +6544,9 @@ public final class TicketOuterClass {
         if (!other.getLanguage().isEmpty()) {
           language_ = other.language_;
           onChanged();
+        }
+        if (other.hasNickname()) {
+          mergeNickname(other.getNickname());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6969,6 +7077,161 @@ public final class TicketOuterClass {
         language_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.StringValue nickname_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> nicknameBuilder_;
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       * @return Whether the nickname field is set.
+       */
+      public boolean hasNickname() {
+        return nicknameBuilder_ != null || nickname_ != null;
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       * @return The nickname.
+       */
+      public com.google.protobuf.StringValue getNickname() {
+        if (nicknameBuilder_ == null) {
+          return nickname_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : nickname_;
+        } else {
+          return nicknameBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public Builder setNickname(com.google.protobuf.StringValue value) {
+        if (nicknameBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nickname_ = value;
+          onChanged();
+        } else {
+          nicknameBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public Builder setNickname(
+          com.google.protobuf.StringValue.Builder builderForValue) {
+        if (nicknameBuilder_ == null) {
+          nickname_ = builderForValue.build();
+          onChanged();
+        } else {
+          nicknameBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public Builder mergeNickname(com.google.protobuf.StringValue value) {
+        if (nicknameBuilder_ == null) {
+          if (nickname_ != null) {
+            nickname_ =
+              com.google.protobuf.StringValue.newBuilder(nickname_).mergeFrom(value).buildPartial();
+          } else {
+            nickname_ = value;
+          }
+          onChanged();
+        } else {
+          nicknameBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public Builder clearNickname() {
+        if (nicknameBuilder_ == null) {
+          nickname_ = null;
+          onChanged();
+        } else {
+          nickname_ = null;
+          nicknameBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public com.google.protobuf.StringValue.Builder getNicknameBuilder() {
+        
+        onChanged();
+        return getNicknameFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      public com.google.protobuf.StringValueOrBuilder getNicknameOrBuilder() {
+        if (nicknameBuilder_ != null) {
+          return nicknameBuilder_.getMessageOrBuilder();
+        } else {
+          return nickname_ == null ?
+              com.google.protobuf.StringValue.getDefaultInstance() : nickname_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional bettor nickname
+       * </pre>
+       *
+       * <code>.google.protobuf.StringValue nickname = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+          getNicknameFieldBuilder() {
+        if (nicknameBuilder_ == null) {
+          nicknameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                  getNickname(),
+                  getParentForChildren(),
+                  isClean());
+          nickname_ = null;
+        }
+        return nicknameBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19570,66 +19833,67 @@ public final class TicketOuterClass {
       "l\032G\n\017SelectionsEntry\022\013\n\003key\030\001 \001(\t\022#\n\005val" +
       "ue\030\002 \001(\0132\024.ots.TicketSelection:\0028\001\"+\n\017Ti" +
       "cketSelection\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\003 \001(\004\"" +
-      "\211\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001" +
+      "\271\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001" +
       "(\0132\034.google.protobuf.StringValue\022/\n\tdevi" +
       "ce_id\030\003 \001(\0132\034.google.protobuf.StringValu" +
-      "e\022\020\n\010language\030\004 \001(\t\"\207\002\n\003Bet\022(\n\002id\030\001 \001(\0132" +
-      "\034.google.protobuf.StringValue\022\034\n\005bonus\030\002" +
-      " \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r.ots" +
-      ".BetStake\0220\n\nreoffer_id\030\004 \001(\0132\034.google.p" +
-      "rotobuf.StringValue\0220\n\ntotal_wins\030\005 \001(\0132" +
-      "\034.google.protobuf.UInt64Value\022\017\n\007systems" +
-      "\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots.BetSele" +
-      "ction\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(\t\"@\n\010Bet" +
-      "Stake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots" +
-      ".enums.BetStakeType\"g\n\010BetBonus\022\r\n\005value" +
-      "\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetBonu" +
-      "sType\022%\n\004mode\030\003 \001(\0162\027.ots.enums.BetBonus" +
-      "Mode\"\377\004\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rtick" +
-      "et_status\030\002 \001(\0162\033.ots.enums.AcceptanceSt" +
-      "atus\022.\n\rreject_reason\030\003 \001(\0132\027.ots.Ticket" +
-      "RejectReason\022/\n\010bet_info\030\004 \003(\0132\035.ots.Tic" +
-      "ketState.BetInfoEntry\022;\n\016selection_info\030" +
-      "\007 \003(\0132#.ots.TicketState.SelectionInfoEnt" +
-      "ry\0223\n\rexchange_rate\030\005 \001(\0132\034.google.proto" +
-      "buf.UInt64Value\022B\n\022auto_accepted_odds\030\006 " +
-      "\003(\0132&.ots.TicketState.AutoAcceptedOddsEn" +
-      "try\022%\n\007reoffer\030\010 \001(\0132\024.ots.ResponseReoff" +
-      "er\032J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value" +
-      "\030\002 \001(\0132\032.ots.TicketResponseBetInfo:\0028\001\032V" +
-      "\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\022/\n\005val" +
-      "ue\030\002 \001(\0132 .ots.TicketSelectionRejectReas" +
-      "on:\0028\001\032N\n\025AutoAcceptedOddsEntry\022\013\n\003key\030\001" +
-      " \001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAcceptedOd" +
-      "ds:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026" +
-      "\n\016requested_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(" +
-      "\004\"\306\002\n\022TicketRejectReason\022*\n\004code\030\001 \001(\0162\034" +
-      ".ots.TicketRejectReason.Code\022\017\n\007message\030" +
-      "\002 \001(\t\"\362\001\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\r" +
-      "CODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMENT" +
-      "\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\025\n\021CODE_STAK" +
-      "E_TO_LOW\020\004\022\026\n\022CODE_STAKE_TO_HIGH\020\005\022\034\n\030CO" +
-      "DE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS_NO" +
-      "T_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT_AC" +
-      "CEPTABLE\020\010\"\344\002\n\025TicketBetRejectReason\022-\n\004" +
-      "code\030\001 \001(\0162\037.ots.TicketBetRejectReason.C" +
-      "ode\022\017\n\007message\030\002 \001(\t\"\212\002\n\004Code\022\024\n\020CODE_UN" +
-      "SPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031CO" +
-      "DE_SELECTION_NOT_ACTIVE\020\002\022\025\n\021CODE_STAKE_" +
-      "TO_LOW\020\003\022\026\n\022CODE_STAKE_TO_HIGH\020\004\022\034\n\030CODE" +
-      "_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_MARKET_LI" +
-      "ABILITY_BREACHED\020\006\022\"\n\036CODE_BETTOR_LIABIL" +
-      "ITY_BREACHED\020\007\022!\n\035CODE_EVENT_LIABILITY_B" +
-      "REACHED\020\010\"}\n\025TicketResponseBetInfo\022\n\n\002id" +
-      "\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots.Tick" +
-      "etBetRejectReason\022%\n\007reoffer\030\003 \001(\0132\024.ots" +
-      ".ResponseReoffer\"\255\001\n\033TicketSelectionReje" +
-      "ctReason\0223\n\004code\030\001 \001(\0162%.ots.TicketSelec" +
-      "tionRejectReason.Code\022\017\n\007message\030\002 \001(\t\"H" +
-      "\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODD" +
-      "S_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\" \n\017Resp" +
-      "onseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin." +
-      "otsZ\014oddin.gg/otsb\006proto3"
+      "e\022\020\n\010language\030\004 \001(\t\022.\n\010nickname\030\005 \001(\0132\034." +
+      "google.protobuf.StringValue\"\207\002\n\003Bet\022(\n\002i" +
+      "d\030\001 \001(\0132\034.google.protobuf.StringValue\022\034\n" +
+      "\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001" +
+      "(\0132\r.ots.BetStake\0220\n\nreoffer_id\030\004 \001(\0132\034." +
+      "google.protobuf.StringValue\0220\n\ntotal_win" +
+      "s\030\005 \001(\0132\034.google.protobuf.UInt64Value\022\017\n" +
+      "\007systems\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots" +
+      ".BetSelection\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(" +
+      "\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001" +
+      "(\0162\027.ots.enums.BetStakeType\"g\n\010BetBonus\022" +
+      "\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums" +
+      ".BetBonusType\022%\n\004mode\030\003 \001(\0162\027.ots.enums." +
+      "BetBonusMode\"\377\004\n\013TicketState\022\n\n\002id\030\001 \001(\t" +
+      "\0222\n\rticket_status\030\002 \001(\0162\033.ots.enums.Acce" +
+      "ptanceStatus\022.\n\rreject_reason\030\003 \001(\0132\027.ot" +
+      "s.TicketRejectReason\022/\n\010bet_info\030\004 \003(\0132\035" +
+      ".ots.TicketState.BetInfoEntry\022;\n\016selecti" +
+      "on_info\030\007 \003(\0132#.ots.TicketState.Selectio" +
+      "nInfoEntry\0223\n\rexchange_rate\030\005 \001(\0132\034.goog" +
+      "le.protobuf.UInt64Value\022B\n\022auto_accepted" +
+      "_odds\030\006 \003(\0132&.ots.TicketState.AutoAccept" +
+      "edOddsEntry\022%\n\007reoffer\030\010 \001(\0132\024.ots.Respo" +
+      "nseReoffer\032J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022" +
+      ")\n\005value\030\002 \001(\0132\032.ots.TicketResponseBetIn" +
+      "fo:\0028\001\032V\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022/\n\005value\030\002 \001(\0132 .ots.TicketSelectionRe" +
+      "jectReason:\0028\001\032N\n\025AutoAcceptedOddsEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAc" +
+      "ceptedOdds:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id" +
+      "\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n\tused_o" +
+      "dds\030\003 \001(\004\"\306\002\n\022TicketRejectReason\022*\n\004code" +
+      "\030\001 \001(\0162\034.ots.TicketRejectReason.Code\022\017\n\007" +
+      "message\030\002 \001(\t\"\362\001\n\004Code\022\024\n\020CODE_UNSPECIFI" +
+      "ED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_" +
+      "ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\025\n\021C" +
+      "ODE_STAKE_TO_LOW\020\004\022\026\n\022CODE_STAKE_TO_HIGH" +
+      "\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE" +
+      "_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTION" +
+      "S_NOT_ACCEPTABLE\020\010\"\344\002\n\025TicketBetRejectRe" +
+      "ason\022-\n\004code\030\001 \001(\0162\037.ots.TicketBetReject" +
+      "Reason.Code\022\017\n\007message\030\002 \001(\t\"\212\002\n\004Code\022\024\n" +
+      "\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED" +
+      "\020\001\022\035\n\031CODE_SELECTION_NOT_ACTIVE\020\002\022\025\n\021COD" +
+      "E_STAKE_TO_LOW\020\003\022\026\n\022CODE_STAKE_TO_HIGH\020\004" +
+      "\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_M" +
+      "ARKET_LIABILITY_BREACHED\020\006\022\"\n\036CODE_BETTO" +
+      "R_LIABILITY_BREACHED\020\007\022!\n\035CODE_EVENT_LIA" +
+      "BILITY_BREACHED\020\010\"}\n\025TicketResponseBetIn" +
+      "fo\022\n\n\002id\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032." +
+      "ots.TicketBetRejectReason\022%\n\007reoffer\030\003 \001" +
+      "(\0132\024.ots.ResponseReoffer\"\255\001\n\033TicketSelec" +
+      "tionRejectReason\0223\n\004code\030\001 \001(\0162%.ots.Tic" +
+      "ketSelectionRejectReason.Code\022\017\n\007message" +
+      "\030\002 \001(\t\"H\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021" +
+      "CODE_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002" +
+      "\" \n\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rco" +
+      "m.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19674,7 +19938,7 @@ public final class TicketOuterClass {
     internal_static_ots_TicketCustomer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketCustomer_descriptor,
-        new java.lang.String[] { "Id", "Ip", "DeviceId", "Language", });
+        new java.lang.String[] { "Id", "Ip", "DeviceId", "Language", "Nickname", });
     internal_static_ots_Bet_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_ots_Bet_fieldAccessorTable = new

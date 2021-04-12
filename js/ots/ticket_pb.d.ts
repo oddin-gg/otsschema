@@ -187,6 +187,11 @@ export class TicketCustomer extends jspb.Message {
   getLanguage(): string;
   setLanguage(value: string): void;
 
+  hasNickname(): boolean;
+  clearNickname(): void;
+  getNickname(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setNickname(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketCustomer.AsObject;
   static toObject(includeInstance: boolean, msg: TicketCustomer): TicketCustomer.AsObject;
@@ -203,6 +208,7 @@ export namespace TicketCustomer {
     ip?: google_protobuf_wrappers_pb.StringValue.AsObject,
     deviceId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     language: string,
+    nickname?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

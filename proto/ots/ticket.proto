@@ -81,6 +81,9 @@ message TicketCustomer {
 
   // Supported language ISO-639-1 code.
   string language = 4;
+
+  // Optional bettor nickname
+  google.protobuf.StringValue nickname = 5;
 }
 
 message Bet {

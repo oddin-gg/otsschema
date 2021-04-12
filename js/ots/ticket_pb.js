@@ -1578,7 +1578,8 @@ proto.ots.TicketCustomer.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     ip: (f = msg.getIp()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     deviceId: (f = msg.getDeviceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    language: jspb.Message.getFieldWithDefault(msg, 4, "")
+    language: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    nickname: (f = msg.getNickname()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1632,6 +1633,11 @@ proto.ots.TicketCustomer.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setLanguage(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setNickname(value);
       break;
     default:
       reader.skipField();
@@ -1690,6 +1696,14 @@ proto.ots.TicketCustomer.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getNickname();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -1802,6 +1816,43 @@ proto.ots.TicketCustomer.prototype.getLanguage = function() {
  */
 proto.ots.TicketCustomer.prototype.setLanguage = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue nickname = 5;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.ots.TicketCustomer.prototype.getNickname = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.ots.TicketCustomer} returns this
+*/
+proto.ots.TicketCustomer.prototype.setNickname = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.TicketCustomer} returns this
+ */
+proto.ots.TicketCustomer.prototype.clearNickname = function() {
+  return this.setNickname(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.TicketCustomer.prototype.hasNickname = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
