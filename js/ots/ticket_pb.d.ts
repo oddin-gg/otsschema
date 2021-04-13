@@ -454,6 +454,7 @@ export namespace TicketRejectReason {
     CODE_MAX_PAYOUT_BREACHED: 6;
     CODE_BETS_NOT_ACCEPTABLE: 7;
     CODE_SELECTIONS_NOT_ACCEPTABLE: 8;
+    CODE_NOT_FOUND: 9;
   }
 
   export const Code: CodeMap;
