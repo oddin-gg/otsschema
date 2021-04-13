@@ -198,6 +198,9 @@ message TicketRejectReason {
 
     // Ticket selections are not acceptable, check selection_info field for details.
     CODE_SELECTIONS_NOT_ACCEPTABLE = 8;
+
+    // Ticket not found in our system.
+    CODE_NOT_FOUND = 9;
   }
 
   // Reason code.
