@@ -15391,17 +15391,17 @@ public final class TicketOuterClass {
        * Bet stake is lower then minimum stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_LOW = 4;</code>
+       * <code>CODE_STAKE_TOO_LOW = 4;</code>
        */
-      CODE_STAKE_TO_LOW(4),
+      CODE_STAKE_TOO_LOW(4),
       /**
        * <pre>
        * Bet stake is high then maximal stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_HIGH = 5;</code>
+       * <code>CODE_STAKE_TOO_HIGH = 5;</code>
        */
-      CODE_STAKE_TO_HIGH(5),
+      CODE_STAKE_TOO_HIGH(5),
       /**
        * <pre>
        * Max payout breached.
@@ -15474,17 +15474,17 @@ public final class TicketOuterClass {
        * Bet stake is lower then minimum stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_LOW = 4;</code>
+       * <code>CODE_STAKE_TOO_LOW = 4;</code>
        */
-      public static final int CODE_STAKE_TO_LOW_VALUE = 4;
+      public static final int CODE_STAKE_TOO_LOW_VALUE = 4;
       /**
        * <pre>
        * Bet stake is high then maximal stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_HIGH = 5;</code>
+       * <code>CODE_STAKE_TOO_HIGH = 5;</code>
        */
-      public static final int CODE_STAKE_TO_HIGH_VALUE = 5;
+      public static final int CODE_STAKE_TOO_HIGH_VALUE = 5;
       /**
        * <pre>
        * Max payout breached.
@@ -15547,8 +15547,8 @@ public final class TicketOuterClass {
           case 1: return CODE_INTERNAL;
           case 2: return CODE_INVALID_ARGUMENT;
           case 3: return CODE_ALREADY_EXISTS;
-          case 4: return CODE_STAKE_TO_LOW;
-          case 5: return CODE_STAKE_TO_HIGH;
+          case 4: return CODE_STAKE_TOO_LOW;
+          case 5: return CODE_STAKE_TOO_HIGH;
           case 6: return CODE_MAX_PAYOUT_BREACHED;
           case 7: return CODE_BETS_NOT_ACCEPTABLE;
           case 8: return CODE_SELECTIONS_NOT_ACCEPTABLE;
@@ -16390,17 +16390,17 @@ public final class TicketOuterClass {
        * Bet stake is lower then minimum stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_LOW = 3;</code>
+       * <code>CODE_STAKE_TOO_LOW = 3;</code>
        */
-      CODE_STAKE_TO_LOW(3),
+      CODE_STAKE_TOO_LOW(3),
       /**
        * <pre>
        * Bet stake is high then maximal stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_HIGH = 4;</code>
+       * <code>CODE_STAKE_TOO_HIGH = 4;</code>
        */
-      CODE_STAKE_TO_HIGH(4),
+      CODE_STAKE_TOO_HIGH(4),
       /**
        * <pre>
        * Max payout breached.
@@ -16465,17 +16465,17 @@ public final class TicketOuterClass {
        * Bet stake is lower then minimum stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_LOW = 3;</code>
+       * <code>CODE_STAKE_TOO_LOW = 3;</code>
        */
-      public static final int CODE_STAKE_TO_LOW_VALUE = 3;
+      public static final int CODE_STAKE_TOO_LOW_VALUE = 3;
       /**
        * <pre>
        * Bet stake is high then maximal stake.
        * </pre>
        *
-       * <code>CODE_STAKE_TO_HIGH = 4;</code>
+       * <code>CODE_STAKE_TOO_HIGH = 4;</code>
        */
-      public static final int CODE_STAKE_TO_HIGH_VALUE = 4;
+      public static final int CODE_STAKE_TOO_HIGH_VALUE = 4;
       /**
        * <pre>
        * Max payout breached.
@@ -16537,8 +16537,8 @@ public final class TicketOuterClass {
           case 0: return CODE_UNSPECIFIED;
           case 1: return CODE_ODDS_CHANGED;
           case 2: return CODE_SELECTION_NOT_ACTIVE;
-          case 3: return CODE_STAKE_TO_LOW;
-          case 4: return CODE_STAKE_TO_HIGH;
+          case 3: return CODE_STAKE_TOO_LOW;
+          case 4: return CODE_STAKE_TOO_HIGH;
           case 5: return CODE_MAX_PAYOUT_BREACHED;
           case 6: return CODE_MARKET_LIABILITY_BREACHED;
           case 7: return CODE_BETTOR_LIABILITY_BREACHED;
@@ -19884,34 +19884,34 @@ public final class TicketOuterClass {
       "\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAc" +
       "ceptedOdds:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id" +
       "\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n\tused_o" +
-      "dds\030\003 \001(\004\"\332\002\n\022TicketRejectReason\022*\n\004code" +
+      "dds\030\003 \001(\004\"\334\002\n\022TicketRejectReason\022*\n\004code" +
       "\030\001 \001(\0162\034.ots.TicketRejectReason.Code\022\017\n\007" +
-      "message\030\002 \001(\t\"\206\002\n\004Code\022\024\n\020CODE_UNSPECIFI" +
+      "message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020CODE_UNSPECIFI" +
       "ED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_" +
-      "ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\025\n\021C" +
-      "ODE_STAKE_TO_LOW\020\004\022\026\n\022CODE_STAKE_TO_HIGH" +
-      "\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE" +
-      "_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTION" +
-      "S_NOT_ACCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\344" +
-      "\002\n\025TicketBetRejectReason\022-\n\004code\030\001 \001(\0162\037" +
-      ".ots.TicketBetRejectReason.Code\022\017\n\007messa" +
-      "ge\030\002 \001(\t\"\212\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022" +
-      "\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTION" +
-      "_NOT_ACTIVE\020\002\022\025\n\021CODE_STAKE_TO_LOW\020\003\022\026\n\022" +
-      "CODE_STAKE_TO_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_" +
-      "BREACHED\020\005\022\"\n\036CODE_MARKET_LIABILITY_BREA" +
-      "CHED\020\006\022\"\n\036CODE_BETTOR_LIABILITY_BREACHED" +
-      "\020\007\022!\n\035CODE_EVENT_LIABILITY_BREACHED\020\010\"}\n" +
-      "\025TicketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rre" +
-      "ject_reason\030\002 \001(\0132\032.ots.TicketBetRejectR" +
-      "eason\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReo" +
-      "ffer\"\255\001\n\033TicketSelectionRejectReason\0223\n\004" +
-      "code\030\001 \001(\0162%.ots.TicketSelectionRejectRe" +
-      "ason.Code\022\017\n\007message\030\002 \001(\t\"H\n\004Code\022\024\n\020CO" +
-      "DE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022" +
-      "\023\n\017CODE_NOT_ACTIVE\020\002\" \n\017ResponseReoffer\022" +
-      "\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddin.g" +
-      "g/otsb\006proto3"
+      "ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\026\n\022C" +
+      "ODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HI" +
+      "GH\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CO" +
+      "DE_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTI" +
+      "ONS_NOT_ACCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t" +
+      "\"\346\002\n\025TicketBetRejectReason\022-\n\004code\030\001 \001(\016" +
+      "2\037.ots.TicketBetRejectReason.Code\022\017\n\007mes" +
+      "sage\030\002 \001(\t\"\214\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020" +
+      "\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTI" +
+      "ON_NOT_ACTIVE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022" +
+      "\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAY" +
+      "OUT_BREACHED\020\005\022\"\n\036CODE_MARKET_LIABILITY_" +
+      "BREACHED\020\006\022\"\n\036CODE_BETTOR_LIABILITY_BREA" +
+      "CHED\020\007\022!\n\035CODE_EVENT_LIABILITY_BREACHED\020" +
+      "\010\"}\n\025TicketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221" +
+      "\n\rreject_reason\030\002 \001(\0132\032.ots.TicketBetRej" +
+      "ectReason\022%\n\007reoffer\030\003 \001(\0132\024.ots.Respons" +
+      "eReoffer\"\255\001\n\033TicketSelectionRejectReason" +
+      "\0223\n\004code\030\001 \001(\0162%.ots.TicketSelectionReje" +
+      "ctReason.Code\022\017\n\007message\030\002 \001(\t\"H\n\004Code\022\024" +
+      "\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGE" +
+      "D\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\" \n\017ResponseReof" +
+      "fer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014odd" +
+      "in.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

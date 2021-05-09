@@ -185,10 +185,10 @@ message TicketRejectReason {
     CODE_ALREADY_EXISTS = 3;
 
     // Bet stake is lower then minimum stake.
-    CODE_STAKE_TO_LOW = 4;
+    CODE_STAKE_TOO_LOW = 4;
 
     // Bet stake is high then maximal stake.
-    CODE_STAKE_TO_HIGH = 5;
+    CODE_STAKE_TOO_HIGH = 5;
 
     // Max payout breached.
     CODE_MAX_PAYOUT_BREACHED = 6;
@@ -222,10 +222,10 @@ message TicketBetRejectReason {
     CODE_SELECTION_NOT_ACTIVE = 2;
 
     // Bet stake is lower then minimum stake.
-    CODE_STAKE_TO_LOW = 3;
+    CODE_STAKE_TOO_LOW = 3;
 
     // Bet stake is high then maximal stake.
-    CODE_STAKE_TO_HIGH = 4;
+    CODE_STAKE_TOO_HIGH = 4;
 
     // Max payout breached.
     CODE_MAX_PAYOUT_BREACHED = 5;
