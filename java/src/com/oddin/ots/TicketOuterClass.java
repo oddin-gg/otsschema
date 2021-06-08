@@ -2207,19 +2207,19 @@ public final class TicketOuterClass {
     com.oddin.ots.Enums.TicketChannel getChannel();
 
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-     * @return Whether the lastForeignMatchStartTime field is set.
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+     * @return Whether the lastForeignEventStartTime field is set.
      */
-    boolean hasLastForeignMatchStartTime();
+    boolean hasLastForeignEventStartTime();
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-     * @return The lastForeignMatchStartTime.
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+     * @return The lastForeignEventStartTime.
      */
-    com.google.protobuf.Timestamp getLastForeignMatchStartTime();
+    com.google.protobuf.Timestamp getLastForeignEventStartTime();
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getLastForeignMatchStartTimeOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getLastForeignEventStartTimeOrBuilder();
   }
   /**
    * <pre>
@@ -2381,13 +2381,13 @@ public final class TicketOuterClass {
             }
             case 106: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastForeignMatchStartTime_ != null) {
-                subBuilder = lastForeignMatchStartTime_.toBuilder();
+              if (lastForeignEventStartTime_ != null) {
+                subBuilder = lastForeignEventStartTime_.toBuilder();
               }
-              lastForeignMatchStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              lastForeignEventStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(lastForeignMatchStartTime_);
-                lastForeignMatchStartTime_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(lastForeignEventStartTime_);
+                lastForeignEventStartTime_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2909,30 +2909,30 @@ public final class TicketOuterClass {
       return result == null ? com.oddin.ots.Enums.TicketChannel.UNRECOGNIZED : result;
     }
 
-    public static final int LASTFOREIGNMATCHSTARTTIME_FIELD_NUMBER = 13;
-    private com.google.protobuf.Timestamp lastForeignMatchStartTime_;
+    public static final int LASTFOREIGNEVENTSTARTTIME_FIELD_NUMBER = 13;
+    private com.google.protobuf.Timestamp lastForeignEventStartTime_;
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-     * @return Whether the lastForeignMatchStartTime field is set.
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+     * @return Whether the lastForeignEventStartTime field is set.
      */
     @java.lang.Override
-    public boolean hasLastForeignMatchStartTime() {
-      return lastForeignMatchStartTime_ != null;
+    public boolean hasLastForeignEventStartTime() {
+      return lastForeignEventStartTime_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-     * @return The lastForeignMatchStartTime.
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+     * @return The lastForeignEventStartTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getLastForeignMatchStartTime() {
-      return lastForeignMatchStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignMatchStartTime_;
+    public com.google.protobuf.Timestamp getLastForeignEventStartTime() {
+      return lastForeignEventStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignEventStartTime_;
     }
     /**
-     * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+     * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getLastForeignMatchStartTimeOrBuilder() {
-      return getLastForeignMatchStartTime();
+    public com.google.protobuf.TimestampOrBuilder getLastForeignEventStartTimeOrBuilder() {
+      return getLastForeignEventStartTime();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2985,8 +2985,8 @@ public final class TicketOuterClass {
       if (channel_ != com.oddin.ots.Enums.TicketChannel.TICKET_CHANNEL_UNSPECIFIED.getNumber()) {
         output.writeEnum(12, channel_);
       }
-      if (lastForeignMatchStartTime_ != null) {
-        output.writeMessage(13, getLastForeignMatchStartTime());
+      if (lastForeignEventStartTime_ != null) {
+        output.writeMessage(13, getLastForeignEventStartTime());
       }
       unknownFields.writeTo(output);
     }
@@ -3045,9 +3045,9 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, channel_);
       }
-      if (lastForeignMatchStartTime_ != null) {
+      if (lastForeignEventStartTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getLastForeignMatchStartTime());
+          .computeMessageSize(13, getLastForeignEventStartTime());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3096,10 +3096,10 @@ public final class TicketOuterClass {
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
       if (channel_ != other.channel_) return false;
-      if (hasLastForeignMatchStartTime() != other.hasLastForeignMatchStartTime()) return false;
-      if (hasLastForeignMatchStartTime()) {
-        if (!getLastForeignMatchStartTime()
-            .equals(other.getLastForeignMatchStartTime())) return false;
+      if (hasLastForeignEventStartTime() != other.hasLastForeignEventStartTime()) return false;
+      if (hasLastForeignEventStartTime()) {
+        if (!getLastForeignEventStartTime()
+            .equals(other.getLastForeignEventStartTime())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3147,9 +3147,9 @@ public final class TicketOuterClass {
       hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + channel_;
-      if (hasLastForeignMatchStartTime()) {
-        hash = (37 * hash) + LASTFOREIGNMATCHSTARTTIME_FIELD_NUMBER;
-        hash = (53 * hash) + getLastForeignMatchStartTime().hashCode();
+      if (hasLastForeignEventStartTime()) {
+        hash = (37 * hash) + LASTFOREIGNEVENTSTARTTIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastForeignEventStartTime().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3352,11 +3352,11 @@ public final class TicketOuterClass {
 
         channel_ = 0;
 
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          lastForeignMatchStartTime_ = null;
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          lastForeignEventStartTime_ = null;
         } else {
-          lastForeignMatchStartTime_ = null;
-          lastForeignMatchStartTimeBuilder_ = null;
+          lastForeignEventStartTime_ = null;
+          lastForeignEventStartTimeBuilder_ = null;
         }
         return this;
       }
@@ -3421,10 +3421,10 @@ public final class TicketOuterClass {
         }
         result.currency_ = currency_;
         result.channel_ = channel_;
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          result.lastForeignMatchStartTime_ = lastForeignMatchStartTime_;
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          result.lastForeignEventStartTime_ = lastForeignEventStartTime_;
         } else {
-          result.lastForeignMatchStartTime_ = lastForeignMatchStartTimeBuilder_.build();
+          result.lastForeignEventStartTime_ = lastForeignEventStartTimeBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3531,8 +3531,8 @@ public final class TicketOuterClass {
         if (other.channel_ != 0) {
           setChannelValue(other.getChannelValue());
         }
-        if (other.hasLastForeignMatchStartTime()) {
-          mergeLastForeignMatchStartTime(other.getLastForeignMatchStartTime());
+        if (other.hasLastForeignEventStartTime()) {
+          mergeLastForeignEventStartTime(other.getLastForeignEventStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5035,123 +5035,123 @@ public final class TicketOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp lastForeignMatchStartTime_;
+      private com.google.protobuf.Timestamp lastForeignEventStartTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastForeignMatchStartTimeBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastForeignEventStartTimeBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-       * @return Whether the lastForeignMatchStartTime field is set.
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+       * @return Whether the lastForeignEventStartTime field is set.
        */
-      public boolean hasLastForeignMatchStartTime() {
-        return lastForeignMatchStartTimeBuilder_ != null || lastForeignMatchStartTime_ != null;
+      public boolean hasLastForeignEventStartTime() {
+        return lastForeignEventStartTimeBuilder_ != null || lastForeignEventStartTime_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
-       * @return The lastForeignMatchStartTime.
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
+       * @return The lastForeignEventStartTime.
        */
-      public com.google.protobuf.Timestamp getLastForeignMatchStartTime() {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          return lastForeignMatchStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignMatchStartTime_;
+      public com.google.protobuf.Timestamp getLastForeignEventStartTime() {
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          return lastForeignEventStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignEventStartTime_;
         } else {
-          return lastForeignMatchStartTimeBuilder_.getMessage();
+          return lastForeignEventStartTimeBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public Builder setLastForeignMatchStartTime(com.google.protobuf.Timestamp value) {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
+      public Builder setLastForeignEventStartTime(com.google.protobuf.Timestamp value) {
+        if (lastForeignEventStartTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          lastForeignMatchStartTime_ = value;
+          lastForeignEventStartTime_ = value;
           onChanged();
         } else {
-          lastForeignMatchStartTimeBuilder_.setMessage(value);
+          lastForeignEventStartTimeBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public Builder setLastForeignMatchStartTime(
+      public Builder setLastForeignEventStartTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          lastForeignMatchStartTime_ = builderForValue.build();
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          lastForeignEventStartTime_ = builderForValue.build();
           onChanged();
         } else {
-          lastForeignMatchStartTimeBuilder_.setMessage(builderForValue.build());
+          lastForeignEventStartTimeBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public Builder mergeLastForeignMatchStartTime(com.google.protobuf.Timestamp value) {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          if (lastForeignMatchStartTime_ != null) {
-            lastForeignMatchStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastForeignMatchStartTime_).mergeFrom(value).buildPartial();
+      public Builder mergeLastForeignEventStartTime(com.google.protobuf.Timestamp value) {
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          if (lastForeignEventStartTime_ != null) {
+            lastForeignEventStartTime_ =
+              com.google.protobuf.Timestamp.newBuilder(lastForeignEventStartTime_).mergeFrom(value).buildPartial();
           } else {
-            lastForeignMatchStartTime_ = value;
+            lastForeignEventStartTime_ = value;
           }
           onChanged();
         } else {
-          lastForeignMatchStartTimeBuilder_.mergeFrom(value);
+          lastForeignEventStartTimeBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public Builder clearLastForeignMatchStartTime() {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          lastForeignMatchStartTime_ = null;
+      public Builder clearLastForeignEventStartTime() {
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          lastForeignEventStartTime_ = null;
           onChanged();
         } else {
-          lastForeignMatchStartTime_ = null;
-          lastForeignMatchStartTimeBuilder_ = null;
+          lastForeignEventStartTime_ = null;
+          lastForeignEventStartTimeBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getLastForeignMatchStartTimeBuilder() {
+      public com.google.protobuf.Timestamp.Builder getLastForeignEventStartTimeBuilder() {
         
         onChanged();
-        return getLastForeignMatchStartTimeFieldBuilder().getBuilder();
+        return getLastForeignEventStartTimeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getLastForeignMatchStartTimeOrBuilder() {
-        if (lastForeignMatchStartTimeBuilder_ != null) {
-          return lastForeignMatchStartTimeBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.TimestampOrBuilder getLastForeignEventStartTimeOrBuilder() {
+        if (lastForeignEventStartTimeBuilder_ != null) {
+          return lastForeignEventStartTimeBuilder_.getMessageOrBuilder();
         } else {
-          return lastForeignMatchStartTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignMatchStartTime_;
+          return lastForeignEventStartTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : lastForeignEventStartTime_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp lastForeignMatchStartTime = 13;</code>
+       * <code>.google.protobuf.Timestamp lastForeignEventStartTime = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getLastForeignMatchStartTimeFieldBuilder() {
-        if (lastForeignMatchStartTimeBuilder_ == null) {
-          lastForeignMatchStartTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getLastForeignEventStartTimeFieldBuilder() {
+        if (lastForeignEventStartTimeBuilder_ == null) {
+          lastForeignEventStartTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getLastForeignMatchStartTime(),
+                  getLastForeignEventStartTime(),
                   getParentForChildren(),
                   isClean());
-          lastForeignMatchStartTime_ = null;
+          lastForeignEventStartTime_ = null;
         }
-        return lastForeignMatchStartTimeBuilder_;
+        return lastForeignEventStartTimeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -20313,7 +20313,7 @@ public final class TicketOuterClass {
       "ionsEntry\0221\n\013location_id\030\n \001(\0132\034.google." +
       "protobuf.StringValue\022\020\n\010currency\030\013 \001(\t\022)" +
       "\n\007channel\030\014 \001(\0162\030.ots.enums.TicketChanne" +
-      "l\022=\n\031lastForeignMatchStartTime\030\r \001(\0132\032.g" +
+      "l\022=\n\031lastForeignEventStartTime\030\r \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\032G\n\017SelectionsEn" +
       "try\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.ots.Ti" +
       "cketSelection:\0028\001\"X\n\017TicketSelection\022\n\n\002" +
@@ -20407,7 +20407,7 @@ public final class TicketOuterClass {
     internal_static_ots_Ticket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Ticket_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignMatchStartTime", });
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", });
     internal_static_ots_Ticket_SelectionsEntry_descriptor =
       internal_static_ots_Ticket_descriptor.getNestedTypes().get(0);
     internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable = new

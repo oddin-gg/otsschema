@@ -887,7 +887,7 @@ proto.ots.Ticket.toObject = function(includeInstance, msg) {
     locationId: (f = msg.getLocationId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     currency: jspb.Message.getFieldWithDefault(msg, 11, ""),
     channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    lastforeignmatchstarttime: (f = msg.getLastforeignmatchstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastforeigneventstarttime: (f = msg.getLastforeigneventstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -978,7 +978,7 @@ proto.ots.Ticket.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLastforeignmatchstarttime(value);
+      msg.setLastforeigneventstarttime(value);
       break;
     default:
       reader.skipField();
@@ -1088,7 +1088,7 @@ proto.ots.Ticket.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLastforeignmatchstarttime();
+  f = message.getLastforeigneventstarttime();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -1398,10 +1398,10 @@ proto.ots.Ticket.prototype.setChannel = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp lastForeignMatchStartTime = 13;
+ * optional google.protobuf.Timestamp lastForeignEventStartTime = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.ots.Ticket.prototype.getLastforeignmatchstarttime = function() {
+proto.ots.Ticket.prototype.getLastforeigneventstarttime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
@@ -1411,7 +1411,7 @@ proto.ots.Ticket.prototype.getLastforeignmatchstarttime = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.ots.Ticket} returns this
 */
-proto.ots.Ticket.prototype.setLastforeignmatchstarttime = function(value) {
+proto.ots.Ticket.prototype.setLastforeigneventstarttime = function(value) {
   return jspb.Message.setWrapperField(this, 13, value);
 };
 
@@ -1420,8 +1420,8 @@ proto.ots.Ticket.prototype.setLastforeignmatchstarttime = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ots.Ticket} returns this
  */
-proto.ots.Ticket.prototype.clearLastforeignmatchstarttime = function() {
-  return this.setLastforeignmatchstarttime(undefined);
+proto.ots.Ticket.prototype.clearLastforeigneventstarttime = function() {
+  return this.setLastforeigneventstarttime(undefined);
 };
 
 
@@ -1429,7 +1429,7 @@ proto.ots.Ticket.prototype.clearLastforeignmatchstarttime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ots.Ticket.prototype.hasLastforeignmatchstarttime = function() {
+proto.ots.Ticket.prototype.hasLastforeigneventstarttime = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 

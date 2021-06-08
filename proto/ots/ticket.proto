@@ -59,7 +59,7 @@ message Ticket {
   // Channel from which ticket was placed (internet, terminal, etc..).
   enums.TicketChannel channel = 12;
 
-  google.protobuf.Timestamp lastForeignMatchStartTime = 13;
+  google.protobuf.Timestamp lastForeignEventStartTime = 13;
 }
 
 message TicketSelection {
