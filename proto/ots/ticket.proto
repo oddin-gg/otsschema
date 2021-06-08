@@ -58,6 +58,8 @@ message Ticket {
 
   // Channel from which ticket was placed (internet, terminal, etc..).
   enums.TicketChannel channel = 12;
+
+  google.protobuf.Timestamp lastForeignMatchStartTime = 13;
 }
 
 message TicketSelection {
@@ -67,6 +69,9 @@ message TicketSelection {
 
   // Odds multiplied by 10000 and rounded to uint value.
   uint64 odds = 3;
+
+  // Information about selection origin
+  google.protobuf.BoolValue foreign = 4;
 }
 
 message TicketCustomer {

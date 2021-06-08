@@ -120,6 +120,11 @@ export class Ticket extends jspb.Message {
   getChannel(): ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap];
   setChannel(value: ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap]): void;
 
+  hasLastforeignmatchstarttime(): boolean;
+  clearLastforeignmatchstarttime(): void;
+  getLastforeignmatchstarttime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastforeignmatchstarttime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -143,6 +148,7 @@ export namespace Ticket {
     locationId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     currency: string,
     channel: ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap],
+    lastforeignmatchstarttime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -152,6 +158,11 @@ export class TicketSelection extends jspb.Message {
 
   getOdds(): number;
   setOdds(value: number): void;
+
+  hasForeign(): boolean;
+  clearForeign(): void;
+  getForeign(): google_protobuf_wrappers_pb.BoolValue | undefined;
+  setForeign(value?: google_protobuf_wrappers_pb.BoolValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketSelection.AsObject;
@@ -167,6 +178,7 @@ export namespace TicketSelection {
   export type AsObject = {
     id: string,
     odds: number,
+    foreign?: google_protobuf_wrappers_pb.BoolValue.AsObject,
   }
 }
 

@@ -886,7 +886,8 @@ proto.ots.Ticket.toObject = function(includeInstance, msg) {
     selectionsMap: (f = msg.getSelectionsMap()) ? f.toObject(includeInstance, proto.ots.TicketSelection.toObject) : [],
     locationId: (f = msg.getLocationId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     currency: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    channel: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    lastforeignmatchstarttime: (f = msg.getLastforeignmatchstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -973,6 +974,11 @@ proto.ots.Ticket.deserializeBinaryFromReader = function(msg, reader) {
     case 12:
       var value = /** @type {!proto.ots.enums.TicketChannel} */ (reader.readEnum());
       msg.setChannel(value);
+      break;
+    case 13:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastforeignmatchstarttime(value);
       break;
     default:
       reader.skipField();
@@ -1080,6 +1086,14 @@ proto.ots.Ticket.serializeBinaryToWriter = function(message, writer) {
     writer.writeEnum(
       12,
       f
+    );
+  }
+  f = message.getLastforeignmatchstarttime();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1383,6 +1397,43 @@ proto.ots.Ticket.prototype.setChannel = function(value) {
 };
 
 
+/**
+ * optional google.protobuf.Timestamp lastForeignMatchStartTime = 13;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.ots.Ticket.prototype.getLastforeignmatchstarttime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.ots.Ticket} returns this
+*/
+proto.ots.Ticket.prototype.setLastforeignmatchstarttime = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.Ticket} returns this
+ */
+proto.ots.Ticket.prototype.clearLastforeignmatchstarttime = function() {
+  return this.setLastforeignmatchstarttime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.Ticket.prototype.hasLastforeignmatchstarttime = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
 
 
 
@@ -1416,7 +1467,8 @@ proto.ots.TicketSelection.prototype.toObject = function(opt_includeInstance) {
 proto.ots.TicketSelection.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    odds: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    odds: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    foreign: (f = msg.getForeign()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1461,6 +1513,11 @@ proto.ots.TicketSelection.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint64());
       msg.setOdds(value);
       break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.BoolValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
+      msg.setForeign(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1504,6 +1561,14 @@ proto.ots.TicketSelection.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getForeign();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -1540,6 +1605,43 @@ proto.ots.TicketSelection.prototype.getOdds = function() {
  */
 proto.ots.TicketSelection.prototype.setOdds = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.BoolValue foreign = 4;
+ * @return {?proto.google.protobuf.BoolValue}
+ */
+proto.ots.TicketSelection.prototype.getForeign = function() {
+  return /** @type{?proto.google.protobuf.BoolValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.BoolValue|undefined} value
+ * @return {!proto.ots.TicketSelection} returns this
+*/
+proto.ots.TicketSelection.prototype.setForeign = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.TicketSelection} returns this
+ */
+proto.ots.TicketSelection.prototype.clearForeign = function() {
+  return this.setForeign(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.TicketSelection.prototype.hasForeign = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
