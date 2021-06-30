@@ -887,7 +887,8 @@ proto.ots.Ticket.toObject = function(includeInstance, msg) {
     locationId: (f = msg.getLocationId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     currency: jspb.Message.getFieldWithDefault(msg, 11, ""),
     channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    lastforeigneventstarttime: (f = msg.getLastforeigneventstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastforeigneventstarttime: (f = msg.getLastforeigneventstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    lastforeigneventendtime: (f = msg.getLastforeigneventendtime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -979,6 +980,11 @@ proto.ots.Ticket.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastforeigneventstarttime(value);
+      break;
+    case 14:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastforeigneventendtime(value);
       break;
     default:
       reader.skipField();
@@ -1092,6 +1098,14 @@ proto.ots.Ticket.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       13,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastforeigneventendtime();
+  if (f != null) {
+    writer.writeMessage(
+      14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1431,6 +1445,43 @@ proto.ots.Ticket.prototype.clearLastforeigneventstarttime = function() {
  */
 proto.ots.Ticket.prototype.hasLastforeigneventstarttime = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp lastForeignEventEndTime = 14;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.ots.Ticket.prototype.getLastforeigneventendtime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.ots.Ticket} returns this
+*/
+proto.ots.Ticket.prototype.setLastforeigneventendtime = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.Ticket} returns this
+ */
+proto.ots.Ticket.prototype.clearLastforeigneventendtime = function() {
+  return this.setLastforeigneventendtime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.Ticket.prototype.hasLastforeigneventendtime = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

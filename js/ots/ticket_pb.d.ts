@@ -125,6 +125,11 @@ export class Ticket extends jspb.Message {
   getLastforeigneventstarttime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastforeigneventstarttime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasLastforeigneventendtime(): boolean;
+  clearLastforeigneventendtime(): void;
+  getLastforeigneventendtime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastforeigneventendtime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -149,6 +154,7 @@ export namespace Ticket {
     currency: string,
     channel: ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap],
     lastforeigneventstarttime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    lastforeigneventendtime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

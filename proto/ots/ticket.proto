@@ -60,6 +60,8 @@ message Ticket {
   enums.TicketChannel channel = 12;
 
   google.protobuf.Timestamp lastForeignEventStartTime = 13;
+
+  google.protobuf.Timestamp lastForeignEventEndTime = 14;
 }
 
 message TicketSelection {
