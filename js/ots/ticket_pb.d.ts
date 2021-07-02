@@ -575,6 +575,7 @@ export namespace TicketSelectionRejectReason {
     CODE_UNSPECIFIED: 0;
     CODE_ODDS_CHANGED: 1;
     CODE_NOT_ACTIVE: 2;
+    CODE_NOT_INDEPENDENT: 3;
   }
 
   export const Code: CodeMap;

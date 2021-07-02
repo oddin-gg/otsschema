@@ -275,6 +275,9 @@ message TicketSelectionRejectReason {
 
     // Selection is not active.
     CODE_NOT_ACTIVE = 2;
+
+    // Selection is not independent.
+    CODE_NOT_INDEPENDENT = 3;
   }
 
   // Reason code.

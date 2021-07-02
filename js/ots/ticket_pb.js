@@ -4270,7 +4270,8 @@ proto.ots.TicketSelectionRejectReason.serializeBinaryToWriter = function(message
 proto.ots.TicketSelectionRejectReason.Code = {
   CODE_UNSPECIFIED: 0,
   CODE_ODDS_CHANGED: 1,
-  CODE_NOT_ACTIVE: 2
+  CODE_NOT_ACTIVE: 2,
+  CODE_NOT_INDEPENDENT: 3
 };
 
 /**

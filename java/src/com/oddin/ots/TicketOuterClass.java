@@ -19174,6 +19174,14 @@ public final class TicketOuterClass {
        * <code>CODE_NOT_ACTIVE = 2;</code>
        */
       CODE_NOT_ACTIVE(2),
+      /**
+       * <pre>
+       * Selection is not independent.
+       * </pre>
+       *
+       * <code>CODE_NOT_INDEPENDENT = 3;</code>
+       */
+      CODE_NOT_INDEPENDENT(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -19201,6 +19209,14 @@ public final class TicketOuterClass {
        * <code>CODE_NOT_ACTIVE = 2;</code>
        */
       public static final int CODE_NOT_ACTIVE_VALUE = 2;
+      /**
+       * <pre>
+       * Selection is not independent.
+       * </pre>
+       *
+       * <code>CODE_NOT_INDEPENDENT = 3;</code>
+       */
+      public static final int CODE_NOT_INDEPENDENT_VALUE = 3;
 
 
       public final int getNumber() {
@@ -19230,6 +19246,7 @@ public final class TicketOuterClass {
           case 0: return CODE_UNSPECIFIED;
           case 1: return CODE_ODDS_CHANGED;
           case 2: return CODE_NOT_ACTIVE;
+          case 3: return CODE_NOT_INDEPENDENT;
           default: return null;
         }
       }
@@ -20578,13 +20595,14 @@ public final class TicketOuterClass {
       "BREACHED\020\010\"}\n\025TicketResponseBetInfo\022\n\n\002i" +
       "d\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots.Tic" +
       "ketBetRejectReason\022%\n\007reoffer\030\003 \001(\0132\024.ot" +
-      "s.ResponseReoffer\"\255\001\n\033TicketSelectionRej" +
+      "s.ResponseReoffer\"\307\001\n\033TicketSelectionRej" +
       "ectReason\0223\n\004code\030\001 \001(\0162%.ots.TicketSele" +
       "ctionRejectReason.Code\022\017\n\007message\030\002 \001(\t\"" +
-      "H\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_OD" +
-      "DS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\" \n\017Res" +
-      "ponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin" +
-      ".otsZ\014oddin.gg/otsb\006proto3"
+      "b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_OD" +
+      "DS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024COD" +
+      "E_NOT_INDEPENDENT\020\003\" \n\017ResponseReoffer\022\r" +
+      "\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddin.gg" +
+      "/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
