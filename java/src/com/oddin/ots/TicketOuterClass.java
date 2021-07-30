@@ -8045,27 +8045,27 @@ public final class TicketOuterClass {
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @return Whether the reofferId field is set.
      */
-    boolean hasReofferId();
+    @java.lang.Deprecated boolean hasReofferId();
     /**
      * <pre>
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @return The reofferId.
      */
-    com.google.protobuf.StringValue getReofferId();
+    @java.lang.Deprecated com.google.protobuf.StringValue getReofferId();
     /**
      * <pre>
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      */
-    com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder();
+    @java.lang.Deprecated com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder();
 
     /**
      * <pre>
@@ -8469,11 +8469,11 @@ public final class TicketOuterClass {
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @return Whether the reofferId field is set.
      */
     @java.lang.Override
-    public boolean hasReofferId() {
+    @java.lang.Deprecated public boolean hasReofferId() {
       return reofferId_ != null;
     }
     /**
@@ -8481,11 +8481,11 @@ public final class TicketOuterClass {
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @return The reofferId.
      */
     @java.lang.Override
-    public com.google.protobuf.StringValue getReofferId() {
+    @java.lang.Deprecated public com.google.protobuf.StringValue getReofferId() {
       return reofferId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : reofferId_;
     }
     /**
@@ -8493,10 +8493,10 @@ public final class TicketOuterClass {
      * Reoffer bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+     * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder() {
       return getReofferId();
     }
 
@@ -9648,10 +9648,10 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        * @return Whether the reofferId field is set.
        */
-      public boolean hasReofferId() {
+      @java.lang.Deprecated public boolean hasReofferId() {
         return reofferIdBuilder_ != null || reofferId_ != null;
       }
       /**
@@ -9659,10 +9659,10 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        * @return The reofferId.
        */
-      public com.google.protobuf.StringValue getReofferId() {
+      @java.lang.Deprecated public com.google.protobuf.StringValue getReofferId() {
         if (reofferIdBuilder_ == null) {
           return reofferId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : reofferId_;
         } else {
@@ -9674,9 +9674,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public Builder setReofferId(com.google.protobuf.StringValue value) {
+      @java.lang.Deprecated public Builder setReofferId(com.google.protobuf.StringValue value) {
         if (reofferIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9694,9 +9694,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public Builder setReofferId(
+      @java.lang.Deprecated public Builder setReofferId(
           com.google.protobuf.StringValue.Builder builderForValue) {
         if (reofferIdBuilder_ == null) {
           reofferId_ = builderForValue.build();
@@ -9712,9 +9712,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public Builder mergeReofferId(com.google.protobuf.StringValue value) {
+      @java.lang.Deprecated public Builder mergeReofferId(com.google.protobuf.StringValue value) {
         if (reofferIdBuilder_ == null) {
           if (reofferId_ != null) {
             reofferId_ =
@@ -9734,9 +9734,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public Builder clearReofferId() {
+      @java.lang.Deprecated public Builder clearReofferId() {
         if (reofferIdBuilder_ == null) {
           reofferId_ = null;
           onChanged();
@@ -9752,9 +9752,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public com.google.protobuf.StringValue.Builder getReofferIdBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.StringValue.Builder getReofferIdBuilder() {
         
         onChanged();
         return getReofferIdFieldBuilder().getBuilder();
@@ -9764,9 +9764,9 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
-      public com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.StringValueOrBuilder getReofferIdOrBuilder() {
         if (reofferIdBuilder_ != null) {
           return reofferIdBuilder_.getMessageOrBuilder();
         } else {
@@ -9779,7 +9779,7 @@ public final class TicketOuterClass {
        * Reoffer bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue reoffer_id = 4;</code>
+       * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
@@ -20544,65 +20544,65 @@ public final class TicketOuterClass {
       "(\n\002ip\030\002 \001(\0132\034.google.protobuf.StringValu" +
       "e\022/\n\tdevice_id\030\003 \001(\0132\034.google.protobuf.S" +
       "tringValue\022\020\n\010language\030\004 \001(\t\022.\n\010nickname" +
-      "\030\005 \001(\0132\034.google.protobuf.StringValue\"\207\002\n" +
+      "\030\005 \001(\0132\034.google.protobuf.StringValue\"\213\002\n" +
       "\003Bet\022(\n\002id\030\001 \001(\0132\034.google.protobuf.Strin" +
       "gValue\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005" +
-      "stake\030\003 \001(\0132\r.ots.BetStake\0220\n\nreoffer_id" +
-      "\030\004 \001(\0132\034.google.protobuf.StringValue\0220\n\n" +
-      "total_wins\030\005 \001(\0132\034.google.protobuf.UInt6" +
-      "4Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselections\030\007 " +
-      "\003(\0132\021.ots.BetSelection\"\032\n\014BetSelection\022\n" +
-      "\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(\004\022%\n" +
-      "\004type\030\002 \001(\0162\027.ots.enums.BetStakeType\"g\n\010" +
-      "BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027." +
-      "ots.enums.BetBonusType\022%\n\004mode\030\003 \001(\0162\027.o" +
-      "ts.enums.BetBonusMode\"\377\004\n\013TicketState\022\n\n" +
-      "\002id\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.ots.e" +
-      "nums.AcceptanceStatus\022.\n\rreject_reason\030\003" +
-      " \001(\0132\027.ots.TicketRejectReason\022/\n\010bet_inf" +
-      "o\030\004 \003(\0132\035.ots.TicketState.BetInfoEntry\022;" +
-      "\n\016selection_info\030\007 \003(\0132#.ots.TicketState" +
-      ".SelectionInfoEntry\0223\n\rexchange_rate\030\005 \001" +
-      "(\0132\034.google.protobuf.UInt64Value\022B\n\022auto" +
-      "_accepted_odds\030\006 \003(\0132&.ots.TicketState.A" +
-      "utoAcceptedOddsEntry\022%\n\007reoffer\030\010 \001(\0132\024." +
-      "ots.ResponseReoffer\032J\n\014BetInfoEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.ots.TicketResp" +
-      "onseBetInfo:\0028\001\032V\n\022SelectionInfoEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .ots.TicketSe" +
-      "lectionRejectReason:\0028\001\032N\n\025AutoAcceptedO" +
-      "ddsEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.o" +
-      "ts.AutoAcceptedOdds:\0028\001\"I\n\020AutoAcceptedO" +
-      "dds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022" +
-      "\021\n\tused_odds\030\003 \001(\004\"\334\002\n\022TicketRejectReaso" +
-      "n\022*\n\004code\030\001 \001(\0162\034.ots.TicketRejectReason" +
-      ".Code\022\017\n\007message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020CODE_" +
-      "UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE" +
-      "_INVALID_ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXIS" +
-      "TS\020\003\022\026\n\022CODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE_STA" +
-      "KE_TOO_HIGH\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHE" +
-      "D\020\006\022\034\n\030CODE_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036COD" +
-      "E_SELECTIONS_NOT_ACCEPTABLE\020\010\022\022\n\016CODE_NO" +
-      "T_FOUND\020\t\"\346\002\n\025TicketBetRejectReason\022-\n\004c" +
-      "ode\030\001 \001(\0162\037.ots.TicketBetRejectReason.Co" +
-      "de\022\017\n\007message\030\002 \001(\t\"\214\002\n\004Code\022\024\n\020CODE_UNS" +
-      "PECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031COD" +
-      "E_SELECTION_NOT_ACTIVE\020\002\022\026\n\022CODE_STAKE_T" +
-      "OO_LOW\020\003\022\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n\030COD" +
-      "E_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_MARKET_L" +
-      "IABILITY_BREACHED\020\006\022\"\n\036CODE_BETTOR_LIABI" +
-      "LITY_BREACHED\020\007\022!\n\035CODE_EVENT_LIABILITY_" +
-      "BREACHED\020\010\"}\n\025TicketResponseBetInfo\022\n\n\002i" +
-      "d\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots.Tic" +
-      "ketBetRejectReason\022%\n\007reoffer\030\003 \001(\0132\024.ot" +
-      "s.ResponseReoffer\"\307\001\n\033TicketSelectionRej" +
-      "ectReason\0223\n\004code\030\001 \001(\0162%.ots.TicketSele" +
-      "ctionRejectReason.Code\022\017\n\007message\030\002 \001(\t\"" +
-      "b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_OD" +
-      "DS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024COD" +
-      "E_NOT_INDEPENDENT\020\003\" \n\017ResponseReoffer\022\r" +
-      "\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddin.gg" +
-      "/otsb\006proto3"
+      "stake\030\003 \001(\0132\r.ots.BetStake\0224\n\nreoffer_id" +
+      "\030\004 \001(\0132\034.google.protobuf.StringValueB\002\030\001" +
+      "\0220\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf.U" +
+      "Int64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselection" +
+      "s\030\007 \003(\0132\021.ots.BetSelection\"\032\n\014BetSelecti" +
+      "on\022\n\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(" +
+      "\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeType" +
+      "\"g\n\010BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(" +
+      "\0162\027.ots.enums.BetBonusType\022%\n\004mode\030\003 \001(\016" +
+      "2\027.ots.enums.BetBonusMode\"\377\004\n\013TicketStat" +
+      "e\022\n\n\002id\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.o" +
+      "ts.enums.AcceptanceStatus\022.\n\rreject_reas" +
+      "on\030\003 \001(\0132\027.ots.TicketRejectReason\022/\n\010bet" +
+      "_info\030\004 \003(\0132\035.ots.TicketState.BetInfoEnt" +
+      "ry\022;\n\016selection_info\030\007 \003(\0132#.ots.TicketS" +
+      "tate.SelectionInfoEntry\0223\n\rexchange_rate" +
+      "\030\005 \001(\0132\034.google.protobuf.UInt64Value\022B\n\022" +
+      "auto_accepted_odds\030\006 \003(\0132&.ots.TicketSta" +
+      "te.AutoAcceptedOddsEntry\022%\n\007reoffer\030\010 \001(" +
+      "\0132\024.ots.ResponseReoffer\032J\n\014BetInfoEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.ots.Ticket" +
+      "ResponseBetInfo:\0028\001\032V\n\022SelectionInfoEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .ots.Tick" +
+      "etSelectionRejectReason:\0028\001\032N\n\025AutoAccep" +
+      "tedOddsEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\013" +
+      "2\025.ots.AutoAcceptedOdds:\0028\001\"I\n\020AutoAccep" +
+      "tedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 " +
+      "\001(\004\022\021\n\tused_odds\030\003 \001(\004\"\334\002\n\022TicketRejectR" +
+      "eason\022*\n\004code\030\001 \001(\0162\034.ots.TicketRejectRe" +
+      "ason.Code\022\017\n\007message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020C" +
+      "ODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025" +
+      "CODE_INVALID_ARGUMENT\020\002\022\027\n\023CODE_ALREADY_" +
+      "EXISTS\020\003\022\026\n\022CODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE" +
+      "_STAKE_TOO_HIGH\020\005\022\034\n\030CODE_MAX_PAYOUT_BRE" +
+      "ACHED\020\006\022\034\n\030CODE_BETS_NOT_ACCEPTABLE\020\007\022\"\n" +
+      "\036CODE_SELECTIONS_NOT_ACCEPTABLE\020\010\022\022\n\016COD" +
+      "E_NOT_FOUND\020\t\"\346\002\n\025TicketBetRejectReason\022" +
+      "-\n\004code\030\001 \001(\0162\037.ots.TicketBetRejectReaso" +
+      "n.Code\022\017\n\007message\030\002 \001(\t\"\214\002\n\004Code\022\024\n\020CODE" +
+      "_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n" +
+      "\031CODE_SELECTION_NOT_ACTIVE\020\002\022\026\n\022CODE_STA" +
+      "KE_TOO_LOW\020\003\022\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n" +
+      "\030CODE_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_MARK" +
+      "ET_LIABILITY_BREACHED\020\006\022\"\n\036CODE_BETTOR_L" +
+      "IABILITY_BREACHED\020\007\022!\n\035CODE_EVENT_LIABIL" +
+      "ITY_BREACHED\020\010\"}\n\025TicketResponseBetInfo\022" +
+      "\n\n\002id\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots" +
+      ".TicketBetRejectReason\022%\n\007reoffer\030\003 \001(\0132" +
+      "\024.ots.ResponseReoffer\"\307\001\n\033TicketSelectio" +
+      "nRejectReason\0223\n\004code\030\001 \001(\0162%.ots.Ticket" +
+      "SelectionRejectReason.Code\022\017\n\007message\030\002 " +
+      "\001(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021COD" +
+      "E_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n" +
+      "\024CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseReoff" +
+      "er\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddi" +
+      "n.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

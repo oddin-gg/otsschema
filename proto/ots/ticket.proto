@@ -104,7 +104,7 @@ message Bet {
   BetStake stake = 3;
 
   // Reoffer bet id.
-  google.protobuf.StringValue reoffer_id = 4;
+  google.protobuf.StringValue reoffer_id = 4 [deprecated = true];
 
   // Total wins for all generated combinations for the bet. We use this for validation purposes.
   google.protobuf.UInt64Value total_wins = 5;
