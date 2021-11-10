@@ -27,6 +27,7 @@ export interface CancelReasonMap {
   CANCEL_REASON_TECHNICAL_ISSUE: 3;
   CANCEL_REASON_UNEXPECTED_ISSUE: 4;
   CANCEL_REASON_REGULATOR: 5;
+  CANCEL_REASON_FOREIGN_STAKE_REJECTED: 6;
 }
 
 export const CancelReason: CancelReasonMap;

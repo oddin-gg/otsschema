@@ -39,6 +39,9 @@ enum CancelReason {
 
   // Regulator requested to cancel the ticket.
   CANCEL_REASON_REGULATOR = 5;
+
+  // Foreign stake can't be accepted.
+  CANCEL_REASON_FOREIGN_STAKE_REJECTED = 6;
 }
 
 enum CancelRejectionReason {
