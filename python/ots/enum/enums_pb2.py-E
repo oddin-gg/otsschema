@@ -20,9 +20,60 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums*\x94\x01\n\x10\x41\x63\x63\x65ptanceStatus\x12!\n\x1d\x41\x43\x43\x45PTANCE_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_REJECTED\x10\x01\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_ACCEPTED\x10\x02\x12\x1d\n\x19\x41\x43\x43\x45PTANCE_STATUS_PENDING\x10\x03*i\n\x0c\x43\x61ncelStatus\x12\x1d\n\x19\x43\x41NCEL_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x43\x41NCEL_STATUS_NOT_CANCELED\x10\x01\x12\x1a\n\x16\x43\x41NCEL_STATUS_CANCELED\x10\x02*\xfd\x01\n\x0c\x43\x61ncelReason\x12\x1d\n\x19\x43\x41NCEL_REASON_UNSPECIFIED\x10\x00\x12 \n\x1c\x43\x41NCEL_REASON_TICKET_TIMEOUT\x10\x01\x12\x1e\n\x1a\x43\x41NCEL_REASON_WRONG_TICKET\x10\x02\x12!\n\x1d\x43\x41NCEL_REASON_TECHNICAL_ISSUE\x10\x03\x12\"\n\x1e\x43\x41NCEL_REASON_UNEXPECTED_ISSUE\x10\x04\x12\x1b\n\x17\x43\x41NCEL_REASON_REGULATOR\x10\x05\x12(\n$CANCEL_REASON_FOREIGN_STAKE_REJECTED\x10\x06*\xd9\x01\n\x15\x43\x61ncelRejectionReason\x12$\n CANCEL_REJECT_REASON_UNSPECIFIED\x10\x00\x12)\n%CANCEL_REJECT_REASON_TICKET_NOT_FOUND\x10\x01\x12%\n!CANCEL_REJECT_REASON_TIME_EXPIRED\x10\x02\x12(\n$CANCEL_REJECT_REASON_ALREADY_SETTLED\x10\x03\x12\x1e\n\x1a\x43\x41NCEL_REJECT_REASON_OTHER\x10\x04*_\n\x0c\x42\x65tStakeType\x12\x1e\n\x1a\x42\x45T_STAKE_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_STAKE_TYPE_SUM\x10\x01\x12\x17\n\x13\x42\x45T_STAKE_TYPE_UNIT\x10\x02*\x8e\x01\n\x10\x41\x63\x63\x65ptOddsChange\x12\"\n\x1e\x41\x43\x43\x45PT_ODDS_CHANGE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x41\x43\x43\x45PT_ODDS_CHANGE_NONE\x10\x01\x12\x1a\n\x16\x41\x43\x43\x45PT_ODDS_CHANGE_ANY\x10\x02\x12\x1d\n\x19\x41\x43\x43\x45PT_ODDS_CHANGE_HIGHER\x10\x03*\xa6\x02\n\rTicketChannel\x12\x1e\n\x1aTICKET_CHANNEL_UNSPECIFIED\x10\x00\x12\x1b\n\x17TICKET_CHANNEL_INTERNET\x10\x01\x12\x19\n\x15TICKET_CHANNEL_RETAIL\x10\x02\x12\x1b\n\x17TICKET_CHANNEL_TERMINAL\x10\x03\x12\x19\n\x15TICKET_CHANNEL_MOBILE\x10\x04\x12\x18\n\x14TICKET_CHANNEL_PHONE\x10\x05\x12\x16\n\x12TICKET_CHANNEL_SMS\x10\x06\x12\x1e\n\x1aTICKET_CHANNEL_CALL_CENTRE\x10\x07\x12\x19\n\x15TICKET_CHANNEL_TV_APP\x10\x08\x12\x18\n\x14TICKET_CHANNEL_AGENT\x10\t*H\n\x0c\x42\x65tBonusType\x12\x1e\n\x1a\x42\x45T_BONUS_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x42\x45T_BONUS_TYPE_TOTAL\x10\x01*F\n\x0c\x42\x65tBonusMode\x12\x1e\n\x1a\x42\x45T_BONUS_MODE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_BONUS_MODE_ALL\x10\x01*\xbd\x01\n\nReasonCode\x12\x1b\n\x17REASON_CODE_UNSPECIFIED\x10\x00\x12 \n\x1cREASON_CODE_INVALID_ARGUMENT\x10\x01\x12\x1e\n\x1aREASON_CODE_ALREADY_EXISTS\x10\x02\x12\x19\n\x15REASON_CODE_NOT_FOUND\x10\x03\x12\x1b\n\x17REASON_CODE_UNAVAILABLE\x10\x04\x12\x18\n\x14REASON_CODE_INTERNAL\x10\x05\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x14ots/enum/enums.proto\x12\tots.enums*\xea\x01\n\x0fResultingStatus\x12 \n\x1cRESULTING_STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14RESULTING_STATUS_WON\x10\x01\x12\x1b\n\x17RESULTING_STATUS_VOIDED\x10\x02\x12\x19\n\x15RESULTING_STATUS_LOST\x10\x03\x12!\n\x1dRESULTING_STATUS_NOT_RESULTED\x10\x04\x12!\n\x1dRESULTING_STATUS_PENDING_LOST\x10\x05\x12\x1d\n\x19RESULTING_STATUS_REJECTED\x10\x06*\x94\x01\n\x10\x41\x63\x63\x65ptanceStatus\x12!\n\x1d\x41\x43\x43\x45PTANCE_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_REJECTED\x10\x01\x12\x1e\n\x1a\x41\x43\x43\x45PTANCE_STATUS_ACCEPTED\x10\x02\x12\x1d\n\x19\x41\x43\x43\x45PTANCE_STATUS_PENDING\x10\x03*i\n\x0c\x43\x61ncelStatus\x12\x1d\n\x19\x43\x41NCEL_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x43\x41NCEL_STATUS_NOT_CANCELED\x10\x01\x12\x1a\n\x16\x43\x41NCEL_STATUS_CANCELED\x10\x02*\xfd\x01\n\x0c\x43\x61ncelReason\x12\x1d\n\x19\x43\x41NCEL_REASON_UNSPECIFIED\x10\x00\x12 \n\x1c\x43\x41NCEL_REASON_TICKET_TIMEOUT\x10\x01\x12\x1e\n\x1a\x43\x41NCEL_REASON_WRONG_TICKET\x10\x02\x12!\n\x1d\x43\x41NCEL_REASON_TECHNICAL_ISSUE\x10\x03\x12\"\n\x1e\x43\x41NCEL_REASON_UNEXPECTED_ISSUE\x10\x04\x12\x1b\n\x17\x43\x41NCEL_REASON_REGULATOR\x10\x05\x12(\n$CANCEL_REASON_FOREIGN_STAKE_REJECTED\x10\x06*\xd9\x01\n\x15\x43\x61ncelRejectionReason\x12$\n CANCEL_REJECT_REASON_UNSPECIFIED\x10\x00\x12)\n%CANCEL_REJECT_REASON_TICKET_NOT_FOUND\x10\x01\x12%\n!CANCEL_REJECT_REASON_TIME_EXPIRED\x10\x02\x12(\n$CANCEL_REJECT_REASON_ALREADY_SETTLED\x10\x03\x12\x1e\n\x1a\x43\x41NCEL_REJECT_REASON_OTHER\x10\x04*_\n\x0c\x42\x65tStakeType\x12\x1e\n\x1a\x42\x45T_STAKE_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_STAKE_TYPE_SUM\x10\x01\x12\x17\n\x13\x42\x45T_STAKE_TYPE_UNIT\x10\x02*\x8e\x01\n\x10\x41\x63\x63\x65ptOddsChange\x12\"\n\x1e\x41\x43\x43\x45PT_ODDS_CHANGE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x41\x43\x43\x45PT_ODDS_CHANGE_NONE\x10\x01\x12\x1a\n\x16\x41\x43\x43\x45PT_ODDS_CHANGE_ANY\x10\x02\x12\x1d\n\x19\x41\x43\x43\x45PT_ODDS_CHANGE_HIGHER\x10\x03*\xa6\x02\n\rTicketChannel\x12\x1e\n\x1aTICKET_CHANNEL_UNSPECIFIED\x10\x00\x12\x1b\n\x17TICKET_CHANNEL_INTERNET\x10\x01\x12\x19\n\x15TICKET_CHANNEL_RETAIL\x10\x02\x12\x1b\n\x17TICKET_CHANNEL_TERMINAL\x10\x03\x12\x19\n\x15TICKET_CHANNEL_MOBILE\x10\x04\x12\x18\n\x14TICKET_CHANNEL_PHONE\x10\x05\x12\x16\n\x12TICKET_CHANNEL_SMS\x10\x06\x12\x1e\n\x1aTICKET_CHANNEL_CALL_CENTRE\x10\x07\x12\x19\n\x15TICKET_CHANNEL_TV_APP\x10\x08\x12\x18\n\x14TICKET_CHANNEL_AGENT\x10\t*H\n\x0c\x42\x65tBonusType\x12\x1e\n\x1a\x42\x45T_BONUS_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x42\x45T_BONUS_TYPE_TOTAL\x10\x01*F\n\x0c\x42\x65tBonusMode\x12\x1e\n\x1a\x42\x45T_BONUS_MODE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42\x45T_BONUS_MODE_ALL\x10\x01*\xbd\x01\n\nReasonCode\x12\x1b\n\x17REASON_CODE_UNSPECIFIED\x10\x00\x12 \n\x1cREASON_CODE_INVALID_ARGUMENT\x10\x01\x12\x1e\n\x1aREASON_CODE_ALREADY_EXISTS\x10\x02\x12\x19\n\x15REASON_CODE_NOT_FOUND\x10\x03\x12\x1b\n\x17REASON_CODE_UNAVAILABLE\x10\x04\x12\x18\n\x14REASON_CODE_INTERNAL\x10\x05\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
 )
 
+_RESULTINGSTATUS = _descriptor.EnumDescriptor(
+  name='ResultingStatus',
+  full_name='ots.enums.ResultingStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_WON', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_VOIDED', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_LOST', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_NOT_RESULTED', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_PENDING_LOST', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RESULTING_STATUS_REJECTED', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=36,
+  serialized_end=270,
+)
+_sym_db.RegisterEnumDescriptor(_RESULTINGSTATUS)
+
+ResultingStatus = enum_type_wrapper.EnumTypeWrapper(_RESULTINGSTATUS)
 _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
   name='AcceptanceStatus',
   full_name='ots.enums.AcceptanceStatus',
@@ -53,8 +104,8 @@ _ACCEPTANCESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=36,
-  serialized_end=184,
+  serialized_start=273,
+  serialized_end=421,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTANCESTATUS)
 
@@ -84,8 +135,8 @@ _CANCELSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=186,
-  serialized_end=291,
+  serialized_start=423,
+  serialized_end=528,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELSTATUS)
 
@@ -135,8 +186,8 @@ _CANCELREASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=294,
-  serialized_end=547,
+  serialized_start=531,
+  serialized_end=784,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELREASON)
 
@@ -176,8 +227,8 @@ _CANCELREJECTIONREASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=550,
-  serialized_end=767,
+  serialized_start=787,
+  serialized_end=1004,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELREJECTIONREASON)
 
@@ -207,8 +258,8 @@ _BETSTAKETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=769,
-  serialized_end=864,
+  serialized_start=1006,
+  serialized_end=1101,
 )
 _sym_db.RegisterEnumDescriptor(_BETSTAKETYPE)
 
@@ -243,8 +294,8 @@ _ACCEPTODDSCHANGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=867,
-  serialized_end=1009,
+  serialized_start=1104,
+  serialized_end=1246,
 )
 _sym_db.RegisterEnumDescriptor(_ACCEPTODDSCHANGE)
 
@@ -309,8 +360,8 @@ _TICKETCHANNEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1012,
-  serialized_end=1306,
+  serialized_start=1249,
+  serialized_end=1543,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETCHANNEL)
 
@@ -335,8 +386,8 @@ _BETBONUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1308,
-  serialized_end=1380,
+  serialized_start=1545,
+  serialized_end=1617,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSTYPE)
 
@@ -361,8 +412,8 @@ _BETBONUSMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1382,
-  serialized_end=1452,
+  serialized_start=1619,
+  serialized_end=1689,
 )
 _sym_db.RegisterEnumDescriptor(_BETBONUSMODE)
 
@@ -407,12 +458,19 @@ _REASONCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1455,
-  serialized_end=1644,
+  serialized_start=1692,
+  serialized_end=1881,
 )
 _sym_db.RegisterEnumDescriptor(_REASONCODE)
 
 ReasonCode = enum_type_wrapper.EnumTypeWrapper(_REASONCODE)
+RESULTING_STATUS_UNSPECIFIED = 0
+RESULTING_STATUS_WON = 1
+RESULTING_STATUS_VOIDED = 2
+RESULTING_STATUS_LOST = 3
+RESULTING_STATUS_NOT_RESULTED = 4
+RESULTING_STATUS_PENDING_LOST = 5
+RESULTING_STATUS_REJECTED = 6
 ACCEPTANCE_STATUS_UNSPECIFIED = 0
 ACCEPTANCE_STATUS_REJECTED = 1
 ACCEPTANCE_STATUS_ACCEPTED = 2
@@ -461,6 +519,7 @@ REASON_CODE_UNAVAILABLE = 4
 REASON_CODE_INTERNAL = 5
 
 
+DESCRIPTOR.enum_types_by_name['ResultingStatus'] = _RESULTINGSTATUS
 DESCRIPTOR.enum_types_by_name['AcceptanceStatus'] = _ACCEPTANCESTATUS
 DESCRIPTOR.enum_types_by_name['CancelStatus'] = _CANCELSTATUS
 DESCRIPTOR.enum_types_by_name['CancelReason'] = _CANCELREASON

@@ -5,6 +5,17 @@ package ots.enums;
 option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
+enum ResultingStatus {
+  // Not a valid value. Used for blocking 0 as invalid state.
+  RESULTING_STATUS_UNSPECIFIED = 0;
+  RESULTING_STATUS_WON = 1;
+  RESULTING_STATUS_VOIDED = 2;
+  RESULTING_STATUS_LOST = 3;
+  RESULTING_STATUS_NOT_RESULTED = 4;
+  RESULTING_STATUS_PENDING_LOST = 5;
+  RESULTING_STATUS_REJECTED = 6;
+}
+
 enum AcceptanceStatus {
   // Not a valid value. Used for blocking 0 as invalid state.
   ACCEPTANCE_STATUS_UNSPECIFIED = 0;

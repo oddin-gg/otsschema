@@ -43,6 +43,11 @@ class otsStub(object):
                 request_serializer=ots_dot_ticket__ack__pb2.TicketAckRequest.SerializeToString,
                 response_deserializer=ots_dot_ticket__ack__pb2.TicketAckResponse.FromString,
                 )
+        self.TicketResult = channel.stream_stream(
+                '/ots.ots/TicketResult',
+                request_serializer=ots_dot_ticket__pb2.TicketResultRequest.SerializeToString,
+                response_deserializer=ots_dot_ticket__pb2.TicketResultResponse.FromString,
+                )
 
 
 class otsServicer(object):
@@ -78,6 +83,12 @@ class otsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def TicketResult(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_otsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -105,6 +116,11 @@ def add_otsServicer_to_server(servicer, server):
                     servicer.TicketAck,
                     request_deserializer=ots_dot_ticket__ack__pb2.TicketAckRequest.FromString,
                     response_serializer=ots_dot_ticket__ack__pb2.TicketAckResponse.SerializeToString,
+            ),
+            'TicketResult': grpc.stream_stream_rpc_method_handler(
+                    servicer.TicketResult,
+                    request_deserializer=ots_dot_ticket__pb2.TicketResultRequest.FromString,
+                    response_serializer=ots_dot_ticket__pb2.TicketResultResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -198,5 +214,22 @@ class ots(object):
         return grpc.experimental.unary_unary(request, target, '/ots.ots/TicketAck',
             ots_dot_ticket__ack__pb2.TicketAckRequest.SerializeToString,
             ots_dot_ticket__ack__pb2.TicketAckResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TicketResult(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(request_iterator, target, '/ots.ots/TicketResult',
+            ots_dot_ticket__pb2.TicketResultRequest.SerializeToString,
+            ots_dot_ticket__pb2.TicketResultResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

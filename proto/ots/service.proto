@@ -17,4 +17,5 @@ service ots {
   rpc CancelTicket (TicketCancelRequest) returns (TicketCancelResponse);
   rpc PlayerRiskScore (PlayerRiskScoreRequest) returns (PlayerRiskScoreResponse);
   rpc TicketAck (TicketAckRequest) returns (TicketAckResponse);
+  rpc TicketResult (stream TicketResultRequest) returns (stream TicketResultResponse);
 }

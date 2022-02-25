@@ -118,6 +118,28 @@ function deserialize_ots_TicketResponse(buffer_arg) {
   return ots_ticket_pb.TicketResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_ots_TicketResultRequest(arg) {
+  if (!(arg instanceof ots_ticket_pb.TicketResultRequest)) {
+    throw new Error('Expected argument of type ots.TicketResultRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ots_TicketResultRequest(buffer_arg) {
+  return ots_ticket_pb.TicketResultRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_ots_TicketResultResponse(arg) {
+  if (!(arg instanceof ots_ticket_pb.TicketResultResponse)) {
+    throw new Error('Expected argument of type ots.TicketResultResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ots_TicketResultResponse(buffer_arg) {
+  return ots_ticket_pb.TicketResultResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var otsService = exports.otsService = {
   ticket: {
@@ -174,6 +196,17 @@ var otsService = exports.otsService = {
     requestDeserialize: deserialize_ots_TicketAckRequest,
     responseSerialize: serialize_ots_TicketAckResponse,
     responseDeserialize: deserialize_ots_TicketAckResponse,
+  },
+  ticketResult: {
+    path: '/ots.ots/TicketResult',
+    requestStream: true,
+    responseStream: true,
+    requestType: ots_ticket_pb.TicketResultRequest,
+    responseType: ots_ticket_pb.TicketResultResponse,
+    requestSerialize: serialize_ots_TicketResultRequest,
+    requestDeserialize: deserialize_ots_TicketResultRequest,
+    responseSerialize: serialize_ots_TicketResultResponse,
+    responseDeserialize: deserialize_ots_TicketResultResponse,
   },
 };
 

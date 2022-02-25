@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10ots/ticket.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\x1a\x11ots/commons.proto\"a\n\rTicketRequest\x12\x1d\n\x06ticket\x18\x01 \x01(\x0b\x32\x0b.ots.TicketH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"f\n\x0eTicketResponse\x12!\n\x05state\x18\x01 \x01(\x0b\x32\x10.ots.TicketStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\xa7\x05\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04\x62\x65ts\x18\x03 \x03(\x0b\x32\x08.ots.Bet\x12\x37\n\x12\x61\x63\x63\x65pt_odds_change\x18\x04 \x01(\x0e\x32\x1b.ots.enums.AcceptOddsChange\x12\x1a\n\x12total_combinations\x18\x05 \x01(\x04\x12%\n\x08\x63ustomer\x18\x06 \x01(\x0b\x32\x13.ots.TicketCustomer\x12\x30\n\nreoffer_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\nselections\x18\t \x03(\x0b\x32\x1b.ots.Ticket.SelectionsEntry\x12\x31\n\x0blocation_id\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12)\n\x07\x63hannel\x18\x0c \x01(\x0e\x32\x18.ots.enums.TicketChannel\x12=\n\x19lastForeignEventStartTime\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x17lastForeignEventEndTime\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x10stake_multiplier\x18\x0f \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x1aG\n\x0fSelectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.ots.TicketSelection:\x02\x38\x01\"X\n\x0fTicketSelection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x03 \x01(\x04\x12+\n\x07\x66oreign\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xb9\x01\n\x0eTicketCustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\tdevice_id\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08language\x18\x04 \x01(\t\x12.\n\x08nickname\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x8b\x02\n\x03\x42\x65t\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x1c\n\x05\x62onus\x18\x02 \x01(\x0b\x32\r.ots.BetBonus\x12\x1c\n\x05stake\x18\x03 \x01(\x0b\x32\r.ots.BetStake\x12\x34\n\nreoffer_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x02\x18\x01\x12\x30\n\ntotal_wins\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x0f\n\x07systems\x18\x06 \x03(\r\x12%\n\nselections\x18\x07 \x03(\x0b\x32\x11.ots.BetSelection\"\x1a\n\x0c\x42\x65tSelection\x12\n\n\x02id\x18\x01 \x01(\t\"@\n\x08\x42\x65tStake\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetStakeType\"g\n\x08\x42\x65tBonus\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetBonusType\x12%\n\x04mode\x18\x03 \x01(\x0e\x32\x17.ots.enums.BetBonusMode\"\xff\x04\n\x0bTicketState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12.\n\rreject_reason\x18\x03 \x01(\x0b\x32\x17.ots.TicketRejectReason\x12/\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32\x1d.ots.TicketState.BetInfoEntry\x12;\n\x0eselection_info\x18\x07 \x03(\x0b\x32#.ots.TicketState.SelectionInfoEntry\x12\x33\n\rexchange_rate\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x42\n\x12\x61uto_accepted_odds\x18\x06 \x03(\x0b\x32&.ots.TicketState.AutoAcceptedOddsEntry\x12%\n\x07reoffer\x18\x08 \x01(\x0b\x32\x14.ots.ResponseReoffer\x1aJ\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.ots.TicketResponseBetInfo:\x02\x38\x01\x1aV\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .ots.TicketSelectionRejectReason:\x02\x38\x01\x1aN\n\x15\x41utoAcceptedOddsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.ots.AutoAcceptedOdds:\x02\x38\x01\"I\n\x10\x41utoAcceptedOdds\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0erequested_odds\x18\x02 \x01(\x04\x12\x11\n\tused_odds\x18\x03 \x01(\x04\"\xdc\x02\n\x12TicketRejectReason\x12*\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1c.ots.TicketRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x88\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x03\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x04\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x05\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x06\x12\x1c\n\x18\x43ODE_BETS_NOT_ACCEPTABLE\x10\x07\x12\"\n\x1e\x43ODE_SELECTIONS_NOT_ACCEPTABLE\x10\x08\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\t\"\xe6\x02\n\x15TicketBetRejectReason\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.ots.TicketBetRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x8c\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x1d\n\x19\x43ODE_SELECTION_NOT_ACTIVE\x10\x02\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x03\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\x12\"\n\x1e\x43ODE_MARKET_LIABILITY_BREACHED\x10\x06\x12\"\n\x1e\x43ODE_BETTOR_LIABILITY_BREACHED\x10\x07\x12!\n\x1d\x43ODE_EVENT_LIABILITY_BREACHED\x10\x08\"}\n\x15TicketResponseBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rreject_reason\x18\x02 \x01(\x0b\x32\x1a.ots.TicketBetRejectReason\x12%\n\x07reoffer\x18\x03 \x01(\x0b\x32\x14.ots.ResponseReoffer\"\xc7\x01\n\x1bTicketSelectionRejectReason\x12\x33\n\x04\x63ode\x18\x01 \x01(\x0e\x32%.ots.TicketSelectionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"b\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x13\n\x0f\x43ODE_NOT_ACTIVE\x10\x02\x12\x18\n\x14\x43ODE_NOT_INDEPENDENT\x10\x03\" \n\x0fResponseReoffer\x12\r\n\x05stake\x18\x01 \x01(\x04\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x10ots/ticket.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\x1a\x11ots/commons.proto\"a\n\rTicketRequest\x12\x1d\n\x06ticket\x18\x01 \x01(\x0b\x32\x0b.ots.TicketH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x91\x01\n\x13TicketResultRequest\x12#\n\x06ticket\x18\x01 \x01(\x0b\x32\x11.ots.TicketResultH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\"\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x11.ots.TicketsAfterH\x00\x42\x06\n\x04\x64\x61ta\"f\n\x0eTicketResponse\x12!\n\x05state\x18\x01 \x01(\x0b\x32\x10.ots.TicketStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x9b\x01\n\x14TicketResultResponse\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x16.ots.TicketResultStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\'\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.ots.TicketsAfterStateH\x00\x42\x06\n\x04\x64\x61ta\"\xef\x04\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04\x62\x65ts\x18\x03 \x03(\x0b\x32\x08.ots.Bet\x12\x37\n\x12\x61\x63\x63\x65pt_odds_change\x18\x04 \x01(\x0e\x32\x1b.ots.enums.AcceptOddsChange\x12\x1a\n\x12total_combinations\x18\x05 \x01(\x04\x12%\n\x08\x63ustomer\x18\x06 \x01(\x0b\x32\x13.ots.TicketCustomer\x12\x30\n\nreoffer_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\nselections\x18\t \x03(\x0b\x32\x1b.ots.Ticket.SelectionsEntry\x12\x31\n\x0blocation_id\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12)\n\x07\x63hannel\x18\x0c \x01(\x0e\x32\x18.ots.enums.TicketChannel\x12=\n\x19lastForeignEventStartTime\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x17lastForeignEventEndTime\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aG\n\x0fSelectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.ots.TicketSelection:\x02\x38\x01\"X\n\x0fTicketSelection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x03 \x01(\x04\x12+\n\x07\x66oreign\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xb9\x01\n\x0eTicketCustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\tdevice_id\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08language\x18\x04 \x01(\t\x12.\n\x08nickname\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x8b\x02\n\x03\x42\x65t\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x1c\n\x05\x62onus\x18\x02 \x01(\x0b\x32\r.ots.BetBonus\x12\x1c\n\x05stake\x18\x03 \x01(\x0b\x32\r.ots.BetStake\x12\x34\n\nreoffer_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x02\x18\x01\x12\x30\n\ntotal_wins\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x0f\n\x07systems\x18\x06 \x03(\r\x12%\n\nselections\x18\x07 \x03(\x0b\x32\x11.ots.BetSelection\"\x1a\n\x0c\x42\x65tSelection\x12\n\n\x02id\x18\x01 \x01(\t\"@\n\x08\x42\x65tStake\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetStakeType\"g\n\x08\x42\x65tBonus\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetBonusType\x12%\n\x04mode\x18\x03 \x01(\x0e\x32\x17.ots.enums.BetBonusMode\"{\n\x11TicketsAfterState\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x07tickets\x18\x03 \x03(\x0b\x32\x16.ots.TicketResultState\"\x93\x05\n\x0bTicketState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12.\n\rreject_reason\x18\x03 \x01(\x0b\x32\x17.ots.TicketRejectReason\x12/\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32\x1d.ots.TicketState.BetInfoEntry\x12;\n\x0eselection_info\x18\x07 \x03(\x0b\x32#.ots.TicketState.SelectionInfoEntry\x12\x33\n\rexchange_rate\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x42\n\x12\x61uto_accepted_odds\x18\x06 \x03(\x0b\x32&.ots.TicketState.AutoAcceptedOddsEntry\x12%\n\x07reoffer\x18\x08 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\t \x01(\x04\x1aJ\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.ots.TicketResponseBetInfo:\x02\x38\x01\x1aV\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .ots.TicketSelectionRejectReason:\x02\x38\x01\x1aN\n\x15\x41utoAcceptedOddsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.ots.AutoAcceptedOdds:\x02\x38\x01\"I\n\x10\x41utoAcceptedOdds\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0erequested_odds\x18\x02 \x01(\x04\x12\x11\n\tused_odds\x18\x03 \x01(\x04\"\xdc\x02\n\x12TicketRejectReason\x12*\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1c.ots.TicketRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x88\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x03\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x04\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x05\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x06\x12\x1c\n\x18\x43ODE_BETS_NOT_ACCEPTABLE\x10\x07\x12\"\n\x1e\x43ODE_SELECTIONS_NOT_ACCEPTABLE\x10\x08\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\t\"\xe6\x02\n\x15TicketBetRejectReason\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.ots.TicketBetRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x8c\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x1d\n\x19\x43ODE_SELECTION_NOT_ACTIVE\x10\x02\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x03\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\x12\"\n\x1e\x43ODE_MARKET_LIABILITY_BREACHED\x10\x06\x12\"\n\x1e\x43ODE_BETTOR_LIABILITY_BREACHED\x10\x07\x12!\n\x1d\x43ODE_EVENT_LIABILITY_BREACHED\x10\x08\"\x91\x01\n\x15TicketResponseBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rreject_reason\x18\x02 \x01(\x0b\x32\x1a.ots.TicketBetRejectReason\x12%\n\x07reoffer\x18\x03 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\x04 \x01(\x04\"\xc7\x01\n\x1bTicketSelectionRejectReason\x12\x33\n\x04\x63ode\x18\x01 \x01(\x0e\x32%.ots.TicketSelectionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"b\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x13\n\x0f\x43ODE_NOT_ACTIVE\x10\x02\x12\x18\n\x14\x43ODE_NOT_INDEPENDENT\x10\x03\" \n\x0fResponseReoffer\x12\r\n\x05stake\x18\x01 \x01(\x04\"M\n\x0cTicketsAfter\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x1a\n\x0cTicketResult\x12\n\n\x02id\x18\x01 \x01(\t\"\x88\x01\n\x18TicketResultStateBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\nbet_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"V\n\x1eTicketResultStateSelectionInfo\x12\x34\n\x10selection_status\x18\x01 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\"\x8e\x04\n\x11TicketResultState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rticket_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32#.ots.TicketResultState.BetInfoEntry\x12\x41\n\x0eselection_info\x18\x05 \x03(\x0b\x32).ots.TicketResultState.SelectionInfoEntry\x12\x33\n\rexchange_rate\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12/\n\x0bresulted_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aM\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x1d.ots.TicketResultStateBetInfo:\x02\x38\x01\x1aY\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x32\n\x05value\x18\x02 \x01(\x0b\x32#.ots.TicketResultStateSelectionInfo:\x02\x38\x01\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,ots_dot_commons__pb2.DESCRIPTOR,])
 
@@ -89,8 +89,8 @@ _TICKETREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2565,
-  serialized_end=2829,
+  serialized_start=2960,
+  serialized_end=3224,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETREJECTREASON_CODE)
 
@@ -149,8 +149,8 @@ _TICKETBETREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2922,
-  serialized_end=3190,
+  serialized_start=3317,
+  serialized_end=3585,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETBETREJECTREASON_CODE)
 
@@ -184,8 +184,8 @@ _TICKETSELECTIONREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3421,
-  serialized_end=3519,
+  serialized_start=3837,
+  serialized_end=3935,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETSELECTIONREJECTREASON_CODE)
 
@@ -234,6 +234,57 @@ _TICKETREQUEST = _descriptor.Descriptor(
 )
 
 
+_TICKETRESULTREQUEST = _descriptor.Descriptor(
+  name='TicketResultRequest',
+  full_name='ots.TicketResultRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ticket', full_name='ots.TicketResultRequest.ticket', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='keepalive', full_name='ots.TicketResultRequest.keepalive', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='after', full_name='ots.TicketResultRequest.after', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='data', full_name='ots.TicketResultRequest.data',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=231,
+  serialized_end=376,
+)
+
+
 _TICKETRESPONSE = _descriptor.Descriptor(
   name='TicketResponse',
   full_name='ots.TicketResponse',
@@ -273,8 +324,59 @@ _TICKETRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=230,
-  serialized_end=332,
+  serialized_start=378,
+  serialized_end=480,
+)
+
+
+_TICKETRESULTRESPONSE = _descriptor.Descriptor(
+  name='TicketResultResponse',
+  full_name='ots.TicketResultResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='state', full_name='ots.TicketResultResponse.state', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='keepalive', full_name='ots.TicketResultResponse.keepalive', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='after', full_name='ots.TicketResultResponse.after', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='data', full_name='ots.TicketResultResponse.data',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=483,
+  serialized_end=638,
 )
 
 
@@ -312,8 +414,8 @@ _TICKET_SELECTIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=943,
-  serialized_end=1014,
+  serialized_start=1193,
+  serialized_end=1264,
 )
 
 _TICKET = _descriptor.Descriptor(
@@ -415,13 +517,6 @@ _TICKET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stake_multiplier', full_name='ots.Ticket.stake_multiplier', index=13,
-      number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -434,8 +529,8 @@ _TICKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=335,
-  serialized_end=1014,
+  serialized_start=641,
+  serialized_end=1264,
 )
 
 
@@ -480,8 +575,8 @@ _TICKETSELECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1016,
-  serialized_end=1104,
+  serialized_start=1266,
+  serialized_end=1354,
 )
 
 
@@ -540,8 +635,8 @@ _TICKETCUSTOMER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1107,
-  serialized_end=1292,
+  serialized_start=1357,
+  serialized_end=1542,
 )
 
 
@@ -614,8 +709,8 @@ _BET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1295,
-  serialized_end=1562,
+  serialized_start=1545,
+  serialized_end=1812,
 )
 
 
@@ -646,8 +741,8 @@ _BETSELECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1564,
-  serialized_end=1590,
+  serialized_start=1814,
+  serialized_end=1840,
 )
 
 
@@ -685,8 +780,8 @@ _BETSTAKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1592,
-  serialized_end=1656,
+  serialized_start=1842,
+  serialized_end=1906,
 )
 
 
@@ -731,8 +826,54 @@ _BETBONUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1658,
-  serialized_end=1761,
+  serialized_start=1908,
+  serialized_end=2011,
+)
+
+
+_TICKETSAFTERSTATE = _descriptor.Descriptor(
+  name='TicketsAfterState',
+  full_name='ots.TicketsAfterState',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='request_id', full_name='ots.TicketsAfterState.request_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='after', full_name='ots.TicketsAfterState.after', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tickets', full_name='ots.TicketsAfterState.tickets', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2013,
+  serialized_end=2136,
 )
 
 
@@ -770,8 +911,8 @@ _TICKETSTATE_BETINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2161,
-  serialized_end=2235,
+  serialized_start=2556,
+  serialized_end=2630,
 )
 
 _TICKETSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
@@ -808,8 +949,8 @@ _TICKETSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2237,
-  serialized_end=2323,
+  serialized_start=2632,
+  serialized_end=2718,
 )
 
 _TICKETSTATE_AUTOACCEPTEDODDSENTRY = _descriptor.Descriptor(
@@ -846,8 +987,8 @@ _TICKETSTATE_AUTOACCEPTEDODDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2325,
-  serialized_end=2403,
+  serialized_start=2720,
+  serialized_end=2798,
 )
 
 _TICKETSTATE = _descriptor.Descriptor(
@@ -914,6 +1055,13 @@ _TICKETSTATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total_odds', full_name='ots.TicketState.total_odds', index=8,
+      number=9, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -926,8 +1074,8 @@ _TICKETSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1764,
-  serialized_end=2403,
+  serialized_start=2139,
+  serialized_end=2798,
 )
 
 
@@ -972,8 +1120,8 @@ _AUTOACCEPTEDODDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2405,
-  serialized_end=2478,
+  serialized_start=2800,
+  serialized_end=2873,
 )
 
 
@@ -1012,8 +1160,8 @@ _TICKETREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2481,
-  serialized_end=2829,
+  serialized_start=2876,
+  serialized_end=3224,
 )
 
 
@@ -1052,8 +1200,8 @@ _TICKETBETREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2832,
-  serialized_end=3190,
+  serialized_start=3227,
+  serialized_end=3585,
 )
 
 
@@ -1086,6 +1234,13 @@ _TICKETRESPONSEBETINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total_odds', full_name='ots.TicketResponseBetInfo.total_odds', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1098,8 +1253,8 @@ _TICKETRESPONSEBETINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3192,
-  serialized_end=3317,
+  serialized_start=3588,
+  serialized_end=3733,
 )
 
 
@@ -1138,8 +1293,8 @@ _TICKETSELECTIONREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3320,
-  serialized_end=3519,
+  serialized_start=3736,
+  serialized_end=3935,
 )
 
 
@@ -1170,8 +1325,307 @@ _RESPONSEREOFFER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3521,
-  serialized_end=3553,
+  serialized_start=3937,
+  serialized_end=3969,
+)
+
+
+_TICKETSAFTER = _descriptor.Descriptor(
+  name='TicketsAfter',
+  full_name='ots.TicketsAfter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='request_id', full_name='ots.TicketsAfter.request_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='after', full_name='ots.TicketsAfter.after', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3971,
+  serialized_end=4048,
+)
+
+
+_TICKETRESULT = _descriptor.Descriptor(
+  name='TicketResult',
+  full_name='ots.TicketResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='ots.TicketResult.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4050,
+  serialized_end=4076,
+)
+
+
+_TICKETRESULTSTATEBETINFO = _descriptor.Descriptor(
+  name='TicketResultStateBetInfo',
+  full_name='ots.TicketResultStateBetInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='ots.TicketResultStateBetInfo.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bet_status', full_name='ots.TicketResultStateBetInfo.bet_status', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='won_amount', full_name='ots.TicketResultStateBetInfo.won_amount', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4079,
+  serialized_end=4215,
+)
+
+
+_TICKETRESULTSTATESELECTIONINFO = _descriptor.Descriptor(
+  name='TicketResultStateSelectionInfo',
+  full_name='ots.TicketResultStateSelectionInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='selection_status', full_name='ots.TicketResultStateSelectionInfo.selection_status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4217,
+  serialized_end=4303,
+)
+
+
+_TICKETRESULTSTATE_BETINFOENTRY = _descriptor.Descriptor(
+  name='BetInfoEntry',
+  full_name='ots.TicketResultState.BetInfoEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ots.TicketResultState.BetInfoEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ots.TicketResultState.BetInfoEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4664,
+  serialized_end=4741,
+)
+
+_TICKETRESULTSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
+  name='SelectionInfoEntry',
+  full_name='ots.TicketResultState.SelectionInfoEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ots.TicketResultState.SelectionInfoEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ots.TicketResultState.SelectionInfoEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4743,
+  serialized_end=4832,
+)
+
+_TICKETRESULTSTATE = _descriptor.Descriptor(
+  name='TicketResultState',
+  full_name='ots.TicketResultState',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='ots.TicketResultState.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ticket_status', full_name='ots.TicketResultState.ticket_status', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='won_amount', full_name='ots.TicketResultState.won_amount', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bet_info', full_name='ots.TicketResultState.bet_info', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='selection_info', full_name='ots.TicketResultState.selection_info', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='exchange_rate', full_name='ots.TicketResultState.exchange_rate', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resulted_at', full_name='ots.TicketResultState.resulted_at', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TICKETRESULTSTATE_BETINFOENTRY, _TICKETRESULTSTATE_SELECTIONINFOENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4306,
+  serialized_end=4832,
 )
 
 _TICKETREQUEST.fields_by_name['ticket'].message_type = _TICKET
@@ -1182,6 +1636,18 @@ _TICKETREQUEST.fields_by_name['ticket'].containing_oneof = _TICKETREQUEST.oneofs
 _TICKETREQUEST.oneofs_by_name['data'].fields.append(
   _TICKETREQUEST.fields_by_name['keepalive'])
 _TICKETREQUEST.fields_by_name['keepalive'].containing_oneof = _TICKETREQUEST.oneofs_by_name['data']
+_TICKETRESULTREQUEST.fields_by_name['ticket'].message_type = _TICKETRESULT
+_TICKETRESULTREQUEST.fields_by_name['keepalive'].message_type = ots_dot_commons__pb2._STREAMKEEPALIVE
+_TICKETRESULTREQUEST.fields_by_name['after'].message_type = _TICKETSAFTER
+_TICKETRESULTREQUEST.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTREQUEST.fields_by_name['ticket'])
+_TICKETRESULTREQUEST.fields_by_name['ticket'].containing_oneof = _TICKETRESULTREQUEST.oneofs_by_name['data']
+_TICKETRESULTREQUEST.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTREQUEST.fields_by_name['keepalive'])
+_TICKETRESULTREQUEST.fields_by_name['keepalive'].containing_oneof = _TICKETRESULTREQUEST.oneofs_by_name['data']
+_TICKETRESULTREQUEST.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTREQUEST.fields_by_name['after'])
+_TICKETRESULTREQUEST.fields_by_name['after'].containing_oneof = _TICKETRESULTREQUEST.oneofs_by_name['data']
 _TICKETRESPONSE.fields_by_name['state'].message_type = _TICKETSTATE
 _TICKETRESPONSE.fields_by_name['keepalive'].message_type = ots_dot_commons__pb2._STREAMKEEPALIVE
 _TICKETRESPONSE.oneofs_by_name['data'].fields.append(
@@ -1190,6 +1656,18 @@ _TICKETRESPONSE.fields_by_name['state'].containing_oneof = _TICKETRESPONSE.oneof
 _TICKETRESPONSE.oneofs_by_name['data'].fields.append(
   _TICKETRESPONSE.fields_by_name['keepalive'])
 _TICKETRESPONSE.fields_by_name['keepalive'].containing_oneof = _TICKETRESPONSE.oneofs_by_name['data']
+_TICKETRESULTRESPONSE.fields_by_name['state'].message_type = _TICKETRESULTSTATE
+_TICKETRESULTRESPONSE.fields_by_name['keepalive'].message_type = ots_dot_commons__pb2._STREAMKEEPALIVE
+_TICKETRESULTRESPONSE.fields_by_name['after'].message_type = _TICKETSAFTERSTATE
+_TICKETRESULTRESPONSE.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTRESPONSE.fields_by_name['state'])
+_TICKETRESULTRESPONSE.fields_by_name['state'].containing_oneof = _TICKETRESULTRESPONSE.oneofs_by_name['data']
+_TICKETRESULTRESPONSE.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTRESPONSE.fields_by_name['keepalive'])
+_TICKETRESULTRESPONSE.fields_by_name['keepalive'].containing_oneof = _TICKETRESULTRESPONSE.oneofs_by_name['data']
+_TICKETRESULTRESPONSE.oneofs_by_name['data'].fields.append(
+  _TICKETRESULTRESPONSE.fields_by_name['after'])
+_TICKETRESULTRESPONSE.fields_by_name['after'].containing_oneof = _TICKETRESULTRESPONSE.oneofs_by_name['data']
 _TICKET_SELECTIONSENTRY.fields_by_name['value'].message_type = _TICKETSELECTION
 _TICKET_SELECTIONSENTRY.containing_type = _TICKET
 _TICKET.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -1202,7 +1680,6 @@ _TICKET.fields_by_name['location_id'].message_type = google_dot_protobuf_dot_wra
 _TICKET.fields_by_name['channel'].enum_type = ots_dot_enum_dot_enums__pb2._TICKETCHANNEL
 _TICKET.fields_by_name['lastForeignEventStartTime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TICKET.fields_by_name['lastForeignEventEndTime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_TICKET.fields_by_name['stake_multiplier'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
 _TICKETSELECTION.fields_by_name['foreign'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _TICKETCUSTOMER.fields_by_name['ip'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _TICKETCUSTOMER.fields_by_name['device_id'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
@@ -1216,6 +1693,8 @@ _BET.fields_by_name['selections'].message_type = _BETSELECTION
 _BETSTAKE.fields_by_name['type'].enum_type = ots_dot_enum_dot_enums__pb2._BETSTAKETYPE
 _BETBONUS.fields_by_name['type'].enum_type = ots_dot_enum_dot_enums__pb2._BETBONUSTYPE
 _BETBONUS.fields_by_name['mode'].enum_type = ots_dot_enum_dot_enums__pb2._BETBONUSMODE
+_TICKETSAFTERSTATE.fields_by_name['after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_TICKETSAFTERSTATE.fields_by_name['tickets'].message_type = _TICKETRESULTSTATE
 _TICKETSTATE_BETINFOENTRY.fields_by_name['value'].message_type = _TICKETRESPONSEBETINFO
 _TICKETSTATE_BETINFOENTRY.containing_type = _TICKETSTATE
 _TICKETSTATE_SELECTIONINFOENTRY.fields_by_name['value'].message_type = _TICKETSELECTIONREJECTREASON
@@ -1237,8 +1716,24 @@ _TICKETRESPONSEBETINFO.fields_by_name['reject_reason'].message_type = _TICKETBET
 _TICKETRESPONSEBETINFO.fields_by_name['reoffer'].message_type = _RESPONSEREOFFER
 _TICKETSELECTIONREJECTREASON.fields_by_name['code'].enum_type = _TICKETSELECTIONREJECTREASON_CODE
 _TICKETSELECTIONREJECTREASON_CODE.containing_type = _TICKETSELECTIONREJECTREASON
+_TICKETSAFTER.fields_by_name['after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_TICKETRESULTSTATEBETINFO.fields_by_name['bet_status'].enum_type = ots_dot_enum_dot_enums__pb2._RESULTINGSTATUS
+_TICKETRESULTSTATEBETINFO.fields_by_name['won_amount'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
+_TICKETRESULTSTATESELECTIONINFO.fields_by_name['selection_status'].enum_type = ots_dot_enum_dot_enums__pb2._RESULTINGSTATUS
+_TICKETRESULTSTATE_BETINFOENTRY.fields_by_name['value'].message_type = _TICKETRESULTSTATEBETINFO
+_TICKETRESULTSTATE_BETINFOENTRY.containing_type = _TICKETRESULTSTATE
+_TICKETRESULTSTATE_SELECTIONINFOENTRY.fields_by_name['value'].message_type = _TICKETRESULTSTATESELECTIONINFO
+_TICKETRESULTSTATE_SELECTIONINFOENTRY.containing_type = _TICKETRESULTSTATE
+_TICKETRESULTSTATE.fields_by_name['ticket_status'].enum_type = ots_dot_enum_dot_enums__pb2._RESULTINGSTATUS
+_TICKETRESULTSTATE.fields_by_name['won_amount'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
+_TICKETRESULTSTATE.fields_by_name['bet_info'].message_type = _TICKETRESULTSTATE_BETINFOENTRY
+_TICKETRESULTSTATE.fields_by_name['selection_info'].message_type = _TICKETRESULTSTATE_SELECTIONINFOENTRY
+_TICKETRESULTSTATE.fields_by_name['exchange_rate'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
+_TICKETRESULTSTATE.fields_by_name['resulted_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['TicketRequest'] = _TICKETREQUEST
+DESCRIPTOR.message_types_by_name['TicketResultRequest'] = _TICKETRESULTREQUEST
 DESCRIPTOR.message_types_by_name['TicketResponse'] = _TICKETRESPONSE
+DESCRIPTOR.message_types_by_name['TicketResultResponse'] = _TICKETRESULTRESPONSE
 DESCRIPTOR.message_types_by_name['Ticket'] = _TICKET
 DESCRIPTOR.message_types_by_name['TicketSelection'] = _TICKETSELECTION
 DESCRIPTOR.message_types_by_name['TicketCustomer'] = _TICKETCUSTOMER
@@ -1246,6 +1741,7 @@ DESCRIPTOR.message_types_by_name['Bet'] = _BET
 DESCRIPTOR.message_types_by_name['BetSelection'] = _BETSELECTION
 DESCRIPTOR.message_types_by_name['BetStake'] = _BETSTAKE
 DESCRIPTOR.message_types_by_name['BetBonus'] = _BETBONUS
+DESCRIPTOR.message_types_by_name['TicketsAfterState'] = _TICKETSAFTERSTATE
 DESCRIPTOR.message_types_by_name['TicketState'] = _TICKETSTATE
 DESCRIPTOR.message_types_by_name['AutoAcceptedOdds'] = _AUTOACCEPTEDODDS
 DESCRIPTOR.message_types_by_name['TicketRejectReason'] = _TICKETREJECTREASON
@@ -1253,6 +1749,11 @@ DESCRIPTOR.message_types_by_name['TicketBetRejectReason'] = _TICKETBETREJECTREAS
 DESCRIPTOR.message_types_by_name['TicketResponseBetInfo'] = _TICKETRESPONSEBETINFO
 DESCRIPTOR.message_types_by_name['TicketSelectionRejectReason'] = _TICKETSELECTIONREJECTREASON
 DESCRIPTOR.message_types_by_name['ResponseReoffer'] = _RESPONSEREOFFER
+DESCRIPTOR.message_types_by_name['TicketsAfter'] = _TICKETSAFTER
+DESCRIPTOR.message_types_by_name['TicketResult'] = _TICKETRESULT
+DESCRIPTOR.message_types_by_name['TicketResultStateBetInfo'] = _TICKETRESULTSTATEBETINFO
+DESCRIPTOR.message_types_by_name['TicketResultStateSelectionInfo'] = _TICKETRESULTSTATESELECTIONINFO
+DESCRIPTOR.message_types_by_name['TicketResultState'] = _TICKETRESULTSTATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TicketRequest = _reflection.GeneratedProtocolMessageType('TicketRequest', (_message.Message,), {
@@ -1262,12 +1763,26 @@ TicketRequest = _reflection.GeneratedProtocolMessageType('TicketRequest', (_mess
   })
 _sym_db.RegisterMessage(TicketRequest)
 
+TicketResultRequest = _reflection.GeneratedProtocolMessageType('TicketResultRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETRESULTREQUEST,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResultRequest)
+  })
+_sym_db.RegisterMessage(TicketResultRequest)
+
 TicketResponse = _reflection.GeneratedProtocolMessageType('TicketResponse', (_message.Message,), {
   'DESCRIPTOR' : _TICKETRESPONSE,
   '__module__' : 'ots.ticket_pb2'
   # @@protoc_insertion_point(class_scope:ots.TicketResponse)
   })
 _sym_db.RegisterMessage(TicketResponse)
+
+TicketResultResponse = _reflection.GeneratedProtocolMessageType('TicketResultResponse', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETRESULTRESPONSE,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResultResponse)
+  })
+_sym_db.RegisterMessage(TicketResultResponse)
 
 Ticket = _reflection.GeneratedProtocolMessageType('Ticket', (_message.Message,), {
 
@@ -1325,6 +1840,13 @@ BetBonus = _reflection.GeneratedProtocolMessageType('BetBonus', (_message.Messag
   # @@protoc_insertion_point(class_scope:ots.BetBonus)
   })
 _sym_db.RegisterMessage(BetBonus)
+
+TicketsAfterState = _reflection.GeneratedProtocolMessageType('TicketsAfterState', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETSAFTERSTATE,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketsAfterState)
+  })
+_sym_db.RegisterMessage(TicketsAfterState)
 
 TicketState = _reflection.GeneratedProtocolMessageType('TicketState', (_message.Message,), {
 
@@ -1399,6 +1921,57 @@ ResponseReoffer = _reflection.GeneratedProtocolMessageType('ResponseReoffer', (_
   })
 _sym_db.RegisterMessage(ResponseReoffer)
 
+TicketsAfter = _reflection.GeneratedProtocolMessageType('TicketsAfter', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETSAFTER,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketsAfter)
+  })
+_sym_db.RegisterMessage(TicketsAfter)
+
+TicketResult = _reflection.GeneratedProtocolMessageType('TicketResult', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETRESULT,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResult)
+  })
+_sym_db.RegisterMessage(TicketResult)
+
+TicketResultStateBetInfo = _reflection.GeneratedProtocolMessageType('TicketResultStateBetInfo', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETRESULTSTATEBETINFO,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResultStateBetInfo)
+  })
+_sym_db.RegisterMessage(TicketResultStateBetInfo)
+
+TicketResultStateSelectionInfo = _reflection.GeneratedProtocolMessageType('TicketResultStateSelectionInfo', (_message.Message,), {
+  'DESCRIPTOR' : _TICKETRESULTSTATESELECTIONINFO,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResultStateSelectionInfo)
+  })
+_sym_db.RegisterMessage(TicketResultStateSelectionInfo)
+
+TicketResultState = _reflection.GeneratedProtocolMessageType('TicketResultState', (_message.Message,), {
+
+  'BetInfoEntry' : _reflection.GeneratedProtocolMessageType('BetInfoEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TICKETRESULTSTATE_BETINFOENTRY,
+    '__module__' : 'ots.ticket_pb2'
+    # @@protoc_insertion_point(class_scope:ots.TicketResultState.BetInfoEntry)
+    })
+  ,
+
+  'SelectionInfoEntry' : _reflection.GeneratedProtocolMessageType('SelectionInfoEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TICKETRESULTSTATE_SELECTIONINFOENTRY,
+    '__module__' : 'ots.ticket_pb2'
+    # @@protoc_insertion_point(class_scope:ots.TicketResultState.SelectionInfoEntry)
+    })
+  ,
+  'DESCRIPTOR' : _TICKETRESULTSTATE,
+  '__module__' : 'ots.ticket_pb2'
+  # @@protoc_insertion_point(class_scope:ots.TicketResultState)
+  })
+_sym_db.RegisterMessage(TicketResultState)
+_sym_db.RegisterMessage(TicketResultState.BetInfoEntry)
+_sym_db.RegisterMessage(TicketResultState.SelectionInfoEntry)
+
 
 DESCRIPTOR._options = None
 _TICKET_SELECTIONSENTRY._options = None
@@ -1406,4 +1979,6 @@ _BET.fields_by_name['reoffer_id']._options = None
 _TICKETSTATE_BETINFOENTRY._options = None
 _TICKETSTATE_SELECTIONINFOENTRY._options = None
 _TICKETSTATE_AUTOACCEPTEDODDSENTRY._options = None
+_TICKETRESULTSTATE_BETINFOENTRY._options = None
+_TICKETRESULTSTATE_SELECTIONINFOENTRY._options = None
 # @@protoc_insertion_point(module_scope)

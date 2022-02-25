@@ -15,6 +15,167 @@ public final class Enums {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * Protobuf enum {@code ots.enums.ResultingStatus}
+   */
+  public enum ResultingStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>RESULTING_STATUS_UNSPECIFIED = 0;</code>
+     */
+    RESULTING_STATUS_UNSPECIFIED(0),
+    /**
+     * <code>RESULTING_STATUS_WON = 1;</code>
+     */
+    RESULTING_STATUS_WON(1),
+    /**
+     * <code>RESULTING_STATUS_VOIDED = 2;</code>
+     */
+    RESULTING_STATUS_VOIDED(2),
+    /**
+     * <code>RESULTING_STATUS_LOST = 3;</code>
+     */
+    RESULTING_STATUS_LOST(3),
+    /**
+     * <code>RESULTING_STATUS_NOT_RESULTED = 4;</code>
+     */
+    RESULTING_STATUS_NOT_RESULTED(4),
+    /**
+     * <code>RESULTING_STATUS_PENDING_LOST = 5;</code>
+     */
+    RESULTING_STATUS_PENDING_LOST(5),
+    /**
+     * <code>RESULTING_STATUS_REJECTED = 6;</code>
+     */
+    RESULTING_STATUS_REJECTED(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Not a valid value. Used for blocking 0 as invalid state.
+     * </pre>
+     *
+     * <code>RESULTING_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESULTING_STATUS_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>RESULTING_STATUS_WON = 1;</code>
+     */
+    public static final int RESULTING_STATUS_WON_VALUE = 1;
+    /**
+     * <code>RESULTING_STATUS_VOIDED = 2;</code>
+     */
+    public static final int RESULTING_STATUS_VOIDED_VALUE = 2;
+    /**
+     * <code>RESULTING_STATUS_LOST = 3;</code>
+     */
+    public static final int RESULTING_STATUS_LOST_VALUE = 3;
+    /**
+     * <code>RESULTING_STATUS_NOT_RESULTED = 4;</code>
+     */
+    public static final int RESULTING_STATUS_NOT_RESULTED_VALUE = 4;
+    /**
+     * <code>RESULTING_STATUS_PENDING_LOST = 5;</code>
+     */
+    public static final int RESULTING_STATUS_PENDING_LOST_VALUE = 5;
+    /**
+     * <code>RESULTING_STATUS_REJECTED = 6;</code>
+     */
+    public static final int RESULTING_STATUS_REJECTED_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResultingStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ResultingStatus forNumber(int value) {
+      switch (value) {
+        case 0: return RESULTING_STATUS_UNSPECIFIED;
+        case 1: return RESULTING_STATUS_WON;
+        case 2: return RESULTING_STATUS_VOIDED;
+        case 3: return RESULTING_STATUS_LOST;
+        case 4: return RESULTING_STATUS_NOT_RESULTED;
+        case 5: return RESULTING_STATUS_PENDING_LOST;
+        case 6: return RESULTING_STATUS_REJECTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ResultingStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ResultingStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ResultingStatus>() {
+            public ResultingStatus findValueByNumber(int number) {
+              return ResultingStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ResultingStatus[] VALUES = values();
+
+    public static ResultingStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ResultingStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ots.enums.ResultingStatus)
+  }
+
+  /**
    * Protobuf enum {@code ots.enums.AcceptanceStatus}
    */
   public enum AcceptanceStatus
@@ -122,7 +283,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(0);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final AcceptanceStatus[] VALUES = values();
@@ -247,7 +408,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(1);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final CancelStatus[] VALUES = values();
@@ -458,7 +619,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(2);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final CancelReason[] VALUES = values();
@@ -633,7 +794,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(3);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final CancelRejectionReason[] VALUES = values();
@@ -758,7 +919,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(4);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final BetStakeType[] VALUES = values();
@@ -892,7 +1053,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(5);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final AcceptOddsChange[] VALUES = values();
@@ -1080,7 +1241,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(6);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final TicketChannel[] VALUES = values();
@@ -1196,7 +1357,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(7);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final BetBonusType[] VALUES = values();
@@ -1312,7 +1473,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(8);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final BetBonusMode[] VALUES = values();
@@ -1464,7 +1625,7 @@ public final class Enums {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(9);
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final ReasonCode[] VALUES = values();
@@ -1499,49 +1660,54 @@ public final class Enums {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ots/enum/enums.proto\022\tots.enums*\224\001\n\020Ac" +
-      "ceptanceStatus\022!\n\035ACCEPTANCE_STATUS_UNSP" +
-      "ECIFIED\020\000\022\036\n\032ACCEPTANCE_STATUS_REJECTED\020" +
-      "\001\022\036\n\032ACCEPTANCE_STATUS_ACCEPTED\020\002\022\035\n\031ACC" +
-      "EPTANCE_STATUS_PENDING\020\003*i\n\014CancelStatus" +
-      "\022\035\n\031CANCEL_STATUS_UNSPECIFIED\020\000\022\036\n\032CANCE" +
-      "L_STATUS_NOT_CANCELED\020\001\022\032\n\026CANCEL_STATUS" +
-      "_CANCELED\020\002*\375\001\n\014CancelReason\022\035\n\031CANCEL_R" +
-      "EASON_UNSPECIFIED\020\000\022 \n\034CANCEL_REASON_TIC" +
-      "KET_TIMEOUT\020\001\022\036\n\032CANCEL_REASON_WRONG_TIC" +
-      "KET\020\002\022!\n\035CANCEL_REASON_TECHNICAL_ISSUE\020\003" +
-      "\022\"\n\036CANCEL_REASON_UNEXPECTED_ISSUE\020\004\022\033\n\027" +
-      "CANCEL_REASON_REGULATOR\020\005\022(\n$CANCEL_REAS" +
-      "ON_FOREIGN_STAKE_REJECTED\020\006*\331\001\n\025CancelRe" +
-      "jectionReason\022$\n CANCEL_REJECT_REASON_UN" +
-      "SPECIFIED\020\000\022)\n%CANCEL_REJECT_REASON_TICK" +
-      "ET_NOT_FOUND\020\001\022%\n!CANCEL_REJECT_REASON_T" +
-      "IME_EXPIRED\020\002\022(\n$CANCEL_REJECT_REASON_AL" +
-      "READY_SETTLED\020\003\022\036\n\032CANCEL_REJECT_REASON_" +
-      "OTHER\020\004*_\n\014BetStakeType\022\036\n\032BET_STAKE_TYP" +
-      "E_UNSPECIFIED\020\000\022\026\n\022BET_STAKE_TYPE_SUM\020\001\022" +
-      "\027\n\023BET_STAKE_TYPE_UNIT\020\002*\216\001\n\020AcceptOddsC" +
-      "hange\022\"\n\036ACCEPT_ODDS_CHANGE_UNSPECIFIED\020" +
-      "\000\022\033\n\027ACCEPT_ODDS_CHANGE_NONE\020\001\022\032\n\026ACCEPT" +
-      "_ODDS_CHANGE_ANY\020\002\022\035\n\031ACCEPT_ODDS_CHANGE" +
-      "_HIGHER\020\003*\246\002\n\rTicketChannel\022\036\n\032TICKET_CH" +
-      "ANNEL_UNSPECIFIED\020\000\022\033\n\027TICKET_CHANNEL_IN" +
-      "TERNET\020\001\022\031\n\025TICKET_CHANNEL_RETAIL\020\002\022\033\n\027T" +
-      "ICKET_CHANNEL_TERMINAL\020\003\022\031\n\025TICKET_CHANN" +
-      "EL_MOBILE\020\004\022\030\n\024TICKET_CHANNEL_PHONE\020\005\022\026\n" +
-      "\022TICKET_CHANNEL_SMS\020\006\022\036\n\032TICKET_CHANNEL_" +
-      "CALL_CENTRE\020\007\022\031\n\025TICKET_CHANNEL_TV_APP\020\010" +
-      "\022\030\n\024TICKET_CHANNEL_AGENT\020\t*H\n\014BetBonusTy" +
-      "pe\022\036\n\032BET_BONUS_TYPE_UNSPECIFIED\020\000\022\030\n\024BE" +
-      "T_BONUS_TYPE_TOTAL\020\001*F\n\014BetBonusMode\022\036\n\032" +
-      "BET_BONUS_MODE_UNSPECIFIED\020\000\022\026\n\022BET_BONU" +
-      "S_MODE_ALL\020\001*\275\001\n\nReasonCode\022\033\n\027REASON_CO" +
-      "DE_UNSPECIFIED\020\000\022 \n\034REASON_CODE_INVALID_" +
-      "ARGUMENT\020\001\022\036\n\032REASON_CODE_ALREADY_EXISTS" +
-      "\020\002\022\031\n\025REASON_CODE_NOT_FOUND\020\003\022\033\n\027REASON_" +
-      "CODE_UNAVAILABLE\020\004\022\030\n\024REASON_CODE_INTERN" +
-      "AL\020\005B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006pro" +
-      "to3"
+      "\n\024ots/enum/enums.proto\022\tots.enums*\352\001\n\017Re" +
+      "sultingStatus\022 \n\034RESULTING_STATUS_UNSPEC" +
+      "IFIED\020\000\022\030\n\024RESULTING_STATUS_WON\020\001\022\033\n\027RES" +
+      "ULTING_STATUS_VOIDED\020\002\022\031\n\025RESULTING_STAT" +
+      "US_LOST\020\003\022!\n\035RESULTING_STATUS_NOT_RESULT" +
+      "ED\020\004\022!\n\035RESULTING_STATUS_PENDING_LOST\020\005\022" +
+      "\035\n\031RESULTING_STATUS_REJECTED\020\006*\224\001\n\020Accep" +
+      "tanceStatus\022!\n\035ACCEPTANCE_STATUS_UNSPECI" +
+      "FIED\020\000\022\036\n\032ACCEPTANCE_STATUS_REJECTED\020\001\022\036" +
+      "\n\032ACCEPTANCE_STATUS_ACCEPTED\020\002\022\035\n\031ACCEPT" +
+      "ANCE_STATUS_PENDING\020\003*i\n\014CancelStatus\022\035\n" +
+      "\031CANCEL_STATUS_UNSPECIFIED\020\000\022\036\n\032CANCEL_S" +
+      "TATUS_NOT_CANCELED\020\001\022\032\n\026CANCEL_STATUS_CA" +
+      "NCELED\020\002*\375\001\n\014CancelReason\022\035\n\031CANCEL_REAS" +
+      "ON_UNSPECIFIED\020\000\022 \n\034CANCEL_REASON_TICKET" +
+      "_TIMEOUT\020\001\022\036\n\032CANCEL_REASON_WRONG_TICKET" +
+      "\020\002\022!\n\035CANCEL_REASON_TECHNICAL_ISSUE\020\003\022\"\n" +
+      "\036CANCEL_REASON_UNEXPECTED_ISSUE\020\004\022\033\n\027CAN" +
+      "CEL_REASON_REGULATOR\020\005\022(\n$CANCEL_REASON_" +
+      "FOREIGN_STAKE_REJECTED\020\006*\331\001\n\025CancelRejec" +
+      "tionReason\022$\n CANCEL_REJECT_REASON_UNSPE" +
+      "CIFIED\020\000\022)\n%CANCEL_REJECT_REASON_TICKET_" +
+      "NOT_FOUND\020\001\022%\n!CANCEL_REJECT_REASON_TIME" +
+      "_EXPIRED\020\002\022(\n$CANCEL_REJECT_REASON_ALREA" +
+      "DY_SETTLED\020\003\022\036\n\032CANCEL_REJECT_REASON_OTH" +
+      "ER\020\004*_\n\014BetStakeType\022\036\n\032BET_STAKE_TYPE_U" +
+      "NSPECIFIED\020\000\022\026\n\022BET_STAKE_TYPE_SUM\020\001\022\027\n\023" +
+      "BET_STAKE_TYPE_UNIT\020\002*\216\001\n\020AcceptOddsChan" +
+      "ge\022\"\n\036ACCEPT_ODDS_CHANGE_UNSPECIFIED\020\000\022\033" +
+      "\n\027ACCEPT_ODDS_CHANGE_NONE\020\001\022\032\n\026ACCEPT_OD" +
+      "DS_CHANGE_ANY\020\002\022\035\n\031ACCEPT_ODDS_CHANGE_HI" +
+      "GHER\020\003*\246\002\n\rTicketChannel\022\036\n\032TICKET_CHANN" +
+      "EL_UNSPECIFIED\020\000\022\033\n\027TICKET_CHANNEL_INTER" +
+      "NET\020\001\022\031\n\025TICKET_CHANNEL_RETAIL\020\002\022\033\n\027TICK" +
+      "ET_CHANNEL_TERMINAL\020\003\022\031\n\025TICKET_CHANNEL_" +
+      "MOBILE\020\004\022\030\n\024TICKET_CHANNEL_PHONE\020\005\022\026\n\022TI" +
+      "CKET_CHANNEL_SMS\020\006\022\036\n\032TICKET_CHANNEL_CAL" +
+      "L_CENTRE\020\007\022\031\n\025TICKET_CHANNEL_TV_APP\020\010\022\030\n" +
+      "\024TICKET_CHANNEL_AGENT\020\t*H\n\014BetBonusType\022" +
+      "\036\n\032BET_BONUS_TYPE_UNSPECIFIED\020\000\022\030\n\024BET_B" +
+      "ONUS_TYPE_TOTAL\020\001*F\n\014BetBonusMode\022\036\n\032BET" +
+      "_BONUS_MODE_UNSPECIFIED\020\000\022\026\n\022BET_BONUS_M" +
+      "ODE_ALL\020\001*\275\001\n\nReasonCode\022\033\n\027REASON_CODE_" +
+      "UNSPECIFIED\020\000\022 \n\034REASON_CODE_INVALID_ARG" +
+      "UMENT\020\001\022\036\n\032REASON_CODE_ALREADY_EXISTS\020\002\022" +
+      "\031\n\025REASON_CODE_NOT_FOUND\020\003\022\033\n\027REASON_COD" +
+      "E_UNAVAILABLE\020\004\022\030\n\024REASON_CODE_INTERNAL\020" +
+      "\005B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

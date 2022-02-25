@@ -3,6 +3,18 @@
 
 import * as jspb from "google-protobuf";
 
+export interface ResultingStatusMap {
+  RESULTING_STATUS_UNSPECIFIED: 0;
+  RESULTING_STATUS_WON: 1;
+  RESULTING_STATUS_VOIDED: 2;
+  RESULTING_STATUS_LOST: 3;
+  RESULTING_STATUS_NOT_RESULTED: 4;
+  RESULTING_STATUS_PENDING_LOST: 5;
+  RESULTING_STATUS_REJECTED: 6;
+}
+
+export const ResultingStatus: ResultingStatusMap;
+
 export interface AcceptanceStatusMap {
   ACCEPTANCE_STATUS_UNSPECIFIED: 0;
   ACCEPTANCE_STATUS_REJECTED: 1;

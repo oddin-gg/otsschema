@@ -42,6 +42,48 @@ export namespace TicketRequest {
   }
 }
 
+export class TicketResultRequest extends jspb.Message {
+  hasTicket(): boolean;
+  clearTicket(): void;
+  getTicket(): TicketResult | undefined;
+  setTicket(value?: TicketResult): void;
+
+  hasKeepalive(): boolean;
+  clearKeepalive(): void;
+  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
+  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
+
+  hasAfter(): boolean;
+  clearAfter(): void;
+  getAfter(): TicketsAfter | undefined;
+  setAfter(value?: TicketsAfter): void;
+
+  getDataCase(): TicketResultRequest.DataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultRequest): TicketResultRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultRequest;
+  static deserializeBinaryFromReader(message: TicketResultRequest, reader: jspb.BinaryReader): TicketResultRequest;
+}
+
+export namespace TicketResultRequest {
+  export type AsObject = {
+    ticket?: TicketResult.AsObject,
+    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
+    after?: TicketsAfter.AsObject,
+  }
+
+  export enum DataCase {
+    DATA_NOT_SET = 0,
+    TICKET = 1,
+    KEEPALIVE = 2,
+    AFTER = 3,
+  }
+}
+
 export class TicketResponse extends jspb.Message {
   hasState(): boolean;
   clearState(): void;
@@ -74,6 +116,48 @@ export namespace TicketResponse {
     DATA_NOT_SET = 0,
     STATE = 1,
     KEEPALIVE = 2,
+  }
+}
+
+export class TicketResultResponse extends jspb.Message {
+  hasState(): boolean;
+  clearState(): void;
+  getState(): TicketResultState | undefined;
+  setState(value?: TicketResultState): void;
+
+  hasKeepalive(): boolean;
+  clearKeepalive(): void;
+  getKeepalive(): ots_commons_pb.StreamKeepalive | undefined;
+  setKeepalive(value?: ots_commons_pb.StreamKeepalive): void;
+
+  hasAfter(): boolean;
+  clearAfter(): void;
+  getAfter(): TicketsAfterState | undefined;
+  setAfter(value?: TicketsAfterState): void;
+
+  getDataCase(): TicketResultResponse.DataCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultResponse): TicketResultResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultResponse;
+  static deserializeBinaryFromReader(message: TicketResultResponse, reader: jspb.BinaryReader): TicketResultResponse;
+}
+
+export namespace TicketResultResponse {
+  export type AsObject = {
+    state?: TicketResultState.AsObject,
+    keepalive?: ots_commons_pb.StreamKeepalive.AsObject,
+    after?: TicketsAfterState.AsObject,
+  }
+
+  export enum DataCase {
+    DATA_NOT_SET = 0,
+    STATE = 1,
+    KEEPALIVE = 2,
+    AFTER = 3,
   }
 }
 
@@ -366,6 +450,38 @@ export namespace BetBonus {
   }
 }
 
+export class TicketsAfterState extends jspb.Message {
+  getRequestId(): string;
+  setRequestId(value: string): void;
+
+  hasAfter(): boolean;
+  clearAfter(): void;
+  getAfter(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAfter(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearTicketsList(): void;
+  getTicketsList(): Array<TicketResultState>;
+  setTicketsList(value: Array<TicketResultState>): void;
+  addTickets(value?: TicketResultState, index?: number): TicketResultState;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketsAfterState.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketsAfterState): TicketsAfterState.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketsAfterState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketsAfterState;
+  static deserializeBinaryFromReader(message: TicketsAfterState, reader: jspb.BinaryReader): TicketsAfterState;
+}
+
+export namespace TicketsAfterState {
+  export type AsObject = {
+    requestId: string,
+    after?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketsList: Array<TicketResultState.AsObject>,
+  }
+}
+
 export class TicketState extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -394,6 +510,9 @@ export class TicketState extends jspb.Message {
   getReoffer(): ResponseReoffer | undefined;
   setReoffer(value?: ResponseReoffer): void;
 
+  getTotalOdds(): number;
+  setTotalOdds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketState): TicketState.AsObject;
@@ -414,6 +533,7 @@ export namespace TicketState {
     exchangeRate?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
     autoAcceptedOddsMap: Array<[string, AutoAcceptedOdds.AsObject]>,
     reoffer?: ResponseReoffer.AsObject,
+    totalOdds: number,
   }
 }
 
@@ -536,6 +656,9 @@ export class TicketResponseBetInfo extends jspb.Message {
   getReoffer(): ResponseReoffer | undefined;
   setReoffer(value?: ResponseReoffer): void;
 
+  getTotalOdds(): number;
+  setTotalOdds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResponseBetInfo.AsObject;
   static toObject(includeInstance: boolean, msg: TicketResponseBetInfo): TicketResponseBetInfo.AsObject;
@@ -551,6 +674,7 @@ export namespace TicketResponseBetInfo {
     id: string,
     rejectReason?: TicketBetRejectReason.AsObject,
     reoffer?: ResponseReoffer.AsObject,
+    totalOdds: number,
   }
 }
 
@@ -604,6 +728,150 @@ export class ResponseReoffer extends jspb.Message {
 export namespace ResponseReoffer {
   export type AsObject = {
     stake: number,
+  }
+}
+
+export class TicketsAfter extends jspb.Message {
+  getRequestId(): string;
+  setRequestId(value: string): void;
+
+  hasAfter(): boolean;
+  clearAfter(): void;
+  getAfter(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAfter(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketsAfter.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketsAfter): TicketsAfter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketsAfter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketsAfter;
+  static deserializeBinaryFromReader(message: TicketsAfter, reader: jspb.BinaryReader): TicketsAfter;
+}
+
+export namespace TicketsAfter {
+  export type AsObject = {
+    requestId: string,
+    after?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class TicketResult extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResult.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResult): TicketResult.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResult;
+  static deserializeBinaryFromReader(message: TicketResult, reader: jspb.BinaryReader): TicketResult;
+}
+
+export namespace TicketResult {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class TicketResultStateBetInfo extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getBetStatus(): ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap];
+  setBetStatus(value: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap]): void;
+
+  hasWonAmount(): boolean;
+  clearWonAmount(): void;
+  getWonAmount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setWonAmount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultStateBetInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultStateBetInfo): TicketResultStateBetInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultStateBetInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultStateBetInfo;
+  static deserializeBinaryFromReader(message: TicketResultStateBetInfo, reader: jspb.BinaryReader): TicketResultStateBetInfo;
+}
+
+export namespace TicketResultStateBetInfo {
+  export type AsObject = {
+    id: string,
+    betStatus: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap],
+    wonAmount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+  }
+}
+
+export class TicketResultStateSelectionInfo extends jspb.Message {
+  getSelectionStatus(): ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap];
+  setSelectionStatus(value: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultStateSelectionInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultStateSelectionInfo): TicketResultStateSelectionInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultStateSelectionInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultStateSelectionInfo;
+  static deserializeBinaryFromReader(message: TicketResultStateSelectionInfo, reader: jspb.BinaryReader): TicketResultStateSelectionInfo;
+}
+
+export namespace TicketResultStateSelectionInfo {
+  export type AsObject = {
+    selectionStatus: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap],
+  }
+}
+
+export class TicketResultState extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getTicketStatus(): ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap];
+  setTicketStatus(value: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap]): void;
+
+  hasWonAmount(): boolean;
+  clearWonAmount(): void;
+  getWonAmount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setWonAmount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+
+  getBetInfoMap(): jspb.Map<string, TicketResultStateBetInfo>;
+  clearBetInfoMap(): void;
+  getSelectionInfoMap(): jspb.Map<string, TicketResultStateSelectionInfo>;
+  clearSelectionInfoMap(): void;
+  hasExchangeRate(): boolean;
+  clearExchangeRate(): void;
+  getExchangeRate(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setExchangeRate(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+
+  hasResultedAt(): boolean;
+  clearResultedAt(): void;
+  getResultedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setResultedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultState.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultState): TicketResultState.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultState;
+  static deserializeBinaryFromReader(message: TicketResultState, reader: jspb.BinaryReader): TicketResultState;
+}
+
+export namespace TicketResultState {
+  export type AsObject = {
+    id: string,
+    ticketStatus: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap],
+    wonAmount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    betInfoMap: Array<[string, TicketResultStateBetInfo.AsObject]>,
+    selectionInfoMap: Array<[string, TicketResultStateSelectionInfo.AsObject]>,
+    exchangeRate?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    resultedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

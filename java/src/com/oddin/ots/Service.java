@@ -27,7 +27,7 @@ public final class Service {
       "to\032\027ots/ticket_cancel.proto\032\033ots/player_" +
       "risk_score.proto\032*ots/resolve_foreign_ev" +
       "ents_in_ticket.proto\032\024ots/ticket_ack.pro" +
-      "to2\201\003\n\003ots\0225\n\006Ticket\022\022.ots.TicketRequest" +
+      "to2\312\003\n\003ots\0225\n\006Ticket\022\022.ots.TicketRequest" +
       "\032\023.ots.TicketResponse(\0010\001\022t\n\035ResolveFore" +
       "ignMatchesInTicket\022(.ots.ResolveForeignE" +
       "ventsInTicketRequest\032).ots.ResolveForeig" +
@@ -36,8 +36,10 @@ public final class Service {
       "ncelResponse\022L\n\017PlayerRiskScore\022\033.ots.Pl" +
       "ayerRiskScoreRequest\032\034.ots.PlayerRiskSco" +
       "reResponse\022:\n\tTicketAck\022\025.ots.TicketAckR" +
-      "equest\032\026.ots.TicketAckResponseB\035\n\rcom.od" +
-      "din.otsZ\014oddin.gg/otsb\006proto3"
+      "equest\032\026.ots.TicketAckResponse\022G\n\014Ticket" +
+      "Result\022\030.ots.TicketResultRequest\032\031.ots.T" +
+      "icketResultResponse(\0010\001B\035\n\rcom.oddin.ots" +
+      "Z\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

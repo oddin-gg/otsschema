@@ -30,7 +30,21 @@ goog.exportSymbol('proto.ots.enums.CancelReason', null, global);
 goog.exportSymbol('proto.ots.enums.CancelRejectionReason', null, global);
 goog.exportSymbol('proto.ots.enums.CancelStatus', null, global);
 goog.exportSymbol('proto.ots.enums.ReasonCode', null, global);
+goog.exportSymbol('proto.ots.enums.ResultingStatus', null, global);
 goog.exportSymbol('proto.ots.enums.TicketChannel', null, global);
+/**
+ * @enum {number}
+ */
+proto.ots.enums.ResultingStatus = {
+  RESULTING_STATUS_UNSPECIFIED: 0,
+  RESULTING_STATUS_WON: 1,
+  RESULTING_STATUS_VOIDED: 2,
+  RESULTING_STATUS_LOST: 3,
+  RESULTING_STATUS_NOT_RESULTED: 4,
+  RESULTING_STATUS_PENDING_LOST: 5,
+  RESULTING_STATUS_REJECTED: 6
+};
+
 /**
  * @enum {number}
  */
