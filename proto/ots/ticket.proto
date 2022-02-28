@@ -122,11 +122,14 @@ message BetSelection {
 }
 
 message BetStake {
-  // Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+  // Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
   uint64 value = 1;
 
   // Stake type - SUM or UNIT.
   enums.BetStakeType type = 2;
+
+  // Stake multiplier for stake - optional value to use instead of 10000
+  google.protobuf.UInt64Value stake_multiplier = 3;
 }
 
 message BetBonus {
