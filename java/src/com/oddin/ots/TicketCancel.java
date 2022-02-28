@@ -534,13 +534,13 @@ public final class TicketCancel {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (cancelReason_ != com.oddin.ots.Enums.CancelReason.CANCEL_REASON_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, cancelReason_);
       }
-      if (!getCancelReasonDetailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelReasonDetail_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cancelReasonDetail_);
       }
       if (timestamp_ != null) {
@@ -561,14 +561,14 @@ public final class TicketCancel {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (cancelReason_ != com.oddin.ots.Enums.CancelReason.CANCEL_REASON_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, cancelReason_);
       }
-      if (!getCancelReasonDetailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelReasonDetail_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cancelReasonDetail_);
       }
       if (timestamp_ != null) {
@@ -1985,7 +1985,7 @@ public final class TicketCancel {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (cancelPercent_ != 0) {
@@ -2000,7 +2000,7 @@ public final class TicketCancel {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (cancelPercent_ != 0) {
@@ -2761,7 +2761,7 @@ public final class TicketCancel {
       if (cancelRejectionReason_ != com.oddin.ots.Enums.CancelRejectionReason.CANCEL_REJECT_REASON_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, cancelRejectionReason_);
       }
-      if (!getCancelRejectionMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelRejectionMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cancelRejectionMessage_);
       }
       unknownFields.writeTo(output);
@@ -2781,7 +2781,7 @@ public final class TicketCancel {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, cancelRejectionReason_);
       }
-      if (!getCancelRejectionMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelRejectionMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cancelRejectionMessage_);
       }
       size += unknownFields.getSerializedSize();

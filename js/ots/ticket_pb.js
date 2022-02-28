@@ -13,7 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
@@ -2638,7 +2644,8 @@ proto.ots.BetStake.prototype.toObject = function(opt_includeInstance) {
 proto.ots.BetStake.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    stakeMultiplier: (f = msg.getStakeMultiplier()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2683,6 +2690,11 @@ proto.ots.BetStake.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!proto.ots.enums.BetStakeType} */ (reader.readEnum());
       msg.setType(value);
       break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.UInt64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
+      msg.setStakeMultiplier(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2726,6 +2738,14 @@ proto.ots.BetStake.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getStakeMultiplier();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -2762,6 +2782,43 @@ proto.ots.BetStake.prototype.getType = function() {
  */
 proto.ots.BetStake.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.UInt64Value stake_multiplier = 3;
+ * @return {?proto.google.protobuf.UInt64Value}
+ */
+proto.ots.BetStake.prototype.getStakeMultiplier = function() {
+  return /** @type{?proto.google.protobuf.UInt64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.UInt64Value|undefined} value
+ * @return {!proto.ots.BetStake} returns this
+*/
+proto.ots.BetStake.prototype.setStakeMultiplier = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.BetStake} returns this
+ */
+proto.ots.BetStake.prototype.clearStakeMultiplier = function() {
+  return this.setStakeMultiplier(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.BetStake.prototype.hasStakeMultiplier = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

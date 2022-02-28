@@ -315,6 +315,11 @@ export class BetStake extends jspb.Message {
   getType(): ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap];
   setType(value: ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap]): void;
 
+  hasStakeMultiplier(): boolean;
+  clearStakeMultiplier(): void;
+  getStakeMultiplier(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setStakeMultiplier(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BetStake.AsObject;
   static toObject(includeInstance: boolean, msg: BetStake): BetStake.AsObject;
@@ -329,6 +334,7 @@ export namespace BetStake {
   export type AsObject = {
     value: number,
     type: ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap],
+    stakeMultiplier?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
   }
 }
 

@@ -2766,7 +2766,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public boolean containsSelections(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetSelections().getMap().containsKey(key);
     }
     /**
@@ -2801,7 +2801,7 @@ public final class TicketOuterClass {
     public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
         java.lang.String key,
         com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
           internalGetSelections().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2817,7 +2817,7 @@ public final class TicketOuterClass {
 
     public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
           internalGetSelections().getMap();
       if (!map.containsKey(key)) {
@@ -3003,7 +3003,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (timestamp_ != null) {
@@ -3033,7 +3033,7 @@ public final class TicketOuterClass {
       if (locationId_ != null) {
         output.writeMessage(10, getLocationId());
       }
-      if (!getCurrencyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, currency_);
       }
       if (channel_ != com.oddin.ots.Enums.TicketChannel.TICKET_CHANNEL_UNSPECIFIED.getNumber()) {
@@ -3054,7 +3054,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (timestamp_ != null) {
@@ -3095,7 +3095,7 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getLocationId());
       }
-      if (!getCurrencyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, currency_);
       }
       if (channel_ != com.oddin.ots.Enums.TicketChannel.TICKET_CHANNEL_UNSPECIFIED.getNumber()) {
@@ -4675,7 +4675,7 @@ public final class TicketOuterClass {
       @java.lang.Override
       public boolean containsSelections(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetSelections().getMap().containsKey(key);
       }
       /**
@@ -4710,7 +4710,7 @@ public final class TicketOuterClass {
       public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
             internalGetSelections().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -4726,7 +4726,7 @@ public final class TicketOuterClass {
 
       public com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelection> map =
             internalGetSelections().getMap();
         if (!map.containsKey(key)) {
@@ -4750,7 +4750,7 @@ public final class TicketOuterClass {
 
       public Builder removeSelections(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableSelections().getMutableMap()
             .remove(key);
         return this;
@@ -4773,8 +4773,11 @@ public final class TicketOuterClass {
       public Builder putSelections(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketSelection value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableSelections().getMutableMap()
             .put(key, value);
         return this;
@@ -5689,7 +5692,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (odds_ != 0L) {
@@ -5707,7 +5710,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (odds_ != 0L) {
@@ -6851,7 +6854,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (ip_ != null) {
@@ -6860,7 +6863,7 @@ public final class TicketOuterClass {
       if (deviceId_ != null) {
         output.writeMessage(3, getDeviceId());
       }
-      if (!getLanguageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
       }
       if (nickname_ != null) {
@@ -6875,7 +6878,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (ip_ != null) {
@@ -6886,7 +6889,7 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getDeviceId());
       }
-      if (!getLanguageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
       }
       if (nickname_ != null) {
@@ -8046,6 +8049,7 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+     * @deprecated
      * @return Whether the reofferId field is set.
      */
     @java.lang.Deprecated boolean hasReofferId();
@@ -8055,6 +8059,7 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+     * @deprecated
      * @return The reofferId.
      */
     @java.lang.Deprecated com.google.protobuf.StringValue getReofferId();
@@ -8470,6 +8475,7 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+     * @deprecated
      * @return Whether the reofferId field is set.
      */
     @java.lang.Override
@@ -8482,6 +8488,7 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+     * @deprecated
      * @return The reofferId.
      */
     @java.lang.Override
@@ -9649,6 +9656,7 @@ public final class TicketOuterClass {
        * </pre>
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+       * @deprecated
        * @return Whether the reofferId field is set.
        */
       @java.lang.Deprecated public boolean hasReofferId() {
@@ -9660,6 +9668,7 @@ public final class TicketOuterClass {
        * </pre>
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
+       * @deprecated
        * @return The reofferId.
        */
       @java.lang.Deprecated public com.google.protobuf.StringValue getReofferId() {
@@ -10589,7 +10598,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       unknownFields.writeTo(output);
@@ -10601,7 +10610,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -11031,7 +11040,7 @@ public final class TicketOuterClass {
 
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -11057,6 +11066,33 @@ public final class TicketOuterClass {
      * @return The type.
      */
     com.oddin.ots.Enums.BetStakeType getType();
+
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    boolean hasStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     * @return The stakeMultiplier.
+     */
+    com.google.protobuf.UInt64Value getStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     */
+    com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
   }
   /**
    * Protobuf type {@code ots.BetStake}
@@ -11115,6 +11151,19 @@ public final class TicketOuterClass {
               type_ = rawValue;
               break;
             }
+            case 26: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (stakeMultiplier_ != null) {
+                subBuilder = stakeMultiplier_.toBuilder();
+              }
+              stakeMultiplier_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stakeMultiplier_);
+                stakeMultiplier_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11151,7 +11200,7 @@ public final class TicketOuterClass {
     private long value_;
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -11189,6 +11238,44 @@ public final class TicketOuterClass {
       return result == null ? com.oddin.ots.Enums.BetStakeType.UNRECOGNIZED : result;
     }
 
+    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 3;
+    private com.google.protobuf.UInt64Value stakeMultiplier_;
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakeMultiplier() {
+      return stakeMultiplier_ != null;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     * @return The stakeMultiplier.
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64Value getStakeMultiplier() {
+      return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+      return getStakeMultiplier();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11209,6 +11296,9 @@ public final class TicketOuterClass {
       if (type_ != com.oddin.ots.Enums.BetStakeType.BET_STAKE_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
+      if (stakeMultiplier_ != null) {
+        output.writeMessage(3, getStakeMultiplier());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11225,6 +11315,10 @@ public final class TicketOuterClass {
       if (type_ != com.oddin.ots.Enums.BetStakeType.BET_STAKE_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
+      }
+      if (stakeMultiplier_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getStakeMultiplier());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11244,6 +11338,11 @@ public final class TicketOuterClass {
       if (getValue()
           != other.getValue()) return false;
       if (type_ != other.type_) return false;
+      if (hasStakeMultiplier() != other.hasStakeMultiplier()) return false;
+      if (hasStakeMultiplier()) {
+        if (!getStakeMultiplier()
+            .equals(other.getStakeMultiplier())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11260,6 +11359,10 @@ public final class TicketOuterClass {
           getValue());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      if (hasStakeMultiplier()) {
+        hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
+        hash = (53 * hash) + getStakeMultiplier().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11397,6 +11500,12 @@ public final class TicketOuterClass {
 
         type_ = 0;
 
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
         return this;
       }
 
@@ -11425,6 +11534,11 @@ public final class TicketOuterClass {
         com.oddin.ots.TicketOuterClass.BetStake result = new com.oddin.ots.TicketOuterClass.BetStake(this);
         result.value_ = value_;
         result.type_ = type_;
+        if (stakeMultiplierBuilder_ == null) {
+          result.stakeMultiplier_ = stakeMultiplier_;
+        } else {
+          result.stakeMultiplier_ = stakeMultiplierBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -11479,6 +11593,9 @@ public final class TicketOuterClass {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (other.hasStakeMultiplier()) {
+          mergeStakeMultiplier(other.getStakeMultiplier());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11511,7 +11628,7 @@ public final class TicketOuterClass {
       private long value_ ;
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11523,7 +11640,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11538,7 +11655,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11623,6 +11740,161 @@ public final class TicketOuterClass {
         type_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.UInt64Value stakeMultiplier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> stakeMultiplierBuilder_;
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       * @return Whether the stakeMultiplier field is set.
+       */
+      public boolean hasStakeMultiplier() {
+        return stakeMultiplierBuilder_ != null || stakeMultiplier_ != null;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       * @return The stakeMultiplier.
+       */
+      public com.google.protobuf.UInt64Value getStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        } else {
+          return stakeMultiplierBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public Builder setStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stakeMultiplier_ = value;
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public Builder setStakeMultiplier(
+          com.google.protobuf.UInt64Value.Builder builderForValue) {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (stakeMultiplier_ != null) {
+            stakeMultiplier_ =
+              com.google.protobuf.UInt64Value.newBuilder(stakeMultiplier_).mergeFrom(value).buildPartial();
+          } else {
+            stakeMultiplier_ = value;
+          }
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public Builder clearStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+          onChanged();
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
+        
+        onChanged();
+        return getStakeMultiplierFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+        if (stakeMultiplierBuilder_ != null) {
+          return stakeMultiplierBuilder_.getMessageOrBuilder();
+        } else {
+          return stakeMultiplier_ == null ?
+              com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+          getStakeMultiplierFieldBuilder() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                  getStakeMultiplier(),
+                  getParentForChildren(),
+                  isClean());
+          stakeMultiplier_ = null;
+        }
+        return stakeMultiplierBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13092,7 +13364,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public boolean containsBetInfo(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetBetInfo().getMap().containsKey(key);
     }
     /**
@@ -13127,7 +13399,7 @@ public final class TicketOuterClass {
     public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrDefault(
         java.lang.String key,
         com.oddin.ots.TicketOuterClass.TicketResponseBetInfo defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> map =
           internalGetBetInfo().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -13143,7 +13415,7 @@ public final class TicketOuterClass {
 
     public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> map =
           internalGetBetInfo().getMap();
       if (!map.containsKey(key)) {
@@ -13189,7 +13461,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public boolean containsSelectionInfo(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetSelectionInfo().getMap().containsKey(key);
     }
     /**
@@ -13224,7 +13496,7 @@ public final class TicketOuterClass {
     public com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrDefault(
         java.lang.String key,
         com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason> map =
           internalGetSelectionInfo().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -13240,7 +13512,7 @@ public final class TicketOuterClass {
 
     public com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason> map =
           internalGetSelectionInfo().getMap();
       if (!map.containsKey(key)) {
@@ -13324,7 +13596,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public boolean containsAutoAcceptedOdds(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetAutoAcceptedOdds().getMap().containsKey(key);
     }
     /**
@@ -13359,7 +13631,7 @@ public final class TicketOuterClass {
     public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrDefault(
         java.lang.String key,
         com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> map =
           internalGetAutoAcceptedOdds().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -13375,7 +13647,7 @@ public final class TicketOuterClass {
 
     public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> map =
           internalGetAutoAcceptedOdds().getMap();
       if (!map.containsKey(key)) {
@@ -13436,7 +13708,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (ticketStatus_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
@@ -13478,7 +13750,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (ticketStatus_ != com.oddin.ots.Enums.AcceptanceStatus.ACCEPTANCE_STATUS_UNSPECIFIED.getNumber()) {
@@ -14305,7 +14577,7 @@ public final class TicketOuterClass {
       @java.lang.Override
       public boolean containsBetInfo(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetBetInfo().getMap().containsKey(key);
       }
       /**
@@ -14340,7 +14612,7 @@ public final class TicketOuterClass {
       public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrDefault(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketResponseBetInfo defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> map =
             internalGetBetInfo().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -14356,7 +14628,7 @@ public final class TicketOuterClass {
 
       public com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketResponseBetInfo> map =
             internalGetBetInfo().getMap();
         if (!map.containsKey(key)) {
@@ -14380,7 +14652,7 @@ public final class TicketOuterClass {
 
       public Builder removeBetInfo(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableBetInfo().getMutableMap()
             .remove(key);
         return this;
@@ -14403,8 +14675,11 @@ public final class TicketOuterClass {
       public Builder putBetInfo(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketResponseBetInfo value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableBetInfo().getMutableMap()
             .put(key, value);
         return this;
@@ -14461,7 +14736,7 @@ public final class TicketOuterClass {
       @java.lang.Override
       public boolean containsSelectionInfo(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetSelectionInfo().getMap().containsKey(key);
       }
       /**
@@ -14496,7 +14771,7 @@ public final class TicketOuterClass {
       public com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrDefault(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason> map =
             internalGetSelectionInfo().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -14512,7 +14787,7 @@ public final class TicketOuterClass {
 
       public com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason> map =
             internalGetSelectionInfo().getMap();
         if (!map.containsKey(key)) {
@@ -14536,7 +14811,7 @@ public final class TicketOuterClass {
 
       public Builder removeSelectionInfo(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableSelectionInfo().getMutableMap()
             .remove(key);
         return this;
@@ -14559,8 +14834,11 @@ public final class TicketOuterClass {
       public Builder putSelectionInfo(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableSelectionInfo().getMutableMap()
             .put(key, value);
         return this;
@@ -14772,7 +15050,7 @@ public final class TicketOuterClass {
       @java.lang.Override
       public boolean containsAutoAcceptedOdds(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetAutoAcceptedOdds().getMap().containsKey(key);
       }
       /**
@@ -14807,7 +15085,7 @@ public final class TicketOuterClass {
       public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrDefault(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> map =
             internalGetAutoAcceptedOdds().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -14823,7 +15101,7 @@ public final class TicketOuterClass {
 
       public com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.oddin.ots.TicketOuterClass.AutoAcceptedOdds> map =
             internalGetAutoAcceptedOdds().getMap();
         if (!map.containsKey(key)) {
@@ -14847,7 +15125,7 @@ public final class TicketOuterClass {
 
       public Builder removeAutoAcceptedOdds(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableAutoAcceptedOdds().getMutableMap()
             .remove(key);
         return this;
@@ -14870,8 +15148,11 @@ public final class TicketOuterClass {
       public Builder putAutoAcceptedOdds(
           java.lang.String key,
           com.oddin.ots.TicketOuterClass.AutoAcceptedOdds value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableAutoAcceptedOdds().getMutableMap()
             .put(key, value);
         return this;
@@ -15326,7 +15607,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (requestedOdds_ != 0L) {
@@ -15344,7 +15625,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (requestedOdds_ != 0L) {
@@ -16368,7 +16649,7 @@ public final class TicketOuterClass {
       if (code_ != com.oddin.ots.TicketOuterClass.TicketRejectReason.Code.CODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -16384,7 +16665,7 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -17358,7 +17639,7 @@ public final class TicketOuterClass {
       if (code_ != com.oddin.ots.TicketOuterClass.TicketBetRejectReason.Code.CODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -17374,7 +17655,7 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -18205,7 +18486,7 @@ public final class TicketOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (rejectReason_ != null) {
@@ -18223,7 +18504,7 @@ public final class TicketOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (rejectReason_ != null) {
@@ -19393,7 +19674,7 @@ public final class TicketOuterClass {
       if (code_ != com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason.Code.CODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -19409,7 +19690,7 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -20552,57 +20833,58 @@ public final class TicketOuterClass {
       "\0220\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf.U" +
       "Int64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselection" +
       "s\030\007 \003(\0132\021.ots.BetSelection\"\032\n\014BetSelecti" +
-      "on\022\n\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(" +
+      "on\022\n\n\002id\030\001 \001(\t\"x\n\010BetStake\022\r\n\005value\030\001 \001(" +
       "\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeType" +
-      "\"g\n\010BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(" +
-      "\0162\027.ots.enums.BetBonusType\022%\n\004mode\030\003 \001(\016" +
-      "2\027.ots.enums.BetBonusMode\"\377\004\n\013TicketStat" +
-      "e\022\n\n\002id\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.o" +
-      "ts.enums.AcceptanceStatus\022.\n\rreject_reas" +
-      "on\030\003 \001(\0132\027.ots.TicketRejectReason\022/\n\010bet" +
-      "_info\030\004 \003(\0132\035.ots.TicketState.BetInfoEnt" +
-      "ry\022;\n\016selection_info\030\007 \003(\0132#.ots.TicketS" +
-      "tate.SelectionInfoEntry\0223\n\rexchange_rate" +
-      "\030\005 \001(\0132\034.google.protobuf.UInt64Value\022B\n\022" +
-      "auto_accepted_odds\030\006 \003(\0132&.ots.TicketSta" +
-      "te.AutoAcceptedOddsEntry\022%\n\007reoffer\030\010 \001(" +
-      "\0132\024.ots.ResponseReoffer\032J\n\014BetInfoEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.ots.Ticket" +
-      "ResponseBetInfo:\0028\001\032V\n\022SelectionInfoEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .ots.Tick" +
-      "etSelectionRejectReason:\0028\001\032N\n\025AutoAccep" +
-      "tedOddsEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\013" +
-      "2\025.ots.AutoAcceptedOdds:\0028\001\"I\n\020AutoAccep" +
-      "tedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 " +
-      "\001(\004\022\021\n\tused_odds\030\003 \001(\004\"\334\002\n\022TicketRejectR" +
-      "eason\022*\n\004code\030\001 \001(\0162\034.ots.TicketRejectRe" +
-      "ason.Code\022\017\n\007message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020C" +
-      "ODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025" +
-      "CODE_INVALID_ARGUMENT\020\002\022\027\n\023CODE_ALREADY_" +
-      "EXISTS\020\003\022\026\n\022CODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE" +
-      "_STAKE_TOO_HIGH\020\005\022\034\n\030CODE_MAX_PAYOUT_BRE" +
-      "ACHED\020\006\022\034\n\030CODE_BETS_NOT_ACCEPTABLE\020\007\022\"\n" +
-      "\036CODE_SELECTIONS_NOT_ACCEPTABLE\020\010\022\022\n\016COD" +
-      "E_NOT_FOUND\020\t\"\346\002\n\025TicketBetRejectReason\022" +
-      "-\n\004code\030\001 \001(\0162\037.ots.TicketBetRejectReaso" +
-      "n.Code\022\017\n\007message\030\002 \001(\t\"\214\002\n\004Code\022\024\n\020CODE" +
-      "_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n" +
-      "\031CODE_SELECTION_NOT_ACTIVE\020\002\022\026\n\022CODE_STA" +
-      "KE_TOO_LOW\020\003\022\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n" +
-      "\030CODE_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_MARK" +
-      "ET_LIABILITY_BREACHED\020\006\022\"\n\036CODE_BETTOR_L" +
-      "IABILITY_BREACHED\020\007\022!\n\035CODE_EVENT_LIABIL" +
-      "ITY_BREACHED\020\010\"}\n\025TicketResponseBetInfo\022" +
-      "\n\n\002id\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots" +
-      ".TicketBetRejectReason\022%\n\007reoffer\030\003 \001(\0132" +
-      "\024.ots.ResponseReoffer\"\307\001\n\033TicketSelectio" +
-      "nRejectReason\0223\n\004code\030\001 \001(\0162%.ots.Ticket" +
-      "SelectionRejectReason.Code\022\017\n\007message\030\002 " +
-      "\001(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021COD" +
-      "E_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n" +
-      "\024CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseReoff" +
-      "er\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014oddi" +
-      "n.gg/otsb\006proto3"
+      "\0226\n\020stake_multiplier\030\003 \001(\0132\034.google.prot" +
+      "obuf.UInt64Value\"g\n\010BetBonus\022\r\n\005value\030\001 " +
+      "\001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetBonusTy" +
+      "pe\022%\n\004mode\030\003 \001(\0162\027.ots.enums.BetBonusMod" +
+      "e\"\377\004\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rticket_" +
+      "status\030\002 \001(\0162\033.ots.enums.AcceptanceStatu" +
+      "s\022.\n\rreject_reason\030\003 \001(\0132\027.ots.TicketRej" +
+      "ectReason\022/\n\010bet_info\030\004 \003(\0132\035.ots.Ticket" +
+      "State.BetInfoEntry\022;\n\016selection_info\030\007 \003" +
+      "(\0132#.ots.TicketState.SelectionInfoEntry\022" +
+      "3\n\rexchange_rate\030\005 \001(\0132\034.google.protobuf" +
+      ".UInt64Value\022B\n\022auto_accepted_odds\030\006 \003(\013" +
+      "2&.ots.TicketState.AutoAcceptedOddsEntry" +
+      "\022%\n\007reoffer\030\010 \001(\0132\024.ots.ResponseReoffer\032" +
+      "J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 " +
+      "\001(\0132\032.ots.TicketResponseBetInfo:\0028\001\032V\n\022S" +
+      "electionInfoEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030" +
+      "\002 \001(\0132 .ots.TicketSelectionRejectReason:" +
+      "\0028\001\032N\n\025AutoAcceptedOddsEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAcceptedOdds:" +
+      "\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016r" +
+      "equested_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004\"\334" +
+      "\002\n\022TicketRejectReason\022*\n\004code\030\001 \001(\0162\034.ot" +
+      "s.TicketRejectReason.Code\022\017\n\007message\030\002 \001" +
+      "(\t\"\210\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCOD" +
+      "E_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022" +
+      "\027\n\023CODE_ALREADY_EXISTS\020\003\022\026\n\022CODE_STAKE_T" +
+      "OO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HIGH\020\005\022\034\n\030COD" +
+      "E_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS_NOT" +
+      "_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT_ACC" +
+      "EPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\346\002\n\025Ticket" +
+      "BetRejectReason\022-\n\004code\030\001 \001(\0162\037.ots.Tick" +
+      "etBetRejectReason.Code\022\017\n\007message\030\002 \001(\t\"" +
+      "\214\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_O" +
+      "DDS_CHANGED\020\001\022\035\n\031CODE_SELECTION_NOT_ACTI" +
+      "VE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022\027\n\023CODE_STA" +
+      "KE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_BREACHE" +
+      "D\020\005\022\"\n\036CODE_MARKET_LIABILITY_BREACHED\020\006\022" +
+      "\"\n\036CODE_BETTOR_LIABILITY_BREACHED\020\007\022!\n\035C" +
+      "ODE_EVENT_LIABILITY_BREACHED\020\010\"}\n\025Ticket" +
+      "ResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rreject_re" +
+      "ason\030\002 \001(\0132\032.ots.TicketBetRejectReason\022%" +
+      "\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReoffer\"\307\001" +
+      "\n\033TicketSelectionRejectReason\0223\n\004code\030\001 " +
+      "\001(\0162%.ots.TicketSelectionRejectReason.Co" +
+      "de\022\017\n\007message\030\002 \001(\t\"b\n\004Code\022\024\n\020CODE_UNSP" +
+      "ECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\023\n\017CODE" +
+      "_NOT_ACTIVE\020\002\022\030\n\024CODE_NOT_INDEPENDENT\020\003\"" +
+      " \n\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom" +
+      ".oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20665,7 +20947,7 @@ public final class TicketOuterClass {
     internal_static_ots_BetStake_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetStake_descriptor,
-        new java.lang.String[] { "Value", "Type", });
+        new java.lang.String[] { "Value", "Type", "StakeMultiplier", });
     internal_static_ots_BetBonus_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_ots_BetBonus_fieldAccessorTable = new
