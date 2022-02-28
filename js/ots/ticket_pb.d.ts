@@ -130,6 +130,11 @@ export class Ticket extends jspb.Message {
   getLastforeigneventendtime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastforeigneventendtime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasStakeMultiplier(): boolean;
+  clearStakeMultiplier(): void;
+  getStakeMultiplier(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setStakeMultiplier(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -155,6 +160,7 @@ export namespace Ticket {
     channel: ots_enum_enums_pb.TicketChannelMap[keyof ots_enum_enums_pb.TicketChannelMap],
     lastforeigneventstarttime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastforeigneventendtime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    stakeMultiplier?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
   }
 }
 
@@ -315,11 +321,6 @@ export class BetStake extends jspb.Message {
   getType(): ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap];
   setType(value: ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap]): void;
 
-  hasStakeMultiplier(): boolean;
-  clearStakeMultiplier(): void;
-  getStakeMultiplier(): google_protobuf_wrappers_pb.UInt64Value | undefined;
-  setStakeMultiplier(value?: google_protobuf_wrappers_pb.UInt64Value): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BetStake.AsObject;
   static toObject(includeInstance: boolean, msg: BetStake): BetStake.AsObject;
@@ -334,7 +335,6 @@ export namespace BetStake {
   export type AsObject = {
     value: number,
     type: ots_enum_enums_pb.BetStakeTypeMap[keyof ots_enum_enums_pb.BetStakeTypeMap],
-    stakeMultiplier?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
   }
 }
 

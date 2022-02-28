@@ -894,7 +894,8 @@ proto.ots.Ticket.toObject = function(includeInstance, msg) {
     currency: jspb.Message.getFieldWithDefault(msg, 11, ""),
     channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
     lastforeigneventstarttime: (f = msg.getLastforeigneventstarttime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastforeigneventendtime: (f = msg.getLastforeigneventendtime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastforeigneventendtime: (f = msg.getLastforeigneventendtime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    stakeMultiplier: (f = msg.getStakeMultiplier()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -991,6 +992,11 @@ proto.ots.Ticket.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastforeigneventendtime(value);
+      break;
+    case 15:
+      var value = new google_protobuf_wrappers_pb.UInt64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
+      msg.setStakeMultiplier(value);
       break;
     default:
       reader.skipField();
@@ -1114,6 +1120,14 @@ proto.ots.Ticket.serializeBinaryToWriter = function(message, writer) {
       14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getStakeMultiplier();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
     );
   }
 };
@@ -1488,6 +1502,43 @@ proto.ots.Ticket.prototype.clearLastforeigneventendtime = function() {
  */
 proto.ots.Ticket.prototype.hasLastforeigneventendtime = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.UInt64Value stake_multiplier = 15;
+ * @return {?proto.google.protobuf.UInt64Value}
+ */
+proto.ots.Ticket.prototype.getStakeMultiplier = function() {
+  return /** @type{?proto.google.protobuf.UInt64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.UInt64Value|undefined} value
+ * @return {!proto.ots.Ticket} returns this
+*/
+proto.ots.Ticket.prototype.setStakeMultiplier = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.Ticket} returns this
+ */
+proto.ots.Ticket.prototype.clearStakeMultiplier = function() {
+  return this.setStakeMultiplier(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.Ticket.prototype.hasStakeMultiplier = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -2644,8 +2695,7 @@ proto.ots.BetStake.prototype.toObject = function(opt_includeInstance) {
 proto.ots.BetStake.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    stakeMultiplier: (f = msg.getStakeMultiplier()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f)
+    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2690,11 +2740,6 @@ proto.ots.BetStake.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!proto.ots.enums.BetStakeType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 3:
-      var value = new google_protobuf_wrappers_pb.UInt64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
-      msg.setStakeMultiplier(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2738,14 +2783,6 @@ proto.ots.BetStake.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getStakeMultiplier();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -2782,43 +2819,6 @@ proto.ots.BetStake.prototype.getType = function() {
  */
 proto.ots.BetStake.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
-};
-
-
-/**
- * optional google.protobuf.UInt64Value stake_multiplier = 3;
- * @return {?proto.google.protobuf.UInt64Value}
- */
-proto.ots.BetStake.prototype.getStakeMultiplier = function() {
-  return /** @type{?proto.google.protobuf.UInt64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.UInt64Value|undefined} value
- * @return {!proto.ots.BetStake} returns this
-*/
-proto.ots.BetStake.prototype.setStakeMultiplier = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ots.BetStake} returns this
- */
-proto.ots.BetStake.prototype.clearStakeMultiplier = function() {
-  return this.setStakeMultiplier(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ots.BetStake.prototype.hasStakeMultiplier = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

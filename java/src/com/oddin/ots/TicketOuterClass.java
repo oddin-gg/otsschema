@@ -2235,6 +2235,33 @@ public final class TicketOuterClass {
      * <code>.google.protobuf.Timestamp lastForeignEventEndTime = 14;</code>
      */
     com.google.protobuf.TimestampOrBuilder getLastForeignEventEndTimeOrBuilder();
+
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    boolean hasStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return The stakeMultiplier.
+     */
+    com.google.protobuf.UInt64Value getStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     */
+    com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
   }
   /**
    * <pre>
@@ -2416,6 +2443,19 @@ public final class TicketOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(lastForeignEventEndTime_);
                 lastForeignEventEndTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (stakeMultiplier_ != null) {
+                subBuilder = stakeMultiplier_.toBuilder();
+              }
+              stakeMultiplier_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stakeMultiplier_);
+                stakeMultiplier_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2989,6 +3029,44 @@ public final class TicketOuterClass {
       return getLastForeignEventEndTime();
     }
 
+    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 15;
+    private com.google.protobuf.UInt64Value stakeMultiplier_;
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakeMultiplier() {
+      return stakeMultiplier_ != null;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return The stakeMultiplier.
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64Value getStakeMultiplier() {
+      return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+      return getStakeMultiplier();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3044,6 +3122,9 @@ public final class TicketOuterClass {
       }
       if (lastForeignEventEndTime_ != null) {
         output.writeMessage(14, getLastForeignEventEndTime());
+      }
+      if (stakeMultiplier_ != null) {
+        output.writeMessage(15, getStakeMultiplier());
       }
       unknownFields.writeTo(output);
     }
@@ -3110,6 +3191,10 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getLastForeignEventEndTime());
       }
+      if (stakeMultiplier_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getStakeMultiplier());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3167,6 +3252,11 @@ public final class TicketOuterClass {
         if (!getLastForeignEventEndTime()
             .equals(other.getLastForeignEventEndTime())) return false;
       }
+      if (hasStakeMultiplier() != other.hasStakeMultiplier()) return false;
+      if (hasStakeMultiplier()) {
+        if (!getStakeMultiplier()
+            .equals(other.getStakeMultiplier())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3220,6 +3310,10 @@ public final class TicketOuterClass {
       if (hasLastForeignEventEndTime()) {
         hash = (37 * hash) + LASTFOREIGNEVENTENDTIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastForeignEventEndTime().hashCode();
+      }
+      if (hasStakeMultiplier()) {
+        hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
+        hash = (53 * hash) + getStakeMultiplier().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3434,6 +3528,12 @@ public final class TicketOuterClass {
           lastForeignEventEndTime_ = null;
           lastForeignEventEndTimeBuilder_ = null;
         }
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
         return this;
       }
 
@@ -3506,6 +3606,11 @@ public final class TicketOuterClass {
           result.lastForeignEventEndTime_ = lastForeignEventEndTime_;
         } else {
           result.lastForeignEventEndTime_ = lastForeignEventEndTimeBuilder_.build();
+        }
+        if (stakeMultiplierBuilder_ == null) {
+          result.stakeMultiplier_ = stakeMultiplier_;
+        } else {
+          result.stakeMultiplier_ = stakeMultiplierBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3617,6 +3722,9 @@ public final class TicketOuterClass {
         }
         if (other.hasLastForeignEventEndTime()) {
           mergeLastForeignEventEndTime(other.getLastForeignEventEndTime());
+        }
+        if (other.hasStakeMultiplier()) {
+          mergeStakeMultiplier(other.getStakeMultiplier());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5358,6 +5466,161 @@ public final class TicketOuterClass {
           lastForeignEventEndTime_ = null;
         }
         return lastForeignEventEndTimeBuilder_;
+      }
+
+      private com.google.protobuf.UInt64Value stakeMultiplier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> stakeMultiplierBuilder_;
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * @return Whether the stakeMultiplier field is set.
+       */
+      public boolean hasStakeMultiplier() {
+        return stakeMultiplierBuilder_ != null || stakeMultiplier_ != null;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * @return The stakeMultiplier.
+       */
+      public com.google.protobuf.UInt64Value getStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        } else {
+          return stakeMultiplierBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder setStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stakeMultiplier_ = value;
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder setStakeMultiplier(
+          com.google.protobuf.UInt64Value.Builder builderForValue) {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (stakeMultiplier_ != null) {
+            stakeMultiplier_ =
+              com.google.protobuf.UInt64Value.newBuilder(stakeMultiplier_).mergeFrom(value).buildPartial();
+          } else {
+            stakeMultiplier_ = value;
+          }
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder clearStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+          onChanged();
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
+        
+        onChanged();
+        return getStakeMultiplierFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+        if (stakeMultiplierBuilder_ != null) {
+          return stakeMultiplierBuilder_.getMessageOrBuilder();
+        } else {
+          return stakeMultiplier_ == null ?
+              com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+          getStakeMultiplierFieldBuilder() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                  getStakeMultiplier(),
+                  getParentForChildren(),
+                  isClean());
+          stakeMultiplier_ = null;
+        }
+        return stakeMultiplierBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11040,7 +11303,7 @@ public final class TicketOuterClass {
 
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -11066,33 +11329,6 @@ public final class TicketOuterClass {
      * @return The type.
      */
     com.oddin.ots.Enums.BetStakeType getType();
-
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     * @return Whether the stakeMultiplier field is set.
-     */
-    boolean hasStakeMultiplier();
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     * @return The stakeMultiplier.
-     */
-    com.google.protobuf.UInt64Value getStakeMultiplier();
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     */
-    com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
   }
   /**
    * Protobuf type {@code ots.BetStake}
@@ -11151,19 +11387,6 @@ public final class TicketOuterClass {
               type_ = rawValue;
               break;
             }
-            case 26: {
-              com.google.protobuf.UInt64Value.Builder subBuilder = null;
-              if (stakeMultiplier_ != null) {
-                subBuilder = stakeMultiplier_.toBuilder();
-              }
-              stakeMultiplier_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stakeMultiplier_);
-                stakeMultiplier_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11200,7 +11423,7 @@ public final class TicketOuterClass {
     private long value_;
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -11238,44 +11461,6 @@ public final class TicketOuterClass {
       return result == null ? com.oddin.ots.Enums.BetStakeType.UNRECOGNIZED : result;
     }
 
-    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 3;
-    private com.google.protobuf.UInt64Value stakeMultiplier_;
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     * @return Whether the stakeMultiplier field is set.
-     */
-    @java.lang.Override
-    public boolean hasStakeMultiplier() {
-      return stakeMultiplier_ != null;
-    }
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     * @return The stakeMultiplier.
-     */
-    @java.lang.Override
-    public com.google.protobuf.UInt64Value getStakeMultiplier() {
-      return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
-    }
-    /**
-     * <pre>
-     * Stake multiplier for stake - optional value to use instead of 10000
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
-      return getStakeMultiplier();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11296,9 +11481,6 @@ public final class TicketOuterClass {
       if (type_ != com.oddin.ots.Enums.BetStakeType.BET_STAKE_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
-      if (stakeMultiplier_ != null) {
-        output.writeMessage(3, getStakeMultiplier());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -11315,10 +11497,6 @@ public final class TicketOuterClass {
       if (type_ != com.oddin.ots.Enums.BetStakeType.BET_STAKE_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
-      }
-      if (stakeMultiplier_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getStakeMultiplier());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11338,11 +11516,6 @@ public final class TicketOuterClass {
       if (getValue()
           != other.getValue()) return false;
       if (type_ != other.type_) return false;
-      if (hasStakeMultiplier() != other.hasStakeMultiplier()) return false;
-      if (hasStakeMultiplier()) {
-        if (!getStakeMultiplier()
-            .equals(other.getStakeMultiplier())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11359,10 +11532,6 @@ public final class TicketOuterClass {
           getValue());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      if (hasStakeMultiplier()) {
-        hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
-        hash = (53 * hash) + getStakeMultiplier().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11500,12 +11669,6 @@ public final class TicketOuterClass {
 
         type_ = 0;
 
-        if (stakeMultiplierBuilder_ == null) {
-          stakeMultiplier_ = null;
-        } else {
-          stakeMultiplier_ = null;
-          stakeMultiplierBuilder_ = null;
-        }
         return this;
       }
 
@@ -11534,11 +11697,6 @@ public final class TicketOuterClass {
         com.oddin.ots.TicketOuterClass.BetStake result = new com.oddin.ots.TicketOuterClass.BetStake(this);
         result.value_ = value_;
         result.type_ = type_;
-        if (stakeMultiplierBuilder_ == null) {
-          result.stakeMultiplier_ = stakeMultiplier_;
-        } else {
-          result.stakeMultiplier_ = stakeMultiplierBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -11593,9 +11751,6 @@ public final class TicketOuterClass {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        if (other.hasStakeMultiplier()) {
-          mergeStakeMultiplier(other.getStakeMultiplier());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11628,7 +11783,7 @@ public final class TicketOuterClass {
       private long value_ ;
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11640,7 +11795,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11655,7 +11810,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 (or multiplier) and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -11740,161 +11895,6 @@ public final class TicketOuterClass {
         type_ = 0;
         onChanged();
         return this;
-      }
-
-      private com.google.protobuf.UInt64Value stakeMultiplier_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> stakeMultiplierBuilder_;
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       * @return Whether the stakeMultiplier field is set.
-       */
-      public boolean hasStakeMultiplier() {
-        return stakeMultiplierBuilder_ != null || stakeMultiplier_ != null;
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       * @return The stakeMultiplier.
-       */
-      public com.google.protobuf.UInt64Value getStakeMultiplier() {
-        if (stakeMultiplierBuilder_ == null) {
-          return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
-        } else {
-          return stakeMultiplierBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public Builder setStakeMultiplier(com.google.protobuf.UInt64Value value) {
-        if (stakeMultiplierBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          stakeMultiplier_ = value;
-          onChanged();
-        } else {
-          stakeMultiplierBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public Builder setStakeMultiplier(
-          com.google.protobuf.UInt64Value.Builder builderForValue) {
-        if (stakeMultiplierBuilder_ == null) {
-          stakeMultiplier_ = builderForValue.build();
-          onChanged();
-        } else {
-          stakeMultiplierBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
-        if (stakeMultiplierBuilder_ == null) {
-          if (stakeMultiplier_ != null) {
-            stakeMultiplier_ =
-              com.google.protobuf.UInt64Value.newBuilder(stakeMultiplier_).mergeFrom(value).buildPartial();
-          } else {
-            stakeMultiplier_ = value;
-          }
-          onChanged();
-        } else {
-          stakeMultiplierBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public Builder clearStakeMultiplier() {
-        if (stakeMultiplierBuilder_ == null) {
-          stakeMultiplier_ = null;
-          onChanged();
-        } else {
-          stakeMultiplier_ = null;
-          stakeMultiplierBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
-        
-        onChanged();
-        return getStakeMultiplierFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
-        if (stakeMultiplierBuilder_ != null) {
-          return stakeMultiplierBuilder_.getMessageOrBuilder();
-        } else {
-          return stakeMultiplier_ == null ?
-              com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
-        }
-      }
-      /**
-       * <pre>
-       * Stake multiplier for stake - optional value to use instead of 10000
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
-          getStakeMultiplierFieldBuilder() {
-        if (stakeMultiplierBuilder_ == null) {
-          stakeMultiplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
-                  getStakeMultiplier(),
-                  getParentForChildren(),
-                  isClean());
-          stakeMultiplier_ = null;
-        }
-        return stakeMultiplierBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -20803,7 +20803,7 @@ public final class TicketOuterClass {
       "ts.StreamKeepaliveH\000B\006\n\004data\"f\n\016TicketRe" +
       "sponse\022!\n\005state\030\001 \001(\0132\020.ots.TicketStateH" +
       "\000\022)\n\tkeepalive\030\002 \001(\0132\024.ots.StreamKeepali" +
-      "veH\000B\006\n\004data\"\357\004\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\tt" +
+      "veH\000B\006\n\004data\"\247\005\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\tt" +
       "imestamp\030\002 \001(\0132\032.google.protobuf.Timesta" +
       "mp\022\026\n\004bets\030\003 \003(\0132\010.ots.Bet\0227\n\022accept_odd" +
       "s_change\030\004 \001(\0162\033.ots.enums.AcceptOddsCha" +
@@ -20817,26 +20817,26 @@ public final class TicketOuterClass {
       "l\022=\n\031lastForeignEventStartTime\030\r \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\022;\n\027lastForeignE" +
       "ventEndTime\030\016 \001(\0132\032.google.protobuf.Time" +
-      "stamp\032G\n\017SelectionsEntry\022\013\n\003key\030\001 \001(\t\022#\n" +
-      "\005value\030\002 \001(\0132\024.ots.TicketSelection:\0028\001\"X" +
-      "\n\017TicketSelection\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\003 " +
-      "\001(\004\022+\n\007foreign\030\004 \001(\0132\032.google.protobuf.B" +
-      "oolValue\"\271\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(\t\022" +
-      "(\n\002ip\030\002 \001(\0132\034.google.protobuf.StringValu" +
-      "e\022/\n\tdevice_id\030\003 \001(\0132\034.google.protobuf.S" +
-      "tringValue\022\020\n\010language\030\004 \001(\t\022.\n\010nickname" +
-      "\030\005 \001(\0132\034.google.protobuf.StringValue\"\213\002\n" +
-      "\003Bet\022(\n\002id\030\001 \001(\0132\034.google.protobuf.Strin" +
-      "gValue\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005" +
-      "stake\030\003 \001(\0132\r.ots.BetStake\0224\n\nreoffer_id" +
-      "\030\004 \001(\0132\034.google.protobuf.StringValueB\002\030\001" +
-      "\0220\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf.U" +
-      "Int64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselection" +
-      "s\030\007 \003(\0132\021.ots.BetSelection\"\032\n\014BetSelecti" +
-      "on\022\n\n\002id\030\001 \001(\t\"x\n\010BetStake\022\r\n\005value\030\001 \001(" +
-      "\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeType" +
-      "\0226\n\020stake_multiplier\030\003 \001(\0132\034.google.prot" +
-      "obuf.UInt64Value\"g\n\010BetBonus\022\r\n\005value\030\001 " +
+      "stamp\0226\n\020stake_multiplier\030\017 \001(\0132\034.google" +
+      ".protobuf.UInt64Value\032G\n\017SelectionsEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.ots.Ticke" +
+      "tSelection:\0028\001\"X\n\017TicketSelection\022\n\n\002id\030" +
+      "\001 \001(\t\022\014\n\004odds\030\003 \001(\004\022+\n\007foreign\030\004 \001(\0132\032.g" +
+      "oogle.protobuf.BoolValue\"\271\001\n\016TicketCusto" +
+      "mer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001(\0132\034.google.pro" +
+      "tobuf.StringValue\022/\n\tdevice_id\030\003 \001(\0132\034.g" +
+      "oogle.protobuf.StringValue\022\020\n\010language\030\004" +
+      " \001(\t\022.\n\010nickname\030\005 \001(\0132\034.google.protobuf" +
+      ".StringValue\"\213\002\n\003Bet\022(\n\002id\030\001 \001(\0132\034.googl" +
+      "e.protobuf.StringValue\022\034\n\005bonus\030\002 \001(\0132\r." +
+      "ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r.ots.BetSta" +
+      "ke\0224\n\nreoffer_id\030\004 \001(\0132\034.google.protobuf" +
+      ".StringValueB\002\030\001\0220\n\ntotal_wins\030\005 \001(\0132\034.g" +
+      "oogle.protobuf.UInt64Value\022\017\n\007systems\030\006 " +
+      "\003(\r\022%\n\nselections\030\007 \003(\0132\021.ots.BetSelecti" +
+      "on\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(\t\"@\n\010BetSta" +
+      "ke\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.en" +
+      "ums.BetStakeType\"g\n\010BetBonus\022\r\n\005value\030\001 " +
       "\001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetBonusTy" +
       "pe\022%\n\004mode\030\003 \001(\0162\027.ots.enums.BetBonusMod" +
       "e\"\377\004\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222\n\rticket_" +
@@ -20911,7 +20911,7 @@ public final class TicketOuterClass {
     internal_static_ots_Ticket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Ticket_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", });
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", "StakeMultiplier", });
     internal_static_ots_Ticket_SelectionsEntry_descriptor =
       internal_static_ots_Ticket_descriptor.getNestedTypes().get(0);
     internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable = new
@@ -20947,7 +20947,7 @@ public final class TicketOuterClass {
     internal_static_ots_BetStake_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BetStake_descriptor,
-        new java.lang.String[] { "Value", "Type", "StakeMultiplier", });
+        new java.lang.String[] { "Value", "Type", });
     internal_static_ots_BetBonus_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_ots_BetBonus_fieldAccessorTable = new
