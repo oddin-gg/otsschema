@@ -28,3 +28,5 @@ protoc-gen-grpc-java
 */.gradle
 */build
 java/ots_schema.jar
+
+/examples/goconnector/goconnector
