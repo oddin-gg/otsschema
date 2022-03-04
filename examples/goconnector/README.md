@@ -1,4 +1,4 @@
-# Bragi GO connector example
+# OTSSchema GO connector example
 
 ### Download dependencies
 
