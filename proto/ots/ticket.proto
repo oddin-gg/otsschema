@@ -372,7 +372,7 @@ message TicketResultState {
   map<string, TicketResultStateSelectionInfo> selection_info = 5;
 
   // Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-  google.protobuf.UInt64Value exchange_rate = 6;
+  uint64  exchange_rate = 6;
 
   // Ticket result timestamp.
   google.protobuf.Timestamp resulted_at = 7;

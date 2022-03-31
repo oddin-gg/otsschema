@@ -6225,7 +6225,7 @@ proto.ots.TicketResultState.toObject = function(includeInstance, msg) {
     wonAmount: (f = msg.getWonAmount()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f),
     betInfoMap: (f = msg.getBetInfoMap()) ? f.toObject(includeInstance, proto.ots.TicketResultStateBetInfo.toObject) : [],
     selectionInfoMap: (f = msg.getSelectionInfoMap()) ? f.toObject(includeInstance, proto.ots.TicketResultStateSelectionInfo.toObject) : [],
-    exchangeRate: (f = msg.getExchangeRate()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f),
+    exchangeRate: jspb.Message.getFieldWithDefault(msg, 6, 0),
     resultedAt: (f = msg.getResultedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -6289,8 +6289,7 @@ proto.ots.TicketResultState.deserializeBinaryFromReader = function(msg, reader) 
          });
       break;
     case 6:
-      var value = new google_protobuf_wrappers_pb.UInt64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setExchangeRate(value);
       break;
     case 7:
@@ -6358,11 +6357,10 @@ proto.ots.TicketResultState.serializeBinaryToWriter = function(message, writer) 
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.ots.TicketResultStateSelectionInfo.serializeBinaryToWriter);
   }
   f = message.getExchangeRate();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0) {
+    writer.writeUint64(
       6,
-      f,
-      google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
+      f
     );
   }
   f = message.getResultedAt();
@@ -6494,39 +6492,20 @@ proto.ots.TicketResultState.prototype.clearSelectionInfoMap = function() {
 
 
 /**
- * optional google.protobuf.UInt64Value exchange_rate = 6;
- * @return {?proto.google.protobuf.UInt64Value}
+ * optional uint64 exchange_rate = 6;
+ * @return {number}
  */
 proto.ots.TicketResultState.prototype.getExchangeRate = function() {
-  return /** @type{?proto.google.protobuf.UInt64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 6));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {?proto.google.protobuf.UInt64Value|undefined} value
+ * @param {number} value
  * @return {!proto.ots.TicketResultState} returns this
-*/
+ */
 proto.ots.TicketResultState.prototype.setExchangeRate = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ots.TicketResultState} returns this
- */
-proto.ots.TicketResultState.prototype.clearExchangeRate = function() {
-  return this.setExchangeRate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ots.TicketResultState.prototype.hasExchangeRate = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 

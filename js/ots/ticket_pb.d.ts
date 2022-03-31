@@ -843,10 +843,8 @@ export class TicketResultState extends jspb.Message {
   clearBetInfoMap(): void;
   getSelectionInfoMap(): jspb.Map<string, TicketResultStateSelectionInfo>;
   clearSelectionInfoMap(): void;
-  hasExchangeRate(): boolean;
-  clearExchangeRate(): void;
-  getExchangeRate(): google_protobuf_wrappers_pb.UInt64Value | undefined;
-  setExchangeRate(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  getExchangeRate(): number;
+  setExchangeRate(value: number): void;
 
   hasResultedAt(): boolean;
   clearResultedAt(): void;
@@ -870,7 +868,7 @@ export namespace TicketResultState {
     wonAmount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
     betInfoMap: Array<[string, TicketResultStateBetInfo.AsObject]>,
     selectionInfoMap: Array<[string, TicketResultStateSelectionInfo.AsObject]>,
-    exchangeRate?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    exchangeRate: number,
     resultedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }

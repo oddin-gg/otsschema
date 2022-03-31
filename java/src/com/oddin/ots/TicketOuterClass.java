@@ -27799,27 +27799,10 @@ public final class TicketOuterClass {
      * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-     * @return Whether the exchangeRate field is set.
-     */
-    boolean hasExchangeRate();
-    /**
-     * <pre>
-     * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
+     * <code>uint64 exchange_rate = 6;</code>
      * @return The exchangeRate.
      */
-    com.google.protobuf.UInt64Value getExchangeRate();
-    /**
-     * <pre>
-     * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-     */
-    com.google.protobuf.UInt64ValueOrBuilder getExchangeRateOrBuilder();
+    long getExchangeRate();
 
     /**
      * <pre>
@@ -27947,17 +27930,9 @@ public final class TicketOuterClass {
                   selectionInfo__.getKey(), selectionInfo__.getValue());
               break;
             }
-            case 50: {
-              com.google.protobuf.UInt64Value.Builder subBuilder = null;
-              if (exchangeRate_ != null) {
-                subBuilder = exchangeRate_.toBuilder();
-              }
-              exchangeRate_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(exchangeRate_);
-                exchangeRate_ = subBuilder.buildPartial();
-              }
+            case 48: {
 
+              exchangeRate_ = input.readUInt64();
               break;
             }
             case 58: {
@@ -28325,41 +28300,18 @@ public final class TicketOuterClass {
     }
 
     public static final int EXCHANGE_RATE_FIELD_NUMBER = 6;
-    private com.google.protobuf.UInt64Value exchangeRate_;
+    private long exchangeRate_;
     /**
      * <pre>
      * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-     * @return Whether the exchangeRate field is set.
-     */
-    @java.lang.Override
-    public boolean hasExchangeRate() {
-      return exchangeRate_ != null;
-    }
-    /**
-     * <pre>
-     * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
+     * <code>uint64 exchange_rate = 6;</code>
      * @return The exchangeRate.
      */
     @java.lang.Override
-    public com.google.protobuf.UInt64Value getExchangeRate() {
-      return exchangeRate_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : exchangeRate_;
-    }
-    /**
-     * <pre>
-     * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.UInt64ValueOrBuilder getExchangeRateOrBuilder() {
-      return getExchangeRate();
+    public long getExchangeRate() {
+      return exchangeRate_;
     }
 
     public static final int RESULTED_AT_FIELD_NUMBER = 7;
@@ -28435,8 +28387,8 @@ public final class TicketOuterClass {
           internalGetSelectionInfo(),
           SelectionInfoDefaultEntryHolder.defaultEntry,
           5);
-      if (exchangeRate_ != null) {
-        output.writeMessage(6, getExchangeRate());
+      if (exchangeRate_ != 0L) {
+        output.writeUInt64(6, exchangeRate_);
       }
       if (resultedAt_ != null) {
         output.writeMessage(7, getResultedAt());
@@ -28481,9 +28433,9 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, selectionInfo__);
       }
-      if (exchangeRate_ != null) {
+      if (exchangeRate_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getExchangeRate());
+          .computeUInt64Size(6, exchangeRate_);
       }
       if (resultedAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -28516,11 +28468,8 @@ public final class TicketOuterClass {
           other.internalGetBetInfo())) return false;
       if (!internalGetSelectionInfo().equals(
           other.internalGetSelectionInfo())) return false;
-      if (hasExchangeRate() != other.hasExchangeRate()) return false;
-      if (hasExchangeRate()) {
-        if (!getExchangeRate()
-            .equals(other.getExchangeRate())) return false;
-      }
+      if (getExchangeRate()
+          != other.getExchangeRate()) return false;
       if (hasResultedAt() != other.hasResultedAt()) return false;
       if (hasResultedAt()) {
         if (!getResultedAt()
@@ -28553,10 +28502,9 @@ public final class TicketOuterClass {
         hash = (37 * hash) + SELECTION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSelectionInfo().hashCode();
       }
-      if (hasExchangeRate()) {
-        hash = (37 * hash) + EXCHANGE_RATE_FIELD_NUMBER;
-        hash = (53 * hash) + getExchangeRate().hashCode();
-      }
+      hash = (37 * hash) + EXCHANGE_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExchangeRate());
       if (hasResultedAt()) {
         hash = (37 * hash) + RESULTED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getResultedAt().hashCode();
@@ -28732,12 +28680,8 @@ public final class TicketOuterClass {
         }
         internalGetMutableBetInfo().clear();
         internalGetMutableSelectionInfo().clear();
-        if (exchangeRateBuilder_ == null) {
-          exchangeRate_ = null;
-        } else {
-          exchangeRate_ = null;
-          exchangeRateBuilder_ = null;
-        }
+        exchangeRate_ = 0L;
+
         if (resultedAtBuilder_ == null) {
           resultedAt_ = null;
         } else {
@@ -28782,11 +28726,7 @@ public final class TicketOuterClass {
         result.betInfo_.makeImmutable();
         result.selectionInfo_ = internalGetSelectionInfo();
         result.selectionInfo_.makeImmutable();
-        if (exchangeRateBuilder_ == null) {
-          result.exchangeRate_ = exchangeRate_;
-        } else {
-          result.exchangeRate_ = exchangeRateBuilder_.build();
-        }
+        result.exchangeRate_ = exchangeRate_;
         if (resultedAtBuilder_ == null) {
           result.resultedAt_ = resultedAt_;
         } else {
@@ -28854,8 +28794,8 @@ public final class TicketOuterClass {
             other.internalGetBetInfo());
         internalGetMutableSelectionInfo().mergeFrom(
             other.internalGetSelectionInfo());
-        if (other.hasExchangeRate()) {
-          mergeExchangeRate(other.getExchangeRate());
+        if (other.getExchangeRate() != 0L) {
+          setExchangeRate(other.getExchangeRate());
         }
         if (other.hasResultedAt()) {
           mergeResultedAt(other.getResultedAt());
@@ -29533,53 +29473,32 @@ public final class TicketOuterClass {
         return this;
       }
 
-      private com.google.protobuf.UInt64Value exchangeRate_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> exchangeRateBuilder_;
+      private long exchangeRate_ ;
       /**
        * <pre>
        * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       * @return Whether the exchangeRate field is set.
-       */
-      public boolean hasExchangeRate() {
-        return exchangeRateBuilder_ != null || exchangeRate_ != null;
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
+       * <code>uint64 exchange_rate = 6;</code>
        * @return The exchangeRate.
        */
-      public com.google.protobuf.UInt64Value getExchangeRate() {
-        if (exchangeRateBuilder_ == null) {
-          return exchangeRate_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : exchangeRate_;
-        } else {
-          return exchangeRateBuilder_.getMessage();
-        }
+      @java.lang.Override
+      public long getExchangeRate() {
+        return exchangeRate_;
       }
       /**
        * <pre>
        * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
+       * <code>uint64 exchange_rate = 6;</code>
+       * @param value The exchangeRate to set.
+       * @return This builder for chaining.
        */
-      public Builder setExchangeRate(com.google.protobuf.UInt64Value value) {
-        if (exchangeRateBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          exchangeRate_ = value;
-          onChanged();
-        } else {
-          exchangeRateBuilder_.setMessage(value);
-        }
-
+      public Builder setExchangeRate(long value) {
+        
+        exchangeRate_ = value;
+        onChanged();
         return this;
       }
       /**
@@ -29587,105 +29506,14 @@ public final class TicketOuterClass {
        * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       */
-      public Builder setExchangeRate(
-          com.google.protobuf.UInt64Value.Builder builderForValue) {
-        if (exchangeRateBuilder_ == null) {
-          exchangeRate_ = builderForValue.build();
-          onChanged();
-        } else {
-          exchangeRateBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       */
-      public Builder mergeExchangeRate(com.google.protobuf.UInt64Value value) {
-        if (exchangeRateBuilder_ == null) {
-          if (exchangeRate_ != null) {
-            exchangeRate_ =
-              com.google.protobuf.UInt64Value.newBuilder(exchangeRate_).mergeFrom(value).buildPartial();
-          } else {
-            exchangeRate_ = value;
-          }
-          onChanged();
-        } else {
-          exchangeRateBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
+       * <code>uint64 exchange_rate = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExchangeRate() {
-        if (exchangeRateBuilder_ == null) {
-          exchangeRate_ = null;
-          onChanged();
-        } else {
-          exchangeRate_ = null;
-          exchangeRateBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       */
-      public com.google.protobuf.UInt64Value.Builder getExchangeRateBuilder() {
         
+        exchangeRate_ = 0L;
         onChanged();
-        return getExchangeRateFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       */
-      public com.google.protobuf.UInt64ValueOrBuilder getExchangeRateOrBuilder() {
-        if (exchangeRateBuilder_ != null) {
-          return exchangeRateBuilder_.getMessageOrBuilder();
-        } else {
-          return exchangeRate_ == null ?
-              com.google.protobuf.UInt64Value.getDefaultInstance() : exchangeRate_;
-        }
-      }
-      /**
-       * <pre>
-       * Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value exchange_rate = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
-          getExchangeRateFieldBuilder() {
-        if (exchangeRateBuilder_ == null) {
-          exchangeRateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
-                  getExchangeRate(),
-                  getParentForChildren(),
-                  isClean());
-          exchangeRate_ = null;
-        }
-        return exchangeRateBuilder_;
+        return this;
       }
 
       private com.google.protobuf.Timestamp resultedAt_;
@@ -30163,21 +29991,20 @@ public final class TicketOuterClass {
       "\0132\034.google.protobuf.UInt64Value\"V\n\036Ticke" +
       "tResultStateSelectionInfo\0224\n\020selection_s" +
       "tatus\030\001 \001(\0162\032.ots.enums.ResultingStatus\"" +
-      "\216\004\n\021TicketResultState\022\n\n\002id\030\001 \001(\t\0221\n\rtic" +
+      "\360\003\n\021TicketResultState\022\n\n\002id\030\001 \001(\t\0221\n\rtic" +
       "ket_status\030\002 \001(\0162\032.ots.enums.ResultingSt" +
       "atus\0220\n\nwon_amount\030\003 \001(\0132\034.google.protob" +
       "uf.UInt64Value\0225\n\010bet_info\030\004 \003(\0132#.ots.T" +
       "icketResultState.BetInfoEntry\022A\n\016selecti" +
       "on_info\030\005 \003(\0132).ots.TicketResultState.Se" +
-      "lectionInfoEntry\0223\n\rexchange_rate\030\006 \001(\0132" +
-      "\034.google.protobuf.UInt64Value\022/\n\013resulte" +
-      "d_at\030\007 \001(\0132\032.google.protobuf.Timestamp\032M" +
-      "\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001" +
-      "(\0132\035.ots.TicketResultStateBetInfo:\0028\001\032Y\n" +
-      "\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005valu" +
-      "e\030\002 \001(\0132#.ots.TicketResultStateSelection" +
-      "Info:\0028\001B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb" +
-      "\006proto3"
+      "lectionInfoEntry\022\025\n\rexchange_rate\030\006 \001(\004\022" +
+      "/\n\013resulted_at\030\007 \001(\0132\032.google.protobuf.T" +
+      "imestamp\032M\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n" +
+      "\005value\030\002 \001(\0132\035.ots.TicketResultStateBetI" +
+      "nfo:\0028\001\032Y\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001" +
+      "(\t\0222\n\005value\030\002 \001(\0132#.ots.TicketResultStat" +
+      "eSelectionInfo:\0028\001B\035\n\rcom.oddin.otsZ\014odd" +
+      "in.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
