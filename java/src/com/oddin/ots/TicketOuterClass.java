@@ -4587,6 +4587,33 @@ public final class TicketOuterClass {
      * <code>.google.protobuf.Timestamp lastForeignEventEndTime = 14;</code>
      */
     com.google.protobuf.TimestampOrBuilder getLastForeignEventEndTimeOrBuilder();
+
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    boolean hasStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return The stakeMultiplier.
+     */
+    com.google.protobuf.UInt64Value getStakeMultiplier();
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     */
+    com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
   }
   /**
    * <pre>
@@ -4768,6 +4795,19 @@ public final class TicketOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(lastForeignEventEndTime_);
                 lastForeignEventEndTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (stakeMultiplier_ != null) {
+                subBuilder = stakeMultiplier_.toBuilder();
+              }
+              stakeMultiplier_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stakeMultiplier_);
+                stakeMultiplier_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5341,6 +5381,44 @@ public final class TicketOuterClass {
       return getLastForeignEventEndTime();
     }
 
+    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 15;
+    private com.google.protobuf.UInt64Value stakeMultiplier_;
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return Whether the stakeMultiplier field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakeMultiplier() {
+      return stakeMultiplier_ != null;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * @return The stakeMultiplier.
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64Value getStakeMultiplier() {
+      return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+    }
+    /**
+     * <pre>
+     * Stake multiplier for stake - optional value to use instead of 10000
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+      return getStakeMultiplier();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5396,6 +5474,9 @@ public final class TicketOuterClass {
       }
       if (lastForeignEventEndTime_ != null) {
         output.writeMessage(14, getLastForeignEventEndTime());
+      }
+      if (stakeMultiplier_ != null) {
+        output.writeMessage(15, getStakeMultiplier());
       }
       unknownFields.writeTo(output);
     }
@@ -5462,6 +5543,10 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getLastForeignEventEndTime());
       }
+      if (stakeMultiplier_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getStakeMultiplier());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5519,6 +5604,11 @@ public final class TicketOuterClass {
         if (!getLastForeignEventEndTime()
             .equals(other.getLastForeignEventEndTime())) return false;
       }
+      if (hasStakeMultiplier() != other.hasStakeMultiplier()) return false;
+      if (hasStakeMultiplier()) {
+        if (!getStakeMultiplier()
+            .equals(other.getStakeMultiplier())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5572,6 +5662,10 @@ public final class TicketOuterClass {
       if (hasLastForeignEventEndTime()) {
         hash = (37 * hash) + LASTFOREIGNEVENTENDTIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastForeignEventEndTime().hashCode();
+      }
+      if (hasStakeMultiplier()) {
+        hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
+        hash = (53 * hash) + getStakeMultiplier().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5786,6 +5880,12 @@ public final class TicketOuterClass {
           lastForeignEventEndTime_ = null;
           lastForeignEventEndTimeBuilder_ = null;
         }
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
         return this;
       }
 
@@ -5858,6 +5958,11 @@ public final class TicketOuterClass {
           result.lastForeignEventEndTime_ = lastForeignEventEndTime_;
         } else {
           result.lastForeignEventEndTime_ = lastForeignEventEndTimeBuilder_.build();
+        }
+        if (stakeMultiplierBuilder_ == null) {
+          result.stakeMultiplier_ = stakeMultiplier_;
+        } else {
+          result.stakeMultiplier_ = stakeMultiplierBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5969,6 +6074,9 @@ public final class TicketOuterClass {
         }
         if (other.hasLastForeignEventEndTime()) {
           mergeLastForeignEventEndTime(other.getLastForeignEventEndTime());
+        }
+        if (other.hasStakeMultiplier()) {
+          mergeStakeMultiplier(other.getStakeMultiplier());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7710,6 +7818,161 @@ public final class TicketOuterClass {
           lastForeignEventEndTime_ = null;
         }
         return lastForeignEventEndTimeBuilder_;
+      }
+
+      private com.google.protobuf.UInt64Value stakeMultiplier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> stakeMultiplierBuilder_;
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * @return Whether the stakeMultiplier field is set.
+       */
+      public boolean hasStakeMultiplier() {
+        return stakeMultiplierBuilder_ != null || stakeMultiplier_ != null;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * @return The stakeMultiplier.
+       */
+      public com.google.protobuf.UInt64Value getStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        } else {
+          return stakeMultiplierBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder setStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stakeMultiplier_ = value;
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder setStakeMultiplier(
+          com.google.protobuf.UInt64Value.Builder builderForValue) {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
+        if (stakeMultiplierBuilder_ == null) {
+          if (stakeMultiplier_ != null) {
+            stakeMultiplier_ =
+              com.google.protobuf.UInt64Value.newBuilder(stakeMultiplier_).mergeFrom(value).buildPartial();
+          } else {
+            stakeMultiplier_ = value;
+          }
+          onChanged();
+        } else {
+          stakeMultiplierBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public Builder clearStakeMultiplier() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+          onChanged();
+        } else {
+          stakeMultiplier_ = null;
+          stakeMultiplierBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
+        
+        onChanged();
+        return getStakeMultiplierFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
+        if (stakeMultiplierBuilder_ != null) {
+          return stakeMultiplierBuilder_.getMessageOrBuilder();
+        } else {
+          return stakeMultiplier_ == null ?
+              com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+        }
+      }
+      /**
+       * <pre>
+       * Stake multiplier for stake - optional value to use instead of 10000
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+          getStakeMultiplierFieldBuilder() {
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                  getStakeMultiplier(),
+                  getParentForChildren(),
+                  isClean());
+          stakeMultiplier_ = null;
+        }
+        return stakeMultiplierBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13392,7 +13655,7 @@ public final class TicketOuterClass {
 
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -13512,7 +13775,7 @@ public final class TicketOuterClass {
     private long value_;
     /**
      * <pre>
-     * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+     * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
      * </pre>
      *
      * <code>uint64 value = 1;</code>
@@ -13872,7 +14135,7 @@ public final class TicketOuterClass {
       private long value_ ;
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -13884,7 +14147,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -13899,7 +14162,7 @@ public final class TicketOuterClass {
       }
       /**
        * <pre>
-       * Stake amount. It needs to be multiplied by 10000 and rounded to long value in local currency.
+       * Stake amount. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency.
        * </pre>
        *
        * <code>uint64 value = 1;</code>
@@ -29806,8 +30069,8 @@ public final class TicketOuterClass {
       "\"\233\001\n\024TicketResultResponse\022\'\n\005state\030\001 \001(\013" +
       "2\026.ots.TicketResultStateH\000\022)\n\tkeepalive\030" +
       "\002 \001(\0132\024.ots.StreamKeepaliveH\000\022\'\n\005after\030\003" +
-      " \001(\0132\026.ots.TicketsAfterStateH\000B\006\n\004data\"\357" +
-      "\004\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\013" +
+      " \001(\0132\026.ots.TicketsAfterStateH\000B\006\n\004data\"\247" +
+      "\005\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\013" +
       "2\032.google.protobuf.Timestamp\022\026\n\004bets\030\003 \003" +
       "(\0132\010.ots.Bet\0227\n\022accept_odds_change\030\004 \001(\016" +
       "2\033.ots.enums.AcceptOddsChange\022\032\n\022total_c" +
@@ -29820,99 +30083,101 @@ public final class TicketOuterClass {
       "\0162\030.ots.enums.TicketChannel\022=\n\031lastForei" +
       "gnEventStartTime\030\r \001(\0132\032.google.protobuf" +
       ".Timestamp\022;\n\027lastForeignEventEndTime\030\016 " +
-      "\001(\0132\032.google.protobuf.Timestamp\032G\n\017Selec" +
-      "tionsEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024" +
-      ".ots.TicketSelection:\0028\001\"X\n\017TicketSelect" +
-      "ion\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\003 \001(\004\022+\n\007foreign" +
-      "\030\004 \001(\0132\032.google.protobuf.BoolValue\"\271\001\n\016T" +
-      "icketCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001(\0132\034." +
-      "google.protobuf.StringValue\022/\n\tdevice_id" +
-      "\030\003 \001(\0132\034.google.protobuf.StringValue\022\020\n\010" +
-      "language\030\004 \001(\t\022.\n\010nickname\030\005 \001(\0132\034.googl" +
-      "e.protobuf.StringValue\"\213\002\n\003Bet\022(\n\002id\030\001 \001" +
-      "(\0132\034.google.protobuf.StringValue\022\034\n\005bonu" +
-      "s\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r." +
-      "ots.BetStake\0224\n\nreoffer_id\030\004 \001(\0132\034.googl" +
-      "e.protobuf.StringValueB\002\030\001\0220\n\ntotal_wins" +
-      "\030\005 \001(\0132\034.google.protobuf.UInt64Value\022\017\n\007" +
-      "systems\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots." +
-      "BetSelection\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(\t" +
-      "\"@\n\010BetStake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(" +
-      "\0162\027.ots.enums.BetStakeType\"g\n\010BetBonus\022\r" +
-      "\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums." +
-      "BetBonusType\022%\n\004mode\030\003 \001(\0162\027.ots.enums.B" +
-      "etBonusMode\"{\n\021TicketsAfterState\022\022\n\nrequ" +
-      "est_id\030\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\022\'\n\007tickets\030\003 \003(\0132\026.ots.T" +
-      "icketResultState\"\223\005\n\013TicketState\022\n\n\002id\030\001" +
-      " \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.ots.enums." +
-      "AcceptanceStatus\022.\n\rreject_reason\030\003 \001(\0132" +
-      "\027.ots.TicketRejectReason\022/\n\010bet_info\030\004 \003" +
-      "(\0132\035.ots.TicketState.BetInfoEntry\022;\n\016sel" +
-      "ection_info\030\007 \003(\0132#.ots.TicketState.Sele" +
-      "ctionInfoEntry\0223\n\rexchange_rate\030\005 \001(\0132\034." +
-      "google.protobuf.UInt64Value\022B\n\022auto_acce" +
-      "pted_odds\030\006 \003(\0132&.ots.TicketState.AutoAc" +
-      "ceptedOddsEntry\022%\n\007reoffer\030\010 \001(\0132\024.ots.R" +
-      "esponseReoffer\022\022\n\ntotal_odds\030\t \001(\004\032J\n\014Be" +
-      "tInfoEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032" +
-      ".ots.TicketResponseBetInfo:\0028\001\032V\n\022Select" +
-      "ionInfoEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\013" +
-      "2 .ots.TicketSelectionRejectReason:\0028\001\032N" +
-      "\n\025AutoAcceptedOddsEntry\022\013\n\003key\030\001 \001(\t\022$\n\005" +
-      "value\030\002 \001(\0132\025.ots.AutoAcceptedOdds:\0028\001\"I" +
-      "\n\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016reques" +
-      "ted_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004\"\334\002\n\022Ti" +
-      "cketRejectReason\022*\n\004code\030\001 \001(\0162\034.ots.Tic" +
-      "ketRejectReason.Code\022\017\n\007message\030\002 \001(\t\"\210\002" +
-      "\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INT" +
-      "ERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022\027\n\023CO" +
-      "DE_ALREADY_EXISTS\020\003\022\026\n\022CODE_STAKE_TOO_LO" +
-      "W\020\004\022\027\n\023CODE_STAKE_TOO_HIGH\020\005\022\034\n\030CODE_MAX" +
-      "_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS_NOT_ACCE" +
-      "PTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT_ACCEPTAB" +
-      "LE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\346\002\n\025TicketBetRe" +
-      "jectReason\022-\n\004code\030\001 \001(\0162\037.ots.TicketBet" +
-      "RejectReason.Code\022\017\n\007message\030\002 \001(\t\"\214\002\n\004C" +
-      "ode\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_C" +
-      "HANGED\020\001\022\035\n\031CODE_SELECTION_NOT_ACTIVE\020\002\022" +
-      "\026\n\022CODE_STAKE_TOO_LOW\020\003\022\027\n\023CODE_STAKE_TO" +
-      "O_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\005\022\"" +
-      "\n\036CODE_MARKET_LIABILITY_BREACHED\020\006\022\"\n\036CO" +
-      "DE_BETTOR_LIABILITY_BREACHED\020\007\022!\n\035CODE_E" +
-      "VENT_LIABILITY_BREACHED\020\010\"\221\001\n\025TicketResp" +
-      "onseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rreject_reason" +
-      "\030\002 \001(\0132\032.ots.TicketBetRejectReason\022%\n\007re" +
-      "offer\030\003 \001(\0132\024.ots.ResponseReoffer\022\022\n\ntot" +
-      "al_odds\030\004 \001(\004\"\307\001\n\033TicketSelectionRejectR" +
-      "eason\0223\n\004code\030\001 \001(\0162%.ots.TicketSelectio" +
-      "nRejectReason.Code\022\017\n\007message\030\002 \001(\t\"b\n\004C" +
-      "ode\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_C" +
-      "HANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024CODE_NO" +
-      "T_INDEPENDENT\020\003\" \n\017ResponseReoffer\022\r\n\005st" +
-      "ake\030\001 \001(\004\"M\n\014TicketsAfter\022\022\n\nrequest_id\030" +
-      "\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.google.protobuf.T" +
-      "imestamp\"\032\n\014TicketResult\022\n\n\002id\030\001 \001(\t\"\210\001\n" +
-      "\030TicketResultStateBetInfo\022\n\n\002id\030\001 \001(\t\022.\n" +
-      "\nbet_status\030\002 \001(\0162\032.ots.enums.ResultingS" +
-      "tatus\0220\n\nwon_amount\030\003 \001(\0132\034.google.proto" +
-      "buf.UInt64Value\"V\n\036TicketResultStateSele" +
-      "ctionInfo\0224\n\020selection_status\030\001 \001(\0162\032.ot" +
-      "s.enums.ResultingStatus\"\216\004\n\021TicketResult" +
-      "State\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(\016" +
-      "2\032.ots.enums.ResultingStatus\0220\n\nwon_amou" +
-      "nt\030\003 \001(\0132\034.google.protobuf.UInt64Value\0225" +
-      "\n\010bet_info\030\004 \003(\0132#.ots.TicketResultState" +
-      ".BetInfoEntry\022A\n\016selection_info\030\005 \003(\0132)." +
-      "ots.TicketResultState.SelectionInfoEntry" +
-      "\0223\n\rexchange_rate\030\006 \001(\0132\034.google.protobu" +
-      "f.UInt64Value\022/\n\013resulted_at\030\007 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\032M\n\014BetInfoEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots.TicketR" +
-      "esultStateBetInfo:\0028\001\032Y\n\022SelectionInfoEn" +
-      "try\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ots.Ti" +
-      "cketResultStateSelectionInfo:\0028\001B\035\n\rcom." +
-      "oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "\001(\0132\032.google.protobuf.Timestamp\0226\n\020stake" +
+      "_multiplier\030\017 \001(\0132\034.google.protobuf.UInt" +
+      "64Value\032G\n\017SelectionsEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "#\n\005value\030\002 \001(\0132\024.ots.TicketSelection:\0028\001" +
+      "\"X\n\017TicketSelection\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030" +
+      "\003 \001(\004\022+\n\007foreign\030\004 \001(\0132\032.google.protobuf" +
+      ".BoolValue\"\271\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(" +
+      "\t\022(\n\002ip\030\002 \001(\0132\034.google.protobuf.StringVa" +
+      "lue\022/\n\tdevice_id\030\003 \001(\0132\034.google.protobuf" +
+      ".StringValue\022\020\n\010language\030\004 \001(\t\022.\n\010nickna" +
+      "me\030\005 \001(\0132\034.google.protobuf.StringValue\"\213" +
+      "\002\n\003Bet\022(\n\002id\030\001 \001(\0132\034.google.protobuf.Str" +
+      "ingValue\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034" +
+      "\n\005stake\030\003 \001(\0132\r.ots.BetStake\0224\n\nreoffer_" +
+      "id\030\004 \001(\0132\034.google.protobuf.StringValueB\002" +
+      "\030\001\0220\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf" +
+      ".UInt64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselecti" +
+      "ons\030\007 \003(\0132\021.ots.BetSelection\"\032\n\014BetSelec" +
+      "tion\022\n\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 " +
+      "\001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeTy" +
+      "pe\"g\n\010BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 " +
+      "\001(\0162\027.ots.enums.BetBonusType\022%\n\004mode\030\003 \001" +
+      "(\0162\027.ots.enums.BetBonusMode\"{\n\021TicketsAf" +
+      "terState\022\022\n\nrequest_id\030\001 \001(\t\022)\n\005after\030\002 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022\'\n\007ticke" +
+      "ts\030\003 \003(\0132\026.ots.TicketResultState\"\223\005\n\013Tic" +
+      "ketState\022\n\n\002id\030\001 \001(\t\0222\n\rticket_status\030\002 " +
+      "\001(\0162\033.ots.enums.AcceptanceStatus\022.\n\rreje" +
+      "ct_reason\030\003 \001(\0132\027.ots.TicketRejectReason" +
+      "\022/\n\010bet_info\030\004 \003(\0132\035.ots.TicketState.Bet" +
+      "InfoEntry\022;\n\016selection_info\030\007 \003(\0132#.ots." +
+      "TicketState.SelectionInfoEntry\0223\n\rexchan" +
+      "ge_rate\030\005 \001(\0132\034.google.protobuf.UInt64Va" +
+      "lue\022B\n\022auto_accepted_odds\030\006 \003(\0132&.ots.Ti" +
+      "cketState.AutoAcceptedOddsEntry\022%\n\007reoff" +
+      "er\030\010 \001(\0132\024.ots.ResponseReoffer\022\022\n\ntotal_" +
+      "odds\030\t \001(\004\032J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022" +
+      ")\n\005value\030\002 \001(\0132\032.ots.TicketResponseBetIn" +
+      "fo:\0028\001\032V\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022/\n\005value\030\002 \001(\0132 .ots.TicketSelectionRe" +
+      "jectReason:\0028\001\032N\n\025AutoAcceptedOddsEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAc" +
+      "ceptedOdds:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id" +
+      "\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n\tused_o" +
+      "dds\030\003 \001(\004\"\334\002\n\022TicketRejectReason\022*\n\004code" +
+      "\030\001 \001(\0162\034.ots.TicketRejectReason.Code\022\017\n\007" +
+      "message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020CODE_UNSPECIFI" +
+      "ED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_" +
+      "ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\026\n\022C" +
+      "ODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HI" +
+      "GH\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CO" +
+      "DE_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTI" +
+      "ONS_NOT_ACCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t" +
+      "\"\346\002\n\025TicketBetRejectReason\022-\n\004code\030\001 \001(\016" +
+      "2\037.ots.TicketBetRejectReason.Code\022\017\n\007mes" +
+      "sage\030\002 \001(\t\"\214\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020" +
+      "\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTI" +
+      "ON_NOT_ACTIVE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022" +
+      "\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAY" +
+      "OUT_BREACHED\020\005\022\"\n\036CODE_MARKET_LIABILITY_" +
+      "BREACHED\020\006\022\"\n\036CODE_BETTOR_LIABILITY_BREA" +
+      "CHED\020\007\022!\n\035CODE_EVENT_LIABILITY_BREACHED\020" +
+      "\010\"\221\001\n\025TicketResponseBetInfo\022\n\n\002id\030\001 \001(\t\022" +
+      "1\n\rreject_reason\030\002 \001(\0132\032.ots.TicketBetRe" +
+      "jectReason\022%\n\007reoffer\030\003 \001(\0132\024.ots.Respon" +
+      "seReoffer\022\022\n\ntotal_odds\030\004 \001(\004\"\307\001\n\033Ticket" +
+      "SelectionRejectReason\0223\n\004code\030\001 \001(\0162%.ot" +
+      "s.TicketSelectionRejectReason.Code\022\017\n\007me" +
+      "ssage\030\002 \001(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020" +
+      "\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACT" +
+      "IVE\020\002\022\030\n\024CODE_NOT_INDEPENDENT\020\003\" \n\017Respo" +
+      "nseReoffer\022\r\n\005stake\030\001 \001(\004\"M\n\014TicketsAfte" +
+      "r\022\022\n\nrequest_id\030\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\"\032\n\014TicketResult" +
+      "\022\n\n\002id\030\001 \001(\t\"\210\001\n\030TicketResultStateBetInf" +
+      "o\022\n\n\002id\030\001 \001(\t\022.\n\nbet_status\030\002 \001(\0162\032.ots." +
+      "enums.ResultingStatus\0220\n\nwon_amount\030\003 \001(" +
+      "\0132\034.google.protobuf.UInt64Value\"V\n\036Ticke" +
+      "tResultStateSelectionInfo\0224\n\020selection_s" +
+      "tatus\030\001 \001(\0162\032.ots.enums.ResultingStatus\"" +
+      "\216\004\n\021TicketResultState\022\n\n\002id\030\001 \001(\t\0221\n\rtic" +
+      "ket_status\030\002 \001(\0162\032.ots.enums.ResultingSt" +
+      "atus\0220\n\nwon_amount\030\003 \001(\0132\034.google.protob" +
+      "uf.UInt64Value\0225\n\010bet_info\030\004 \003(\0132#.ots.T" +
+      "icketResultState.BetInfoEntry\022A\n\016selecti" +
+      "on_info\030\005 \003(\0132).ots.TicketResultState.Se" +
+      "lectionInfoEntry\0223\n\rexchange_rate\030\006 \001(\0132" +
+      "\034.google.protobuf.UInt64Value\022/\n\013resulte" +
+      "d_at\030\007 \001(\0132\032.google.protobuf.Timestamp\032M" +
+      "\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001" +
+      "(\0132\035.ots.TicketResultStateBetInfo:\0028\001\032Y\n" +
+      "\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005valu" +
+      "e\030\002 \001(\0132#.ots.TicketResultStateSelection" +
+      "Info:\0028\001B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -29951,7 +30216,7 @@ public final class TicketOuterClass {
     internal_static_ots_Ticket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Ticket_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", });
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", "StakeMultiplier", });
     internal_static_ots_Ticket_SelectionsEntry_descriptor =
       internal_static_ots_Ticket_descriptor.getNestedTypes().get(0);
     internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable = new
