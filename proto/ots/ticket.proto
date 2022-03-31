@@ -168,6 +168,9 @@ message TicketsAfterState {
 
   // Tickets resulted after timestamp
   repeated TicketResultState tickets = 3;
+
+  // Information about possible error during processing
+  TicketResultError error = 4;
 }
 
 message TicketState {
@@ -355,6 +358,11 @@ message TicketResultStateSelectionInfo {
   enums.ResultingStatus selection_status = 1;
 }
 
+message TicketResultError {
+  enums.ReasonCode code = 1;
+  google.protobuf.StringValue message = 2;
+}
+
 message TicketResultState {
   // Unique ticket id from operator’s system.
   string id = 1;
@@ -376,4 +384,7 @@ message TicketResultState {
 
   // Ticket result timestamp.
   google.protobuf.Timestamp resulted_at = 7;
+
+  // Information about possible error during processing
+  TicketResultError error = 8;
 }

@@ -464,6 +464,11 @@ export class TicketsAfterState extends jspb.Message {
   setTicketsList(value: Array<TicketResultState>): void;
   addTickets(value?: TicketResultState, index?: number): TicketResultState;
 
+  hasError(): boolean;
+  clearError(): void;
+  getError(): TicketResultError | undefined;
+  setError(value?: TicketResultError): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketsAfterState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketsAfterState): TicketsAfterState.AsObject;
@@ -479,6 +484,7 @@ export namespace TicketsAfterState {
     requestId: string,
     after?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     ticketsList: Array<TicketResultState.AsObject>,
+    error?: TicketResultError.AsObject,
   }
 }
 
@@ -827,6 +833,32 @@ export namespace TicketResultStateSelectionInfo {
   }
 }
 
+export class TicketResultError extends jspb.Message {
+  getCode(): ots_enum_enums_pb.ReasonCodeMap[keyof ots_enum_enums_pb.ReasonCodeMap];
+  setCode(value: ots_enum_enums_pb.ReasonCodeMap[keyof ots_enum_enums_pb.ReasonCodeMap]): void;
+
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setMessage(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketResultError.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketResultError): TicketResultError.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketResultError, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketResultError;
+  static deserializeBinaryFromReader(message: TicketResultError, reader: jspb.BinaryReader): TicketResultError;
+}
+
+export namespace TicketResultError {
+  export type AsObject = {
+    code: ots_enum_enums_pb.ReasonCodeMap[keyof ots_enum_enums_pb.ReasonCodeMap],
+    message?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export class TicketResultState extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -851,6 +883,11 @@ export class TicketResultState extends jspb.Message {
   getResultedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setResultedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasError(): boolean;
+  clearError(): void;
+  getError(): TicketResultError | undefined;
+  setError(value?: TicketResultError): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResultState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketResultState): TicketResultState.AsObject;
@@ -870,6 +907,7 @@ export namespace TicketResultState {
     selectionInfoMap: Array<[string, TicketResultStateSelectionInfo.AsObject]>,
     exchangeRate: number,
     resultedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    error?: TicketResultError.AsObject,
   }
 }
 
