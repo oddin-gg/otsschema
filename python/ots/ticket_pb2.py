@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10ots/ticket.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\x1a\x11ots/commons.proto\"a\n\rTicketRequest\x12\x1d\n\x06ticket\x18\x01 \x01(\x0b\x32\x0b.ots.TicketH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x91\x01\n\x13TicketResultRequest\x12#\n\x06ticket\x18\x01 \x01(\x0b\x32\x11.ots.TicketResultH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\"\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x11.ots.TicketsAfterH\x00\x42\x06\n\x04\x64\x61ta\"f\n\x0eTicketResponse\x12!\n\x05state\x18\x01 \x01(\x0b\x32\x10.ots.TicketStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x9b\x01\n\x14TicketResultResponse\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x16.ots.TicketResultStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\'\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.ots.TicketsAfterStateH\x00\x42\x06\n\x04\x64\x61ta\"\xa7\x05\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04\x62\x65ts\x18\x03 \x03(\x0b\x32\x08.ots.Bet\x12\x37\n\x12\x61\x63\x63\x65pt_odds_change\x18\x04 \x01(\x0e\x32\x1b.ots.enums.AcceptOddsChange\x12\x1a\n\x12total_combinations\x18\x05 \x01(\x04\x12%\n\x08\x63ustomer\x18\x06 \x01(\x0b\x32\x13.ots.TicketCustomer\x12\x30\n\nreoffer_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\nselections\x18\t \x03(\x0b\x32\x1b.ots.Ticket.SelectionsEntry\x12\x31\n\x0blocation_id\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12)\n\x07\x63hannel\x18\x0c \x01(\x0e\x32\x18.ots.enums.TicketChannel\x12=\n\x19lastForeignEventStartTime\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x17lastForeignEventEndTime\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x10stake_multiplier\x18\x0f \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x1aG\n\x0fSelectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.ots.TicketSelection:\x02\x38\x01\"X\n\x0fTicketSelection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x03 \x01(\x04\x12+\n\x07\x66oreign\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xb9\x01\n\x0eTicketCustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\tdevice_id\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08language\x18\x04 \x01(\t\x12.\n\x08nickname\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x8b\x02\n\x03\x42\x65t\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x1c\n\x05\x62onus\x18\x02 \x01(\x0b\x32\r.ots.BetBonus\x12\x1c\n\x05stake\x18\x03 \x01(\x0b\x32\r.ots.BetStake\x12\x34\n\nreoffer_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x02\x18\x01\x12\x30\n\ntotal_wins\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x0f\n\x07systems\x18\x06 \x03(\r\x12%\n\nselections\x18\x07 \x03(\x0b\x32\x11.ots.BetSelection\"\x1a\n\x0c\x42\x65tSelection\x12\n\n\x02id\x18\x01 \x01(\t\"@\n\x08\x42\x65tStake\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetStakeType\"g\n\x08\x42\x65tBonus\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetBonusType\x12%\n\x04mode\x18\x03 \x01(\x0e\x32\x17.ots.enums.BetBonusMode\"\xa2\x01\n\x11TicketsAfterState\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x07tickets\x18\x03 \x03(\x0b\x32\x16.ots.TicketResultState\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x16.ots.TicketResultError\"\x93\x05\n\x0bTicketState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12.\n\rreject_reason\x18\x03 \x01(\x0b\x32\x17.ots.TicketRejectReason\x12/\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32\x1d.ots.TicketState.BetInfoEntry\x12;\n\x0eselection_info\x18\x07 \x03(\x0b\x32#.ots.TicketState.SelectionInfoEntry\x12\x33\n\rexchange_rate\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x42\n\x12\x61uto_accepted_odds\x18\x06 \x03(\x0b\x32&.ots.TicketState.AutoAcceptedOddsEntry\x12%\n\x07reoffer\x18\x08 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\t \x01(\x04\x1aJ\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.ots.TicketResponseBetInfo:\x02\x38\x01\x1aV\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .ots.TicketSelectionRejectReason:\x02\x38\x01\x1aN\n\x15\x41utoAcceptedOddsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.ots.AutoAcceptedOdds:\x02\x38\x01\"I\n\x10\x41utoAcceptedOdds\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0erequested_odds\x18\x02 \x01(\x04\x12\x11\n\tused_odds\x18\x03 \x01(\x04\"\xdc\x02\n\x12TicketRejectReason\x12*\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1c.ots.TicketRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x88\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x03\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x04\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x05\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x06\x12\x1c\n\x18\x43ODE_BETS_NOT_ACCEPTABLE\x10\x07\x12\"\n\x1e\x43ODE_SELECTIONS_NOT_ACCEPTABLE\x10\x08\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\t\"\xe6\x02\n\x15TicketBetRejectReason\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.ots.TicketBetRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x8c\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x1d\n\x19\x43ODE_SELECTION_NOT_ACTIVE\x10\x02\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x03\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\x12\"\n\x1e\x43ODE_MARKET_LIABILITY_BREACHED\x10\x06\x12\"\n\x1e\x43ODE_BETTOR_LIABILITY_BREACHED\x10\x07\x12!\n\x1d\x43ODE_EVENT_LIABILITY_BREACHED\x10\x08\"\x91\x01\n\x15TicketResponseBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rreject_reason\x18\x02 \x01(\x0b\x32\x1a.ots.TicketBetRejectReason\x12%\n\x07reoffer\x18\x03 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\x04 \x01(\x04\"\xc7\x01\n\x1bTicketSelectionRejectReason\x12\x33\n\x04\x63ode\x18\x01 \x01(\x0e\x32%.ots.TicketSelectionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"b\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x13\n\x0f\x43ODE_NOT_ACTIVE\x10\x02\x12\x18\n\x14\x43ODE_NOT_INDEPENDENT\x10\x03\" \n\x0fResponseReoffer\x12\r\n\x05stake\x18\x01 \x01(\x04\"M\n\x0cTicketsAfter\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x1a\n\x0cTicketResult\x12\n\n\x02id\x18\x01 \x01(\t\"\x88\x01\n\x18TicketResultStateBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\nbet_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"V\n\x1eTicketResultStateSelectionInfo\x12\x34\n\x10selection_status\x18\x01 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\"g\n\x11TicketResultError\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.ots.enums.ReasonCode\x12-\n\x07message\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x97\x04\n\x11TicketResultState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rticket_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32#.ots.TicketResultState.BetInfoEntry\x12\x41\n\x0eselection_info\x18\x05 \x03(\x0b\x32).ots.TicketResultState.SelectionInfoEntry\x12\x15\n\rexchange_rate\x18\x06 \x01(\x04\x12/\n\x0bresulted_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x05\x65rror\x18\x08 \x01(\x0b\x32\x16.ots.TicketResultError\x1aM\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x1d.ots.TicketResultStateBetInfo:\x02\x38\x01\x1aY\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x32\n\x05value\x18\x02 \x01(\x0b\x32#.ots.TicketResultStateSelectionInfo:\x02\x38\x01\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x10ots/ticket.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\x1a\x11ots/commons.proto\"a\n\rTicketRequest\x12\x1d\n\x06ticket\x18\x01 \x01(\x0b\x32\x0b.ots.TicketH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x91\x01\n\x13TicketResultRequest\x12#\n\x06ticket\x18\x01 \x01(\x0b\x32\x11.ots.TicketResultH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\"\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x11.ots.TicketsAfterH\x00\x42\x06\n\x04\x64\x61ta\"f\n\x0eTicketResponse\x12!\n\x05state\x18\x01 \x01(\x0b\x32\x10.ots.TicketStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\x9b\x01\n\x14TicketResultResponse\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x16.ots.TicketResultStateH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x12\'\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.ots.TicketsAfterStateH\x00\x42\x06\n\x04\x64\x61ta\"\xa7\x05\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04\x62\x65ts\x18\x03 \x03(\x0b\x32\x08.ots.Bet\x12\x37\n\x12\x61\x63\x63\x65pt_odds_change\x18\x04 \x01(\x0e\x32\x1b.ots.enums.AcceptOddsChange\x12\x1a\n\x12total_combinations\x18\x05 \x01(\x04\x12%\n\x08\x63ustomer\x18\x06 \x01(\x0b\x32\x13.ots.TicketCustomer\x12\x30\n\nreoffer_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\nselections\x18\t \x03(\x0b\x32\x1b.ots.Ticket.SelectionsEntry\x12\x31\n\x0blocation_id\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12)\n\x07\x63hannel\x18\x0c \x01(\x0e\x32\x18.ots.enums.TicketChannel\x12=\n\x19lastForeignEventStartTime\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x17lastForeignEventEndTime\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x10stake_multiplier\x18\x0f \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x1aG\n\x0fSelectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.ots.TicketSelection:\x02\x38\x01\"X\n\x0fTicketSelection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x03 \x01(\x04\x12+\n\x07\x66oreign\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xb9\x01\n\x0eTicketCustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\tdevice_id\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08language\x18\x04 \x01(\t\x12.\n\x08nickname\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x8b\x02\n\x03\x42\x65t\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x1c\n\x05\x62onus\x18\x02 \x01(\x0b\x32\r.ots.BetBonus\x12\x1c\n\x05stake\x18\x03 \x01(\x0b\x32\r.ots.BetStake\x12\x34\n\nreoffer_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x02\x18\x01\x12\x30\n\ntotal_wins\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x0f\n\x07systems\x18\x06 \x03(\r\x12%\n\nselections\x18\x07 \x03(\x0b\x32\x11.ots.BetSelection\"\x1a\n\x0c\x42\x65tSelection\x12\n\n\x02id\x18\x01 \x01(\t\"@\n\x08\x42\x65tStake\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetStakeType\"g\n\x08\x42\x65tBonus\x12\r\n\x05value\x18\x01 \x01(\x04\x12%\n\x04type\x18\x02 \x01(\x0e\x32\x17.ots.enums.BetBonusType\x12%\n\x04mode\x18\x03 \x01(\x0e\x32\x17.ots.enums.BetBonusMode\"\x84\x02\n\x11TicketsAfterState\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x07tickets\x18\x03 \x03(\x0b\x32\x16.ots.TicketResultState\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x16.ots.TicketResultError\x12\x34\n\nbatch_info\x18\x05 \x01(\x0b\x32 .ots.TicketsAfterState.BatchInfo\x1a*\n\tBatchInfo\x12\x0e\n\x06\x61\x63tual\x18\x01 \x01(\r\x12\r\n\x05total\x18\x02 \x01(\r\"\x93\x05\n\x0bTicketState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12.\n\rreject_reason\x18\x03 \x01(\x0b\x32\x17.ots.TicketRejectReason\x12/\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32\x1d.ots.TicketState.BetInfoEntry\x12;\n\x0eselection_info\x18\x07 \x03(\x0b\x32#.ots.TicketState.SelectionInfoEntry\x12\x33\n\rexchange_rate\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x42\n\x12\x61uto_accepted_odds\x18\x06 \x03(\x0b\x32&.ots.TicketState.AutoAcceptedOddsEntry\x12%\n\x07reoffer\x18\x08 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\t \x01(\x04\x1aJ\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.ots.TicketResponseBetInfo:\x02\x38\x01\x1aV\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .ots.TicketSelectionRejectReason:\x02\x38\x01\x1aN\n\x15\x41utoAcceptedOddsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.ots.AutoAcceptedOdds:\x02\x38\x01\"I\n\x10\x41utoAcceptedOdds\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0erequested_odds\x18\x02 \x01(\x04\x12\x11\n\tused_odds\x18\x03 \x01(\x04\"\xdc\x02\n\x12TicketRejectReason\x12*\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1c.ots.TicketRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x88\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x03\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x04\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x05\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x06\x12\x1c\n\x18\x43ODE_BETS_NOT_ACCEPTABLE\x10\x07\x12\"\n\x1e\x43ODE_SELECTIONS_NOT_ACCEPTABLE\x10\x08\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\t\"\xe6\x02\n\x15TicketBetRejectReason\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.ots.TicketBetRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x8c\x02\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x1d\n\x19\x43ODE_SELECTION_NOT_ACTIVE\x10\x02\x12\x16\n\x12\x43ODE_STAKE_TOO_LOW\x10\x03\x12\x17\n\x13\x43ODE_STAKE_TOO_HIGH\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\x12\"\n\x1e\x43ODE_MARKET_LIABILITY_BREACHED\x10\x06\x12\"\n\x1e\x43ODE_BETTOR_LIABILITY_BREACHED\x10\x07\x12!\n\x1d\x43ODE_EVENT_LIABILITY_BREACHED\x10\x08\"\x91\x01\n\x15TicketResponseBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rreject_reason\x18\x02 \x01(\x0b\x32\x1a.ots.TicketBetRejectReason\x12%\n\x07reoffer\x18\x03 \x01(\x0b\x32\x14.ots.ResponseReoffer\x12\x12\n\ntotal_odds\x18\x04 \x01(\x04\"\xc7\x01\n\x1bTicketSelectionRejectReason\x12\x33\n\x04\x63ode\x18\x01 \x01(\x0e\x32%.ots.TicketSelectionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"b\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43ODE_ODDS_CHANGED\x10\x01\x12\x13\n\x0f\x43ODE_NOT_ACTIVE\x10\x02\x12\x18\n\x14\x43ODE_NOT_INDEPENDENT\x10\x03\" \n\x0fResponseReoffer\x12\r\n\x05stake\x18\x01 \x01(\x04\"M\n\x0cTicketsAfter\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x1a\n\x0cTicketResult\x12\n\n\x02id\x18\x01 \x01(\t\"\x88\x01\n\x18TicketResultStateBetInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\nbet_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"V\n\x1eTicketResultStateSelectionInfo\x12\x34\n\x10selection_status\x18\x01 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\"g\n\x11TicketResultError\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.ots.enums.ReasonCode\x12-\n\x07message\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x97\x04\n\x11TicketResultState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rticket_status\x18\x02 \x01(\x0e\x32\x1a.ots.enums.ResultingStatus\x12\x30\n\nwon_amount\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x08\x62\x65t_info\x18\x04 \x03(\x0b\x32#.ots.TicketResultState.BetInfoEntry\x12\x41\n\x0eselection_info\x18\x05 \x03(\x0b\x32).ots.TicketResultState.SelectionInfoEntry\x12\x15\n\rexchange_rate\x18\x06 \x01(\x04\x12/\n\x0bresulted_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x05\x65rror\x18\x08 \x01(\x0b\x32\x16.ots.TicketResultError\x1aM\n\x0c\x42\x65tInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x1d.ots.TicketResultStateBetInfo:\x02\x38\x01\x1aY\n\x12SelectionInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x32\n\x05value\x18\x02 \x01(\x0b\x32#.ots.TicketResultStateSelectionInfo:\x02\x38\x01\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,ots_dot_enum_dot_enums__pb2.DESCRIPTOR,ots_dot_commons__pb2.DESCRIPTOR,])
 
@@ -89,8 +89,8 @@ _TICKETREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3056,
-  serialized_end=3320,
+  serialized_start=3154,
+  serialized_end=3418,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETREJECTREASON_CODE)
 
@@ -149,8 +149,8 @@ _TICKETBETREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3413,
-  serialized_end=3681,
+  serialized_start=3511,
+  serialized_end=3779,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETBETREJECTREASON_CODE)
 
@@ -184,8 +184,8 @@ _TICKETSELECTIONREJECTREASON_CODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3933,
-  serialized_end=4031,
+  serialized_start=4031,
+  serialized_end=4129,
 )
 _sym_db.RegisterEnumDescriptor(_TICKETSELECTIONREJECTREASON_CODE)
 
@@ -838,6 +838,44 @@ _BETBONUS = _descriptor.Descriptor(
 )
 
 
+_TICKETSAFTERSTATE_BATCHINFO = _descriptor.Descriptor(
+  name='BatchInfo',
+  full_name='ots.TicketsAfterState.BatchInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='actual', full_name='ots.TicketsAfterState.BatchInfo.actual', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='ots.TicketsAfterState.BatchInfo.total', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2288,
+  serialized_end=2330,
+)
+
 _TICKETSAFTERSTATE = _descriptor.Descriptor(
   name='TicketsAfterState',
   full_name='ots.TicketsAfterState',
@@ -874,10 +912,17 @@ _TICKETSAFTERSTATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='batch_info', full_name='ots.TicketsAfterState.batch_info', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_TICKETSAFTERSTATE_BATCHINFO, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -887,7 +932,7 @@ _TICKETSAFTERSTATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2070,
-  serialized_end=2232,
+  serialized_end=2330,
 )
 
 
@@ -925,8 +970,8 @@ _TICKETSTATE_BETINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2652,
-  serialized_end=2726,
+  serialized_start=2750,
+  serialized_end=2824,
 )
 
 _TICKETSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
@@ -963,8 +1008,8 @@ _TICKETSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2728,
-  serialized_end=2814,
+  serialized_start=2826,
+  serialized_end=2912,
 )
 
 _TICKETSTATE_AUTOACCEPTEDODDSENTRY = _descriptor.Descriptor(
@@ -1001,8 +1046,8 @@ _TICKETSTATE_AUTOACCEPTEDODDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2816,
-  serialized_end=2894,
+  serialized_start=2914,
+  serialized_end=2992,
 )
 
 _TICKETSTATE = _descriptor.Descriptor(
@@ -1088,8 +1133,8 @@ _TICKETSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2235,
-  serialized_end=2894,
+  serialized_start=2333,
+  serialized_end=2992,
 )
 
 
@@ -1134,8 +1179,8 @@ _AUTOACCEPTEDODDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2896,
-  serialized_end=2969,
+  serialized_start=2994,
+  serialized_end=3067,
 )
 
 
@@ -1174,8 +1219,8 @@ _TICKETREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2972,
-  serialized_end=3320,
+  serialized_start=3070,
+  serialized_end=3418,
 )
 
 
@@ -1214,8 +1259,8 @@ _TICKETBETREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3323,
-  serialized_end=3681,
+  serialized_start=3421,
+  serialized_end=3779,
 )
 
 
@@ -1267,8 +1312,8 @@ _TICKETRESPONSEBETINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3684,
-  serialized_end=3829,
+  serialized_start=3782,
+  serialized_end=3927,
 )
 
 
@@ -1307,8 +1352,8 @@ _TICKETSELECTIONREJECTREASON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3832,
-  serialized_end=4031,
+  serialized_start=3930,
+  serialized_end=4129,
 )
 
 
@@ -1339,8 +1384,8 @@ _RESPONSEREOFFER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4033,
-  serialized_end=4065,
+  serialized_start=4131,
+  serialized_end=4163,
 )
 
 
@@ -1378,8 +1423,8 @@ _TICKETSAFTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4067,
-  serialized_end=4144,
+  serialized_start=4165,
+  serialized_end=4242,
 )
 
 
@@ -1410,8 +1455,8 @@ _TICKETRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4146,
-  serialized_end=4172,
+  serialized_start=4244,
+  serialized_end=4270,
 )
 
 
@@ -1456,8 +1501,8 @@ _TICKETRESULTSTATEBETINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4175,
-  serialized_end=4311,
+  serialized_start=4273,
+  serialized_end=4409,
 )
 
 
@@ -1488,8 +1533,8 @@ _TICKETRESULTSTATESELECTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4313,
-  serialized_end=4399,
+  serialized_start=4411,
+  serialized_end=4497,
 )
 
 
@@ -1527,8 +1572,8 @@ _TICKETRESULTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4401,
-  serialized_end=4504,
+  serialized_start=4499,
+  serialized_end=4602,
 )
 
 
@@ -1566,8 +1611,8 @@ _TICKETRESULTSTATE_BETINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4874,
-  serialized_end=4951,
+  serialized_start=4972,
+  serialized_end=5049,
 )
 
 _TICKETRESULTSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
@@ -1604,8 +1649,8 @@ _TICKETRESULTSTATE_SELECTIONINFOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4953,
-  serialized_end=5042,
+  serialized_start=5051,
+  serialized_end=5140,
 )
 
 _TICKETRESULTSTATE = _descriptor.Descriptor(
@@ -1684,8 +1729,8 @@ _TICKETRESULTSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4507,
-  serialized_end=5042,
+  serialized_start=4605,
+  serialized_end=5140,
 )
 
 _TICKETREQUEST.fields_by_name['ticket'].message_type = _TICKET
@@ -1754,9 +1799,11 @@ _BET.fields_by_name['selections'].message_type = _BETSELECTION
 _BETSTAKE.fields_by_name['type'].enum_type = ots_dot_enum_dot_enums__pb2._BETSTAKETYPE
 _BETBONUS.fields_by_name['type'].enum_type = ots_dot_enum_dot_enums__pb2._BETBONUSTYPE
 _BETBONUS.fields_by_name['mode'].enum_type = ots_dot_enum_dot_enums__pb2._BETBONUSMODE
+_TICKETSAFTERSTATE_BATCHINFO.containing_type = _TICKETSAFTERSTATE
 _TICKETSAFTERSTATE.fields_by_name['after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TICKETSAFTERSTATE.fields_by_name['tickets'].message_type = _TICKETRESULTSTATE
 _TICKETSAFTERSTATE.fields_by_name['error'].message_type = _TICKETRESULTERROR
+_TICKETSAFTERSTATE.fields_by_name['batch_info'].message_type = _TICKETSAFTERSTATE_BATCHINFO
 _TICKETSTATE_BETINFOENTRY.fields_by_name['value'].message_type = _TICKETRESPONSEBETINFO
 _TICKETSTATE_BETINFOENTRY.containing_type = _TICKETSTATE
 _TICKETSTATE_SELECTIONINFOENTRY.fields_by_name['value'].message_type = _TICKETSELECTIONREJECTREASON
@@ -1907,11 +1954,19 @@ BetBonus = _reflection.GeneratedProtocolMessageType('BetBonus', (_message.Messag
 _sym_db.RegisterMessage(BetBonus)
 
 TicketsAfterState = _reflection.GeneratedProtocolMessageType('TicketsAfterState', (_message.Message,), {
+
+  'BatchInfo' : _reflection.GeneratedProtocolMessageType('BatchInfo', (_message.Message,), {
+    'DESCRIPTOR' : _TICKETSAFTERSTATE_BATCHINFO,
+    '__module__' : 'ots.ticket_pb2'
+    # @@protoc_insertion_point(class_scope:ots.TicketsAfterState.BatchInfo)
+    })
+  ,
   'DESCRIPTOR' : _TICKETSAFTERSTATE,
   '__module__' : 'ots.ticket_pb2'
   # @@protoc_insertion_point(class_scope:ots.TicketsAfterState)
   })
 _sym_db.RegisterMessage(TicketsAfterState)
+_sym_db.RegisterMessage(TicketsAfterState.BatchInfo)
 
 TicketState = _reflection.GeneratedProtocolMessageType('TicketState', (_message.Message,), {
 

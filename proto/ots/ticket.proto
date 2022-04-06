@@ -160,6 +160,11 @@ message BetBonus {
 }
 
 message TicketsAfterState {
+  message BatchInfo {
+    uint32 actual = 1;
+    uint32 total = 2;
+  }
+
   // Unique request id from TicketsAfter request
   string request_id = 1;
 
@@ -171,6 +176,9 @@ message TicketsAfterState {
 
   // Information about possible error during processing
   TicketResultError error = 4;
+
+  // Information about batching - batch size is fixed to 100 tickets
+  BatchInfo batch_info = 5;
 }
 
 message TicketState {

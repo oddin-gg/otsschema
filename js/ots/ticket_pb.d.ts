@@ -469,6 +469,11 @@ export class TicketsAfterState extends jspb.Message {
   getError(): TicketResultError | undefined;
   setError(value?: TicketResultError): void;
 
+  hasBatchInfo(): boolean;
+  clearBatchInfo(): void;
+  getBatchInfo(): TicketsAfterState.BatchInfo | undefined;
+  setBatchInfo(value?: TicketsAfterState.BatchInfo): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketsAfterState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketsAfterState): TicketsAfterState.AsObject;
@@ -485,6 +490,31 @@ export namespace TicketsAfterState {
     after?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     ticketsList: Array<TicketResultState.AsObject>,
     error?: TicketResultError.AsObject,
+    batchInfo?: TicketsAfterState.BatchInfo.AsObject,
+  }
+
+  export class BatchInfo extends jspb.Message {
+    getActual(): number;
+    setActual(value: number): void;
+
+    getTotal(): number;
+    setTotal(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BatchInfo.AsObject;
+    static toObject(includeInstance: boolean, msg: BatchInfo): BatchInfo.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BatchInfo, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BatchInfo;
+    static deserializeBinaryFromReader(message: BatchInfo, reader: jspb.BinaryReader): BatchInfo;
+  }
+
+  export namespace BatchInfo {
+    export type AsObject = {
+      actual: number,
+      total: number,
+    }
   }
 }
 
