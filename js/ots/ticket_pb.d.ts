@@ -549,6 +549,11 @@ export class TicketState extends jspb.Message {
   getTotalOdds(): number;
   setTotalOdds(value: number): void;
 
+  hasPendingDelay(): boolean;
+  clearPendingDelay(): void;
+  getPendingDelay(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+  setPendingDelay(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketState): TicketState.AsObject;
@@ -570,6 +575,7 @@ export namespace TicketState {
     autoAcceptedOddsMap: Array<[string, AutoAcceptedOdds.AsObject]>,
     reoffer?: ResponseReoffer.AsObject,
     totalOdds: number,
+    pendingDelay?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
   }
 }
 

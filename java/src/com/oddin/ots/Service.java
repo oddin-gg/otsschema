@@ -27,19 +27,22 @@ public final class Service {
       "to\032\027ots/ticket_cancel.proto\032\033ots/player_" +
       "risk_score.proto\032*ots/resolve_foreign_ev" +
       "ents_in_ticket.proto\032\024ots/ticket_ack.pro" +
-      "to2\312\003\n\003ots\0225\n\006Ticket\022\022.ots.TicketRequest" +
-      "\032\023.ots.TicketResponse(\0010\001\022t\n\035ResolveFore" +
-      "ignMatchesInTicket\022(.ots.ResolveForeignE" +
-      "ventsInTicketRequest\032).ots.ResolveForeig" +
-      "nEventsInTicketResponse\022C\n\014CancelTicket\022" +
-      "\030.ots.TicketCancelRequest\032\031.ots.TicketCa" +
-      "ncelResponse\022L\n\017PlayerRiskScore\022\033.ots.Pl" +
-      "ayerRiskScoreRequest\032\034.ots.PlayerRiskSco" +
-      "reResponse\022:\n\tTicketAck\022\025.ots.TicketAckR" +
-      "equest\032\026.ots.TicketAckResponse\022G\n\014Ticket" +
-      "Result\022\030.ots.TicketResultRequest\032\031.ots.T" +
-      "icketResultResponse(\0010\001B\035\n\rcom.oddin.ots" +
-      "Z\014oddin.gg/otsb\006proto3"
+      "to\032\032ots/ticket_max_stake.proto2\225\004\n\003ots\0225" +
+      "\n\006Ticket\022\022.ots.TicketRequest\032\023.ots.Ticke" +
+      "tResponse(\0010\001\022t\n\035ResolveForeignMatchesIn" +
+      "Ticket\022(.ots.ResolveForeignEventsInTicke" +
+      "tRequest\032).ots.ResolveForeignEventsInTic" +
+      "ketResponse\022C\n\014CancelTicket\022\030.ots.Ticket" +
+      "CancelRequest\032\031.ots.TicketCancelResponse" +
+      "\022L\n\017PlayerRiskScore\022\033.ots.PlayerRiskScor" +
+      "eRequest\032\034.ots.PlayerRiskScoreResponse\022:" +
+      "\n\tTicketAck\022\025.ots.TicketAckRequest\032\026.ots" +
+      ".TicketAckResponse\022G\n\014TicketResult\022\030.ots" +
+      ".TicketResultRequest\032\031.ots.TicketResultR" +
+      "esponse(\0010\001\022I\n\016TicketMaxStake\022\032.ots.Tick" +
+      "etMaxStakeRequest\032\033.ots.TicketMaxStakeRe" +
+      "sponseB\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49,12 +52,14 @@ public final class Service {
           com.oddin.ots.PlayerRiskScore.getDescriptor(),
           com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor(),
           com.oddin.ots.TicketAck.getDescriptor(),
+          com.oddin.ots.TicketMaxStake.getDescriptor(),
         });
     com.oddin.ots.TicketOuterClass.getDescriptor();
     com.oddin.ots.TicketCancel.getDescriptor();
     com.oddin.ots.PlayerRiskScore.getDescriptor();
     com.oddin.ots.ResolveForeignEventsInTicket.getDescriptor();
     com.oddin.ots.TicketAck.getDescriptor();
+    com.oddin.ots.TicketMaxStake.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

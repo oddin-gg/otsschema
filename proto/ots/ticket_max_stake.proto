@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "ots/ticket.proto";
+
+message TicketMaxStakeRequest {
+  Ticket ticket = 1;
+}
+
+message TicketMaxStakeResponse {
+  TicketState state = 1;
+}
+
+

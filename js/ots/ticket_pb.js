@@ -4337,7 +4337,8 @@ proto.ots.TicketState.toObject = function(includeInstance, msg) {
     exchangeRate: (f = msg.getExchangeRate()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f),
     autoAcceptedOddsMap: (f = msg.getAutoAcceptedOddsMap()) ? f.toObject(includeInstance, proto.ots.AutoAcceptedOdds.toObject) : [],
     reoffer: (f = msg.getReoffer()) && proto.ots.ResponseReoffer.toObject(includeInstance, f),
-    totalOdds: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    totalOdds: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    pendingDelay: (f = msg.getPendingDelay()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4418,6 +4419,11 @@ proto.ots.TicketState.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setTotalOdds(value);
+      break;
+    case 10:
+      var value = new google_protobuf_wrappers_pb.UInt32Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.UInt32Value.deserializeBinaryFromReader);
+      msg.setPendingDelay(value);
       break;
     default:
       reader.skipField();
@@ -4503,6 +4509,14 @@ proto.ots.TicketState.serializeBinaryToWriter = function(message, writer) {
     writer.writeUint64(
       9,
       f
+    );
+  }
+  f = message.getPendingDelay();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_wrappers_pb.UInt32Value.serializeBinaryToWriter
     );
   }
 };
@@ -4736,6 +4750,43 @@ proto.ots.TicketState.prototype.getTotalOdds = function() {
  */
 proto.ots.TicketState.prototype.setTotalOdds = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional google.protobuf.UInt32Value pending_delay = 10;
+ * @return {?proto.google.protobuf.UInt32Value}
+ */
+proto.ots.TicketState.prototype.getPendingDelay = function() {
+  return /** @type{?proto.google.protobuf.UInt32Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt32Value, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.UInt32Value|undefined} value
+ * @return {!proto.ots.TicketState} returns this
+*/
+proto.ots.TicketState.prototype.setPendingDelay = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.TicketState} returns this
+ */
+proto.ots.TicketState.prototype.clearPendingDelay = function() {
+  return this.setPendingDelay(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.TicketState.prototype.hasPendingDelay = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

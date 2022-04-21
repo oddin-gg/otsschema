@@ -17829,6 +17829,33 @@ public final class TicketOuterClass {
      * @return The totalOdds.
      */
     long getTotalOdds();
+
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     * @return Whether the pendingDelay field is set.
+     */
+    boolean hasPendingDelay();
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     * @return The pendingDelay.
+     */
+    com.google.protobuf.UInt32Value getPendingDelay();
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     */
+    com.google.protobuf.UInt32ValueOrBuilder getPendingDelayOrBuilder();
   }
   /**
    * Protobuf type {@code ots.TicketState}
@@ -17971,6 +17998,19 @@ public final class TicketOuterClass {
             case 72: {
 
               totalOdds_ = input.readUInt64();
+              break;
+            }
+            case 82: {
+              com.google.protobuf.UInt32Value.Builder subBuilder = null;
+              if (pendingDelay_ != null) {
+                subBuilder = pendingDelay_.toBuilder();
+              }
+              pendingDelay_ = input.readMessage(com.google.protobuf.UInt32Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pendingDelay_);
+                pendingDelay_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -18514,6 +18554,44 @@ public final class TicketOuterClass {
       return totalOdds_;
     }
 
+    public static final int PENDING_DELAY_FIELD_NUMBER = 10;
+    private com.google.protobuf.UInt32Value pendingDelay_;
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     * @return Whether the pendingDelay field is set.
+     */
+    @java.lang.Override
+    public boolean hasPendingDelay() {
+      return pendingDelay_ != null;
+    }
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     * @return The pendingDelay.
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt32Value getPendingDelay() {
+      return pendingDelay_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : pendingDelay_;
+    }
+    /**
+     * <pre>
+     * Possible ticket pending delay
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.UInt32ValueOrBuilder getPendingDelayOrBuilder() {
+      return getPendingDelay();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18563,6 +18641,9 @@ public final class TicketOuterClass {
       }
       if (totalOdds_ != 0L) {
         output.writeUInt64(9, totalOdds_);
+      }
+      if (pendingDelay_ != null) {
+        output.writeMessage(10, getPendingDelay());
       }
       unknownFields.writeTo(output);
     }
@@ -18626,6 +18707,10 @@ public final class TicketOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(9, totalOdds_);
       }
+      if (pendingDelay_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getPendingDelay());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -18667,6 +18752,11 @@ public final class TicketOuterClass {
       }
       if (getTotalOdds()
           != other.getTotalOdds()) return false;
+      if (hasPendingDelay() != other.hasPendingDelay()) return false;
+      if (hasPendingDelay()) {
+        if (!getPendingDelay()
+            .equals(other.getPendingDelay())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -18709,6 +18799,10 @@ public final class TicketOuterClass {
       hash = (37 * hash) + TOTAL_ODDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotalOdds());
+      if (hasPendingDelay()) {
+        hash = (37 * hash) + PENDING_DELAY_FIELD_NUMBER;
+        hash = (53 * hash) + getPendingDelay().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18899,6 +18993,12 @@ public final class TicketOuterClass {
         }
         totalOdds_ = 0L;
 
+        if (pendingDelayBuilder_ == null) {
+          pendingDelay_ = null;
+        } else {
+          pendingDelay_ = null;
+          pendingDelayBuilder_ = null;
+        }
         return this;
       }
 
@@ -18950,6 +19050,11 @@ public final class TicketOuterClass {
           result.reoffer_ = reofferBuilder_.build();
         }
         result.totalOdds_ = totalOdds_;
+        if (pendingDelayBuilder_ == null) {
+          result.pendingDelay_ = pendingDelay_;
+        } else {
+          result.pendingDelay_ = pendingDelayBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -19022,6 +19127,9 @@ public final class TicketOuterClass {
         }
         if (other.getTotalOdds() != 0L) {
           setTotalOdds(other.getTotalOdds());
+        }
+        if (other.hasPendingDelay()) {
+          mergePendingDelay(other.getPendingDelay());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -20206,6 +20314,161 @@ public final class TicketOuterClass {
         totalOdds_ = 0L;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.UInt32Value pendingDelay_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> pendingDelayBuilder_;
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       * @return Whether the pendingDelay field is set.
+       */
+      public boolean hasPendingDelay() {
+        return pendingDelayBuilder_ != null || pendingDelay_ != null;
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       * @return The pendingDelay.
+       */
+      public com.google.protobuf.UInt32Value getPendingDelay() {
+        if (pendingDelayBuilder_ == null) {
+          return pendingDelay_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : pendingDelay_;
+        } else {
+          return pendingDelayBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public Builder setPendingDelay(com.google.protobuf.UInt32Value value) {
+        if (pendingDelayBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pendingDelay_ = value;
+          onChanged();
+        } else {
+          pendingDelayBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public Builder setPendingDelay(
+          com.google.protobuf.UInt32Value.Builder builderForValue) {
+        if (pendingDelayBuilder_ == null) {
+          pendingDelay_ = builderForValue.build();
+          onChanged();
+        } else {
+          pendingDelayBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public Builder mergePendingDelay(com.google.protobuf.UInt32Value value) {
+        if (pendingDelayBuilder_ == null) {
+          if (pendingDelay_ != null) {
+            pendingDelay_ =
+              com.google.protobuf.UInt32Value.newBuilder(pendingDelay_).mergeFrom(value).buildPartial();
+          } else {
+            pendingDelay_ = value;
+          }
+          onChanged();
+        } else {
+          pendingDelayBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public Builder clearPendingDelay() {
+        if (pendingDelayBuilder_ == null) {
+          pendingDelay_ = null;
+          onChanged();
+        } else {
+          pendingDelay_ = null;
+          pendingDelayBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public com.google.protobuf.UInt32Value.Builder getPendingDelayBuilder() {
+        
+        onChanged();
+        return getPendingDelayFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      public com.google.protobuf.UInt32ValueOrBuilder getPendingDelayOrBuilder() {
+        if (pendingDelayBuilder_ != null) {
+          return pendingDelayBuilder_.getMessageOrBuilder();
+        } else {
+          return pendingDelay_ == null ?
+              com.google.protobuf.UInt32Value.getDefaultInstance() : pendingDelay_;
+        }
+      }
+      /**
+       * <pre>
+       * Possible ticket pending delay
+       * </pre>
+       *
+       * <code>.google.protobuf.UInt32Value pending_delay = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> 
+          getPendingDelayFieldBuilder() {
+        if (pendingDelayBuilder_ == null) {
+          pendingDelayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder>(
+                  getPendingDelay(),
+                  getParentForChildren(),
+                  isClean());
+          pendingDelay_ = null;
+        }
+        return pendingDelayBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -32025,7 +32288,7 @@ public final class TicketOuterClass {
       "or\030\004 \001(\0132\026.ots.TicketResultError\0224\n\nbatc" +
       "h_info\030\005 \001(\0132 .ots.TicketsAfterState.Bat" +
       "chInfo\032*\n\tBatchInfo\022\016\n\006actual\030\001 \001(\r\022\r\n\005t" +
-      "otal\030\002 \001(\r\"\223\005\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222" +
+      "otal\030\002 \001(\r\"\310\005\n\013TicketState\022\n\n\002id\030\001 \001(\t\0222" +
       "\n\rticket_status\030\002 \001(\0162\033.ots.enums.Accept" +
       "anceStatus\022.\n\rreject_reason\030\003 \001(\0132\027.ots." +
       "TicketRejectReason\022/\n\010bet_info\030\004 \003(\0132\035.o" +
@@ -32035,68 +32298,69 @@ public final class TicketOuterClass {
       ".protobuf.UInt64Value\022B\n\022auto_accepted_o" +
       "dds\030\006 \003(\0132&.ots.TicketState.AutoAccepted" +
       "OddsEntry\022%\n\007reoffer\030\010 \001(\0132\024.ots.Respons" +
-      "eReoffer\022\022\n\ntotal_odds\030\t \001(\004\032J\n\014BetInfoE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.ots.T" +
-      "icketResponseBetInfo:\0028\001\032V\n\022SelectionInf" +
-      "oEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .ots" +
-      ".TicketSelectionRejectReason:\0028\001\032N\n\025Auto" +
-      "AcceptedOddsEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030" +
-      "\002 \001(\0132\025.ots.AutoAcceptedOdds:\0028\001\"I\n\020Auto" +
-      "AcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_od" +
-      "ds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004\"\334\002\n\022TicketRe" +
-      "jectReason\022*\n\004code\030\001 \001(\0162\034.ots.TicketRej" +
-      "ectReason.Code\022\017\n\007message\030\002 \001(\t\"\210\002\n\004Code" +
-      "\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020" +
-      "\001\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022\027\n\023CODE_ALR" +
-      "EADY_EXISTS\020\003\022\026\n\022CODE_STAKE_TOO_LOW\020\004\022\027\n" +
-      "\023CODE_STAKE_TOO_HIGH\020\005\022\034\n\030CODE_MAX_PAYOU" +
-      "T_BREACHED\020\006\022\034\n\030CODE_BETS_NOT_ACCEPTABLE" +
-      "\020\007\022\"\n\036CODE_SELECTIONS_NOT_ACCEPTABLE\020\010\022\022" +
-      "\n\016CODE_NOT_FOUND\020\t\"\346\002\n\025TicketBetRejectRe" +
-      "ason\022-\n\004code\030\001 \001(\0162\037.ots.TicketBetReject" +
-      "Reason.Code\022\017\n\007message\030\002 \001(\t\"\214\002\n\004Code\022\024\n" +
-      "\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED" +
-      "\020\001\022\035\n\031CODE_SELECTION_NOT_ACTIVE\020\002\022\026\n\022COD" +
-      "E_STAKE_TOO_LOW\020\003\022\027\n\023CODE_STAKE_TOO_HIGH" +
-      "\020\004\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE" +
-      "_MARKET_LIABILITY_BREACHED\020\006\022\"\n\036CODE_BET" +
-      "TOR_LIABILITY_BREACHED\020\007\022!\n\035CODE_EVENT_L" +
-      "IABILITY_BREACHED\020\010\"\221\001\n\025TicketResponseBe" +
-      "tInfo\022\n\n\002id\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\013" +
-      "2\032.ots.TicketBetRejectReason\022%\n\007reoffer\030" +
-      "\003 \001(\0132\024.ots.ResponseReoffer\022\022\n\ntotal_odd" +
-      "s\030\004 \001(\004\"\307\001\n\033TicketSelectionRejectReason\022" +
-      "3\n\004code\030\001 \001(\0162%.ots.TicketSelectionRejec" +
-      "tReason.Code\022\017\n\007message\030\002 \001(\t\"b\n\004Code\022\024\n" +
-      "\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED" +
-      "\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024CODE_NOT_INDE" +
-      "PENDENT\020\003\" \n\017ResponseReoffer\022\r\n\005stake\030\001 " +
-      "\001(\004\"M\n\014TicketsAfter\022\022\n\nrequest_id\030\001 \001(\t\022" +
-      ")\n\005after\030\002 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\"\032\n\014TicketResult\022\n\n\002id\030\001 \001(\t\"\210\001\n\030Ticke" +
-      "tResultStateBetInfo\022\n\n\002id\030\001 \001(\t\022.\n\nbet_s" +
-      "tatus\030\002 \001(\0162\032.ots.enums.ResultingStatus\022" +
-      "0\n\nwon_amount\030\003 \001(\0132\034.google.protobuf.UI" +
-      "nt64Value\"V\n\036TicketResultStateSelectionI" +
-      "nfo\0224\n\020selection_status\030\001 \001(\0162\032.ots.enum" +
-      "s.ResultingStatus\"g\n\021TicketResultError\022#" +
-      "\n\004code\030\001 \001(\0162\025.ots.enums.ReasonCode\022-\n\007m" +
-      "essage\030\002 \001(\0132\034.google.protobuf.StringVal" +
-      "ue\"\227\004\n\021TicketResultState\022\n\n\002id\030\001 \001(\t\0221\n\r" +
-      "ticket_status\030\002 \001(\0162\032.ots.enums.Resultin" +
-      "gStatus\0220\n\nwon_amount\030\003 \001(\0132\034.google.pro" +
-      "tobuf.UInt64Value\0225\n\010bet_info\030\004 \003(\0132#.ot" +
-      "s.TicketResultState.BetInfoEntry\022A\n\016sele" +
-      "ction_info\030\005 \003(\0132).ots.TicketResultState" +
-      ".SelectionInfoEntry\022\025\n\rexchange_rate\030\006 \001" +
-      "(\004\022/\n\013resulted_at\030\007 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022%\n\005error\030\010 \001(\0132\026.ots.TicketR" +
-      "esultError\032M\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022" +
-      ",\n\005value\030\002 \001(\0132\035.ots.TicketResultStateBe" +
-      "tInfo:\0028\001\032Y\n\022SelectionInfoEntry\022\013\n\003key\030\001" +
-      " \001(\t\0222\n\005value\030\002 \001(\0132#.ots.TicketResultSt" +
-      "ateSelectionInfo:\0028\001B\035\n\rcom.oddin.otsZ\014o" +
-      "ddin.gg/otsb\006proto3"
+      "eReoffer\022\022\n\ntotal_odds\030\t \001(\004\0223\n\rpending_" +
+      "delay\030\n \001(\0132\034.google.protobuf.UInt32Valu" +
+      "e\032J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030" +
+      "\002 \001(\0132\032.ots.TicketResponseBetInfo:\0028\001\032V\n" +
+      "\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\022/\n\005valu" +
+      "e\030\002 \001(\0132 .ots.TicketSelectionRejectReaso" +
+      "n:\0028\001\032N\n\025AutoAcceptedOddsEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAcceptedOdd" +
+      "s:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022\026\n" +
+      "\016requested_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001(\004" +
+      "\"\334\002\n\022TicketRejectReason\022*\n\004code\030\001 \001(\0162\034." +
+      "ots.TicketRejectReason.Code\022\017\n\007message\030\002" +
+      " \001(\t\"\210\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rC" +
+      "ODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMENT\020" +
+      "\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\026\n\022CODE_STAKE" +
+      "_TOO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HIGH\020\005\022\034\n\030C" +
+      "ODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS_N" +
+      "OT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT_A" +
+      "CCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\346\002\n\025Tick" +
+      "etBetRejectReason\022-\n\004code\030\001 \001(\0162\037.ots.Ti" +
+      "cketBetRejectReason.Code\022\017\n\007message\030\002 \001(" +
+      "\t\"\214\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE" +
+      "_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTION_NOT_AC" +
+      "TIVE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022\027\n\023CODE_S" +
+      "TAKE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_BREAC" +
+      "HED\020\005\022\"\n\036CODE_MARKET_LIABILITY_BREACHED\020" +
+      "\006\022\"\n\036CODE_BETTOR_LIABILITY_BREACHED\020\007\022!\n" +
+      "\035CODE_EVENT_LIABILITY_BREACHED\020\010\"\221\001\n\025Tic" +
+      "ketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rreject" +
+      "_reason\030\002 \001(\0132\032.ots.TicketBetRejectReaso" +
+      "n\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReoffer" +
+      "\022\022\n\ntotal_odds\030\004 \001(\004\"\307\001\n\033TicketSelection" +
+      "RejectReason\0223\n\004code\030\001 \001(\0162%.ots.TicketS" +
+      "electionRejectReason.Code\022\017\n\007message\030\002 \001" +
+      "(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE" +
+      "_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024" +
+      "CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseReoffe" +
+      "r\022\r\n\005stake\030\001 \001(\004\"M\n\014TicketsAfter\022\022\n\nrequ" +
+      "est_id\030\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\"\032\n\014TicketResult\022\n\n\002id\030\001 " +
+      "\001(\t\"\210\001\n\030TicketResultStateBetInfo\022\n\n\002id\030\001" +
+      " \001(\t\022.\n\nbet_status\030\002 \001(\0162\032.ots.enums.Res" +
+      "ultingStatus\0220\n\nwon_amount\030\003 \001(\0132\034.googl" +
+      "e.protobuf.UInt64Value\"V\n\036TicketResultSt" +
+      "ateSelectionInfo\0224\n\020selection_status\030\001 \001" +
+      "(\0162\032.ots.enums.ResultingStatus\"g\n\021Ticket" +
+      "ResultError\022#\n\004code\030\001 \001(\0162\025.ots.enums.Re" +
+      "asonCode\022-\n\007message\030\002 \001(\0132\034.google.proto" +
+      "buf.StringValue\"\227\004\n\021TicketResultState\022\n\n" +
+      "\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(\0162\032.ots.e" +
+      "nums.ResultingStatus\0220\n\nwon_amount\030\003 \001(\013" +
+      "2\034.google.protobuf.UInt64Value\0225\n\010bet_in" +
+      "fo\030\004 \003(\0132#.ots.TicketResultState.BetInfo" +
+      "Entry\022A\n\016selection_info\030\005 \003(\0132).ots.Tick" +
+      "etResultState.SelectionInfoEntry\022\025\n\rexch" +
+      "ange_rate\030\006 \001(\004\022/\n\013resulted_at\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022%\n\005error\030\010 \001(\0132" +
+      "\026.ots.TicketResultError\032M\n\014BetInfoEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots.Ticket" +
+      "ResultStateBetInfo:\0028\001\032Y\n\022SelectionInfoE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ots.T" +
+      "icketResultStateSelectionInfo:\0028\001B\035\n\rcom" +
+      ".oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -32195,7 +32459,7 @@ public final class TicketOuterClass {
     internal_static_ots_TicketState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketState_descriptor,
-        new java.lang.String[] { "Id", "TicketStatus", "RejectReason", "BetInfo", "SelectionInfo", "ExchangeRate", "AutoAcceptedOdds", "Reoffer", "TotalOdds", });
+        new java.lang.String[] { "Id", "TicketStatus", "RejectReason", "BetInfo", "SelectionInfo", "ExchangeRate", "AutoAcceptedOdds", "Reoffer", "TotalOdds", "PendingDelay", });
     internal_static_ots_TicketState_BetInfoEntry_descriptor =
       internal_static_ots_TicketState_descriptor.getNestedTypes().get(0);
     internal_static_ots_TicketState_BetInfoEntry_fieldAccessorTable = new

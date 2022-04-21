@@ -31,3 +31,5 @@ var ots_resolve_foreign_events_in_ticket_pb = require('../ots/resolve_foreign_ev
 goog.object.extend(proto, ots_resolve_foreign_events_in_ticket_pb);
 var ots_ticket_ack_pb = require('../ots/ticket_ack_pb.js');
 goog.object.extend(proto, ots_ticket_ack_pb);
+var ots_ticket_max_stake_pb = require('../ots/ticket_max_stake_pb.js');
+goog.object.extend(proto, ots_ticket_max_stake_pb);

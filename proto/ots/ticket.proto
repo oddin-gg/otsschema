@@ -208,6 +208,9 @@ message TicketState {
 
   // Total odds for whole ticket
   uint64 total_odds = 9;
+
+  // Possible ticket pending delay
+  google.protobuf.UInt32Value pending_delay = 10;
 }
 
 message AutoAcceptedOdds {

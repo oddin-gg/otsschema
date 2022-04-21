@@ -28,6 +28,7 @@ type OtsClient interface {
 	PlayerRiskScore(ctx context.Context, in *PlayerRiskScoreRequest, opts ...grpc.CallOption) (*PlayerRiskScoreResponse, error)
 	TicketAck(ctx context.Context, in *TicketAckRequest, opts ...grpc.CallOption) (*TicketAckResponse, error)
 	TicketResult(ctx context.Context, opts ...grpc.CallOption) (Ots_TicketResultClient, error)
+	TicketMaxStake(ctx context.Context, in *TicketMaxStakeRequest, opts ...grpc.CallOption) (*TicketMaxStakeResponse, error)
 }
 
 type otsClient struct {
@@ -136,6 +137,15 @@ func (x *otsTicketResultClient) Recv() (*TicketResultResponse, error) {
 	return m, nil
 }
 
+func (c *otsClient) TicketMaxStake(ctx context.Context, in *TicketMaxStakeRequest, opts ...grpc.CallOption) (*TicketMaxStakeResponse, error) {
+	out := new(TicketMaxStakeResponse)
+	err := c.cc.Invoke(ctx, "/ots.ots/TicketMaxStake", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OtsServer is the server API for Ots service.
 // All implementations must embed UnimplementedOtsServer
 // for forward compatibility
@@ -146,6 +156,7 @@ type OtsServer interface {
 	PlayerRiskScore(context.Context, *PlayerRiskScoreRequest) (*PlayerRiskScoreResponse, error)
 	TicketAck(context.Context, *TicketAckRequest) (*TicketAckResponse, error)
 	TicketResult(Ots_TicketResultServer) error
+	TicketMaxStake(context.Context, *TicketMaxStakeRequest) (*TicketMaxStakeResponse, error)
 	mustEmbedUnimplementedOtsServer()
 }
 
@@ -170,6 +181,9 @@ func (UnimplementedOtsServer) TicketAck(context.Context, *TicketAckRequest) (*Ti
 }
 func (UnimplementedOtsServer) TicketResult(Ots_TicketResultServer) error {
 	return status.Errorf(codes.Unimplemented, "method TicketResult not implemented")
+}
+func (UnimplementedOtsServer) TicketMaxStake(context.Context, *TicketMaxStakeRequest) (*TicketMaxStakeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TicketMaxStake not implemented")
 }
 func (UnimplementedOtsServer) mustEmbedUnimplementedOtsServer() {}
 
@@ -308,6 +322,24 @@ func (x *otsTicketResultServer) Recv() (*TicketResultRequest, error) {
 	return m, nil
 }
 
+func _Ots_TicketMaxStake_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TicketMaxStakeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OtsServer).TicketMaxStake(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ots.ots/TicketMaxStake",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OtsServer).TicketMaxStake(ctx, req.(*TicketMaxStakeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Ots_ServiceDesc is the grpc.ServiceDesc for Ots service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -330,6 +362,10 @@ var Ots_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TicketAck",
 			Handler:    _Ots_TicketAck_Handler,
+		},
+		{
+			MethodName: "TicketMaxStake",
+			Handler:    _Ots_TicketMaxStake_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

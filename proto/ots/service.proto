@@ -10,6 +10,7 @@ import "ots/ticket_cancel.proto";
 import "ots/player_risk_score.proto";
 import "ots/resolve_foreign_events_in_ticket.proto";
 import "ots/ticket_ack.proto";
+import "ots/ticket_max_stake.proto";
 
 service ots {
   rpc Ticket (stream TicketRequest) returns (stream TicketResponse);
@@ -18,4 +19,5 @@ service ots {
   rpc PlayerRiskScore (PlayerRiskScoreRequest) returns (PlayerRiskScoreResponse);
   rpc TicketAck (TicketAckRequest) returns (TicketAckResponse);
   rpc TicketResult (stream TicketResultRequest) returns (stream TicketResultResponse);
+  rpc TicketMaxStake(TicketMaxStakeRequest) returns (TicketMaxStakeResponse);
 }

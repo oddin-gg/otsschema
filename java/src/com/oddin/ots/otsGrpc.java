@@ -213,6 +213,37 @@ public final class otsGrpc {
     return getTicketResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
+      com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TicketMaxStake",
+      requestType = com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest.class,
+      responseType = com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
+      com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest, com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> getTicketMaxStakeMethod;
+    if ((getTicketMaxStakeMethod = otsGrpc.getTicketMaxStakeMethod) == null) {
+      synchronized (otsGrpc.class) {
+        if ((getTicketMaxStakeMethod = otsGrpc.getTicketMaxStakeMethod) == null) {
+          otsGrpc.getTicketMaxStakeMethod = getTicketMaxStakeMethod =
+              io.grpc.MethodDescriptor.<com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest, com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TicketMaxStake"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new otsMethodDescriptorSupplier("TicketMaxStake"))
+              .build();
+        }
+      }
+    }
+    return getTicketMaxStakeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -303,6 +334,13 @@ public final class otsGrpc {
       return asyncUnimplementedStreamingCall(getTicketResultMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTicketMaxStakeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -347,6 +385,13 @@ public final class otsGrpc {
                 com.oddin.ots.TicketOuterClass.TicketResultRequest,
                 com.oddin.ots.TicketOuterClass.TicketResultResponse>(
                   this, METHODID_TICKET_RESULT)))
+          .addMethod(
+            getTicketMaxStakeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
+                com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>(
+                  this, METHODID_TICKET_MAX_STAKE)))
           .build();
     }
   }
@@ -412,6 +457,14 @@ public final class otsGrpc {
       return asyncBidiStreamingCall(
           getChannel().newCall(getTicketResultMethod(), getCallOptions()), responseObserver);
     }
+
+    /**
+     */
+    public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -454,6 +507,13 @@ public final class otsGrpc {
     public com.oddin.ots.TicketAck.TicketAckResponse ticketAck(com.oddin.ots.TicketAck.TicketAckRequest request) {
       return blockingUnaryCall(
           getChannel(), getTicketAckMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTicketMaxStakeMethod(), getCallOptions(), request);
     }
   }
 
@@ -502,14 +562,23 @@ public final class otsGrpc {
       return futureUnaryCall(
           getChannel().newCall(getTicketAckMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> ticketMaxStake(
+        com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET = 0;
   private static final int METHODID_CANCEL_TICKET = 1;
   private static final int METHODID_PLAYER_RISK_SCORE = 2;
   private static final int METHODID_TICKET_ACK = 3;
-  private static final int METHODID_TICKET = 4;
-  private static final int METHODID_TICKET_RESULT = 5;
+  private static final int METHODID_TICKET_MAX_STAKE = 4;
+  private static final int METHODID_TICKET = 5;
+  private static final int METHODID_TICKET_RESULT = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -543,6 +612,10 @@ public final class otsGrpc {
         case METHODID_TICKET_ACK:
           serviceImpl.ticketAck((com.oddin.ots.TicketAck.TicketAckRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.ots.TicketAck.TicketAckResponse>) responseObserver);
+          break;
+        case METHODID_TICKET_MAX_STAKE:
+          serviceImpl.ticketMaxStake((com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -617,6 +690,7 @@ public final class otsGrpc {
               .addMethod(getPlayerRiskScoreMethod())
               .addMethod(getTicketAckMethod())
               .addMethod(getTicketResultMethod())
+              .addMethod(getTicketMaxStakeMethod())
               .build();
         }
       }

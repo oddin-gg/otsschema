@@ -7,6 +7,7 @@ var ots_ticket_cancel_pb = require('../ots/ticket_cancel_pb.js');
 var ots_player_risk_score_pb = require('../ots/player_risk_score_pb.js');
 var ots_resolve_foreign_events_in_ticket_pb = require('../ots/resolve_foreign_events_in_ticket_pb.js');
 var ots_ticket_ack_pb = require('../ots/ticket_ack_pb.js');
+var ots_ticket_max_stake_pb = require('../ots/ticket_max_stake_pb.js');
 
 function serialize_ots_PlayerRiskScoreRequest(arg) {
   if (!(arg instanceof ots_player_risk_score_pb.PlayerRiskScoreRequest)) {
@@ -94,6 +95,28 @@ function serialize_ots_TicketCancelResponse(arg) {
 
 function deserialize_ots_TicketCancelResponse(buffer_arg) {
   return ots_ticket_cancel_pb.TicketCancelResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_ots_TicketMaxStakeRequest(arg) {
+  if (!(arg instanceof ots_ticket_max_stake_pb.TicketMaxStakeRequest)) {
+    throw new Error('Expected argument of type ots.TicketMaxStakeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ots_TicketMaxStakeRequest(buffer_arg) {
+  return ots_ticket_max_stake_pb.TicketMaxStakeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_ots_TicketMaxStakeResponse(arg) {
+  if (!(arg instanceof ots_ticket_max_stake_pb.TicketMaxStakeResponse)) {
+    throw new Error('Expected argument of type ots.TicketMaxStakeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ots_TicketMaxStakeResponse(buffer_arg) {
+  return ots_ticket_max_stake_pb.TicketMaxStakeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_ots_TicketRequest(arg) {
@@ -207,6 +230,17 @@ var otsService = exports.otsService = {
     requestDeserialize: deserialize_ots_TicketResultRequest,
     responseSerialize: serialize_ots_TicketResultResponse,
     responseDeserialize: deserialize_ots_TicketResultResponse,
+  },
+  ticketMaxStake: {
+    path: '/ots.ots/TicketMaxStake',
+    requestStream: false,
+    responseStream: false,
+    requestType: ots_ticket_max_stake_pb.TicketMaxStakeRequest,
+    responseType: ots_ticket_max_stake_pb.TicketMaxStakeResponse,
+    requestSerialize: serialize_ots_TicketMaxStakeRequest,
+    requestDeserialize: deserialize_ots_TicketMaxStakeRequest,
+    responseSerialize: serialize_ots_TicketMaxStakeResponse,
+    responseDeserialize: deserialize_ots_TicketMaxStakeResponse,
   },
 };
 
