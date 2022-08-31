@@ -13,5 +13,9 @@ message PlayerRiskScoreRequest {
 }
 
 message PlayerRiskScoreResponse {
-  float score = 1;
+  float score = 1 [deprecated=true];
+  float bos = 2;
+  float oaf = 3;
+  uint32 live_delay = 4;
+  uint32 prematch_delay = 5;
 }

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\rcom.oddin.otsZ\014oddin.gg/ots',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1bots/player_risk_score.proto\x12\x03ots\"$\n\x16PlayerRiskScoreRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x17PlayerRiskScoreResponse\x12\r\n\x05score\x18\x01 \x01(\x02\x42\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
+  serialized_pb=b'\n\x1bots/player_risk_score.proto\x12\x03ots\"$\n\x16PlayerRiskScoreRequest\x12\n\n\x02id\x18\x01 \x01(\t\"r\n\x17PlayerRiskScoreResponse\x12\x11\n\x05score\x18\x01 \x01(\x02\x42\x02\x18\x01\x12\x0b\n\x03\x62os\x18\x02 \x01(\x02\x12\x0b\n\x03oaf\x18\x03 \x01(\x02\x12\x12\n\nlive_delay\x18\x04 \x01(\r\x12\x16\n\x0eprematch_delay\x18\x05 \x01(\rB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3'
 )
 
 
@@ -71,6 +71,34 @@ _PLAYERRISKSCORERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
+      serialized_options=b'\030\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bos', full_name='ots.PlayerRiskScoreResponse.bos', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oaf', full_name='ots.PlayerRiskScoreResponse.oaf', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='live_delay', full_name='ots.PlayerRiskScoreResponse.live_delay', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='prematch_delay', full_name='ots.PlayerRiskScoreResponse.prematch_delay', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
@@ -85,7 +113,7 @@ _PLAYERRISKSCORERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=74,
-  serialized_end=114,
+  serialized_end=188,
 )
 
 DESCRIPTOR.message_types_by_name['PlayerRiskScoreRequest'] = _PLAYERRISKSCOREREQUEST
@@ -108,4 +136,5 @@ _sym_db.RegisterMessage(PlayerRiskScoreResponse)
 
 
 DESCRIPTOR._options = None
+_PLAYERRISKSCORERESPONSE.fields_by_name['score']._options = None
 # @@protoc_insertion_point(module_scope)

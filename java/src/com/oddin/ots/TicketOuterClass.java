@@ -134,6 +134,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -701,8 +703,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 1) {
             ticketBuilder_.mergeFrom(value);
+          } else {
+            ticketBuilder_.setMessage(value);
           }
-          ticketBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -842,8 +845,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 2) {
             keepaliveBuilder_.mergeFrom(value);
+          } else {
+            keepaliveBuilder_.setMessage(value);
           }
-          keepaliveBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -1110,6 +1114,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -1736,8 +1742,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 1) {
             ticketBuilder_.mergeFrom(value);
+          } else {
+            ticketBuilder_.setMessage(value);
           }
-          ticketBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -1877,8 +1884,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 2) {
             keepaliveBuilder_.mergeFrom(value);
+          } else {
+            keepaliveBuilder_.setMessage(value);
           }
-          keepaliveBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -2018,8 +2026,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 3) {
             afterBuilder_.mergeFrom(value);
+          } else {
+            afterBuilder_.setMessage(value);
           }
-          afterBuilder_.setMessage(value);
         }
         dataCase_ = 3;
         return this;
@@ -2257,6 +2266,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -2824,8 +2835,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 1) {
             stateBuilder_.mergeFrom(value);
+          } else {
+            stateBuilder_.setMessage(value);
           }
-          stateBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -2965,8 +2977,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 2) {
             keepaliveBuilder_.mergeFrom(value);
+          } else {
+            keepaliveBuilder_.setMessage(value);
           }
-          keepaliveBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -3233,6 +3246,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -3859,8 +3874,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 1) {
             stateBuilder_.mergeFrom(value);
+          } else {
+            stateBuilder_.setMessage(value);
           }
-          stateBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -4000,8 +4016,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 2) {
             keepaliveBuilder_.mergeFrom(value);
+          } else {
+            keepaliveBuilder_.setMessage(value);
           }
-          keepaliveBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -4141,8 +4158,9 @@ public final class TicketOuterClass {
         } else {
           if (dataCase_ == 3) {
             afterBuilder_.mergeFrom(value);
+          } else {
+            afterBuilder_.setMessage(value);
           }
-          afterBuilder_.setMessage(value);
         }
         dataCase_ = 3;
         return this;
@@ -4478,9 +4496,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.TicketSelection&gt; selections = 9;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.TicketSelection getSelectionsOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.TicketSelection defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.TicketSelection defaultValue);
     /**
      * <pre>
      * Array of selections which form this bet, if omitted all selections are used.
@@ -4823,6 +4843,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -8171,6 +8193,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -9228,6 +9252,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -10664,7 +10690,8 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-     * @deprecated
+     * @deprecated ots.Bet.reoffer_id is deprecated.
+     *     See ots/ticket.proto;l=125
      * @return Whether the reofferId field is set.
      */
     @java.lang.Deprecated boolean hasReofferId();
@@ -10674,7 +10701,8 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-     * @deprecated
+     * @deprecated ots.Bet.reoffer_id is deprecated.
+     *     See ots/ticket.proto;l=125
      * @return The reofferId.
      */
     @java.lang.Deprecated com.google.protobuf.StringValue getReofferId();
@@ -10941,6 +10969,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -11090,7 +11120,8 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-     * @deprecated
+     * @deprecated ots.Bet.reoffer_id is deprecated.
+     *     See ots/ticket.proto;l=125
      * @return Whether the reofferId field is set.
      */
     @java.lang.Override
@@ -11103,7 +11134,8 @@ public final class TicketOuterClass {
      * </pre>
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-     * @deprecated
+     * @deprecated ots.Bet.reoffer_id is deprecated.
+     *     See ots/ticket.proto;l=125
      * @return The reofferId.
      */
     @java.lang.Override
@@ -12271,7 +12303,8 @@ public final class TicketOuterClass {
        * </pre>
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-       * @deprecated
+       * @deprecated ots.Bet.reoffer_id is deprecated.
+       *     See ots/ticket.proto;l=125
        * @return Whether the reofferId field is set.
        */
       @java.lang.Deprecated public boolean hasReofferId() {
@@ -12283,7 +12316,8 @@ public final class TicketOuterClass {
        * </pre>
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
-       * @deprecated
+       * @deprecated ots.Bet.reoffer_id is deprecated.
+       *     See ots/ticket.proto;l=125
        * @return The reofferId.
        */
       @java.lang.Deprecated public com.google.protobuf.StringValue getReofferId() {
@@ -13132,6 +13166,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -13750,6 +13786,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -14428,6 +14466,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -15358,6 +15398,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -15464,6 +15506,8 @@ public final class TicketOuterClass {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
@@ -17644,9 +17688,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.TicketResponseBetInfo&gt; bet_info = 4;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResponseBetInfo getBetInfoOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.TicketResponseBetInfo defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResponseBetInfo defaultValue);
     /**
      * <pre>
      * Rejection details of bets.
@@ -17698,9 +17744,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.TicketSelectionRejectReason&gt; selection_info = 7;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason getSelectionInfoOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.TicketSelectionRejectReason defaultValue);
     /**
      * <pre>
      * Rejection details of selections.
@@ -17779,9 +17827,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.AutoAcceptedOdds&gt; auto_accepted_odds = 6;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.AutoAcceptedOdds getAutoAcceptedOddsOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue);
     /**
      * <pre>
      * Alternative odds used to accept bet.
@@ -18024,6 +18074,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -20640,6 +20692,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -21422,6 +21476,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -22429,6 +22485,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -23488,6 +23546,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -24640,6 +24700,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -25503,6 +25565,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -26048,6 +26112,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -26875,6 +26941,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -27545,6 +27613,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -28488,6 +28558,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -29069,6 +29141,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -29801,9 +29875,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.TicketResultStateBetInfo&gt; bet_info = 4;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.TicketResultStateBetInfo getBetInfoOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResultStateBetInfo getBetInfoOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.TicketResultStateBetInfo defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResultStateBetInfo defaultValue);
     /**
      * <pre>
      * Rejection details of bets.
@@ -29855,9 +29931,11 @@ public final class TicketOuterClass {
      * <code>map&lt;string, .ots.TicketResultStateSelectionInfo&gt; selection_info = 5;</code>
      */
 
-    com.oddin.ots.TicketOuterClass.TicketResultStateSelectionInfo getSelectionInfoOrDefault(
+    /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResultStateSelectionInfo getSelectionInfoOrDefault(
         java.lang.String key,
-        com.oddin.ots.TicketOuterClass.TicketResultStateSelectionInfo defaultValue);
+        /* nullable */
+com.oddin.ots.TicketOuterClass.TicketResultStateSelectionInfo defaultValue);
     /**
      * <pre>
      * Rejection details of selections.
@@ -30074,6 +30152,8 @@ public final class TicketOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);

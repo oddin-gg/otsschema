@@ -106,6 +106,8 @@ public final class PlayerRiskScore {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -633,10 +635,36 @@ public final class PlayerRiskScore {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float score = 1;</code>
+     * <code>float score = 1 [deprecated = true];</code>
+     * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
+     *     See ots/player_risk_score.proto;l=15
      * @return The score.
      */
-    float getScore();
+    @java.lang.Deprecated float getScore();
+
+    /**
+     * <code>float bos = 2;</code>
+     * @return The bos.
+     */
+    float getBos();
+
+    /**
+     * <code>float oaf = 3;</code>
+     * @return The oaf.
+     */
+    float getOaf();
+
+    /**
+     * <code>uint32 live_delay = 4;</code>
+     * @return The liveDelay.
+     */
+    int getLiveDelay();
+
+    /**
+     * <code>uint32 prematch_delay = 5;</code>
+     * @return The prematchDelay.
+     */
+    int getPrematchDelay();
   }
   /**
    * Protobuf type {@code ots.PlayerRiskScoreResponse}
@@ -688,6 +716,26 @@ public final class PlayerRiskScore {
               score_ = input.readFloat();
               break;
             }
+            case 21: {
+
+              bos_ = input.readFloat();
+              break;
+            }
+            case 29: {
+
+              oaf_ = input.readFloat();
+              break;
+            }
+            case 32: {
+
+              liveDelay_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              prematchDelay_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -699,6 +747,8 @@ public final class PlayerRiskScore {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -723,12 +773,58 @@ public final class PlayerRiskScore {
     public static final int SCORE_FIELD_NUMBER = 1;
     private float score_;
     /**
-     * <code>float score = 1;</code>
+     * <code>float score = 1 [deprecated = true];</code>
+     * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
+     *     See ots/player_risk_score.proto;l=15
      * @return The score.
      */
     @java.lang.Override
-    public float getScore() {
+    @java.lang.Deprecated public float getScore() {
       return score_;
+    }
+
+    public static final int BOS_FIELD_NUMBER = 2;
+    private float bos_;
+    /**
+     * <code>float bos = 2;</code>
+     * @return The bos.
+     */
+    @java.lang.Override
+    public float getBos() {
+      return bos_;
+    }
+
+    public static final int OAF_FIELD_NUMBER = 3;
+    private float oaf_;
+    /**
+     * <code>float oaf = 3;</code>
+     * @return The oaf.
+     */
+    @java.lang.Override
+    public float getOaf() {
+      return oaf_;
+    }
+
+    public static final int LIVE_DELAY_FIELD_NUMBER = 4;
+    private int liveDelay_;
+    /**
+     * <code>uint32 live_delay = 4;</code>
+     * @return The liveDelay.
+     */
+    @java.lang.Override
+    public int getLiveDelay() {
+      return liveDelay_;
+    }
+
+    public static final int PREMATCH_DELAY_FIELD_NUMBER = 5;
+    private int prematchDelay_;
+    /**
+     * <code>uint32 prematch_delay = 5;</code>
+     * @return The prematchDelay.
+     */
+    @java.lang.Override
+    public int getPrematchDelay() {
+      return prematchDelay_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -748,6 +844,18 @@ public final class PlayerRiskScore {
       if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         output.writeFloat(1, score_);
       }
+      if (java.lang.Float.floatToRawIntBits(bos_) != 0) {
+        output.writeFloat(2, bos_);
+      }
+      if (java.lang.Float.floatToRawIntBits(oaf_) != 0) {
+        output.writeFloat(3, oaf_);
+      }
+      if (liveDelay_ != 0) {
+        output.writeUInt32(4, liveDelay_);
+      }
+      if (prematchDelay_ != 0) {
+        output.writeUInt32(5, prematchDelay_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -760,6 +868,22 @@ public final class PlayerRiskScore {
       if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, score_);
+      }
+      if (java.lang.Float.floatToRawIntBits(bos_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, bos_);
+      }
+      if (java.lang.Float.floatToRawIntBits(oaf_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, oaf_);
+      }
+      if (liveDelay_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, liveDelay_);
+      }
+      if (prematchDelay_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, prematchDelay_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -779,6 +903,16 @@ public final class PlayerRiskScore {
       if (java.lang.Float.floatToIntBits(getScore())
           != java.lang.Float.floatToIntBits(
               other.getScore())) return false;
+      if (java.lang.Float.floatToIntBits(getBos())
+          != java.lang.Float.floatToIntBits(
+              other.getBos())) return false;
+      if (java.lang.Float.floatToIntBits(getOaf())
+          != java.lang.Float.floatToIntBits(
+              other.getOaf())) return false;
+      if (getLiveDelay()
+          != other.getLiveDelay()) return false;
+      if (getPrematchDelay()
+          != other.getPrematchDelay()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -793,6 +927,16 @@ public final class PlayerRiskScore {
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getScore());
+      hash = (37 * hash) + BOS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getBos());
+      hash = (37 * hash) + OAF_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getOaf());
+      hash = (37 * hash) + LIVE_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveDelay();
+      hash = (37 * hash) + PREMATCH_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrematchDelay();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -928,6 +1072,14 @@ public final class PlayerRiskScore {
         super.clear();
         score_ = 0F;
 
+        bos_ = 0F;
+
+        oaf_ = 0F;
+
+        liveDelay_ = 0;
+
+        prematchDelay_ = 0;
+
         return this;
       }
 
@@ -955,6 +1107,10 @@ public final class PlayerRiskScore {
       public com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse buildPartial() {
         com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse result = new com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse(this);
         result.score_ = score_;
+        result.bos_ = bos_;
+        result.oaf_ = oaf_;
+        result.liveDelay_ = liveDelay_;
+        result.prematchDelay_ = prematchDelay_;
         onBuilt();
         return result;
       }
@@ -1006,6 +1162,18 @@ public final class PlayerRiskScore {
         if (other.getScore() != 0F) {
           setScore(other.getScore());
         }
+        if (other.getBos() != 0F) {
+          setBos(other.getBos());
+        }
+        if (other.getOaf() != 0F) {
+          setOaf(other.getOaf());
+        }
+        if (other.getLiveDelay() != 0) {
+          setLiveDelay(other.getLiveDelay());
+        }
+        if (other.getPrematchDelay() != 0) {
+          setPrematchDelay(other.getPrematchDelay());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1037,31 +1205,161 @@ public final class PlayerRiskScore {
 
       private float score_ ;
       /**
-       * <code>float score = 1;</code>
+       * <code>float score = 1 [deprecated = true];</code>
+       * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
+       *     See ots/player_risk_score.proto;l=15
        * @return The score.
        */
       @java.lang.Override
-      public float getScore() {
+      @java.lang.Deprecated public float getScore() {
         return score_;
       }
       /**
-       * <code>float score = 1;</code>
+       * <code>float score = 1 [deprecated = true];</code>
+       * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
+       *     See ots/player_risk_score.proto;l=15
        * @param value The score to set.
        * @return This builder for chaining.
        */
-      public Builder setScore(float value) {
+      @java.lang.Deprecated public Builder setScore(float value) {
         
         score_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float score = 1;</code>
+       * <code>float score = 1 [deprecated = true];</code>
+       * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
+       *     See ots/player_risk_score.proto;l=15
        * @return This builder for chaining.
        */
-      public Builder clearScore() {
+      @java.lang.Deprecated public Builder clearScore() {
         
         score_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float bos_ ;
+      /**
+       * <code>float bos = 2;</code>
+       * @return The bos.
+       */
+      @java.lang.Override
+      public float getBos() {
+        return bos_;
+      }
+      /**
+       * <code>float bos = 2;</code>
+       * @param value The bos to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBos(float value) {
+        
+        bos_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float bos = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBos() {
+        
+        bos_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float oaf_ ;
+      /**
+       * <code>float oaf = 3;</code>
+       * @return The oaf.
+       */
+      @java.lang.Override
+      public float getOaf() {
+        return oaf_;
+      }
+      /**
+       * <code>float oaf = 3;</code>
+       * @param value The oaf to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOaf(float value) {
+        
+        oaf_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float oaf = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOaf() {
+        
+        oaf_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int liveDelay_ ;
+      /**
+       * <code>uint32 live_delay = 4;</code>
+       * @return The liveDelay.
+       */
+      @java.lang.Override
+      public int getLiveDelay() {
+        return liveDelay_;
+      }
+      /**
+       * <code>uint32 live_delay = 4;</code>
+       * @param value The liveDelay to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLiveDelay(int value) {
+        
+        liveDelay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 live_delay = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLiveDelay() {
+        
+        liveDelay_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int prematchDelay_ ;
+      /**
+       * <code>uint32 prematch_delay = 5;</code>
+       * @return The prematchDelay.
+       */
+      @java.lang.Override
+      public int getPrematchDelay() {
+        return prematchDelay_;
+      }
+      /**
+       * <code>uint32 prematch_delay = 5;</code>
+       * @param value The prematchDelay to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrematchDelay(int value) {
+        
+        prematchDelay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 prematch_delay = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrematchDelay() {
+        
+        prematchDelay_ = 0;
         onChanged();
         return this;
       }
@@ -1138,9 +1436,11 @@ public final class PlayerRiskScore {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ots/player_risk_score.proto\022\003ots\"$\n\026Pl" +
-      "ayerRiskScoreRequest\022\n\n\002id\030\001 \001(\t\"(\n\027Play" +
-      "erRiskScoreResponse\022\r\n\005score\030\001 \001(\002B\035\n\rco" +
-      "m.oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "ayerRiskScoreRequest\022\n\n\002id\030\001 \001(\t\"r\n\027Play" +
+      "erRiskScoreResponse\022\021\n\005score\030\001 \001(\002B\002\030\001\022\013" +
+      "\n\003bos\030\002 \001(\002\022\013\n\003oaf\030\003 \001(\002\022\022\n\nlive_delay\030\004" +
+      " \001(\r\022\026\n\016prematch_delay\030\005 \001(\rB\035\n\rcom.oddi" +
+      "n.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1157,7 +1457,7 @@ public final class PlayerRiskScore {
     internal_static_ots_PlayerRiskScoreResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_PlayerRiskScoreResponse_descriptor,
-        new java.lang.String[] { "Score", });
+        new java.lang.String[] { "Score", "Bos", "Oaf", "LiveDelay", "PrematchDelay", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
