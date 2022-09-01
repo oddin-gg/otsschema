@@ -292,6 +292,9 @@ message TicketBetRejectReason {
 
     // Event liability breached.
     CODE_EVENT_LIABILITY_BREACHED = 8;
+
+    // Market bettor liability breached.
+    CODE_MARKET_BETTOR_LIABILITY_BREACHED = 9;
   }
 
   // Reason code.

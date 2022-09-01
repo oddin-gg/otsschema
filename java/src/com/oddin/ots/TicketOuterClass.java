@@ -22585,6 +22585,14 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue);
        * <code>CODE_EVENT_LIABILITY_BREACHED = 8;</code>
        */
       CODE_EVENT_LIABILITY_BREACHED(8),
+      /**
+       * <pre>
+       * Market bettor liability breached.
+       * </pre>
+       *
+       * <code>CODE_MARKET_BETTOR_LIABILITY_BREACHED = 9;</code>
+       */
+      CODE_MARKET_BETTOR_LIABILITY_BREACHED(9),
       UNRECOGNIZED(-1),
       ;
 
@@ -22660,6 +22668,14 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue);
        * <code>CODE_EVENT_LIABILITY_BREACHED = 8;</code>
        */
       public static final int CODE_EVENT_LIABILITY_BREACHED_VALUE = 8;
+      /**
+       * <pre>
+       * Market bettor liability breached.
+       * </pre>
+       *
+       * <code>CODE_MARKET_BETTOR_LIABILITY_BREACHED = 9;</code>
+       */
+      public static final int CODE_MARKET_BETTOR_LIABILITY_BREACHED_VALUE = 9;
 
 
       public final int getNumber() {
@@ -22695,6 +22711,7 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue);
           case 6: return CODE_MARKET_LIABILITY_BREACHED;
           case 7: return CODE_BETTOR_LIABILITY_BREACHED;
           case 8: return CODE_EVENT_LIABILITY_BREACHED;
+          case 9: return CODE_MARKET_BETTOR_LIABILITY_BREACHED;
           default: return null;
         }
       }
@@ -32396,51 +32413,52 @@ com.oddin.ots.TicketOuterClass.TicketResultStateSelectionInfo defaultValue);
       "_TOO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HIGH\020\005\022\034\n\030C" +
       "ODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS_N" +
       "OT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT_A" +
-      "CCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\346\002\n\025Tick" +
+      "CCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\221\003\n\025Tick" +
       "etBetRejectReason\022-\n\004code\030\001 \001(\0162\037.ots.Ti" +
       "cketBetRejectReason.Code\022\017\n\007message\030\002 \001(" +
-      "\t\"\214\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE" +
+      "\t\"\267\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE" +
       "_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTION_NOT_AC" +
       "TIVE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022\027\n\023CODE_S" +
       "TAKE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_BREAC" +
       "HED\020\005\022\"\n\036CODE_MARKET_LIABILITY_BREACHED\020" +
       "\006\022\"\n\036CODE_BETTOR_LIABILITY_BREACHED\020\007\022!\n" +
-      "\035CODE_EVENT_LIABILITY_BREACHED\020\010\"\221\001\n\025Tic" +
-      "ketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rreject" +
-      "_reason\030\002 \001(\0132\032.ots.TicketBetRejectReaso" +
-      "n\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReoffer" +
-      "\022\022\n\ntotal_odds\030\004 \001(\004\"\307\001\n\033TicketSelection" +
-      "RejectReason\0223\n\004code\030\001 \001(\0162%.ots.TicketS" +
-      "electionRejectReason.Code\022\017\n\007message\030\002 \001" +
-      "(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CODE" +
-      "_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022\030\n\024" +
-      "CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseReoffe" +
-      "r\022\r\n\005stake\030\001 \001(\004\"M\n\014TicketsAfter\022\022\n\nrequ" +
-      "est_id\030\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\"\032\n\014TicketResult\022\n\n\002id\030\001 " +
-      "\001(\t\"\210\001\n\030TicketResultStateBetInfo\022\n\n\002id\030\001" +
-      " \001(\t\022.\n\nbet_status\030\002 \001(\0162\032.ots.enums.Res" +
-      "ultingStatus\0220\n\nwon_amount\030\003 \001(\0132\034.googl" +
-      "e.protobuf.UInt64Value\"V\n\036TicketResultSt" +
-      "ateSelectionInfo\0224\n\020selection_status\030\001 \001" +
-      "(\0162\032.ots.enums.ResultingStatus\"g\n\021Ticket" +
-      "ResultError\022#\n\004code\030\001 \001(\0162\025.ots.enums.Re" +
-      "asonCode\022-\n\007message\030\002 \001(\0132\034.google.proto" +
-      "buf.StringValue\"\227\004\n\021TicketResultState\022\n\n" +
-      "\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(\0162\032.ots.e" +
-      "nums.ResultingStatus\0220\n\nwon_amount\030\003 \001(\013" +
-      "2\034.google.protobuf.UInt64Value\0225\n\010bet_in" +
-      "fo\030\004 \003(\0132#.ots.TicketResultState.BetInfo" +
-      "Entry\022A\n\016selection_info\030\005 \003(\0132).ots.Tick" +
-      "etResultState.SelectionInfoEntry\022\025\n\rexch" +
-      "ange_rate\030\006 \001(\004\022/\n\013resulted_at\030\007 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022%\n\005error\030\010 \001(\0132" +
-      "\026.ots.TicketResultError\032M\n\014BetInfoEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots.Ticket" +
-      "ResultStateBetInfo:\0028\001\032Y\n\022SelectionInfoE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ots.T" +
-      "icketResultStateSelectionInfo:\0028\001B\035\n\rcom" +
-      ".oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "\035CODE_EVENT_LIABILITY_BREACHED\020\010\022)\n%CODE" +
+      "_MARKET_BETTOR_LIABILITY_BREACHED\020\t\"\221\001\n\025" +
+      "TicketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rrej" +
+      "ect_reason\030\002 \001(\0132\032.ots.TicketBetRejectRe" +
+      "ason\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseReof" +
+      "fer\022\022\n\ntotal_odds\030\004 \001(\004\"\307\001\n\033TicketSelect" +
+      "ionRejectReason\0223\n\004code\030\001 \001(\0162%.ots.Tick" +
+      "etSelectionRejectReason.Code\022\017\n\007message\030" +
+      "\002 \001(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021C" +
+      "ODE_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020\002\022" +
+      "\030\n\024CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseReo" +
+      "ffer\022\r\n\005stake\030\001 \001(\004\"M\n\014TicketsAfter\022\022\n\nr" +
+      "equest_id\030\001 \001(\t\022)\n\005after\030\002 \001(\0132\032.google." +
+      "protobuf.Timestamp\"\032\n\014TicketResult\022\n\n\002id" +
+      "\030\001 \001(\t\"\210\001\n\030TicketResultStateBetInfo\022\n\n\002i" +
+      "d\030\001 \001(\t\022.\n\nbet_status\030\002 \001(\0162\032.ots.enums." +
+      "ResultingStatus\0220\n\nwon_amount\030\003 \001(\0132\034.go" +
+      "ogle.protobuf.UInt64Value\"V\n\036TicketResul" +
+      "tStateSelectionInfo\0224\n\020selection_status\030" +
+      "\001 \001(\0162\032.ots.enums.ResultingStatus\"g\n\021Tic" +
+      "ketResultError\022#\n\004code\030\001 \001(\0162\025.ots.enums" +
+      ".ReasonCode\022-\n\007message\030\002 \001(\0132\034.google.pr" +
+      "otobuf.StringValue\"\227\004\n\021TicketResultState" +
+      "\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(\0162\032.ot" +
+      "s.enums.ResultingStatus\0220\n\nwon_amount\030\003 " +
+      "\001(\0132\034.google.protobuf.UInt64Value\0225\n\010bet" +
+      "_info\030\004 \003(\0132#.ots.TicketResultState.BetI" +
+      "nfoEntry\022A\n\016selection_info\030\005 \003(\0132).ots.T" +
+      "icketResultState.SelectionInfoEntry\022\025\n\re" +
+      "xchange_rate\030\006 \001(\004\022/\n\013resulted_at\030\007 \001(\0132" +
+      "\032.google.protobuf.Timestamp\022%\n\005error\030\010 \001" +
+      "(\0132\026.ots.TicketResultError\032M\n\014BetInfoEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots.Tic" +
+      "ketResultStateBetInfo:\0028\001\032Y\n\022SelectionIn" +
+      "foEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ot" +
+      "s.TicketResultStateSelectionInfo:\0028\001B\035\n\r" +
+      "com.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
