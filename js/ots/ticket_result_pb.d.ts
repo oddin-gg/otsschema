@@ -310,6 +310,11 @@ export class TicketResultState extends jspb.Message {
   getError(): TicketResultError | undefined;
   setError(value?: TicketResultError): void;
 
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): void;
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResultState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketResultState): TicketResultState.AsObject;
@@ -330,6 +335,7 @@ export namespace TicketResultState {
     exchangeRate: number,
     resultedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     error?: TicketResultError.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

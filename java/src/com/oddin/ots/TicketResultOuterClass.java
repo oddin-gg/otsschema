@@ -8617,7 +8617,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
 
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
@@ -8626,7 +8626,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     boolean hasError();
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
@@ -8635,12 +8635,39 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     com.oddin.ots.TicketResultOuterClass.TicketResultError getError();
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
      */
     com.oddin.ots.TicketResultOuterClass.TicketResultErrorOrBuilder getErrorOrBuilder();
+
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    boolean hasModifiedAt();
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return The modifiedAt.
+     */
+    com.google.protobuf.Timestamp getModifiedAt();
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
   }
   /**
    * Protobuf type {@code ots.TicketResultState}
@@ -9056,7 +9083,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     private com.oddin.ots.TicketResultOuterClass.TicketResultError error_;
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
@@ -9068,7 +9095,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     }
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
@@ -9080,7 +9107,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     }
     /**
      * <pre>
-     * Information about possible error during processing
+     * Information about possible error during processing.
      * </pre>
      *
      * <code>.ots.TicketResultError error = 8;</code>
@@ -9088,6 +9115,44 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     @java.lang.Override
     public com.oddin.ots.TicketResultOuterClass.TicketResultErrorOrBuilder getErrorOrBuilder() {
       return error_ == null ? com.oddin.ots.TicketResultOuterClass.TicketResultError.getDefaultInstance() : error_;
+    }
+
+    public static final int MODIFIED_AT_FIELD_NUMBER = 9;
+    private com.google.protobuf.Timestamp modifiedAt_;
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasModifiedAt() {
+      return modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return The modifiedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+    }
+    /**
+     * <pre>
+     * Ticket modified_at timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9133,6 +9198,9 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       if (error_ != null) {
         output.writeMessage(8, getError());
+      }
+      if (modifiedAt_ != null) {
+        output.writeMessage(9, getModifiedAt());
       }
       getUnknownFields().writeTo(output);
     }
@@ -9186,6 +9254,10 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getError());
       }
+      if (modifiedAt_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getModifiedAt());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9225,6 +9297,11 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         if (!getError()
             .equals(other.getError())) return false;
       }
+      if (hasModifiedAt() != other.hasModifiedAt()) return false;
+      if (hasModifiedAt()) {
+        if (!getModifiedAt()
+            .equals(other.getModifiedAt())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9262,6 +9339,10 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       if (hasError()) {
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
         hash = (53 * hash) + getError().hashCode();
+      }
+      if (hasModifiedAt()) {
+        hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getModifiedAt().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -9438,6 +9519,11 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           errorBuilder_.dispose();
           errorBuilder_ = null;
         }
+        modifiedAt_ = null;
+        if (modifiedAtBuilder_ != null) {
+          modifiedAtBuilder_.dispose();
+          modifiedAtBuilder_ = null;
+        }
         return this;
       }
 
@@ -9502,6 +9588,11 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           result.error_ = errorBuilder_ == null
               ? error_
               : errorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.modifiedAt_ = modifiedAtBuilder_ == null
+              ? modifiedAt_
+              : modifiedAtBuilder_.build();
         }
       }
 
@@ -9574,6 +9665,9 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         }
         if (other.hasError()) {
           mergeError(other.getError());
+        }
+        if (other.hasModifiedAt()) {
+          mergeModifiedAt(other.getModifiedAt());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9655,6 +9749,13 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+              case 74: {
+                input.readMessage(
+                    getModifiedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -10506,7 +10607,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           com.oddin.ots.TicketResultOuterClass.TicketResultError, com.oddin.ots.TicketResultOuterClass.TicketResultError.Builder, com.oddin.ots.TicketResultOuterClass.TicketResultErrorOrBuilder> errorBuilder_;
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10517,7 +10618,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10532,7 +10633,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10552,7 +10653,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10570,7 +10671,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10593,7 +10694,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10610,7 +10711,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10622,7 +10723,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10637,7 +10738,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       }
       /**
        * <pre>
-       * Information about possible error during processing
+       * Information about possible error during processing.
        * </pre>
        *
        * <code>.ots.TicketResultError error = 8;</code>
@@ -10654,6 +10755,161 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           error_ = null;
         }
         return errorBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp modifiedAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       * @return Whether the modifiedAt field is set.
+       */
+      public boolean hasModifiedAt() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       * @return The modifiedAt.
+       */
+      public com.google.protobuf.Timestamp getModifiedAt() {
+        if (modifiedAtBuilder_ == null) {
+          return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+        } else {
+          return modifiedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+        if (modifiedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          modifiedAt_ = value;
+        } else {
+          modifiedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public Builder setModifiedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (modifiedAtBuilder_ == null) {
+          modifiedAt_ = builderForValue.build();
+        } else {
+          modifiedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+        if (modifiedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0) &&
+            modifiedAt_ != null &&
+            modifiedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getModifiedAtBuilder().mergeFrom(value);
+          } else {
+            modifiedAt_ = value;
+          }
+        } else {
+          modifiedAtBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public Builder clearModifiedAt() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        modifiedAt_ = null;
+        if (modifiedAtBuilder_ != null) {
+          modifiedAtBuilder_.dispose();
+          modifiedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getModifiedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+        if (modifiedAtBuilder_ != null) {
+          return modifiedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return modifiedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+        }
+      }
+      /**
+       * <pre>
+       * Ticket modified_at timestamp.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getModifiedAtFieldBuilder() {
+        if (modifiedAtBuilder_ == null) {
+          modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getModifiedAt(),
+                  getParentForChildren(),
+                  isClean());
+          modifiedAt_ = null;
+        }
+        return modifiedAtBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10816,7 +11072,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       "tatus\030\001 \001(\0162\032.ots.enums.ResultingStatus\"" +
       "g\n\021TicketResultError\022#\n\004code\030\001 \001(\0162\025.ots" +
       ".enums.ReasonCode\022-\n\007message\030\002 \001(\0132\034.goo" +
-      "gle.protobuf.StringValue\"\227\004\n\021TicketResul" +
+      "gle.protobuf.StringValue\"\310\004\n\021TicketResul" +
       "tState\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(" +
       "\0162\032.ots.enums.ResultingStatus\0220\n\nwon_amo" +
       "unt\030\003 \001(\0132\034.google.protobuf.UInt64Value\022" +
@@ -10825,13 +11081,14 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       ".ots.TicketResultState.SelectionInfoEntr" +
       "y\022\025\n\rexchange_rate\030\006 \001(\004\022/\n\013resulted_at\030" +
       "\007 \001(\0132\032.google.protobuf.Timestamp\022%\n\005err" +
-      "or\030\010 \001(\0132\026.ots.TicketResultError\032M\n\014BetI" +
-      "nfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.o" +
-      "ts.TicketResultStateBetInfo:\0028\001\032Y\n\022Selec" +
-      "tionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(" +
-      "\0132#.ots.TicketResultStateSelectionInfo:\002" +
-      "8\001B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto" +
-      "3"
+      "or\030\010 \001(\0132\026.ots.TicketResultError\022/\n\013modi" +
+      "fied_at\030\t \001(\0132\032.google.protobuf.Timestam" +
+      "p\032M\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030" +
+      "\002 \001(\0132\035.ots.TicketResultStateBetInfo:\0028\001" +
+      "\032Y\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005v" +
+      "alue\030\002 \001(\0132#.ots.TicketResultStateSelect" +
+      "ionInfo:\0028\001B\035\n\rcom.oddin.otsZ\014oddin.gg/o" +
+      "tsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10900,7 +11157,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     internal_static_ots_TicketResultState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResultState_descriptor,
-        new java.lang.String[] { "Id", "TicketStatus", "WonAmount", "BetInfo", "SelectionInfo", "ExchangeRate", "ResultedAt", "Error", });
+        new java.lang.String[] { "Id", "TicketStatus", "WonAmount", "BetInfo", "SelectionInfo", "ExchangeRate", "ResultedAt", "Error", "ModifiedAt", });
     internal_static_ots_TicketResultState_BetInfoEntry_descriptor =
       internal_static_ots_TicketResultState_descriptor.getNestedTypes().get(0);
     internal_static_ots_TicketResultState_BetInfoEntry_fieldAccessorTable = new

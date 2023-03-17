@@ -78,7 +78,7 @@ message TicketCashout {
   repeated BetCashout bet_cashout = 5;
 
   // Stake multiplier for stake - optional value to use instead of 10000
-  google.protobuf.UInt64Value stake_multiplier = 15;
+  google.protobuf.UInt64Value stake_multiplier = 6;
 }
 
 

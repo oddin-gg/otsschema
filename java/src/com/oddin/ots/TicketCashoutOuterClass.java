@@ -964,7 +964,7 @@ public final class TicketCashoutOuterClass {
 
     /**
      * <pre>
-     * Acceptance status - PENDING | REJECTED | ACCEPTED.
+     * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -973,7 +973,7 @@ public final class TicketCashoutOuterClass {
     int getTicketStatusValue();
     /**
      * <pre>
-     * Acceptance status - PENDING | REJECTED | ACCEPTED.
+     * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1101,7 +1101,7 @@ public final class TicketCashoutOuterClass {
     private int ticketStatus_ = 0;
     /**
      * <pre>
-     * Acceptance status - PENDING | REJECTED | ACCEPTED.
+     * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1112,7 +1112,7 @@ public final class TicketCashoutOuterClass {
     }
     /**
      * <pre>
-     * Acceptance status - PENDING | REJECTED | ACCEPTED.
+     * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
      * </pre>
      *
      * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1638,7 +1638,7 @@ public final class TicketCashoutOuterClass {
       private int ticketStatus_ = 0;
       /**
        * <pre>
-       * Acceptance status - PENDING | REJECTED | ACCEPTED.
+       * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1649,7 +1649,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Acceptance status - PENDING | REJECTED | ACCEPTED.
+       * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1664,7 +1664,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Acceptance status - PENDING | REJECTED | ACCEPTED.
+       * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1677,7 +1677,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Acceptance status - PENDING | REJECTED | ACCEPTED.
+       * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -1695,7 +1695,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Acceptance status - PENDING | REJECTED | ACCEPTED.
+       * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
        * </pre>
        *
        * <code>.ots.enums.AcceptanceStatus ticket_status = 2;</code>
@@ -3235,7 +3235,7 @@ public final class TicketCashoutOuterClass {
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      * @return Whether the stakeMultiplier field is set.
      */
     boolean hasStakeMultiplier();
@@ -3244,7 +3244,7 @@ public final class TicketCashoutOuterClass {
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      * @return The stakeMultiplier.
      */
     com.google.protobuf.UInt64Value getStakeMultiplier();
@@ -3253,7 +3253,7 @@ public final class TicketCashoutOuterClass {
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      */
     com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
   }
@@ -3505,14 +3505,14 @@ public final class TicketCashoutOuterClass {
       return betCashout_.get(index);
     }
 
-    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 15;
+    public static final int STAKE_MULTIPLIER_FIELD_NUMBER = 6;
     private com.google.protobuf.UInt64Value stakeMultiplier_;
     /**
      * <pre>
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      * @return Whether the stakeMultiplier field is set.
      */
     @java.lang.Override
@@ -3524,7 +3524,7 @@ public final class TicketCashoutOuterClass {
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      * @return The stakeMultiplier.
      */
     @java.lang.Override
@@ -3536,7 +3536,7 @@ public final class TicketCashoutOuterClass {
      * Stake multiplier for stake - optional value to use instead of 10000
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+     * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
      */
     @java.lang.Override
     public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
@@ -3573,7 +3573,7 @@ public final class TicketCashoutOuterClass {
         output.writeMessage(5, betCashout_.get(i));
       }
       if (stakeMultiplier_ != null) {
-        output.writeMessage(15, getStakeMultiplier());
+        output.writeMessage(6, getStakeMultiplier());
       }
       getUnknownFields().writeTo(output);
     }
@@ -3605,7 +3605,7 @@ public final class TicketCashoutOuterClass {
       }
       if (stakeMultiplier_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getStakeMultiplier());
+          .computeMessageSize(6, getStakeMultiplier());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4063,13 +4063,13 @@ public final class TicketCashoutOuterClass {
                 }
                 break;
               } // case 42
-              case 122: {
+              case 50: {
                 input.readMessage(
                     getStakeMultiplierFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 122
+              } // case 50
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4892,7 +4892,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        * @return Whether the stakeMultiplier field is set.
        */
       public boolean hasStakeMultiplier() {
@@ -4903,7 +4903,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        * @return The stakeMultiplier.
        */
       public com.google.protobuf.UInt64Value getStakeMultiplier() {
@@ -4918,7 +4918,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public Builder setStakeMultiplier(com.google.protobuf.UInt64Value value) {
         if (stakeMultiplierBuilder_ == null) {
@@ -4938,7 +4938,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public Builder setStakeMultiplier(
           com.google.protobuf.UInt64Value.Builder builderForValue) {
@@ -4956,7 +4956,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
         if (stakeMultiplierBuilder_ == null) {
@@ -4979,7 +4979,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public Builder clearStakeMultiplier() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -4996,7 +4996,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
         bitField0_ |= 0x00000020;
@@ -5008,7 +5008,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
         if (stakeMultiplierBuilder_ != null) {
@@ -5023,7 +5023,7 @@ public final class TicketCashoutOuterClass {
        * Stake multiplier for stake - optional value to use instead of 10000
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
+       * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
@@ -5154,7 +5154,7 @@ public final class TicketCashoutOuterClass {
       "nt64Value\0225\n\017cashout_percent\030\004 \001(\0132\034.goo" +
       "gle.protobuf.UInt64Value\022$\n\013bet_cashout\030" +
       "\005 \003(\0132\017.ots.BetCashout\0226\n\020stake_multipli" +
-      "er\030\017 \001(\0132\034.google.protobuf.UInt64ValueB\035" +
+      "er\030\006 \001(\0132\034.google.protobuf.UInt64ValueB\035" +
       "\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -858,7 +858,7 @@ proto.ots.TicketCashout.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.ots.BetCashout.deserializeBinaryFromReader);
       msg.addBetCashout(value);
       break;
-    case 15:
+    case 6:
       var value = new google_protobuf_wrappers_pb.UInt64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
       msg.setStakeMultiplier(value);
@@ -934,7 +934,7 @@ proto.ots.TicketCashout.serializeBinaryToWriter = function(message, writer) {
   f = message.getStakeMultiplier();
   if (f != null) {
     writer.writeMessage(
-      15,
+      6,
       f,
       google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
     );
@@ -1110,12 +1110,12 @@ proto.ots.TicketCashout.prototype.clearBetCashoutList = function() {
 
 
 /**
- * optional google.protobuf.UInt64Value stake_multiplier = 15;
+ * optional google.protobuf.UInt64Value stake_multiplier = 6;
  * @return {?proto.google.protobuf.UInt64Value}
  */
 proto.ots.TicketCashout.prototype.getStakeMultiplier = function() {
   return /** @type{?proto.google.protobuf.UInt64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 15));
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 6));
 };
 
 
@@ -1124,7 +1124,7 @@ proto.ots.TicketCashout.prototype.getStakeMultiplier = function() {
  * @return {!proto.ots.TicketCashout} returns this
 */
 proto.ots.TicketCashout.prototype.setStakeMultiplier = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1142,7 +1142,7 @@ proto.ots.TicketCashout.prototype.clearStakeMultiplier = function() {
  * @return {boolean}
  */
 proto.ots.TicketCashout.prototype.hasStakeMultiplier = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

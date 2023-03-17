@@ -2186,7 +2186,8 @@ proto.ots.TicketResultState.toObject = function(includeInstance, msg) {
     selectionInfoMap: (f = msg.getSelectionInfoMap()) ? f.toObject(includeInstance, proto.ots.TicketResultStateSelectionInfo.toObject) : [],
     exchangeRate: jspb.Message.getFieldWithDefault(msg, 6, 0),
     resultedAt: (f = msg.getResultedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    error: (f = msg.getError()) && proto.ots.TicketResultError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && proto.ots.TicketResultError.toObject(includeInstance, f),
+    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2261,6 +2262,11 @@ proto.ots.TicketResultState.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.ots.TicketResultError;
       reader.readMessage(value,proto.ots.TicketResultError.deserializeBinaryFromReader);
       msg.setError(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setModifiedAt(value);
       break;
     default:
       reader.skipField();
@@ -2342,6 +2348,14 @@ proto.ots.TicketResultState.serializeBinaryToWriter = function(message, writer) 
       8,
       f,
       proto.ots.TicketResultError.serializeBinaryToWriter
+    );
+  }
+  f = message.getModifiedAt();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2555,6 +2569,43 @@ proto.ots.TicketResultState.prototype.clearError = function() {
  */
 proto.ots.TicketResultState.prototype.hasError = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp modified_at = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.ots.TicketResultState.prototype.getModifiedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.ots.TicketResultState} returns this
+*/
+proto.ots.TicketResultState.prototype.setModifiedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ots.TicketResultState} returns this
+ */
+proto.ots.TicketResultState.prototype.clearModifiedAt = function() {
+  return this.setModifiedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ots.TicketResultState.prototype.hasModifiedAt = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
