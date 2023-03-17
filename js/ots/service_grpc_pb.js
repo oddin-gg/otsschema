@@ -8,6 +8,7 @@ var ots_player_risk_score_pb = require('../ots/player_risk_score_pb.js');
 var ots_resolve_foreign_events_in_ticket_pb = require('../ots/resolve_foreign_events_in_ticket_pb.js');
 var ots_ticket_ack_pb = require('../ots/ticket_ack_pb.js');
 var ots_ticket_max_stake_pb = require('../ots/ticket_max_stake_pb.js');
+var ots_ticket_result_pb = require('../ots/ticket_result_pb.js');
 
 function serialize_ots_PlayerRiskScoreRequest(arg) {
   if (!(arg instanceof ots_player_risk_score_pb.PlayerRiskScoreRequest)) {
@@ -142,25 +143,25 @@ function deserialize_ots_TicketResponse(buffer_arg) {
 }
 
 function serialize_ots_TicketResultRequest(arg) {
-  if (!(arg instanceof ots_ticket_pb.TicketResultRequest)) {
+  if (!(arg instanceof ots_ticket_result_pb.TicketResultRequest)) {
     throw new Error('Expected argument of type ots.TicketResultRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_ots_TicketResultRequest(buffer_arg) {
-  return ots_ticket_pb.TicketResultRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return ots_ticket_result_pb.TicketResultRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_ots_TicketResultResponse(arg) {
-  if (!(arg instanceof ots_ticket_pb.TicketResultResponse)) {
+  if (!(arg instanceof ots_ticket_result_pb.TicketResultResponse)) {
     throw new Error('Expected argument of type ots.TicketResultResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_ots_TicketResultResponse(buffer_arg) {
-  return ots_ticket_pb.TicketResultResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return ots_ticket_result_pb.TicketResultResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -224,8 +225,8 @@ var otsService = exports.otsService = {
     path: '/ots.ots/TicketResult',
     requestStream: true,
     responseStream: true,
-    requestType: ots_ticket_pb.TicketResultRequest,
-    responseType: ots_ticket_pb.TicketResultResponse,
+    requestType: ots_ticket_result_pb.TicketResultRequest,
+    responseType: ots_ticket_result_pb.TicketResultResponse,
     requestSerialize: serialize_ots_TicketResultRequest,
     requestDeserialize: deserialize_ots_TicketResultRequest,
     responseSerialize: serialize_ots_TicketResultResponse,

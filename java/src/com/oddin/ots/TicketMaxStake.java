@@ -14,7 +14,7 @@ public final class TicketMaxStake {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface TicketMaxStakeRequestOrBuilder extends
+  @java.lang.Deprecated public interface TicketMaxStakeRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.TicketMaxStakeRequest)
       com.google.protobuf.MessageOrBuilder {
 
@@ -36,7 +36,7 @@ public final class TicketMaxStake {
   /**
    * Protobuf type {@code ots.TicketMaxStakeRequest}
    */
-  public static final class TicketMaxStakeRequest extends
+  @java.lang.Deprecated public static final class TicketMaxStakeRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ots.TicketMaxStakeRequest)
       TicketMaxStakeRequestOrBuilder {
@@ -59,58 +59,6 @@ public final class TicketMaxStake {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TicketMaxStakeRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.oddin.ots.TicketOuterClass.Ticket.Builder subBuilder = null;
-              if (ticket_ != null) {
-                subBuilder = ticket_.toBuilder();
-              }
-              ticket_ = input.readMessage(com.oddin.ots.TicketOuterClass.Ticket.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ticket_);
-                ticket_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -148,7 +96,7 @@ public final class TicketMaxStake {
      */
     @java.lang.Override
     public com.oddin.ots.TicketOuterClass.TicketOrBuilder getTicketOrBuilder() {
-      return getTicket();
+      return ticket_ == null ? com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance() : ticket_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -168,7 +116,7 @@ public final class TicketMaxStake {
       if (ticket_ != null) {
         output.writeMessage(1, getTicket());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -181,7 +129,7 @@ public final class TicketMaxStake {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTicket());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -201,7 +149,7 @@ public final class TicketMaxStake {
         if (!getTicket()
             .equals(other.getTicket())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -216,7 +164,7 @@ public final class TicketMaxStake {
         hash = (37 * hash) + TICKET_FIELD_NUMBER;
         hash = (53 * hash) + getTicket().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -333,26 +281,21 @@ public final class TicketMaxStake {
 
       // Construct using com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (ticketBuilder_ == null) {
-          ticket_ = null;
-        } else {
-          ticket_ = null;
+        bitField0_ = 0;
+        ticket_ = null;
+        if (ticketBuilder_ != null) {
+          ticketBuilder_.dispose();
           ticketBuilder_ = null;
         }
         return this;
@@ -381,13 +324,18 @@ public final class TicketMaxStake {
       @java.lang.Override
       public com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest buildPartial() {
         com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest result = new com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest(this);
-        if (ticketBuilder_ == null) {
-          result.ticket_ = ticket_;
-        } else {
-          result.ticket_ = ticketBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ticket_ = ticketBuilder_ == null
+              ? ticket_
+              : ticketBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -437,7 +385,7 @@ public final class TicketMaxStake {
         if (other.hasTicket()) {
           mergeTicket(other.getTicket());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -452,19 +400,40 @@ public final class TicketMaxStake {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getTicketFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private com.oddin.ots.TicketOuterClass.Ticket ticket_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -474,7 +443,7 @@ public final class TicketMaxStake {
        * @return Whether the ticket field is set.
        */
       public boolean hasTicket() {
-        return ticketBuilder_ != null || ticket_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ots.Ticket ticket = 1;</code>
@@ -496,11 +465,11 @@ public final class TicketMaxStake {
             throw new NullPointerException();
           }
           ticket_ = value;
-          onChanged();
         } else {
           ticketBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -510,11 +479,11 @@ public final class TicketMaxStake {
           com.oddin.ots.TicketOuterClass.Ticket.Builder builderForValue) {
         if (ticketBuilder_ == null) {
           ticket_ = builderForValue.build();
-          onChanged();
         } else {
           ticketBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -522,38 +491,38 @@ public final class TicketMaxStake {
        */
       public Builder mergeTicket(com.oddin.ots.TicketOuterClass.Ticket value) {
         if (ticketBuilder_ == null) {
-          if (ticket_ != null) {
-            ticket_ =
-              com.oddin.ots.TicketOuterClass.Ticket.newBuilder(ticket_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            ticket_ != null &&
+            ticket_ != com.oddin.ots.TicketOuterClass.Ticket.getDefaultInstance()) {
+            getTicketBuilder().mergeFrom(value);
           } else {
             ticket_ = value;
           }
-          onChanged();
         } else {
           ticketBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ots.Ticket ticket = 1;</code>
        */
       public Builder clearTicket() {
-        if (ticketBuilder_ == null) {
-          ticket_ = null;
-          onChanged();
-        } else {
-          ticket_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ticket_ = null;
+        if (ticketBuilder_ != null) {
+          ticketBuilder_.dispose();
           ticketBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ots.Ticket ticket = 1;</code>
        */
       public com.oddin.ots.TicketOuterClass.Ticket.Builder getTicketBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTicketFieldBuilder().getBuilder();
       }
@@ -617,7 +586,18 @@ public final class TicketMaxStake {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TicketMaxStakeRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -637,7 +617,7 @@ public final class TicketMaxStake {
 
   }
 
-  public interface TicketMaxStakeResponseOrBuilder extends
+  @java.lang.Deprecated public interface TicketMaxStakeResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.TicketMaxStakeResponse)
       com.google.protobuf.MessageOrBuilder {
 
@@ -659,7 +639,7 @@ public final class TicketMaxStake {
   /**
    * Protobuf type {@code ots.TicketMaxStakeResponse}
    */
-  public static final class TicketMaxStakeResponse extends
+  @java.lang.Deprecated public static final class TicketMaxStakeResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ots.TicketMaxStakeResponse)
       TicketMaxStakeResponseOrBuilder {
@@ -682,58 +662,6 @@ public final class TicketMaxStake {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TicketMaxStakeResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.oddin.ots.TicketOuterClass.TicketState.Builder subBuilder = null;
-              if (state_ != null) {
-                subBuilder = state_.toBuilder();
-              }
-              state_ = input.readMessage(com.oddin.ots.TicketOuterClass.TicketState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(state_);
-                state_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -771,7 +699,7 @@ public final class TicketMaxStake {
      */
     @java.lang.Override
     public com.oddin.ots.TicketOuterClass.TicketStateOrBuilder getStateOrBuilder() {
-      return getState();
+      return state_ == null ? com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance() : state_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -791,7 +719,7 @@ public final class TicketMaxStake {
       if (state_ != null) {
         output.writeMessage(1, getState());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -804,7 +732,7 @@ public final class TicketMaxStake {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getState());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -824,7 +752,7 @@ public final class TicketMaxStake {
         if (!getState()
             .equals(other.getState())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -839,7 +767,7 @@ public final class TicketMaxStake {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
         hash = (53 * hash) + getState().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -956,26 +884,21 @@ public final class TicketMaxStake {
 
       // Construct using com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (stateBuilder_ == null) {
-          state_ = null;
-        } else {
-          state_ = null;
+        bitField0_ = 0;
+        state_ = null;
+        if (stateBuilder_ != null) {
+          stateBuilder_.dispose();
           stateBuilder_ = null;
         }
         return this;
@@ -1004,13 +927,18 @@ public final class TicketMaxStake {
       @java.lang.Override
       public com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse buildPartial() {
         com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse result = new com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse(this);
-        if (stateBuilder_ == null) {
-          result.state_ = state_;
-        } else {
-          result.state_ = stateBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = stateBuilder_ == null
+              ? state_
+              : stateBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1060,7 +988,7 @@ public final class TicketMaxStake {
         if (other.hasState()) {
           mergeState(other.getState());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1075,19 +1003,40 @@ public final class TicketMaxStake {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private com.oddin.ots.TicketOuterClass.TicketState state_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1097,7 +1046,7 @@ public final class TicketMaxStake {
        * @return Whether the state field is set.
        */
       public boolean hasState() {
-        return stateBuilder_ != null || state_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ots.TicketState state = 1;</code>
@@ -1119,11 +1068,11 @@ public final class TicketMaxStake {
             throw new NullPointerException();
           }
           state_ = value;
-          onChanged();
         } else {
           stateBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1133,11 +1082,11 @@ public final class TicketMaxStake {
           com.oddin.ots.TicketOuterClass.TicketState.Builder builderForValue) {
         if (stateBuilder_ == null) {
           state_ = builderForValue.build();
-          onChanged();
         } else {
           stateBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1145,38 +1094,38 @@ public final class TicketMaxStake {
        */
       public Builder mergeState(com.oddin.ots.TicketOuterClass.TicketState value) {
         if (stateBuilder_ == null) {
-          if (state_ != null) {
-            state_ =
-              com.oddin.ots.TicketOuterClass.TicketState.newBuilder(state_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            state_ != null &&
+            state_ != com.oddin.ots.TicketOuterClass.TicketState.getDefaultInstance()) {
+            getStateBuilder().mergeFrom(value);
           } else {
             state_ = value;
           }
-          onChanged();
         } else {
           stateBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ots.TicketState state = 1;</code>
        */
       public Builder clearState() {
-        if (stateBuilder_ == null) {
-          state_ = null;
-          onChanged();
-        } else {
-          state_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = null;
+        if (stateBuilder_ != null) {
+          stateBuilder_.dispose();
           stateBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ots.TicketState state = 1;</code>
        */
       public com.oddin.ots.TicketOuterClass.TicketState.Builder getStateBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStateFieldBuilder().getBuilder();
       }
@@ -1240,7 +1189,18 @@ public final class TicketMaxStake {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TicketMaxStakeResponse(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1280,11 +1240,11 @@ public final class TicketMaxStake {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ots/ticket_max_stake.proto\022\003ots\032\020ots/t" +
-      "icket.proto\"4\n\025TicketMaxStakeRequest\022\033\n\006" +
-      "ticket\030\001 \001(\0132\013.ots.Ticket\"9\n\026TicketMaxSt" +
-      "akeResponse\022\037\n\005state\030\001 \001(\0132\020.ots.TicketS" +
-      "tateB\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006pro" +
-      "to3"
+      "icket.proto\"8\n\025TicketMaxStakeRequest\022\033\n\006" +
+      "ticket\030\001 \001(\0132\013.ots.Ticket:\002\030\001\"=\n\026TicketM" +
+      "axStakeResponse\022\037\n\005state\030\001 \001(\0132\020.ots.Tic" +
+      "ketState:\002\030\001B\035\n\rcom.oddin.otsZ\014oddin.gg/" +
+      "otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

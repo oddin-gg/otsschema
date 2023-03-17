@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+import "ots/commons.proto";
+
+message TicketResultRequest {
+  oneof data {
+    TicketResult ticket = 1;
+    StreamKeepalive keepalive = 2;
+    TicketsAfter after = 3;
+  }
+}
+
+message TicketResultResponse {
+  oneof data {
+    TicketResultState state = 1;
+    StreamKeepalive keepalive = 2;
+    TicketsAfterState after = 3;
+  }
+}
+
+message TicketsAfter {
+  // Unique request id
+  string request_id = 1;
+  // Request tickets after this date
+  google.protobuf.Timestamp after = 2;
+}
+
+message TicketsAfterState {
+  message BatchInfo {
+    uint32 actual = 1;
+    uint32 total = 2;
+  }
+
+  // Unique request id from TicketsAfter request
+  string request_id = 1;
+
+  // Request tickets after this date
+  google.protobuf.Timestamp after = 2;
+
+  // Tickets resulted after timestamp
+  repeated TicketResultState tickets = 3;
+
+  // Information about possible error during processing
+  TicketResultError error = 4;
+
+  // Information about batching - batch size is fixed to 100 tickets
+  BatchInfo batch_info = 5;
+}
+message TicketResult {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+}
+
+message TicketResultStateBetInfo {
+  // Unique bet id from operator’s system.
+  string id = 1;
+
+  // Information about rejection reason - WON | VOIDED | LOST | PENDING_LOST | NOT_RESULTED | REJECTED.
+  enums.ResultingStatus bet_status = 2;
+
+  // Won amount on bet converted by ticket exchange_rate and multiplied by 10000 and rounded to uint value.
+  google.protobuf.UInt64Value won_amount = 3;
+}
+
+message TicketResultStateSelectionInfo {
+  // Information about selection status - WON | VOIDED | LOST | PENDING_LOST | NOT_RESULTED | REJECTED.
+  enums.ResultingStatus selection_status = 1;
+}
+
+message TicketResultError {
+  enums.ReasonCode code = 1;
+  google.protobuf.StringValue message = 2;
+}
+
+message TicketResultState {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+
+  // Resulting status - WON | VOIDED | LOST | PENDING_LOST | NOT_RESULTED | REJECTED.
+  enums.ResultingStatus ticket_status = 2;
+
+  // Won amount of ticket converted by exchange_rate and multiplied by 10000 and rounded to uint value.
+  google.protobuf.UInt64Value won_amount = 3;
+
+  // Rejection details of bets.
+  map<string, TicketResultStateBetInfo> bet_info = 4;
+
+  // Rejection details of selections.
+  map<string, TicketResultStateSelectionInfo> selection_info = 5;
+
+  // Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
+  uint64  exchange_rate = 6;
+
+  // Ticket result timestamp.
+  google.protobuf.Timestamp resulted_at = 7;
+
+  // Information about possible error during processing.
+  TicketResultError error = 8;
+
+  // Ticket modified_at timestamp.
+  google.protobuf.Timestamp modified_at = 9;
+}

@@ -8,6 +8,7 @@ from ots import ticket_ack_pb2 as ots_dot_ticket__ack__pb2
 from ots import ticket_cancel_pb2 as ots_dot_ticket__cancel__pb2
 from ots import ticket_max_stake_pb2 as ots_dot_ticket__max__stake__pb2
 from ots import ticket_pb2 as ots_dot_ticket__pb2
+from ots import ticket_result_pb2 as ots_dot_ticket__result__pb2
 
 
 class otsStub(object):
@@ -46,8 +47,8 @@ class otsStub(object):
                 )
         self.TicketResult = channel.stream_stream(
                 '/ots.ots/TicketResult',
-                request_serializer=ots_dot_ticket__pb2.TicketResultRequest.SerializeToString,
-                response_deserializer=ots_dot_ticket__pb2.TicketResultResponse.FromString,
+                request_serializer=ots_dot_ticket__result__pb2.TicketResultRequest.SerializeToString,
+                response_deserializer=ots_dot_ticket__result__pb2.TicketResultResponse.FromString,
                 )
         self.TicketMaxStake = channel.unary_unary(
                 '/ots.ots/TicketMaxStake',
@@ -131,8 +132,8 @@ def add_otsServicer_to_server(servicer, server):
             ),
             'TicketResult': grpc.stream_stream_rpc_method_handler(
                     servicer.TicketResult,
-                    request_deserializer=ots_dot_ticket__pb2.TicketResultRequest.FromString,
-                    response_serializer=ots_dot_ticket__pb2.TicketResultResponse.SerializeToString,
+                    request_deserializer=ots_dot_ticket__result__pb2.TicketResultRequest.FromString,
+                    response_serializer=ots_dot_ticket__result__pb2.TicketResultResponse.SerializeToString,
             ),
             'TicketMaxStake': grpc.unary_unary_rpc_method_handler(
                     servicer.TicketMaxStake,
@@ -246,8 +247,8 @@ class ots(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.stream_stream(request_iterator, target, '/ots.ots/TicketResult',
-            ots_dot_ticket__pb2.TicketResultRequest.SerializeToString,
-            ots_dot_ticket__pb2.TicketResultResponse.FromString,
+            ots_dot_ticket__result__pb2.TicketResultRequest.SerializeToString,
+            ots_dot_ticket__result__pb2.TicketResultResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

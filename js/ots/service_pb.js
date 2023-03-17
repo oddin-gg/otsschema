@@ -13,7 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var ots_ticket_pb = require('../ots/ticket_pb.js');
 goog.object.extend(proto, ots_ticket_pb);
@@ -27,3 +33,5 @@ var ots_ticket_ack_pb = require('../ots/ticket_ack_pb.js');
 goog.object.extend(proto, ots_ticket_ack_pb);
 var ots_ticket_max_stake_pb = require('../ots/ticket_max_stake_pb.js');
 goog.object.extend(proto, ots_ticket_max_stake_pb);
+var ots_ticket_result_pb = require('../ots/ticket_result_pb.js');
+goog.object.extend(proto, ots_ticket_result_pb);
