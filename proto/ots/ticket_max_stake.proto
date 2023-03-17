@@ -8,11 +8,11 @@ option java_package = "com.oddin.ots";
 import "ots/ticket.proto";
 
 message TicketMaxStakeRequest {
+  option deprecated = true;
   Ticket ticket = 1;
 }
 
 message TicketMaxStakeResponse {
+  option deprecated = true;
   TicketState state = 1;
 }
-
-

@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "ots/enum/enums.proto";
+
+message TicketCashoutRejectReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
+
+    // We are having internal problems.
+    CODE_INTERNAL = 1;
+
+    // Ticket cashout is not valid.
+    CODE_INVALID_ARGUMENT = 2;
+
+    // Ticket not found.
+    CODE_NOT_FOUND = 3;
+
+    // Ticket is not in accepted state.
+    CODE_WRONG_TICKET_STAKE = 4;
+
+    // Cashout amount is higher than possible payout.
+    CODE_MAX_PAYOUT_BREACHED = 5;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
+}
+
+
+message TicketCashoutState {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+
+  // Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
+  enums.AcceptanceStatus ticket_status = 2;
+
+  // Information about rejection reason.
+  TicketCashoutRejectReason reject_reason = 3;
+}
+
+
+message BetCashout {
+  // Bet id.
+  google.protobuf.StringValue id = 1;
+
+  // Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  google.protobuf.UInt64Value cashout_stake = 2;
+
+  // Total cashout percent. Applicable bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  google.protobuf.UInt64Value cashout_percent = 3;
+}
+
+// TicketCashout is used as request for Ticket Cashout RPC call.
+message TicketCashout {
+  // Unique ticket id from operator’s system.
+  string id = 1;
+
+  // Timestamp of request creation.
+  google.protobuf.Timestamp timestamp = 2;
+
+  // Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  google.protobuf.UInt64Value cashout_stake = 3;
+
+  // Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  google.protobuf.UInt64Value cashout_percent = 4;
+
+  repeated BetCashout bet_cashout = 5;
+
+  // Stake multiplier for stake - optional value to use instead of 10000
+  google.protobuf.UInt64Value stake_multiplier = 6;
+}
+
+
+
+
