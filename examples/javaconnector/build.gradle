@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'com.oddin.ots.example.Main'
+}
+
+group = 'com.oddin.ots'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+
+    def otsVersion = '0.22.0' // here you can update version of lib
+    def grpcVersion = '1.54.0'
+
+    implementation group: "com.oddin.ots", name: 'ots', version: otsVersion
+
+    implementation group: 'io.grpc', name: 'grpc-protobuf', version: grpcVersion
+    implementation group: 'io.grpc', name: 'grpc-services', version: grpcVersion
+    implementation group: 'io.grpc', name: 'grpc-stub', version: grpcVersion
+}
+
+test {
+    useJUnitPlatform()
+}
