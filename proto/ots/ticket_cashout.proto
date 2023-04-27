@@ -52,10 +52,10 @@ message TicketCashoutState {
 
 message BetCashout {
   // Bet id.
-  google.protobuf.StringValue id = 1;
+  string id = 1;
 
   // Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-  google.protobuf.UInt64Value cashout_stake = 2;
+  uint64 cashout_stake = 2;
 
   // Total cashout percent. Applicable bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
   google.protobuf.UInt64Value cashout_percent = 3;
