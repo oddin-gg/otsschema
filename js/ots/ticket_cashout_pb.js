@@ -531,8 +531,8 @@ proto.ots.BetCashout.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ots.BetCashout.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    cashoutStake: (f = msg.getCashoutStake()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    cashoutStake: jspb.Message.getFieldWithDefault(msg, 2, 0),
     cashoutPercent: (f = msg.getCashoutPercent()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f)
   };
 
@@ -571,13 +571,11 @@ proto.ots.BetCashout.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
-      var value = new google_protobuf_wrappers_pb.UInt64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setCashoutStake(value);
       break;
     case 3:
@@ -615,19 +613,17 @@ proto.ots.BetCashout.prototype.serializeBinary = function() {
 proto.ots.BetCashout.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+      f
     );
   }
   f = message.getCashoutStake();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0) {
+    writer.writeUint64(
       2,
-      f,
-      google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
+      f
     );
   }
   f = message.getCashoutPercent();
@@ -642,76 +638,38 @@ proto.ots.BetCashout.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional google.protobuf.StringValue id = 1;
- * @return {?proto.google.protobuf.StringValue}
+ * optional string id = 1;
+ * @return {string}
  */
 proto.ots.BetCashout.prototype.getId = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @param {string} value
  * @return {!proto.ots.BetCashout} returns this
-*/
+ */
 proto.ots.BetCashout.prototype.setId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.ots.BetCashout} returns this
- */
-proto.ots.BetCashout.prototype.clearId = function() {
-  return this.setId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ots.BetCashout.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional google.protobuf.UInt64Value cashout_stake = 2;
- * @return {?proto.google.protobuf.UInt64Value}
+ * optional uint64 cashout_stake = 2;
+ * @return {number}
  */
 proto.ots.BetCashout.prototype.getCashoutStake = function() {
-  return /** @type{?proto.google.protobuf.UInt64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.UInt64Value, 2));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {?proto.google.protobuf.UInt64Value|undefined} value
+ * @param {number} value
  * @return {!proto.ots.BetCashout} returns this
-*/
+ */
 proto.ots.BetCashout.prototype.setCashoutStake = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ots.BetCashout} returns this
- */
-proto.ots.BetCashout.prototype.clearCashoutStake = function() {
-  return this.setCashoutStake(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ots.BetCashout.prototype.hasCashoutStake = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

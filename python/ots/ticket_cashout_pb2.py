@@ -16,7 +16,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from ots_schema.ots.enum import enums_pb2 as ots_dot_enum_dot_enums__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18ots/ticket_cashout.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"\xfb\x01\n\x19TicketCashoutRejectReason\x12\x31\n\x04\x63ode\x18\x01 \x01(\x0e\x32#.ots.TicketCashoutRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x99\x01\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x03\x12\x1b\n\x17\x43ODE_WRONG_TICKET_STAKE\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\"\x8b\x01\n\x12TicketCashoutState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x35\n\rreject_reason\x18\x03 \x01(\x0b\x32\x1e.ots.TicketCashoutRejectReason\"\xa2\x01\n\nBetCashout\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x33\n\rcashout_stake\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x0f\x63\x61shout_percent\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x94\x02\n\rTicketCashout\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\rcashout_stake\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x0f\x63\x61shout_percent\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12$\n\x0b\x62\x65t_cashout\x18\x05 \x03(\x0b\x32\x0f.ots.BetCashout\x12\x36\n\x10stake_multiplier\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.UInt64ValueB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18ots/ticket_cashout.proto\x12\x03ots\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14ots/enum/enums.proto\"\xfb\x01\n\x19TicketCashoutRejectReason\x12\x31\n\x04\x63ode\x18\x01 \x01(\x0e\x32#.ots.TicketCashoutRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x99\x01\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x03\x12\x1b\n\x17\x43ODE_WRONG_TICKET_STAKE\x10\x04\x12\x1c\n\x18\x43ODE_MAX_PAYOUT_BREACHED\x10\x05\"\x8b\x01\n\x12TicketCashoutState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\rticket_status\x18\x02 \x01(\x0e\x32\x1b.ots.enums.AcceptanceStatus\x12\x35\n\rreject_reason\x18\x03 \x01(\x0b\x32\x1e.ots.TicketCashoutRejectReason\"f\n\nBetCashout\x12\n\n\x02id\x18\x01 \x01(\t\x12\x15\n\rcashout_stake\x18\x02 \x01(\x04\x12\x35\n\x0f\x63\x61shout_percent\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x94\x02\n\rTicketCashout\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\rcashout_stake\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12\x35\n\x0f\x63\x61shout_percent\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12$\n\x0b\x62\x65t_cashout\x18\x05 \x03(\x0b\x32\x0f.ots.BetCashout\x12\x36\n\x10stake_multiplier\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.UInt64ValueB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ots.ticket_cashout_pb2', globals())
@@ -30,8 +30,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TICKETCASHOUTREJECTREASON_CODE._serialized_end=372
   _TICKETCASHOUTSTATE._serialized_start=375
   _TICKETCASHOUTSTATE._serialized_end=514
-  _BETCASHOUT._serialized_start=517
-  _BETCASHOUT._serialized_end=679
-  _TICKETCASHOUT._serialized_start=682
-  _TICKETCASHOUT._serialized_end=958
+  _BETCASHOUT._serialized_start=516
+  _BETCASHOUT._serialized_end=618
+  _TICKETCASHOUT._serialized_start=621
+  _TICKETCASHOUT._serialized_end=897
 # @@protoc_insertion_point(module_scope)

@@ -1935,54 +1935,30 @@ public final class TicketCashoutOuterClass {
      * Bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    boolean hasId();
-    /**
-     * <pre>
-     * Bet id.
-     * </pre>
-     *
-     * <code>.google.protobuf.StringValue id = 1;</code>
+     * <code>string id = 1;</code>
      * @return The id.
      */
-    com.google.protobuf.StringValue getId();
+    java.lang.String getId();
     /**
      * <pre>
      * Bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
-    com.google.protobuf.StringValueOrBuilder getIdOrBuilder();
+    com.google.protobuf.ByteString
+        getIdBytes();
 
     /**
      * <pre>
      * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-     * @return Whether the cashoutStake field is set.
-     */
-    boolean hasCashoutStake();
-    /**
-     * <pre>
-     * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
+     * <code>uint64 cashout_stake = 2;</code>
      * @return The cashoutStake.
      */
-    com.google.protobuf.UInt64Value getCashoutStake();
-    /**
-     * <pre>
-     * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-     */
-    com.google.protobuf.UInt64ValueOrBuilder getCashoutStakeOrBuilder();
+    long getCashoutStake();
 
     /**
      * <pre>
@@ -2024,6 +2000,7 @@ public final class TicketCashoutOuterClass {
       super(builder);
     }
     private BetCashout() {
+      id_ = "";
     }
 
     @java.lang.Override
@@ -2052,79 +2029,65 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private com.google.protobuf.StringValue id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <pre>
      * Bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return id_ != null;
-    }
-    /**
-     * <pre>
-     * Bet id.
-     * </pre>
-     *
-     * <code>.google.protobuf.StringValue id = 1;</code>
+     * <code>string id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public com.google.protobuf.StringValue getId() {
-      return id_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : id_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * Bet id.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
-    public com.google.protobuf.StringValueOrBuilder getIdOrBuilder() {
-      return id_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : id_;
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CASHOUT_STAKE_FIELD_NUMBER = 2;
-    private com.google.protobuf.UInt64Value cashoutStake_;
+    private long cashoutStake_ = 0L;
     /**
      * <pre>
      * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
      * </pre>
      *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-     * @return Whether the cashoutStake field is set.
-     */
-    @java.lang.Override
-    public boolean hasCashoutStake() {
-      return cashoutStake_ != null;
-    }
-    /**
-     * <pre>
-     * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
+     * <code>uint64 cashout_stake = 2;</code>
      * @return The cashoutStake.
      */
     @java.lang.Override
-    public com.google.protobuf.UInt64Value getCashoutStake() {
-      return cashoutStake_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutStake_;
-    }
-    /**
-     * <pre>
-     * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-     * </pre>
-     *
-     * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.UInt64ValueOrBuilder getCashoutStakeOrBuilder() {
-      return cashoutStake_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutStake_;
+    public long getCashoutStake() {
+      return cashoutStake_;
     }
 
     public static final int CASHOUT_PERCENT_FIELD_NUMBER = 3;
@@ -2179,11 +2142,11 @@ public final class TicketCashoutOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (cashoutStake_ != null) {
-        output.writeMessage(2, getCashoutStake());
+      if (cashoutStake_ != 0L) {
+        output.writeUInt64(2, cashoutStake_);
       }
       if (cashoutPercent_ != null) {
         output.writeMessage(3, getCashoutPercent());
@@ -2197,13 +2160,12 @@ public final class TicketCashoutOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (cashoutStake_ != null) {
+      if (cashoutStake_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCashoutStake());
+          .computeUInt64Size(2, cashoutStake_);
       }
       if (cashoutPercent_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -2224,16 +2186,10 @@ public final class TicketCashoutOuterClass {
       }
       com.oddin.ots.TicketCashoutOuterClass.BetCashout other = (com.oddin.ots.TicketCashoutOuterClass.BetCashout) obj;
 
-      if (hasId() != other.hasId()) return false;
-      if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
-      }
-      if (hasCashoutStake() != other.hasCashoutStake()) return false;
-      if (hasCashoutStake()) {
-        if (!getCashoutStake()
-            .equals(other.getCashoutStake())) return false;
-      }
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (getCashoutStake()
+          != other.getCashoutStake()) return false;
       if (hasCashoutPercent() != other.hasCashoutPercent()) return false;
       if (hasCashoutPercent()) {
         if (!getCashoutPercent()
@@ -2250,14 +2206,11 @@ public final class TicketCashoutOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
-      }
-      if (hasCashoutStake()) {
-        hash = (37 * hash) + CASHOUT_STAKE_FIELD_NUMBER;
-        hash = (53 * hash) + getCashoutStake().hashCode();
-      }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + CASHOUT_STAKE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCashoutStake());
       if (hasCashoutPercent()) {
         hash = (37 * hash) + CASHOUT_PERCENT_FIELD_NUMBER;
         hash = (53 * hash) + getCashoutPercent().hashCode();
@@ -2391,16 +2344,8 @@ public final class TicketCashoutOuterClass {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = null;
-        if (idBuilder_ != null) {
-          idBuilder_.dispose();
-          idBuilder_ = null;
-        }
-        cashoutStake_ = null;
-        if (cashoutStakeBuilder_ != null) {
-          cashoutStakeBuilder_.dispose();
-          cashoutStakeBuilder_ = null;
-        }
+        id_ = "";
+        cashoutStake_ = 0L;
         cashoutPercent_ = null;
         if (cashoutPercentBuilder_ != null) {
           cashoutPercentBuilder_.dispose();
@@ -2440,14 +2385,10 @@ public final class TicketCashoutOuterClass {
       private void buildPartial0(com.oddin.ots.TicketCashoutOuterClass.BetCashout result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = idBuilder_ == null
-              ? id_
-              : idBuilder_.build();
+          result.id_ = id_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cashoutStake_ = cashoutStakeBuilder_ == null
-              ? cashoutStake_
-              : cashoutStakeBuilder_.build();
+          result.cashoutStake_ = cashoutStake_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.cashoutPercent_ = cashoutPercentBuilder_ == null
@@ -2500,11 +2441,13 @@ public final class TicketCashoutOuterClass {
 
       public Builder mergeFrom(com.oddin.ots.TicketCashoutOuterClass.BetCashout other) {
         if (other == com.oddin.ots.TicketCashoutOuterClass.BetCashout.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
-        if (other.hasCashoutStake()) {
-          mergeCashoutStake(other.getCashoutStake());
+        if (other.getCashoutStake() != 0L) {
+          setCashoutStake(other.getCashoutStake());
         }
         if (other.hasCashoutPercent()) {
           mergeCashoutPercent(other.getCashoutPercent());
@@ -2536,19 +2479,15 @@ public final class TicketCashoutOuterClass {
                 done = true;
                 break;
               case 10: {
-                input.readMessage(
-                    getIdFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                id_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 18: {
-                input.readMessage(
-                    getCashoutStakeFieldBuilder().getBuilder(),
-                    extensionRegistry);
+              case 16: {
+                cashoutStake_ = input.readUInt64();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 18
+              } // case 16
               case 26: {
                 input.readMessage(
                     getCashoutPercentFieldBuilder().getBuilder(),
@@ -2573,33 +2512,25 @@ public final class TicketCashoutOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.StringValue id_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> idBuilder_;
+      private java.lang.Object id_ = "";
       /**
        * <pre>
        * Bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue id = 1;</code>
-       * @return Whether the id field is set.
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       * Bet id.
-       * </pre>
-       *
-       * <code>.google.protobuf.StringValue id = 1;</code>
+       * <code>string id = 1;</code>
        * @return The id.
        */
-      public com.google.protobuf.StringValue getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : id_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
         } else {
-          return idBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2607,35 +2538,35 @@ public final class TicketCashoutOuterClass {
        * Bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
-      public Builder setId(com.google.protobuf.StringValue value) {
-        if (idBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          id_ = value;
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
         } else {
-          idBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
       }
       /**
        * <pre>
        * Bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
-          com.google.protobuf.StringValue.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
-        } else {
-          idBuilder_.setMessage(builderForValue.build());
-        }
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
@@ -2645,38 +2576,12 @@ public final class TicketCashoutOuterClass {
        * Bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue id = 1;</code>
-       */
-      public Builder mergeId(com.google.protobuf.StringValue value) {
-        if (idBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            id_ != null &&
-            id_ != com.google.protobuf.StringValue.getDefaultInstance()) {
-            getIdBuilder().mergeFrom(value);
-          } else {
-            id_ = value;
-          }
-        } else {
-          idBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Bet id.
-       * </pre>
-       *
-       * <code>.google.protobuf.StringValue id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
+        id_ = getDefaultInstance().getId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = null;
-        if (idBuilder_ != null) {
-          idBuilder_.dispose();
-          idBuilder_ = null;
-        }
         onChanged();
         return this;
       }
@@ -2685,94 +2590,45 @@ public final class TicketCashoutOuterClass {
        * Bet id.
        * </pre>
        *
-       * <code>.google.protobuf.StringValue id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
-      public com.google.protobuf.StringValue.Builder getIdBuilder() {
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
-        return getIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Bet id.
-       * </pre>
-       *
-       * <code>.google.protobuf.StringValue id = 1;</code>
-       */
-      public com.google.protobuf.StringValueOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
-        } else {
-          return id_ == null ?
-              com.google.protobuf.StringValue.getDefaultInstance() : id_;
-        }
-      }
-      /**
-       * <pre>
-       * Bet id.
-       * </pre>
-       *
-       * <code>.google.protobuf.StringValue id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
-                  getId(),
-                  getParentForChildren(),
-                  isClean());
-          id_ = null;
-        }
-        return idBuilder_;
+        return this;
       }
 
-      private com.google.protobuf.UInt64Value cashoutStake_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> cashoutStakeBuilder_;
+      private long cashoutStake_ ;
       /**
        * <pre>
        * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       * @return Whether the cashoutStake field is set.
-       */
-      public boolean hasCashoutStake() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
+       * <code>uint64 cashout_stake = 2;</code>
        * @return The cashoutStake.
        */
-      public com.google.protobuf.UInt64Value getCashoutStake() {
-        if (cashoutStakeBuilder_ == null) {
-          return cashoutStake_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutStake_;
-        } else {
-          return cashoutStakeBuilder_.getMessage();
-        }
+      @java.lang.Override
+      public long getCashoutStake() {
+        return cashoutStake_;
       }
       /**
        * <pre>
        * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
+       * <code>uint64 cashout_stake = 2;</code>
+       * @param value The cashoutStake to set.
+       * @return This builder for chaining.
        */
-      public Builder setCashoutStake(com.google.protobuf.UInt64Value value) {
-        if (cashoutStakeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          cashoutStake_ = value;
-        } else {
-          cashoutStakeBuilder_.setMessage(value);
-        }
+      public Builder setCashoutStake(long value) {
+        
+        cashoutStake_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
@@ -2782,105 +2638,14 @@ public final class TicketCashoutOuterClass {
        * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
        * </pre>
        *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       */
-      public Builder setCashoutStake(
-          com.google.protobuf.UInt64Value.Builder builderForValue) {
-        if (cashoutStakeBuilder_ == null) {
-          cashoutStake_ = builderForValue.build();
-        } else {
-          cashoutStakeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       */
-      public Builder mergeCashoutStake(com.google.protobuf.UInt64Value value) {
-        if (cashoutStakeBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            cashoutStake_ != null &&
-            cashoutStake_ != com.google.protobuf.UInt64Value.getDefaultInstance()) {
-            getCashoutStakeBuilder().mergeFrom(value);
-          } else {
-            cashoutStake_ = value;
-          }
-        } else {
-          cashoutStakeBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
+       * <code>uint64 cashout_stake = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCashoutStake() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        cashoutStake_ = null;
-        if (cashoutStakeBuilder_ != null) {
-          cashoutStakeBuilder_.dispose();
-          cashoutStakeBuilder_ = null;
-        }
+        cashoutStake_ = 0L;
         onChanged();
         return this;
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       */
-      public com.google.protobuf.UInt64Value.Builder getCashoutStakeBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getCashoutStakeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       */
-      public com.google.protobuf.UInt64ValueOrBuilder getCashoutStakeOrBuilder() {
-        if (cashoutStakeBuilder_ != null) {
-          return cashoutStakeBuilder_.getMessageOrBuilder();
-        } else {
-          return cashoutStake_ == null ?
-              com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutStake_;
-        }
-      }
-      /**
-       * <pre>
-       * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
-       * </pre>
-       *
-       * <code>.google.protobuf.UInt64Value cashout_stake = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
-          getCashoutStakeFieldBuilder() {
-        if (cashoutStakeBuilder_ == null) {
-          cashoutStakeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
-                  getCashoutStake(),
-                  getParentForChildren(),
-                  isClean());
-          cashoutStake_ = null;
-        }
-        return cashoutStakeBuilder_;
       }
 
       private com.google.protobuf.UInt64Value cashoutPercent_;
@@ -5143,19 +4908,18 @@ public final class TicketCashoutOuterClass {
       "T_BREACHED\020\005\"\213\001\n\022TicketCashoutState\022\n\n\002i" +
       "d\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.ots.enu" +
       "ms.AcceptanceStatus\0225\n\rreject_reason\030\003 \001" +
-      "(\0132\036.ots.TicketCashoutRejectReason\"\242\001\n\nB" +
-      "etCashout\022(\n\002id\030\001 \001(\0132\034.google.protobuf." +
-      "StringValue\0223\n\rcashout_stake\030\002 \001(\0132\034.goo" +
-      "gle.protobuf.UInt64Value\0225\n\017cashout_perc" +
-      "ent\030\003 \001(\0132\034.google.protobuf.UInt64Value\"" +
-      "\224\002\n\rTicketCashout\022\n\n\002id\030\001 \001(\t\022-\n\ttimesta" +
-      "mp\030\002 \001(\0132\032.google.protobuf.Timestamp\0223\n\r" +
-      "cashout_stake\030\003 \001(\0132\034.google.protobuf.UI" +
-      "nt64Value\0225\n\017cashout_percent\030\004 \001(\0132\034.goo" +
-      "gle.protobuf.UInt64Value\022$\n\013bet_cashout\030" +
-      "\005 \003(\0132\017.ots.BetCashout\0226\n\020stake_multipli" +
-      "er\030\006 \001(\0132\034.google.protobuf.UInt64ValueB\035" +
-      "\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "(\0132\036.ots.TicketCashoutRejectReason\"f\n\nBe" +
+      "tCashout\022\n\n\002id\030\001 \001(\t\022\025\n\rcashout_stake\030\002 " +
+      "\001(\004\0225\n\017cashout_percent\030\003 \001(\0132\034.google.pr" +
+      "otobuf.UInt64Value\"\224\002\n\rTicketCashout\022\n\n\002" +
+      "id\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\0223\n\rcashout_stake\030\003 \001(\0132\034" +
+      ".google.protobuf.UInt64Value\0225\n\017cashout_" +
+      "percent\030\004 \001(\0132\034.google.protobuf.UInt64Va" +
+      "lue\022$\n\013bet_cashout\030\005 \003(\0132\017.ots.BetCashou" +
+      "t\0226\n\020stake_multiplier\030\006 \001(\0132\034.google.pro" +
+      "tobuf.UInt64ValueB\035\n\rcom.oddin.otsZ\014oddi" +
+      "n.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

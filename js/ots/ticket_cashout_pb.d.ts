@@ -72,15 +72,11 @@ export namespace TicketCashoutState {
 }
 
 export class BetCashout extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setId(value?: google_protobuf_wrappers_pb.StringValue): void;
+  getId(): string;
+  setId(value: string): void;
 
-  hasCashoutStake(): boolean;
-  clearCashoutStake(): void;
-  getCashoutStake(): google_protobuf_wrappers_pb.UInt64Value | undefined;
-  setCashoutStake(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  getCashoutStake(): number;
+  setCashoutStake(value: number): void;
 
   hasCashoutPercent(): boolean;
   clearCashoutPercent(): void;
@@ -99,8 +95,8 @@ export class BetCashout extends jspb.Message {
 
 export namespace BetCashout {
   export type AsObject = {
-    id?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    cashoutStake?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    id: string,
+    cashoutStake: number,
     cashoutPercent?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
   }
 }
