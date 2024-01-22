@@ -93,6 +93,9 @@ message TicketSelection {
 
   // Information about selection origin
   google.protobuf.BoolValue foreign = 4;
+
+  // Margin for the given selection (comes from client templates).
+  double margin = 5;
 }
 
 message TicketCustomer {
