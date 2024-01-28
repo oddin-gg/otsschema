@@ -189,6 +189,94 @@ public final class TicketCancel {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketCancelRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              cancelReason_ = rawValue;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cancelReasonDetail_ = s;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              cancelPercent_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cancelBetInfo_ = new java.util.ArrayList<com.oddin.ots.TicketCancel.CancelBetInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cancelBetInfo_.add(
+                  input.readMessage(com.oddin.ots.TicketCancel.CancelBetInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          cancelBetInfo_ = java.util.Collections.unmodifiableList(cancelBetInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCancel.internal_static_ots_TicketCancelRequest_descriptor;
@@ -203,8 +291,7 @@ public final class TicketCancel {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ticket id from the operator’s system.
@@ -250,7 +337,7 @@ public final class TicketCancel {
     }
 
     public static final int CANCEL_REASON_FIELD_NUMBER = 2;
-    private int cancelReason_ = 0;
+    private int cancelReason_;
     /**
      * <pre>
      * Enum describing the reason for cancelling.
@@ -271,13 +358,13 @@ public final class TicketCancel {
      * @return The cancelReason.
      */
     @java.lang.Override public com.oddin.ots.Enums.CancelReason getCancelReason() {
-      com.oddin.ots.Enums.CancelReason result = com.oddin.ots.Enums.CancelReason.forNumber(cancelReason_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.CancelReason result = com.oddin.ots.Enums.CancelReason.valueOf(cancelReason_);
       return result == null ? com.oddin.ots.Enums.CancelReason.UNRECOGNIZED : result;
     }
 
     public static final int CANCEL_REASON_DETAIL_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object cancelReasonDetail_ = "";
+    private volatile java.lang.Object cancelReasonDetail_;
     /**
      * <pre>
      * Verbose description of the reason for cancelling the ticket.
@@ -357,11 +444,11 @@ public final class TicketCancel {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+      return getTimestamp();
     }
 
     public static final int CANCEL_PERCENT_FIELD_NUMBER = 5;
-    private int cancelPercent_ = 0;
+    private int cancelPercent_;
     /**
      * <pre>
      * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
@@ -376,7 +463,6 @@ public final class TicketCancel {
     }
 
     public static final int CANCEL_BET_INFO_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo> cancelBetInfo_;
     /**
      * <pre>
@@ -468,7 +554,7 @@ public final class TicketCancel {
       for (int i = 0; i < cancelBetInfo_.size(); i++) {
         output.writeMessage(6, cancelBetInfo_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -499,7 +585,7 @@ public final class TicketCancel {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, cancelBetInfo_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -528,7 +614,7 @@ public final class TicketCancel {
           != other.getCancelPercent()) return false;
       if (!getCancelBetInfoList()
           .equals(other.getCancelBetInfoList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -555,7 +641,7 @@ public final class TicketCancel {
         hash = (37 * hash) + CANCEL_BET_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCancelBetInfoList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -672,34 +758,43 @@ public final class TicketCancel {
 
       // Construct using com.oddin.ots.TicketCancel.TicketCancelRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCancelBetInfoFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         cancelReason_ = 0;
+
         cancelReasonDetail_ = "";
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
         cancelPercent_ = 0;
+
         if (cancelBetInfoBuilder_ == null) {
           cancelBetInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          cancelBetInfo_ = null;
           cancelBetInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -726,43 +821,27 @@ public final class TicketCancel {
       @java.lang.Override
       public com.oddin.ots.TicketCancel.TicketCancelRequest buildPartial() {
         com.oddin.ots.TicketCancel.TicketCancelRequest result = new com.oddin.ots.TicketCancel.TicketCancelRequest(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(com.oddin.ots.TicketCancel.TicketCancelRequest result) {
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.cancelReason_ = cancelReason_;
+        result.cancelReasonDetail_ = cancelReasonDetail_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
+        }
+        result.cancelPercent_ = cancelPercent_;
         if (cancelBetInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             cancelBetInfo_ = java.util.Collections.unmodifiableList(cancelBetInfo_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.cancelBetInfo_ = cancelBetInfo_;
         } else {
           result.cancelBetInfo_ = cancelBetInfoBuilder_.build();
         }
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCancel.TicketCancelRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cancelReason_ = cancelReason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cancelReasonDetail_ = cancelReasonDetail_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.timestamp_ = timestampBuilder_ == null
-              ? timestamp_
-              : timestampBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.cancelPercent_ = cancelPercent_;
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -811,7 +890,6 @@ public final class TicketCancel {
         if (other == com.oddin.ots.TicketCancel.TicketCancelRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.cancelReason_ != 0) {
@@ -819,7 +897,6 @@ public final class TicketCancel {
         }
         if (!other.getCancelReasonDetail().isEmpty()) {
           cancelReasonDetail_ = other.cancelReasonDetail_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasTimestamp()) {
@@ -832,7 +909,7 @@ public final class TicketCancel {
           if (!other.cancelBetInfo_.isEmpty()) {
             if (cancelBetInfo_.isEmpty()) {
               cancelBetInfo_ = other.cancelBetInfo_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCancelBetInfoIsMutable();
               cancelBetInfo_.addAll(other.cancelBetInfo_);
@@ -845,7 +922,7 @@ public final class TicketCancel {
               cancelBetInfoBuilder_.dispose();
               cancelBetInfoBuilder_ = null;
               cancelBetInfo_ = other.cancelBetInfo_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
               cancelBetInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCancelBetInfoFieldBuilder() : null;
@@ -854,7 +931,7 @@ public final class TicketCancel {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -869,70 +946,17 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCancel.TicketCancelRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                cancelReason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                cancelReasonDetail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getTimestampFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 40: {
-                cancelPercent_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 50: {
-                com.oddin.ots.TicketCancel.CancelBetInfo m =
-                    input.readMessage(
-                        com.oddin.ots.TicketCancel.CancelBetInfo.parser(),
-                        extensionRegistry);
-                if (cancelBetInfoBuilder_ == null) {
-                  ensureCancelBetInfoIsMutable();
-                  cancelBetInfo_.add(m);
-                } else {
-                  cancelBetInfoBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCancel.TicketCancelRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -990,9 +1014,11 @@ public final class TicketCancel {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1005,8 +1031,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1021,10 +1047,12 @@ public final class TicketCancel {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1051,8 +1079,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder setCancelReasonValue(int value) {
+        
         cancelReason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1066,7 +1094,8 @@ public final class TicketCancel {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.CancelReason getCancelReason() {
-        com.oddin.ots.Enums.CancelReason result = com.oddin.ots.Enums.CancelReason.forNumber(cancelReason_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.CancelReason result = com.oddin.ots.Enums.CancelReason.valueOf(cancelReason_);
         return result == null ? com.oddin.ots.Enums.CancelReason.UNRECOGNIZED : result;
       }
       /**
@@ -1082,7 +1111,7 @@ public final class TicketCancel {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         cancelReason_ = value.getNumber();
         onChanged();
         return this;
@@ -1096,7 +1125,7 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cancelReason_ = 0;
         onChanged();
         return this;
@@ -1155,9 +1184,11 @@ public final class TicketCancel {
        */
       public Builder setCancelReasonDetail(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         cancelReasonDetail_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1170,8 +1201,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelReasonDetail() {
+        
         cancelReasonDetail_ = getDefaultInstance().getCancelReasonDetail();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1186,10 +1217,12 @@ public final class TicketCancel {
        */
       public Builder setCancelReasonDetailBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         cancelReasonDetail_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1206,7 +1239,7 @@ public final class TicketCancel {
        * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
        * <pre>
@@ -1236,11 +1269,11 @@ public final class TicketCancel {
             throw new NullPointerException();
           }
           timestamp_ = value;
+          onChanged();
         } else {
           timestampBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1254,11 +1287,11 @@ public final class TicketCancel {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
+          onChanged();
         } else {
           timestampBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1270,18 +1303,17 @@ public final class TicketCancel {
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            timestamp_ != null &&
-            timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getTimestampBuilder().mergeFrom(value);
+          if (timestamp_ != null) {
+            timestamp_ =
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
+          onChanged();
         } else {
           timestampBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1292,13 +1324,14 @@ public final class TicketCancel {
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+          onChanged();
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -1309,7 +1342,7 @@ public final class TicketCancel {
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
@@ -1374,7 +1407,6 @@ public final class TicketCancel {
       public Builder setCancelPercent(int value) {
         
         cancelPercent_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1387,7 +1419,7 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelPercent() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         cancelPercent_ = 0;
         onChanged();
         return this;
@@ -1396,9 +1428,9 @@ public final class TicketCancel {
       private java.util.List<com.oddin.ots.TicketCancel.CancelBetInfo> cancelBetInfo_ =
         java.util.Collections.emptyList();
       private void ensureCancelBetInfoIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           cancelBetInfo_ = new java.util.ArrayList<com.oddin.ots.TicketCancel.CancelBetInfo>(cancelBetInfo_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1592,7 +1624,7 @@ public final class TicketCancel {
       public Builder clearCancelBetInfo() {
         if (cancelBetInfoBuilder_ == null) {
           cancelBetInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           cancelBetInfoBuilder_.clear();
@@ -1697,7 +1729,7 @@ public final class TicketCancel {
           cancelBetInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.oddin.ots.TicketCancel.CancelBetInfo, com.oddin.ots.TicketCancel.CancelBetInfo.Builder, com.oddin.ots.TicketCancel.CancelBetInfoOrBuilder>(
                   cancelBetInfo_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           cancelBetInfo_ = null;
@@ -1737,18 +1769,7 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketCancelRequest(input, extensionRegistry);
       }
     };
 
@@ -1830,6 +1851,56 @@ public final class TicketCancel {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CancelBetInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+
+              cancelPercent_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCancel.internal_static_ots_CancelBetInfo_descriptor;
@@ -1844,8 +1915,7 @@ public final class TicketCancel {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique bet id from the operator’s system.
@@ -1891,7 +1961,7 @@ public final class TicketCancel {
     }
 
     public static final int CANCEL_PERCENT_FIELD_NUMBER = 2;
-    private int cancelPercent_ = 0;
+    private int cancelPercent_;
     /**
      * <pre>
      * Cancel percent multiplied by 10 000 and rounded to a long value. Only applicable if cancelling the whole ticket.
@@ -1925,7 +1995,7 @@ public final class TicketCancel {
       if (cancelPercent_ != 0) {
         output.writeUInt32(2, cancelPercent_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1941,7 +2011,7 @@ public final class TicketCancel {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, cancelPercent_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1960,7 +2030,7 @@ public final class TicketCancel {
           .equals(other.getId())) return false;
       if (getCancelPercent()
           != other.getCancelPercent()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1975,7 +2045,7 @@ public final class TicketCancel {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + CANCEL_PERCENT_FIELD_NUMBER;
       hash = (53 * hash) + getCancelPercent();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2092,20 +2162,26 @@ public final class TicketCancel {
 
       // Construct using com.oddin.ots.TicketCancel.CancelBetInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         cancelPercent_ = 0;
+
         return this;
       }
 
@@ -2132,19 +2208,10 @@ public final class TicketCancel {
       @java.lang.Override
       public com.oddin.ots.TicketCancel.CancelBetInfo buildPartial() {
         com.oddin.ots.TicketCancel.CancelBetInfo result = new com.oddin.ots.TicketCancel.CancelBetInfo(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.cancelPercent_ = cancelPercent_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCancel.CancelBetInfo result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cancelPercent_ = cancelPercent_;
-        }
       }
 
       @java.lang.Override
@@ -2193,13 +2260,12 @@ public final class TicketCancel {
         if (other == com.oddin.ots.TicketCancel.CancelBetInfo.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getCancelPercent() != 0) {
           setCancelPercent(other.getCancelPercent());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2214,43 +2280,19 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCancel.CancelBetInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                cancelPercent_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCancel.CancelBetInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -2305,9 +2347,11 @@ public final class TicketCancel {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2320,8 +2364,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2336,10 +2380,12 @@ public final class TicketCancel {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2369,7 +2415,6 @@ public final class TicketCancel {
       public Builder setCancelPercent(int value) {
         
         cancelPercent_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2382,7 +2427,7 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelPercent() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cancelPercent_ = 0;
         onChanged();
         return this;
@@ -2420,18 +2465,7 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CancelBetInfo(input, extensionRegistry);
       }
     };
 
@@ -2543,6 +2577,63 @@ public final class TicketCancel {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketCancelResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              cancelRejectionReason_ = rawValue;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cancelRejectionMessage_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCancel.internal_static_ots_TicketCancelResponse_descriptor;
@@ -2557,7 +2648,7 @@ public final class TicketCancel {
     }
 
     public static final int STATUS_FIELD_NUMBER = 1;
-    private int status_ = 0;
+    private int status_;
     /**
      * <pre>
      * Acceptance status - REJECTED or ACCEPTED.
@@ -2578,12 +2669,13 @@ public final class TicketCancel {
      * @return The status.
      */
     @java.lang.Override public com.oddin.ots.Enums.AcceptanceStatus getStatus() {
-      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(status_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(status_);
       return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
     }
 
     public static final int CANCEL_REJECTION_REASON_FIELD_NUMBER = 2;
-    private int cancelRejectionReason_ = 0;
+    private int cancelRejectionReason_;
     /**
      * <pre>
      * Enum describing cancel rejection reason.
@@ -2604,13 +2696,13 @@ public final class TicketCancel {
      * @return The cancelRejectionReason.
      */
     @java.lang.Override public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
-      com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.forNumber(cancelRejectionReason_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
       return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
     }
 
     public static final int CANCEL_REJECTION_MESSAGE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object cancelRejectionMessage_ = "";
+    private volatile java.lang.Object cancelRejectionMessage_;
     /**
      * <pre>
      * Verbose description of ticket cancel rejection reason.
@@ -2678,7 +2770,7 @@ public final class TicketCancel {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelRejectionMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cancelRejectionMessage_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2698,7 +2790,7 @@ public final class TicketCancel {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelRejectionMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cancelRejectionMessage_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2717,7 +2809,7 @@ public final class TicketCancel {
       if (cancelRejectionReason_ != other.cancelRejectionReason_) return false;
       if (!getCancelRejectionMessage()
           .equals(other.getCancelRejectionMessage())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2734,7 +2826,7 @@ public final class TicketCancel {
       hash = (53 * hash) + cancelRejectionReason_;
       hash = (37 * hash) + CANCEL_REJECTION_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getCancelRejectionMessage().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2851,21 +2943,28 @@ public final class TicketCancel {
 
       // Construct using com.oddin.ots.TicketCancel.TicketCancelResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         status_ = 0;
+
         cancelRejectionReason_ = 0;
+
         cancelRejectionMessage_ = "";
+
         return this;
       }
 
@@ -2892,22 +2991,11 @@ public final class TicketCancel {
       @java.lang.Override
       public com.oddin.ots.TicketCancel.TicketCancelResponse buildPartial() {
         com.oddin.ots.TicketCancel.TicketCancelResponse result = new com.oddin.ots.TicketCancel.TicketCancelResponse(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.status_ = status_;
+        result.cancelRejectionReason_ = cancelRejectionReason_;
+        result.cancelRejectionMessage_ = cancelRejectionMessage_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCancel.TicketCancelResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.status_ = status_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cancelRejectionReason_ = cancelRejectionReason_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cancelRejectionMessage_ = cancelRejectionMessage_;
-        }
       }
 
       @java.lang.Override
@@ -2962,10 +3050,9 @@ public final class TicketCancel {
         }
         if (!other.getCancelRejectionMessage().isEmpty()) {
           cancelRejectionMessage_ = other.cancelRejectionMessage_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2980,48 +3067,19 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCancel.TicketCancelResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                status_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                cancelRejectionReason_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                cancelRejectionMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCancel.TicketCancelResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int status_ = 0;
       /**
@@ -3045,8 +3103,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
+        
         status_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3060,7 +3118,8 @@ public final class TicketCancel {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.AcceptanceStatus getStatus() {
-        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(status_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(status_);
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
@@ -3076,7 +3135,7 @@ public final class TicketCancel {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -3090,7 +3149,7 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         status_ = 0;
         onChanged();
         return this;
@@ -3118,8 +3177,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder setCancelRejectionReasonValue(int value) {
+        
         cancelRejectionReason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3133,7 +3192,8 @@ public final class TicketCancel {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.CancelRejectionReason getCancelRejectionReason() {
-        com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.forNumber(cancelRejectionReason_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.CancelRejectionReason result = com.oddin.ots.Enums.CancelRejectionReason.valueOf(cancelRejectionReason_);
         return result == null ? com.oddin.ots.Enums.CancelRejectionReason.UNRECOGNIZED : result;
       }
       /**
@@ -3149,7 +3209,7 @@ public final class TicketCancel {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         cancelRejectionReason_ = value.getNumber();
         onChanged();
         return this;
@@ -3163,7 +3223,7 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelRejectionReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cancelRejectionReason_ = 0;
         onChanged();
         return this;
@@ -3222,9 +3282,11 @@ public final class TicketCancel {
        */
       public Builder setCancelRejectionMessage(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         cancelRejectionMessage_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3237,8 +3299,8 @@ public final class TicketCancel {
        * @return This builder for chaining.
        */
       public Builder clearCancelRejectionMessage() {
+        
         cancelRejectionMessage_ = getDefaultInstance().getCancelRejectionMessage();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3253,10 +3315,12 @@ public final class TicketCancel {
        */
       public Builder setCancelRejectionMessageBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         cancelRejectionMessage_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3293,18 +3357,7 @@ public final class TicketCancel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketCancelResponse(input, extensionRegistry);
       }
     };
 
