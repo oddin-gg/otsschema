@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
@@ -1941,8 +1935,7 @@ proto.ots.Ticket.prototype.getSelectionsMap = function(opt_noLazyCreate) {
  */
 proto.ots.Ticket.prototype.clearSelectionsMap = function() {
   this.getSelectionsMap().clear();
-  return this;
-};
+  return this;};
 
 
 /**
@@ -3916,8 +3909,7 @@ proto.ots.TicketState.prototype.getBetInfoMap = function(opt_noLazyCreate) {
  */
 proto.ots.TicketState.prototype.clearBetInfoMap = function() {
   this.getBetInfoMap().clear();
-  return this;
-};
+  return this;};
 
 
 /**
@@ -3939,8 +3931,7 @@ proto.ots.TicketState.prototype.getSelectionInfoMap = function(opt_noLazyCreate)
  */
 proto.ots.TicketState.prototype.clearSelectionInfoMap = function() {
   this.getSelectionInfoMap().clear();
-  return this;
-};
+  return this;};
 
 
 /**
@@ -3999,8 +3990,7 @@ proto.ots.TicketState.prototype.getAutoAcceptedOddsMap = function(opt_noLazyCrea
  */
 proto.ots.TicketState.prototype.clearAutoAcceptedOddsMap = function() {
   this.getAutoAcceptedOddsMap().clear();
-  return this;
-};
+  return this;};
 
 
 /**

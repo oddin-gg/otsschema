@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 goog.exportSymbol('proto.ots.enums.AcceptOddsChange', null, global);
 goog.exportSymbol('proto.ots.enums.AcceptanceStatus', null, global);
@@ -42,7 +36,9 @@ proto.ots.enums.ResultingStatus = {
   RESULTING_STATUS_LOST: 3,
   RESULTING_STATUS_NOT_RESULTED: 4,
   RESULTING_STATUS_PENDING_LOST: 5,
-  RESULTING_STATUS_REJECTED: 6
+  RESULTING_STATUS_REJECTED: 6,
+  RESULTING_STATUS_HALF_WON: 7,
+  RESULTING_STATUS_HALF_LOST: 8
 };
 
 /**

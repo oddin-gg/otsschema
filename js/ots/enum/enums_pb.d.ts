@@ -11,6 +11,8 @@ export interface ResultingStatusMap {
   RESULTING_STATUS_NOT_RESULTED: 4;
   RESULTING_STATUS_PENDING_LOST: 5;
   RESULTING_STATUS_REJECTED: 6;
+  RESULTING_STATUS_HALF_WON: 7;
+  RESULTING_STATUS_HALF_LOST: 8;
 }
 
 export const ResultingStatus: ResultingStatusMap;
