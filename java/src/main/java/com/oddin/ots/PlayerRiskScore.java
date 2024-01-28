@@ -71,6 +71,51 @@ public final class PlayerRiskScore {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerRiskScoreRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.PlayerRiskScore.internal_static_ots_PlayerRiskScoreRequest_descriptor;
@@ -85,8 +130,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique player id from the operator’s system.
@@ -148,7 +192,7 @@ public final class PlayerRiskScore {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -160,7 +204,7 @@ public final class PlayerRiskScore {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -177,7 +221,7 @@ public final class PlayerRiskScore {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -190,7 +234,7 @@ public final class PlayerRiskScore {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -312,19 +356,24 @@ public final class PlayerRiskScore {
 
       // Construct using com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         return this;
       }
 
@@ -351,16 +400,9 @@ public final class PlayerRiskScore {
       @java.lang.Override
       public com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest buildPartial() {
         com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest result = new com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
       }
 
       @java.lang.Override
@@ -409,10 +451,9 @@ public final class PlayerRiskScore {
         if (other == com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -427,38 +468,19 @@ public final class PlayerRiskScore {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -513,9 +535,11 @@ public final class PlayerRiskScore {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -528,8 +552,8 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -544,10 +568,12 @@ public final class PlayerRiskScore {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,18 +610,7 @@ public final class PlayerRiskScore {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerRiskScoreRequest(input, extensionRegistry);
       }
     };
 
@@ -678,6 +693,70 @@ public final class PlayerRiskScore {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PlayerRiskScoreResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              score_ = input.readFloat();
+              break;
+            }
+            case 21: {
+
+              bos_ = input.readFloat();
+              break;
+            }
+            case 29: {
+
+              oaf_ = input.readFloat();
+              break;
+            }
+            case 32: {
+
+              liveDelay_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              prematchDelay_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.PlayerRiskScore.internal_static_ots_PlayerRiskScoreResponse_descriptor;
@@ -692,7 +771,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private float score_ = 0F;
+    private float score_;
     /**
      * <code>float score = 1 [deprecated = true];</code>
      * @deprecated ots.PlayerRiskScoreResponse.score is deprecated.
@@ -705,7 +784,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int BOS_FIELD_NUMBER = 2;
-    private float bos_ = 0F;
+    private float bos_;
     /**
      * <code>float bos = 2;</code>
      * @return The bos.
@@ -716,7 +795,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int OAF_FIELD_NUMBER = 3;
-    private float oaf_ = 0F;
+    private float oaf_;
     /**
      * <code>float oaf = 3;</code>
      * @return The oaf.
@@ -727,7 +806,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int LIVE_DELAY_FIELD_NUMBER = 4;
-    private int liveDelay_ = 0;
+    private int liveDelay_;
     /**
      * <code>uint32 live_delay = 4;</code>
      * @return The liveDelay.
@@ -738,7 +817,7 @@ public final class PlayerRiskScore {
     }
 
     public static final int PREMATCH_DELAY_FIELD_NUMBER = 5;
-    private int prematchDelay_ = 0;
+    private int prematchDelay_;
     /**
      * <code>uint32 prematch_delay = 5;</code>
      * @return The prematchDelay.
@@ -777,7 +856,7 @@ public final class PlayerRiskScore {
       if (prematchDelay_ != 0) {
         output.writeUInt32(5, prematchDelay_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -806,7 +885,7 @@ public final class PlayerRiskScore {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, prematchDelay_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -834,7 +913,7 @@ public final class PlayerRiskScore {
           != other.getLiveDelay()) return false;
       if (getPrematchDelay()
           != other.getPrematchDelay()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -858,7 +937,7 @@ public final class PlayerRiskScore {
       hash = (53 * hash) + getLiveDelay();
       hash = (37 * hash) + PREMATCH_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getPrematchDelay();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -975,23 +1054,32 @@ public final class PlayerRiskScore {
 
       // Construct using com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         score_ = 0F;
+
         bos_ = 0F;
+
         oaf_ = 0F;
+
         liveDelay_ = 0;
+
         prematchDelay_ = 0;
+
         return this;
       }
 
@@ -1018,28 +1106,13 @@ public final class PlayerRiskScore {
       @java.lang.Override
       public com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse buildPartial() {
         com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse result = new com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.score_ = score_;
+        result.bos_ = bos_;
+        result.oaf_ = oaf_;
+        result.liveDelay_ = liveDelay_;
+        result.prematchDelay_ = prematchDelay_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.bos_ = bos_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.oaf_ = oaf_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.liveDelay_ = liveDelay_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.prematchDelay_ = prematchDelay_;
-        }
       }
 
       @java.lang.Override
@@ -1101,7 +1174,7 @@ public final class PlayerRiskScore {
         if (other.getPrematchDelay() != 0) {
           setPrematchDelay(other.getPrematchDelay());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1116,58 +1189,19 @@ public final class PlayerRiskScore {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                score_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                bos_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                oaf_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 32: {
-                liveDelay_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                prematchDelay_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float score_ ;
       /**
@@ -1190,7 +1224,6 @@ public final class PlayerRiskScore {
       @java.lang.Deprecated public Builder setScore(float value) {
         
         score_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1201,7 +1234,7 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         score_ = 0F;
         onChanged();
         return this;
@@ -1224,7 +1257,6 @@ public final class PlayerRiskScore {
       public Builder setBos(float value) {
         
         bos_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1233,7 +1265,7 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       public Builder clearBos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         bos_ = 0F;
         onChanged();
         return this;
@@ -1256,7 +1288,6 @@ public final class PlayerRiskScore {
       public Builder setOaf(float value) {
         
         oaf_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1265,7 +1296,7 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       public Builder clearOaf() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         oaf_ = 0F;
         onChanged();
         return this;
@@ -1288,7 +1319,6 @@ public final class PlayerRiskScore {
       public Builder setLiveDelay(int value) {
         
         liveDelay_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1297,7 +1327,7 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       public Builder clearLiveDelay() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         liveDelay_ = 0;
         onChanged();
         return this;
@@ -1320,7 +1350,6 @@ public final class PlayerRiskScore {
       public Builder setPrematchDelay(int value) {
         
         prematchDelay_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1329,7 +1358,7 @@ public final class PlayerRiskScore {
        * @return This builder for chaining.
        */
       public Builder clearPrematchDelay() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         prematchDelay_ = 0;
         onChanged();
         return this;
@@ -1367,18 +1396,7 @@ public final class PlayerRiskScore {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PlayerRiskScoreResponse(input, extensionRegistry);
       }
     };
 

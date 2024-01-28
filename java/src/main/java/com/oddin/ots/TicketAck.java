@@ -140,6 +140,83 @@ public final class TicketAck {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketAckRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              acceptanceStatus_ = rawValue;
+              break;
+            }
+            case 34: {
+              com.oddin.ots.Commons.Reason.Builder subBuilder = null;
+              if (reason_ != null) {
+                subBuilder = reason_.toBuilder();
+              }
+              reason_ = input.readMessage(com.oddin.ots.Commons.Reason.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reason_);
+                reason_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketAck.internal_static_ots_TicketAckRequest_descriptor;
@@ -154,8 +231,7 @@ public final class TicketAck {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ticket id from the operator’s system.
@@ -235,11 +311,11 @@ public final class TicketAck {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+      return getTimestamp();
     }
 
     public static final int ACCEPTANCE_STATUS_FIELD_NUMBER = 3;
-    private int acceptanceStatus_ = 0;
+    private int acceptanceStatus_;
     /**
      * <pre>
      * Acceptance status - REJECTED or ACCEPTED
@@ -260,7 +336,8 @@ public final class TicketAck {
      * @return The acceptanceStatus.
      */
     @java.lang.Override public com.oddin.ots.Enums.AcceptanceStatus getAcceptanceStatus() {
-      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(acceptanceStatus_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(acceptanceStatus_);
       return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
     }
 
@@ -299,7 +376,7 @@ public final class TicketAck {
      */
     @java.lang.Override
     public com.oddin.ots.Commons.ReasonOrBuilder getReasonOrBuilder() {
-      return reason_ == null ? com.oddin.ots.Commons.Reason.getDefaultInstance() : reason_;
+      return getReason();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -328,7 +405,7 @@ public final class TicketAck {
       if (reason_ != null) {
         output.writeMessage(4, getReason());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -352,7 +429,7 @@ public final class TicketAck {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getReason());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -380,7 +457,7 @@ public final class TicketAck {
         if (!getReason()
             .equals(other.getReason())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -403,7 +480,7 @@ public final class TicketAck {
         hash = (37 * hash) + REASON_FIELD_NUMBER;
         hash = (53 * hash) + getReason().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -520,28 +597,36 @@ public final class TicketAck {
 
       // Construct using com.oddin.ots.TicketAck.TicketAckRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
         acceptanceStatus_ = 0;
-        reason_ = null;
-        if (reasonBuilder_ != null) {
-          reasonBuilder_.dispose();
+
+        if (reasonBuilder_ == null) {
+          reason_ = null;
+        } else {
+          reason_ = null;
           reasonBuilder_ = null;
         }
         return this;
@@ -570,29 +655,20 @@ public final class TicketAck {
       @java.lang.Override
       public com.oddin.ots.TicketAck.TicketAckRequest buildPartial() {
         com.oddin.ots.TicketAck.TicketAckRequest result = new com.oddin.ots.TicketAck.TicketAckRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
+        }
+        result.acceptanceStatus_ = acceptanceStatus_;
+        if (reasonBuilder_ == null) {
+          result.reason_ = reason_;
+        } else {
+          result.reason_ = reasonBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketAck.TicketAckRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timestamp_ = timestampBuilder_ == null
-              ? timestamp_
-              : timestampBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.acceptanceStatus_ = acceptanceStatus_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.reason_ = reasonBuilder_ == null
-              ? reason_
-              : reasonBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -641,7 +717,6 @@ public final class TicketAck {
         if (other == com.oddin.ots.TicketAck.TicketAckRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasTimestamp()) {
@@ -653,7 +728,7 @@ public final class TicketAck {
         if (other.hasReason()) {
           mergeReason(other.getReason());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -668,57 +743,19 @@ public final class TicketAck {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketAck.TicketAckRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getTimestampFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                acceptanceStatus_ = input.readEnum();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getReasonFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketAck.TicketAckRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -773,9 +810,11 @@ public final class TicketAck {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -788,8 +827,8 @@ public final class TicketAck {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -804,10 +843,12 @@ public final class TicketAck {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -824,7 +865,7 @@ public final class TicketAck {
        * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
        * <pre>
@@ -854,11 +895,11 @@ public final class TicketAck {
             throw new NullPointerException();
           }
           timestamp_ = value;
+          onChanged();
         } else {
           timestampBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -872,11 +913,11 @@ public final class TicketAck {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
+          onChanged();
         } else {
           timestampBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -888,18 +929,17 @@ public final class TicketAck {
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            timestamp_ != null &&
-            timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getTimestampBuilder().mergeFrom(value);
+          if (timestamp_ != null) {
+            timestamp_ =
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
+          onChanged();
         } else {
           timestampBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -910,13 +950,14 @@ public final class TicketAck {
        * <code>.google.protobuf.Timestamp timestamp = 2;</code>
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+          onChanged();
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -927,7 +968,7 @@ public final class TicketAck {
        * <code>.google.protobuf.Timestamp timestamp = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
@@ -989,8 +1030,8 @@ public final class TicketAck {
        * @return This builder for chaining.
        */
       public Builder setAcceptanceStatusValue(int value) {
+        
         acceptanceStatus_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1004,7 +1045,8 @@ public final class TicketAck {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.AcceptanceStatus getAcceptanceStatus() {
-        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(acceptanceStatus_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(acceptanceStatus_);
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
@@ -1020,7 +1062,7 @@ public final class TicketAck {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         acceptanceStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -1034,7 +1076,7 @@ public final class TicketAck {
        * @return This builder for chaining.
        */
       public Builder clearAcceptanceStatus() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         acceptanceStatus_ = 0;
         onChanged();
         return this;
@@ -1052,7 +1094,7 @@ public final class TicketAck {
        * @return Whether the reason field is set.
        */
       public boolean hasReason() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return reasonBuilder_ != null || reason_ != null;
       }
       /**
        * <pre>
@@ -1082,11 +1124,11 @@ public final class TicketAck {
             throw new NullPointerException();
           }
           reason_ = value;
+          onChanged();
         } else {
           reasonBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1100,11 +1142,11 @@ public final class TicketAck {
           com.oddin.ots.Commons.Reason.Builder builderForValue) {
         if (reasonBuilder_ == null) {
           reason_ = builderForValue.build();
+          onChanged();
         } else {
           reasonBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1116,18 +1158,17 @@ public final class TicketAck {
        */
       public Builder mergeReason(com.oddin.ots.Commons.Reason value) {
         if (reasonBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            reason_ != null &&
-            reason_ != com.oddin.ots.Commons.Reason.getDefaultInstance()) {
-            getReasonBuilder().mergeFrom(value);
+          if (reason_ != null) {
+            reason_ =
+              com.oddin.ots.Commons.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
             reason_ = value;
           }
+          onChanged();
         } else {
           reasonBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -1138,13 +1179,14 @@ public final class TicketAck {
        * <code>.ots.Reason reason = 4;</code>
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        reason_ = null;
-        if (reasonBuilder_ != null) {
-          reasonBuilder_.dispose();
+        if (reasonBuilder_ == null) {
+          reason_ = null;
+          onChanged();
+        } else {
+          reason_ = null;
           reasonBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -1155,7 +1197,7 @@ public final class TicketAck {
        * <code>.ots.Reason reason = 4;</code>
        */
       public com.oddin.ots.Commons.Reason.Builder getReasonBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getReasonFieldBuilder().getBuilder();
       }
@@ -1227,18 +1269,7 @@ public final class TicketAck {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketAckRequest(input, extensionRegistry);
       }
     };
 
@@ -1289,6 +1320,45 @@ public final class TicketAck {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketAckResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketAck.internal_static_ots_TicketAckResponse_descriptor;
@@ -1316,7 +1386,7 @@ public final class TicketAck {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1325,7 +1395,7 @@ public final class TicketAck {
       if (size != -1) return size;
 
       size = 0;
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1340,7 +1410,7 @@ public final class TicketAck {
       }
       com.oddin.ots.TicketAck.TicketAckResponse other = (com.oddin.ots.TicketAck.TicketAckResponse) obj;
 
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1351,7 +1421,7 @@ public final class TicketAck {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1468,13 +1538,18 @@ public final class TicketAck {
 
       // Construct using com.oddin.ots.TicketAck.TicketAckResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1553,7 +1628,7 @@ public final class TicketAck {
 
       public Builder mergeFrom(com.oddin.ots.TicketAck.TicketAckResponse other) {
         if (other == com.oddin.ots.TicketAck.TicketAckResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1568,30 +1643,17 @@ public final class TicketAck {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketAck.TicketAckResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketAck.TicketAckResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       @java.lang.Override
@@ -1627,18 +1689,7 @@ public final class TicketAck {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketAckResponse(input, extensionRegistry);
       }
     };
 

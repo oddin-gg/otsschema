@@ -86,6 +86,57 @@ public final class TicketCashoutOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketCashoutRejectReason(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              code_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCashoutOuterClass.internal_static_ots_TicketCashoutRejectReason_descriptor;
@@ -292,7 +343,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
-    private int code_ = 0;
+    private int code_;
     /**
      * <pre>
      * Reason code.
@@ -313,13 +364,13 @@ public final class TicketCashoutOuterClass {
      * @return The code.
      */
     @java.lang.Override public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code getCode() {
-      com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code result = com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.forNumber(code_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code result = com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.valueOf(code_);
       return result == null ? com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
+    private volatile java.lang.Object message_;
     /**
      * <pre>
      * Message describing a reason.
@@ -384,7 +435,7 @@ public final class TicketCashoutOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -400,7 +451,7 @@ public final class TicketCashoutOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -418,7 +469,7 @@ public final class TicketCashoutOuterClass {
       if (code_ != other.code_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -433,7 +484,7 @@ public final class TicketCashoutOuterClass {
       hash = (53 * hash) + code_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -550,20 +601,26 @@ public final class TicketCashoutOuterClass {
 
       // Construct using com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         code_ = 0;
+
         message_ = "";
+
         return this;
       }
 
@@ -590,19 +647,10 @@ public final class TicketCashoutOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason buildPartial() {
         com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason result = new com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.code_ = code_;
+        result.message_ = message_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.code_ = code_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.message_ = message_;
-        }
       }
 
       @java.lang.Override
@@ -654,10 +702,9 @@ public final class TicketCashoutOuterClass {
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -672,43 +719,19 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                code_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int code_ = 0;
       /**
@@ -732,8 +755,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
+        
         code_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -747,7 +770,8 @@ public final class TicketCashoutOuterClass {
        */
       @java.lang.Override
       public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code getCode() {
-        com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code result = com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.forNumber(code_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code result = com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.valueOf(code_);
         return result == null ? com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Code.UNRECOGNIZED : result;
       }
       /**
@@ -763,7 +787,7 @@ public final class TicketCashoutOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         code_ = value.getNumber();
         onChanged();
         return this;
@@ -777,7 +801,7 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         code_ = 0;
         onChanged();
         return this;
@@ -836,9 +860,11 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setMessage(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         message_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -851,8 +877,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
+        
         message_ = getDefaultInstance().getMessage();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -867,10 +893,12 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         message_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -907,18 +935,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketCashoutRejectReason(input, extensionRegistry);
       }
     };
 
@@ -1037,6 +1054,70 @@ public final class TicketCashoutOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketCashoutState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              ticketStatus_ = rawValue;
+              break;
+            }
+            case 26: {
+              com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Builder subBuilder = null;
+              if (rejectReason_ != null) {
+                subBuilder = rejectReason_.toBuilder();
+              }
+              rejectReason_ = input.readMessage(com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rejectReason_);
+                rejectReason_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCashoutOuterClass.internal_static_ots_TicketCashoutState_descriptor;
@@ -1051,8 +1132,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ticket id from operator’s system.
@@ -1098,7 +1178,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int TICKET_STATUS_FIELD_NUMBER = 2;
-    private int ticketStatus_ = 0;
+    private int ticketStatus_;
     /**
      * <pre>
      * Acceptance status - REJECTED | ACCEPTED. PENDING is not used.
@@ -1119,7 +1199,8 @@ public final class TicketCashoutOuterClass {
      * @return The ticketStatus.
      */
     @java.lang.Override public com.oddin.ots.Enums.AcceptanceStatus getTicketStatus() {
-      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(ticketStatus_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(ticketStatus_);
       return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
     }
 
@@ -1158,7 +1239,7 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReasonOrBuilder getRejectReasonOrBuilder() {
-      return rejectReason_ == null ? com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.getDefaultInstance() : rejectReason_;
+      return getRejectReason();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1184,7 +1265,7 @@ public final class TicketCashoutOuterClass {
       if (rejectReason_ != null) {
         output.writeMessage(3, getRejectReason());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1204,7 +1285,7 @@ public final class TicketCashoutOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRejectReason());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1227,7 +1308,7 @@ public final class TicketCashoutOuterClass {
         if (!getRejectReason()
             .equals(other.getRejectReason())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1246,7 +1327,7 @@ public final class TicketCashoutOuterClass {
         hash = (37 * hash) + REJECT_REASON_FIELD_NUMBER;
         hash = (53 * hash) + getRejectReason().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1363,23 +1444,30 @@ public final class TicketCashoutOuterClass {
 
       // Construct using com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         ticketStatus_ = 0;
-        rejectReason_ = null;
-        if (rejectReasonBuilder_ != null) {
-          rejectReasonBuilder_.dispose();
+
+        if (rejectReasonBuilder_ == null) {
+          rejectReason_ = null;
+        } else {
+          rejectReason_ = null;
           rejectReasonBuilder_ = null;
         }
         return this;
@@ -1408,24 +1496,15 @@ public final class TicketCashoutOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState buildPartial() {
         com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState result = new com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.ticketStatus_ = ticketStatus_;
+        if (rejectReasonBuilder_ == null) {
+          result.rejectReason_ = rejectReason_;
+        } else {
+          result.rejectReason_ = rejectReasonBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.ticketStatus_ = ticketStatus_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.rejectReason_ = rejectReasonBuilder_ == null
-              ? rejectReason_
-              : rejectReasonBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -1474,7 +1553,6 @@ public final class TicketCashoutOuterClass {
         if (other == com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.ticketStatus_ != 0) {
@@ -1483,7 +1561,7 @@ public final class TicketCashoutOuterClass {
         if (other.hasRejectReason()) {
           mergeRejectReason(other.getRejectReason());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1498,50 +1576,19 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                ticketStatus_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                input.readMessage(
-                    getRejectReasonFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCashoutOuterClass.TicketCashoutState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1596,9 +1643,11 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1611,8 +1660,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1627,10 +1676,12 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1657,8 +1708,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTicketStatusValue(int value) {
+        
         ticketStatus_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1672,7 +1723,8 @@ public final class TicketCashoutOuterClass {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.AcceptanceStatus getTicketStatus() {
-        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(ticketStatus_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(ticketStatus_);
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
@@ -1688,7 +1740,7 @@ public final class TicketCashoutOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000002;
+        
         ticketStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -1702,7 +1754,7 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTicketStatus() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         ticketStatus_ = 0;
         onChanged();
         return this;
@@ -1720,7 +1772,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the rejectReason field is set.
        */
       public boolean hasRejectReason() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return rejectReasonBuilder_ != null || rejectReason_ != null;
       }
       /**
        * <pre>
@@ -1750,11 +1802,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           rejectReason_ = value;
+          onChanged();
         } else {
           rejectReasonBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1768,11 +1820,11 @@ public final class TicketCashoutOuterClass {
           com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Builder builderForValue) {
         if (rejectReasonBuilder_ == null) {
           rejectReason_ = builderForValue.build();
+          onChanged();
         } else {
           rejectReasonBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1784,18 +1836,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeRejectReason(com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason value) {
         if (rejectReasonBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            rejectReason_ != null &&
-            rejectReason_ != com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.getDefaultInstance()) {
-            getRejectReasonBuilder().mergeFrom(value);
+          if (rejectReason_ != null) {
+            rejectReason_ =
+              com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.newBuilder(rejectReason_).mergeFrom(value).buildPartial();
           } else {
             rejectReason_ = value;
           }
+          onChanged();
         } else {
           rejectReasonBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -1806,13 +1857,14 @@ public final class TicketCashoutOuterClass {
        * <code>.ots.TicketCashoutRejectReason reject_reason = 3;</code>
        */
       public Builder clearRejectReason() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        rejectReason_ = null;
-        if (rejectReasonBuilder_ != null) {
-          rejectReasonBuilder_.dispose();
+        if (rejectReasonBuilder_ == null) {
+          rejectReason_ = null;
+          onChanged();
+        } else {
+          rejectReason_ = null;
           rejectReasonBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -1823,7 +1875,7 @@ public final class TicketCashoutOuterClass {
        * <code>.ots.TicketCashoutRejectReason reject_reason = 3;</code>
        */
       public com.oddin.ots.TicketCashoutOuterClass.TicketCashoutRejectReason.Builder getRejectReasonBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getRejectReasonFieldBuilder().getBuilder();
       }
@@ -1895,18 +1947,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketCashoutState(input, extensionRegistry);
       }
     };
 
@@ -2015,6 +2056,69 @@ public final class TicketCashoutOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BetCashout(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+
+              cashoutStake_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (cashoutPercent_ != null) {
+                subBuilder = cashoutPercent_.toBuilder();
+              }
+              cashoutPercent_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cashoutPercent_);
+                cashoutPercent_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCashoutOuterClass.internal_static_ots_BetCashout_descriptor;
@@ -2029,8 +2133,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Bet id.
@@ -2076,7 +2179,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int CASHOUT_STAKE_FIELD_NUMBER = 2;
-    private long cashoutStake_ = 0L;
+    private long cashoutStake_;
     /**
      * <pre>
      * Total cashout amount. Applicable for bet. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
@@ -2125,7 +2228,7 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.UInt64ValueOrBuilder getCashoutPercentOrBuilder() {
-      return cashoutPercent_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutPercent_;
+      return getCashoutPercent();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2151,7 +2254,7 @@ public final class TicketCashoutOuterClass {
       if (cashoutPercent_ != null) {
         output.writeMessage(3, getCashoutPercent());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2171,7 +2274,7 @@ public final class TicketCashoutOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getCashoutPercent());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2195,7 +2298,7 @@ public final class TicketCashoutOuterClass {
         if (!getCashoutPercent()
             .equals(other.getCashoutPercent())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2215,7 +2318,7 @@ public final class TicketCashoutOuterClass {
         hash = (37 * hash) + CASHOUT_PERCENT_FIELD_NUMBER;
         hash = (53 * hash) + getCashoutPercent().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2332,23 +2435,30 @@ public final class TicketCashoutOuterClass {
 
       // Construct using com.oddin.ots.TicketCashoutOuterClass.BetCashout.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         cashoutStake_ = 0L;
-        cashoutPercent_ = null;
-        if (cashoutPercentBuilder_ != null) {
-          cashoutPercentBuilder_.dispose();
+
+        if (cashoutPercentBuilder_ == null) {
+          cashoutPercent_ = null;
+        } else {
+          cashoutPercent_ = null;
           cashoutPercentBuilder_ = null;
         }
         return this;
@@ -2377,24 +2487,15 @@ public final class TicketCashoutOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketCashoutOuterClass.BetCashout buildPartial() {
         com.oddin.ots.TicketCashoutOuterClass.BetCashout result = new com.oddin.ots.TicketCashoutOuterClass.BetCashout(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.cashoutStake_ = cashoutStake_;
+        if (cashoutPercentBuilder_ == null) {
+          result.cashoutPercent_ = cashoutPercent_;
+        } else {
+          result.cashoutPercent_ = cashoutPercentBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCashoutOuterClass.BetCashout result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cashoutStake_ = cashoutStake_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cashoutPercent_ = cashoutPercentBuilder_ == null
-              ? cashoutPercent_
-              : cashoutPercentBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -2443,7 +2544,6 @@ public final class TicketCashoutOuterClass {
         if (other == com.oddin.ots.TicketCashoutOuterClass.BetCashout.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getCashoutStake() != 0L) {
@@ -2452,7 +2552,7 @@ public final class TicketCashoutOuterClass {
         if (other.hasCashoutPercent()) {
           mergeCashoutPercent(other.getCashoutPercent());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2467,50 +2567,19 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCashoutOuterClass.BetCashout parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                cashoutStake_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                input.readMessage(
-                    getCashoutPercentFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCashoutOuterClass.BetCashout) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -2565,9 +2634,11 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2580,8 +2651,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2596,10 +2667,12 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2629,7 +2702,6 @@ public final class TicketCashoutOuterClass {
       public Builder setCashoutStake(long value) {
         
         cashoutStake_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2642,7 +2714,7 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCashoutStake() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         cashoutStake_ = 0L;
         onChanged();
         return this;
@@ -2660,7 +2732,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the cashoutPercent field is set.
        */
       public boolean hasCashoutPercent() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return cashoutPercentBuilder_ != null || cashoutPercent_ != null;
       }
       /**
        * <pre>
@@ -2690,11 +2762,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           cashoutPercent_ = value;
+          onChanged();
         } else {
           cashoutPercentBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -2708,11 +2780,11 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value.Builder builderForValue) {
         if (cashoutPercentBuilder_ == null) {
           cashoutPercent_ = builderForValue.build();
+          onChanged();
         } else {
           cashoutPercentBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -2724,18 +2796,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeCashoutPercent(com.google.protobuf.UInt64Value value) {
         if (cashoutPercentBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            cashoutPercent_ != null &&
-            cashoutPercent_ != com.google.protobuf.UInt64Value.getDefaultInstance()) {
-            getCashoutPercentBuilder().mergeFrom(value);
+          if (cashoutPercent_ != null) {
+            cashoutPercent_ =
+              com.google.protobuf.UInt64Value.newBuilder(cashoutPercent_).mergeFrom(value).buildPartial();
           } else {
             cashoutPercent_ = value;
           }
+          onChanged();
         } else {
           cashoutPercentBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -2746,13 +2817,14 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_percent = 3;</code>
        */
       public Builder clearCashoutPercent() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        cashoutPercent_ = null;
-        if (cashoutPercentBuilder_ != null) {
-          cashoutPercentBuilder_.dispose();
+        if (cashoutPercentBuilder_ == null) {
+          cashoutPercent_ = null;
+          onChanged();
+        } else {
+          cashoutPercent_ = null;
           cashoutPercentBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -2763,7 +2835,7 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_percent = 3;</code>
        */
       public com.google.protobuf.UInt64Value.Builder getCashoutPercentBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getCashoutPercentFieldBuilder().getBuilder();
       }
@@ -2835,18 +2907,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BetCashout(input, extensionRegistry);
       }
     };
 
@@ -3055,6 +3116,116 @@ public final class TicketCashoutOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TicketCashout(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (cashoutStake_ != null) {
+                subBuilder = cashoutStake_.toBuilder();
+              }
+              cashoutStake_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cashoutStake_);
+                cashoutStake_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (cashoutPercent_ != null) {
+                subBuilder = cashoutPercent_.toBuilder();
+              }
+              cashoutPercent_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cashoutPercent_);
+                cashoutPercent_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                betCashout_ = new java.util.ArrayList<com.oddin.ots.TicketCashoutOuterClass.BetCashout>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              betCashout_.add(
+                  input.readMessage(com.oddin.ots.TicketCashoutOuterClass.BetCashout.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              com.google.protobuf.UInt64Value.Builder subBuilder = null;
+              if (stakeMultiplier_ != null) {
+                subBuilder = stakeMultiplier_.toBuilder();
+              }
+              stakeMultiplier_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stakeMultiplier_);
+                stakeMultiplier_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          betCashout_ = java.util.Collections.unmodifiableList(betCashout_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.TicketCashoutOuterClass.internal_static_ots_TicketCashout_descriptor;
@@ -3069,8 +3240,7 @@ public final class TicketCashoutOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ticket id from operator’s system.
@@ -3150,7 +3320,7 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+      return getTimestamp();
     }
 
     public static final int CASHOUT_STAKE_FIELD_NUMBER = 3;
@@ -3188,7 +3358,7 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.UInt64ValueOrBuilder getCashoutStakeOrBuilder() {
-      return cashoutStake_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutStake_;
+      return getCashoutStake();
     }
 
     public static final int CASHOUT_PERCENT_FIELD_NUMBER = 4;
@@ -3226,11 +3396,10 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.UInt64ValueOrBuilder getCashoutPercentOrBuilder() {
-      return cashoutPercent_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : cashoutPercent_;
+      return getCashoutPercent();
     }
 
     public static final int BET_CASHOUT_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<com.oddin.ots.TicketCashoutOuterClass.BetCashout> betCashout_;
     /**
      * <code>repeated .ots.BetCashout bet_cashout = 5;</code>
@@ -3305,7 +3474,7 @@ public final class TicketCashoutOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder() {
-      return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
+      return getStakeMultiplier();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3340,7 +3509,7 @@ public final class TicketCashoutOuterClass {
       if (stakeMultiplier_ != null) {
         output.writeMessage(6, getStakeMultiplier());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3372,7 +3541,7 @@ public final class TicketCashoutOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getStakeMultiplier());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3411,7 +3580,7 @@ public final class TicketCashoutOuterClass {
         if (!getStakeMultiplier()
             .equals(other.getStakeMultiplier())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3444,7 +3613,7 @@ public final class TicketCashoutOuterClass {
         hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
         hash = (53 * hash) + getStakeMultiplier().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3565,44 +3734,53 @@ public final class TicketCashoutOuterClass {
 
       // Construct using com.oddin.ots.TicketCashoutOuterClass.TicketCashout.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBetCashoutFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
-        cashoutStake_ = null;
-        if (cashoutStakeBuilder_ != null) {
-          cashoutStakeBuilder_.dispose();
+        if (cashoutStakeBuilder_ == null) {
+          cashoutStake_ = null;
+        } else {
+          cashoutStake_ = null;
           cashoutStakeBuilder_ = null;
         }
-        cashoutPercent_ = null;
-        if (cashoutPercentBuilder_ != null) {
-          cashoutPercentBuilder_.dispose();
+        if (cashoutPercentBuilder_ == null) {
+          cashoutPercent_ = null;
+        } else {
+          cashoutPercent_ = null;
           cashoutPercentBuilder_ = null;
         }
         if (betCashoutBuilder_ == null) {
           betCashout_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          betCashout_ = null;
           betCashoutBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
-        stakeMultiplier_ = null;
-        if (stakeMultiplierBuilder_ != null) {
-          stakeMultiplierBuilder_.dispose();
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+        } else {
+          stakeMultiplier_ = null;
           stakeMultiplierBuilder_ = null;
         }
         return this;
@@ -3631,49 +3809,39 @@ public final class TicketCashoutOuterClass {
       @java.lang.Override
       public com.oddin.ots.TicketCashoutOuterClass.TicketCashout buildPartial() {
         com.oddin.ots.TicketCashoutOuterClass.TicketCashout result = new com.oddin.ots.TicketCashoutOuterClass.TicketCashout(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(com.oddin.ots.TicketCashoutOuterClass.TicketCashout result) {
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
+        }
+        if (cashoutStakeBuilder_ == null) {
+          result.cashoutStake_ = cashoutStake_;
+        } else {
+          result.cashoutStake_ = cashoutStakeBuilder_.build();
+        }
+        if (cashoutPercentBuilder_ == null) {
+          result.cashoutPercent_ = cashoutPercent_;
+        } else {
+          result.cashoutPercent_ = cashoutPercentBuilder_.build();
+        }
         if (betCashoutBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             betCashout_ = java.util.Collections.unmodifiableList(betCashout_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.betCashout_ = betCashout_;
         } else {
           result.betCashout_ = betCashoutBuilder_.build();
         }
-      }
-
-      private void buildPartial0(com.oddin.ots.TicketCashoutOuterClass.TicketCashout result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
+        if (stakeMultiplierBuilder_ == null) {
+          result.stakeMultiplier_ = stakeMultiplier_;
+        } else {
+          result.stakeMultiplier_ = stakeMultiplierBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timestamp_ = timestampBuilder_ == null
-              ? timestamp_
-              : timestampBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.cashoutStake_ = cashoutStakeBuilder_ == null
-              ? cashoutStake_
-              : cashoutStakeBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cashoutPercent_ = cashoutPercentBuilder_ == null
-              ? cashoutPercent_
-              : cashoutPercentBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.stakeMultiplier_ = stakeMultiplierBuilder_ == null
-              ? stakeMultiplier_
-              : stakeMultiplierBuilder_.build();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -3722,7 +3890,6 @@ public final class TicketCashoutOuterClass {
         if (other == com.oddin.ots.TicketCashoutOuterClass.TicketCashout.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasTimestamp()) {
@@ -3738,7 +3905,7 @@ public final class TicketCashoutOuterClass {
           if (!other.betCashout_.isEmpty()) {
             if (betCashout_.isEmpty()) {
               betCashout_ = other.betCashout_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBetCashoutIsMutable();
               betCashout_.addAll(other.betCashout_);
@@ -3751,7 +3918,7 @@ public final class TicketCashoutOuterClass {
               betCashoutBuilder_.dispose();
               betCashoutBuilder_ = null;
               betCashout_ = other.betCashout_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               betCashoutBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBetCashoutFieldBuilder() : null;
@@ -3763,7 +3930,7 @@ public final class TicketCashoutOuterClass {
         if (other.hasStakeMultiplier()) {
           mergeStakeMultiplier(other.getStakeMultiplier());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3778,76 +3945,17 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.TicketCashoutOuterClass.TicketCashout parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getTimestampFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getCashoutStakeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCashoutPercentFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                com.oddin.ots.TicketCashoutOuterClass.BetCashout m =
-                    input.readMessage(
-                        com.oddin.ots.TicketCashoutOuterClass.BetCashout.parser(),
-                        extensionRegistry);
-                if (betCashoutBuilder_ == null) {
-                  ensureBetCashoutIsMutable();
-                  betCashout_.add(m);
-                } else {
-                  betCashoutBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getStakeMultiplierFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.TicketCashoutOuterClass.TicketCashout) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3905,9 +4013,11 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3920,8 +4030,8 @@ public final class TicketCashoutOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3936,10 +4046,12 @@ public final class TicketCashoutOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3956,7 +4068,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
        * <pre>
@@ -3986,11 +4098,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           timestamp_ = value;
+          onChanged();
         } else {
           timestampBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -4004,11 +4116,11 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
+          onChanged();
         } else {
           timestampBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -4020,18 +4132,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            timestamp_ != null &&
-            timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getTimestampBuilder().mergeFrom(value);
+          if (timestamp_ != null) {
+            timestamp_ =
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
+          onChanged();
         } else {
           timestampBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -4042,13 +4153,14 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.Timestamp timestamp = 2;</code>
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+          onChanged();
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -4059,7 +4171,7 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.Timestamp timestamp = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
@@ -4111,7 +4223,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the cashoutStake field is set.
        */
       public boolean hasCashoutStake() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return cashoutStakeBuilder_ != null || cashoutStake_ != null;
       }
       /**
        * <pre>
@@ -4141,11 +4253,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           cashoutStake_ = value;
+          onChanged();
         } else {
           cashoutStakeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -4159,11 +4271,11 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value.Builder builderForValue) {
         if (cashoutStakeBuilder_ == null) {
           cashoutStake_ = builderForValue.build();
+          onChanged();
         } else {
           cashoutStakeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -4175,18 +4287,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeCashoutStake(com.google.protobuf.UInt64Value value) {
         if (cashoutStakeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            cashoutStake_ != null &&
-            cashoutStake_ != com.google.protobuf.UInt64Value.getDefaultInstance()) {
-            getCashoutStakeBuilder().mergeFrom(value);
+          if (cashoutStake_ != null) {
+            cashoutStake_ =
+              com.google.protobuf.UInt64Value.newBuilder(cashoutStake_).mergeFrom(value).buildPartial();
           } else {
             cashoutStake_ = value;
           }
+          onChanged();
         } else {
           cashoutStakeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -4197,13 +4308,14 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
        */
       public Builder clearCashoutStake() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        cashoutStake_ = null;
-        if (cashoutStakeBuilder_ != null) {
-          cashoutStakeBuilder_.dispose();
+        if (cashoutStakeBuilder_ == null) {
+          cashoutStake_ = null;
+          onChanged();
+        } else {
+          cashoutStake_ = null;
           cashoutStakeBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -4214,7 +4326,7 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
        */
       public com.google.protobuf.UInt64Value.Builder getCashoutStakeBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getCashoutStakeFieldBuilder().getBuilder();
       }
@@ -4266,7 +4378,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the cashoutPercent field is set.
        */
       public boolean hasCashoutPercent() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return cashoutPercentBuilder_ != null || cashoutPercent_ != null;
       }
       /**
        * <pre>
@@ -4296,11 +4408,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           cashoutPercent_ = value;
+          onChanged();
         } else {
           cashoutPercentBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -4314,11 +4426,11 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value.Builder builderForValue) {
         if (cashoutPercentBuilder_ == null) {
           cashoutPercent_ = builderForValue.build();
+          onChanged();
         } else {
           cashoutPercentBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -4330,18 +4442,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeCashoutPercent(com.google.protobuf.UInt64Value value) {
         if (cashoutPercentBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            cashoutPercent_ != null &&
-            cashoutPercent_ != com.google.protobuf.UInt64Value.getDefaultInstance()) {
-            getCashoutPercentBuilder().mergeFrom(value);
+          if (cashoutPercent_ != null) {
+            cashoutPercent_ =
+              com.google.protobuf.UInt64Value.newBuilder(cashoutPercent_).mergeFrom(value).buildPartial();
           } else {
             cashoutPercent_ = value;
           }
+          onChanged();
         } else {
           cashoutPercentBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -4352,13 +4463,14 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
        */
       public Builder clearCashoutPercent() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        cashoutPercent_ = null;
-        if (cashoutPercentBuilder_ != null) {
-          cashoutPercentBuilder_.dispose();
+        if (cashoutPercentBuilder_ == null) {
+          cashoutPercent_ = null;
+          onChanged();
+        } else {
+          cashoutPercent_ = null;
           cashoutPercentBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -4369,7 +4481,7 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
        */
       public com.google.protobuf.UInt64Value.Builder getCashoutPercentBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getCashoutPercentFieldBuilder().getBuilder();
       }
@@ -4412,9 +4524,9 @@ public final class TicketCashoutOuterClass {
       private java.util.List<com.oddin.ots.TicketCashoutOuterClass.BetCashout> betCashout_ =
         java.util.Collections.emptyList();
       private void ensureBetCashoutIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           betCashout_ = new java.util.ArrayList<com.oddin.ots.TicketCashoutOuterClass.BetCashout>(betCashout_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -4564,7 +4676,7 @@ public final class TicketCashoutOuterClass {
       public Builder clearBetCashout() {
         if (betCashoutBuilder_ == null) {
           betCashout_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           betCashoutBuilder_.clear();
@@ -4641,7 +4753,7 @@ public final class TicketCashoutOuterClass {
           betCashoutBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.oddin.ots.TicketCashoutOuterClass.BetCashout, com.oddin.ots.TicketCashoutOuterClass.BetCashout.Builder, com.oddin.ots.TicketCashoutOuterClass.BetCashoutOrBuilder>(
                   betCashout_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           betCashout_ = null;
@@ -4661,7 +4773,7 @@ public final class TicketCashoutOuterClass {
        * @return Whether the stakeMultiplier field is set.
        */
       public boolean hasStakeMultiplier() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return stakeMultiplierBuilder_ != null || stakeMultiplier_ != null;
       }
       /**
        * <pre>
@@ -4691,11 +4803,11 @@ public final class TicketCashoutOuterClass {
             throw new NullPointerException();
           }
           stakeMultiplier_ = value;
+          onChanged();
         } else {
           stakeMultiplierBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -4709,11 +4821,11 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value.Builder builderForValue) {
         if (stakeMultiplierBuilder_ == null) {
           stakeMultiplier_ = builderForValue.build();
+          onChanged();
         } else {
           stakeMultiplierBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -4725,18 +4837,17 @@ public final class TicketCashoutOuterClass {
        */
       public Builder mergeStakeMultiplier(com.google.protobuf.UInt64Value value) {
         if (stakeMultiplierBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            stakeMultiplier_ != null &&
-            stakeMultiplier_ != com.google.protobuf.UInt64Value.getDefaultInstance()) {
-            getStakeMultiplierBuilder().mergeFrom(value);
+          if (stakeMultiplier_ != null) {
+            stakeMultiplier_ =
+              com.google.protobuf.UInt64Value.newBuilder(stakeMultiplier_).mergeFrom(value).buildPartial();
           } else {
             stakeMultiplier_ = value;
           }
+          onChanged();
         } else {
           stakeMultiplierBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
-        onChanged();
+
         return this;
       }
       /**
@@ -4747,13 +4858,14 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public Builder clearStakeMultiplier() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        stakeMultiplier_ = null;
-        if (stakeMultiplierBuilder_ != null) {
-          stakeMultiplierBuilder_.dispose();
+        if (stakeMultiplierBuilder_ == null) {
+          stakeMultiplier_ = null;
+          onChanged();
+        } else {
+          stakeMultiplier_ = null;
           stakeMultiplierBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -4764,7 +4876,7 @@ public final class TicketCashoutOuterClass {
        * <code>.google.protobuf.UInt64Value stake_multiplier = 6;</code>
        */
       public com.google.protobuf.UInt64Value.Builder getStakeMultiplierBuilder() {
-        bitField0_ |= 0x00000020;
+        
         onChanged();
         return getStakeMultiplierFieldBuilder().getBuilder();
       }
@@ -4836,18 +4948,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TicketCashout(input, extensionRegistry);
       }
     };
 

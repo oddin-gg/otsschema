@@ -104,6 +104,69 @@ public final class ResolveForeignEventsInTicket {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ResolveForeignEventsInTicketRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 24: {
+
+              foreignStake_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.ResolveForeignEventsInTicket.internal_static_ots_ResolveForeignEventsInTicketRequest_descriptor;
@@ -118,8 +181,7 @@ public final class ResolveForeignEventsInTicket {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ticket id from the operator’s system.
@@ -165,7 +227,7 @@ public final class ResolveForeignEventsInTicket {
     }
 
     public static final int FOREIGN_STAKE_FIELD_NUMBER = 3;
-    private long foreignStake_ = 0L;
+    private long foreignStake_;
     /**
      * <pre>
      * Stake not handled by Oddin in the same currency as the previous ticket
@@ -215,7 +277,7 @@ public final class ResolveForeignEventsInTicket {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+      return getTimestamp();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,7 +303,7 @@ public final class ResolveForeignEventsInTicket {
       if (timestamp_ != null) {
         output.writeMessage(4, getTimestamp());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +323,7 @@ public final class ResolveForeignEventsInTicket {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getTimestamp());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -285,7 +347,7 @@ public final class ResolveForeignEventsInTicket {
         if (!getTimestamp()
             .equals(other.getTimestamp())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -305,7 +367,7 @@ public final class ResolveForeignEventsInTicket {
         hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
         hash = (53 * hash) + getTimestamp().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -422,23 +484,30 @@ public final class ResolveForeignEventsInTicket {
 
       // Construct using com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         foreignStake_ = 0L;
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
         return this;
@@ -467,24 +536,15 @@ public final class ResolveForeignEventsInTicket {
       @java.lang.Override
       public com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest buildPartial() {
         com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest result = new com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.foreignStake_ = foreignStake_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.foreignStake_ = foreignStake_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.timestamp_ = timestampBuilder_ == null
-              ? timestamp_
-              : timestampBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -533,7 +593,6 @@ public final class ResolveForeignEventsInTicket {
         if (other == com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getForeignStake() != 0L) {
@@ -542,7 +601,7 @@ public final class ResolveForeignEventsInTicket {
         if (other.hasTimestamp()) {
           mergeTimestamp(other.getTimestamp());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -557,50 +616,19 @@ public final class ResolveForeignEventsInTicket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 24: {
-                foreignStake_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getTimestampFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -655,9 +683,11 @@ public final class ResolveForeignEventsInTicket {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -670,8 +700,8 @@ public final class ResolveForeignEventsInTicket {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -686,10 +716,12 @@ public final class ResolveForeignEventsInTicket {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -721,7 +753,6 @@ public final class ResolveForeignEventsInTicket {
       public Builder setForeignStake(long value) {
         
         foreignStake_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -735,7 +766,7 @@ public final class ResolveForeignEventsInTicket {
        * @return This builder for chaining.
        */
       public Builder clearForeignStake() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         foreignStake_ = 0L;
         onChanged();
         return this;
@@ -753,7 +784,7 @@ public final class ResolveForeignEventsInTicket {
        * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
        * <pre>
@@ -783,11 +814,11 @@ public final class ResolveForeignEventsInTicket {
             throw new NullPointerException();
           }
           timestamp_ = value;
+          onChanged();
         } else {
           timestampBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -801,11 +832,11 @@ public final class ResolveForeignEventsInTicket {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
+          onChanged();
         } else {
           timestampBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -817,18 +848,17 @@ public final class ResolveForeignEventsInTicket {
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            timestamp_ != null &&
-            timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getTimestampBuilder().mergeFrom(value);
+          if (timestamp_ != null) {
+            timestamp_ =
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
+          onChanged();
         } else {
           timestampBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -839,13 +869,14 @@ public final class ResolveForeignEventsInTicket {
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        timestamp_ = null;
-        if (timestampBuilder_ != null) {
-          timestampBuilder_.dispose();
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+          onChanged();
+        } else {
+          timestamp_ = null;
           timestampBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -856,7 +887,7 @@ public final class ResolveForeignEventsInTicket {
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
@@ -928,18 +959,7 @@ public final class ResolveForeignEventsInTicket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ResolveForeignEventsInTicketRequest(input, extensionRegistry);
       }
     };
 
@@ -1037,6 +1057,64 @@ public final class ResolveForeignEventsInTicket {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ResolveForeignEventsInTicketResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 18: {
+              com.oddin.ots.Commons.Reason.Builder subBuilder = null;
+              if (reason_ != null) {
+                subBuilder = reason_.toBuilder();
+              }
+              reason_ = input.readMessage(com.oddin.ots.Commons.Reason.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reason_);
+                reason_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.ots.ResolveForeignEventsInTicket.internal_static_ots_ResolveForeignEventsInTicketResponse_descriptor;
@@ -1051,7 +1129,7 @@ public final class ResolveForeignEventsInTicket {
     }
 
     public static final int STATUS_FIELD_NUMBER = 1;
-    private int status_ = 0;
+    private int status_;
     /**
      * <pre>
      * Acceptance status - REJECTED or ACCEPTED
@@ -1072,7 +1150,8 @@ public final class ResolveForeignEventsInTicket {
      * @return The status.
      */
     @java.lang.Override public com.oddin.ots.Enums.AcceptanceStatus getStatus() {
-      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(status_);
+      @SuppressWarnings("deprecation")
+      com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(status_);
       return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
     }
 
@@ -1111,7 +1190,7 @@ public final class ResolveForeignEventsInTicket {
      */
     @java.lang.Override
     public com.oddin.ots.Commons.ReasonOrBuilder getReasonOrBuilder() {
-      return reason_ == null ? com.oddin.ots.Commons.Reason.getDefaultInstance() : reason_;
+      return getReason();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1134,7 +1213,7 @@ public final class ResolveForeignEventsInTicket {
       if (reason_ != null) {
         output.writeMessage(2, getReason());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1151,7 +1230,7 @@ public final class ResolveForeignEventsInTicket {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getReason());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1172,7 +1251,7 @@ public final class ResolveForeignEventsInTicket {
         if (!getReason()
             .equals(other.getReason())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1189,7 +1268,7 @@ public final class ResolveForeignEventsInTicket {
         hash = (37 * hash) + REASON_FIELD_NUMBER;
         hash = (53 * hash) + getReason().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1306,22 +1385,28 @@ public final class ResolveForeignEventsInTicket {
 
       // Construct using com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         status_ = 0;
-        reason_ = null;
-        if (reasonBuilder_ != null) {
-          reasonBuilder_.dispose();
+
+        if (reasonBuilder_ == null) {
+          reason_ = null;
+        } else {
+          reason_ = null;
           reasonBuilder_ = null;
         }
         return this;
@@ -1350,21 +1435,14 @@ public final class ResolveForeignEventsInTicket {
       @java.lang.Override
       public com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse buildPartial() {
         com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse result = new com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.status_ = status_;
+        if (reasonBuilder_ == null) {
+          result.reason_ = reason_;
+        } else {
+          result.reason_ = reasonBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.status_ = status_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reasonBuilder_ == null
-              ? reason_
-              : reasonBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -1417,7 +1495,7 @@ public final class ResolveForeignEventsInTicket {
         if (other.hasReason()) {
           mergeReason(other.getReason());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1432,45 +1510,19 @@ public final class ResolveForeignEventsInTicket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                status_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getReasonFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int status_ = 0;
       /**
@@ -1494,8 +1546,8 @@ public final class ResolveForeignEventsInTicket {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
+        
         status_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1509,7 +1561,8 @@ public final class ResolveForeignEventsInTicket {
        */
       @java.lang.Override
       public com.oddin.ots.Enums.AcceptanceStatus getStatus() {
-        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.forNumber(status_);
+        @SuppressWarnings("deprecation")
+        com.oddin.ots.Enums.AcceptanceStatus result = com.oddin.ots.Enums.AcceptanceStatus.valueOf(status_);
         return result == null ? com.oddin.ots.Enums.AcceptanceStatus.UNRECOGNIZED : result;
       }
       /**
@@ -1525,7 +1578,7 @@ public final class ResolveForeignEventsInTicket {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -1539,7 +1592,7 @@ public final class ResolveForeignEventsInTicket {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         status_ = 0;
         onChanged();
         return this;
@@ -1557,7 +1610,7 @@ public final class ResolveForeignEventsInTicket {
        * @return Whether the reason field is set.
        */
       public boolean hasReason() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return reasonBuilder_ != null || reason_ != null;
       }
       /**
        * <pre>
@@ -1587,11 +1640,11 @@ public final class ResolveForeignEventsInTicket {
             throw new NullPointerException();
           }
           reason_ = value;
+          onChanged();
         } else {
           reasonBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1605,11 +1658,11 @@ public final class ResolveForeignEventsInTicket {
           com.oddin.ots.Commons.Reason.Builder builderForValue) {
         if (reasonBuilder_ == null) {
           reason_ = builderForValue.build();
+          onChanged();
         } else {
           reasonBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1621,18 +1674,17 @@ public final class ResolveForeignEventsInTicket {
        */
       public Builder mergeReason(com.oddin.ots.Commons.Reason value) {
         if (reasonBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            reason_ != null &&
-            reason_ != com.oddin.ots.Commons.Reason.getDefaultInstance()) {
-            getReasonBuilder().mergeFrom(value);
+          if (reason_ != null) {
+            reason_ =
+              com.oddin.ots.Commons.Reason.newBuilder(reason_).mergeFrom(value).buildPartial();
           } else {
             reason_ = value;
           }
+          onChanged();
         } else {
           reasonBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -1643,13 +1695,14 @@ public final class ResolveForeignEventsInTicket {
        * <code>.ots.Reason reason = 2;</code>
        */
       public Builder clearReason() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        reason_ = null;
-        if (reasonBuilder_ != null) {
-          reasonBuilder_.dispose();
+        if (reasonBuilder_ == null) {
+          reason_ = null;
+          onChanged();
+        } else {
+          reason_ = null;
           reasonBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
@@ -1660,7 +1713,7 @@ public final class ResolveForeignEventsInTicket {
        * <code>.ots.Reason reason = 2;</code>
        */
       public com.oddin.ots.Commons.Reason.Builder getReasonBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getReasonFieldBuilder().getBuilder();
       }
@@ -1732,18 +1785,7 @@ public final class ResolveForeignEventsInTicket {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ResolveForeignEventsInTicketResponse(input, extensionRegistry);
       }
     };
 
