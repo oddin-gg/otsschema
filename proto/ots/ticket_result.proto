@@ -71,7 +71,7 @@ message TicketResultStateBetInfo {
 }
 
 message TicketResultStateSelectionInfo {
-  // Information about selection status - WON | VOIDED | LOST | PENDING_LOST | NOT_RESULTED | REJECTED.
+  // Information about selection status - WON | HALF_WON | VOIDED | LOST | HALF_LOST | PENDING_LOST | NOT_RESULTED | REJECTED.
   enums.ResultingStatus selection_status = 1;
 }
 
