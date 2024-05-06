@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ots;
+
+option go_package = "oddin.gg/ots";
+option java_package = "com.oddin.ots";
+
+import "google/protobuf/timestamp.proto";
+import "ots/commons.proto";
+
+message BettorsRequest {
+  // if recover_since is null, no updates will be recovered. If it is defined we will start to send to consumer
+  // all BettorRiskCoefficients since given timestamp value
+  optional google.protobuf.Timestamp recover_since = 1 ;
+}
+
+message BettorsResponse {
+  oneof data {
+    Bettor bettor = 1;
+    StreamKeepalive keepalive = 2;
+  }
+}
+
+message Bettor {
+  // Unique bettor id from Oddin.gg system.
+  string id = 1;
+  // Unique bettor id from operator’s system.
+  string ext_id = 2;
+  google.protobuf.Timestamp modified_at = 3;
+  float bos = 4;
+  float over_ask_factor = 5;
+  repeated string oddins_labels = 6;
+  repeated string clients_labels = 7;
+}
