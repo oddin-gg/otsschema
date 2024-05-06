@@ -5,6 +5,7 @@ package ots;
 option go_package = "oddin.gg/ots";
 option java_package = "com.oddin.ots";
 
+import "ots/bettor.proto";
 import "ots/ticket.proto";
 import "ots/ticket_cancel.proto";
 import "ots/player_risk_score.proto";
@@ -12,6 +13,7 @@ import "ots/resolve_foreign_events_in_ticket.proto";
 import "ots/ticket_ack.proto";
 import "ots/ticket_max_stake.proto";
 import "ots/ticket_result.proto";
+
 
 service ots {
   rpc Ticket (stream TicketRequest) returns (stream TicketResponse);
@@ -23,4 +25,5 @@ service ots {
   rpc TicketMaxStake(TicketMaxStakeRequest) returns (TicketMaxStakeResponse){
     option deprecated = true;
   };
+  rpc Bettors(BettorsRequest) returns (stream BettorsResponse);
 }

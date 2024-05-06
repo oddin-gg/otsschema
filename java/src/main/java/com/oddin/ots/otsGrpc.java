@@ -1,13 +1,25 @@
 package com.oddin.ots;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.54.1)",
+    value = "by gRPC proto compiler (version 1.33.1)",
     comments = "Source: ots/service.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class otsGrpc {
 
   private otsGrpc() {}
@@ -232,6 +244,37 @@ public final class otsGrpc {
     return getTicketMaxStakeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorsRequest,
+      com.oddin.ots.BettorOuterClass.BettorsResponse> getBettorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Bettors",
+      requestType = com.oddin.ots.BettorOuterClass.BettorsRequest.class,
+      responseType = com.oddin.ots.BettorOuterClass.BettorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorsRequest,
+      com.oddin.ots.BettorOuterClass.BettorsResponse> getBettorsMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorsRequest, com.oddin.ots.BettorOuterClass.BettorsResponse> getBettorsMethod;
+    if ((getBettorsMethod = otsGrpc.getBettorsMethod) == null) {
+      synchronized (otsGrpc.class) {
+        if ((getBettorsMethod = otsGrpc.getBettorsMethod) == null) {
+          otsGrpc.getBettorsMethod = getBettorsMethod =
+              io.grpc.MethodDescriptor.<com.oddin.ots.BettorOuterClass.BettorsRequest, com.oddin.ots.BettorOuterClass.BettorsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Bettors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.BettorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.BettorsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new otsMethodDescriptorSupplier("Bettors"))
+              .build();
+        }
+      }
+    }
+    return getBettorsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -278,75 +321,130 @@ public final class otsGrpc {
 
   /**
    */
-  public interface AsyncService {
+  public static abstract class otsImplBase implements io.grpc.BindableService {
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketRequest> ticket(
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketRequest> ticket(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getTicketMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getTicketMethod(), responseObserver);
     }
 
     /**
      */
-    default void resolveForeignMatchesInTicket(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request,
+    public void resolveForeignMatchesInTicket(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResolveForeignMatchesInTicketMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getResolveForeignMatchesInTicketMethod(), responseObserver);
     }
 
     /**
      */
-    default void cancelTicket(com.oddin.ots.TicketCancel.TicketCancelRequest request,
+    public void cancelTicket(com.oddin.ots.TicketCancel.TicketCancelRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketCancel.TicketCancelResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelTicketMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getCancelTicketMethod(), responseObserver);
     }
 
     /**
      */
-    default void playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request,
+    public void playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPlayerRiskScoreMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getPlayerRiskScoreMethod(), responseObserver);
     }
 
     /**
      */
-    default void ticketAck(com.oddin.ots.TicketAck.TicketAckRequest request,
+    public void ticketAck(com.oddin.ots.TicketAck.TicketAckRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketAck.TicketAckResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTicketAckMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getTicketAckMethod(), responseObserver);
     }
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.oddin.ots.TicketResultOuterClass.TicketResultRequest> ticketResult(
+    public io.grpc.stub.StreamObserver<com.oddin.ots.TicketResultOuterClass.TicketResultRequest> ticketResult(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketResultOuterClass.TicketResultResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getTicketResultMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getTicketResultMethod(), responseObserver);
     }
 
     /**
      */
     @java.lang.Deprecated
-    default void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
+    public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTicketMaxStakeMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getTicketMaxStakeMethod(), responseObserver);
     }
-  }
 
-  /**
-   * Base class for the server implementation of the service ots.
-   */
-  public static abstract class otsImplBase
-      implements io.grpc.BindableService, AsyncService {
+    /**
+     */
+    public void bettors(com.oddin.ots.BettorOuterClass.BettorsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getBettorsMethod(), responseObserver);
+    }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return otsGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getTicketMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketOuterClass.TicketRequest,
+                com.oddin.ots.TicketOuterClass.TicketResponse>(
+                  this, METHODID_TICKET)))
+          .addMethod(
+            getResolveForeignMatchesInTicketMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest,
+                com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse>(
+                  this, METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET)))
+          .addMethod(
+            getCancelTicketMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketCancel.TicketCancelRequest,
+                com.oddin.ots.TicketCancel.TicketCancelResponse>(
+                  this, METHODID_CANCEL_TICKET)))
+          .addMethod(
+            getPlayerRiskScoreMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest,
+                com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse>(
+                  this, METHODID_PLAYER_RISK_SCORE)))
+          .addMethod(
+            getTicketAckMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketAck.TicketAckRequest,
+                com.oddin.ots.TicketAck.TicketAckResponse>(
+                  this, METHODID_TICKET_ACK)))
+          .addMethod(
+            getTicketResultMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketResultOuterClass.TicketResultRequest,
+                com.oddin.ots.TicketResultOuterClass.TicketResultResponse>(
+                  this, METHODID_TICKET_RESULT)))
+          .addMethod(
+            getTicketMaxStakeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
+                com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>(
+                  this, METHODID_TICKET_MAX_STAKE)))
+          .addMethod(
+            getBettorsMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.oddin.ots.BettorOuterClass.BettorsRequest,
+                com.oddin.ots.BettorOuterClass.BettorsResponse>(
+                  this, METHODID_BETTORS)))
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service ots.
    */
-  public static final class otsStub
-      extends io.grpc.stub.AbstractAsyncStub<otsStub> {
+  public static final class otsStub extends io.grpc.stub.AbstractAsyncStub<otsStub> {
     private otsStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -362,7 +460,7 @@ public final class otsGrpc {
      */
     public io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketRequest> ticket(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketOuterClass.TicketResponse> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+      return asyncBidiStreamingCall(
           getChannel().newCall(getTicketMethod(), getCallOptions()), responseObserver);
     }
 
@@ -370,7 +468,7 @@ public final class otsGrpc {
      */
     public void resolveForeignMatchesInTicket(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getResolveForeignMatchesInTicketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -378,7 +476,7 @@ public final class otsGrpc {
      */
     public void cancelTicket(com.oddin.ots.TicketCancel.TicketCancelRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketCancel.TicketCancelResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getCancelTicketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -386,7 +484,7 @@ public final class otsGrpc {
      */
     public void playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getPlayerRiskScoreMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -394,7 +492,7 @@ public final class otsGrpc {
      */
     public void ticketAck(com.oddin.ots.TicketAck.TicketAckRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketAck.TicketAckResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getTicketAckMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -402,7 +500,7 @@ public final class otsGrpc {
      */
     public io.grpc.stub.StreamObserver<com.oddin.ots.TicketResultOuterClass.TicketResultRequest> ticketResult(
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketResultOuterClass.TicketResultResponse> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+      return asyncBidiStreamingCall(
           getChannel().newCall(getTicketResultMethod(), getCallOptions()), responseObserver);
     }
 
@@ -411,16 +509,22 @@ public final class otsGrpc {
     @java.lang.Deprecated
     public void ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request,
         io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void bettors(com.oddin.ots.BettorOuterClass.BettorsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorsResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getBettorsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service ots.
    */
-  public static final class otsBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<otsBlockingStub> {
+  public static final class otsBlockingStub extends io.grpc.stub.AbstractBlockingStub<otsBlockingStub> {
     private otsBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -435,28 +539,28 @@ public final class otsGrpc {
     /**
      */
     public com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse resolveForeignMatchesInTicket(com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getResolveForeignMatchesInTicketMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public com.oddin.ots.TicketCancel.TicketCancelResponse cancelTicket(com.oddin.ots.TicketCancel.TicketCancelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getCancelTicketMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse playerRiskScore(com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getPlayerRiskScoreMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public com.oddin.ots.TicketAck.TicketAckResponse ticketAck(com.oddin.ots.TicketAck.TicketAckRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getTicketAckMethod(), getCallOptions(), request);
     }
 
@@ -464,16 +568,22 @@ public final class otsGrpc {
      */
     @java.lang.Deprecated
     public com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse ticketMaxStake(com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getTicketMaxStakeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.oddin.ots.BettorOuterClass.BettorsResponse> bettors(
+        com.oddin.ots.BettorOuterClass.BettorsRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getBettorsMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service ots.
    */
-  public static final class otsFutureStub
-      extends io.grpc.stub.AbstractFutureStub<otsFutureStub> {
+  public static final class otsFutureStub extends io.grpc.stub.AbstractFutureStub<otsFutureStub> {
     private otsFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -489,7 +599,7 @@ public final class otsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse> resolveForeignMatchesInTicket(
         com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getResolveForeignMatchesInTicketMethod(), getCallOptions()), request);
     }
 
@@ -497,7 +607,7 @@ public final class otsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketCancel.TicketCancelResponse> cancelTicket(
         com.oddin.ots.TicketCancel.TicketCancelRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getCancelTicketMethod(), getCallOptions()), request);
     }
 
@@ -505,7 +615,7 @@ public final class otsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse> playerRiskScore(
         com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getPlayerRiskScoreMethod(), getCallOptions()), request);
     }
 
@@ -513,7 +623,7 @@ public final class otsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketAck.TicketAckResponse> ticketAck(
         com.oddin.ots.TicketAck.TicketAckRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getTicketAckMethod(), getCallOptions()), request);
     }
 
@@ -522,7 +632,7 @@ public final class otsGrpc {
     @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse> ticketMaxStake(
         com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request);
     }
   }
@@ -532,18 +642,19 @@ public final class otsGrpc {
   private static final int METHODID_PLAYER_RISK_SCORE = 2;
   private static final int METHODID_TICKET_ACK = 3;
   private static final int METHODID_TICKET_MAX_STAKE = 4;
-  private static final int METHODID_TICKET = 5;
-  private static final int METHODID_TICKET_RESULT = 6;
+  private static final int METHODID_BETTORS = 5;
+  private static final int METHODID_TICKET = 6;
+  private static final int METHODID_TICKET_RESULT = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final otsImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(otsImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -572,6 +683,10 @@ public final class otsGrpc {
           serviceImpl.ticketMaxStake((com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>) responseObserver);
           break;
+        case METHODID_BETTORS:
+          serviceImpl.bettors((com.oddin.ots.BettorOuterClass.BettorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorsResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -592,60 +707,6 @@ public final class otsGrpc {
           throw new AssertionError();
       }
     }
-  }
-
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getTicketMethod(),
-          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-            new MethodHandlers<
-              com.oddin.ots.TicketOuterClass.TicketRequest,
-              com.oddin.ots.TicketOuterClass.TicketResponse>(
-                service, METHODID_TICKET)))
-        .addMethod(
-          getResolveForeignMatchesInTicketMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketRequest,
-              com.oddin.ots.ResolveForeignEventsInTicket.ResolveForeignEventsInTicketResponse>(
-                service, METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET)))
-        .addMethod(
-          getCancelTicketMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.oddin.ots.TicketCancel.TicketCancelRequest,
-              com.oddin.ots.TicketCancel.TicketCancelResponse>(
-                service, METHODID_CANCEL_TICKET)))
-        .addMethod(
-          getPlayerRiskScoreMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.oddin.ots.PlayerRiskScore.PlayerRiskScoreRequest,
-              com.oddin.ots.PlayerRiskScore.PlayerRiskScoreResponse>(
-                service, METHODID_PLAYER_RISK_SCORE)))
-        .addMethod(
-          getTicketAckMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.oddin.ots.TicketAck.TicketAckRequest,
-              com.oddin.ots.TicketAck.TicketAckResponse>(
-                service, METHODID_TICKET_ACK)))
-        .addMethod(
-          getTicketResultMethod(),
-          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-            new MethodHandlers<
-              com.oddin.ots.TicketResultOuterClass.TicketResultRequest,
-              com.oddin.ots.TicketResultOuterClass.TicketResultResponse>(
-                service, METHODID_TICKET_RESULT)))
-        .addMethod(
-          getTicketMaxStakeMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.oddin.ots.TicketMaxStake.TicketMaxStakeRequest,
-              com.oddin.ots.TicketMaxStake.TicketMaxStakeResponse>(
-                service, METHODID_TICKET_MAX_STAKE)))
-        .build();
   }
 
   private static abstract class otsBaseDescriptorSupplier
@@ -700,6 +761,7 @@ public final class otsGrpc {
               .addMethod(getTicketAckMethod())
               .addMethod(getTicketResultMethod())
               .addMethod(getTicketMaxStakeMethod())
+              .addMethod(getBettorsMethod())
               .build();
         }
       }
