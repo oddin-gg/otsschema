@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from ots import bettor_pb2 as ots_dot_bettor__pb2
 from ots import player_risk_score_pb2 as ots_dot_player__risk__score__pb2
 from ots import resolve_foreign_events_in_ticket_pb2 as ots_dot_resolve__foreign__events__in__ticket__pb2
 from ots import ticket_ack_pb2 as ots_dot_ticket__ack__pb2
@@ -55,6 +56,11 @@ class otsStub(object):
                 request_serializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.SerializeToString,
                 response_deserializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.FromString,
                 )
+        self.Bettors = channel.unary_stream(
+                '/ots.ots/Bettors',
+                request_serializer=ots_dot_bettor__pb2.BettorsRequest.SerializeToString,
+                response_deserializer=ots_dot_bettor__pb2.BettorsResponse.FromString,
+                )
 
 
 class otsServicer(object):
@@ -102,6 +108,12 @@ class otsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Bettors(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_otsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -139,6 +151,11 @@ def add_otsServicer_to_server(servicer, server):
                     servicer.TicketMaxStake,
                     request_deserializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.FromString,
                     response_serializer=ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.SerializeToString,
+            ),
+            'Bettors': grpc.unary_stream_rpc_method_handler(
+                    servicer.Bettors,
+                    request_deserializer=ots_dot_bettor__pb2.BettorsRequest.FromString,
+                    response_serializer=ots_dot_bettor__pb2.BettorsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -266,5 +283,22 @@ class ots(object):
         return grpc.experimental.unary_unary(request, target, '/ots.ots/TicketMaxStake',
             ots_dot_ticket__max__stake__pb2.TicketMaxStakeRequest.SerializeToString,
             ots_dot_ticket__max__stake__pb2.TicketMaxStakeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Bettors(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/ots.ots/Bettors',
+            ots_dot_bettor__pb2.BettorsRequest.SerializeToString,
+            ots_dot_bettor__pb2.BettorsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
