@@ -23,30 +23,33 @@ public final class Service {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ots/service.proto\022\003ots\032\020ots/ticket.pro" +
-      "to\032\027ots/ticket_cancel.proto\032\033ots/player_" +
-      "risk_score.proto\032*ots/resolve_foreign_ev" +
-      "ents_in_ticket.proto\032\024ots/ticket_ack.pro" +
-      "to\032\032ots/ticket_max_stake.proto\032\027ots/tick" +
-      "et_result.proto2\232\004\n\003ots\0225\n\006Ticket\022\022.ots." +
-      "TicketRequest\032\023.ots.TicketResponse(\0010\001\022t" +
-      "\n\035ResolveForeignMatchesInTicket\022(.ots.Re" +
-      "solveForeignEventsInTicketRequest\032).ots." +
-      "ResolveForeignEventsInTicketResponse\022C\n\014" +
-      "CancelTicket\022\030.ots.TicketCancelRequest\032\031" +
-      ".ots.TicketCancelResponse\022L\n\017PlayerRiskS" +
-      "core\022\033.ots.PlayerRiskScoreRequest\032\034.ots." +
-      "PlayerRiskScoreResponse\022:\n\tTicketAck\022\025.o" +
-      "ts.TicketAckRequest\032\026.ots.TicketAckRespo" +
-      "nse\022G\n\014TicketResult\022\030.ots.TicketResultRe" +
-      "quest\032\031.ots.TicketResultResponse(\0010\001\022N\n\016" +
-      "TicketMaxStake\022\032.ots.TicketMaxStakeReque" +
-      "st\032\033.ots.TicketMaxStakeResponse\"\003\210\002\001B\035\n\r" +
-      "com.oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "\n\021ots/service.proto\022\003ots\032\020ots/bettor.pro" +
+      "to\032\020ots/ticket.proto\032\027ots/ticket_cancel." +
+      "proto\032\033ots/player_risk_score.proto\032*ots/" +
+      "resolve_foreign_events_in_ticket.proto\032\024" +
+      "ots/ticket_ack.proto\032\032ots/ticket_max_sta" +
+      "ke.proto\032\027ots/ticket_result.proto2\322\004\n\003ot" +
+      "s\0225\n\006Ticket\022\022.ots.TicketRequest\032\023.ots.Ti" +
+      "cketResponse(\0010\001\022t\n\035ResolveForeignMatche" +
+      "sInTicket\022(.ots.ResolveForeignEventsInTi" +
+      "cketRequest\032).ots.ResolveForeignEventsIn" +
+      "TicketResponse\022C\n\014CancelTicket\022\030.ots.Tic" +
+      "ketCancelRequest\032\031.ots.TicketCancelRespo" +
+      "nse\022L\n\017PlayerRiskScore\022\033.ots.PlayerRiskS" +
+      "coreRequest\032\034.ots.PlayerRiskScoreRespons" +
+      "e\022:\n\tTicketAck\022\025.ots.TicketAckRequest\032\026." +
+      "ots.TicketAckResponse\022G\n\014TicketResult\022\030." +
+      "ots.TicketResultRequest\032\031.ots.TicketResu" +
+      "ltResponse(\0010\001\022N\n\016TicketMaxStake\022\032.ots.T" +
+      "icketMaxStakeRequest\032\033.ots.TicketMaxStak" +
+      "eResponse\"\003\210\002\001\0226\n\007Bettors\022\023.ots.BettorsR" +
+      "equest\032\024.ots.BettorsResponse0\001B\035\n\rcom.od" +
+      "din.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.oddin.ots.BettorOuterClass.getDescriptor(),
           com.oddin.ots.TicketOuterClass.getDescriptor(),
           com.oddin.ots.TicketCancel.getDescriptor(),
           com.oddin.ots.PlayerRiskScore.getDescriptor(),
@@ -55,6 +58,7 @@ public final class Service {
           com.oddin.ots.TicketMaxStake.getDescriptor(),
           com.oddin.ots.TicketResultOuterClass.getDescriptor(),
         });
+    com.oddin.ots.BettorOuterClass.getDescriptor();
     com.oddin.ots.TicketOuterClass.getDescriptor();
     com.oddin.ots.TicketCancel.getDescriptor();
     com.oddin.ots.PlayerRiskScore.getDescriptor();
