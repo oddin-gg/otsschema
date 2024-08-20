@@ -83,9 +83,16 @@ message Ticket {
   google.protobuf.UInt64Value stake_multiplier = 15;
 }
 
+// TicketSelection represents the selection of a ticket. We have two types of selections.
+// * Regular selection - represents the selection of one market and it is associated with one odds number.
+// * Oddin Bet Builder (OBB) selection - represents a special set of multiple (at least 2) selections. Because those
+//   particular selections have no associated odds (only the whole set of selections has associated one odd) we introduce
+//   OBB selection type which consists of one odds number, a set of OBB sub-selections (with no associated odds), and one
+//   OBB session id which is a unique identification of the set of OBB sub-selections and its odds in time.
 message TicketSelection {
   // Selection ID mush have specific format:
-  // "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // * Regular TicketSelection: "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // * OBB TicketSelection:  "od:obb_session:xxxx-xxxx-xxxx-xxxx"
   string id = 1;
 
   // Odds multiplied by 10000 and rounded to uint value.
@@ -93,6 +100,20 @@ message TicketSelection {
 
   // Information about selection origin
   google.protobuf.BoolValue foreign = 4;
+
+  // If obb_session_info property is null, then TicketSelection message represents regular ticket selection.
+  // If obb_session_info property defined, then TicketSelection message represents OBB ticket selection.
+  optional OBBSessionInfo obb_session_info = 6;
+}
+
+message OBBSessionInfo {
+  // Represents BetBuilder sessionID. If it is defined then it is BetBuilder TicketSelection if not then it is a regular bet.
+  string session_id = 1;
+
+  // Selection ID mush has a specific format, which is the same format as for regular selection (but without odds).
+  // E.g.: "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // OBB format (e.g  "od:obb-session:xxxx-xxxx-xxxx-xxxx") is not not allowed here.
+  repeated string sub_selections = 2;
 }
 
 message TicketCustomer {
