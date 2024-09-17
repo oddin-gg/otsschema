@@ -4,9 +4,8 @@ import (
 	"context"
 	"crypto/tls"
 	"crypto/x509"
-	"fmt"
-	"io"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -14,7 +13,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/metadata"
-	"google.golang.org/protobuf/types/known/timestamppb"
+	"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/proto"
 )
 
 func main() {
@@ -26,6 +26,16 @@ func main() {
 	accessToken := strings.Trim(os.Getenv("TOKEN"), " ")
 	if accessToken == "" {
 		panic("missing 'TOKEN' env variable")
+	}
+
+	runTicketStream := true
+	runTicketStreamStr := strings.Trim(os.Getenv("RUN_TICKET_STREAM"), " ")
+	if runTicketStreamStr != "" {
+		v, err := strconv.ParseBool(runTicketStreamStr)
+		if err != nil {
+			panic(err)
+		}
+		runTicketStream = v
 	}
 
 	var tlsCfg tls.Config
@@ -52,69 +62,17 @@ func main() {
 		"token": accessToken,
 	}))
 
-	closeCh := make(chan bool, 1)
-	aliveTicker := time.NewTicker(10 * time.Second)
-
 	client := ots.NewOtsClient(conn)
 
-	stream, err := client.Ticket(ctx)
-	if err != nil {
-		panic(err)
+	if runTicketStream {
+		connectToTicketStream(ctx, client)
+	} else {
+		connectToRiskApiStream(ctx, client)
+
 	}
+}
 
-	fmt.Println("CONNECTED")
-
-	go func() {
-		for {
-			// receive data from stream
-			req, err := stream.Recv()
-			switch {
-			case err == io.EOF:
-				fmt.Println("stream closed")
-				closeCh <- true
-				return
-
-			case err != nil:
-				panic(err)
-
-			case req.GetKeepalive() != nil:
-				fmt.Println("keepalive Received")
-				continue
-
-			case req.GetState() != nil:
-				fmt.Println("incoming Ticket state")
-
-			}
-		}
-	}()
-
-	closeExampleTicker := time.NewTimer(time.Second * 60)
-
-	for {
-		select {
-
-		case <-closeExampleTicker.C:
-			fmt.Println("closing example")
-			closeCh <- true
-
-		case <-closeCh:
-			if err := stream.CloseSend(); err != nil {
-				panic(err)
-			}
-			fmt.Println("stream closed")
-			return
-
-		case <-aliveTicker.C:
-			if err := stream.Send(&ots.TicketRequest{
-				Data: &ots.TicketRequest_Keepalive{
-					Keepalive: &ots.StreamKeepalive{
-						Timestamp: timestamppb.Now(),
-					},
-				},
-			}); err != nil {
-				panic(err)
-			}
-			fmt.Println("keepalive Sent")
-		}
-	}
+func toJson(msg proto.Message) string {
+	opt := protojson.MarshalOptions{Multiline: true, EmitUnpopulated: true}
+	return opt.Format(msg)
 }
