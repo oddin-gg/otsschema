@@ -94,7 +94,15 @@ message TicketResultState {
   map<string, TicketResultStateBetInfo> bet_info = 4;
 
   // Rejection details of selections.
+  // Key represents Selection ID must has a specific format:
+  // * Regular TicketSelection: "od:<product_id>:<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // * OBB TicketSelection:  "od:obb_session:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
   map<string, TicketResultStateSelectionInfo> selection_info = 5;
+
+  // Rejection details of BetBuilder (OBB) sub-selections.
+  // Key represents only regular Selection ID and must has a specific format:
+  // "od:<product_id>:<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  map<string, TicketResultStateSelectionInfo> obb_sub_selection_info = 10;
 
   // Exchange rate used to convert currency to EUR multiplied by 10 000 and rounded to long value.
   uint64  exchange_rate = 6;
