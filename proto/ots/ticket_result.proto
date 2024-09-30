@@ -95,7 +95,7 @@ message TicketResultState {
 
   // Rejection details of selections.
   // Key represents Selection ID must has a specific format:
-  // * Regular TicketSelection: "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // * Regular TicketSelection: "od:<product_id>:<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
   // * OBB TicketSelection:  "od:obb_session:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
   map<string, TicketResultStateSelectionInfo> selection_info = 5;
 
