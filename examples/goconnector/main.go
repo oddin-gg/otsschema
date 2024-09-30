@@ -4,11 +4,10 @@ import (
 	"context"
 	"crypto/tls"
 	"crypto/x509"
-	"os"
-	"strconv"
-	"strings"
 	"time"
 
+	"github.com/google/uuid"
+	"github.com/kelseyhightower/envconfig"
 	"github.com/oddin-gg/otsschema/go/oddin.gg/ots"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -17,25 +16,55 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
+type config struct {
+	// URL of service, e.g. "api-ots-test.integration.oddin.gg:443"
+	URL string `envconfig:"URL" required:"true"`
+
+	// Search for client's OTS (service = Kabal) token in the table `access_tokens`
+	// (ignore records with non-NULL `deleted_at`).
+	Token string `envconfig:"TOKEN" required:"true"`
+
+	// ConnectionTime is the time interval during which is kept connection to the OTS stream. After that time
+	// is connection closed and application is shut down.
+	ConnectionTime time.Duration `envconfig:"CONNECTION_TIME" default:"60s"`
+
+	// SendTicket - Reset this flag to disable sending the brand-new generated ticket into the ticket stream.
+	// Mind that this can work only in "ticket stream mode".
+	SendTicket bool `envconfig:"SEND_TICKET" default:"true"`
+
+	// Mode - Define the mode in which this tool runs. Check constants of type `mode` for valid values.
+	Mode mode `envconfig:"MODE" default:"ticket stream mode"`
+}
+
+// generateTicket should return nil if no new ticket should be generated, otherwise the new ticket should be prepared
+// and returned by this function. It is implemented on for connectToTicketStream feature.
+func generateTicket(cfg config) *ots.Ticket {
+	switch {
+	case cfg.Mode != ModeTicketStream,
+		!cfg.SendTicket:
+		return nil
+	}
+
+	obbSelection := obbSelectionInput{
+		obbSessionID: uuid.NewString(),
+		extIDs: []string{
+			"od:match:251063/1/1?variant=way:two&way=two",
+			"od:match:251063/11/1?handicap=-2.5&map=1",
+		},
+		odds: 350000,
+	}
+
+	return NewObbSingleTicket(
+		&obbSelection,
+		WithStake(10000),
+		WithCurrency(defaultCurrencyCode),
+	)
+}
+
 func main() {
-	url := strings.Trim(os.Getenv("URL"), " ")
-	if url == "" {
-		panic("missing 'URL' env variable")
-	}
-
-	accessToken := strings.Trim(os.Getenv("TOKEN"), " ")
-	if accessToken == "" {
-		panic("missing 'TOKEN' env variable")
-	}
-
-	runTicketStream := true
-	runTicketStreamStr := strings.Trim(os.Getenv("RUN_TICKET_STREAM"), " ")
-	if runTicketStreamStr != "" {
-		v, err := strconv.ParseBool(runTicketStreamStr)
-		if err != nil {
-			panic(err)
-		}
-		runTicketStream = v
+	var cfg config
+	if err := envconfig.Process("", &cfg); err != nil {
+		panic(err)
 	}
 
 	var tlsCfg tls.Config
@@ -50,7 +79,7 @@ func main() {
 
 	conn, err := grpc.DialContext(
 		connCtx,
-		url,
+		cfg.URL,
 		grpc.WithBlock(),
 		grpc.WithTransportCredentials(credentials.NewTLS(&tlsCfg)),
 	)
@@ -59,16 +88,16 @@ func main() {
 	}
 
 	ctx := metadata.NewOutgoingContext(context.Background(), metadata.New(map[string]string{
-		"token": accessToken,
+		"token": cfg.Token,
 	}))
 
 	client := ots.NewOtsClient(conn)
 
-	if runTicketStream {
-		connectToTicketStream(ctx, client)
-	} else {
-		connectToRiskApiStream(ctx, client)
-
+	switch cfg.Mode {
+	case ModeTicketStream:
+		connectToTicketStream(ctx, cfg, client)
+	case ModeRiskApi:
+		connectToRiskApiStream(ctx, cfg, client)
 	}
 }
 
