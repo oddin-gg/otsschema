@@ -90,9 +90,9 @@ message Ticket {
 //   OBB selection type which consists of one odds number, a set of OBB sub-selections (with no associated odds), and one
 //   OBB session id which is a unique identification of the set of OBB sub-selections and its odds in time.
 message TicketSelection {
-  // Selection ID mush have specific format:
-  // * Regular TicketSelection: "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
-  // * OBB TicketSelection:  "od:obb_session:xxxx-xxxx-xxxx-xxxx"
+  // Selection ID must have specific format:
+  // * Regular TicketSelection: "od:<product_id>:<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // * OBB TicketSelection:  "od:obb_session:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
   string id = 1;
 
   // Odds multiplied by 10000 and rounded to uint value.
@@ -110,9 +110,9 @@ message OBBSessionInfo {
   // Represents BetBuilder sessionID. If it is defined then it is BetBuilder TicketSelection if not then it is a regular bet.
   string session_id = 1;
 
-  // Selection ID mush has a specific format, which is the same format as for regular selection (but without odds).
-  // E.g.: "od:<product_id>/<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
-  // OBB format (e.g  "od:obb-session:xxxx-xxxx-xxxx-xxxx") is not not allowed here.
+  // Selection ID must has a specific format, which is the same format as for regular selection (but without odds).
+  // E.g.: "od:<product_id>:<event_id>/<market_id>/<outcome_id>?<specifier1>=<value1>[&<specifierN=valueN>]*"
+  // OBB format (e.g.: "od:obb_session:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx") is not not allowed here.
   repeated string sub_selections = 2;
 }
 
