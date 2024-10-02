@@ -20,6 +20,14 @@ func connectToTicketStream(ctx context.Context, cfg config, client ots.OtsClient
 	}
 
 	fmt.Println("Ticket stream CONNECTED")
+	closeExampleTicker := time.NewTimer(cfg.ConnectionTime)
+
+	// Optional sending of the ticket (see generateTicket() function defined on top of the main.go file).
+	var newTicketDelay <-chan time.Time
+	generatedTicket := generateTicket(cfg)
+	if generatedTicket != nil {
+		newTicketDelay = time.After(time.Second * 1)
+	}
 
 	go func() {
 		for {
@@ -38,28 +46,22 @@ func connectToTicketStream(ctx context.Context, cfg config, client ots.OtsClient
 				fmt.Println("Keepalive received")
 				continue
 
-			case req.GetData() != nil:
-				fmt.Println("#####################################################################################")
-				fmt.Println("Incoming ticket data: \n", toJson(req))
-				fmt.Println("#####################################################################################")
-
 			case req.GetState() != nil:
-				state := req.GetState().TicketStatus.String()
-				fmt.Println("#####################################################################################")
-				fmt.Printf("Incoming ticket state (state=%s): %s\n", state, toJson(req))
-				fmt.Println("#####################################################################################")
+				fmt.Println("###################################################################")
+				fmt.Printf("Incoming ticket state: %s\n", toJson(req))
+				fmt.Println("###################################################################")
+
+				if cfg.QuitOnSentTicketStatus && cfg.SendTicket && req.GetState().GetId() == generatedTicket.GetId() {
+					closeExampleTicker.Reset(1 * time.Nanosecond)
+				}
+
+			case req.GetData() != nil: // to handle oll other requests
+				fmt.Println("###################################################################")
+				fmt.Println("Incoming ticket data: \n", toJson(req))
+				fmt.Println("###################################################################")
 			}
 		}
 	}()
-
-	closeExampleTicker := time.NewTimer(cfg.ConnectionTime)
-
-	// Optional sending of the ticket (see generateTicket() function defined on top of the main.go file).
-	var newTicketDelay <-chan time.Time
-	generatedTicket := generateTicket(cfg)
-	if generatedTicket != nil {
-		newTicketDelay = time.After(time.Second * 1)
-	}
 
 	for {
 		select {
@@ -69,7 +71,7 @@ func connectToTicketStream(ctx context.Context, cfg config, client ots.OtsClient
 			closeCh <- struct{}{}
 
 		case <-newTicketDelay:
-			fmt.Println("#####################################################################################")
+			fmt.Println("###################################################################")
 			fmt.Println("Sending generated ticket...")
 			if err := stream.Send(&ots.TicketRequest{
 				Data: &ots.TicketRequest_Ticket{
@@ -82,7 +84,7 @@ func connectToTicketStream(ctx context.Context, cfg config, client ots.OtsClient
 				"Sent generated ticket: %s\n",
 				toJson(generatedTicket),
 			)
-			fmt.Println("#####################################################################################")
+			fmt.Println("###################################################################")
 
 		case <-closeCh:
 			if err := stream.CloseSend(); err != nil {

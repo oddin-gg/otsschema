@@ -32,6 +32,10 @@ type config struct {
 	// Mind that this can work only in "ticket stream mode".
 	SendTicket bool `envconfig:"SEND_TICKET" default:"true"`
 
+	// QuitOnSentTicketStatus - Set this flag to shut down the application after receiving of state response for
+	// the generated ticket (it can be used only with SendTicket set to true).
+	QuitOnSentTicketStatus bool `envconfig:"QUIT_ON_SENT_TICKET_STATUS" default:"false"`
+
 	// Mode - Define the mode in which this tool runs. Check constants of type `mode` for valid values.
 	Mode mode `envconfig:"MODE" default:"ticket stream mode"`
 }
