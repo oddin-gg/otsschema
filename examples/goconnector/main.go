@@ -17,11 +17,10 @@ import (
 )
 
 type config struct {
-	// URL of service, e.g. "api-ots-test.integration.oddin.gg:443"
+	// URL of service, e.g. "api-ots.integration.oddin.gg:443"
 	URL string `envconfig:"URL" required:"true"`
 
-	// Search for client's OTS (service = Kabal) token in the table `access_tokens`
-	// (ignore records with non-NULL `deleted_at`).
+	// OTS token of the given token.
 	Token string `envconfig:"TOKEN" required:"true"`
 
 	// ConnectionTime is the time interval during which is kept connection to the OTS stream. After that time
@@ -52,8 +51,8 @@ func generateTicket(cfg config) *ots.Ticket {
 	obbSelection := obbSelectionInput{
 		obbSessionID: uuid.NewString(),
 		extIDs: []string{
-			"od:match:251063/1/1?variant=way:two&way=two",
-			"od:match:251063/11/1?handicap=-2.5&map=1",
+			"od:match:251368/1/1?variant=way:two&way=two",
+			"od:match:251368/6/1?variant=way:three&map=1&way=three",
 		},
 		odds: 350000,
 	}
