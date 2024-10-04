@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-func connectToRiskApiStream(ctx context.Context, client ots.OtsClient) {
+func connectToRiskApiStream(ctx context.Context, cfg config, client ots.OtsClient) {
 	closeCh := make(chan struct{}, 1)
 
 	recoverSince := time.Now().Add(-2 * 24 * time.Hour) // recovers last two days bettors updates
@@ -43,19 +43,19 @@ func connectToRiskApiStream(ctx context.Context, client ots.OtsClient) {
 
 			case req.GetBettor() != nil:
 				i++
-				fmt.Println("#####################################################################################")
+				fmt.Println("###################################################################")
 				fmt.Printf("Incoming bettor data [%d]: \n%s \n", i, toJson(req))
-				fmt.Println("#####################################################################################")
+				fmt.Println("###################################################################")
 
 			case req.GetData() != nil:
-				fmt.Println("#####################################################################################")
+				fmt.Println("###################################################################")
 				fmt.Println("Incoming data: \n", toJson(req))
-				fmt.Println("#####################################################################################")
+				fmt.Println("###################################################################")
 			}
 		}
 	}()
 
-	closeExampleTicker := time.NewTimer(time.Hour * 60)
+	closeExampleTicker := time.NewTimer(cfg.ConnectionTime)
 
 	for {
 		select {
