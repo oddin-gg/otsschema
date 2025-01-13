@@ -81,6 +81,10 @@ message Ticket {
 
   // Stake multiplier for stake - optional value to use instead of 10000
   google.protobuf.UInt64Value stake_multiplier = 15;
+
+  // Optional field which may contain additional information which is not directly connected ticket accepting logic.
+  // E.g. debug traces etc.
+  map<string, string> metadata = 16;
 }
 
 // TicketSelection represents the selection of a ticket. We have two types of selections.

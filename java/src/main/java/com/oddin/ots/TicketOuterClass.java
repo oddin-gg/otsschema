@@ -4508,6 +4508,65 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue);
      * <code>.google.protobuf.UInt64Value stake_multiplier = 15;</code>
      */
     com.google.protobuf.UInt64ValueOrBuilder getStakeMultiplierOrBuilder();
+
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    int getMetadataCount();
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -4557,6 +4616,8 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue);
       switch (number) {
         case 9:
           return internalGetSelections();
+        case 16:
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -5129,6 +5190,105 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
       return stakeMultiplier_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : stakeMultiplier_;
     }
 
+    public static final int METADATA_FIELD_NUMBER = 16;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.oddin.ots.TicketOuterClass.internal_static_ots_Ticket_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+     * E.g. debug traces etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 16;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5188,6 +5348,12 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
       if (stakeMultiplier_ != null) {
         output.writeMessage(15, getStakeMultiplier());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          16);
       getUnknownFields().writeTo(output);
     }
 
@@ -5257,6 +5423,16 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getStakeMultiplier());
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(16, metadata__);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5319,6 +5495,8 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         if (!getStakeMultiplier()
             .equals(other.getStakeMultiplier())) return false;
       }
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5376,6 +5554,10 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
       if (hasStakeMultiplier()) {
         hash = (37 * hash) + STAKE_MULTIPLIER_FIELD_NUMBER;
         hash = (53 * hash) + getStakeMultiplier().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -5494,6 +5676,8 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         switch (number) {
           case 9:
             return internalGetSelections();
+          case 16:
+            return internalGetMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -5505,6 +5689,8 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         switch (number) {
           case 9:
             return internalGetMutableSelections();
+          case 16:
+            return internalGetMutableMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -5580,6 +5766,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
           stakeMultiplierBuilder_.dispose();
           stakeMultiplierBuilder_ = null;
         }
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -5679,6 +5866,10 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
           result.stakeMultiplier_ = stakeMultiplierBuilder_ == null
               ? stakeMultiplier_
               : stakeMultiplierBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.metadata_ = internalGetMetadata();
+          result.metadata_.makeImmutable();
         }
       }
 
@@ -5795,6 +5986,9 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
         if (other.hasStakeMultiplier()) {
           mergeStakeMultiplier(other.getStakeMultiplier());
         }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
+        bitField0_ |= 0x00004000;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5917,6 +6111,15 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
                 bitField0_ |= 0x00002000;
                 break;
               } // case 122
+              case 130: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                metadata__ = input.readMessage(
+                    MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMetadata().getMutableMap().put(
+                    metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 130
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7786,6 +7989,168 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
           stakeMultiplier_ = null;
         }
         return stakeMultiplierBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableMetadata() {
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return metadata_;
+      }
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+          getMutableMetadata() {
+        bitField0_ |= 0x00004000;
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional field which may contain additional information which is not directly connected ticket accepting logic.
+       * E.g. debug traces etc.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 16;</code>
+       */
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00004000;
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11647,7 +12012,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @deprecated ots.Bet.reoffer_id is deprecated.
-     *     See ots/ticket.proto;l=146
+     *     See ots/ticket.proto;l=150
      * @return Whether the reofferId field is set.
      */
     @java.lang.Deprecated boolean hasReofferId();
@@ -11658,7 +12023,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @deprecated ots.Bet.reoffer_id is deprecated.
-     *     See ots/ticket.proto;l=146
+     *     See ots/ticket.proto;l=150
      * @return The reofferId.
      */
     @java.lang.Deprecated com.google.protobuf.StringValue getReofferId();
@@ -11936,7 +12301,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @deprecated ots.Bet.reoffer_id is deprecated.
-     *     See ots/ticket.proto;l=146
+     *     See ots/ticket.proto;l=150
      * @return Whether the reofferId field is set.
      */
     @java.lang.Override
@@ -11950,7 +12315,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
      *
      * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
      * @deprecated ots.Bet.reoffer_id is deprecated.
-     *     See ots/ticket.proto;l=146
+     *     See ots/ticket.proto;l=150
      * @return The reofferId.
      */
     @java.lang.Override
@@ -13196,7 +13561,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        * @deprecated ots.Bet.reoffer_id is deprecated.
-       *     See ots/ticket.proto;l=146
+       *     See ots/ticket.proto;l=150
        * @return Whether the reofferId field is set.
        */
       @java.lang.Deprecated public boolean hasReofferId() {
@@ -13209,7 +13574,7 @@ com.oddin.ots.TicketOuterClass.TicketSelection defaultValue) {
        *
        * <code>.google.protobuf.StringValue reoffer_id = 4 [deprecated = true];</code>
        * @deprecated ots.Bet.reoffer_id is deprecated.
-       *     See ots/ticket.proto;l=146
+       *     See ots/ticket.proto;l=150
        * @return The reofferId.
        */
       @java.lang.Deprecated public com.google.protobuf.StringValue getReofferId() {
@@ -24280,6 +24645,11 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_Ticket_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_Ticket_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_TicketSelection_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -24389,7 +24759,7 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
       "teH\000B\006\n\004data\"-\n\016TicketMaxStake\022\033\n\006ticket" +
       "\030\001 \001(\0132\013.ots.Ticket\"B\n\023TicketMaxStakeSta" +
       "te\022\n\n\002id\030\001 \001(\t\022\037\n\005state\030\002 \001(\0132\020.ots.Tick" +
-      "etState\"\247\005\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\ttimest" +
+      "etState\"\205\006\n\006Ticket\022\n\n\002id\030\001 \001(\t\022-\n\ttimest" +
       "amp\030\002 \001(\0132\032.google.protobuf.Timestamp\022\026\n" +
       "\004bets\030\003 \003(\0132\010.ots.Bet\0227\n\022accept_odds_cha" +
       "nge\030\004 \001(\0162\033.ots.enums.AcceptOddsChange\022\032" +
@@ -24404,80 +24774,82 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
       ".protobuf.Timestamp\022;\n\027lastForeignEventE" +
       "ndTime\030\016 \001(\0132\032.google.protobuf.Timestamp" +
       "\0226\n\020stake_multiplier\030\017 \001(\0132\034.google.prot" +
-      "obuf.UInt64Value\032G\n\017SelectionsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.ots.TicketSele" +
-      "ction:\0028\001\"\241\001\n\017TicketSelection\022\n\n\002id\030\001 \001(" +
-      "\t\022\014\n\004odds\030\003 \001(\004\022+\n\007foreign\030\004 \001(\0132\032.googl" +
-      "e.protobuf.BoolValue\0222\n\020obb_session_info" +
-      "\030\006 \001(\0132\023.ots.OBBSessionInfoH\000\210\001\001B\023\n\021_obb" +
-      "_session_info\"<\n\016OBBSessionInfo\022\022\n\nsessi" +
-      "on_id\030\001 \001(\t\022\026\n\016sub_selections\030\002 \003(\t\"\271\001\n\016" +
-      "TicketCustomer\022\n\n\002id\030\001 \001(\t\022(\n\002ip\030\002 \001(\0132\034" +
-      ".google.protobuf.StringValue\022/\n\tdevice_i" +
-      "d\030\003 \001(\0132\034.google.protobuf.StringValue\022\020\n" +
-      "\010language\030\004 \001(\t\022.\n\010nickname\030\005 \001(\0132\034.goog" +
-      "le.protobuf.StringValue\"\213\002\n\003Bet\022(\n\002id\030\001 " +
-      "\001(\0132\034.google.protobuf.StringValue\022\034\n\005bon" +
-      "us\030\002 \001(\0132\r.ots.BetBonus\022\034\n\005stake\030\003 \001(\0132\r" +
-      ".ots.BetStake\0224\n\nreoffer_id\030\004 \001(\0132\034.goog" +
-      "le.protobuf.StringValueB\002\030\001\0220\n\ntotal_win" +
-      "s\030\005 \001(\0132\034.google.protobuf.UInt64Value\022\017\n" +
-      "\007systems\030\006 \003(\r\022%\n\nselections\030\007 \003(\0132\021.ots" +
-      ".BetSelection\"\032\n\014BetSelection\022\n\n\002id\030\001 \001(" +
-      "\t\"@\n\010BetStake\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001" +
-      "(\0162\027.ots.enums.BetStakeType\"g\n\010BetBonus\022" +
-      "\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums" +
-      ".BetBonusType\022%\n\004mode\030\003 \001(\0162\027.ots.enums." +
-      "BetBonusMode\"\310\005\n\013TicketState\022\n\n\002id\030\001 \001(\t" +
-      "\0222\n\rticket_status\030\002 \001(\0162\033.ots.enums.Acce" +
-      "ptanceStatus\022.\n\rreject_reason\030\003 \001(\0132\027.ot" +
-      "s.TicketRejectReason\022/\n\010bet_info\030\004 \003(\0132\035" +
-      ".ots.TicketState.BetInfoEntry\022;\n\016selecti" +
-      "on_info\030\007 \003(\0132#.ots.TicketState.Selectio" +
-      "nInfoEntry\0223\n\rexchange_rate\030\005 \001(\0132\034.goog" +
-      "le.protobuf.UInt64Value\022B\n\022auto_accepted" +
-      "_odds\030\006 \003(\0132&.ots.TicketState.AutoAccept" +
-      "edOddsEntry\022%\n\007reoffer\030\010 \001(\0132\024.ots.Respo" +
-      "nseReoffer\022\022\n\ntotal_odds\030\t \001(\004\0223\n\rpendin" +
-      "g_delay\030\n \001(\0132\034.google.protobuf.UInt32Va" +
-      "lue\032J\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022)\n\005valu" +
-      "e\030\002 \001(\0132\032.ots.TicketResponseBetInfo:\0028\001\032" +
-      "V\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\022/\n\005va" +
-      "lue\030\002 \001(\0132 .ots.TicketSelectionRejectRea" +
-      "son:\0028\001\032N\n\025AutoAcceptedOddsEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.ots.AutoAcceptedO" +
-      "dds:\0028\001\"I\n\020AutoAcceptedOdds\022\n\n\002id\030\001 \001(\t\022" +
-      "\026\n\016requested_odds\030\002 \001(\004\022\021\n\tused_odds\030\003 \001" +
-      "(\004\"\334\002\n\022TicketRejectReason\022*\n\004code\030\001 \001(\0162" +
-      "\034.ots.TicketRejectReason.Code\022\017\n\007message" +
-      "\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n" +
-      "\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMEN" +
-      "T\020\002\022\027\n\023CODE_ALREADY_EXISTS\020\003\022\026\n\022CODE_STA" +
-      "KE_TOO_LOW\020\004\022\027\n\023CODE_STAKE_TOO_HIGH\020\005\022\034\n" +
-      "\030CODE_MAX_PAYOUT_BREACHED\020\006\022\034\n\030CODE_BETS" +
-      "_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_SELECTIONS_NOT" +
-      "_ACCEPTABLE\020\010\022\022\n\016CODE_NOT_FOUND\020\t\"\221\003\n\025Ti" +
-      "cketBetRejectReason\022-\n\004code\030\001 \001(\0162\037.ots." +
-      "TicketBetRejectReason.Code\022\017\n\007message\030\002 " +
-      "\001(\t\"\267\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n\021CO" +
-      "DE_ODDS_CHANGED\020\001\022\035\n\031CODE_SELECTION_NOT_" +
-      "ACTIVE\020\002\022\026\n\022CODE_STAKE_TOO_LOW\020\003\022\027\n\023CODE" +
-      "_STAKE_TOO_HIGH\020\004\022\034\n\030CODE_MAX_PAYOUT_BRE" +
-      "ACHED\020\005\022\"\n\036CODE_MARKET_LIABILITY_BREACHE" +
-      "D\020\006\022\"\n\036CODE_BETTOR_LIABILITY_BREACHED\020\007\022" +
-      "!\n\035CODE_EVENT_LIABILITY_BREACHED\020\010\022)\n%CO" +
-      "DE_MARKET_BETTOR_LIABILITY_BREACHED\020\t\"\221\001" +
-      "\n\025TicketResponseBetInfo\022\n\n\002id\030\001 \001(\t\0221\n\rr" +
-      "eject_reason\030\002 \001(\0132\032.ots.TicketBetReject" +
-      "Reason\022%\n\007reoffer\030\003 \001(\0132\024.ots.ResponseRe" +
-      "offer\022\022\n\ntotal_odds\030\004 \001(\004\"\307\001\n\033TicketSele" +
-      "ctionRejectReason\0223\n\004code\030\001 \001(\0162%.ots.Ti" +
-      "cketSelectionRejectReason.Code\022\017\n\007messag" +
-      "e\030\002 \001(\t\"b\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\025\n" +
-      "\021CODE_ODDS_CHANGED\020\001\022\023\n\017CODE_NOT_ACTIVE\020" +
-      "\002\022\030\n\024CODE_NOT_INDEPENDENT\020\003\" \n\017ResponseR" +
-      "eoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rcom.oddin.otsZ\014" +
-      "oddin.gg/otsb\006proto3"
+      "obuf.UInt64Value\022+\n\010metadata\030\020 \003(\0132\031.ots" +
+      ".Ticket.MetadataEntry\032G\n\017SelectionsEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.ots.Ticke" +
+      "tSelection:\0028\001\032/\n\rMetadataEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\241\001\n\017TicketSelect" +
+      "ion\022\n\n\002id\030\001 \001(\t\022\014\n\004odds\030\003 \001(\004\022+\n\007foreign" +
+      "\030\004 \001(\0132\032.google.protobuf.BoolValue\0222\n\020ob" +
+      "b_session_info\030\006 \001(\0132\023.ots.OBBSessionInf" +
+      "oH\000\210\001\001B\023\n\021_obb_session_info\"<\n\016OBBSessio" +
+      "nInfo\022\022\n\nsession_id\030\001 \001(\t\022\026\n\016sub_selecti" +
+      "ons\030\002 \003(\t\"\271\001\n\016TicketCustomer\022\n\n\002id\030\001 \001(\t" +
+      "\022(\n\002ip\030\002 \001(\0132\034.google.protobuf.StringVal" +
+      "ue\022/\n\tdevice_id\030\003 \001(\0132\034.google.protobuf." +
+      "StringValue\022\020\n\010language\030\004 \001(\t\022.\n\010nicknam" +
+      "e\030\005 \001(\0132\034.google.protobuf.StringValue\"\213\002" +
+      "\n\003Bet\022(\n\002id\030\001 \001(\0132\034.google.protobuf.Stri" +
+      "ngValue\022\034\n\005bonus\030\002 \001(\0132\r.ots.BetBonus\022\034\n" +
+      "\005stake\030\003 \001(\0132\r.ots.BetStake\0224\n\nreoffer_i" +
+      "d\030\004 \001(\0132\034.google.protobuf.StringValueB\002\030" +
+      "\001\0220\n\ntotal_wins\030\005 \001(\0132\034.google.protobuf." +
+      "UInt64Value\022\017\n\007systems\030\006 \003(\r\022%\n\nselectio" +
+      "ns\030\007 \003(\0132\021.ots.BetSelection\"\032\n\014BetSelect" +
+      "ion\022\n\n\002id\030\001 \001(\t\"@\n\010BetStake\022\r\n\005value\030\001 \001" +
+      "(\004\022%\n\004type\030\002 \001(\0162\027.ots.enums.BetStakeTyp" +
+      "e\"g\n\010BetBonus\022\r\n\005value\030\001 \001(\004\022%\n\004type\030\002 \001" +
+      "(\0162\027.ots.enums.BetBonusType\022%\n\004mode\030\003 \001(" +
+      "\0162\027.ots.enums.BetBonusMode\"\310\005\n\013TicketSta" +
+      "te\022\n\n\002id\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033." +
+      "ots.enums.AcceptanceStatus\022.\n\rreject_rea" +
+      "son\030\003 \001(\0132\027.ots.TicketRejectReason\022/\n\010be" +
+      "t_info\030\004 \003(\0132\035.ots.TicketState.BetInfoEn" +
+      "try\022;\n\016selection_info\030\007 \003(\0132#.ots.Ticket" +
+      "State.SelectionInfoEntry\0223\n\rexchange_rat" +
+      "e\030\005 \001(\0132\034.google.protobuf.UInt64Value\022B\n" +
+      "\022auto_accepted_odds\030\006 \003(\0132&.ots.TicketSt" +
+      "ate.AutoAcceptedOddsEntry\022%\n\007reoffer\030\010 \001" +
+      "(\0132\024.ots.ResponseReoffer\022\022\n\ntotal_odds\030\t" +
+      " \001(\004\0223\n\rpending_delay\030\n \001(\0132\034.google.pro" +
+      "tobuf.UInt32Value\032J\n\014BetInfoEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.ots.TicketRespon" +
+      "seBetInfo:\0028\001\032V\n\022SelectionInfoEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .ots.TicketSele" +
+      "ctionRejectReason:\0028\001\032N\n\025AutoAcceptedOdd" +
+      "sEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.ots" +
+      ".AutoAcceptedOdds:\0028\001\"I\n\020AutoAcceptedOdd" +
+      "s\022\n\n\002id\030\001 \001(\t\022\026\n\016requested_odds\030\002 \001(\004\022\021\n" +
+      "\tused_odds\030\003 \001(\004\"\334\002\n\022TicketRejectReason\022" +
+      "*\n\004code\030\001 \001(\0162\034.ots.TicketRejectReason.C" +
+      "ode\022\017\n\007message\030\002 \001(\t\"\210\002\n\004Code\022\024\n\020CODE_UN" +
+      "SPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_I" +
+      "NVALID_ARGUMENT\020\002\022\027\n\023CODE_ALREADY_EXISTS" +
+      "\020\003\022\026\n\022CODE_STAKE_TOO_LOW\020\004\022\027\n\023CODE_STAKE" +
+      "_TOO_HIGH\020\005\022\034\n\030CODE_MAX_PAYOUT_BREACHED\020" +
+      "\006\022\034\n\030CODE_BETS_NOT_ACCEPTABLE\020\007\022\"\n\036CODE_" +
+      "SELECTIONS_NOT_ACCEPTABLE\020\010\022\022\n\016CODE_NOT_" +
+      "FOUND\020\t\"\221\003\n\025TicketBetRejectReason\022-\n\004cod" +
+      "e\030\001 \001(\0162\037.ots.TicketBetRejectReason.Code" +
+      "\022\017\n\007message\030\002 \001(\t\"\267\002\n\004Code\022\024\n\020CODE_UNSPE" +
+      "CIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\035\n\031CODE_" +
+      "SELECTION_NOT_ACTIVE\020\002\022\026\n\022CODE_STAKE_TOO" +
+      "_LOW\020\003\022\027\n\023CODE_STAKE_TOO_HIGH\020\004\022\034\n\030CODE_" +
+      "MAX_PAYOUT_BREACHED\020\005\022\"\n\036CODE_MARKET_LIA" +
+      "BILITY_BREACHED\020\006\022\"\n\036CODE_BETTOR_LIABILI" +
+      "TY_BREACHED\020\007\022!\n\035CODE_EVENT_LIABILITY_BR" +
+      "EACHED\020\010\022)\n%CODE_MARKET_BETTOR_LIABILITY" +
+      "_BREACHED\020\t\"\221\001\n\025TicketResponseBetInfo\022\n\n" +
+      "\002id\030\001 \001(\t\0221\n\rreject_reason\030\002 \001(\0132\032.ots.T" +
+      "icketBetRejectReason\022%\n\007reoffer\030\003 \001(\0132\024." +
+      "ots.ResponseReoffer\022\022\n\ntotal_odds\030\004 \001(\004\"" +
+      "\307\001\n\033TicketSelectionRejectReason\0223\n\004code\030" +
+      "\001 \001(\0162%.ots.TicketSelectionRejectReason." +
+      "Code\022\017\n\007message\030\002 \001(\t\"b\n\004Code\022\024\n\020CODE_UN" +
+      "SPECIFIED\020\000\022\025\n\021CODE_ODDS_CHANGED\020\001\022\023\n\017CO" +
+      "DE_NOT_ACTIVE\020\002\022\030\n\024CODE_NOT_INDEPENDENT\020" +
+      "\003\" \n\017ResponseReoffer\022\r\n\005stake\030\001 \001(\004B\035\n\rc" +
+      "om.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24517,12 +24889,18 @@ com.oddin.ots.TicketOuterClass.AutoAcceptedOdds defaultValue) {
     internal_static_ots_Ticket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Ticket_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", "StakeMultiplier", });
+        new java.lang.String[] { "Id", "Timestamp", "Bets", "AcceptOddsChange", "TotalCombinations", "Customer", "ReofferId", "Selections", "LocationId", "Currency", "Channel", "LastForeignEventStartTime", "LastForeignEventEndTime", "StakeMultiplier", "Metadata", });
     internal_static_ots_Ticket_SelectionsEntry_descriptor =
       internal_static_ots_Ticket_descriptor.getNestedTypes().get(0);
     internal_static_ots_Ticket_SelectionsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Ticket_SelectionsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ots_Ticket_MetadataEntry_descriptor =
+      internal_static_ots_Ticket_descriptor.getNestedTypes().get(1);
+    internal_static_ots_Ticket_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_Ticket_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_ots_TicketSelection_descriptor =
       getDescriptor().getMessageTypes().get(5);
