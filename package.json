@@ -11,8 +11,9 @@
     "@types/google-protobuf": "^3.7.3",
     "google-protobuf": "^3.14.0",
     "grpc-tools": "^1.12.4",
-    "protoc-gen-grpc-web": "^1.2.1",
-    "ts-protoc-gen": "^0.14.0"
+    "protoc-gen-grpc-web": "^1.5.0",
+    "protoc-gen-js": "^3.21.4",
+    "ts-protoc-gen": "^0.15.0"
   },
   "devDependencies": {
     "@improbable-eng/grpc-web": "^0.13.0"
