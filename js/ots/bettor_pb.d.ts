@@ -62,6 +62,132 @@ export namespace BettorsResponse {
   }
 }
 
+export class BettorUpsertRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  hasBos(): boolean;
+  clearBos(): void;
+  getBos(): number;
+  setBos(value: number): void;
+
+  hasOverAskFactor(): boolean;
+  clearOverAskFactor(): void;
+  getOverAskFactor(): number;
+  setOverAskFactor(value: number): void;
+
+  hasLabels(): boolean;
+  clearLabels(): void;
+  getLabels(): BettorUpsertRequest.NewLabelSet | undefined;
+  setLabels(value?: BettorUpsertRequest.NewLabelSet): void;
+
+  hasNickname(): boolean;
+  clearNickname(): void;
+  getNickname(): string;
+  setNickname(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BettorUpsertRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BettorUpsertRequest): BettorUpsertRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BettorUpsertRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BettorUpsertRequest;
+  static deserializeBinaryFromReader(message: BettorUpsertRequest, reader: jspb.BinaryReader): BettorUpsertRequest;
+}
+
+export namespace BettorUpsertRequest {
+  export type AsObject = {
+    id: string,
+    bos: number,
+    overAskFactor: number,
+    labels?: BettorUpsertRequest.NewLabelSet.AsObject,
+    nickname: string,
+  }
+
+  export class NewLabelSet extends jspb.Message {
+    clearLabelsList(): void;
+    getLabelsList(): Array<string>;
+    setLabelsList(value: Array<string>): void;
+    addLabels(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NewLabelSet.AsObject;
+    static toObject(includeInstance: boolean, msg: NewLabelSet): NewLabelSet.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NewLabelSet, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NewLabelSet;
+    static deserializeBinaryFromReader(message: NewLabelSet, reader: jspb.BinaryReader): NewLabelSet;
+  }
+
+  export namespace NewLabelSet {
+    export type AsObject = {
+      labelsList: Array<string>,
+    }
+  }
+}
+
+export class BettorUpsertResponse extends jspb.Message {
+  hasBettor(): boolean;
+  clearBettor(): void;
+  getBettor(): Bettor | undefined;
+  setBettor(value?: Bettor): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BettorUpsertResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BettorUpsertResponse): BettorUpsertResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BettorUpsertResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BettorUpsertResponse;
+  static deserializeBinaryFromReader(message: BettorUpsertResponse, reader: jspb.BinaryReader): BettorUpsertResponse;
+}
+
+export namespace BettorUpsertResponse {
+  export type AsObject = {
+    bettor?: Bettor.AsObject,
+  }
+}
+
+export class BettorLabelsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BettorLabelsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BettorLabelsRequest): BettorLabelsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BettorLabelsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BettorLabelsRequest;
+  static deserializeBinaryFromReader(message: BettorLabelsRequest, reader: jspb.BinaryReader): BettorLabelsRequest;
+}
+
+export namespace BettorLabelsRequest {
+  export type AsObject = {
+  }
+}
+
+export class BettorLabelsResponse extends jspb.Message {
+  clearLabelsList(): void;
+  getLabelsList(): Array<string>;
+  setLabelsList(value: Array<string>): void;
+  addLabels(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BettorLabelsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BettorLabelsResponse): BettorLabelsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BettorLabelsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BettorLabelsResponse;
+  static deserializeBinaryFromReader(message: BettorLabelsResponse, reader: jspb.BinaryReader): BettorLabelsResponse;
+}
+
+export namespace BettorLabelsResponse {
+  export type AsObject = {
+    labelsList: Array<string>,
+  }
+}
+
 export class Bettor extends jspb.Message {
   getId(): string;
   setId(value: string): void;
