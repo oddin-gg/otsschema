@@ -27,6 +27,8 @@ type OtsClient interface {
 	// Deprecated: Do not use.
 	TicketMaxStake(ctx context.Context, in *TicketMaxStakeRequest, opts ...grpc.CallOption) (*TicketMaxStakeResponse, error)
 	Bettors(ctx context.Context, in *BettorsRequest, opts ...grpc.CallOption) (Ots_BettorsClient, error)
+	BettorUpsert(ctx context.Context, in *BettorUpsertRequest, opts ...grpc.CallOption) (*BettorUpsertResponse, error)
+	AvailableBettorLabels(ctx context.Context, in *AvailableBettorLabelsRequest, opts ...grpc.CallOption) (*AvailableBettorLabelsResponse, error)
 }
 
 type otsClient struct {
@@ -177,6 +179,24 @@ func (x *otsBettorsClient) Recv() (*BettorsResponse, error) {
 	return m, nil
 }
 
+func (c *otsClient) BettorUpsert(ctx context.Context, in *BettorUpsertRequest, opts ...grpc.CallOption) (*BettorUpsertResponse, error) {
+	out := new(BettorUpsertResponse)
+	err := c.cc.Invoke(ctx, "/ots.ots/BettorUpsert", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *otsClient) AvailableBettorLabels(ctx context.Context, in *AvailableBettorLabelsRequest, opts ...grpc.CallOption) (*AvailableBettorLabelsResponse, error) {
+	out := new(AvailableBettorLabelsResponse)
+	err := c.cc.Invoke(ctx, "/ots.ots/AvailableBettorLabels", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OtsServer is the server API for Ots service.
 // All implementations must embed UnimplementedOtsServer
 // for forward compatibility
@@ -190,6 +210,8 @@ type OtsServer interface {
 	// Deprecated: Do not use.
 	TicketMaxStake(context.Context, *TicketMaxStakeRequest) (*TicketMaxStakeResponse, error)
 	Bettors(*BettorsRequest, Ots_BettorsServer) error
+	BettorUpsert(context.Context, *BettorUpsertRequest) (*BettorUpsertResponse, error)
+	AvailableBettorLabels(context.Context, *AvailableBettorLabelsRequest) (*AvailableBettorLabelsResponse, error)
 	mustEmbedUnimplementedOtsServer()
 }
 
@@ -220,6 +242,12 @@ func (UnimplementedOtsServer) TicketMaxStake(context.Context, *TicketMaxStakeReq
 }
 func (UnimplementedOtsServer) Bettors(*BettorsRequest, Ots_BettorsServer) error {
 	return status.Errorf(codes.Unimplemented, "method Bettors not implemented")
+}
+func (UnimplementedOtsServer) BettorUpsert(context.Context, *BettorUpsertRequest) (*BettorUpsertResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BettorUpsert not implemented")
+}
+func (UnimplementedOtsServer) AvailableBettorLabels(context.Context, *AvailableBettorLabelsRequest) (*AvailableBettorLabelsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AvailableBettorLabels not implemented")
 }
 func (UnimplementedOtsServer) mustEmbedUnimplementedOtsServer() {}
 
@@ -397,6 +425,42 @@ func (x *otsBettorsServer) Send(m *BettorsResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _Ots_BettorUpsert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BettorUpsertRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OtsServer).BettorUpsert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ots.ots/BettorUpsert",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OtsServer).BettorUpsert(ctx, req.(*BettorUpsertRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ots_AvailableBettorLabels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AvailableBettorLabelsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OtsServer).AvailableBettorLabels(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ots.ots/AvailableBettorLabels",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OtsServer).AvailableBettorLabels(ctx, req.(*AvailableBettorLabelsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Ots_ServiceDesc is the grpc.ServiceDesc for Ots service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -423,6 +487,14 @@ var Ots_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TicketMaxStake",
 			Handler:    _Ots_TicketMaxStake_Handler,
+		},
+		{
+			MethodName: "BettorUpsert",
+			Handler:    _Ots_BettorUpsert_Handler,
+		},
+		{
+			MethodName: "AvailableBettorLabels",
+			Handler:    _Ots_AvailableBettorLabels_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

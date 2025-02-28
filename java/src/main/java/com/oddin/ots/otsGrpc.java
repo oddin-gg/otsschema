@@ -263,6 +263,68 @@ public final class otsGrpc {
     return getBettorsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorUpsertRequest,
+      com.oddin.ots.BettorOuterClass.BettorUpsertResponse> getBettorUpsertMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BettorUpsert",
+      requestType = com.oddin.ots.BettorOuterClass.BettorUpsertRequest.class,
+      responseType = com.oddin.ots.BettorOuterClass.BettorUpsertResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorUpsertRequest,
+      com.oddin.ots.BettorOuterClass.BettorUpsertResponse> getBettorUpsertMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.BettorUpsertRequest, com.oddin.ots.BettorOuterClass.BettorUpsertResponse> getBettorUpsertMethod;
+    if ((getBettorUpsertMethod = otsGrpc.getBettorUpsertMethod) == null) {
+      synchronized (otsGrpc.class) {
+        if ((getBettorUpsertMethod = otsGrpc.getBettorUpsertMethod) == null) {
+          otsGrpc.getBettorUpsertMethod = getBettorUpsertMethod =
+              io.grpc.MethodDescriptor.<com.oddin.ots.BettorOuterClass.BettorUpsertRequest, com.oddin.ots.BettorOuterClass.BettorUpsertResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BettorUpsert"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.BettorUpsertRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.BettorUpsertResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new otsMethodDescriptorSupplier("BettorUpsert"))
+              .build();
+        }
+      }
+    }
+    return getBettorUpsertMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest,
+      com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> getAvailableBettorLabelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AvailableBettorLabels",
+      requestType = com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.class,
+      responseType = com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest,
+      com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> getAvailableBettorLabelsMethod() {
+    io.grpc.MethodDescriptor<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> getAvailableBettorLabelsMethod;
+    if ((getAvailableBettorLabelsMethod = otsGrpc.getAvailableBettorLabelsMethod) == null) {
+      synchronized (otsGrpc.class) {
+        if ((getAvailableBettorLabelsMethod = otsGrpc.getAvailableBettorLabelsMethod) == null) {
+          otsGrpc.getAvailableBettorLabelsMethod = getAvailableBettorLabelsMethod =
+              io.grpc.MethodDescriptor.<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AvailableBettorLabels"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new otsMethodDescriptorSupplier("AvailableBettorLabels"))
+              .build();
+        }
+      }
+    }
+    return getAvailableBettorLabelsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -367,6 +429,20 @@ public final class otsGrpc {
         io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBettorsMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void bettorUpsert(com.oddin.ots.BettorOuterClass.BettorUpsertRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorUpsertResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBettorUpsertMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void availableBettorLabels(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAvailableBettorLabelsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -460,6 +536,22 @@ public final class otsGrpc {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getBettorsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void bettorUpsert(com.oddin.ots.BettorOuterClass.BettorUpsertRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorUpsertResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBettorUpsertMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void availableBettorLabels(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAvailableBettorLabelsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -521,6 +613,20 @@ public final class otsGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getBettorsMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.oddin.ots.BettorOuterClass.BettorUpsertResponse bettorUpsert(com.oddin.ots.BettorOuterClass.BettorUpsertRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBettorUpsertMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse availableBettorLabels(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAvailableBettorLabelsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -579,6 +685,22 @@ public final class otsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTicketMaxStakeMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.BettorOuterClass.BettorUpsertResponse> bettorUpsert(
+        com.oddin.ots.BettorOuterClass.BettorUpsertRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBettorUpsertMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse> availableBettorLabels(
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAvailableBettorLabelsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RESOLVE_FOREIGN_MATCHES_IN_TICKET = 0;
@@ -587,8 +709,10 @@ public final class otsGrpc {
   private static final int METHODID_TICKET_ACK = 3;
   private static final int METHODID_TICKET_MAX_STAKE = 4;
   private static final int METHODID_BETTORS = 5;
-  private static final int METHODID_TICKET = 6;
-  private static final int METHODID_TICKET_RESULT = 7;
+  private static final int METHODID_BETTOR_UPSERT = 6;
+  private static final int METHODID_AVAILABLE_BETTOR_LABELS = 7;
+  private static final int METHODID_TICKET = 8;
+  private static final int METHODID_TICKET_RESULT = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -630,6 +754,14 @@ public final class otsGrpc {
         case METHODID_BETTORS:
           serviceImpl.bettors((com.oddin.ots.BettorOuterClass.BettorsRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorsResponse>) responseObserver);
+          break;
+        case METHODID_BETTOR_UPSERT:
+          serviceImpl.bettorUpsert((com.oddin.ots.BettorOuterClass.BettorUpsertRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.BettorUpsertResponse>) responseObserver);
+          break;
+        case METHODID_AVAILABLE_BETTOR_LABELS:
+          serviceImpl.availableBettorLabels((com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -711,6 +843,20 @@ public final class otsGrpc {
               com.oddin.ots.BettorOuterClass.BettorsRequest,
               com.oddin.ots.BettorOuterClass.BettorsResponse>(
                 service, METHODID_BETTORS)))
+        .addMethod(
+          getBettorUpsertMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.oddin.ots.BettorOuterClass.BettorUpsertRequest,
+              com.oddin.ots.BettorOuterClass.BettorUpsertResponse>(
+                service, METHODID_BETTOR_UPSERT)))
+        .addMethod(
+          getAvailableBettorLabelsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest,
+              com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse>(
+                service, METHODID_AVAILABLE_BETTOR_LABELS)))
         .build();
   }
 
@@ -767,6 +913,8 @@ public final class otsGrpc {
               .addMethod(getTicketResultMethod())
               .addMethod(getTicketMaxStakeMethod())
               .addMethod(getBettorsMethod())
+              .addMethod(getBettorUpsertMethod())
+              .addMethod(getAvailableBettorLabelsMethod())
               .build();
         }
       }

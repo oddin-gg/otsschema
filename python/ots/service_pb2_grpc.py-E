@@ -81,6 +81,16 @@ class otsStub(object):
                 request_serializer=ots_dot_bettor__pb2.BettorsRequest.SerializeToString,
                 response_deserializer=ots_dot_bettor__pb2.BettorsResponse.FromString,
                 _registered_method=True)
+        self.BettorUpsert = channel.unary_unary(
+                '/ots.ots/BettorUpsert',
+                request_serializer=ots_dot_bettor__pb2.BettorUpsertRequest.SerializeToString,
+                response_deserializer=ots_dot_bettor__pb2.BettorUpsertResponse.FromString,
+                _registered_method=True)
+        self.AvailableBettorLabels = channel.unary_unary(
+                '/ots.ots/AvailableBettorLabels',
+                request_serializer=ots_dot_bettor__pb2.AvailableBettorLabelsRequest.SerializeToString,
+                response_deserializer=ots_dot_bettor__pb2.AvailableBettorLabelsResponse.FromString,
+                _registered_method=True)
 
 
 class otsServicer(object):
@@ -134,6 +144,18 @@ class otsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BettorUpsert(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AvailableBettorLabels(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_otsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -176,6 +198,16 @@ def add_otsServicer_to_server(servicer, server):
                     servicer.Bettors,
                     request_deserializer=ots_dot_bettor__pb2.BettorsRequest.FromString,
                     response_serializer=ots_dot_bettor__pb2.BettorsResponse.SerializeToString,
+            ),
+            'BettorUpsert': grpc.unary_unary_rpc_method_handler(
+                    servicer.BettorUpsert,
+                    request_deserializer=ots_dot_bettor__pb2.BettorUpsertRequest.FromString,
+                    response_serializer=ots_dot_bettor__pb2.BettorUpsertResponse.SerializeToString,
+            ),
+            'AvailableBettorLabels': grpc.unary_unary_rpc_method_handler(
+                    servicer.AvailableBettorLabels,
+                    request_deserializer=ots_dot_bettor__pb2.AvailableBettorLabelsRequest.FromString,
+                    response_serializer=ots_dot_bettor__pb2.AvailableBettorLabelsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -394,6 +426,60 @@ class ots(object):
             '/ots.ots/Bettors',
             ots_dot_bettor__pb2.BettorsRequest.SerializeToString,
             ots_dot_bettor__pb2.BettorsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BettorUpsert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ots.ots/BettorUpsert',
+            ots_dot_bettor__pb2.BettorUpsertRequest.SerializeToString,
+            ots_dot_bettor__pb2.BettorUpsertResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AvailableBettorLabels(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ots.ots/AvailableBettorLabels',
+            ots_dot_bettor__pb2.AvailableBettorLabelsRequest.SerializeToString,
+            ots_dot_bettor__pb2.AvailableBettorLabelsResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from ots_schema.ots import commons_pb2 as ots_dot_commons__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10ots/bettor.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x11ots/commons.proto\"Z\n\x0e\x42\x65ttorsRequest\x12\x36\n\rrecover_since\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x88\x01\x01\x42\x10\n\x0e_recover_since\"c\n\x0f\x42\x65ttorsResponse\x12\x1d\n\x06\x62\x65ttor\x18\x01 \x01(\x0b\x32\x0b.ots.BettorH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\xaa\x01\n\x06\x42\x65ttor\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x65xt_id\x18\x02 \x01(\t\x12/\n\x0bmodified_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0b\n\x03\x62os\x18\x04 \x01(\x02\x12\x17\n\x0fover_ask_factor\x18\x05 \x01(\x02\x12\x15\n\roddins_labels\x18\x06 \x03(\t\x12\x16\n\x0e\x63lients_labels\x18\x07 \x03(\tB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10ots/bettor.proto\x12\x03ots\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x11ots/commons.proto\"Z\n\x0e\x42\x65ttorsRequest\x12\x36\n\rrecover_since\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x88\x01\x01\x42\x10\n\x0e_recover_since\"c\n\x0f\x42\x65ttorsResponse\x12\x1d\n\x06\x62\x65ttor\x18\x01 \x01(\x0b\x32\x0b.ots.BettorH\x00\x12)\n\tkeepalive\x18\x02 \x01(\x0b\x32\x14.ots.StreamKeepaliveH\x00\x42\x06\n\x04\x64\x61ta\"\xec\x01\n\x13\x42\x65ttorUpsertRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x03\x62os\x18\x02 \x01(\x02H\x00\x88\x01\x01\x12\x1c\n\x0fover_ask_factor\x18\x03 \x01(\x02H\x01\x88\x01\x01\x12\x34\n\x06labels\x18\x04 \x01(\x0b\x32\x1f.ots.BettorUpsertRequest.LabelsH\x02\x88\x01\x01\x12\x15\n\x08nickname\x18\x05 \x01(\tH\x03\x88\x01\x01\x1a\x18\n\x06Labels\x12\x0e\n\x06values\x18\x01 \x03(\tB\x06\n\x04_bosB\x12\n\x10_over_ask_factorB\t\n\x07_labelsB\x0b\n\t_nickname\"3\n\x14\x42\x65ttorUpsertResponse\x12\x1b\n\x06\x62\x65ttor\x18\x01 \x01(\x0b\x32\x0b.ots.Bettor\"\x1e\n\x1c\x41vailableBettorLabelsRequest\"/\n\x1d\x41vailableBettorLabelsResponse\x12\x0e\n\x06labels\x18\x01 \x03(\t\"\xaa\x01\n\x06\x42\x65ttor\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x65xt_id\x18\x02 \x01(\t\x12/\n\x0bmodified_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0b\n\x03\x62os\x18\x04 \x01(\x02\x12\x17\n\x0fover_ask_factor\x18\x05 \x01(\x02\x12\x15\n\roddins_labels\x18\x06 \x03(\t\x12\x16\n\x0e\x63lients_labels\x18\x07 \x03(\tB\x1d\n\rcom.oddin.otsZ\x0coddin.gg/otsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +38,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BETTORSREQUEST']._serialized_end=167
   _globals['_BETTORSRESPONSE']._serialized_start=169
   _globals['_BETTORSRESPONSE']._serialized_end=268
-  _globals['_BETTOR']._serialized_start=271
-  _globals['_BETTOR']._serialized_end=441
+  _globals['_BETTORUPSERTREQUEST']._serialized_start=271
+  _globals['_BETTORUPSERTREQUEST']._serialized_end=507
+  _globals['_BETTORUPSERTREQUEST_LABELS']._serialized_start=431
+  _globals['_BETTORUPSERTREQUEST_LABELS']._serialized_end=455
+  _globals['_BETTORUPSERTRESPONSE']._serialized_start=509
+  _globals['_BETTORUPSERTRESPONSE']._serialized_end=560
+  _globals['_AVAILABLEBETTORLABELSREQUEST']._serialized_start=562
+  _globals['_AVAILABLEBETTORLABELSREQUEST']._serialized_end=592
+  _globals['_AVAILABLEBETTORLABELSRESPONSE']._serialized_start=594
+  _globals['_AVAILABLEBETTORLABELSRESPONSE']._serialized_end=641
+  _globals['_BETTOR']._serialized_start=644
+  _globals['_BETTOR']._serialized_end=814
 # @@protoc_insertion_point(module_scope)
