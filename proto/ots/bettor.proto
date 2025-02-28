@@ -21,6 +21,28 @@ message BettorsResponse {
   }
 }
 
+message BettorUpsertRequest {
+  message NewLabelSet {
+    repeated string labels = 1;
+  }
+  // Unique bettor id from operator’s system.
+  string id = 1;
+  optional float bos = 2;
+  optional float over_ask_factor = 3;
+  optional NewLabelSet labels = 4;
+  optional string nickname = 5;
+}
+
+message BettorUpsertResponse {
+  Bettor bettor = 1;
+}
+
+message BettorLabelsRequest {}
+
+message BettorLabelsResponse {
+  repeated string labels = 1;
+}
+
 message Bettor {
   // Unique bettor id from Oddin.gg system.
   string id = 1;
