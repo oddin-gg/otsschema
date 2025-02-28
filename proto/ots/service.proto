@@ -26,4 +26,6 @@ service ots {
     option deprecated = true;
   };
   rpc Bettors(BettorsRequest) returns (stream BettorsResponse);
+  rpc BettorUpsert(BettorUpsertRequest) returns (BettorUpsertResponse);
+  rpc AvailableBettorLabels(AvailableBettorLabelsRequest) returns (AvailableBettorLabelsResponse);
 }

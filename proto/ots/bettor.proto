@@ -21,6 +21,43 @@ message BettorsResponse {
   }
 }
 
+message BettorUpsertRequest {
+  message Labels {
+    repeated string values = 1;
+  }
+
+  // Unique bettor id from operator’s system.
+  string id = 1;
+
+  //  Property bos and over_ask_factor has this specific constraints.
+  // - If properties are not defined, no change happen.
+  // - BOS can have values between 0 and 1 (inclusive).
+  // - OverAskFactor can have values between 1 and 10 (inclusive).
+  // - Only one property (BOS or OverAskFactor) can be of value other than 1.
+  // - If one property pass value other than 1, the other one is automatically set to a value of 1.
+  optional float bos = 2;
+  optional float over_ask_factor = 3;
+
+  // Labels property definition.
+  // - If labels property is not defined, no change happen.
+  // - If labels property is provided, it updates the current labels.
+  // - If labels property is empty list, all labels are removed.
+  optional Labels labels = 4;
+
+  // If nickname is not defined, no change happen.
+  optional string nickname = 5;
+}
+
+message BettorUpsertResponse {
+  Bettor bettor = 1;
+}
+
+message AvailableBettorLabelsRequest {}
+
+message AvailableBettorLabelsResponse {
+  repeated string labels = 1;
+}
+
 message Bettor {
   // Unique bettor id from Oddin.gg system.
   string id = 1;

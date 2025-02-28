@@ -1631,6 +1631,3641 @@ public final class BettorOuterClass {
 
   }
 
+  public interface BettorUpsertRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.BettorUpsertRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Unique bettor id from operator’s system.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * Unique bettor id from operator’s system.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     *  Property bos and over_ask_factor has this specific constraints.
+     * - If properties are not defined, no change happen.
+     * - BOS can have values between 0 and 1 (inclusive).
+     * - OverAskFactor can have values between 1 and 10 (inclusive).
+     * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+     * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+     * </pre>
+     *
+     * <code>optional float bos = 2;</code>
+     * @return Whether the bos field is set.
+     */
+    boolean hasBos();
+    /**
+     * <pre>
+     *  Property bos and over_ask_factor has this specific constraints.
+     * - If properties are not defined, no change happen.
+     * - BOS can have values between 0 and 1 (inclusive).
+     * - OverAskFactor can have values between 1 and 10 (inclusive).
+     * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+     * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+     * </pre>
+     *
+     * <code>optional float bos = 2;</code>
+     * @return The bos.
+     */
+    float getBos();
+
+    /**
+     * <code>optional float over_ask_factor = 3;</code>
+     * @return Whether the overAskFactor field is set.
+     */
+    boolean hasOverAskFactor();
+    /**
+     * <code>optional float over_ask_factor = 3;</code>
+     * @return The overAskFactor.
+     */
+    float getOverAskFactor();
+
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     * @return Whether the labels field is set.
+     */
+    boolean hasLabels();
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     * @return The labels.
+     */
+    com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getLabels();
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     */
+    com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder getLabelsOrBuilder();
+
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return Whether the nickname field is set.
+     */
+    boolean hasNickname();
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return The nickname.
+     */
+    java.lang.String getNickname();
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return The bytes for nickname.
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+  }
+  /**
+   * Protobuf type {@code ots.BettorUpsertRequest}
+   */
+  public static final class BettorUpsertRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.BettorUpsertRequest)
+      BettorUpsertRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BettorUpsertRequest.newBuilder() to construct.
+    private BettorUpsertRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BettorUpsertRequest() {
+      id_ = "";
+      nickname_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BettorUpsertRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.BettorOuterClass.BettorUpsertRequest.class, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Builder.class);
+    }
+
+    public interface LabelsOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:ots.BettorUpsertRequest.Labels)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return A list containing the values.
+       */
+      java.util.List<java.lang.String>
+          getValuesList();
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return The count of values.
+       */
+      int getValuesCount();
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      java.lang.String getValues(int index);
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      com.google.protobuf.ByteString
+          getValuesBytes(int index);
+    }
+    /**
+     * Protobuf type {@code ots.BettorUpsertRequest.Labels}
+     */
+    public static final class Labels extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:ots.BettorUpsertRequest.Labels)
+        LabelsOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Labels.newBuilder() to construct.
+      private Labels(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Labels() {
+        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Labels();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_Labels_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_Labels_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.class, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder.class);
+      }
+
+      public static final int VALUES_FIELD_NUMBER = 1;
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringList values_;
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return A list containing the values.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getValuesList() {
+        return values_;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < values_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < values_.size(); i++) {
+            dataSize += computeStringSizeNoTag(values_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getValuesList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels)) {
+          return super.equals(obj);
+        }
+        com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels other = (com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels) obj;
+
+        if (!getValuesList()
+            .equals(other.getValuesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getValuesCount() > 0) {
+          hash = (37 * hash) + VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getValuesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code ots.BettorUpsertRequest.Labels}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:ots.BettorUpsertRequest.Labels)
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_Labels_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_Labels_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.class, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder.class);
+        }
+
+        // Construct using com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_Labels_descriptor;
+        }
+
+        @java.lang.Override
+        public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getDefaultInstanceForType() {
+          return com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels build() {
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels buildPartial() {
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels result = new com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            values_ = values_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.values_ = values_;
+        }
+
+        private void buildPartial0(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels) {
+            return mergeFrom((com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels other) {
+          if (other == com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance()) return this;
+          if (!other.values_.isEmpty()) {
+            if (values_.isEmpty()) {
+              values_ = other.values_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureValuesIsMutable();
+              values_.addAll(other.values_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureValuesIsMutable();
+                  values_.add(s);
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringList values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureValuesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            values_ = new com.google.protobuf.LazyStringArrayList(values_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @return A list containing the values.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getValuesList() {
+          return values_.getUnmodifiableView();
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public java.lang.String getValues(int index) {
+          return values_.get(index);
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getValuesBytes(int index) {
+          return values_.getByteString(index);
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param index The index to set the value at.
+         * @param value The values to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValues(
+            int index, java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          ensureValuesIsMutable();
+          values_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param value The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValues(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          ensureValuesIsMutable();
+          values_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param values The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllValues(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, values_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearValues() {
+          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string values = 1;</code>
+         * @param value The bytes of the values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValuesBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          ensureValuesIsMutable();
+          values_.add(value);
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:ots.BettorUpsertRequest.Labels)
+      }
+
+      // @@protoc_insertion_point(class_scope:ots.BettorUpsertRequest.Labels)
+      private static final com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels();
+      }
+
+      public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Labels>
+          PARSER = new com.google.protobuf.AbstractParser<Labels>() {
+        @java.lang.Override
+        public Labels parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<Labels> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Labels> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * Unique bettor id from operator’s system.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unique bettor id from operator’s system.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOS_FIELD_NUMBER = 2;
+    private float bos_ = 0F;
+    /**
+     * <pre>
+     *  Property bos and over_ask_factor has this specific constraints.
+     * - If properties are not defined, no change happen.
+     * - BOS can have values between 0 and 1 (inclusive).
+     * - OverAskFactor can have values between 1 and 10 (inclusive).
+     * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+     * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+     * </pre>
+     *
+     * <code>optional float bos = 2;</code>
+     * @return Whether the bos field is set.
+     */
+    @java.lang.Override
+    public boolean hasBos() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     *  Property bos and over_ask_factor has this specific constraints.
+     * - If properties are not defined, no change happen.
+     * - BOS can have values between 0 and 1 (inclusive).
+     * - OverAskFactor can have values between 1 and 10 (inclusive).
+     * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+     * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+     * </pre>
+     *
+     * <code>optional float bos = 2;</code>
+     * @return The bos.
+     */
+    @java.lang.Override
+    public float getBos() {
+      return bos_;
+    }
+
+    public static final int OVER_ASK_FACTOR_FIELD_NUMBER = 3;
+    private float overAskFactor_ = 0F;
+    /**
+     * <code>optional float over_ask_factor = 3;</code>
+     * @return Whether the overAskFactor field is set.
+     */
+    @java.lang.Override
+    public boolean hasOverAskFactor() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional float over_ask_factor = 3;</code>
+     * @return The overAskFactor.
+     */
+    @java.lang.Override
+    public float getOverAskFactor() {
+      return overAskFactor_;
+    }
+
+    public static final int LABELS_FIELD_NUMBER = 4;
+    private com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels labels_;
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     * @return Whether the labels field is set.
+     */
+    @java.lang.Override
+    public boolean hasLabels() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     * @return The labels.
+     */
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getLabels() {
+      return labels_ == null ? com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance() : labels_;
+    }
+    /**
+     * <pre>
+     * Labels property definition.
+     * - If labels property is not defined, no change happen.
+     * - If labels property is provided, it updates the current labels.
+     * - If labels property is empty list, all labels are removed.
+     * </pre>
+     *
+     * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder getLabelsOrBuilder() {
+      return labels_ == null ? com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance() : labels_;
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickname_ = "";
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return Whether the nickname field is set.
+     */
+    @java.lang.Override
+    public boolean hasNickname() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return The nickname.
+     */
+    @java.lang.Override
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nickname_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If nickname is not defined, no change happen.
+     * </pre>
+     *
+     * <code>optional string nickname = 5;</code>
+     * @return The bytes for nickname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeFloat(2, bos_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeFloat(3, overAskFactor_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getLabels());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nickname_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, bos_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, overAskFactor_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getLabels());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nickname_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.BettorOuterClass.BettorUpsertRequest)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.BettorOuterClass.BettorUpsertRequest other = (com.oddin.ots.BettorOuterClass.BettorUpsertRequest) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (hasBos() != other.hasBos()) return false;
+      if (hasBos()) {
+        if (java.lang.Float.floatToIntBits(getBos())
+            != java.lang.Float.floatToIntBits(
+                other.getBos())) return false;
+      }
+      if (hasOverAskFactor() != other.hasOverAskFactor()) return false;
+      if (hasOverAskFactor()) {
+        if (java.lang.Float.floatToIntBits(getOverAskFactor())
+            != java.lang.Float.floatToIntBits(
+                other.getOverAskFactor())) return false;
+      }
+      if (hasLabels() != other.hasLabels()) return false;
+      if (hasLabels()) {
+        if (!getLabels()
+            .equals(other.getLabels())) return false;
+      }
+      if (hasNickname() != other.hasNickname()) return false;
+      if (hasNickname()) {
+        if (!getNickname()
+            .equals(other.getNickname())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      if (hasBos()) {
+        hash = (37 * hash) + BOS_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getBos());
+      }
+      if (hasOverAskFactor()) {
+        hash = (37 * hash) + OVER_ASK_FACTOR_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getOverAskFactor());
+      }
+      if (hasLabels()) {
+        hash = (37 * hash) + LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + getLabels().hashCode();
+      }
+      if (hasNickname()) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickname().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.BettorOuterClass.BettorUpsertRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.BettorUpsertRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.BettorUpsertRequest)
+        com.oddin.ots.BettorOuterClass.BettorUpsertRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.BettorOuterClass.BettorUpsertRequest.class, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.BettorOuterClass.BettorUpsertRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLabelsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        bos_ = 0F;
+        overAskFactor_ = 0F;
+        labels_ = null;
+        if (labelsBuilder_ != null) {
+          labelsBuilder_.dispose();
+          labelsBuilder_ = null;
+        }
+        nickname_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest getDefaultInstanceForType() {
+        return com.oddin.ots.BettorOuterClass.BettorUpsertRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest build() {
+        com.oddin.ots.BettorOuterClass.BettorUpsertRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest buildPartial() {
+        com.oddin.ots.BettorOuterClass.BettorUpsertRequest result = new com.oddin.ots.BettorOuterClass.BettorUpsertRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.oddin.ots.BettorOuterClass.BettorUpsertRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bos_ = bos_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.overAskFactor_ = overAskFactor_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.labels_ = labelsBuilder_ == null
+              ? labels_
+              : labelsBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.nickname_ = nickname_;
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.BettorOuterClass.BettorUpsertRequest) {
+          return mergeFrom((com.oddin.ots.BettorOuterClass.BettorUpsertRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.BettorOuterClass.BettorUpsertRequest other) {
+        if (other == com.oddin.ots.BettorOuterClass.BettorUpsertRequest.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasBos()) {
+          setBos(other.getBos());
+        }
+        if (other.hasOverAskFactor()) {
+          setOverAskFactor(other.getOverAskFactor());
+        }
+        if (other.hasLabels()) {
+          mergeLabels(other.getLabels());
+        }
+        if (other.hasNickname()) {
+          nickname_ = other.nickname_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 21: {
+                bos_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              case 29: {
+                overAskFactor_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 34: {
+                input.readMessage(
+                    getLabelsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                nickname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * Unique bettor id from operator’s system.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique bettor id from operator’s system.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique bettor id from operator’s system.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique bettor id from operator’s system.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique bettor id from operator’s system.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private float bos_ ;
+      /**
+       * <pre>
+       *  Property bos and over_ask_factor has this specific constraints.
+       * - If properties are not defined, no change happen.
+       * - BOS can have values between 0 and 1 (inclusive).
+       * - OverAskFactor can have values between 1 and 10 (inclusive).
+       * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+       * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+       * </pre>
+       *
+       * <code>optional float bos = 2;</code>
+       * @return Whether the bos field is set.
+       */
+      @java.lang.Override
+      public boolean hasBos() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       *  Property bos and over_ask_factor has this specific constraints.
+       * - If properties are not defined, no change happen.
+       * - BOS can have values between 0 and 1 (inclusive).
+       * - OverAskFactor can have values between 1 and 10 (inclusive).
+       * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+       * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+       * </pre>
+       *
+       * <code>optional float bos = 2;</code>
+       * @return The bos.
+       */
+      @java.lang.Override
+      public float getBos() {
+        return bos_;
+      }
+      /**
+       * <pre>
+       *  Property bos and over_ask_factor has this specific constraints.
+       * - If properties are not defined, no change happen.
+       * - BOS can have values between 0 and 1 (inclusive).
+       * - OverAskFactor can have values between 1 and 10 (inclusive).
+       * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+       * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+       * </pre>
+       *
+       * <code>optional float bos = 2;</code>
+       * @param value The bos to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBos(float value) {
+        
+        bos_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Property bos and over_ask_factor has this specific constraints.
+       * - If properties are not defined, no change happen.
+       * - BOS can have values between 0 and 1 (inclusive).
+       * - OverAskFactor can have values between 1 and 10 (inclusive).
+       * - Only one property (BOS or OverAskFactor) can be of value other than 1.
+       * - If one property pass value other than 1, the other one is automatically set to a value of 1.
+       * </pre>
+       *
+       * <code>optional float bos = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBos() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bos_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float overAskFactor_ ;
+      /**
+       * <code>optional float over_ask_factor = 3;</code>
+       * @return Whether the overAskFactor field is set.
+       */
+      @java.lang.Override
+      public boolean hasOverAskFactor() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional float over_ask_factor = 3;</code>
+       * @return The overAskFactor.
+       */
+      @java.lang.Override
+      public float getOverAskFactor() {
+        return overAskFactor_;
+      }
+      /**
+       * <code>optional float over_ask_factor = 3;</code>
+       * @param value The overAskFactor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverAskFactor(float value) {
+        
+        overAskFactor_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float over_ask_factor = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOverAskFactor() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        overAskFactor_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels labels_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder> labelsBuilder_;
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       * @return Whether the labels field is set.
+       */
+      public boolean hasLabels() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       * @return The labels.
+       */
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels getLabels() {
+        if (labelsBuilder_ == null) {
+          return labels_ == null ? com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance() : labels_;
+        } else {
+          return labelsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public Builder setLabels(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels value) {
+        if (labelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          labels_ = value;
+        } else {
+          labelsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public Builder setLabels(
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder builderForValue) {
+        if (labelsBuilder_ == null) {
+          labels_ = builderForValue.build();
+        } else {
+          labelsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public Builder mergeLabels(com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels value) {
+        if (labelsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            labels_ != null &&
+            labels_ != com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance()) {
+            getLabelsBuilder().mergeFrom(value);
+          } else {
+            labels_ = value;
+          }
+        } else {
+          labelsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public Builder clearLabels() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        labels_ = null;
+        if (labelsBuilder_ != null) {
+          labelsBuilder_.dispose();
+          labelsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder getLabelsBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getLabelsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      public com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder getLabelsOrBuilder() {
+        if (labelsBuilder_ != null) {
+          return labelsBuilder_.getMessageOrBuilder();
+        } else {
+          return labels_ == null ?
+              com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.getDefaultInstance() : labels_;
+        }
+      }
+      /**
+       * <pre>
+       * Labels property definition.
+       * - If labels property is not defined, no change happen.
+       * - If labels property is provided, it updates the current labels.
+       * - If labels property is empty list, all labels are removed.
+       * </pre>
+       *
+       * <code>optional .ots.BettorUpsertRequest.Labels labels = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder> 
+          getLabelsFieldBuilder() {
+        if (labelsBuilder_ == null) {
+          labelsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.Labels.Builder, com.oddin.ots.BettorOuterClass.BettorUpsertRequest.LabelsOrBuilder>(
+                  getLabels(),
+                  getParentForChildren(),
+                  isClean());
+          labels_ = null;
+        }
+        return labelsBuilder_;
+      }
+
+      private java.lang.Object nickname_ = "";
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @return Whether the nickname field is set.
+       */
+      public boolean hasNickname() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @return The nickname.
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @return The bytes for nickname.
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @param value The nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        nickname_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickname() {
+        nickname_ = getDefaultInstance().getNickname();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If nickname is not defined, no change happen.
+       * </pre>
+       *
+       * <code>optional string nickname = 5;</code>
+       * @param value The bytes for nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        nickname_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.BettorUpsertRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.BettorUpsertRequest)
+    private static final com.oddin.ots.BettorOuterClass.BettorUpsertRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.BettorOuterClass.BettorUpsertRequest();
+    }
+
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BettorUpsertRequest>
+        PARSER = new com.google.protobuf.AbstractParser<BettorUpsertRequest>() {
+      @java.lang.Override
+      public BettorUpsertRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<BettorUpsertRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BettorUpsertRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.BettorUpsertRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BettorUpsertResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.BettorUpsertResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     * @return Whether the bettor field is set.
+     */
+    boolean hasBettor();
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     * @return The bettor.
+     */
+    com.oddin.ots.BettorOuterClass.Bettor getBettor();
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     */
+    com.oddin.ots.BettorOuterClass.BettorOrBuilder getBettorOrBuilder();
+  }
+  /**
+   * Protobuf type {@code ots.BettorUpsertResponse}
+   */
+  public static final class BettorUpsertResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.BettorUpsertResponse)
+      BettorUpsertResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BettorUpsertResponse.newBuilder() to construct.
+    private BettorUpsertResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BettorUpsertResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BettorUpsertResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.BettorOuterClass.BettorUpsertResponse.class, com.oddin.ots.BettorOuterClass.BettorUpsertResponse.Builder.class);
+    }
+
+    public static final int BETTOR_FIELD_NUMBER = 1;
+    private com.oddin.ots.BettorOuterClass.Bettor bettor_;
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     * @return Whether the bettor field is set.
+     */
+    @java.lang.Override
+    public boolean hasBettor() {
+      return bettor_ != null;
+    }
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     * @return The bettor.
+     */
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.Bettor getBettor() {
+      return bettor_ == null ? com.oddin.ots.BettorOuterClass.Bettor.getDefaultInstance() : bettor_;
+    }
+    /**
+     * <code>.ots.Bettor bettor = 1;</code>
+     */
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.BettorOrBuilder getBettorOrBuilder() {
+      return bettor_ == null ? com.oddin.ots.BettorOuterClass.Bettor.getDefaultInstance() : bettor_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (bettor_ != null) {
+        output.writeMessage(1, getBettor());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (bettor_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBettor());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.BettorOuterClass.BettorUpsertResponse)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.BettorOuterClass.BettorUpsertResponse other = (com.oddin.ots.BettorOuterClass.BettorUpsertResponse) obj;
+
+      if (hasBettor() != other.hasBettor()) return false;
+      if (hasBettor()) {
+        if (!getBettor()
+            .equals(other.getBettor())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBettor()) {
+        hash = (37 * hash) + BETTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getBettor().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.BettorOuterClass.BettorUpsertResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.BettorUpsertResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.BettorUpsertResponse)
+        com.oddin.ots.BettorOuterClass.BettorUpsertResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.BettorOuterClass.BettorUpsertResponse.class, com.oddin.ots.BettorOuterClass.BettorUpsertResponse.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.BettorOuterClass.BettorUpsertResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        bettor_ = null;
+        if (bettorBuilder_ != null) {
+          bettorBuilder_.dispose();
+          bettorBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_BettorUpsertResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertResponse getDefaultInstanceForType() {
+        return com.oddin.ots.BettorOuterClass.BettorUpsertResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertResponse build() {
+        com.oddin.ots.BettorOuterClass.BettorUpsertResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.BettorUpsertResponse buildPartial() {
+        com.oddin.ots.BettorOuterClass.BettorUpsertResponse result = new com.oddin.ots.BettorOuterClass.BettorUpsertResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.oddin.ots.BettorOuterClass.BettorUpsertResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bettor_ = bettorBuilder_ == null
+              ? bettor_
+              : bettorBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.BettorOuterClass.BettorUpsertResponse) {
+          return mergeFrom((com.oddin.ots.BettorOuterClass.BettorUpsertResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.BettorOuterClass.BettorUpsertResponse other) {
+        if (other == com.oddin.ots.BettorOuterClass.BettorUpsertResponse.getDefaultInstance()) return this;
+        if (other.hasBettor()) {
+          mergeBettor(other.getBettor());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBettorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.oddin.ots.BettorOuterClass.Bettor bettor_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.BettorOuterClass.Bettor, com.oddin.ots.BettorOuterClass.Bettor.Builder, com.oddin.ots.BettorOuterClass.BettorOrBuilder> bettorBuilder_;
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       * @return Whether the bettor field is set.
+       */
+      public boolean hasBettor() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       * @return The bettor.
+       */
+      public com.oddin.ots.BettorOuterClass.Bettor getBettor() {
+        if (bettorBuilder_ == null) {
+          return bettor_ == null ? com.oddin.ots.BettorOuterClass.Bettor.getDefaultInstance() : bettor_;
+        } else {
+          return bettorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public Builder setBettor(com.oddin.ots.BettorOuterClass.Bettor value) {
+        if (bettorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bettor_ = value;
+        } else {
+          bettorBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public Builder setBettor(
+          com.oddin.ots.BettorOuterClass.Bettor.Builder builderForValue) {
+        if (bettorBuilder_ == null) {
+          bettor_ = builderForValue.build();
+        } else {
+          bettorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public Builder mergeBettor(com.oddin.ots.BettorOuterClass.Bettor value) {
+        if (bettorBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            bettor_ != null &&
+            bettor_ != com.oddin.ots.BettorOuterClass.Bettor.getDefaultInstance()) {
+            getBettorBuilder().mergeFrom(value);
+          } else {
+            bettor_ = value;
+          }
+        } else {
+          bettorBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public Builder clearBettor() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bettor_ = null;
+        if (bettorBuilder_ != null) {
+          bettorBuilder_.dispose();
+          bettorBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public com.oddin.ots.BettorOuterClass.Bettor.Builder getBettorBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getBettorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      public com.oddin.ots.BettorOuterClass.BettorOrBuilder getBettorOrBuilder() {
+        if (bettorBuilder_ != null) {
+          return bettorBuilder_.getMessageOrBuilder();
+        } else {
+          return bettor_ == null ?
+              com.oddin.ots.BettorOuterClass.Bettor.getDefaultInstance() : bettor_;
+        }
+      }
+      /**
+       * <code>.ots.Bettor bettor = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.ots.BettorOuterClass.Bettor, com.oddin.ots.BettorOuterClass.Bettor.Builder, com.oddin.ots.BettorOuterClass.BettorOrBuilder> 
+          getBettorFieldBuilder() {
+        if (bettorBuilder_ == null) {
+          bettorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.ots.BettorOuterClass.Bettor, com.oddin.ots.BettorOuterClass.Bettor.Builder, com.oddin.ots.BettorOuterClass.BettorOrBuilder>(
+                  getBettor(),
+                  getParentForChildren(),
+                  isClean());
+          bettor_ = null;
+        }
+        return bettorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.BettorUpsertResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.BettorUpsertResponse)
+    private static final com.oddin.ots.BettorOuterClass.BettorUpsertResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.BettorOuterClass.BettorUpsertResponse();
+    }
+
+    public static com.oddin.ots.BettorOuterClass.BettorUpsertResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BettorUpsertResponse>
+        PARSER = new com.google.protobuf.AbstractParser<BettorUpsertResponse>() {
+      @java.lang.Override
+      public BettorUpsertResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<BettorUpsertResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BettorUpsertResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.BettorUpsertResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AvailableBettorLabelsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.AvailableBettorLabelsRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code ots.AvailableBettorLabelsRequest}
+   */
+  public static final class AvailableBettorLabelsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.AvailableBettorLabelsRequest)
+      AvailableBettorLabelsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AvailableBettorLabelsRequest.newBuilder() to construct.
+    private AvailableBettorLabelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AvailableBettorLabelsRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AvailableBettorLabelsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.class, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest other = (com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.AvailableBettorLabelsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.AvailableBettorLabelsRequest)
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.class, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest getDefaultInstanceForType() {
+        return com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest build() {
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest buildPartial() {
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest result = new com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest) {
+          return mergeFrom((com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest other) {
+        if (other == com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.AvailableBettorLabelsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.AvailableBettorLabelsRequest)
+    private static final com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest();
+    }
+
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AvailableBettorLabelsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AvailableBettorLabelsRequest>() {
+      @java.lang.Override
+      public AvailableBettorLabelsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AvailableBettorLabelsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AvailableBettorLabelsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AvailableBettorLabelsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ots.AvailableBettorLabelsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @return A list containing the labels.
+     */
+    java.util.List<java.lang.String>
+        getLabelsList();
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @return The count of labels.
+     */
+    int getLabelsCount();
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @param index The index of the element to return.
+     * @return The labels at the given index.
+     */
+    java.lang.String getLabels(int index);
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the labels at the given index.
+     */
+    com.google.protobuf.ByteString
+        getLabelsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code ots.AvailableBettorLabelsResponse}
+   */
+  public static final class AvailableBettorLabelsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ots.AvailableBettorLabelsResponse)
+      AvailableBettorLabelsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AvailableBettorLabelsResponse.newBuilder() to construct.
+    private AvailableBettorLabelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AvailableBettorLabelsResponse() {
+      labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AvailableBettorLabelsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.class, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.Builder.class);
+    }
+
+    public static final int LABELS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList labels_;
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @return A list containing the labels.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLabelsList() {
+      return labels_;
+    }
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @return The count of labels.
+     */
+    public int getLabelsCount() {
+      return labels_.size();
+    }
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @param index The index of the element to return.
+     * @return The labels at the given index.
+     */
+    public java.lang.String getLabels(int index) {
+      return labels_.get(index);
+    }
+    /**
+     * <code>repeated string labels = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the labels at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLabelsBytes(int index) {
+      return labels_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < labels_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, labels_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < labels_.size(); i++) {
+          dataSize += computeStringSizeNoTag(labels_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getLabelsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse)) {
+        return super.equals(obj);
+      }
+      com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse other = (com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse) obj;
+
+      if (!getLabelsList()
+          .equals(other.getLabelsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getLabelsCount() > 0) {
+        hash = (37 * hash) + LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + getLabelsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ots.AvailableBettorLabelsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ots.AvailableBettorLabelsResponse)
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.class, com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.Builder.class);
+      }
+
+      // Construct using com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.oddin.ots.BettorOuterClass.internal_static_ots_AvailableBettorLabelsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse getDefaultInstanceForType() {
+        return com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse build() {
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse buildPartial() {
+        com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse result = new com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse result) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          labels_ = labels_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.labels_ = labels_;
+      }
+
+      private void buildPartial0(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse) {
+          return mergeFrom((com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse other) {
+        if (other == com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse.getDefaultInstance()) return this;
+        if (!other.labels_.isEmpty()) {
+          if (labels_.isEmpty()) {
+            labels_ = other.labels_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureLabelsIsMutable();
+            labels_.addAll(other.labels_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLabelsIsMutable();
+                labels_.add(s);
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureLabelsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @return A list containing the labels.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getLabelsList() {
+        return labels_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @return The count of labels.
+       */
+      public int getLabelsCount() {
+        return labels_.size();
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param index The index of the element to return.
+       * @return The labels at the given index.
+       */
+      public java.lang.String getLabels(int index) {
+        return labels_.get(index);
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the labels at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getLabelsBytes(int index) {
+        return labels_.getByteString(index);
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The labels to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabels(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureLabelsIsMutable();
+        labels_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param value The labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLabels(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureLabelsIsMutable();
+        labels_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param values The labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllLabels(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, labels_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLabels() {
+        labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string labels = 1;</code>
+       * @param value The bytes of the labels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLabelsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureLabelsIsMutable();
+        labels_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ots.AvailableBettorLabelsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ots.AvailableBettorLabelsResponse)
+    private static final com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse();
+    }
+
+    public static com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AvailableBettorLabelsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AvailableBettorLabelsResponse>() {
+      @java.lang.Override
+      public AvailableBettorLabelsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AvailableBettorLabelsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AvailableBettorLabelsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.oddin.ots.BettorOuterClass.AvailableBettorLabelsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BettorOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ots.Bettor)
       com.google.protobuf.MessageOrBuilder {
@@ -3177,6 +6812,31 @@ public final class BettorOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ots_BettorsResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_BettorUpsertRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_BettorUpsertRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_BettorUpsertRequest_Labels_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_BettorUpsertRequest_Labels_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_BettorUpsertResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_BettorUpsertResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_AvailableBettorLabelsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_AvailableBettorLabelsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ots_AvailableBettorLabelsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ots_AvailableBettorLabelsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ots_Bettor_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3196,12 +6856,22 @@ public final class BettorOuterClass {
       "oogle.protobuf.TimestampH\000\210\001\001B\020\n\016_recove" +
       "r_since\"c\n\017BettorsResponse\022\035\n\006bettor\030\001 \001" +
       "(\0132\013.ots.BettorH\000\022)\n\tkeepalive\030\002 \001(\0132\024.o" +
-      "ts.StreamKeepaliveH\000B\006\n\004data\"\252\001\n\006Bettor\022" +
-      "\n\n\002id\030\001 \001(\t\022\016\n\006ext_id\030\002 \001(\t\022/\n\013modified_" +
-      "at\030\003 \001(\0132\032.google.protobuf.Timestamp\022\013\n\003" +
-      "bos\030\004 \001(\002\022\027\n\017over_ask_factor\030\005 \001(\002\022\025\n\rod" +
-      "dins_labels\030\006 \003(\t\022\026\n\016clients_labels\030\007 \003(" +
-      "\tB\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
+      "ts.StreamKeepaliveH\000B\006\n\004data\"\354\001\n\023BettorU" +
+      "psertRequest\022\n\n\002id\030\001 \001(\t\022\020\n\003bos\030\002 \001(\002H\000\210" +
+      "\001\001\022\034\n\017over_ask_factor\030\003 \001(\002H\001\210\001\001\0224\n\006labe" +
+      "ls\030\004 \001(\0132\037.ots.BettorUpsertRequest.Label" +
+      "sH\002\210\001\001\022\025\n\010nickname\030\005 \001(\tH\003\210\001\001\032\030\n\006Labels\022" +
+      "\016\n\006values\030\001 \003(\tB\006\n\004_bosB\022\n\020_over_ask_fac" +
+      "torB\t\n\007_labelsB\013\n\t_nickname\"3\n\024BettorUps" +
+      "ertResponse\022\033\n\006bettor\030\001 \001(\0132\013.ots.Bettor" +
+      "\"\036\n\034AvailableBettorLabelsRequest\"/\n\035Avai" +
+      "lableBettorLabelsResponse\022\016\n\006labels\030\001 \003(" +
+      "\t\"\252\001\n\006Bettor\022\n\n\002id\030\001 \001(\t\022\016\n\006ext_id\030\002 \001(\t" +
+      "\022/\n\013modified_at\030\003 \001(\0132\032.google.protobuf." +
+      "Timestamp\022\013\n\003bos\030\004 \001(\002\022\027\n\017over_ask_facto" +
+      "r\030\005 \001(\002\022\025\n\roddins_labels\030\006 \003(\t\022\026\n\016client" +
+      "s_labels\030\007 \003(\tB\035\n\rcom.oddin.otsZ\014oddin.g" +
+      "g/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3221,8 +6891,38 @@ public final class BettorOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_BettorsResponse_descriptor,
         new java.lang.String[] { "Bettor", "Keepalive", "Data", });
-    internal_static_ots_Bettor_descriptor =
+    internal_static_ots_BettorUpsertRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_ots_BettorUpsertRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_BettorUpsertRequest_descriptor,
+        new java.lang.String[] { "Id", "Bos", "OverAskFactor", "Labels", "Nickname", "Bos", "OverAskFactor", "Labels", "Nickname", });
+    internal_static_ots_BettorUpsertRequest_Labels_descriptor =
+      internal_static_ots_BettorUpsertRequest_descriptor.getNestedTypes().get(0);
+    internal_static_ots_BettorUpsertRequest_Labels_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_BettorUpsertRequest_Labels_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_ots_BettorUpsertResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_ots_BettorUpsertResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_BettorUpsertResponse_descriptor,
+        new java.lang.String[] { "Bettor", });
+    internal_static_ots_AvailableBettorLabelsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_ots_AvailableBettorLabelsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_AvailableBettorLabelsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_ots_AvailableBettorLabelsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_ots_AvailableBettorLabelsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ots_AvailableBettorLabelsResponse_descriptor,
+        new java.lang.String[] { "Labels", });
+    internal_static_ots_Bettor_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_ots_Bettor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_Bettor_descriptor,

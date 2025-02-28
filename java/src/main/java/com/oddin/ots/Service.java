@@ -28,7 +28,7 @@ public final class Service {
       "proto\032\033ots/player_risk_score.proto\032*ots/" +
       "resolve_foreign_events_in_ticket.proto\032\024" +
       "ots/ticket_ack.proto\032\032ots/ticket_max_sta" +
-      "ke.proto\032\027ots/ticket_result.proto2\322\004\n\003ot" +
+      "ke.proto\032\027ots/ticket_result.proto2\367\005\n\003ot" +
       "s\0225\n\006Ticket\022\022.ots.TicketRequest\032\023.ots.Ti" +
       "cketResponse(\0010\001\022t\n\035ResolveForeignMatche" +
       "sInTicket\022(.ots.ResolveForeignEventsInTi" +
@@ -43,8 +43,12 @@ public final class Service {
       "ltResponse(\0010\001\022N\n\016TicketMaxStake\022\032.ots.T" +
       "icketMaxStakeRequest\032\033.ots.TicketMaxStak" +
       "eResponse\"\003\210\002\001\0226\n\007Bettors\022\023.ots.BettorsR" +
-      "equest\032\024.ots.BettorsResponse0\001B\035\n\rcom.od" +
-      "din.otsZ\014oddin.gg/otsb\006proto3"
+      "equest\032\024.ots.BettorsResponse0\001\022C\n\014Bettor" +
+      "Upsert\022\030.ots.BettorUpsertRequest\032\031.ots.B" +
+      "ettorUpsertResponse\022^\n\025AvailableBettorLa" +
+      "bels\022!.ots.AvailableBettorLabelsRequest\032" +
+      "\".ots.AvailableBettorLabelsResponseB\035\n\rc" +
+      "om.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
