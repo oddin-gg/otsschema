@@ -24,7 +24,6 @@ vendor/
 /node_modules
 /venv
 
-protoc-gen-grpc-java
 */.gradle
 */build
 java/ots_schema.jar

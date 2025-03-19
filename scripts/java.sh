@@ -9,6 +9,6 @@ protoc ./proto/ots/*.proto ./proto/ots/*/*.proto -I ./proto --plugin=protoc-gen-
 cd ./java &&
 ./gradlew clean jar &&
 cd .. &&
-cp ./java/build/libs/ots_schema.jar ./java
+cp ./java/build/libs/ots.jar ./java/ots_schema.jar
 
 echo "JAVA DONE"

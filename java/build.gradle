@@ -1,14 +1,11 @@
 plugins {
     id 'java'
     id 'java-library'
-    id 'com.palantir.git-version' version '0.12.2'
     id 'maven-publish'
     id 'com.google.protobuf' version '0.9.1'
 }
 
-
-def gitVersionDetails = versionDetails()
-version gitVersionDetails.lastTag.replace('v', '')
+version System.getenv("APP_VERSION")
 
 group 'com.oddin.ots'
 
@@ -23,9 +20,13 @@ java {
     withSourcesJar()
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.21.7"
+        artifact = 'com.google.protobuf:protoc:3.21.7'
     }
     plugins {
         grpc {
