@@ -4,6 +4,7 @@ echo "GENERATING PYTHON"
 
 PACKAGE_NAME=ots_schema
 PYTHON_PATH=./python
+OWNER_GROUP=$(ls -ld ./python/ots | awk '{print $3 ":" $4}')
 DEF=proto
 
 rm -rf ${PYTHON_PATH}/*
@@ -45,5 +46,6 @@ done
 
 echo "deactivating venv"
 deactivate
+chown -R $OWNER_GROUP ./python
 
 echo "PYTHON DONE"

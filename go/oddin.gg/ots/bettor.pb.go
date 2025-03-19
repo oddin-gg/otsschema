@@ -76,6 +76,7 @@ type BettorsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*BettorsResponse_Bettor
 	//	*BettorsResponse_Keepalive
 	Data isBettorsResponse_Data `protobuf_oneof:"data"`
@@ -157,7 +158,8 @@ type BettorUpsertRequest struct {
 
 	// Unique bettor id from operator’s system.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	//  Property bos and over_ask_factor has this specific constraints.
+	//	Property bos and over_ask_factor has this specific constraints.
+	//
 	// - If properties are not defined, no change happen.
 	// - BOS can have values between 0 and 1 (inclusive).
 	// - OverAskFactor can have values between 1 and 10 (inclusive).

@@ -244,6 +244,7 @@ type TicketRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*TicketRequest_Ticket
 	//	*TicketRequest_Keepalive
 	//	*TicketRequest_Cashout
@@ -352,6 +353,7 @@ type TicketResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*TicketResponse_State
 	//	*TicketResponse_Keepalive
 	//	*TicketResponse_Cashout
@@ -732,11 +734,11 @@ func (x *Ticket) GetMetadata() map[string]string {
 }
 
 // TicketSelection represents the selection of a ticket. We have two types of selections.
-// * Regular selection - represents the selection of one market and it is associated with one odds number.
-// * Oddin Bet Builder (OBB) selection - represents a special set of multiple (at least 2) selections. Because those
-//   particular selections have no associated odds (only the whole set of selections has associated one odd) we introduce
-//   OBB selection type which consists of one odds number, a set of OBB sub-selections (with no associated odds), and one
-//   OBB session id which is a unique identification of the set of OBB sub-selections and its odds in time.
+//   - Regular selection - represents the selection of one market and it is associated with one odds number.
+//   - Oddin Bet Builder (OBB) selection - represents a special set of multiple (at least 2) selections. Because those
+//     particular selections have no associated odds (only the whole set of selections has associated one odd) we introduce
+//     OBB selection type which consists of one odds number, a set of OBB sub-selections (with no associated odds), and one
+//     OBB session id which is a unique identification of the set of OBB sub-selections and its odds in time.
 type TicketSelection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -977,7 +979,7 @@ type Bet struct {
 	TotalWins *wrapperspb.UInt64Value `protobuf:"bytes,5,opt,name=total_wins,json=totalWins,proto3" json:"total_wins,omitempty"`
 	// Array of all the systems in the bet ([0] is not allowed, use [fold] instead).
 	Systems []uint32 `protobuf:"varint,6,rep,packed,name=systems,proto3" json:"systems,omitempty"`
-	//  Array of selections which form this bet, if omitted all selections are used.
+	// Array of selections which form this bet, if omitted all selections are used.
 	Selections []*BetSelection `protobuf:"bytes,7,rep,name=selections,proto3" json:"selections,omitempty"`
 }
 

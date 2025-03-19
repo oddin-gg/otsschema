@@ -11,7 +11,6 @@ import (
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-// Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
 // OtsClient is the client API for Ots service.
@@ -40,7 +39,7 @@ func NewOtsClient(cc grpc.ClientConnInterface) OtsClient {
 }
 
 func (c *otsClient) Ticket(ctx context.Context, opts ...grpc.CallOption) (Ots_TicketClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Ots_ServiceDesc.Streams[0], "/ots.ots/Ticket", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Ots_serviceDesc.Streams[0], "/ots.ots/Ticket", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +106,7 @@ func (c *otsClient) TicketAck(ctx context.Context, in *TicketAckRequest, opts ..
 }
 
 func (c *otsClient) TicketResult(ctx context.Context, opts ...grpc.CallOption) (Ots_TicketResultClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Ots_ServiceDesc.Streams[1], "/ots.ots/TicketResult", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Ots_serviceDesc.Streams[1], "/ots.ots/TicketResult", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -148,7 +147,7 @@ func (c *otsClient) TicketMaxStake(ctx context.Context, in *TicketMaxStakeReques
 }
 
 func (c *otsClient) Bettors(ctx context.Context, in *BettorsRequest, opts ...grpc.CallOption) (Ots_BettorsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Ots_ServiceDesc.Streams[2], "/ots.ots/Bettors", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Ots_serviceDesc.Streams[2], "/ots.ots/Bettors", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -258,8 +257,8 @@ type UnsafeOtsServer interface {
 	mustEmbedUnimplementedOtsServer()
 }
 
-func RegisterOtsServer(s grpc.ServiceRegistrar, srv OtsServer) {
-	s.RegisterService(&Ots_ServiceDesc, srv)
+func RegisterOtsServer(s *grpc.Server, srv OtsServer) {
+	s.RegisterService(&_Ots_serviceDesc, srv)
 }
 
 func _Ots_Ticket_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -461,10 +460,7 @@ func _Ots_AvailableBettorLabels_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-// Ots_ServiceDesc is the grpc.ServiceDesc for Ots service.
-// It's only intended for direct use with grpc.RegisterService,
-// and not to be introspected or modified (even as a copy)
-var Ots_ServiceDesc = grpc.ServiceDesc{
+var _Ots_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "ots.ots",
 	HandlerType: (*OtsServer)(nil),
 	Methods: []grpc.MethodDesc{
