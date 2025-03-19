@@ -2,3 +2,4 @@ google
 googleapis-common-protos
 grpcio
 grpcio-tools
+protobuf==5.27.2

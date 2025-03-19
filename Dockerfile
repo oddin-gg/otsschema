@@ -1,8 +1,8 @@
 # Start with a Go base image
 FROM golang:1.23
 
-ARG PROTOC_GEN_GO_VERSION="v1.36.3"
-ARG PROTOC_GEN_GO_GRPC_VERSION="v1.5.1"
+ARG PROTOC_GEN_GO_VERSION="v1.27.1"
+ARG PROTOC_GEN_GO_GRPC_VERSION="v1.0.0"
 ARG PROTOC_GEN_GO_VTPROTO_VERSION="79df5c4"
 ARG NPM_VERSION="11"
 ARG OPEN_JDK_VERSION="17"
@@ -14,6 +14,14 @@ RUN apt-get update && \
     curl -fsSL https://deb.nodesource.com/setup_${NODE_JS_VERSION}.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g npm@${NPM_VERSION}
+
+# Install protoc-gen-grpc-java
+RUN wget https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-osx-x86_64.exe && \
+    chmod +x protoc-gen-grpc-java-1.54.0-linux-x86_64 && \
+    mv protoc-gen-grpc-java-1.54.0-linux-x86_64 /usr/local/bin/protoc-gen-grpc-java
+
+# Ensure the plugin is executable
+RUN chmod +x /usr/local/bin/protoc-gen-grpc-java
 
 # Install Go protobuf plugins
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@${PROTOC_GEN_GO_VERSION} && \
