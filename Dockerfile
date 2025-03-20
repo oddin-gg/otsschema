@@ -15,15 +15,6 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     npm install -g npm@${NPM_VERSION}
 
-# TODO move somewhere else
-# Install protoc-gen-grpc-java
-#RUN wget https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-osx-x86_64.exe && \
-#    chmod +x protoc-gen-grpc-java-1.54.0-linux-x86_64 && \
-#    mv protoc-gen-grpc-java-1.54.0-linux-x86_64 /usr/local/bin/protoc-gen-grpc-java
-
-# Ensure the plugin is executable
-#RUN chmod +x /usr/local/bin/protoc-gen-grpc-java
-
 # Install Go protobuf plugins
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@${PROTOC_GEN_GO_VERSION} && \
     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@${PROTOC_GEN_GO_GRPC_VERSION} && \
@@ -61,8 +52,13 @@ RUN mkdir -p go js python java
 
 # Copy all scripts to a scripts directory
 COPY scripts/ /app/scripts/
-COPY protoc-gen-grpc-java /app/
-RUN chmod a+x /app/protoc-gen-grpc-java
+
+# Install protoc-gen-grpc-java
+RUN wget https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-linux-x86_64.exe && \
+    mv protoc-gen-grpc-java-1.54.0-linux-x86_64.exe protoc-gen-grpc-java && \
+    chmod +x /app/protoc-gen-grpc-java
+
+
 COPY generate.sh /app/
 
 # Copy Java project files
