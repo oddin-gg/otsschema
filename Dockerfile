@@ -15,13 +15,14 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     npm install -g npm@${NPM_VERSION}
 
+# TODO move somewhere else
 # Install protoc-gen-grpc-java
-RUN wget https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-osx-x86_64.exe && \
-    chmod +x protoc-gen-grpc-java-1.54.0-linux-x86_64 && \
-    mv protoc-gen-grpc-java-1.54.0-linux-x86_64 /usr/local/bin/protoc-gen-grpc-java
+#RUN wget https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-osx-x86_64.exe && \
+#    chmod +x protoc-gen-grpc-java-1.54.0-linux-x86_64 && \
+#    mv protoc-gen-grpc-java-1.54.0-linux-x86_64 /usr/local/bin/protoc-gen-grpc-java
 
 # Ensure the plugin is executable
-RUN chmod +x /usr/local/bin/protoc-gen-grpc-java
+#RUN chmod +x /usr/local/bin/protoc-gen-grpc-java
 
 # Install Go protobuf plugins
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@${PROTOC_GEN_GO_VERSION} && \
@@ -39,8 +40,7 @@ RUN java -version && \
 
 WORKDIR /app
 
-COPY package.json .
-COPY requirements.txt .
+COPY package.json package-lock.json requirements.txt ./
 COPY java/ /app/java/
 
 RUN npm install
@@ -51,7 +51,7 @@ ENV VIRTUAL_ENV=/app/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Install Python dependencies
-RUN pip install --disable-pip-version-check -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Add node_modules/.bin to PATH
 ENV PATH="/app/node_modules/.bin:${PATH}"
@@ -61,6 +61,8 @@ RUN mkdir -p go js python java
 
 # Copy all scripts to a scripts directory
 COPY scripts/ /app/scripts/
+COPY protoc-gen-grpc-java /app/
+RUN chmod a+x /app/protoc-gen-grpc-java
 COPY generate.sh /app/
 
 # Copy Java project files
