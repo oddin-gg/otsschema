@@ -54,8 +54,8 @@ RUN mkdir -p go js python java
 COPY scripts/ /app/scripts/
 
 # Install protoc-gen-grpc-java
-RUN wget https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.0/protoc-gen-grpc-java-1.54.0-linux-x86_64.exe && \
-    mv protoc-gen-grpc-java-1.54.0-linux-x86_64.exe protoc-gen-grpc-java && \
+RUN wget https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.1/protoc-gen-grpc-java-1.54.1-linux-x86_64.exe && \
+    mv protoc-gen-grpc-java-1.54.1-linux-x86_64.exe protoc-gen-grpc-java && \
     chmod +x /app/protoc-gen-grpc-java
 
 

@@ -5,7 +5,6 @@ plugins {
     id 'com.google.protobuf' version '0.9.1'
 }
 
-
 version System.getenv("APP_VERSION")
 
 group 'com.oddin.ots'
