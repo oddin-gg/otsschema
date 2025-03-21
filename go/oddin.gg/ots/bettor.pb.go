@@ -76,6 +76,7 @@ type BettorsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*BettorsResponse_Bettor
 	//	*BettorsResponse_Keepalive
 	Data isBettorsResponse_Data `protobuf_oneof:"data"`

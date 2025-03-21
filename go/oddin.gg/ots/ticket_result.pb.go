@@ -28,6 +28,7 @@ type TicketResultRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*TicketResultRequest_Ticket
 	//	*TicketResultRequest_Keepalive
 	//	*TicketResultRequest_After
@@ -122,6 +123,7 @@ type TicketResultResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Data:
+	//
 	//	*TicketResultResponse_State
 	//	*TicketResultResponse_Keepalive
 	//	*TicketResultResponse_After
