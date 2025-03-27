@@ -8,6 +8,7 @@ ifeq ($(shell uname -s),Darwin)
     ifeq ($(shell uname -m),arm64)
         ARCHITECTURE := :osx-x86_64e
     endif
+endif
 
 build:
 	docker build \
