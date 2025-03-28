@@ -1,5 +1,5 @@
 # Start with a Go base image
-FROM golang:1.23
+FROM golang:1.24
 
 ARG PROTOC_GEN_GO_VERSION="v1.27.1"
 ARG PROTOC_GEN_GO_GRPC_VERSION="v1.0.0"
