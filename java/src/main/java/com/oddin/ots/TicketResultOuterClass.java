@@ -8747,6 +8747,25 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
      */
     com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+    /**
+     * <pre>
+     * Information about type of resulting.
+     * </pre>
+     *
+     * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+     * @return The enum numeric value on the wire for ticketResultStateType.
+     */
+    int getTicketResultStateTypeValue();
+    /**
+     * <pre>
+     * Information about type of resulting.
+     * </pre>
+     *
+     * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+     * @return The ticketResultStateType.
+     */
+    com.oddin.ots.Enums.TicketResultStateType getTicketResultStateType();
   }
   /**
    * Protobuf type {@code ots.TicketResultState}
@@ -8763,6 +8782,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     private TicketResultState() {
       id_ = "";
       ticketStatus_ = 0;
+      ticketResultStateType_ = 0;
     }
 
     @java.lang.Override
@@ -9351,6 +9371,32 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
     }
 
+    public static final int TICKET_RESULT_STATE_TYPE_FIELD_NUMBER = 11;
+    private int ticketResultStateType_ = 0;
+    /**
+     * <pre>
+     * Information about type of resulting.
+     * </pre>
+     *
+     * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+     * @return The enum numeric value on the wire for ticketResultStateType.
+     */
+    @java.lang.Override public int getTicketResultStateTypeValue() {
+      return ticketResultStateType_;
+    }
+    /**
+     * <pre>
+     * Information about type of resulting.
+     * </pre>
+     *
+     * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+     * @return The ticketResultStateType.
+     */
+    @java.lang.Override public com.oddin.ots.Enums.TicketResultStateType getTicketResultStateType() {
+      com.oddin.ots.Enums.TicketResultStateType result = com.oddin.ots.Enums.TicketResultStateType.forNumber(ticketResultStateType_);
+      return result == null ? com.oddin.ots.Enums.TicketResultStateType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9404,6 +9450,9 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           internalGetObbSubSelectionInfo(),
           ObbSubSelectionInfoDefaultEntryHolder.defaultEntry,
           10);
+      if (ticketResultStateType_ != com.oddin.ots.Enums.TicketResultStateType.TICKET_RESULT_STATE_TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(11, ticketResultStateType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9470,6 +9519,10 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(10, obbSubSelectionInfo__);
       }
+      if (ticketResultStateType_ != com.oddin.ots.Enums.TicketResultStateType.TICKET_RESULT_STATE_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, ticketResultStateType_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9516,6 +9569,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         if (!getModifiedAt()
             .equals(other.getModifiedAt())) return false;
       }
+      if (ticketResultStateType_ != other.ticketResultStateType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9562,6 +9616,8 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getModifiedAt().hashCode();
       }
+      hash = (37 * hash) + TICKET_RESULT_STATE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + ticketResultStateType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9747,6 +9803,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           modifiedAtBuilder_.dispose();
           modifiedAtBuilder_ = null;
         }
+        ticketResultStateType_ = 0;
         return this;
       }
 
@@ -9820,6 +9877,9 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
           result.modifiedAt_ = modifiedAtBuilder_ == null
               ? modifiedAt_
               : modifiedAtBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.ticketResultStateType_ = ticketResultStateType_;
         }
       }
 
@@ -9898,6 +9958,9 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         }
         if (other.hasModifiedAt()) {
           mergeModifiedAt(other.getModifiedAt());
+        }
+        if (other.ticketResultStateType_ != 0) {
+          setTicketResultStateTypeValue(other.getTicketResultStateTypeValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9995,6 +10058,11 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
                 bitField0_ |= 0x00000020;
                 break;
               } // case 82
+              case 88: {
+                ticketResultStateType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -11340,6 +11408,79 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
         }
         return modifiedAtBuilder_;
       }
+
+      private int ticketResultStateType_ = 0;
+      /**
+       * <pre>
+       * Information about type of resulting.
+       * </pre>
+       *
+       * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+       * @return The enum numeric value on the wire for ticketResultStateType.
+       */
+      @java.lang.Override public int getTicketResultStateTypeValue() {
+        return ticketResultStateType_;
+      }
+      /**
+       * <pre>
+       * Information about type of resulting.
+       * </pre>
+       *
+       * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+       * @param value The enum numeric value on the wire for ticketResultStateType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTicketResultStateTypeValue(int value) {
+        ticketResultStateType_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about type of resulting.
+       * </pre>
+       *
+       * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+       * @return The ticketResultStateType.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Enums.TicketResultStateType getTicketResultStateType() {
+        com.oddin.ots.Enums.TicketResultStateType result = com.oddin.ots.Enums.TicketResultStateType.forNumber(ticketResultStateType_);
+        return result == null ? com.oddin.ots.Enums.TicketResultStateType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Information about type of resulting.
+       * </pre>
+       *
+       * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+       * @param value The ticketResultStateType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTicketResultStateType(com.oddin.ots.Enums.TicketResultStateType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000400;
+        ticketResultStateType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about type of resulting.
+       * </pre>
+       *
+       * <code>.ots.enums.TicketResultStateType ticket_result_state_type = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTicketResultStateType() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        ticketResultStateType_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11506,7 +11647,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       "tatus\030\001 \001(\0162\032.ots.enums.ResultingStatus\"" +
       "g\n\021TicketResultError\022#\n\004code\030\001 \001(\0162\025.ots" +
       ".enums.ReasonCode\022-\n\007message\030\002 \001(\0132\034.goo" +
-      "gle.protobuf.StringValue\"\372\005\n\021TicketResul" +
+      "gle.protobuf.StringValue\"\276\006\n\021TicketResul" +
       "tState\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(" +
       "\0162\032.ots.enums.ResultingStatus\0220\n\nwon_amo" +
       "unt\030\003 \001(\0132\034.google.protobuf.UInt64Value\022" +
@@ -11519,14 +11660,16 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       "\030\007 \001(\0132\032.google.protobuf.Timestamp\022%\n\005er" +
       "ror\030\010 \001(\0132\026.ots.TicketResultError\022/\n\013mod" +
       "ified_at\030\t \001(\0132\032.google.protobuf.Timesta" +
-      "mp\032M\n\014BetInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value" +
-      "\030\002 \001(\0132\035.ots.TicketResultStateBetInfo:\0028" +
-      "\001\032Y\n\022SelectionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005" +
-      "value\030\002 \001(\0132#.ots.TicketResultStateSelec" +
-      "tionInfo:\0028\001\032_\n\030ObbSubSelectionInfoEntry" +
-      "\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ots.Ticke" +
-      "tResultStateSelectionInfo:\0028\001B\035\n\rcom.odd" +
-      "in.otsZ\014oddin.gg/otsb\006proto3"
+      "mp\022B\n\030ticket_result_state_type\030\013 \001(\0162 .o" +
+      "ts.enums.TicketResultStateType\032M\n\014BetInf" +
+      "oEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots" +
+      ".TicketResultStateBetInfo:\0028\001\032Y\n\022Selecti" +
+      "onInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132" +
+      "#.ots.TicketResultStateSelectionInfo:\0028\001" +
+      "\032_\n\030ObbSubSelectionInfoEntry\022\013\n\003key\030\001 \001(" +
+      "\t\0222\n\005value\030\002 \001(\0132#.ots.TicketResultState" +
+      "SelectionInfo:\0028\001B\035\n\rcom.oddin.otsZ\014oddi" +
+      "n.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11595,7 +11738,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     internal_static_ots_TicketResultState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResultState_descriptor,
-        new java.lang.String[] { "Id", "TicketStatus", "WonAmount", "BetInfo", "SelectionInfo", "ObbSubSelectionInfo", "ExchangeRate", "ResultedAt", "Error", "ModifiedAt", });
+        new java.lang.String[] { "Id", "TicketStatus", "WonAmount", "BetInfo", "SelectionInfo", "ObbSubSelectionInfo", "ExchangeRate", "ResultedAt", "Error", "ModifiedAt", "TicketResultStateType", });
     internal_static_ots_TicketResultState_BetInfoEntry_descriptor =
       internal_static_ots_TicketResultState_descriptor.getNestedTypes().get(0);
     internal_static_ots_TicketResultState_BetInfoEntry_fieldAccessorTable = new
