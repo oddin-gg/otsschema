@@ -1,18 +1,15 @@
-.PHONY: generate build
+.PHONY: generate clear
 
 .DEFAULT_GOAL := generate
 
-VERSION := $(shell git tag | sort -V | tail -n 1 | cut -c2-)
+generate: clear
+	DOCKER_BUILDKIT=1 docker build \
+	  --target export-stage \
+	  --output type=local,dest=. \
+	  .
 
-build:
-	docker build \
-		--build-arg APP_VERSION=$(VERSION) \
-		-t proto-gen .
-
-generate: build
-	docker run -v $(shell pwd)/proto:/app/proto \
-		-v $(shell pwd)/go:/app/go \
-	 	-v $(shell pwd)/js:/app/js \
-		-v $(shell pwd)/python:/app/python \
-		-v $(shell pwd)/java:/app/java \
-		proto-gen
+clear:
+	rm -rf go/* && \
+	rm -rf java/src/main/java/* && \
+	rm -rf js/* && \
+	rm -rf python/*

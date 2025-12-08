@@ -2188,7 +2188,8 @@ obbSubSelectionInfoMap: (f = msg.getObbSubSelectionInfoMap()) ? f.toObject(inclu
 exchangeRate: jspb.Message.getFieldWithDefault(msg, 6, 0),
 resultedAt: (f = msg.getResultedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 error: (f = msg.getError()) && proto.ots.TicketResultError.toObject(includeInstance, f),
-modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+ticketResultStateType: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -2274,6 +2275,10 @@ proto.ots.TicketResultState.deserializeBinaryFromReader = function(msg, reader) 
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setModifiedAt(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.ots.enums.TicketResultStateType} */ (reader.readEnum());
+      msg.setTicketResultStateType(value);
       break;
     default:
       reader.skipField();
@@ -2367,6 +2372,13 @@ proto.ots.TicketResultState.serializeBinaryToWriter = function(message, writer) 
       9,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketResultStateType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
     );
   }
 };
@@ -2640,6 +2652,24 @@ proto.ots.TicketResultState.prototype.clearModifiedAt = function() {
  */
 proto.ots.TicketResultState.prototype.hasModifiedAt = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional enums.TicketResultStateType ticket_result_state_type = 11;
+ * @return {!proto.ots.enums.TicketResultStateType}
+ */
+proto.ots.TicketResultState.prototype.getTicketResultStateType = function() {
+  return /** @type {!proto.ots.enums.TicketResultStateType} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.ots.enums.TicketResultStateType} value
+ * @return {!proto.ots.TicketResultState} returns this
+ */
+proto.ots.TicketResultState.prototype.setTicketResultStateType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 

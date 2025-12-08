@@ -1669,6 +1669,132 @@ public final class Enums {
     // @@protoc_insertion_point(enum_scope:ots.enums.ReasonCode)
   }
 
+  /**
+   * Protobuf enum {@code ots.enums.TicketResultStateType}
+   */
+  public enum TicketResultStateType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TICKET_RESULT_STATE_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_RESULTED = 1;</code>
+     */
+    TICKET_RESULT_STATE_TYPE_RESULTED(1),
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_CORRECTED = 2;</code>
+     */
+    TICKET_RESULT_STATE_TYPE_CORRECTED(2),
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_RESEND = 3;</code>
+     */
+    TICKET_RESULT_STATE_TYPE_RESEND(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TICKET_RESULT_STATE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_RESULTED = 1;</code>
+     */
+    public static final int TICKET_RESULT_STATE_TYPE_RESULTED_VALUE = 1;
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_CORRECTED = 2;</code>
+     */
+    public static final int TICKET_RESULT_STATE_TYPE_CORRECTED_VALUE = 2;
+    /**
+     * <code>TICKET_RESULT_STATE_TYPE_RESEND = 3;</code>
+     */
+    public static final int TICKET_RESULT_STATE_TYPE_RESEND_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TicketResultStateType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TicketResultStateType forNumber(int value) {
+      switch (value) {
+        case 0: return TICKET_RESULT_STATE_TYPE_UNSPECIFIED;
+        case 1: return TICKET_RESULT_STATE_TYPE_RESULTED;
+        case 2: return TICKET_RESULT_STATE_TYPE_CORRECTED;
+        case 3: return TICKET_RESULT_STATE_TYPE_RESEND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TicketResultStateType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TicketResultStateType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TicketResultStateType>() {
+            public TicketResultStateType findValueByNumber(int number) {
+              return TicketResultStateType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.oddin.ots.Enums.getDescriptor().getEnumTypes().get(11);
+    }
+
+    private static final TicketResultStateType[] VALUES = values();
+
+    public static TicketResultStateType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TicketResultStateType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ots.enums.TicketResultStateType)
+  }
+
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1726,8 +1852,13 @@ public final class Enums {
       "REASON_CODE_INVALID_ARGUMENT\020\001\022\036\n\032REASON" +
       "_CODE_ALREADY_EXISTS\020\002\022\031\n\025REASON_CODE_NO" +
       "T_FOUND\020\003\022\033\n\027REASON_CODE_UNAVAILABLE\020\004\022\030" +
-      "\n\024REASON_CODE_INTERNAL\020\005B\035\n\rcom.oddin.ot" +
-      "sZ\014oddin.gg/otsb\006proto3"
+      "\n\024REASON_CODE_INTERNAL\020\005*\265\001\n\025TicketResul" +
+      "tStateType\022(\n$TICKET_RESULT_STATE_TYPE_U" +
+      "NSPECIFIED\020\000\022%\n!TICKET_RESULT_STATE_TYPE" +
+      "_RESULTED\020\001\022&\n\"TICKET_RESULT_STATE_TYPE_" +
+      "CORRECTED\020\002\022#\n\037TICKET_RESULT_STATE_TYPE_" +
+      "RESEND\020\003B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
