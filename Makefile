@@ -1,14 +1,12 @@
-.PHONY: generate
+.PHONY: generate clear
 
 .DEFAULT_GOAL := generate
 
 generate: clear
 	DOCKER_BUILDKIT=1 docker build \
-	  --progress=plain \
 	  --target export-stage \
 	  --output type=local,dest=. \
 	  .
-
 
 clear:
 	rm -rf go/* && \
