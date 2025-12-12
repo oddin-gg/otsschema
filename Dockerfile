@@ -3,11 +3,12 @@
 # ==========================================
 FROM golang:1.24 AS go-gen
 
+ARG PROTOBUF_COMPILER_VERSION="3.21.12-11"
 ARG PROTOC_GEN_GO_VERSION="v1.27.1"
 ARG PROTOC_GEN_GO_GRPC_VERSION="v1.0.0"
 ARG PROTOC_GEN_GO_VTPROTO_VERSION="79df5c4"
 
-RUN apt-get update && apt-get install -y protobuf-compiler
+RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
 
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@${PROTOC_GEN_GO_VERSION} && \
     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@${PROTOC_GEN_GO_GRPC_VERSION} && \
@@ -27,15 +28,13 @@ RUN mkdir /app/go && \
 # ==========================================
 FROM node:20-bookworm AS js-gen
 
-RUN apt-get update && apt-get install -y git protobuf-compiler && \
-    git clone https://github.com/protocolbuffers/protobuf.git /tmp/protobuf && \
-    mkdir -p /google-protos && \
-    cp -r /tmp/protobuf/src/google /google-protos/google && \
-    rm -rf /tmp/protobuf
+ARG PROTOBUF_COMPILER_VERSION="3.21.12-3"
+ARG GRPC_TOOLS_NODE_PROTOC_TS_VERSION="1.13.1"
 
-ENV PROTO_DIR=/defs
-ENV OUT_DIR=/out
-ENV GOOGLE_WKT=/google-protos
+RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
+
+ENV PROTO_DIR=/app/proto
+ENV OUT_DIR=/app/js
 
 WORKDIR /app
 
@@ -43,7 +42,7 @@ COPY scripts/js.sh /app/scripts/
 COPY package.json package-lock.json ./
 COPY proto/ ./proto/
 
-RUN npm install -g grpc-tools \
+RUN npm install -g grpc-tools@${GRPC_TOOLS_NODE_PROTOC_TS_VERSION} && \
     npm install && \
     mkdir /app/js && \
     chmod +x /app/scripts/js.sh && \
@@ -54,7 +53,9 @@ RUN npm install -g grpc-tools \
 ## ==========================================
 FROM python:3.12-bookworm AS python-gen
 
-RUN apt-get update && apt-get install -y build-essential
+ARG PROTOBUF_COMPILER_VERSION="3.21.12-3"
+
+RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
 
 WORKDIR /app
 
@@ -72,21 +73,9 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # ==========================================
 FROM eclipse-temurin:17-jdk AS java-gen
 
-RUN apt-get update && apt-get install -y --no-install-recommends protobuf-compiler
+ARG PROTOBUF_COMPILER_VERSION="3.21.12-8.2ubuntu0.2"
 
-RUN update-alternatives --query java | grep 'Value: ' | grep -o '/.*$' | sed 's/\/bin\/java//' > /tmp/java_home && \
-    export JAVA_HOME=$(cat /tmp/java_home) && \
-    echo "export JAVA_HOME=$JAVA_HOME" >> /etc/profile.d/java_home.sh
-
-RUN java -version && \
-    echo $JAVA_HOME
-
-RUN mkdir -p /app/proto-deps/google/protobuf && \
-    base_url="https://raw.githubusercontent.com/protocolbuffers/protobuf/v27.0/src/google/protobuf" && \
-    for f in any.proto api.proto duration.proto empty.proto field_mask.proto source_context.proto struct.proto timestamp.proto type.proto wrappers.proto; do \
-      echo "Downloading $f"; \
-      curl -L "$base_url/$f" -o "/app/proto-deps/google/protobuf/$f"; \
-    done
+RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
 
 WORKDIR /app
 
