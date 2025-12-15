@@ -115,4 +115,7 @@ message TicketResultState {
 
   // Ticket modified_at timestamp.
   google.protobuf.Timestamp modified_at = 9;
+
+  // Information about type of resulting.
+  enums.TicketResultStateType ticket_result_state_type = 11;
 }

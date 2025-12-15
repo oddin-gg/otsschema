@@ -317,6 +317,9 @@ export class TicketResultState extends jspb.Message {
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTicketResultStateType(): ots_enum_enums_pb.TicketResultStateTypeMap[keyof ots_enum_enums_pb.TicketResultStateTypeMap];
+  setTicketResultStateType(value: ots_enum_enums_pb.TicketResultStateTypeMap[keyof ots_enum_enums_pb.TicketResultStateTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResultState.AsObject;
   static toObject(includeInstance: boolean, msg: TicketResultState): TicketResultState.AsObject;
@@ -339,6 +342,7 @@ export namespace TicketResultState {
     resultedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     error?: TicketResultError.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketResultStateType: ots_enum_enums_pb.TicketResultStateTypeMap[keyof ots_enum_enums_pb.TicketResultStateTypeMap],
   }
 }
 

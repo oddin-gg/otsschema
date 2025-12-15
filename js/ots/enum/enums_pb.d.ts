@@ -113,3 +113,12 @@ export interface ReasonCodeMap {
 
 export const ReasonCode: ReasonCodeMap;
 
+export interface TicketResultStateTypeMap {
+  TICKET_RESULT_STATE_TYPE_UNSPECIFIED: 0;
+  TICKET_RESULT_STATE_TYPE_RESULTED: 1;
+  TICKET_RESULT_STATE_TYPE_CORRECTED: 2;
+  TICKET_RESULT_STATE_TYPE_RESEND: 3;
+}
+
+export const TicketResultStateType: TicketResultStateTypeMap;
+

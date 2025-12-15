@@ -32,6 +32,7 @@ goog.exportSymbol('proto.ots.enums.CancelStatus', null, global);
 goog.exportSymbol('proto.ots.enums.ReasonCode', null, global);
 goog.exportSymbol('proto.ots.enums.ResultingStatus', null, global);
 goog.exportSymbol('proto.ots.enums.TicketChannel', null, global);
+goog.exportSymbol('proto.ots.enums.TicketResultStateType', null, global);
 /**
  * @enum {number}
  */
@@ -151,6 +152,16 @@ proto.ots.enums.ReasonCode = {
   REASON_CODE_NOT_FOUND: 3,
   REASON_CODE_UNAVAILABLE: 4,
   REASON_CODE_INTERNAL: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.ots.enums.TicketResultStateType = {
+  TICKET_RESULT_STATE_TYPE_UNSPECIFIED: 0,
+  TICKET_RESULT_STATE_TYPE_RESULTED: 1,
+  TICKET_RESULT_STATE_TYPE_CORRECTED: 2,
+  TICKET_RESULT_STATE_TYPE_RESEND: 3
 };
 
 goog.object.extend(exports, proto.ots.enums);
