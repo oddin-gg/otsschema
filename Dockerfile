@@ -103,3 +103,4 @@ COPY --from=go-gen /app/go /go
 COPY --from=js-gen /app/js /js
 COPY --from=python-gen /app/python /python
 COPY --from=java-gen /app/java/src/main/java/ /java/src/main/java/
+COPY --from=java-gen /app/java/ots_schema.jar /java/ots_schema.jar
