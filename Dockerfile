@@ -1,9 +1,11 @@
+ARG PROTOBUF_COMPILER_VERSION="3.21.12-*"
+
 # ==========================================
 # 1. STAGE: GO GENERATOR
 # ==========================================
 FROM golang:1.24 AS go-gen
 
-ARG PROTOBUF_COMPILER_VERSION="3.21.12-11"
+ARG PROTOBUF_COMPILER_VERSION
 ARG PROTOC_GEN_GO_VERSION="v1.27.1"
 ARG PROTOC_GEN_GO_GRPC_VERSION="v1.0.0"
 ARG PROTOC_GEN_GO_VTPROTO_VERSION="79df5c4"
@@ -28,7 +30,7 @@ RUN mkdir /app/go && \
 # ==========================================
 FROM node:20-bookworm AS js-gen
 
-ARG PROTOBUF_COMPILER_VERSION="3.21.12-3"
+ARG PROTOBUF_COMPILER_VERSION
 ARG GRPC_TOOLS_NODE_PROTOC_TS_VERSION="1.13.1"
 
 RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
@@ -53,7 +55,7 @@ RUN npm install -g grpc-tools@${GRPC_TOOLS_NODE_PROTOC_TS_VERSION} && \
 ## ==========================================
 FROM python:3.12-bookworm AS python-gen
 
-ARG PROTOBUF_COMPILER_VERSION="3.21.12-3"
+ARG PROTOBUF_COMPILER_VERSION
 
 RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
 
@@ -73,7 +75,7 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # ==========================================
 FROM eclipse-temurin:17-jdk AS java-gen
 
-ARG PROTOBUF_COMPILER_VERSION="3.21.12-8.2ubuntu0.2"
+ARG PROTOBUF_COMPILER_VERSION
 
 RUN apt-get update && apt-get install -y protobuf-compiler=${PROTOBUF_COMPILER_VERSION}
 
