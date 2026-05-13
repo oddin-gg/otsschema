@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-func connectToTicketStream(ctx context.Context, cfg config, client ots.OtsClient) {
+func connectToTicketStream(ctx context.Context, cfg Config, client ots.OtsClient) {
 	closeCh := make(chan struct{}, 1)
 	aliveTicker := time.NewTicker(10 * time.Second)
 

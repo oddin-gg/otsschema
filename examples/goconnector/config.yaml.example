@@ -1,0 +1,19 @@
+# URL of the OTS service, e.g. "api-ots.integration.oddin.gg:443"
+url: "api-ots.integration.oddin.gg:443"
+
+# OTS access token.
+token: "changeit"
+
+# How long to keep the stream connection open before shutting down.
+connection_time: 60s
+
+# Send a brand-new generated ticket into the ticket stream.
+# Only used in "ticket stream mode".
+send_ticket: true
+
+# Shut down after receiving the state response for the generated ticket.
+# Only meaningful when send_ticket is true.
+quit_on_sent_ticket_status: false
+
+# Run mode. Valid values: "TICKET_STREAM_MODE", "RISK_API_MODE".
+mode: "TICKET_STREAM_MODE"

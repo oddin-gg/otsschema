@@ -83,8 +83,8 @@ func WithCurrency(code string) TicketOption {
 	}
 }
 
-// WithUniqueCustomerID use randomly generated UUID as a customer ID.
-func WithUniqueCustomerID() TicketOption {
+// WithCustomerID set custom value on customer ID.
+func WithCustomerID(val string) TicketOption {
 	return func(ticket *ots.Ticket) {
 		switch {
 		case ticket == nil:
@@ -94,7 +94,13 @@ func WithUniqueCustomerID() TicketOption {
 			panic("option got ticket with nil customer")
 		}
 
-		ticket.Customer.Id = uuid.NewString()
+		ticket.Customer.Id = val
+	}
+}
+
+func WithBettorID(val string) TicketOption {
+	return func(ticket *ots.Ticket) {
+		WithCustomerID(val)(ticket)
 	}
 }
 
