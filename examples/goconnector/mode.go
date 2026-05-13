@@ -17,9 +17,9 @@ const (
 
 const (
 	// modeTicketStreamAsText is a parsable text value of ModeTicketStream.
-	modeTicketStreamAsText = "ticket stream mode"
+	modeTicketStreamAsText = "TICKET_STREAM_MODE"
 	// modeRiskApiAsText is a parsable text value of ModeRiskApi.
-	modeRiskApiAsText = "risk api mode"
+	modeRiskApiAsText = "RISK_API_MODE"
 )
 
 var toText = map[mode]string{

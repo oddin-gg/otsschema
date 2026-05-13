@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-func connectToRiskApiStream(ctx context.Context, cfg config, client ots.OtsClient) {
+func connectToRiskApiStream(ctx context.Context, cfg Config, client ots.OtsClient) {
 	closeCh := make(chan struct{}, 1)
 
 	recoverSince := time.Now().Add(-2 * 24 * time.Hour) // recovers last two days bettors updates

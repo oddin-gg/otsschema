@@ -4,11 +4,14 @@ import (
 	"context"
 	"crypto/tls"
 	"crypto/x509"
+	"fmt"
 	"time"
 
+	"github.com/go-viper/mapstructure/v2"
 	"github.com/google/uuid"
-	"github.com/kelseyhightower/envconfig"
 	"github.com/oddin-gg/otsschema/go/oddin.gg/ots"
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/metadata"
@@ -16,62 +19,52 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-type config struct {
-	// URL of service, e.g. "api-ots.integration.oddin.gg:443"
-	URL string `envconfig:"URL" required:"true"`
-
-	// OTS token of the given token.
-	Token string `envconfig:"TOKEN" required:"true"`
-
-	// ConnectionTime is the time interval during which is kept connection to the OTS stream. After that time
-	// is connection closed and application is shut down.
-	ConnectionTime time.Duration `envconfig:"CONNECTION_TIME" default:"60s"`
-
-	// SendTicket - Reset this flag to disable sending the brand-new generated ticket into the ticket stream.
-	// Mind that this can work only in "ticket stream mode".
-	SendTicket bool `envconfig:"SEND_TICKET" default:"true"`
-
-	// QuitOnSentTicketStatus - Set this flag to shut down the application after receiving of state response for
-	// the generated ticket (it can be used only with SendTicket set to true).
-	QuitOnSentTicketStatus bool `envconfig:"QUIT_ON_SENT_TICKET_STATUS" default:"false"`
-
-	// Mode - Define the mode in which this tool runs. Check constants of type `mode` for valid values.
-	Mode mode `envconfig:"MODE" default:"ticket stream mode"`
-}
-
 // generateTicket should return nil if no new ticket should be generated, otherwise the new ticket should be prepared
 // and returned by this function. It is implemented on for connectToTicketStream feature.
-func generateTicket(cfg config) *ots.Ticket {
+func generateTicket(cfg Config) *ots.Ticket {
 	switch {
 	case cfg.Mode != ModeTicketStream,
 		!cfg.SendTicket:
 		return nil
 	}
 
-	obbSelection := obbSelectionInput{
-		obbSessionID: uuid.NewString(),
-		extIDs: []string{
-			"od:match:251368/1/1?variant=way:two&way=two",
-			"od:match:251368/6/1?variant=way:three&map=1&way=three",
+	regularSelections := []*regularSelectionInput{
+		{
+			extID: "od:match:193117/1/1?variant=way:two&way=two",
+			odds:  18200,
 		},
-		odds: 350000,
 	}
 
-	return NewObbSingleTicket(
-		&obbSelection,
+	obbSelection := []*obbSelectionInput{
+		{
+			obbSessionID: uuid.NewString(),
+			extIDs: []string{
+				"od:match:251368/1/1?variant=way:two&way=two",
+				"od:match:251368/6/1?variant=way:three&map=1&way=three",
+			},
+			odds: 350000,
+		},
+	}
+
+	return NewTicket(
+		regularSelections,
+		obbSelection,
 		WithStake(10000),
 		WithCurrency(defaultCurrencyCode),
+		WithBettorID("ext_bettor_id_1"),
 	)
 }
 
 func main() {
-	var cfg config
-	if err := envconfig.Process("", &cfg); err != nil {
+	configPath := pflag.StringP("config", "c", "config.yaml", "path to YAML config file")
+	pflag.Parse()
+
+	cfg, err := loadConfig(*configPath)
+	if err != nil {
 		panic(err)
 	}
 
 	var tlsCfg tls.Config
-	var err error
 	tlsCfg.RootCAs, err = x509.SystemCertPool()
 	if err != nil {
 		tlsCfg.RootCAs = x509.NewCertPool()
@@ -102,6 +95,35 @@ func main() {
 	case ModeRiskApi:
 		connectToRiskApiStream(ctx, cfg, client)
 	}
+}
+
+func loadConfig(path string) (Config, error) {
+	v := viper.New()
+	v.SetConfigFile(path)
+	v.SetConfigType("yaml")
+
+	v.SetDefault("connection_time", "60s")
+	v.SetDefault("send_ticket", true)
+	v.SetDefault("quit_on_sent_ticket_status", false)
+	v.SetDefault("mode", modeTicketStreamAsText)
+
+	if err := v.ReadInConfig(); err != nil {
+		return Config{}, fmt.Errorf("read config %q: %w", path, err)
+	}
+
+	var cfg Config
+	if err := v.Unmarshal(&cfg, viper.DecodeHook(mapstructure.ComposeDecodeHookFunc(
+		mapstructure.StringToTimeDurationHookFunc(),
+		mapstructure.TextUnmarshallerHookFunc(),
+	))); err != nil {
+		return Config{}, fmt.Errorf("parse config: %w", err)
+	}
+
+	if cfg.URL == "" || cfg.Token == "" {
+		return Config{}, fmt.Errorf("config %q: url and token are required", path)
+	}
+
+	return cfg, nil
 }
 
 func toJson(msg proto.Message) string {
