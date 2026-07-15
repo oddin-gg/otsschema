@@ -17,3 +17,8 @@ quit_on_sent_ticket_status: false
 
 # Run mode. Valid values: "TICKET_STREAM_MODE", "RISK_API_MODE".
 mode: "TICKET_STREAM_MODE"
+
+# Message type used to send the generated ticket into the ticket stream.
+# Valid values: "ACCEPT_TICKET", "MAX_STAKE".
+# Only used in "ticket stream mode" with send_ticket set to true.
+ticket_stream_message_type: "ACCEPT_TICKET"

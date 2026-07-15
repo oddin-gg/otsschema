@@ -23,4 +23,9 @@ type Config struct {
 
 	// Mode - Define the mode in which this tool runs. Check constants of type `mode` for valid values.
 	Mode mode `mapstructure:"mode"`
+
+	// TicketStreamMessageType - Define which message type is used to send the generated ticket into the ticket
+	// stream. Check constants of type `ticketStreamMessageType` for valid values. Only used in "ticket stream mode"
+	// with SendTicket set to true.
+	TicketStreamMessageType ticketStreamMessageType `mapstructure:"ticket_stream_message_type"`
 }

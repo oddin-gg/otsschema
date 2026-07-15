@@ -23,7 +23,7 @@ const (
 )
 
 var toText = map[mode]string{
-	ModeTicketStream: modeRiskApiAsText,
+	ModeTicketStream: modeTicketStreamAsText,
 	ModeRiskApi:      modeRiskApiAsText,
 }
 

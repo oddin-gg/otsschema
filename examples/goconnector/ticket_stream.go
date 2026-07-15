@@ -55,6 +55,15 @@ func connectToTicketStream(ctx context.Context, cfg Config, client ots.OtsClient
 					closeExampleTicker.Reset(1 * time.Nanosecond)
 				}
 
+			case req.GetMaxStake() != nil:
+				fmt.Println("###################################################################")
+				fmt.Printf("Incoming ticket max stake state: %s\n", toJson(req))
+				fmt.Println("###################################################################")
+
+				if cfg.QuitOnSentTicketStatus && cfg.SendTicket && req.GetMaxStake().GetId() == generatedTicket.GetId() {
+					closeExampleTicker.Reset(1 * time.Nanosecond)
+				}
+
 			case req.GetData() != nil: // to handle oll other requests
 				fmt.Println("###################################################################")
 				fmt.Println("Incoming ticket data: \n", toJson(req))
@@ -72,12 +81,25 @@ func connectToTicketStream(ctx context.Context, cfg Config, client ots.OtsClient
 
 		case <-newTicketDelay:
 			fmt.Println("###################################################################")
-			fmt.Println("Sending generated ticket...")
-			if err := stream.Send(&ots.TicketRequest{
-				Data: &ots.TicketRequest_Ticket{
+			fmt.Printf("Sending generated ticket as %s...\n", cfg.TicketStreamMessageType.String())
+
+			request := &ots.TicketRequest{}
+			switch cfg.TicketStreamMessageType {
+			case TicketStreamMessageTypeMaxStake:
+				request.Data = &ots.TicketRequest_MaxStake{
+					MaxStake: &ots.TicketMaxStake{
+						Ticket: generatedTicket,
+					},
+				}
+			case TicketStreamMessageTypeAcceptTicket:
+				request.Data = &ots.TicketRequest_Ticket{
 					Ticket: generatedTicket,
-				},
-			}); err != nil {
+				}
+			default:
+				panic(fmt.Errorf("unknown TicketStreamMessageType: %v", cfg.TicketStreamMessageType))
+			}
+
+			if err := stream.Send(request); err != nil {
 				panic(err)
 			}
 			fmt.Printf(
