@@ -106,6 +106,7 @@ func loadConfig(path string) (Config, error) {
 	v.SetDefault("send_ticket", true)
 	v.SetDefault("quit_on_sent_ticket_status", false)
 	v.SetDefault("mode", modeTicketStreamAsText)
+	v.SetDefault("ticket_stream_message_type", TicketStreamMessageTypeTextAcceptTicket)
 
 	if err := v.ReadInConfig(); err != nil {
 		return Config{}, fmt.Errorf("read config %q: %w", path, err)
