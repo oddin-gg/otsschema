@@ -34,8 +34,9 @@ export namespace TicketCashoutRejectReason {
     CODE_INTERNAL: 1;
     CODE_INVALID_ARGUMENT: 2;
     CODE_NOT_FOUND: 3;
-    CODE_WRONG_TICKET_STAKE: 4;
+    CODE_WRONG_TICKET_STATE: 4;
     CODE_MAX_PAYOUT_BREACHED: 5;
+    CODE_ALREADY_CASHED_OUT: 6;
   }
 
   export const Code: CodeMap;

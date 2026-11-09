@@ -141,9 +141,9 @@ public final class TicketCashoutOuterClass {
        * Ticket is not in accepted state.
        * </pre>
        *
-       * <code>CODE_WRONG_TICKET_STAKE = 4;</code>
+       * <code>CODE_WRONG_TICKET_STATE = 4;</code>
        */
-      CODE_WRONG_TICKET_STAKE(4),
+      CODE_WRONG_TICKET_STATE(4),
       /**
        * <pre>
        * Cashout amount is higher than possible payout.
@@ -152,6 +152,16 @@ public final class TicketCashoutOuterClass {
        * <code>CODE_MAX_PAYOUT_BREACHED = 5;</code>
        */
       CODE_MAX_PAYOUT_BREACHED(5),
+      /**
+       * <pre>
+       * The requested cashout is already booked on the ticket and nothing was changed: the booked cumulative cashout
+       * stake and percent are both at or above the requested ones. Returned whatever the ticket state is, so a resent
+       * cashout gets it also after the ticket was settled. Every other reject code means the request booked nothing.
+       * </pre>
+       *
+       * <code>CODE_ALREADY_CASHED_OUT = 6;</code>
+       */
+      CODE_ALREADY_CASHED_OUT(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -192,9 +202,9 @@ public final class TicketCashoutOuterClass {
        * Ticket is not in accepted state.
        * </pre>
        *
-       * <code>CODE_WRONG_TICKET_STAKE = 4;</code>
+       * <code>CODE_WRONG_TICKET_STATE = 4;</code>
        */
-      public static final int CODE_WRONG_TICKET_STAKE_VALUE = 4;
+      public static final int CODE_WRONG_TICKET_STATE_VALUE = 4;
       /**
        * <pre>
        * Cashout amount is higher than possible payout.
@@ -203,6 +213,16 @@ public final class TicketCashoutOuterClass {
        * <code>CODE_MAX_PAYOUT_BREACHED = 5;</code>
        */
       public static final int CODE_MAX_PAYOUT_BREACHED_VALUE = 5;
+      /**
+       * <pre>
+       * The requested cashout is already booked on the ticket and nothing was changed: the booked cumulative cashout
+       * stake and percent are both at or above the requested ones. Returned whatever the ticket state is, so a resent
+       * cashout gets it also after the ticket was settled. Every other reject code means the request booked nothing.
+       * </pre>
+       *
+       * <code>CODE_ALREADY_CASHED_OUT = 6;</code>
+       */
+      public static final int CODE_ALREADY_CASHED_OUT_VALUE = 6;
 
 
       public final int getNumber() {
@@ -233,8 +253,9 @@ public final class TicketCashoutOuterClass {
           case 1: return CODE_INTERNAL;
           case 2: return CODE_INVALID_ARGUMENT;
           case 3: return CODE_NOT_FOUND;
-          case 4: return CODE_WRONG_TICKET_STAKE;
+          case 4: return CODE_WRONG_TICKET_STATE;
           case 5: return CODE_MAX_PAYOUT_BREACHED;
+          case 6: return CODE_ALREADY_CASHED_OUT;
           default: return null;
         }
       }
@@ -2919,7 +2940,7 @@ public final class TicketCashoutOuterClass {
 
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -2928,7 +2949,7 @@ public final class TicketCashoutOuterClass {
     boolean hasCashoutStake();
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -2937,7 +2958,7 @@ public final class TicketCashoutOuterClass {
     com.google.protobuf.UInt64Value getCashoutStake();
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -2946,7 +2967,7 @@ public final class TicketCashoutOuterClass {
 
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -2955,7 +2976,7 @@ public final class TicketCashoutOuterClass {
     boolean hasCashoutPercent();
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -2964,7 +2985,7 @@ public final class TicketCashoutOuterClass {
     com.google.protobuf.UInt64Value getCashoutPercent();
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -3157,7 +3178,7 @@ public final class TicketCashoutOuterClass {
     private com.google.protobuf.UInt64Value cashoutStake_;
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -3169,7 +3190,7 @@ public final class TicketCashoutOuterClass {
     }
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -3181,7 +3202,7 @@ public final class TicketCashoutOuterClass {
     }
     /**
      * <pre>
-     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -3195,7 +3216,7 @@ public final class TicketCashoutOuterClass {
     private com.google.protobuf.UInt64Value cashoutPercent_;
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -3207,7 +3228,7 @@ public final class TicketCashoutOuterClass {
     }
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -3219,7 +3240,7 @@ public final class TicketCashoutOuterClass {
     }
     /**
      * <pre>
-     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+     * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
      * </pre>
      *
      * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4104,7 +4125,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> cashoutStakeBuilder_;
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4115,7 +4136,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4130,7 +4151,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4150,7 +4171,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4168,7 +4189,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4191,7 +4212,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4208,7 +4229,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4220,7 +4241,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4235,7 +4256,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_stake = 3;</code>
@@ -4259,7 +4280,7 @@ public final class TicketCashoutOuterClass {
           com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> cashoutPercentBuilder_;
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4270,7 +4291,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4285,7 +4306,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4305,7 +4326,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4323,7 +4344,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4346,7 +4367,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4363,7 +4384,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4375,7 +4396,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4390,7 +4411,7 @@ public final class TicketCashoutOuterClass {
       }
       /**
        * <pre>
-       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+       * Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
        * </pre>
        *
        * <code>.google.protobuf.UInt64Value cashout_percent = 4;</code>
@@ -4898,28 +4919,29 @@ public final class TicketCashoutOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ots/ticket_cashout.proto\022\003ots\032\036google/" +
       "protobuf/wrappers.proto\032\037google/protobuf" +
-      "/timestamp.proto\032\024ots/enum/enums.proto\"\373" +
-      "\001\n\031TicketCashoutRejectReason\0221\n\004code\030\001 \001" +
+      "/timestamp.proto\032\024ots/enum/enums.proto\"\230" +
+      "\002\n\031TicketCashoutRejectReason\0221\n\004code\030\001 \001" +
       "(\0162#.ots.TicketCashoutRejectReason.Code\022" +
-      "\017\n\007message\030\002 \001(\t\"\231\001\n\004Code\022\024\n\020CODE_UNSPEC" +
+      "\017\n\007message\030\002 \001(\t\"\266\001\n\004Code\022\024\n\020CODE_UNSPEC" +
       "IFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVAL" +
       "ID_ARGUMENT\020\002\022\022\n\016CODE_NOT_FOUND\020\003\022\033\n\027COD" +
-      "E_WRONG_TICKET_STAKE\020\004\022\034\n\030CODE_MAX_PAYOU" +
-      "T_BREACHED\020\005\"\213\001\n\022TicketCashoutState\022\n\n\002i" +
-      "d\030\001 \001(\t\0222\n\rticket_status\030\002 \001(\0162\033.ots.enu" +
-      "ms.AcceptanceStatus\0225\n\rreject_reason\030\003 \001" +
-      "(\0132\036.ots.TicketCashoutRejectReason\"f\n\nBe" +
-      "tCashout\022\n\n\002id\030\001 \001(\t\022\025\n\rcashout_stake\030\002 " +
-      "\001(\004\0225\n\017cashout_percent\030\003 \001(\0132\034.google.pr" +
-      "otobuf.UInt64Value\"\224\002\n\rTicketCashout\022\n\n\002" +
-      "id\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\0223\n\rcashout_stake\030\003 \001(\0132\034" +
-      ".google.protobuf.UInt64Value\0225\n\017cashout_" +
-      "percent\030\004 \001(\0132\034.google.protobuf.UInt64Va" +
-      "lue\022$\n\013bet_cashout\030\005 \003(\0132\017.ots.BetCashou" +
-      "t\0226\n\020stake_multiplier\030\006 \001(\0132\034.google.pro" +
-      "tobuf.UInt64ValueB\035\n\rcom.oddin.otsZ\014oddi" +
-      "n.gg/otsb\006proto3"
+      "E_WRONG_TICKET_STATE\020\004\022\034\n\030CODE_MAX_PAYOU" +
+      "T_BREACHED\020\005\022\033\n\027CODE_ALREADY_CASHED_OUT\020" +
+      "\006\"\213\001\n\022TicketCashoutState\022\n\n\002id\030\001 \001(\t\0222\n\r" +
+      "ticket_status\030\002 \001(\0162\033.ots.enums.Acceptan" +
+      "ceStatus\0225\n\rreject_reason\030\003 \001(\0132\036.ots.Ti" +
+      "cketCashoutRejectReason\"f\n\nBetCashout\022\n\n" +
+      "\002id\030\001 \001(\t\022\025\n\rcashout_stake\030\002 \001(\004\0225\n\017cash" +
+      "out_percent\030\003 \001(\0132\034.google.protobuf.UInt" +
+      "64Value\"\224\002\n\rTicketCashout\022\n\n\002id\030\001 \001(\t\022-\n" +
+      "\ttimestamp\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tamp\0223\n\rcashout_stake\030\003 \001(\0132\034.google.pro" +
+      "tobuf.UInt64Value\0225\n\017cashout_percent\030\004 \001" +
+      "(\0132\034.google.protobuf.UInt64Value\022$\n\013bet_" +
+      "cashout\030\005 \003(\0132\017.ots.BetCashout\0226\n\020stake_" +
+      "multiplier\030\006 \001(\0132\034.google.protobuf.UInt6" +
+      "4ValueB\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
