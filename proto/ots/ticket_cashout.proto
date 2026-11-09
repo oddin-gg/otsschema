@@ -31,7 +31,8 @@ message TicketCashoutRejectReason {
 
     // The requested cashout is already booked on the ticket and nothing was changed: the booked cumulative cashout
     // stake and percent are both at or above the requested ones. Returned whatever the ticket state is, so a resent
-    // cashout gets it also after the ticket was settled. Every other reject code means the request booked nothing.
+    // cashout gets it also after the ticket was settled. Every other reject code except CODE_INTERNAL means the request
+    // booked nothing; after CODE_INTERNAL or no reply, resend the same cashout to find out whether it was booked.
     CODE_ALREADY_CASHED_OUT = 6;
   }
 
