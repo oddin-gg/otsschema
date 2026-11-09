@@ -24,10 +24,16 @@ message TicketCashoutRejectReason {
     CODE_NOT_FOUND = 3;
 
     // Ticket is not in accepted state.
-    CODE_WRONG_TICKET_STAKE = 4;
+    CODE_WRONG_TICKET_STATE = 4;
 
     // Cashout amount is higher than possible payout.
     CODE_MAX_PAYOUT_BREACHED = 5;
+
+    // The requested cashout is already booked on the ticket and nothing was changed: the booked cumulative cashout
+    // stake and percent are both at or above the requested ones. Returned whatever the ticket state is, so a resent
+    // cashout gets it also after the ticket was settled. Every other reject code except CODE_INTERNAL means the request
+    // booked nothing; after CODE_INTERNAL or no reply, resend the same cashout to find out whether it was booked.
+    CODE_ALREADY_CASHED_OUT = 6;
   }
 
   // Reason code.
@@ -69,10 +75,10 @@ message TicketCashout {
   // Timestamp of request creation.
   google.protobuf.Timestamp timestamp = 2;
 
-  // Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  // Total cashout amount. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent.
   google.protobuf.UInt64Value cashout_stake = 3;
 
-  // Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values.
+  // Total cashout percent. Applicable for whole ticket. It needs to be multiplied by 10000 (or ticket stake multiplier) and rounded to long value in local currency. All subsequent partial cashout must include previous values: a new cashout must be higher than the booked one in both cashout_stake and cashout_percent. Missing value means a full cashout.
   google.protobuf.UInt64Value cashout_percent = 4;
 
   repeated BetCashout bet_cashout = 5;
