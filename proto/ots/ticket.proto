@@ -177,7 +177,7 @@ message BetBonus {
   // Bonus amount to add to the win. It needs to be multiplied by 10000 and rounded to long value in local currency.
   uint64 value = 1;
 
-  // Bonus type - only supported TOTAL for now.
+  // Bonus type - TOTAL or ACCA_BOOST.
   enums.BetBonusType type = 2;
 
   // Bonus payout mode. Typically used for system bets - only supported ALL for now (means all bets has to be winning).

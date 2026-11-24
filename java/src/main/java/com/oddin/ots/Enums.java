@@ -1302,6 +1302,14 @@ public final class Enums {
      * <code>BET_BONUS_TYPE_TOTAL = 1;</code>
      */
     BET_BONUS_TYPE_TOTAL(1),
+    /**
+     * <pre>
+     * Accumulator boost: like TOTAL, a fixed amount added to the win.
+     * </pre>
+     *
+     * <code>BET_BONUS_TYPE_ACCA_BOOST = 2;</code>
+     */
+    BET_BONUS_TYPE_ACCA_BOOST(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -1317,6 +1325,14 @@ public final class Enums {
      * <code>BET_BONUS_TYPE_TOTAL = 1;</code>
      */
     public static final int BET_BONUS_TYPE_TOTAL_VALUE = 1;
+    /**
+     * <pre>
+     * Accumulator boost: like TOTAL, a fixed amount added to the win.
+     * </pre>
+     *
+     * <code>BET_BONUS_TYPE_ACCA_BOOST = 2;</code>
+     */
+    public static final int BET_BONUS_TYPE_ACCA_BOOST_VALUE = 2;
 
 
     public final int getNumber() {
@@ -1345,6 +1361,7 @@ public final class Enums {
       switch (value) {
         case 0: return BET_BONUS_TYPE_UNSPECIFIED;
         case 1: return BET_BONUS_TYPE_TOTAL;
+        case 2: return BET_BONUS_TYPE_ACCA_BOOST;
         default: return null;
       }
     }
@@ -1844,21 +1861,21 @@ public final class Enums {
       "T_CHANNEL_PHONE\020\005\022\026\n\022TICKET_CHANNEL_SMS\020" +
       "\006\022\036\n\032TICKET_CHANNEL_CALL_CENTRE\020\007\022\031\n\025TIC" +
       "KET_CHANNEL_TV_APP\020\010\022\030\n\024TICKET_CHANNEL_A" +
-      "GENT\020\t*H\n\014BetBonusType\022\036\n\032BET_BONUS_TYPE" +
+      "GENT\020\t*g\n\014BetBonusType\022\036\n\032BET_BONUS_TYPE" +
       "_UNSPECIFIED\020\000\022\030\n\024BET_BONUS_TYPE_TOTAL\020\001" +
-      "*F\n\014BetBonusMode\022\036\n\032BET_BONUS_MODE_UNSPE" +
-      "CIFIED\020\000\022\026\n\022BET_BONUS_MODE_ALL\020\001*\275\001\n\nRea" +
-      "sonCode\022\033\n\027REASON_CODE_UNSPECIFIED\020\000\022 \n\034" +
-      "REASON_CODE_INVALID_ARGUMENT\020\001\022\036\n\032REASON" +
-      "_CODE_ALREADY_EXISTS\020\002\022\031\n\025REASON_CODE_NO" +
-      "T_FOUND\020\003\022\033\n\027REASON_CODE_UNAVAILABLE\020\004\022\030" +
-      "\n\024REASON_CODE_INTERNAL\020\005*\265\001\n\025TicketResul" +
-      "tStateType\022(\n$TICKET_RESULT_STATE_TYPE_U" +
-      "NSPECIFIED\020\000\022%\n!TICKET_RESULT_STATE_TYPE" +
-      "_RESULTED\020\001\022&\n\"TICKET_RESULT_STATE_TYPE_" +
-      "CORRECTED\020\002\022#\n\037TICKET_RESULT_STATE_TYPE_" +
-      "RESEND\020\003B\035\n\rcom.oddin.otsZ\014oddin.gg/otsb" +
-      "\006proto3"
+      "\022\035\n\031BET_BONUS_TYPE_ACCA_BOOST\020\002*F\n\014BetBo" +
+      "nusMode\022\036\n\032BET_BONUS_MODE_UNSPECIFIED\020\000\022" +
+      "\026\n\022BET_BONUS_MODE_ALL\020\001*\275\001\n\nReasonCode\022\033" +
+      "\n\027REASON_CODE_UNSPECIFIED\020\000\022 \n\034REASON_CO" +
+      "DE_INVALID_ARGUMENT\020\001\022\036\n\032REASON_CODE_ALR" +
+      "EADY_EXISTS\020\002\022\031\n\025REASON_CODE_NOT_FOUND\020\003" +
+      "\022\033\n\027REASON_CODE_UNAVAILABLE\020\004\022\030\n\024REASON_" +
+      "CODE_INTERNAL\020\005*\265\001\n\025TicketResultStateTyp" +
+      "e\022(\n$TICKET_RESULT_STATE_TYPE_UNSPECIFIE" +
+      "D\020\000\022%\n!TICKET_RESULT_STATE_TYPE_RESULTED" +
+      "\020\001\022&\n\"TICKET_RESULT_STATE_TYPE_CORRECTED" +
+      "\020\002\022#\n\037TICKET_RESULT_STATE_TYPE_RESEND\020\003B" +
+      "\035\n\rcom.oddin.otsZ\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

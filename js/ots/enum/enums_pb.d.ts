@@ -91,6 +91,7 @@ export const TicketChannel: TicketChannelMap;
 export interface BetBonusTypeMap {
   BET_BONUS_TYPE_UNSPECIFIED: 0;
   BET_BONUS_TYPE_TOTAL: 1;
+  BET_BONUS_TYPE_ACCA_BOOST: 2;
 }
 
 export const BetBonusType: BetBonusTypeMap;

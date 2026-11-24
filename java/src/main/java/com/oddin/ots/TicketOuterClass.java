@@ -15597,7 +15597,7 @@ java.lang.String defaultValue) {
 
     /**
      * <pre>
-     * Bonus type - only supported TOTAL for now.
+     * Bonus type - TOTAL or ACCA_BOOST.
      * </pre>
      *
      * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -15606,7 +15606,7 @@ java.lang.String defaultValue) {
     int getTypeValue();
     /**
      * <pre>
-     * Bonus type - only supported TOTAL for now.
+     * Bonus type - TOTAL or ACCA_BOOST.
      * </pre>
      *
      * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -15694,7 +15694,7 @@ java.lang.String defaultValue) {
     private int type_ = 0;
     /**
      * <pre>
-     * Bonus type - only supported TOTAL for now.
+     * Bonus type - TOTAL or ACCA_BOOST.
      * </pre>
      *
      * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -15705,7 +15705,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * Bonus type - only supported TOTAL for now.
+     * Bonus type - TOTAL or ACCA_BOOST.
      * </pre>
      *
      * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -16157,7 +16157,7 @@ java.lang.String defaultValue) {
       private int type_ = 0;
       /**
        * <pre>
-       * Bonus type - only supported TOTAL for now.
+       * Bonus type - TOTAL or ACCA_BOOST.
        * </pre>
        *
        * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -16168,7 +16168,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * Bonus type - only supported TOTAL for now.
+       * Bonus type - TOTAL or ACCA_BOOST.
        * </pre>
        *
        * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -16183,7 +16183,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * Bonus type - only supported TOTAL for now.
+       * Bonus type - TOTAL or ACCA_BOOST.
        * </pre>
        *
        * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -16196,7 +16196,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * Bonus type - only supported TOTAL for now.
+       * Bonus type - TOTAL or ACCA_BOOST.
        * </pre>
        *
        * <code>.ots.enums.BetBonusType type = 2;</code>
@@ -16214,7 +16214,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * Bonus type - only supported TOTAL for now.
+       * Bonus type - TOTAL or ACCA_BOOST.
        * </pre>
        *
        * <code>.ots.enums.BetBonusType type = 2;</code>

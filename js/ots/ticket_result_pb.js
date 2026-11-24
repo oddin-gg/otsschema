@@ -1659,7 +1659,8 @@ proto.ots.TicketResultStateBetInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
 id: jspb.Message.getFieldWithDefault(msg, 1, ""),
 betStatus: jspb.Message.getFieldWithDefault(msg, 2, 0),
-wonAmount: (f = msg.getWonAmount()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f)
+wonAmount: (f = msg.getWonAmount()) && google_protobuf_wrappers_pb.UInt64Value.toObject(includeInstance, f),
+bonusType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1708,6 +1709,10 @@ proto.ots.TicketResultStateBetInfo.deserializeBinaryFromReader = function(msg, r
       var value = new google_protobuf_wrappers_pb.UInt64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.UInt64Value.deserializeBinaryFromReader);
       msg.setWonAmount(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.ots.enums.BetBonusType} */ (reader.readEnum());
+      msg.setBonusType(value);
       break;
     default:
       reader.skipField();
@@ -1758,6 +1763,13 @@ proto.ots.TicketResultStateBetInfo.serializeBinaryToWriter = function(message, w
       3,
       f,
       google_protobuf_wrappers_pb.UInt64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getBonusType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
     );
   }
 };
@@ -1833,6 +1845,24 @@ proto.ots.TicketResultStateBetInfo.prototype.clearWonAmount = function() {
  */
 proto.ots.TicketResultStateBetInfo.prototype.hasWonAmount = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional enums.BetBonusType bonus_type = 4;
+ * @return {!proto.ots.enums.BetBonusType}
+ */
+proto.ots.TicketResultStateBetInfo.prototype.getBonusType = function() {
+  return /** @type {!proto.ots.enums.BetBonusType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.ots.enums.BetBonusType} value
+ * @return {!proto.ots.TicketResultStateBetInfo} returns this
+ */
+proto.ots.TicketResultStateBetInfo.prototype.setBonusType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 

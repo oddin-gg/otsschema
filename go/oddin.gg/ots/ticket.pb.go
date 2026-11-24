@@ -1177,7 +1177,7 @@ type BetBonus struct {
 
 	// Bonus amount to add to the win. It needs to be multiplied by 10000 and rounded to long value in local currency.
 	Value uint64 `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
-	// Bonus type - only supported TOTAL for now.
+	// Bonus type - TOTAL or ACCA_BOOST.
 	Type BetBonusType `protobuf:"varint,2,opt,name=type,proto3,enum=ots.enums.BetBonusType" json:"type,omitempty"`
 	// Bonus payout mode. Typically used for system bets - only supported ALL for now (means all bets has to be winning).
 	Mode BetBonusMode `protobuf:"varint,3,opt,name=mode,proto3,enum=ots.enums.BetBonusMode" json:"mode,omitempty"`
