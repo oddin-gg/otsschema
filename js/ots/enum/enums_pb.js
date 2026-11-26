@@ -131,7 +131,8 @@ proto.ots.enums.TicketChannel = {
  */
 proto.ots.enums.BetBonusType = {
   BET_BONUS_TYPE_UNSPECIFIED: 0,
-  BET_BONUS_TYPE_TOTAL: 1
+  BET_BONUS_TYPE_TOTAL: 1,
+  BET_BONUS_TYPE_ACCA_BOOST: 2
 };
 
 /**

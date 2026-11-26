@@ -6225,6 +6225,25 @@ public final class TicketResultOuterClass {
      * <code>.google.protobuf.UInt64Value won_amount = 3;</code>
      */
     com.google.protobuf.UInt64ValueOrBuilder getWonAmountOrBuilder();
+
+    /**
+     * <pre>
+     * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+     * </pre>
+     *
+     * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+     * @return The enum numeric value on the wire for bonusType.
+     */
+    int getBonusTypeValue();
+    /**
+     * <pre>
+     * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+     * </pre>
+     *
+     * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+     * @return The bonusType.
+     */
+    com.oddin.ots.Enums.BetBonusType getBonusType();
   }
   /**
    * Protobuf type {@code ots.TicketResultStateBetInfo}
@@ -6241,6 +6260,7 @@ public final class TicketResultOuterClass {
     private TicketResultStateBetInfo() {
       id_ = "";
       betStatus_ = 0;
+      bonusType_ = 0;
     }
 
     @java.lang.Override
@@ -6379,6 +6399,32 @@ public final class TicketResultOuterClass {
       return wonAmount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : wonAmount_;
     }
 
+    public static final int BONUS_TYPE_FIELD_NUMBER = 4;
+    private int bonusType_ = 0;
+    /**
+     * <pre>
+     * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+     * </pre>
+     *
+     * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+     * @return The enum numeric value on the wire for bonusType.
+     */
+    @java.lang.Override public int getBonusTypeValue() {
+      return bonusType_;
+    }
+    /**
+     * <pre>
+     * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+     * </pre>
+     *
+     * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+     * @return The bonusType.
+     */
+    @java.lang.Override public com.oddin.ots.Enums.BetBonusType getBonusType() {
+      com.oddin.ots.Enums.BetBonusType result = com.oddin.ots.Enums.BetBonusType.forNumber(bonusType_);
+      return result == null ? com.oddin.ots.Enums.BetBonusType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6402,6 +6448,9 @@ public final class TicketResultOuterClass {
       if (wonAmount_ != null) {
         output.writeMessage(3, getWonAmount());
       }
+      if (bonusType_ != com.oddin.ots.Enums.BetBonusType.BET_BONUS_TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, bonusType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6421,6 +6470,10 @@ public final class TicketResultOuterClass {
       if (wonAmount_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getWonAmount());
+      }
+      if (bonusType_ != com.oddin.ots.Enums.BetBonusType.BET_BONUS_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, bonusType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6445,6 +6498,7 @@ public final class TicketResultOuterClass {
         if (!getWonAmount()
             .equals(other.getWonAmount())) return false;
       }
+      if (bonusType_ != other.bonusType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6464,6 +6518,8 @@ public final class TicketResultOuterClass {
         hash = (37 * hash) + WON_AMOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getWonAmount().hashCode();
       }
+      hash = (37 * hash) + BONUS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + bonusType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6600,6 +6656,7 @@ public final class TicketResultOuterClass {
           wonAmountBuilder_.dispose();
           wonAmountBuilder_ = null;
         }
+        bonusType_ = 0;
         return this;
       }
 
@@ -6643,6 +6700,9 @@ public final class TicketResultOuterClass {
           result.wonAmount_ = wonAmountBuilder_ == null
               ? wonAmount_
               : wonAmountBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bonusType_ = bonusType_;
         }
       }
 
@@ -6701,6 +6761,9 @@ public final class TicketResultOuterClass {
         if (other.hasWonAmount()) {
           mergeWonAmount(other.getWonAmount());
         }
+        if (other.bonusType_ != 0) {
+          setBonusTypeValue(other.getBonusTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6744,6 +6807,11 @@ public final class TicketResultOuterClass {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 32: {
+                bonusType_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7079,6 +7147,79 @@ public final class TicketResultOuterClass {
           wonAmount_ = null;
         }
         return wonAmountBuilder_;
+      }
+
+      private int bonusType_ = 0;
+      /**
+       * <pre>
+       * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+       * </pre>
+       *
+       * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+       * @return The enum numeric value on the wire for bonusType.
+       */
+      @java.lang.Override public int getBonusTypeValue() {
+        return bonusType_;
+      }
+      /**
+       * <pre>
+       * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+       * </pre>
+       *
+       * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+       * @param value The enum numeric value on the wire for bonusType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBonusTypeValue(int value) {
+        bonusType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+       * </pre>
+       *
+       * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+       * @return The bonusType.
+       */
+      @java.lang.Override
+      public com.oddin.ots.Enums.BetBonusType getBonusType() {
+        com.oddin.ots.Enums.BetBonusType result = com.oddin.ots.Enums.BetBonusType.forNumber(bonusType_);
+        return result == null ? com.oddin.ots.Enums.BetBonusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+       * </pre>
+       *
+       * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+       * @param value The bonusType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBonusType(com.oddin.ots.Enums.BetBonusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        bonusType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+       * </pre>
+       *
+       * <code>.ots.enums.BetBonusType bonus_type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBonusType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bonusType_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11639,37 +11780,38 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
       "tError\0224\n\nbatch_info\030\005 \001(\0132 .ots.Tickets" +
       "AfterState.BatchInfo\032*\n\tBatchInfo\022\016\n\006act" +
       "ual\030\001 \001(\r\022\r\n\005total\030\002 \001(\r\"\032\n\014TicketResult" +
-      "\022\n\n\002id\030\001 \001(\t\"\210\001\n\030TicketResultStateBetInf" +
+      "\022\n\n\002id\030\001 \001(\t\"\265\001\n\030TicketResultStateBetInf" +
       "o\022\n\n\002id\030\001 \001(\t\022.\n\nbet_status\030\002 \001(\0162\032.ots." +
       "enums.ResultingStatus\0220\n\nwon_amount\030\003 \001(" +
-      "\0132\034.google.protobuf.UInt64Value\"V\n\036Ticke" +
-      "tResultStateSelectionInfo\0224\n\020selection_s" +
-      "tatus\030\001 \001(\0162\032.ots.enums.ResultingStatus\"" +
-      "g\n\021TicketResultError\022#\n\004code\030\001 \001(\0162\025.ots" +
-      ".enums.ReasonCode\022-\n\007message\030\002 \001(\0132\034.goo" +
-      "gle.protobuf.StringValue\"\276\006\n\021TicketResul" +
-      "tState\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status\030\002 \001(" +
-      "\0162\032.ots.enums.ResultingStatus\0220\n\nwon_amo" +
-      "unt\030\003 \001(\0132\034.google.protobuf.UInt64Value\022" +
-      "5\n\010bet_info\030\004 \003(\0132#.ots.TicketResultStat" +
-      "e.BetInfoEntry\022A\n\016selection_info\030\005 \003(\0132)" +
-      ".ots.TicketResultState.SelectionInfoEntr" +
-      "y\022O\n\026obb_sub_selection_info\030\n \003(\0132/.ots." +
-      "TicketResultState.ObbSubSelectionInfoEnt" +
-      "ry\022\025\n\rexchange_rate\030\006 \001(\004\022/\n\013resulted_at" +
-      "\030\007 \001(\0132\032.google.protobuf.Timestamp\022%\n\005er" +
-      "ror\030\010 \001(\0132\026.ots.TicketResultError\022/\n\013mod" +
-      "ified_at\030\t \001(\0132\032.google.protobuf.Timesta" +
-      "mp\022B\n\030ticket_result_state_type\030\013 \001(\0162 .o" +
-      "ts.enums.TicketResultStateType\032M\n\014BetInf" +
-      "oEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.ots" +
-      ".TicketResultStateBetInfo:\0028\001\032Y\n\022Selecti" +
-      "onInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132" +
-      "#.ots.TicketResultStateSelectionInfo:\0028\001" +
-      "\032_\n\030ObbSubSelectionInfoEntry\022\013\n\003key\030\001 \001(" +
-      "\t\0222\n\005value\030\002 \001(\0132#.ots.TicketResultState" +
-      "SelectionInfo:\0028\001B\035\n\rcom.oddin.otsZ\014oddi" +
-      "n.gg/otsb\006proto3"
+      "\0132\034.google.protobuf.UInt64Value\022+\n\nbonus" +
+      "_type\030\004 \001(\0162\027.ots.enums.BetBonusType\"V\n\036" +
+      "TicketResultStateSelectionInfo\0224\n\020select" +
+      "ion_status\030\001 \001(\0162\032.ots.enums.ResultingSt" +
+      "atus\"g\n\021TicketResultError\022#\n\004code\030\001 \001(\0162" +
+      "\025.ots.enums.ReasonCode\022-\n\007message\030\002 \001(\0132" +
+      "\034.google.protobuf.StringValue\"\276\006\n\021Ticket" +
+      "ResultState\022\n\n\002id\030\001 \001(\t\0221\n\rticket_status" +
+      "\030\002 \001(\0162\032.ots.enums.ResultingStatus\0220\n\nwo" +
+      "n_amount\030\003 \001(\0132\034.google.protobuf.UInt64V" +
+      "alue\0225\n\010bet_info\030\004 \003(\0132#.ots.TicketResul" +
+      "tState.BetInfoEntry\022A\n\016selection_info\030\005 " +
+      "\003(\0132).ots.TicketResultState.SelectionInf" +
+      "oEntry\022O\n\026obb_sub_selection_info\030\n \003(\0132/" +
+      ".ots.TicketResultState.ObbSubSelectionIn" +
+      "foEntry\022\025\n\rexchange_rate\030\006 \001(\004\022/\n\013result" +
+      "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022" +
+      "%\n\005error\030\010 \001(\0132\026.ots.TicketResultError\022/" +
+      "\n\013modified_at\030\t \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022B\n\030ticket_result_state_type\030\013 \001(" +
+      "\0162 .ots.enums.TicketResultStateType\032M\n\014B" +
+      "etInfoEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132" +
+      "\035.ots.TicketResultStateBetInfo:\0028\001\032Y\n\022Se" +
+      "lectionInfoEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002" +
+      " \001(\0132#.ots.TicketResultStateSelectionInf" +
+      "o:\0028\001\032_\n\030ObbSubSelectionInfoEntry\022\013\n\003key" +
+      "\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.ots.TicketResult" +
+      "StateSelectionInfo:\0028\001B\035\n\rcom.oddin.otsZ" +
+      "\014oddin.gg/otsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11720,7 +11862,7 @@ com.oddin.ots.TicketResultOuterClass.TicketResultStateSelectionInfo defaultValue
     internal_static_ots_TicketResultStateBetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ots_TicketResultStateBetInfo_descriptor,
-        new java.lang.String[] { "Id", "BetStatus", "WonAmount", });
+        new java.lang.String[] { "Id", "BetStatus", "WonAmount", "BonusType", });
     internal_static_ots_TicketResultStateSelectionInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_ots_TicketResultStateSelectionInfo_fieldAccessorTable = new

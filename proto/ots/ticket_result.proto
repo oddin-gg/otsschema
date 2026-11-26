@@ -68,6 +68,9 @@ message TicketResultStateBetInfo {
 
   // Won amount on bet converted by ticket exchange_rate and multiplied by 10000 and rounded to uint value.
   google.protobuf.UInt64Value won_amount = 3;
+
+  // Type of the bet's bonus as accepted; UNSPECIFIED when the bet has no bonus.
+  enums.BetBonusType bonus_type = 4;
 }
 
 message TicketResultStateSelectionInfo {

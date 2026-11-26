@@ -217,6 +217,9 @@ export class TicketResultStateBetInfo extends jspb.Message {
   getWonAmount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
   setWonAmount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
 
+  getBonusType(): ots_enum_enums_pb.BetBonusTypeMap[keyof ots_enum_enums_pb.BetBonusTypeMap];
+  setBonusType(value: ots_enum_enums_pb.BetBonusTypeMap[keyof ots_enum_enums_pb.BetBonusTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketResultStateBetInfo.AsObject;
   static toObject(includeInstance: boolean, msg: TicketResultStateBetInfo): TicketResultStateBetInfo.AsObject;
@@ -232,6 +235,7 @@ export namespace TicketResultStateBetInfo {
     id: string,
     betStatus: ots_enum_enums_pb.ResultingStatusMap[keyof ots_enum_enums_pb.ResultingStatusMap],
     wonAmount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    bonusType: ots_enum_enums_pb.BetBonusTypeMap[keyof ots_enum_enums_pb.BetBonusTypeMap],
   }
 }
 

@@ -107,6 +107,9 @@ enum BetBonusType {
   // Not a valid type. Used for blocking 0 as invalid state.
   BET_BONUS_TYPE_UNSPECIFIED = 0;
   BET_BONUS_TYPE_TOTAL = 1;
+
+  // Accumulator boost: like TOTAL, a fixed amount added to the win.
+  BET_BONUS_TYPE_ACCA_BOOST = 2;
 }
 
 enum BetBonusMode {
